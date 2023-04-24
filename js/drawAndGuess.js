@@ -109,6 +109,7 @@ $(function () {
     if ($("#myRange").val() < 20) {
       $("#myRange").val(20);
     }
+    width = $("#myRange").val();
     $("#magnifier").width($("#myRange").val());
     $("#magnifier").height($("#myRange").val());
     magnifierWidth = $("#magnifier").width();
