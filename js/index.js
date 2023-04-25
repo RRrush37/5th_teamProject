@@ -1,3 +1,1 @@
-window.addEventListener("load", () => {
-  alert("I'm loaded");
-});
+window.addEventListener("load", () => {});

@@ -7,8 +7,90 @@
     <link rel="stylesheet" href="css/style.css" />
     <script src="js/index.js"></script>
     <title>第五組團專</title>
+    <style type="text/css">
+      #txtShow {
+        width: 80vw;
+        height: 70vh;
+      }
+
+      #txtShow,
+      #txtInput,
+      #btnSend {
+        display: block;
+        margin: 20px auto;
+      }
+    </style>
   </head>
   <body>
     <h1>首頁標題</h1>
+    <textarea id="txtShow" disabled></textarea>
+    <input id="txtInput" type="text" />
+    <button id="btnSend">送出</button>
+    <div class="outerTimer">
+      <div class="innerTimer"></div>
+    </div>
+    <div class="reset">重置計時器</div>
+    <script>
+      document.addEventListener("DOMContentLoaded", (event) => {
+        let keyinDom = document.querySelector("#txtInput");
+        let showDom = document.querySelector("#txtShow");
+
+        document.querySelector("#btnSend").addEventListener("click", () => {
+          if (keyinDom.value.trim().length === 0) {
+            alert("請輸入訊息");
+            return;
+          }
+          let txt = keyinDom.value;
+          ws.onmessage = null;
+          // ws.send(txt);
+          ws.send(JSON.stringify([txt, "text"]));
+          ws.onmessage = (event) => {
+            let arr = JSON.parse(event.data);
+            console.log(arr[1]);
+            let txt;
+            if (arr[1] === "text") {
+              txt = arr[0];
+              if (!showDom.value) showDom.value = txt;
+              else showDom.value = showDom.value + "\n" + txt;
+              keyinDom.value = "";
+            } else if (arr[1] === "time") {
+              document.getElementsByClassName("innerTimer")[0].style.width =
+                arr[0] / 100 + "%";
+            }
+          };
+        });
+        document
+          .getElementsByClassName("reset")[0]
+          .addEventListener("click", () => {
+            ws.send(JSON.stringify(["resetClock", "resetTime"]));
+          });
+
+        // 建立 WebSocket (本例 server 端於本地運行)
+        let url = "ws://localhost:3000";
+        var ws = new WebSocket(url);
+        // 監聽連線狀態
+        ws.onopen = () => {
+          console.log("open connection");
+        };
+        ws.onclose = () => {
+          console.log("close connection");
+        };
+        //接收 Server 發送的訊息
+        ws.onmessage = (event) => {
+          let arr = JSON.parse(event.data);
+          console.log(arr[0]);
+          let txt;
+          if (arr[1] === "text") {
+            txt = arr[0];
+            if (!showDom.value) showDom.value = txt;
+            else showDom.value = showDom.value + "\n" + txt;
+            keyinDom.value = "";
+          } else if (arr[1] === "time") {
+            document.getElementsByClassName("innerTimer")[0].style.width =
+              arr[0] / 100 + "%";
+          }
+        };
+      });
+    </script>
   </body>
 </html>

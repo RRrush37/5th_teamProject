@@ -37,7 +37,23 @@ $(function () {
   $("#canvas").mouseup(function () {
     isDrawing = false;
   });
-
+  let time = 10000;
+  let deleteInterval = setInterval(() => {
+    console.log(time);
+    time -= 10;
+    $(".innerTimer").width(time / 100 + "%");
+    if (time < 0) clearInterval(deleteInterval);
+  }, 10);
+  $(".reset").click(() => {
+    time = 10000;
+    clearInterval(deleteInterval);
+    deleteInterval = setInterval(() => {
+      console.log(time);
+      time -= 10;
+      $(".innerTimer").width(time / 100 + "%");
+      if (time < 0) clearInterval(deleteInterval);
+    }, 10);
+  });
   // 顏色選擇事件
   $(".color-button").click(function () {
     if ($(this).hasClass("active")) {
