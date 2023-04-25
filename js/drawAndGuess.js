@@ -1,5 +1,6 @@
 $(function () {
   // 宣告變數
+  alert((Math.atan(1) * 180) / Math.PI);
   var canvas = $("#canvas")[0];
   var ctx = canvas.getContext("2d");
   var isDrawing = false;

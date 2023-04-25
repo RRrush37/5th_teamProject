@@ -12,10 +12,12 @@ const wss = new SocketServer({ server });
 let deleteInterval;
 let answer = ["車子", "鴕鳥", "火柴"];
 let nowAnswer = answer[Math.floor(Math.random() * 3)];
-
+let id = 1;
 //當有 client 連線成功時
 wss.on("connection", (ws) => {
   console.log("Client connected");
+  ws.send(JSON.stringify([id, "ID"]));
+  id++;
   // 當收到client消息時
   ws.on("message", (data) => {
     // 收回來是 Buffer 格式、需轉成字串
@@ -29,11 +31,11 @@ wss.on("connection", (ws) => {
       let clients = wss.clients; //取得所有連接中的 client
       if (newData[0] === nowAnswer) {
         clients.forEach((client) => {
-          client.send(JSON.stringify(["${玩家名稱}猜到了答案！", "text"])); // 發送至每個 client
+          client.send(JSON.stringify([newData[2] + "猜到了答案！", "text"])); // 發送至每個 client
         });
       } else {
         clients.forEach((client) => {
-          client.send(JSON.stringify([newData[0], "text"])); // 發送至每個 client
+          client.send(JSON.stringify([newData[2] + ":" + newData[0], "text"])); // 發送至每個 client
         });
       }
     } else if (newData[1] === "resetTime") {

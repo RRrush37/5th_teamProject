@@ -34,30 +34,30 @@
       document.addEventListener("DOMContentLoaded", (event) => {
         let keyinDom = document.querySelector("#txtInput");
         let showDom = document.querySelector("#txtShow");
-
+        let id;
         document.querySelector("#btnSend").addEventListener("click", () => {
           if (keyinDom.value.trim().length === 0) {
             alert("請輸入訊息");
             return;
           }
           let txt = keyinDom.value;
-          ws.onmessage = null;
+          // ws.onmessage = null;
           // ws.send(txt);
-          ws.send(JSON.stringify([txt, "text"]));
-          ws.onmessage = (event) => {
-            let arr = JSON.parse(event.data);
-            console.log(arr[1]);
-            let txt;
-            if (arr[1] === "text") {
-              txt = arr[0];
-              if (!showDom.value) showDom.value = txt;
-              else showDom.value = showDom.value + "\n" + txt;
-              keyinDom.value = "";
-            } else if (arr[1] === "time") {
-              document.getElementsByClassName("innerTimer")[0].style.width =
-                arr[0] / 100 + "%";
-            }
-          };
+          ws.send(JSON.stringify([txt, "text", id]));
+          // ws.onmessage = (event) => {
+          //   let arr = JSON.parse(event.data);
+          //   console.log(arr[1]);
+          //   let txt;
+          //   if (arr[1] === "text") {
+          //     txt = arr[0];
+          //     if (!showDom.value) showDom.value = txt;
+          //     else showDom.value = showDom.value + "\n" + txt;
+          //     keyinDom.value = "";
+          //   } else if (arr[1] === "time") {
+          //     document.getElementsByClassName("innerTimer")[0].style.width =
+          //       arr[0] / 100 + "%";
+          //   }
+          // };
         });
         document
           .getElementsByClassName("reset")[0]
@@ -80,7 +80,9 @@
           let arr = JSON.parse(event.data);
           console.log(arr[0]);
           let txt;
-          if (arr[1] === "text") {
+          if (arr[1] === "ID") {
+            id = arr[0];
+          } else if (arr[1] === "text") {
             txt = arr[0];
             if (!showDom.value) showDom.value = txt;
             else showDom.value = showDom.value + "\n" + txt;
