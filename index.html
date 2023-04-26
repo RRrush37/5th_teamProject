@@ -22,7 +22,12 @@
     </style>
   </head>
   <body>
-    <h1>首頁標題</h1>
+    <!-- <div class="fullScreen">
+      <div class="center">
+        <div class="nickname">暱稱：<input type="text" name="nickname" /></div>
+        <div class="resetQuestion">設定暱稱</div>
+      </div>
+    </div> -->
     <textarea id="txtShow" disabled></textarea>
     <input id="txtInput" type="text" />
     <button id="btnSend">送出</button>
@@ -30,6 +35,7 @@
       <div class="innerTimer"></div>
     </div>
     <div class="reset">重置計時器</div>
+    <div class="resetQuestion">重置題目</div>
     <script>
       document.addEventListener("DOMContentLoaded", (event) => {
         let keyinDom = document.querySelector("#txtInput");
@@ -60,13 +66,18 @@
           // };
         });
         document
+          .getElementsByClassName("resetQuestion")[0]
+          .addEventListener("click", () => {
+            ws.send(JSON.stringify(["", "resetQuestion"]));
+          });
+        document
           .getElementsByClassName("reset")[0]
           .addEventListener("click", () => {
-            ws.send(JSON.stringify(["resetClock", "resetTime"]));
+            ws.send(JSON.stringify(["", "resetTime"]));
           });
 
         // 建立 WebSocket (本例 server 端於本地運行)
-        let url = "ws://localhost:3000";
+        let url = "ws://192.168.50.168:3000";
         var ws = new WebSocket(url);
         // 監聽連線狀態
         ws.onopen = () => {
@@ -87,6 +98,9 @@
             if (!showDom.value) showDom.value = txt;
             else showDom.value = showDom.value + "\n" + txt;
             keyinDom.value = "";
+            if (arr[2] === id) {
+              showDom.disable = true;
+            }
           } else if (arr[1] === "time") {
             document.getElementsByClassName("innerTimer")[0].style.width =
               arr[0] / 100 + "%";

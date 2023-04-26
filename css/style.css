@@ -3,6 +3,25 @@
 body {
 }
 
+.fullScreen {
+  position: fixed;
+  width: 100vw;
+  height: 100vw;
+  background-color: #fff;
+}
+
+.center {
+  top: 50vh;
+  transform: translateY(-50%);
+  position: relative;
+}
+
+.nickname,
+.resetQuestion {
+  width: fit-content;
+  margin: 0 auto;
+}
+
 .outerTimer {
   width: 100%;
   height: 40px;
@@ -16,7 +35,8 @@ body {
   background-color: black;
 }
 
-.reset {
+.reset,
+.resetQuestion {
   padding: 10px;
   border: 1px solid;
   width: fit-content;

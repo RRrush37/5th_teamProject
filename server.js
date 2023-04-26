@@ -31,7 +31,9 @@ wss.on("connection", (ws) => {
       let clients = wss.clients; //取得所有連接中的 client
       if (newData[0] === nowAnswer) {
         clients.forEach((client) => {
-          client.send(JSON.stringify([newData[2] + "猜到了答案！", "text"])); // 發送至每個 client
+          client.send(
+            JSON.stringify([newData[2] + "猜到了答案！", "text", newData[2]])
+          ); // 發送至每個 client
         });
       } else {
         clients.forEach((client) => {
