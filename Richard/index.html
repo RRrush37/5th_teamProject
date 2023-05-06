@@ -24,10 +24,13 @@
   <body>
     <!-- <div class="fullScreen">
       <div class="center">
-        <div class="nickname">暱稱：<input type="text" name="nickname" /></div>
-        <div class="resetQuestion">設定暱稱</div>
+        <div class="nickname">
+          暱稱：<input type="text" id="nicknameInput" name="nickname" />
+        </div>
+        <div class="setNickname">設定暱稱</div>
       </div>
     </div> -->
+
     <textarea id="txtShow" disabled></textarea>
     <input id="txtInput" type="text" />
     <button id="btnSend">送出</button>
@@ -75,9 +78,16 @@
           .addEventListener("click", () => {
             ws.send(JSON.stringify(["", "resetTime"]));
           });
+        document.addEventListener("keydown", (e) => {
+          if (
+            e.keyCode === 13 &&
+            document.getElementById("txtInput") === document.activeElement
+          )
+            document.querySelector("#btnSend").click();
+        });
 
         // 建立 WebSocket (本例 server 端於本地運行)
-        let url = "wss://192.168.50.168:3000";
+        let url = "ws://192.168.0.6:3000";
         var ws = new WebSocket(url);
         // 監聽連線狀態
         ws.onopen = () => {

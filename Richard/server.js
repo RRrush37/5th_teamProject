@@ -13,6 +13,7 @@ let deleteInterval;
 let answer = ["車子", "鴕鳥", "火柴"];
 let nowAnswer = answer[Math.floor(Math.random() * 3)];
 let id = 1;
+let idArr = [];
 //當有 client 連線成功時
 wss.on("connection", (ws) => {
   console.log("Client connected");
