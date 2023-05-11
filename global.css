@@ -1,0 +1,26 @@
+@import url(reset.css);
+@font-face{
+    font-family: 'Makinas-4-Square';
+    src:url(/font/Makinas-4-Square.ttf),url(/font/Makinas-4-Square.woff);
+}
+html{
+    font-size: 10px;
+    font-family: Makinas-4-Square;
+    line-height: 1.6;
+}
+
+h1{
+    font-size: 4rem;
+}
+
+h2{
+    font-size: 3rem;
+}
+
+h3{
+    font-size: 1.5rem ;
+}
+
+p{
+    font-size: 2rem;
+}

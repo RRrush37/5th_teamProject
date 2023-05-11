@@ -33,12 +33,19 @@ wss.on("connection", (ws) => {
       if (newData[0] === nowAnswer) {
         clients.forEach((client) => {
           client.send(
-            JSON.stringify([newData[2] + "猜到了答案！", "text", newData[2]])
+            JSON.stringify([
+              newData[2] + "猜到了答案！",
+              "text",
+              newData[2],
+              newData[3],
+            ])
           ); // 發送至每個 client
         });
       } else {
         clients.forEach((client) => {
-          client.send(JSON.stringify([newData[2] + ":" + newData[0], "text"])); // 發送至每個 client
+          client.send(
+            JSON.stringify([newData[2] + ":" + newData[0], "text", newData[3]])
+          ); // 發送至每個 client
         });
       }
     } else if (newData[1] === "resetTime") {

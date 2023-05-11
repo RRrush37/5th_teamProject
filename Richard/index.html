@@ -30,9 +30,13 @@
         <div class="setNickname">設定暱稱</div>
       </div>
     </div> -->
-
+    <p>目前房間：<span id="roomName">大廳</span></p>
+    進入房間：<input type="text" id="newRoomName" />
+    <input type="button" value="進入" id="enterRoom" />
     <textarea id="txtShow" disabled></textarea>
+    <span style="margin: 0 auto" id="myName"></span>
     <input id="txtInput" type="text" />
+
     <button id="btnSend">送出</button>
     <div class="outerTimer">
       <div class="innerTimer"></div>
@@ -44,6 +48,10 @@
         let keyinDom = document.querySelector("#txtInput");
         let showDom = document.querySelector("#txtShow");
         let id;
+        document.getElementById("enterRoom").addEventListener("click", () => {
+          document.getElementById("roomName").innerHTML =
+            document.getElementById("newRoomName").value;
+        });
         document.querySelector("#btnSend").addEventListener("click", () => {
           if (keyinDom.value.trim().length === 0) {
             alert("請輸入訊息");
@@ -52,7 +60,14 @@
           let txt = keyinDom.value;
           // ws.onmessage = null;
           // ws.send(txt);
-          ws.send(JSON.stringify([txt, "text", id]));
+          ws.send(
+            JSON.stringify([
+              txt,
+              "text",
+              id,
+              document.getElementById("roomName").innerHTML,
+            ])
+          );
           // ws.onmessage = (event) => {
           //   let arr = JSON.parse(event.data);
           //   console.log(arr[1]);
@@ -87,7 +102,7 @@
         });
 
         // 建立 WebSocket (本例 server 端於本地運行)
-        let url = "ws://192.168.0.6:3000";
+        let url = "ws://192.168.50.168:3000";
         var ws = new WebSocket(url);
         // 監聽連線狀態
         ws.onopen = () => {
@@ -103,7 +118,14 @@
           let txt;
           if (arr[1] === "ID") {
             id = arr[0];
+            document.getElementById("myName").innerHTML = id + "：";
           } else if (arr[1] === "text") {
+            if (arr[2] !== document.getElementById("roomName").innerHTML) {
+              // alert(
+              //   arr[2] + "!=" + document.getElementById("roomName").innerHTML
+              // );
+              return;
+            }
             txt = arr[0];
             if (!showDom.value) showDom.value = txt;
             else showDom.value = showDom.value + "\n" + txt;
