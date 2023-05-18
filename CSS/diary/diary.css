@@ -1,30 +1,37 @@
 @import url(../global.css);
 
+h1 {
+    font-size: 4rem;
+    padding-bottom: 2rem;
+}
+
+
+
 /* --------------NAV改色-------------- */
 
 .bar .ability span:last-child {
     /* border: 1px solid #FFF; */
-    background-color: #3D2E96;
+    background-color: #775050;
 }
 
 .bar .ability span div {
-    background-color: #D6D1F0;
+    background-color: #F9DE9A;
 }
 
 .bar>.ability {
-    text-shadow: #3D2E96 .1rem .1rem .4rem;
+    text-shadow: #ffffff .1rem .1rem .4rem;
 }
 
 .user {
-    border: #D6D1F0 solid 2px;
+    border: #EFE0CC solid 2px;
 }
 
 .widget {
-    color: #D6D1F0;
+    color: #EFE0CC;
 }
 
 .widget a {
-    color: #D6D1F0;
+    color: #EFE0CC;
 }
 
 .bar .ability span div {
@@ -34,7 +41,7 @@
 /* --------------活動主內容-------------- */
 
 body {
-    background-image: url(../../IMG/activity/activity_background.jpeg);
+    background-image: url(../../IMG/diary/forest.png);
     background-size: cover;
 }
 
@@ -69,46 +76,118 @@ body {
 
 
 
-/* --------------活動篩選欄-------------- */
+/* --------------導覽列-------------- */
 
 .activity_main .left {
     width: 20.8%;
-    background-color: rgba(217, 212, 239, 0.7);
-    color: #000;
+    height: 100%;
+    background-color: #847062a1;
+    color: #634921;
     line-height: 1.6;
     padding: 20px;
+    margin-top: 3.5rem;
+    
 }
 
-.activity_main .left h2 {
-    color: #FFF;
-    -webkit-text-stroke: #000 1px;
-    font-weight: 700;
-    text-shadow: 0 4px 4px #0000004e;
-    text-align: center;
+.text_nav {
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-decoration-color: #634921;
+    text-underline-offset: 6px;
+    font-size:2rem;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    margin-top: 1rem;
+    font-weight: bold;
+   
+    
+  }
+  
+  .text_nav > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    line-height: 1.6;
+    position: relative;
+    margin: 1rem auto;
+  }
+  
+  .text_nav > div::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #634921;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .text_nav > div:hover::before {
+    transform: scaleX(1);
+  }
+  
+  .text_nav > div:hover {
+    font-size: 1.7rem;
+    font-weight: bold;
+    color: black;
+    background-color: #ffffff45;
+    border-radius: 10px;
+    
+  }
+  
+
+/* -------------導覽列裡面的大頭貼------- */
+
+.member_photo{
+    background-image: url(../../IMG/diary/grass.png);
+    background-size: cover;
+    background-size: 70%;
+        background-position: center;
+        background-repeat: no-repeat;
+        
+       
 }
+
+.member_photo img{
+width: 50%;
+height: 50%;
+display: block;
+margin: auto;
+}
+
 
 /* --------------活動內容-------------- */
 
-.activity_tab {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 5px;
+.cards_top img{
+    float: right;
+    height: 40px;
+    float: top;   
+}
+
+h2{
+    color: white;
+    margin-left: 1rem;
 }
 
 .activity_tab_active {
     -webkit-text-stroke: #000 1px;
     font-weight: 600;
-    text-decoration: underline #5e51a7;
+    text-decoration: underline #e7e7e7;
+    
 }
 
 .activity_tab>span {
     display: flex;
 }
 
-.activity_tab a {
-    color: #FFF;
-    margin-right: 20px;
-}
+
 
 .activity_main .middle {
     width: 55%;
@@ -117,14 +196,26 @@ body {
 }
 
 .activity_article {
-    background-color: rgba(214, 209, 240, 0.9);
+    background-color: #847062a1;
     padding: 25px;
+    height: 100vh;
 }
 
+.activity_article_cards {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+   margin-right: 200px;
+    padding: 20px;
+  }
+
+
+  
 
 /* --------------活動內容-卡片-------------- */
 .activity_article_cards {
-    background-color: rgba(61, 46, 150, 0.8);
+    background-color: rgba(61, 46,847062a1150, 0.8);
     padding: 20px;
     /* display: grid;
     grid-template-rows: 1fr 1fr 1fr 1fr ;
@@ -152,10 +243,11 @@ body {
 /* --------------活動右側欄-日曆-------------- */
 .calendar {
     color: #fff;
-    background-color: #5e51a7;
+    background-color: #847062a1;
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);
     padding: 0 5px;
-    border-bottom: #5e51a7 5px solid;
+    border-bottom: #847062a1 5px solid;
+    margin-top: 3.5rem;
 }
 
 .right .body {
@@ -187,7 +279,7 @@ ul.weekdays li{
 
 #prev,
 #next {
-    color: #beb9dc;
+    color: #312006;
 }
 
 .light {
@@ -203,14 +295,14 @@ ul.weekdays li{
 }
 
 .todaybox {
-    border: 1px solid #3D2E96;
-    background: #D6D1F0;
+    border: 1px solid #775050;
+    background: #847062a1;
 }
 
 /* --------------活動右側欄-活動簡述-------------- */
 .right .my_activity {
     padding: 20px;
-    background-color: rgba(217, 212, 239, 0.7);
+    background-color: #847062a1;
     margin-top: 20px;
     clear: both;
 }
@@ -225,7 +317,7 @@ ul.weekdays li{
 }
 
 .right .my_activity p {
-    color: #3D2E96;
+    color: #ffffff;
     line-height: 1.6;
     margin-bottom: 10px;
 }
@@ -234,6 +326,7 @@ ul.weekdays li{
     font-size: 1.5rem;
     line-height: 1.25;
     margin-bottom: 50px;
+    color: white;
 }
 
 .right .my_activity a {
@@ -241,9 +334,14 @@ ul.weekdays li{
     text-decoration: underline;
     text-align: center;
     font-size: 2rem;
-    color: #000;
+    color: #ffffff;
 }
 
 .right .my_activity a img {
     width: 80%;
+}
+
+h3{
+    font-size: 2rem;
+    color: rgb(0, 0, 0);
 }
