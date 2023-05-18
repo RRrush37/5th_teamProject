@@ -1,0 +1,167 @@
+@import url("./reset.css");
+
+@font-face {
+    font-family: 'Makinas-4-Square';
+    src: url("/font/Makinas-4-Square.ttf"), url("/font/Makinas-4-Square.woff");
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 10px;
+    /* font-family: Makinas-4-Square; */
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1 {
+    font-size: 4rem;
+}
+
+h2 {
+    font-size: 3rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+p {
+    font-size: 2rem;
+}
+
+/* --------------NAV-------------- */
+
+.bar {
+    display: flex;
+    padding-top: 8px;
+}
+
+.bar >.ability {
+    display: flex;
+    width: fit-content;
+    line-height: normal;
+    color: #FFF;
+    text-shadow: #45300D .1rem .1rem .4rem;
+}
+
+.bar .ability span {
+    font-size: 1.5rem;
+}
+
+
+.bar .ability span:last-child {
+    /* border: 1px solid #FFF; */
+    background-color: #45300D;
+    width: 60px;
+    height: 1.5rem;
+    font-size: 0;
+}
+
+.bar .ability span div {
+    width: 20%;
+    height: 100%;
+    background-color: #E3CEA1;
+    display: inline-block;
+    font-size: 1rem;
+    padding-left: 2px;
+}
+
+.bar .ability li {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+    align-items: center;
+}
+
+.ability {
+    flex: 0 0 calc(50% - 50px);
+}
+
+.nav {
+    text-align: right;
+    flex: 1 0 calc(50% - 50px);
+    position: relative;
+}
+
+.user {
+    margin-right: 10px;
+    border-radius: 50%;
+    float: right;
+    border: #E3CEA1 solid 2px;
+}
+
+.widget {
+    display: flex;
+    justify-content: flex-end;
+    color: #E3CEA1;
+}
+
+.widget a {
+    color: #E3CEA1;
+}
+
+.widget i {
+    font-size: 3rem;
+    margin-right: 20px;
+}
+
+/* .compass {
+    position: relative;
+}
+
+.compass li {
+    background-color: #45300D;
+    margin-top: 10px;
+    padding: 35px 10px;
+    border-radius: 50%;
+}
+
+.compass h4 {
+    margin-top: 5px;
+    white-space: nowrap;
+} */
+
+.widget .fa-bell {
+    position: absolute;
+    top: 5px;
+    right: 78px;
+}
+
+.widget .fa-sack-dollar {
+    position: absolute;
+    top: 49px;
+    right: 72px;
+}
+
+.widget .fa-briefcase {
+    position: absolute;
+    top: 83px;
+    right: 34px;
+}
+
+.widget .fa-compass {
+    position: absolute;
+    top: 82px;
+    right: -13px;
+}
+
+
+/* --------------NAV-------------- */
+
+.activity_title {
+    position: relative;
+}
+
+.activity_title>h1 {
+    text-align: center;
+}
+
+.activity_title>svg {
+    position: absolute;
+}
