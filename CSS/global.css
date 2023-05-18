@@ -1,7 +1,11 @@
 @import url("./reset.css");
 
 @font-face {
+<<<<<<< HEAD
     font-family: 'Makinas-4-Square',Arial, Helvetica, sans-serif;
+=======
+    font-family: 'Makinas-4-Square';
+>>>>>>> a71c25aae5628edbca1858405d829baf0b28f89a
     src: url("/font/Makinas-4-Square.ttf"), url("/font/Makinas-4-Square.woff");
 }
 
@@ -156,7 +160,10 @@ p {
 
 .activity_title {
     position: relative;
+<<<<<<< HEAD
     margin: 0 20px;
+=======
+>>>>>>> a71c25aae5628edbca1858405d829baf0b28f89a
 }
 
 .activity_title>h1 {
