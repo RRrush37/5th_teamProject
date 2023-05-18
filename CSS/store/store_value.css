@@ -1,0 +1,649 @@
+body{
+    background-image: url(/IMG/store/mall_room.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.2);
+    background-blend-mode: multiply;
+}
+
+.activity_title{
+    margin-left: 20px;
+}
+
+.activity_title a{
+    position: absolute;
+
+}
+
+.activity_title a:hover {
+    animation: left .5s infinite;
+}
+
+@keyframes left{
+    0%{
+        margin-left: 0px;
+    }
+    100%{
+        margin-left: -5px;
+    }
+}
+
+.bar>.ability {
+    text-shadow: #405366.1rem .1rem .4rem;
+}
+
+.bar .ability span:last-child {
+    background-color: #405366;
+}
+
+.bar .ability span div {
+    background-color: #A0C0E1;
+}
+
+.user {
+    border: #A0C0E1 solid 2px;
+}
+
+.widget{
+    color: #A0C0E1;
+}
+
+.widget a{
+    color: #A0C0E1;
+}
+
+.activity_title h1{
+    color: white;
+    text-shadow: #405366.1rem .1rem .4rem;
+}
+
+.choose_wrapper{
+    display: flex;
+}
+
+#choose{
+    font-size: 2rem;
+    text-align: center;
+    background-color: #755C5C;
+    color: white;
+    margin: 0 auto;
+    padding: 5px 0;
+}
+
+.wrapper{
+    display: flex;
+    width: 100%;
+}
+
+/* 左邊選單 */
+.nav_left{
+    background-image: url(/IMG/store/photo_frame.png);
+    width: 195px;
+    height: 424px;
+    opacity: 0.8;
+    margin: 20px 100px;
+}
+
+.nav_left ul{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.nav_left ul li{
+    color: white;
+    text-shadow: #405366.1rem .1rem .4rem;
+    border-bottom: 2px solid #4053666c;
+    width: 100px;
+    margin: 35px auto 0;
+    padding-bottom: 10px;
+}
+
+.current{
+    color: #405366;
+}
+
+/* 能力值 */
+.value{
+    background-color: #00000077;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-45%, -50%);
+    width: 700px;
+    height: 460px;
+    border-radius: 10px;
+}
+
+.value_wrapper{
+    height: 400px;
+    overflow: hidden;
+    overflow: auto;
+    margin: 30px 50px;
+}
+
+.value_choose ul{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.value_choose ul li{
+    margin: 20px 5px;
+}
+
+.box{
+    width: 70%;
+    margin-left: 25px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+}
+
+.money{
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5px;
+}
+
+.money h3{
+    margin-left: 15px;
+}
+
+.buy_button{
+    margin: 10px 27px;
+}
+
+.buy{
+    background-color: #D2CAA0;
+    display: flex;
+    justify-content: space-around;
+    width: 120px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.gift{
+    background-color: #A0C0E1;
+    display: flex;
+    justify-content: space-around;
+    width: 120px;
+    margin-top: 10px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.coin{
+    margin-top: 6px;
+}
+
+.fa-gift{
+    margin-top: 6px;
+}
+
+.value_wrapper::-webkit-scrollbar {
+    width: 10px;
+}
+
+.value_wrapper::-webkit-scrollbar-thumb {
+    background: #ffffffcb;
+    border-radius: 10px;
+}
+
+.value_wrapper::-webkit-scrollbar-track {
+    border-radius: 10px;
+}
+
+/*--------------------------------- lightbox -------------------------------------*/
+
+/* main */
+.value_lightbox{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: hsla(0, 0%, 0%, .8);
+}
+
+.value_main{
+    background-color: #ffffffbb;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 500px;
+    border-radius: 30px;
+}
+
+.main_none{
+    display: none;
+}
+    
+.value_main > article{
+    color: white;
+    width: 75%;
+    height: 70%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+}
+
+.fa-xmark{
+    font-size: 3rem;
+    margin-left: 90%;
+    margin-top: 5%;
+    cursor: pointer;
+}
+
+.main{
+    margin: 0 auto;
+}
+
+/* text */
+.value_lightbox1{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: hsla(0, 0%, 0%, .8);
+}
+
+.value_text{
+    background-color: #ffffffbb;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 500px;
+    border-radius: 30px;
+}
+
+.text_none{
+    display: none;
+}
+    
+.value_text > article{
+    color: #000;
+    width: 75%;
+    height: 70%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+}
+
+.fa-xmark{
+    font-size: 3rem;
+    margin-left: 90%;
+    margin-top: 5%;
+    cursor: pointer;
+}
+
+.text{
+    display: flex;
+    width: 600px;
+}
+
+.text p{
+    margin-top: 50px;
+    margin-left: 30px;
+    line-height: 2;
+}
+
+.money1_wrapper{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.money1{
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+}
+
+.money1 h2{
+    margin-left: 5px;
+}
+
+.num{
+    display: flex;
+    align-items: center;
+}
+
+.num1{
+    margin: 0 10px;
+}
+
+.minus{
+    font-size: 2rem;
+    color: white;
+    background-color: #000;
+    border: none;
+    border-radius: 10px;
+    height: 25px;
+    width: 25px;
+    padding-bottom: 10px;
+    cursor: pointer;
+}
+
+.addition{
+    font-size: 2rem;
+    color: white;
+    background-color: #000;
+    border: none;
+    border-radius: 10px;
+    height: 25px;
+    width: 25px;
+    cursor: pointer;
+}
+
+.cancel1{
+    background-color:#ffff;
+    color: #000;
+    font-size: 2rem;
+    border-radius: 15px;
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+}
+
+.cancel1:hover{
+    box-shadow: 0 0 5px #727272;
+}
+
+.buy1{
+    background-color:#000;
+    color: white;
+    font-size: 2rem;
+    border-radius: 15px;
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.buy1:hover{
+    box-shadow: 0 0 5px #000000;
+}
+
+/* gift */
+.value_lightbox2{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: hsla(0, 0%, 0%, .8);
+}
+
+.gift_none{
+    display: none;
+}
+
+.value_gift{
+    background-color: #ffffffbb;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 800px;
+    height: 550px;
+    border-radius: 30px;
+}
+    
+.value_gift > article{
+    color: #000;
+    width: 75%;
+    height: 70%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+}
+
+.fa-xmark{
+    font-size: 3rem;
+    margin-left: 90%;
+    margin-top: 5%;
+    cursor: pointer;
+}
+
+.tatal_wrapper{
+    display: flex;
+}
+
+.tatal_wrapper h2{
+    margin: 20px auto;
+}
+
+/* 好友 */
+.friand_wrapper{
+    background-color: #D2CAA0;
+    width: 180px;
+    height: 400px;
+    text-align: center;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.friand{
+    overflow: auto;
+    height: 300px;
+}
+
+.friand ul li{
+    font-size: 2rem;
+    margin: 20px;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.fa-circle-user{
+    font-size: 3rem;
+    margin-left: 10px;
+    color: #878166;
+}
+
+.friand ul li label{
+    position: relative;
+}
+
+.friand ul li span{
+    position: absolute;
+    top: 10px;
+}
+
+input[type="checkbox"] {
+    visibility: hidden;
+}
+
+input[type="checkbox"]+span::before{
+    content: '\2714';
+    display: inline-block;
+    color: #878166;
+    font-size: 2.5rem;
+    opacity: 0;
+    transition: .2s;
+    position: absolute;
+    left: 0;
+    top: -8px;
+}
+
+input[type="checkbox"]:checked+span::before{
+    opacity: 1;
+}
+
+.checkbox{
+    height: 1.5rem;
+    width: 1.5rem;
+    background-color: white;
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    top: 10;
+}
+
+.friand::-webkit-scrollbar {
+    width: 10px;
+}
+
+.friand::-webkit-scrollbar-thumb {
+    background: #ffffffcb;
+    border-radius: 10px;
+}
+
+.friand::-webkit-scrollbar-track {
+    background: #D2CAA0;
+    border-radius: 10px;
+}
+
+/* 禮物卡 */
+.gift_wrapper{
+    display: flex;
+    flex-direction: column;
+    width: 380px;
+    margin-left: 50px;
+    background-color: #D2CAA0;
+    padding: 0 30px;
+    border-radius: 10px;
+}
+
+.gift_wrapper h2{
+    text-align: center;
+}
+
+.gift_wrapper p{
+    margin-bottom: 10px;
+}
+
+.talk{
+    padding: 10px;
+    border: none;
+    resize: none;
+}
+
+.finish{
+    font-size: 1.5rem;
+    width: 80px;
+    margin: 10px auto;
+    background-color:#878166;
+    color: white;
+    border-radius: 10px;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.finish:hover{
+    box-shadow: 0 0 5px #ffffff;
+}
+
+.money2_wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 40px;
+    margin-top: 20px;
+}
+
+.money2{
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+}
+
+.money2 h2{
+    margin-left: 5px;
+}
+
+.num{
+    display: flex;
+    align-items: center;
+}
+
+.num p{
+    margin: 0 10px;
+}
+
+.minus{
+    font-size: 2rem;
+    color: white;
+    background-color: #000;
+    border: none;
+    border-radius: 10px;
+    height: 25px;
+    width: 25px;
+    padding-bottom: 10px;
+    cursor: pointer;
+}
+
+.minus:hover{
+    box-shadow: 0 0 5px #000000;
+}
+
+.addition{
+    font-size: 2rem;
+    color: white;
+    background-color: #000;
+    border: none;
+    border-radius: 10px;
+    height: 25px;
+    width: 25px;
+    cursor: pointer;
+}
+
+.addition:hover{
+    box-shadow: 0 0 5px #000000;
+}
+
+.check{
+    display: flex;
+}
+
+.cancel2{
+    background-color:#ffff;
+    color: #000;
+    font-size: 2rem;
+    border-radius: 15px;
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+}
+
+.cancel2:hover{
+    box-shadow: 0 0 5px #727272;
+}
+
+.buy2{
+    background-color:#000;
+    color: white;
+    font-size: 2rem;
+    border-radius: 15px;
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.buy2:hover{
+    box-shadow: 0 0 5px #000000;
+}

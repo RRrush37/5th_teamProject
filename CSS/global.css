@@ -1,7 +1,15 @@
 @import url("./reset.css");
 
 @font-face {
+<<<<<<< HEAD
     font-family: 'Makinas-4-Square';
+=======
+<<<<<<< HEAD
+    font-family: 'Makinas-4-Square',Arial, Helvetica, sans-serif;
+=======
+    font-family: 'Makinas-4-Square';
+>>>>>>> a71c25aae5628edbca1858405d829baf0b28f89a
+>>>>>>> 5b8602a235affe89537a6a2a511d2368bb36a3a8
     src: url("/font/Makinas-4-Square.ttf"), url("/font/Makinas-4-Square.woff");
 }
 
@@ -45,7 +53,11 @@ p {
     margin: 0 auto;
 }
 
+<<<<<<< HEAD
+.bar >.ability {
+=======
 .bar>.ability {
+>>>>>>> 5b8602a235affe89537a6a2a511d2368bb36a3a8
     display: flex;
     width: fit-content;
     line-height: normal;
@@ -160,7 +172,17 @@ p {
 
 .activity_title {
     position: relative;
+<<<<<<< HEAD
     z-index: 1;
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+    margin: 0 20px;
+=======
+>>>>>>> a71c25aae5628edbca1858405d829baf0b28f89a
+>>>>>>> 5b8602a235affe89537a6a2a511d2368bb36a3a8
+>>>>>>> 304268cd8fa5f90a6ab13031594430d556456255
 }
 
 .activity_title>h1 {
