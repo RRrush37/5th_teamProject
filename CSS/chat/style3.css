@@ -1,0 +1,301 @@
+body {
+    margin: 0;
+}
+
+#wrapper {
+    display: flex;
+
+}
+
+.navbar-nav {
+    display: flex;
+    flex-direction: column;
+    margin: 5rem 0 0 3rem;
+    background-color: #DCD1C8;
+    font-size: 2rem;
+    height: 34rem;
+
+}
+
+.nav-item:not(:last-child) {
+    border-bottom: 1px solid black;
+}
+
+.nav-link {
+    display: block;
+    padding: .7em 3rem;
+
+    text-decoration: none;
+    text-align: center;
+}
+
+.nav-link span {
+    font-size: 20px;
+    color: black;
+    font-weight: 700;
+}
+
+.nav-link:focus,
+.nav-link:hover {
+    text-decoration: none
+}
+
+.m-text-search {
+    margin: 0 auto;
+    margin-left: 5rem;
+}
+
+.m-text-search ul{
+    margin-bottom: 0;
+}
+
+.m-text-search-banner {
+
+    background-color: #C0B7AA;
+    width: 800px;
+
+}
+
+/* bar */
+#mix-bar{
+    background-color: #ECE3D7;
+    border: 1px solid black;
+}
+
+
+#mix-bar span{
+    border-right: 1px solid black;
+    padding: 1rem;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.search-bar{
+    background-color: #ECE3D7;
+    position: relative;
+}
+
+.search-bar>h2,.hide-bar>h2 {
+    text-align: center;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 3rem;
+    padding-top: 3rem;
+}
+
+
+.search-bar table,.hide-bar table {
+    width: 60%;
+    margin-left: 30%;
+    margin-bottom: 40px;
+    height: 100%;
+    list-style: none;
+    padding-top: 3rem;
+
+}
+
+.search-bar tr,.hide-bar tr {
+
+    height: 4rem;
+}
+
+.hide-bar{
+    background-color: #ECE3D7;
+    display: none;
+}
+
+#event-bar tr td:nth-child(2),#generalEdit-bar tr td:nth-child(2){
+    border-bottom: 1px solid black;
+}
+
+#generalEdit-bar{
+    display:none;
+}
+
+
+
+.search-bar table:nth-of-type(2) td {
+    width: auto;
+    display: inline-block;
+}
+
+tr:nth-child(3) td:nth-child(1) input[type="text"] {
+    padding-left: 10px;
+}
+
+.search-btn {
+    display: inline-block;
+    background-color: #CB963D;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    padding: .7rem 2rem;
+    border-radius: 1rem;
+    margin-left: 46%;
+    margin-bottom: 3rem;
+    cursor: pointer;
+}
+
+.add-btn{
+    background-color: #CB963D;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    padding: .7rem 2rem;
+    border-radius: 1rem;
+    position: absolute;
+    right: 10%;
+    top: 10%;
+    cursor: pointer;
+}
+
+/* 聊天室資料查詢*/
+
+earch-bar2
+
+
+/* 會員資料查詢 */
+
+.wrapper .membertext{
+    width: 50%;
+    background-color: #ECE3D7;
+    width: 80%;
+    margin: 0 auto;
+
+}
+
+.membertext-left table,.membertext-right table{
+    display: inline-block;
+    margin-left: 0;
+    
+}
+
+.membertext-left,.membertext-right {
+    width: 45%;
+    
+    display: inline-block;
+   
+}
+
+.membertext-left td,.membertext-right td {
+    padding: 1rem;
+    font-size: 2rem;
+   
+}
+
+.membertext-left tr td:nth-child(2),
+.membertext-right tr td:nth-child(2) {
+    border-bottom: 1px solid #000;
+    padding-bottom: 0;
+}
+
+
+
+.membertext-left input {
+    background-color: #56493f;
+    color: white;
+    padding: .2rem.5rem;
+    border-radius: .5rem;
+    margin: 1rem;
+    margin-top: 7rem;
+
+}
+
+.membertext input{
+    background-color: #704214;
+    padding: 1rem 2rem;
+    border-radius: 1rem;
+    text-align: center;
+    height: 3rem;
+    line-height: 1rem;
+    display: inline-block;
+    position: absolute;
+    margin-bottom: 1rem;
+    left: 40%;
+    bottom: 0;
+}
+
+/* 下方表格 */
+
+.list-bottom-first {
+    background-color: #CFC7C4;
+
+}
+
+.list-bottom-first div{
+    display: flex;
+    justify-content: space-around; 
+    width: 88%;
+    margin: 0 auto;
+
+    padding: 1rem ;
+}
+
+.list-bottom-first span:last-child{
+    padding: .7rem 1rem;
+}
+
+
+.list-bottom h3 {
+    background-color: #2C4340;
+    margin-top: 0;
+    color: white;
+    padding: 1rem 3rem;
+    margin-bottom: 0;
+}
+
+
+
+.list-bottom ul {
+    width: 100%;
+    margin-top: 0;
+    list-style: none;
+    padding-left: 0;
+    border-left: 3rem solid #CFC7C4;
+    border-right: 3rem solid #CFC7C4;
+    border-bottom: 3rem solid #CFC7C4;
+    
+
+}
+
+.list-bottom ul{
+    background-color: #D9D9D9;
+}
+
+
+.list-bottom li {
+    display: flex;
+    width: 95%;
+    margin: 0 auto;
+    background-color: white;
+    justify-content: space-around;
+    padding: 1rem ;
+    border: 1px solid black;
+}
+
+.list-bottom li:not(:last-child){
+    margin-bottom: 2rem;
+}
+
+.list-bottom span {
+    padding-top: .7rem;
+}
+
+.list-bottom a {
+    color: white;
+    padding: .7rem 1rem;
+    text-align: center;
+    border-radius: .7rem;
+    background-color: #959595;
+}
+
+
+
+
+
+
+
+
+
