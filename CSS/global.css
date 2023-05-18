@@ -12,7 +12,6 @@
 html {
     font-size: 10px;
     /* font-family: Makinas-4-Square; */
-    line-height: 1.6;
 }
 
 a {
@@ -40,6 +39,10 @@ p {
 .bar {
     display: flex;
     padding-top: 8px;
+    padding-right: 10px;
+    max-width: 1280px;
+    width: 100%;
+    margin: 0 auto;
 }
 
 .bar>.ability {
@@ -87,6 +90,7 @@ p {
     text-align: right;
     flex: 1 0 calc(50% - 50px);
     position: relative;
+    z-index: 3;
 }
 
 .user {
@@ -152,10 +156,11 @@ p {
 }
 
 
-/* --------------NAV-------------- */
+/* --------------頁面標題及返回鍵-------------- */
 
 .activity_title {
     position: relative;
+    z-index: 1;
 }
 
 .activity_title>h1 {
@@ -164,4 +169,35 @@ p {
 
 .activity_title>svg {
     position: absolute;
+}
+
+.activity_title>svg:hover {
+    animation: left .5s infinite;
+    cursor: pointer;
+}
+
+@keyframes left {
+    0% {
+        left: 0px;
+    }
+
+    100% {
+        left: -5px;
+    }
+}
+
+/* --------------卷軸-------------- */
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #4b6264;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #79A0A5;
+    border-radius: 10px;
 }
