@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>store_discount</title>
-    <link rel="stylesheet" href="/CSS/global.css">
-    <link rel="stylesheet" href="./CSS/store/store_dress.css">
+    <link rel="stylesheet" href="/css/global.css">
+    <link rel="stylesheet" href="./css/store/store_dress.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
@@ -82,7 +82,7 @@
         <div class="main">
 
             <div class="coutainer">
-                <img class="people" src="/IMG/store/people.png" alt="">
+                <img class="people" src="/img/store/people.png" alt="">
             </div>
 
             <div class="buy">
@@ -93,7 +93,7 @@
             <div class="nav_down">
                 <ul>
                     <li>
-                        <img class="commodity" src="./IMG/store/commodity1.png" alt="">
+                        <img class="commodity" src="./img/store/commodity1.png" alt="">
                         <div class="money">
                             <svg width="20" height="20" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M26.875 31.3008H27.45C28.275 31.3008 28.975 30.5508 28.975 29.6258C28.975 28.4508 28.7 28.3008 27.9 28.0258L26.875 27.6758V31.3008Z" fill="#fff" />
@@ -104,7 +104,7 @@
                         </div>
                     </li>
                     <li>
-                        <img class="commodity" src="./IMG/store/commodity1.png" alt="">
+                        <img class="commodity" src="./img/store/commodity1.png" alt="">
                         <div class="money">
                             <svg width="20" height="20" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M26.875 31.3008H27.45C28.275 31.3008 28.975 30.5508 28.975 29.6258C28.975 28.4508 28.7 28.3008 27.9 28.0258L26.875 27.6758V31.3008Z" fill="#fff" />
@@ -115,7 +115,7 @@
                         </div>
                     </li>
                     <li>
-                        <img class="commodity" src="./IMG/store/commodity1.png" alt="">
+                        <img class="commodity" src="./img/store/commodity1.png" alt="">
                         <div class="money">
                             <svg width="20" height="20" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M26.875 31.3008H27.45C28.275 31.3008 28.975 30.5508 28.975 29.6258C28.975 28.4508 28.7 28.3008 27.9 28.0258L26.875 27.6758V31.3008Z" fill="#fff" />
@@ -126,7 +126,7 @@
                         </div>
                     </li>
                     <li>
-                        <img class="commodity" src="./IMG/store/commodity1.png" alt="">
+                        <img class="commodity" src="./img/store/commodity1.png" alt="">
                         <div class="money">
                             <svg width="20" height="20" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M26.875 31.3008H27.45C28.275 31.3008 28.975 30.5508 28.975 29.6258C28.975 28.4508 28.7 28.3008 27.9 28.0258L26.875 27.6758V31.3008Z" fill="#fff" />
@@ -137,7 +137,7 @@
                         </div>
                     </li>
                     <li>
-                        <img class="commodity" src="./IMG/store/commodity1.png" alt="">
+                        <img class="commodity" src="./img/store/commodity1.png" alt="">
                         <div class="money">
                             <svg width="20" height="20" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M26.875 31.3008H27.45C28.275 31.3008 28.975 30.5508 28.975 29.6258C28.975 28.4508 28.7 28.3008 27.9 28.0258L26.875 27.6758V31.3008Z" fill="#fff" />
@@ -148,7 +148,7 @@
                         </div>
                     </li>
                     <li>
-                        <img class="commodity" src="./IMG/store/commodity1.png" alt="">
+                        <img class="commodity" src="./img/store/commodity1.png" alt="">
                         <div class="money">
                             <svg width="20" height="20" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M26.875 31.3008H27.45C28.275 31.3008 28.975 30.5508 28.975 29.6258C28.975 28.4508 28.7 28.3008 27.9 28.0258L26.875 27.6758V31.3008Z" fill="#fff" />
@@ -173,7 +173,7 @@
             <article>
 
                 <div class="dresss_choose">
-                    <img class="people_choose" src="/IMG/store/people1.png" alt="">
+                    <img class="people_choose" src="/img/store/people1.png" alt="">
                 </div>
 
                 <div class="buy_wrapper">
@@ -196,7 +196,7 @@
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="./JS/store/store_dress.js"></script>
+    <script src="./js/store/store_dress.js"></script>
 
 </body>
 

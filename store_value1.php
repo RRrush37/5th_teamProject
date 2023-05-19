@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>store_value</title>
-    <link rel="stylesheet" href="./CSS/store/store_value1.css">
+    <link rel="stylesheet" href="./css/store/store_value1.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
@@ -86,7 +86,7 @@
             <div class="value_choose">
                 <ul>
                     <li>
-                        <img class="box" src="./IMG/store/box2.png" alt="">
+                        <img class="box" src="./img/store/box2.png" alt="">
                         <div class="money">
                             <svg width="20" height="20" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M26.875 31.3008H27.45C28.275 31.3008 28.975 30.5508 28.975 29.6258C28.975 28.4508 28.7 28.3008 27.9 28.0258L26.875 27.6758V31.3008Z" fill="#fff" />
@@ -114,7 +114,7 @@
                         </div>
                     </li>
                     <li>
-                        <img class="box" src="./IMG/store/box2.png" alt="">
+                        <img class="box" src="./img/store/box2.png" alt="">
                         <div class="money">
                             <svg width="20" height="20" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M26.875 31.3008H27.45C28.275 31.3008 28.975 30.5508 28.975 29.6258C28.975 28.4508 28.7 28.3008 27.9 28.0258L26.875 27.6758V31.3008Z" fill="#fff" />
@@ -142,7 +142,7 @@
                         </div>
                     </li>
                     <li>
-                        <img class="box" src="./IMG/store/box2.png" alt="">
+                        <img class="box" src="./img/store/box2.png" alt="">
                         <div class="money">
                             <svg width="20" height="20" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M26.875 31.3008H27.45C28.275 31.3008 28.975 30.5508 28.975 29.6258C28.975 28.4508 28.7 28.3008 27.9 28.0258L26.875 27.6758V31.3008Z" fill="#fff" />
@@ -170,7 +170,7 @@
                         </div>
                     </li>
                     <li>
-                        <img class="box" src="./IMG/store/box2.png" alt="">
+                        <img class="box" src="./img/store/box2.png" alt="">
                         <div class="money">
                             <svg width="20" height="20" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M26.875 31.3008H27.45C28.275 31.3008 28.975 30.5508 28.975 29.6258C28.975 28.4508 28.7 28.3008 27.9 28.0258L26.875 27.6758V31.3008Z" fill="#fff" />
@@ -198,7 +198,7 @@
                         </div>
                     </li>
                     <li>
-                        <img class="box" src="./IMG/store/box2.png" alt="">
+                        <img class="box" src="./img/store/box2.png" alt="">
                         <div class="money">
                             <svg width="20" height="20" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M26.875 31.3008H27.45C28.275 31.3008 28.975 30.5508 28.975 29.6258C28.975 28.4508 28.7 28.3008 27.9 28.0258L26.875 27.6758V31.3008Z" fill="#fff" />
@@ -226,7 +226,7 @@
                         </div>
                     </li>
                     <li>
-                        <img class="box" src="./IMG/store/box2.png" alt="">
+                        <img class="box" src="./img/store/box2.png" alt="">
                         <div class="money">
                             <svg width="20" height="20" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M26.875 31.3008H27.45C28.275 31.3008 28.975 30.5508 28.975 29.6258C28.975 28.4508 28.7 28.3008 27.9 28.0258L26.875 27.6758V31.3008Z" fill="#fff" />
@@ -266,37 +266,37 @@
         <div class="value_main">
             <i class="fa-solid fa-xmark"></i>
             <article>
-                <img class="main" src="./IMG/store/charm.png" alt="">
+                <img class="main" src="./img/store/charm.png" alt="">
             </article>
         </div>
         <div class="value_main">
             <i class="fa-solid fa-xmark"></i>
             <article>
-                <img class="main" src="./IMG/store/charm.png" alt="">
+                <img class="main" src="./img/store/charm.png" alt="">
             </article>
         </div>
         <div class="value_main">
             <i class="fa-solid fa-xmark"></i>
             <article>
-                <img class="main" src="./IMG/store/charm.png" alt="">
+                <img class="main" src="./img/store/charm.png" alt="">
             </article>
         </div>
         <div class="value_main">
             <i class="fa-solid fa-xmark"></i>
             <article>
-                <img class="main" src="./IMG/store/charm.png" alt="">
+                <img class="main" src="./img/store/charm.png" alt="">
             </article>
         </div>
         <div class="value_main">
             <i class="fa-solid fa-xmark"></i>
             <article>
-                <img class="main" src="./IMG/store/charm.png" alt="">
+                <img class="main" src="./img/store/charm.png" alt="">
             </article>
         </div>
         <div class="value_main">
             <i class="fa-solid fa-xmark"></i>
             <article>
-                <img class="main" src="./IMG/store/charm.png" alt="">
+                <img class="main" src="./img/store/charm.png" alt="">
             </article>
         </div>
     </div>
@@ -309,7 +309,7 @@
             </div>
             <article>
                 <div class="text">
-                    <img class="main1" src="./IMG/store/charm.png" alt="">
+                    <img class="main1" src="./img/store/charm.png" alt="">
                     <p>買了之後會增加妳遊戲中的魅力<br>只有遊戲中而已，現實生活中沒有</p>
                 </div>
                 <div class="money1_wrapper">
@@ -339,7 +339,7 @@
             </div>
             <article>
                 <div class="text">
-                    <img class="main1" src="./IMG/store/charm.png" alt="">
+                    <img class="main1" src="./img/store/charm.png" alt="">
                     <p>買了之後會增加妳遊戲中的魅力<br>只有遊戲中而已，現實生活中沒有</p>
                 </div>
                 <div class="money1_wrapper">
@@ -369,7 +369,7 @@
             </div>
             <article>
                 <div class="text">
-                    <img class="main1" src="./IMG/store/charm.png" alt="">
+                    <img class="main1" src="./img/store/charm.png" alt="">
                     <p>買了之後會增加妳遊戲中的魅力<br>只有遊戲中而已，現實生活中沒有</p>
                 </div>
                 <div class="money1_wrapper">
@@ -399,7 +399,7 @@
             </div>
             <article>
                 <div class="text">
-                    <img class="main1" src="./IMG/store/charm.png" alt="">
+                    <img class="main1" src="./img/store/charm.png" alt="">
                     <p>買了之後會增加妳遊戲中的魅力<br>只有遊戲中而已，現實生活中沒有</p>
                 </div>
                 <div class="money1_wrapper">
@@ -429,7 +429,7 @@
             </div>
             <article>
                 <div class="text">
-                    <img class="main1" src="./IMG/store/charm.png" alt="">
+                    <img class="main1" src="./img/store/charm.png" alt="">
                     <p>買了之後會增加妳遊戲中的魅力<br>只有遊戲中而已，現實生活中沒有</p>
                 </div>
                 <div class="money1_wrapper">
@@ -459,7 +459,7 @@
             </div>
             <article>
                 <div class="text">
-                    <img class="main1" src="./IMG/store/charm.png" alt="">
+                    <img class="main1" src="./img/store/charm.png" alt="">
                     <p>買了之後會增加妳遊戲中的魅力<br>只有遊戲中而已，現實生活中沒有</p>
                 </div>
                 <div class="money1_wrapper">
@@ -1166,7 +1166,7 @@
             </article>
         </div>
     </div>
-    <script src="./JS/store/store_value1.js"></script>
+    <script src="./js/store/store_value1.js"></script>
 
 </body>
 

@@ -197,8 +197,8 @@
                         </div>
                         <div class="my_activity">
                             <h3>廣告</h3>
-                            <a href=""><img src="./IMG/activity/ad1.jpg" alt=""></a>
-                            <a href=""><img src="./IMG/activity/ad2.jpg" alt=""></a>
+                            <a href=""><img src="./img/activity/ad1.jpg" alt=""></a>
+                            <a href=""><img src="./img/activity/ad2.jpg" alt=""></a>
                         </div>
                     </div>
                 </div>

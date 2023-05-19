@@ -5,8 +5,8 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="./CSS/index/sign_up.css" />
-  <link rel="stylesheet" href="./CSS/global.css" />
+  <link rel="stylesheet" href="./css/index/sign_up.css" />
+  <link rel="stylesheet" href="./css/global.css" />
   <title>會員註冊</title>
 </head>
 
@@ -45,7 +45,7 @@
   </div>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script src="JS/index/sign_up.js"></script>
+  <script src="js/index/sign_up.js"></script>
   <script src="https://kit.fontawesome.com/75e9abcec6.js" crossorigin="anonymous"></script>
 </body>
 

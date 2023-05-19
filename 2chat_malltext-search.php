@@ -257,6 +257,6 @@
 
         </div>
 </body>
-<script src="JS/chat/script.js"></script>
+<script src="js/chat/script.js"></script>
 
 </html>

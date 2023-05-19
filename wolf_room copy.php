@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./CSS/global.css">
-    <link rel="stylesheet" href="./CSS/wolf/wolf_room.css">
+    <link rel="stylesheet" href="./css/global.css">
+    <link rel="stylesheet" href="./css/wolf/wolf_room.css">
     <title>Wolf Room</title>
 
 </head>
@@ -58,7 +58,7 @@
                     <div id="player1" data-index="1" class="seat haveplayer">
                         <div class="vote_box none">Vote:<br></div>
                         <div class="player_img">
-                            <img src="../../IMG/wolf/little_red.jpg" alt="">
+                            <img src="../../img/wolf/little_red.jpg" alt="">
                             <div class="name">Apple</div>
                         </div>
                         <div class="player_state_box">
@@ -74,7 +74,7 @@
                     <div id="player2" data-index="2" class="seat haveplayer">
                         <div class="vote_box none">Vote:<br></div>
                         <div class="player_img">
-                            <img src="../../IMG/wolf/little_red.jpg" alt="">
+                            <img src="../../img/wolf/little_red.jpg" alt="">
                             <div class="name">Banana</div>
                         </div>
                         <div class="player_state_box">
@@ -90,7 +90,7 @@
                     <div id="player3" data-index="3" class="seat haveplayer">
                         <div class="vote_box none">Vote:<br></div>
                         <div class="player_img">
-                            <img src="../../IMG/wolf/little_red.jpg" alt="">
+                            <img src="../../img/wolf/little_red.jpg" alt="">
                             <div class="name">Cindy</div>
                         </div>
                         <div class="player_state_box">
@@ -106,7 +106,7 @@
                     <div id="player4" data-index="4" class="seat haveplayer">
                         <div class="vote_box none">Vote:<br></div>
                         <div class="player_img">
-                            <img src="../../IMG/wolf/little_red.jpg" alt="">
+                            <img src="../../img/wolf/little_red.jpg" alt="">
                             <div class="name">Dan</div>
                         </div>
                         <div class="player_state_box">
@@ -133,7 +133,7 @@
                             <button class="v_btn none">Vote</button>
                         </div>
                         <div class="player_img">
-                            <img src="../../IMG/wolf/little_red.jpg" alt="">
+                            <img src="../../img/wolf/little_red.jpg" alt="">
                             <div class="name">Ellen</div>
                         </div>
                         <div class="vote_box none">Vote:<br></div>
@@ -149,7 +149,7 @@
                             <button class="v_btn none">Vote</button>
                         </div>
                         <div class="player_img">
-                            <img src="../../IMG/wolf/little_red.jpg" alt="">
+                            <img src="../../img/wolf/little_red.jpg" alt="">
                             <div class="name">Fiona</div>
                         </div>
                         <div class="vote_box none">Vote:<br></div>
@@ -165,7 +165,7 @@
                             <button class="v_btn none">Vote</button>
                         </div>
                         <div class="player_img">
-                            <img src="../../IMG/wolf/little_red.jpg" alt="">
+                            <img src="../../img/wolf/little_red.jpg" alt="">
                             <div class="name">George</div>
                         </div>
                         <div class="vote_box none">Vote:<br></div>
@@ -484,7 +484,7 @@
                 text[0] = "connect";
                 text[1] = room_imformation;
                 console.log(room_imformation);
-                let data = JSON.stringify(text);
+                let data = jsON.stringify(text);
                 ws.send(data);
             }
             //============================================= 監聽離線狀態
@@ -513,7 +513,7 @@
 
                 text[0] = "ready";
 
-                let data = JSON.stringify(text);
+                let data = jsON.stringify(text);
                 ws.send(data);
             })
 
@@ -550,7 +550,7 @@
                     room_start.round = round;
                     text[1] = room_start; // room_start更新了玩家資訊並傳給所有使用者
                     console.log("text[1].round" + text[1].round);
-                    let data = JSON.stringify(text);
+                    let data = jsON.stringify(text);
                     ws.send(data);
 
                 }
@@ -560,7 +560,7 @@
             //============================================= 接收 Server 發送的訊息
             ws.onmessage = event => {
 
-                text = JSON.parse(event.data);
+                text = jsON.parse(event.data);
 
                 if (text[0] == "connect") {
 
@@ -690,7 +690,7 @@
                             console.log("prepare room_start.num" + room_start.num);
                             text[1].second[player_index] = 0;
                             text[0] = "go";
-                            let data = JSON.stringify(text);
+                            let data = jsON.stringify(text);
                             ws.send(data);
 
                         }
@@ -734,7 +734,7 @@
 
                             // text[0] = "start" ;
                             text[1].second[player_index] = 0;
-                            let data = JSON.stringify(text);
+                            let data = jsON.stringify(text);
                             ws.send(data);
 
                             //werewolveRound();
@@ -878,7 +878,7 @@
 
                             text[1].second[player_index] = 0;
                             text[1].player_state = player_state;
-                            let data = JSON.stringify(text);
+                            let data = jsON.stringify(text);
                             ws.send(data);
                         }
                     }, 1000);
@@ -1564,7 +1564,7 @@
                 //             if ( player_state[i].role != "狼人" ) {
                 //                 winner_box.insertAdjacentHTML( "beforeend", `
                 //                 <div class="player_img">
-                //                     <img src="../../IMG/wolf/little_red.jpg" alt="">
+                //                     <img src="../../img/wolf/little_red.jpg" alt="">
                 //                     <div class="ban"></div>
                 //                     <div class="add"></div>
                 //                     <div class="name">Hawk</div>
@@ -1572,7 +1572,7 @@
                 //             } else {
                 //                 loser_box.insertAdjacentHTML( "beforeend", `
                 //                 <div class="player_img">
-                //                     <img src="../../IMG/wolf/little_red.jpg" alt="">
+                //                     <img src="../../img/wolf/little_red.jpg" alt="">
                 //                     <div class="ban"></div>
                 //                     <div class="add"></div>
                 //                     <div class="name">Hawk</div>
@@ -1582,7 +1582,7 @@
                 //             if ( player_state[i].role == "狼人" ) { // 狼人勝利
                 //                 winner_box.insertAdjacentHTML( "beforeend", `
                 //                 <div class="player_img">
-                //                     <img src="../../IMG/wolf/little_red.jpg" alt="">
+                //                     <img src="../../img/wolf/little_red.jpg" alt="">
                 //                     <div class="ban"></div>
                 //                     <div class="add"></div>
                 //                     <div class="name">Hawk</div>
@@ -1590,7 +1590,7 @@
                 //             } else {
                 //                 loser_box.insertAdjacentHTML( "beforeend", `
                 //                 <div class="player_img">
-                //                     <img src="../../IMG/wolf/little_red.jpg" alt="">
+                //                     <img src="../../img/wolf/little_red.jpg" alt="">
                 //                     <div class="ban"></div>
                 //                     <div class="add"></div>
                 //                     <div class="name">Hawk</div>

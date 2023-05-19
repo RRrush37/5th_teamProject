@@ -5,8 +5,8 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./CSS/global.css">
-  <link rel="stylesheet" href="CSS/index/index_build_roles.html.css">
+  <link rel="stylesheet" href="./css/global.css">
+  <link rel="stylesheet" href="css/index/index_build_roles.html.css">
   <title>創建角色</title>
 </head>
 
@@ -40,40 +40,40 @@
 
     <div class="role">
       <div class="baby">
-        <img src="./IMG/index/a.png" alt="a">
+        <img src="./img/index/a.png" alt="a">
         <div class="button"> <span> 確認 </span> </div>
       </div>
 
       <div class="slider">
         <div class="boxs">
-          <img src="./IMG/index/img/image 37.png" alt="your-image">
+          <img src="./img/index/img/image 37.png" alt="your-image">
         </div>
         <div class="boxs">
-          <img src="./IMG/index/img/image 38.png" alt="your-image">
+          <img src="./img/index/img/image 38.png" alt="your-image">
         </div>
         <div class="boxs">
-          <img src="./IMG/index/img/image 39.png" alt="your-image">
+          <img src="./img/index/img/image 39.png" alt="your-image">
         </div>
         <div class="boxs">
-          <img src="./IMG/index/img/image 40.png" alt="your-image">
+          <img src="./img/index/img/image 40.png" alt="your-image">
         </div>
         <div class="boxs">
-          <img src="./IMG/index/img/image 41.png" alt="your-image">
+          <img src="./img/index/img/image 41.png" alt="your-image">
         </div>
         <div class="boxs">
-          <img src="./IMG/index/img/image 37.png" alt="your-image">
+          <img src="./img/index/img/image 37.png" alt="your-image">
         </div>
         <div class="boxs">
-          <img src="./IMG/index/img/image 38.png" alt="your-image">
+          <img src="./img/index/img/image 38.png" alt="your-image">
         </div>
         <div class="boxs">
-          <img src="./IMG/index/img/image 39.png" alt="your-image">
+          <img src="./img/index/img/image 39.png" alt="your-image">
         </div>
         <div class="boxs">
-          <img src="./IMG/index/img/image 40.png" alt="your-image">
+          <img src="./img/index/img/image 40.png" alt="your-image">
         </div>
         <div class="boxs">
-          <img src="./IMG/index/img/image 41.png" alt="your-image">
+          <img src="./img/index/img/image 41.png" alt="your-image">
         </div>
       </div>
     </div>

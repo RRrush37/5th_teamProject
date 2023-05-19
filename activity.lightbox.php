@@ -16,7 +16,7 @@
             <i class="fa-solid fa-xmark"></i>
             <div class="activity_inf">
                 <div class="article_top_left">
-                    <img class="user" src="./IMG/activity/lonely.png" alt="" width="60">
+                    <img class="user" src="./img/activity/lonely.png" alt="" width="60">
                     <div class="user_identity">
                         <p>用戶暱稱</p>
                         <p>用戶ID</p>
@@ -58,7 +58,7 @@
                 <h3>共7則留言</h3>
                 <div class="comment_card">
                     <span class="more_action">‧‧‧</span>
-                    <img class="user" src="./IMG/activity/lonely.png" alt="" width="60">
+                    <img class="user" src="./img/activity/lonely.png" alt="" width="60">
                     <div class="comment_text">
                         <h2>用戶暱稱</h2>
                         <p>留言留言留言留言留言留言留言</p>
@@ -67,7 +67,7 @@
                 </div>
                 <div class="comment_card">
                     <span class="more_action">‧‧‧</span>
-                    <img class="user" src="./IMG/activity/lonely.png" alt="" width="60">
+                    <img class="user" src="./img/activity/lonely.png" alt="" width="60">
                     <div class="comment_text">
                         <h2>用戶暱稱</h2>
                         <p>留言留言留言留言留言留言留言<br>
@@ -77,7 +77,7 @@
                 </div>
                 <div class="comment_card">
                     <span class="more_action">‧‧‧</span>
-                    <img class="user" src="./IMG/activity/lonely.png" alt="" width="60">
+                    <img class="user" src="./img/activity/lonely.png" alt="" width="60">
                     <div class="comment_text">
                         <h2>用戶暱稱</h2>
                         <p>留言留言留言留言留言留言留言</p>
@@ -87,7 +87,7 @@
             </div>
         </div>
         <div class="activity_myaction">
-            <img class="user" src="./IMG/activity/lonely.png" alt="" width="40">
+            <img class="user" src="./img/activity/lonely.png" alt="" width="40">
             <div class="comment_keyin">
                 <textarea name="" id="" cols="30" rows="1" placeholder="留言..."></textarea>
                 <div class="paste">

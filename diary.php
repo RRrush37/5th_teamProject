@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>活動列表</title>
-    <link rel="stylesheet" href="./CSS/diary/diary.css">
+    <link rel="stylesheet" href="./css/diary/diary.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
@@ -47,7 +47,7 @@
                     <div class="left">
 
                         <div class="member_photo">
-                            <img src="./IMG/diary/girl.png" alt="">
+                            <img src="./img/diary/girl.png" alt="">
 
 
 
@@ -143,8 +143,8 @@
                         </div>
                         <div class="my_activity">
                             <h3>廣告</h3>
-                            <a href=""><img src="./IMG/activity/ad1.jpg" alt=""></a>
-                            <a href=""><img src="./IMG/activity/ad2.jpg" alt=""></a>
+                            <a href=""><img src="./img/activity/ad1.jpg" alt=""></a>
+                            <a href=""><img src="./img/activity/ad2.jpg" alt=""></a>
                         </div>
                     </div>
                 </div>

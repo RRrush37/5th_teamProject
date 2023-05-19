@@ -1,20 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="CSS/global.css">
-    <link rel="stylesheet" href="CSS/chat/style.css">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/chat/style.css">
     <title>Document</title>
 </head>
+
 <body>
-    <?php require("common.php");?>
-    
+    <?php require("common.php"); ?>
+
     <div class="chatroom-inside">
         <h3>房間代碼:55688</h3>
         <div>
-             <ul>
+            <ul>
                 <li class="chatroom-inside-left">
                     <ul>
                         <h4>聊天列表</h4>
@@ -44,15 +46,12 @@
                     </ul>
                     <a href="">新增好友</a>
                 </li>
-             </ul>      
+            </ul>
         </div>
     </div>
-    
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script
-    src="https://kit.fontawesome.com/75e9abcec6.js"
-    crossorigin="anonymous"
-    ></script>
+    <script src="https://kit.fontawesome.com/75e9abcec6.js" crossorigin="anonymous"></script>
 </body>
 
 </html>

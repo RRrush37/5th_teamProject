@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./CSS/global.css">
-    <link rel="stylesheet" href="./CSS/wolf/wolf_list.css">
+    <link rel="stylesheet" href="./css/global.css">
+    <link rel="stylesheet" href="./css/wolf/wolf_list.css">
     <title>Wolf Room List</title>
 </head>
 

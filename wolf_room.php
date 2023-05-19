@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./CSS/global.css">
-    <link rel="stylesheet" href="./CSS/wolf/wolf_room.css">
+    <link rel="stylesheet" href="./css/global.css">
+    <link rel="stylesheet" href="./css/wolf/wolf_room.css">
     <title>Wolf Room</title>
 
 </head>
@@ -58,7 +58,7 @@
                     <div id="player1" data-index="1" class="seat haveplayer">
                         <div class="vote_box none">Vote:<br></div>
                         <div class="player_img">
-                            <img src="../../IMG/wolf/little_red.jpg" alt="">
+                            <img src="../../img/wolf/little_red.jpg" alt="">
                             <div class="name">Apple</div>
                         </div>
                         <div class="player_state_box">
@@ -74,7 +74,7 @@
                     <div id="player2" data-index="2" class="seat haveplayer">
                         <div class="vote_box none">Vote:<br></div>
                         <div class="player_img">
-                            <img src="../../IMG/wolf/little_red.jpg" alt="">
+                            <img src="../../img/wolf/little_red.jpg" alt="">
                             <div class="name">Banana</div>
                         </div>
                         <div class="player_state_box">
@@ -90,7 +90,7 @@
                     <div id="player3" data-index="3" class="seat haveplayer">
                         <div class="vote_box none">Vote:<br></div>
                         <div class="player_img">
-                            <img src="../../IMG/wolf/little_red.jpg" alt="">
+                            <img src="../../img/wolf/little_red.jpg" alt="">
                             <div class="name">Cindy</div>
                         </div>
                         <div class="player_state_box">
@@ -106,7 +106,7 @@
                     <div id="player4" data-index="4" class="seat haveplayer">
                         <div class="vote_box none">Vote:<br></div>
                         <div class="player_img">
-                            <img src="../../IMG/wolf/little_red.jpg" alt="">
+                            <img src="../../img/wolf/little_red.jpg" alt="">
                             <div class="name">Dan</div>
                         </div>
                         <div class="player_state_box">
@@ -133,7 +133,7 @@
                             <button class="v_btn none">Vote</button>
                         </div>
                         <div class="player_img">
-                            <img src="../../IMG/wolf/little_red.jpg" alt="">
+                            <img src="../../img/wolf/little_red.jpg" alt="">
                             <div class="name">Ellen</div>
                         </div>
                         <div class="vote_box none">Vote:<br></div>
@@ -149,7 +149,7 @@
                             <button class="v_btn none">Vote</button>
                         </div>
                         <div class="player_img">
-                            <img src="../../IMG/wolf/little_red.jpg" alt="">
+                            <img src="../../img/wolf/little_red.jpg" alt="">
                             <div class="name">Fiona</div>
                         </div>
                         <div class="vote_box none">Vote:<br></div>
@@ -165,7 +165,7 @@
                             <button class="v_btn none">Vote</button>
                         </div>
                         <div class="player_img">
-                            <img src="../../IMG/wolf/little_red.jpg" alt="">
+                            <img src="../../img/wolf/little_red.jpg" alt="">
                             <div class="name">George</div>
                         </div>
                         <div class="vote_box none">Vote:<br></div>
@@ -1387,7 +1387,7 @@
                     if (player_state[i].role != "狼人") {
                         winner_box.insertAdjacentHTML("beforeend", `
                         <div class="player_img">
-                            <img src="../../IMG/wolf/little_red.jpg" alt="">
+                            <img src="../../img/wolf/little_red.jpg" alt="">
                             <div class="ban"></div>
                             <div class="add"></div>
                             <div class="name">Hawk</div>
@@ -1395,7 +1395,7 @@
                     } else {
                         loser_box.insertAdjacentHTML("beforeend", `
                         <div class="player_img">
-                            <img src="../../IMG/wolf/little_red.jpg" alt="">
+                            <img src="../../img/wolf/little_red.jpg" alt="">
                             <div class="ban"></div>
                             <div class="add"></div>
                             <div class="name">Hawk</div>
@@ -1405,7 +1405,7 @@
                     if (player_state[i].role == "狼人") { // 狼人勝利
                         winner_box.insertAdjacentHTML("beforeend", `
                         <div class="player_img">
-                            <img src="../../IMG/wolf/little_red.jpg" alt="">
+                            <img src="../../img/wolf/little_red.jpg" alt="">
                             <div class="ban"></div>
                             <div class="add"></div>
                             <div class="name">Hawk</div>
@@ -1413,7 +1413,7 @@
                     } else {
                         loser_box.insertAdjacentHTML("beforeend", `
                         <div class="player_img">
-                            <img src="../../IMG/wolf/little_red.jpg" alt="">
+                            <img src="../../img/wolf/little_red.jpg" alt="">
                             <div class="ban"></div>
                             <div class="add"></div>
                             <div class="name">Hawk</div>
