@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>聊天室</title>
+    <link rel="stylesheet" href="CSS/global.css">
+    <link rel="stylesheet" href="CSS/chat/style.css">
+    
+</head>
+<body>
+
+    <div class="header"></div> 
+
+    <div class="wrapper">
+        <div class="search-create">
+            <input type="text" placeholder="蒐集你感興趣的話題或房號">
+                <button  id="newroom-btn" onclick="toggleVisibility()">自訂聊天房間</button>
+            <div class="create-newroom">
+                 <a href="">返回上頁</a></br>
+                 <input type="text" placeholder="輸入房間標題"></br>
+                 <label for="public-room"><input id="public-room" type="checkbox" name="公開" value="公開">公開</label></br>
+                 <label for="private-room"><input id="private-room" type="checkbox" name="不公開" value="不公開">不公開</label></br>
+                 <button >建立聊天房間</button>
+
+            </div>
+        </div>
+        
+        <div class="custom-room">
+            
+            <ul>
+                <li>
+                    <h3>房間標題</h3>
+                    <p>目前成員數</p>
+                    <p>標籤</p>
+                    <a href="">加入聊天</a>
+                </li>
+                <li>
+                    <h3>房間標題</h3>
+                    <p>目前成員數</p>
+                    <p>標籤</p>
+                    <a href="">加入聊天</a>
+                </li>
+                <li>
+                    <h3>房間標題</h3>
+                    <p>目前成員數</p>
+                    <p>標籤</p>
+                    <a href="">加入聊天</a>
+                </li>
+                <li>
+                    <h3>房間標題</h3>
+                    <p>目前成員數</p>
+                    <p>標籤</p>
+                    <a href="">加入聊天</a>
+                </li>
+                <li>
+                    <h3>房間標題</h3>
+                    <p>目前成員數</p>
+                    <p>標籤</p>
+                    <a href="">加入聊天</a>
+                </li>
+                <li>
+                    <h3>房間標題</h3>
+                    <p>目前成員數</p>
+                    <p>標籤</p>
+                    <a href="">加入聊天</a>
+                </li>
+                <li>
+                    <h3>房間標題</h3>
+                    <p>目前成員數</p>
+                    <p>標籤</p>
+                    <a href="">加入聊天</a>
+                </li>
+                <li>
+                    <h3>房間標題</h3>
+                    <p>目前成員數</p>
+                    <p>標籤</p>
+                    <a href="">加入聊天</a>
+                </li>
+                <li>
+                    <h3>房間標題</h3>
+                    <p>目前成員數</p>
+                    <p>標籤</p>
+                    <a href="">加入聊天</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+<script src="JS/chat/script.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(function () {
+            $(".header").load("common.html .header>div");
+            $(".footer").load("common.html .footer>div");
+        });
+    </script>
+
+<script
+src="https://kit.fontawesome.com/75e9abcec6.js"
+crossorigin="anonymous"
+></script>
+
+</html>
