@@ -9,7 +9,7 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="header"></div> 
+    <?php require("common.php");?>
     
     <div class="chatroom-inside">
         <h3>房間代碼:55688</h3>
@@ -49,17 +49,10 @@
     </div>
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script>
-        $(function () {
-            $(".header").load("common.html .header>div");
-            $(".footer").load("common.html .footer>div");
-        });
-    </script>
-
-<script
-src="https://kit.fontawesome.com/75e9abcec6.js"
-crossorigin="anonymous"
-></script>
+    <script
+    src="https://kit.fontawesome.com/75e9abcec6.js"
+    crossorigin="anonymous"
+    ></script>
 </body>
 
 </html>

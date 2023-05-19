@@ -14,7 +14,7 @@
        $dsn = "mysql:host=".$db_host.";dbname=".$db_select.";charset=utf8";
 
        //建立PDO物件，並放入指定的相關資料
-       $pdo = new PDO($dsn, $db_user, $db_pass);
+        $pdo = new PDO($dsn, $db_user, $db_pass);
        $name = isset($_POST['name']) ? htmlspecialchars($_POST['name']) : "";
        $email = isset($_POST['email']) ? htmlspecialchars($_POST['email']) : "";
        $password = isset($_POST['password']) ? htmlspecialchars($_POST['password']) : "";
@@ -84,4 +84,3 @@
                      // echo '<br>';
               }*/
        }
-?>

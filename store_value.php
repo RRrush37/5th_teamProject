@@ -10,77 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-    <div class="header">
-        <div>
-            <span>
-                <div class="bar">
-                    <ul class="ability">
-                        <li><span>體力VIT</span><span>
-                                <div>20</div>
-                            </span></li>
-                        <li><span>魅力CHR</span><span>
-                                <div>20</div>
-                            </span></li>
-                        <li><span>智力INT</span><span>
-                                <div>20</div>
-                            </span></li>
-                        <li><span>幸運LUK</span><span>
-                                <div>20</div>
-                            </span></li>
-                    </ul>
-                    <a href="#"><img class="logo" src="./IMG/logo_1.png" alt="" width="100"></a>
-                    <div class="nav">
-                        <a href="#"><img class="user" src="./IMG/coin.svg" alt="" width="80"></a>
-                        <ul class="widget">
-                            <a href="#">
-                                <li><i class="fa-solid fa-bell"></i></li>
-                            </a>
-                            <a href="">
-                                <li>
-                                    <i class="fa-solid fa-sack-dollar"></i>
-                                </li>
-                            </a>
-                            <a href="">
-                                <li><i class="fa-solid fa-briefcase"></i></li>
-                            </a>
-                            <li><i class="fa-solid fa-compass" style="cursor: pointer;"></i>
-                                <!-- <ol >
-                                <a href="">
-                                    <li>聊天室大廳 <h4> CHAT ROOM</h4>
-                                    </li>
-                                </a>
-                                <a href="">
-                                    <li>會員房間<h4>USER SPACE</h4>
-                                    </li>
-                                </a>
-                                <a href="">
-                                    <li>揪活動<h4>ACTIVITIES</h4>
-                                    </li>
-                                </a>
-                                <a href="">
-                                    <li>玩遊戲<h4>GAMES</h4>
-                                    </li>
-                                </a>
-                                <a href="">
-                                    <li>商城<h4>STORE</h4>
-                                    </li>
-                                </a>
-                            </ol> -->
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </span>
-        </div>
-    </div>
-
-    <!-- <div class="footer">
-        <div>
-            <span>我是AJAX載入共用檔案的 footer 內容</span>
-        </div>
-    </div> -->
-
-
+    <?php require("common.php");?>
     <!-- <div class="header"></div> 用來載入 common.html 裡頭的 header -->
     <div class="activity_title">
         <a href="/store.html">
@@ -2311,12 +2241,6 @@
     </div>
    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script>
-        $(function () {
-            $(".header").load("common.html .header>div");
-            $(".footer").load("common.html .footer>div");
-        });
-    </script>
     <script src="./JS/store/store_value.js"></script>
 
 </body>

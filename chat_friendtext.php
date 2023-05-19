@@ -9,8 +9,7 @@
     <title>Document</title>
 </head>
 <body>
-
-    <div class="header"></div> 
+    <?php require("common.php");?>
 
    <div class="usertext-all">
     <div class="usertext-top">
@@ -79,12 +78,6 @@
 </div>  
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script>
-        $(function () {
-            $(".header").load("common.html .header>div");
-            $(".footer").load("common.html .footer>div");
-        });
-    </script>
 
 <script
 src="https://kit.fontawesome.com/75e9abcec6.js"

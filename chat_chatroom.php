@@ -10,8 +10,7 @@
     
 </head>
 <body>
-
-    <div class="header"></div> 
+    <?php require("common.php");?>
 
     <div class="wrapper">
         <div class="search-create">
@@ -91,13 +90,6 @@
 <script src="JS/chat/script.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script>
-        $(function () {
-            $(".header").load("common.html .header>div");
-            $(".footer").load("common.html .footer>div");
-        });
-    </script>
-
 <script
 src="https://kit.fontawesome.com/75e9abcec6.js"
 crossorigin="anonymous"

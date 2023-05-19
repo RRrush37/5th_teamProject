@@ -6,80 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>store_value</title>
     <link rel="stylesheet" href="/CSS/global.css">
-    <link rel="stylesheet" href="./CSS/store/store_value3.css">
+    <link rel="stylesheet" href="./CSS/store/store_value4.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-    <!-- <div class="header"></div> 用來載入 common.html 裡頭的 header -->
-    <div class="header">
-        <div>
-            <span>
-                <div class="bar">
-                    <ul class="ability">
-                        <li><span>體力VIT</span><span>
-                                <div>20</div>
-                            </span></li>
-                        <li><span>魅力CHR</span><span>
-                                <div>20</div>
-                            </span></li>
-                        <li><span>智力INT</span><span>
-                                <div>20</div>
-                            </span></li>
-                        <li><span>幸運LUK</span><span>
-                                <div>20</div>
-                            </span></li>
-                    </ul>
-                    <a href="#"><img class="logo" src="./IMG/logo_1.png" alt="" width="100"></a>
-                    <div class="nav">
-                        <a href="#"><img class="user" src="./IMG/coin.svg" alt="" width="80"></a>
-                        <ul class="widget">
-                            <a href="#">
-                                <li><i class="fa-solid fa-bell"></i></li>
-                            </a>
-                            <a href="">
-                                <li>
-                                    <i class="fa-solid fa-sack-dollar"></i>
-                                </li>
-                            </a>
-                            <a href="">
-                                <li><i class="fa-solid fa-briefcase"></i></li>
-                            </a>
-                            <li><i class="fa-solid fa-compass" style="cursor: pointer;"></i>
-                                <!-- <ol >
-                                <a href="">
-                                    <li>聊天室大廳 <h4> CHAT ROOM</h4>
-                                    </li>
-                                </a>
-                                <a href="">
-                                    <li>會員房間<h4>USER SPACE</h4>
-                                    </li>
-                                </a>
-                                <a href="">
-                                    <li>揪活動<h4>ACTIVITIES</h4>
-                                    </li>
-                                </a>
-                                <a href="">
-                                    <li>玩遊戲<h4>GAMES</h4>
-                                    </li>
-                                </a>
-                                <a href="">
-                                    <li>商城<h4>STORE</h4>
-                                    </li>
-                                </a>
-                            </ol> -->
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </span>
-        </div>
-    </div>
-
-    <!-- <div class="footer">
-        <div>
-            <span>我是AJAX載入共用檔案的 footer 內容</span>
-        </div>
-    </div> -->
+    <?php require("common.php");?>
 
     <div class="activity_title">
         <a href="/store.html">
@@ -142,12 +73,12 @@
             </a>
             <a href="/store_value3.html">
                 <li>
-                    <h2 class="current">體力</h2>
+                    <h2>體力</h2>
                 </li>
             </a>
             <a href="/store_value4.html">
                 <li>
-                    <h2>幸運</h2>
+                    <h2 class="current">幸運</h2>
                 </li>
             </a>
         </ul>
@@ -160,7 +91,7 @@
             <div class="value_choose">
                 <ul>
                     <li>
-                        <img class="box" src="./IMG/store/box1.png" alt="">
+                        <img class="box" src="./IMG/store/box4.png" alt="">
                         <div class="money">
                             <svg width="20" height="20" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M26.875 31.3008H27.45C28.275 31.3008 28.975 30.5508 28.975 29.6258C28.975 28.4508 28.7 28.3008 27.9 28.0258L26.875 27.6758V31.3008Z" fill="#fff"/>
@@ -188,7 +119,7 @@
                         </div>
                     </li>
                     <li>
-                        <img class="box" src="./IMG/store/box1.png" alt="">
+                        <img class="box" src="./IMG/store/box4.png" alt="">
                         <div class="money">
                             <svg width="20" height="20" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M26.875 31.3008H27.45C28.275 31.3008 28.975 30.5508 28.975 29.6258C28.975 28.4508 28.7 28.3008 27.9 28.0258L26.875 27.6758V31.3008Z" fill="#fff"/>
@@ -216,7 +147,7 @@
                         </div>
                     </li>
                     <li>
-                        <img class="box" src="./IMG/store/box1.png" alt="">
+                        <img class="box" src="./IMG/store/box4.png" alt="">
                         <div class="money">
                             <svg width="20" height="20" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M26.875 31.3008H27.45C28.275 31.3008 28.975 30.5508 28.975 29.6258C28.975 28.4508 28.7 28.3008 27.9 28.0258L26.875 27.6758V31.3008Z" fill="#fff"/>
@@ -244,7 +175,7 @@
                         </div>
                     </li>
                     <li>
-                        <img class="box" src="./IMG/store/box1.png" alt="">
+                        <img class="box" src="./IMG/store/box4.png" alt="">
                         <div class="money">
                             <svg width="20" height="20" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M26.875 31.3008H27.45C28.275 31.3008 28.975 30.5508 28.975 29.6258C28.975 28.4508 28.7 28.3008 27.9 28.0258L26.875 27.6758V31.3008Z" fill="#fff"/>
@@ -272,7 +203,7 @@
                         </div>
                     </li>
                     <li>
-                        <img class="box" src="./IMG/store/box1.png" alt="">
+                        <img class="box" src="./IMG/store/box4.png" alt="">
                         <div class="money">
                             <svg width="20" height="20" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M26.875 31.3008H27.45C28.275 31.3008 28.975 30.5508 28.975 29.6258C28.975 28.4508 28.7 28.3008 27.9 28.0258L26.875 27.6758V31.3008Z" fill="#fff"/>
@@ -300,7 +231,7 @@
                         </div>
                     </li>
                     <li>
-                        <img class="box" src="./IMG/store/box1.png" alt="">
+                        <img class="box" src="./IMG/store/box4.png" alt="">
                         <div class="money">
                             <svg width="20" height="20" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M26.875 31.3008H27.45C28.275 31.3008 28.975 30.5508 28.975 29.6258C28.975 28.4508 28.7 28.3008 27.9 28.0258L26.875 27.6758V31.3008Z" fill="#fff"/>
@@ -340,37 +271,35 @@
         <div class="value_main">
             <i class="fa-solid fa-xmark"></i>
             <article>
-                <img class="main" src="./IMG/store/physical_strength.png" alt="">
+                <img class="main" src="./IMG/store/luck.png" alt="">
             </article>
         </div>
         <div class="value_main">
             <i class="fa-solid fa-xmark"></i>
             <article>
-                <img class="main" src="./IMG/store/physical_strength.png" alt="">
+                <img class="main" src="./IMG/store/luck.png" alt="">
+            </article>
+        </div><div class="value_main">
+            <i class="fa-solid fa-xmark"></i>
+            <article>
+                <img class="main" src="./IMG/store/luck.png" alt="">
             </article>
         </div>
         <div class="value_main">
             <i class="fa-solid fa-xmark"></i>
             <article>
-                <img class="main" src="./IMG/store/physical_strength.png" alt="">
+                <img class="main" src="./IMG/store/luck.png" alt="">
             </article>
         </div>
         <div class="value_main">
             <i class="fa-solid fa-xmark"></i>
             <article>
-                <img class="main" src="./IMG/store/physical_strength.png" alt="">
+                <img class="main" src="./IMG/store/luck.png" alt="">
             </article>
-        </div>
-        <div class="value_main">
+        </div><div class="value_main">
             <i class="fa-solid fa-xmark"></i>
             <article>
-                <img class="main" src="./IMG/store/physical_strength.png" alt="">
-            </article>
-        </div>
-        <div class="value_main">
-            <i class="fa-solid fa-xmark"></i>
-            <article>
-                <img class="main" src="./IMG/store/physical_strength.png" alt="">
+                <img class="main" src="./IMG/store/luck.png" alt="">
             </article>
         </div>
     </div>
@@ -383,8 +312,8 @@
             </div>
             <article>
                 <div class="text">
-                    <img class="main1" src="./IMG/store/physical_strength.png" alt="">
-                    <p>買了之後會增加妳遊戲中的體力<br>只有遊戲中而已，現實生活中沒有</p>
+                    <img class="main1" src="./IMG/store/luck.png" alt="">
+                    <p>買了之後會增加妳遊戲中的幸運<br>只有遊戲中而已，現實生活中沒有</p>
                 </div>
                 <div class="money1_wrapper">
                     <div class="money1">
@@ -413,8 +342,8 @@
             </div>
             <article>
                 <div class="text">
-                    <img class="main1" src="./IMG/store/physical_strength.png" alt="">
-                    <p>買了之後會增加妳遊戲中的體力<br>只有遊戲中而已，現實生活中沒有</p>
+                    <img class="main1" src="./IMG/store/luck.png" alt="">
+                    <p>買了之後會增加妳遊戲中的幸運<br>只有遊戲中而已，現實生活中沒有</p>
                 </div>
                 <div class="money1_wrapper">
                     <div class="money1">
@@ -443,8 +372,37 @@
             </div>
             <article>
                 <div class="text">
-                    <img class="main1" src="./IMG/store/physical_strength.png" alt="">
-                    <p>買了之後會增加妳遊戲中的體力<br>只有遊戲中而已，現實生活中沒有</p>
+                    <img class="main1" src="./IMG/store/luck.png" alt="">
+                    <p>買了之後會增加妳遊戲中的幸運<br>只有遊戲中而已，現實生活中沒有</p>
+                </div>
+                <div class="money1_wrapper">
+                    <div class="money1">
+                        <svg width="35" height="35" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M26.875 31.3008H27.45C28.275 31.3008 28.975 30.5508 28.975 29.6258C28.975 28.4508 28.7 28.3008 27.9 28.0258L26.875 27.6758V31.3008Z" fill="#000"/>
+                            <path d="M25 0C11.2 0 0 11.2 0 25C0 38.8 11.2 50 25 50C38.8 50 50 38.8 50 25C50 11.2 38.8 0 25 0ZM13.95 36.05C14.675 36.775 14.675 37.975 13.95 38.7C13.575 39.075 13.1 39.25 12.625 39.25C12.15 39.25 11.675 39.075 11.3 38.7C7.64997 35.05 5.625 30.175 5.625 25C5.625 19.825 7.64997 14.95 11.3 11.3C12.025 10.575 13.225 10.575 13.95 11.3C14.675 12.025 14.675 13.225 13.95 13.95C11 16.9 9.375 20.825 9.375 25C9.375 29.175 11 33.1 13.95 36.05ZM29.125 24.45C31.525 25.3 32.7 26.975 32.7 29.6C32.7 32.6 30.35 35.025 27.425 35.025H26.85V35.475C26.85 36.5 26 37.35 24.975 37.35C23.95 37.35 23.1 36.5 23.1 35.475V35.025H23.025C19.85 35.025 17.25 32.35 17.25 29.075C17.25 28.05 18.1 27.2 19.125 27.2C20.15 27.2 21 28.05 21 29.075C21 30.3 21.9 31.275 23.025 31.275H23.1V26.325L20.85 25.525C18.45 24.675 17.275 23 17.275 20.375C17.275 17.375 19.625 14.95 22.55 14.95H23.125V14.5C23.125 13.475 23.975 12.625 25 12.625C26.025 12.625 26.875 13.475 26.875 14.5V14.95H26.95C30.125 14.95 32.725 17.625 32.725 20.9C32.725 21.925 31.875 22.775 30.85 22.775C29.825 22.775 28.975 21.925 28.975 20.9C28.975 19.675 28.075 18.7 26.95 18.7H26.875V23.65L29.125 24.45ZM38.7 38.7C38.325 39.075 37.85 39.25 37.375 39.25C36.9 39.25 36.425 39.075 36.05 38.7C35.325 37.975 35.325 36.775 36.05 36.05C39 33.1 40.625 29.175 40.625 25C40.625 20.825 39 16.9 36.05 13.95C35.325 13.225 35.325 12.025 36.05 11.3C36.775 10.575 37.975 10.575 38.7 11.3C42.35 14.95 44.375 19.825 44.375 25C44.375 30.175 42.35 35.05 38.7 38.7Z" fill="#000"/>
+                            <path d="M21.0498 20.4012C21.0498 21.5762 21.3248 21.7262 22.1248 22.0012L23.1498 22.3512V18.7012H22.5748C21.7248 18.7012 21.0498 19.4762 21.0498 20.4012Z" fill="#000"/>
+                        </svg>
+                        <h2 class="money_num">100</h2>
+                    </div>
+                    <div class="num">
+                        <button class="minus">-</button>
+                        <p class="num1">1</p>
+                        <button class="addition">+</button>
+                    </div>
+                    <div class="check">
+                        <input class="cancel1" type="submit" value="取消">
+                        <input class="buy1" type="submit" value="購買">
+                    </div>
+                </div>
+            </article>
+        </div><div class="value_text">
+            <div class="close1">
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+            <article>
+                <div class="text">
+                    <img class="main1" src="./IMG/store/luck.png" alt="">
+                    <p>買了之後會增加妳遊戲中的幸運<br>只有遊戲中而已，現實生活中沒有</p>
                 </div>
                 <div class="money1_wrapper">
                     <div class="money1">
@@ -473,8 +431,8 @@
             </div>
             <article>
                 <div class="text">
-                    <img class="main1" src="./IMG/store/physical_strength.png" alt="">
-                    <p>買了之後會增加妳遊戲中的體力<br>只有遊戲中而已，現實生活中沒有</p>
+                    <img class="main1" src="./IMG/store/luck.png" alt="">
+                    <p>買了之後會增加妳遊戲中的幸運<br>只有遊戲中而已，現實生活中沒有</p>
                 </div>
                 <div class="money1_wrapper">
                     <div class="money1">
@@ -503,38 +461,8 @@
             </div>
             <article>
                 <div class="text">
-                    <img class="main1" src="./IMG/store/physical_strength.png" alt="">
-                    <p>買了之後會增加妳遊戲中的體力<br>只有遊戲中而已，現實生活中沒有</p>
-                </div>
-                <div class="money1_wrapper">
-                    <div class="money1">
-                        <svg width="35" height="35" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M26.875 31.3008H27.45C28.275 31.3008 28.975 30.5508 28.975 29.6258C28.975 28.4508 28.7 28.3008 27.9 28.0258L26.875 27.6758V31.3008Z" fill="#000"/>
-                            <path d="M25 0C11.2 0 0 11.2 0 25C0 38.8 11.2 50 25 50C38.8 50 50 38.8 50 25C50 11.2 38.8 0 25 0ZM13.95 36.05C14.675 36.775 14.675 37.975 13.95 38.7C13.575 39.075 13.1 39.25 12.625 39.25C12.15 39.25 11.675 39.075 11.3 38.7C7.64997 35.05 5.625 30.175 5.625 25C5.625 19.825 7.64997 14.95 11.3 11.3C12.025 10.575 13.225 10.575 13.95 11.3C14.675 12.025 14.675 13.225 13.95 13.95C11 16.9 9.375 20.825 9.375 25C9.375 29.175 11 33.1 13.95 36.05ZM29.125 24.45C31.525 25.3 32.7 26.975 32.7 29.6C32.7 32.6 30.35 35.025 27.425 35.025H26.85V35.475C26.85 36.5 26 37.35 24.975 37.35C23.95 37.35 23.1 36.5 23.1 35.475V35.025H23.025C19.85 35.025 17.25 32.35 17.25 29.075C17.25 28.05 18.1 27.2 19.125 27.2C20.15 27.2 21 28.05 21 29.075C21 30.3 21.9 31.275 23.025 31.275H23.1V26.325L20.85 25.525C18.45 24.675 17.275 23 17.275 20.375C17.275 17.375 19.625 14.95 22.55 14.95H23.125V14.5C23.125 13.475 23.975 12.625 25 12.625C26.025 12.625 26.875 13.475 26.875 14.5V14.95H26.95C30.125 14.95 32.725 17.625 32.725 20.9C32.725 21.925 31.875 22.775 30.85 22.775C29.825 22.775 28.975 21.925 28.975 20.9C28.975 19.675 28.075 18.7 26.95 18.7H26.875V23.65L29.125 24.45ZM38.7 38.7C38.325 39.075 37.85 39.25 37.375 39.25C36.9 39.25 36.425 39.075 36.05 38.7C35.325 37.975 35.325 36.775 36.05 36.05C39 33.1 40.625 29.175 40.625 25C40.625 20.825 39 16.9 36.05 13.95C35.325 13.225 35.325 12.025 36.05 11.3C36.775 10.575 37.975 10.575 38.7 11.3C42.35 14.95 44.375 19.825 44.375 25C44.375 30.175 42.35 35.05 38.7 38.7Z" fill="#000"/>
-                            <path d="M21.0498 20.4012C21.0498 21.5762 21.3248 21.7262 22.1248 22.0012L23.1498 22.3512V18.7012H22.5748C21.7248 18.7012 21.0498 19.4762 21.0498 20.4012Z" fill="#000"/>
-                        </svg>
-                        <h2 class="money_num">100</h2>
-                    </div>
-                    <div class="num">
-                        <button class="minus">-</button>
-                        <p class="num1">1</p>
-                        <button class="addition">+</button>
-                    </div>
-                    <div class="check">
-                        <input class="cancel1" type="submit" value="取消">
-                        <input class="buy1" type="submit" value="購買">
-                    </div>
-                </div>
-            </article>
-        </div>
-        <div class="value_text">
-            <div class="close1">
-                <i class="fa-solid fa-xmark"></i>
-            </div>
-            <article>
-                <div class="text">
-                    <img class="main1" src="./IMG/store/physical_strength.png" alt="">
-                    <p>買了之後會增加妳遊戲中的體力<br>只有遊戲中而已，現實生活中沒有</p>
+                    <img class="main1" src="./IMG/store/luck.png" alt="">
+                    <p>買了之後會增加妳遊戲中的幸運<br>只有遊戲中而已，現實生活中沒有</p>
                 </div>
                 <div class="money1_wrapper">
                     <div class="money1">
@@ -1242,13 +1170,7 @@
     </div>
    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script>
-        $(function () {
-            $(".header").load("common.html .header>div");
-            $(".footer").load("common.html .footer>div");
-        });
-    </script>
-    <script src="./JS/store/store_value3.js"></script>
+    <script src="./JS/store/store_value4.js"></script>
 
 </body>
 </html>
