@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,43 +8,38 @@
     <link rel="stylesheet" href="./CSS/global.css">
     <link rel="stylesheet" href="./CSS/wolf/wolf_create_room.css">
     <title>Wolf Create Room</title>
-    
+
 </head>
+
 <body>
-    <div class="header"></div> <!-- 用來載入 common.html 裡頭的 header -->
+    <?php require("common.php"); ?>
     <div class="activity_title">
         <svg width="40" height="40" viewBox="0 0 83 83" fill="none" xmlns="http://www.w3.org/2000/svg">
             <a href="wolf_list.html">
                 <g filter="url(#filter0_dd_668_6)">
-                    <path d="M9 37.5L34.2778 5V23.018L74 23.0556V51.9444H34.2778V70L9 37.5Z" fill="#606C99"
-                        stroke="#606C99" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M9 37.5L34.2778 5V23.018L74 23.0556V51.9444H34.2778V70L9 37.5Z" fill="#606C99" stroke="#606C99" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" />
                 </g>
                 <defs>
-                    <filter id="filter0_dd_668_6" x="0" y="0" width="83" height="83"
-                        filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                    <filter id="filter0_dd_668_6" x="0" y="0" width="83" height="83" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
                         <feFlood flood-opacity="0" result="BackgroundImageFix" />
-                        <feColorMatrix in="SourceAlpha" type="matrix"
-                            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+                        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
                         <feOffset dy="4" />
                         <feGaussianBlur stdDeviation="2" />
                         <feComposite in2="hardAlpha" operator="out" />
                         <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" />
                         <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_668_6" />
-                        <feColorMatrix in="SourceAlpha" type="matrix"
-                            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+                        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
                         <feOffset dy="4" />
                         <feGaussianBlur stdDeviation="2" />
                         <feComposite in2="hardAlpha" operator="out" />
                         <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" />
-                        <feBlend mode="normal" in2="effect1_dropShadow_668_6"
-                            result="effect2_dropShadow_668_6" />
-                        <feBlend mode="normal" in="SourceGraphic" in2="effect2_dropShadow_668_6"
-                            result="shape" />
+                        <feBlend mode="normal" in2="effect1_dropShadow_668_6" result="effect2_dropShadow_668_6" />
+                        <feBlend mode="normal" in="SourceGraphic" in2="effect2_dropShadow_668_6" result="shape" />
                     </filter>
                 </defs>
             </a>
         </svg>
-        
+
         <h1>狼人殺</h1>
     </div>
 
@@ -84,26 +80,16 @@
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script
-      src="https://kit.fontawesome.com/75e9abcec6.js"
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://kit.fontawesome.com/75e9abcec6.js" crossorigin="anonymous"></script>
     <script>
-        $(function () {
-            $(".header").load("common.html .header>div");
-            $(".footer").load("common.html .footer>div");
-        });
-    </script>
-    <script>
-
         let lock_el = document.getElementsByClassName("lock")[0];
         let password_input = document.getElementsByClassName("password")[0];
 
-        lock_el.addEventListener("click", function(){
-            if( !lock_el.classList.contains("on") ){
+        lock_el.addEventListener("click", function() {
+            if (!lock_el.classList.contains("on")) {
                 lock_el.classList.add("on");
                 password_input.disabled = false;
-                password_input.focus() ;
+                password_input.focus();
             } else {
                 lock_el.classList.remove("on");
                 password_input.disabled = true;
@@ -111,4 +97,5 @@
         })
     </script>
 </body>
+
 </html>
