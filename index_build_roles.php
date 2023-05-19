@@ -13,7 +13,7 @@
 <body>
 
 
-  <?php require("common.php"); ?>
+  <div class="header"></div> <!-- 用來載入 common.html 裡頭的 header -->
 
   <div class="return">
     <img src="./img/index/return.png" alt="" height="60">
@@ -82,6 +82,8 @@
 
 
   </div>
+
+
 
 
 
