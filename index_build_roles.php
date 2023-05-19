@@ -94,57 +94,58 @@
 
 
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script>
-    // 下面的js是給配件有滑動的
+  <<<<<<< HEAD=======>>>>>>> 8275dd376b9d0e831ddcdc1b4d6342dcbd6e58a4
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+      // 下面的js是給配件有滑動的
 
 
-    let isDown = false;
-    let startX;
-    let scrollLeft;
+      let isDown = false;
+      let startX;
+      let scrollLeft;
 
-    const slider = document.querySelector(".slider");
-    const boxWrapper = document.querySelector(".box-wrapper");
-    const scrollbar = document.querySelector(".scrollbar");
+      const slider = document.querySelector(".slider");
+      const boxWrapper = document.querySelector(".box-wrapper");
+      const scrollbar = document.querySelector(".scrollbar");
 
-    slider.addEventListener("mousedown", (e) => {
-      isDown = true;
-      slider.classList.add("active");
-      startX = e.pageX - slider.offsetLeft;
-      scrollLeft = slider.scrollLeft;
-    });
+      slider.addEventListener("mousedown", (e) => {
+        isDown = true;
+        slider.classList.add("active");
+        startX = e.pageX - slider.offsetLeft;
+        scrollLeft = slider.scrollLeft;
+      });
 
-    slider.addEventListener("mouseleave", () => {
-      isDown = false;
-      slider.classList.remove("active");
-    });
+      slider.addEventListener("mouseleave", () => {
+        isDown = false;
+        slider.classList.remove("active");
+      });
 
-    slider.addEventListener("mouseup", () => {
-      isDown = false;
-      slider.classList.remove("active");
-    });
+      slider.addEventListener("mouseup", () => {
+        isDown = false;
+        slider.classList.remove("active");
+      });
 
-    slider.addEventListener("mousemove", (e) => {
-      if (!isDown) return;
-      e.preventDefault();
-      const x = e.pageX - slider.offsetLeft;
-      const walk = (x - startX) * 3; // adjust scroll speed
-      slider.scrollLeft = scrollLeft - walk;
+      slider.addEventListener("mousemove", (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - slider.offsetLeft;
+        const walk = (x - startX) * 3; // adjust scroll speed
+        slider.scrollLeft = scrollLeft - walk;
 
-      updateScrollbar();
-    });
+        updateScrollbar();
+      });
 
-    const updateScrollbar = () => {
-      const scrollbarHeight = slider.offsetHeight;
-      const sliderHeight = slider.scrollHeight;
-    }
-
-
+      const updateScrollbar = () => {
+        const scrollbarHeight = slider.offsetHeight;
+        const sliderHeight = slider.scrollHeight;
+      }
 
 
-    // 上面的js是給配件有滑動的
-  </script>
-  <script src="https://kit.fontawesome.com/75e9abcec6.js" crossorigin="anonymous"></script>
+
+
+      // 上面的js是給配件有滑動的
+    </script>
+    <script src="https://kit.fontawesome.com/75e9abcec6.js" crossorigin="anonymous"></script>
 
 
 </body>
