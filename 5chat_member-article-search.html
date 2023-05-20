@@ -61,11 +61,15 @@
                     </ul>
                 </div>
 
-                <div class="search-bar">
+                <div id="mix-bar">
+                    <span id="general-info">官方文章查詢</span>
+                    <span id="event-info">會員查詢</span>
+                </div> 
+                <div id="article-search" class="search-bar">
 
                     <table>
-                        <h2>會員文章查詢</h2>
-                        <button class="add-btn">新增</button>
+                        <h2>文章查詢</h2>
+                        <button id="article-create-btn" class="add-btn">新增</button>
                         <tr>
                             <td>文章編號</td>
                             <td><input type="text"></td>
@@ -85,7 +89,139 @@
                             </td>
                         </tr>
                     </table>
-                    <button class="search-btn">查看</button>
+                    <button id="member-article-btn" class="search-btn">查看</button>
+
+                </div>
+
+                <div id="article-edit" class="hide-bar">
+
+                    <table>
+                        <h2>官方文章編輯</h2>
+                        <img id="back-btn" src="IMG/chat/Vector.svg" alt="">   
+                        <tr>
+                            <td>文章編號</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>文章時間</td>
+                            <td><input type="date" id="myDate" name="myDate" value="2023-01-01"></td>
+                       </tr>
+                        <tr>
+                            <td>文章狀態</td>
+                            <td>                               
+                                  <input type="radio" checked />開啟 <input type="radio" />關閉
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>文章圖片</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>文章內容</td>
+                            <td>
+                                <textarea name="" id="" cols="30" rows="5"></textarea>
+                               
+                            </td>
+                        </tr>
+                    </table>
+                    <button class="search-btn">變更</button>
+
+                </div>
+
+                <div id="article-create" class="hide-bar">
+
+                    <table>
+                        <h2>新增文章資料</h2>
+                        <img id="back-btn2" src="IMG/chat/Vector.svg" alt="">   
+                        <tr>
+                            <td>文章編號</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>文章刊登時間</td>
+                            <td><input type="date" id="myDate" name="myDate" value="2023-01-01"></td>
+                       </tr>
+                        <tr>
+                            <td>文章圖片</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>文章內容</td>
+                            <td>
+                                <textarea name="" id="" cols="30" rows="5"></textarea>
+                               
+                            </td>
+                        </tr>
+                    </table>
+                    <button class="search-btn">建立</button>
+
+                </div>
+
+                <div id="member-article-search" class="hide-bar">
+                    <h2>會員文章查詢</h2>
+                    <table>
+                        <tr>
+                            <td>會員編號</td>
+                            <td><input type="text"></td>
+                        </tr>
+                        <tr>
+                            <td>會員名稱</td>
+                            <td><input type="text"></td>
+                        </tr>
+                        <tr>
+                            <td>Email</td>
+                            <td><input type="text"></td>
+                        </tr>
+                        <tr>
+                            <td>會員身分</td>
+                            <td>
+                                <select>
+                                    <option selected>一般</option>
+                                    <option>管理員</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>會員狀態</td>
+                            <td>
+                                <select>
+                                    <option selected>正常</option>
+                                    <option>警告</option>
+                                    <option>禁言</option>
+                                    <option>封鎖</option>
+                                </select>
+                            </td>
+                        </tr>
+                    </table>
+                    <button id="member-article-search-btn" class="search-btn">查看</button>
+                </div>
+
+                <div id="member-article-edit" class="hide-bar">
+
+                    <table>
+                        <h2>會員文章明細</h2>
+                        <img id="back-btn3" src="IMG/chat/Vector.svg" alt="">   
+                        <tr>
+                            <td>文章編號</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>文章刊登時間</td>
+                            <td><input type="date" id="myDate" name="myDate" value="2023-01-01"></td>
+                       </tr>
+                        <tr>
+                            <td>文章圖片</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>文章內容</td>
+                            <td>
+                                <textarea name="" id="" cols="30" rows="5"></textarea>
+                               
+                            </td>
+                        </tr>
+                    </table>
+                    <button id="member-article-edit-btn" class="search-btn">變更</button>
 
                 </div>
                 <div class="list-bottom">
@@ -171,5 +307,5 @@
             
         </div>
 </body>
-
+<script src="js/chat/article.js"></script>
 </html>

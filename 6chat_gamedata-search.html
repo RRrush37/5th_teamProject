@@ -61,19 +61,15 @@
                     </ul>
                 </div>
 
-                <div class="search-bar">
+                <div id="mix-bar">
+                    <span id="general-info">你畫我猜</span>
+                    <span id="event-info">狼人殺</span>
+                </div>
+                <div id="draw" class="search-bar">
 
                     <table>
-                        <h2>遊戲資料查詢</h2>
-                        <tr>
-                            <td>遊戲名稱</td>
-                            <td>
-                                <select>
-                                    <option checked>你畫我猜</option>
-                                    <option>狼人殺</option>
-                                </select>
-                            </td>
-                        </tr>
+                        <h2>你畫我猜</h2>
+
                         <tr>
                             <td>遊戲狀態</td>
                             <td>
@@ -81,9 +77,41 @@
                                 <input type="radio">關閉
                             </td>
                         </tr>
+                        <tr>
+                            <td>勝利機制</td>
+                            <td>+3分</td>
+                        </tr>
+                        <tr>
+                            <td>失敗機制</td>
+                            <td>-1分</td>
+                        </tr>
                     </table>
-                    <button class="search-btn">查看</button>
+                    <button class="search-btn">變更</button>
 
+                </div>
+                <div id="werewolf" class="hide-bar">
+
+                    <table>
+                        <h2>狼人殺</h2>
+
+                        <tr>
+                            <td>遊戲狀態</td>
+                            <td>
+                                <input type="radio" checked>開啟
+                                <input type="radio">關閉
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>勝利機制</td>
+                            <td>+5分</td>
+                        </tr>
+                        <tr>
+                            <td>失敗機制</td>
+                            <td>-2分</td>
+                        </tr>
+                    </table>
+                    <button class="search-btn">變更</button>
+                    
                 </div>
                 <div class="list-bottom">
                     <h3>會員列表</h3>
@@ -168,5 +196,5 @@
             
         </div>
 </body>
-
+<script src="js/chat/game.js"></script>
 </html>

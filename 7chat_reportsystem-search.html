@@ -61,7 +61,7 @@
                     </ul>
                 </div>
 
-                <div class="search-bar">
+                <div id="report-search" class="search-bar">
 
                     <table>
                         <h2>檢舉系統查詢</h2>
@@ -86,8 +86,95 @@
                             </td>
                         </tr>
                     </table>
-                    <button class="search-btn">查看</button>
+                    <button id="report-search-btn" class="search-btn">查看</button>
 
+                </div>
+
+                <div id="report-memberdata" class="membertext hide-bar">
+                    <h2>會員資料</h2>                      
+                        <img id="back-btn" src="IMG/chat/Vector.svg" alt="">                       
+                    <div class="membertext-left">
+                        <h2>被檢舉會員資料</h2>
+                        <table>
+
+                            <tr>
+                                <td>會員編號</td>
+                                <td>男/女</td>
+                            </tr>
+                            <td>會員暱稱</td>
+                            <td>202CM</td>
+                            <tr>
+                                <td>EMAIL</td>
+                                <td>nehao@gmail.com</td>
+                            </tr>
+                            <tr>
+                                <td>會員身分</td>
+                                <td>背ABC</td>
+                            </tr>
+                            <tr>
+                                <td>會員狀態</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>檢舉紀錄</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>裁罰時程</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td></td>   
+                            </tr>
+                            <tr>
+                                <td></td>   
+                            </tr>
+
+                        </table>
+                    </div>
+
+                    <div class="membertext-right">
+                        <h2>被檢舉明細</h2>
+                        <table>
+                            <tr>
+                                <td>檢舉類型</td>
+                                <td>11111111111</td>
+                            </tr>
+                            <tr>
+                                <td>檢舉事件編號</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>處理狀態</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>被檢舉事由</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>被檢舉時間</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>被檢舉內容</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>處理時間</td>
+                                <td>1</td>
+                            </tr>
+
+                            <tr>
+                                
+                                <td><button class="search-btn">確認裁罰</button></td>
+                                <td><button class="search-btn">撤消檢舉</button></td>
+                            </tr>                          
+                        </table>
+                        
+                    </div>
+                    
+                    
                 </div>
                 <div class="list-bottom">
                     <h3>會員列表</h3>
@@ -172,5 +259,5 @@
             
         </div>
 </body>
-
+<script src="js/chat/report.js"></script>
 </html>
