@@ -1,5 +1,5 @@
 body{
-    background-image: url(../img/highbackground.jpg);
+    background-image: url(../../img/chat/highbackground.jpg);
     background-size: cover;
     
 }
@@ -89,7 +89,7 @@ body{
 /* 建立聊天房間*/
 
 .create-newroom{
-    background-image: url("../img/box.jpg");
+    background-image: url("../../img/box.jpg");
     background-size: cover;
     width: 30%; 
     height: 50%;   
