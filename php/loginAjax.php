@@ -30,9 +30,9 @@
               // echo json_encode([$data["0"]["memberID"]]);
               if (password_verify($password, $data[0][1])){
                      echo json_encode($data[0][0]);
-                     setcookie("sessionID",session_id(),time()+360000, '/');
-                     $_SESSION["ID".$data[0][0]] = session_id();
-                     setcookie("ID",$data[0][0],time()+360000, '/');
+                     // setcookie("sessionID",session_id(),time()+360000, '/');
+                     $_SESSION["ID"] = $data[0][0];
+                     // setcookie("ID",$data[0][0],time()+360000, '/');
                      session_regenerate_id(true);
               }
               else
@@ -50,5 +50,3 @@
               // echo $row["email"];    //欄位名稱
               // echo '<br>';
        }*/
-
-?>

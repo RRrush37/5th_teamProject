@@ -14,7 +14,7 @@
     <?php require("common.php"); ?>
     <div class="activity_title">
         <svg width="40" height="40" viewBox="0 0 83 83" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <a href="gameChoose.html">
+            <a href="gameChoose.php">
                 <g filter="url(#filter0_dd_668_6)">
                     <path d="M9 37.5L34.2778 5V23.018L74 23.0556V51.9444H34.2778V70L9 37.5Z" fill="#606C99" stroke="#606C99" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" />
                 </g>
@@ -69,7 +69,7 @@
             </div>
 
             <div class="enter">
-                <a href="wolf_list.html"><input type="button" id="enter_btn" value="進入遊戲"></input></a>
+                <a href="wolf_list.php"><input type="button" id="enter_btn" value="進入遊戲"></input></a>
             </div>
 
         </section>
