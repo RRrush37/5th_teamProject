@@ -1,5 +1,5 @@
 body{
-    background-image: url(/IMG/store/mall_room.png);
+    background-image: url(../../IMG/store/mall_room.png);
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
@@ -78,7 +78,7 @@ body{
 
 /* 左邊選單 */
 .nav_left{
-    background-image: url(/IMG/store/photo_frame.png);
+    background-image: url(../../IMG/store/photo_frame.png);
     width: 195px;
     height: 424px;
     opacity: 0.8;
@@ -94,10 +94,14 @@ body{
 .nav_left ul li{
     color: white;
     text-shadow: #405366.1rem .1rem .4rem;
-    border-bottom: 2px solid #40536690;
+    border-bottom: 2px solid #4053666c;
     width: 100px;
-    margin: 50px auto 0;
+    margin: 35px auto 0;
     padding-bottom: 10px;
+}
+
+.nav_left ul li:hover{
+    color: #405366;
 }
 
 .current{
@@ -106,23 +110,23 @@ body{
 
 /* 人偶 */
 .coutainer{
-    background-image: url(/IMG/store/photo_frame_3.png);
-    background-size: 70% auto;
+    background-image: url(../../IMG/store/photo_frame_3.png);
+    background-size: 65% auto;
     background-repeat: no-repeat;
     width: 606px;
     height: 560px;
     position: absolute;
-    top: 52%;
-    left: 50%;
+    top: 50%;
+    left: 52%;
     transform: translate(-35%, -30%);
 }
 
 .coutainer > .people{
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: 55%;
+    left: 60%;
     transform: translate(-100%, -70%);
-    width: 180px;
+    width: 350px;
 }
 
 .check{
@@ -145,34 +149,51 @@ body{
 
 /* 下方選單 */
 .nav_down{
-    background: rgba(0, 0, 0, 0.616);
+    background: rgba(0, 0, 0, 0.45);
     position: absolute;
     width: 450px;
-    height: 150px;
+    height: 180px;
     left: 50%;
-    top: 100%;
+    top: 95%;
     transform: translate(-50%, -40%);
     overflow: hidden;
 }
 
-.nav_down ul{
+.nav_down_wrapper{
     display: flex;
-    flex-wrap: wrap;
-    height: 150px;
+    height: 160px;
+    width: 400px;
+    margin: 10px auto;
     overflow: auto;
 }
 
-.nav_down ul li{
-    background-image: url(/IMG/store/box.png);
-    width: 86.56px;
-    height: 86px;
-    margin: 20px 30px 40px;
+.commodity_wrapper{
     cursor: pointer;
+    display: flex;
+    margin-left: 10px;
+}
+
+.commodity_wrapper:hover{
+    color: #000;
+    background-color: rgba(255, 255, 255, 0.642);
+    box-shadow: 0 0 5px #ffffff;
+    border-radius: 10px;
+}
+
+.commodity_wrapper:hover .money .a{
+    fill: #000;
+
+}
+
+.commodity_wrapper:hover .money p{
+    color: #000;
+
 }
 
 .money{
     display: flex;
-    margin: 5px 10px;
+    margin-top: 100px;
+    padding-right: 10px;
 }
 
 .money p{
@@ -180,21 +201,23 @@ body{
     color: white;
 }
 
-.nav_down ul::-webkit-scrollbar {
+.nav_down_wrapper::-webkit-scrollbar {
+    height: 10px;
     width: 10px;
 }
 
-.nav_down ul::-webkit-scrollbar-thumb {
+.nav_down_wrapper::-webkit-scrollbar-thumb {
     background: #ffffffcb;
     border-radius: 10px;
 }
 
-.nav_down ul::-webkit-scrollbar-track {
+.nav_down_wrapper::-webkit-scrollbar-track {
+    background: #ffffff66;
     border-radius: 10px;
 }
 
 .commodity{
-    margin: 10px;
+    width: 120px;
 }
 
 /*--------------------------- lightbox ---------------------------*/
@@ -206,6 +229,7 @@ body{
     width: 100%;
     height: 100vh;
     background-color: hsla(0, 0%, 0%, .8);
+    z-index: 5;
 }
 
 .dresss{
@@ -250,7 +274,7 @@ body{
 }
 
 .dresss_choose{
-    background-image: url(/IMG/store/photo_frame_3.png);
+    background-image: url(../../IMG/store/photo_frame_3.png);
     background-size: 53% auto;
     background-repeat: no-repeat;
     width: 606px;
