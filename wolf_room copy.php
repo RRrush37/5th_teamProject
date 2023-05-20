@@ -484,7 +484,7 @@
                 text[0] = "connect";
                 text[1] = room_imformation;
                 console.log(room_imformation);
-                let data = jsON.stringify(text);
+                let data = JSON.stringify(text);
                 ws.send(data);
             }
             //============================================= 監聽離線狀態
@@ -513,7 +513,7 @@
 
                 text[0] = "ready";
 
-                let data = jsON.stringify(text);
+                let data = JSON.stringify(text);
                 ws.send(data);
             })
 
@@ -550,7 +550,7 @@
                     room_start.round = round;
                     text[1] = room_start; // room_start更新了玩家資訊並傳給所有使用者
                     console.log("text[1].round" + text[1].round);
-                    let data = jsON.stringify(text);
+                    let data = JSON.stringify(text);
                     ws.send(data);
 
                 }
@@ -560,7 +560,7 @@
             //============================================= 接收 Server 發送的訊息
             ws.onmessage = event => {
 
-                text = jsON.parse(event.data);
+                text = JSON.parse(event.data);
 
                 if (text[0] == "connect") {
 
@@ -690,7 +690,7 @@
                             console.log("prepare room_start.num" + room_start.num);
                             text[1].second[player_index] = 0;
                             text[0] = "go";
-                            let data = jsON.stringify(text);
+                            let data = JSON.stringify(text);
                             ws.send(data);
 
                         }
@@ -734,7 +734,7 @@
 
                             // text[0] = "start" ;
                             text[1].second[player_index] = 0;
-                            let data = jsON.stringify(text);
+                            let data = JSON.stringify(text);
                             ws.send(data);
 
                             //werewolveRound();
@@ -878,7 +878,7 @@
 
                             text[1].second[player_index] = 0;
                             text[1].player_state = player_state;
-                            let data = jsON.stringify(text);
+                            let data = JSON.stringify(text);
                             ws.send(data);
                         }
                     }, 1000);
