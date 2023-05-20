@@ -13,6 +13,7 @@
 
 <body>
     <?php
+    session_start();
     require("php/checkIfLogin.php");
     $isLogin = checkIfLogin();
     if ($isLogin) {
@@ -20,7 +21,7 @@
         require("php/connectSQL.php");
         $sql = "select * from Attributes where memberID = ?";
         $statement = $pdo->prepare($sql);
-        $statement->bindValue(1, $_COOKIE["ID"]);
+        $statement->bindValue(1, $_SESSION["ID"]);
         $statement->execute();
 
         $data = $statement->fetchAll();

@@ -157,7 +157,6 @@ body{
 }
 
 .sticker_wrapper::-webkit-scrollbar-track {
-    background: #ffffff66;
     border-radius: 10px;
 }
 
@@ -171,7 +170,6 @@ body{
     width: 100%;
     height: 100vh;
     background-color: hsla(0, 0%, 0%, .8);
-    z-index: 5;
 }
 
 .text_none{
@@ -282,7 +280,6 @@ body{
     width: 100%;
     height: 100vh;
     background-color: hsla(0, 0%, 0%, .8);
-    z-index: 5;
 }
 
 .gift_none{
