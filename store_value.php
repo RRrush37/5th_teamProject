@@ -15,7 +15,7 @@
     <?php require("common.php"); ?>
     <!-- <div class="header"></div> 用來載入 common.html 裡頭的 header -->
     <div class="activity_title">
-        <a href="/store.html">
+        <a href="/store.php">
             <svg width="40" height="40" viewBox="0 0 83 83" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g filter="url(#filter0_dd_668_6)">
                     <path d="M9 37.5L34.2778 5V23.018L74 23.0556V51.9444H34.2778V70L9 37.5Z" fill="#A0C0E1" stroke="#A0C0E1" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" />
@@ -42,9 +42,9 @@
         </a>
         <div class="choose_wrapper">
             <select id="choose" onchange="navigateToUrl()">
-                <option value="/store_value.html">遊戲能力值</option>
-                <option value="/store_sticker.html">貼圖</option>
-                <option value="/store_dress.html">角色配件</option>
+                <option value="/store_value.php">遊戲能力值</option>
+                <option value="/store_sticker.php">貼圖</option>
+                <option value="/store_dress.php">角色配件</option>
             </select>
         </div>
     </div>
@@ -52,27 +52,27 @@
     <!-- 左邊選單 -->
     <div class="nav_left">
         <ul>
-            <a href="/store_value.html">
+            <a href="/store_value.php">
                 <li>
                     <h2 class="current">全部</h2>
                 </li>
             </a>
-            <a href="/store_value1.html">
+            <a href="/store_value1.php">
                 <li>
                     <h2>魅力</h2>
                 </li>
             </a>
-            <a href="/store_value2.html">
+            <a href="/store_value2.php">
                 <li>
                     <h2>智力</h2>
                 </li>
             </a>
-            <a href="/store_value3.html">
+            <a href="/store_value3.php">
                 <li>
                     <h2>體力</h2>
                 </li>
             </a>
-            <a href="/store_value4.html">
+            <a href="/store_value4.php">
                 <li>
                     <h2>幸運</h2>
                 </li>
@@ -2238,7 +2238,11 @@
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<<<<<<< HEAD
     <script src="./js/store/store_value.js"></script>
+=======
+    <script src="./JS/store/store_value.js"></script>
+>>>>>>> kuan
 
 </body>
 
