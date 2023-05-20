@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>store_discount</title>
+    <title>store</title>
     <link rel="stylesheet" href="/css/global.css">
     <link rel="stylesheet" href="./css/store/store.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -43,7 +43,7 @@
 
     <div class="store_choose">
         <ul>
-            <a href="./store_dress.html">
+            <a href="./store_dress.php">
                 <li>
                     <div class="img_wrapper">
                         <img src="./img/store/dress.png" alt="">
@@ -51,7 +51,7 @@
                     <h2>角色配件</h2>
                 </li>
             </a>
-            <a href="./store_value.html">
+            <a href="./store_value.php">
                 <li>
                     <div class="img_wrapper">
                         <img src="./img/store/value.png" alt="">
@@ -59,7 +59,7 @@
                     <h2>遊戲能力值</h2>
                 </li>
             </a>
-            <a href="./store_sticker.html">
+            <a href="./store_sticker.php">
                 <li>
                     <div class="img_wrapper">
                         <img src="./img/store/sticker.png" alt="">

@@ -218,6 +218,7 @@ body{
 
 .commodity{
     width: 120px;
+    /* transform: scale(2.5); */
 }
 
 /*--------------------------- lightbox ---------------------------*/

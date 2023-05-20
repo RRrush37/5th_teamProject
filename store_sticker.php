@@ -13,8 +13,9 @@
 
 <body>
     <?php require("common.php"); ?>
+    
     <div class="activity_title">
-        <a href="/store.html">
+        <a href="/store.php">
             <svg width="40" height="40" viewBox="0 0 83 83" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g filter="url(#filter0_dd_668_6)">
                     <path d="M9 37.5L34.2778 5V23.018L74 23.0556V51.9444H34.2778V70L9 37.5Z" fill="#A0C0E1" stroke="#A0C0E1" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" />
@@ -41,9 +42,9 @@
         </a>
         <div class="choose_wrapper">
             <select id="choose" onchange="navigateToUrl()">
-                <option value="/store_sticker.html">貼圖</option>
-                <option value="/store_dress.html">角色配件</option>
-                <option value="/store_value.html">遊戲能力值</option>
+                <option value="/store_sticker.php">貼圖</option>
+                <option value="/store_dress.php">角色配件</option>
+                <option value="/store_value.php">遊戲能力值</option>
             </select>
         </div>
     </div>
