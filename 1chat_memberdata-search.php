@@ -52,186 +52,134 @@
         </ul>
 
         <div class="m-text-search">
-
-            <div class="m-text-search-banner">
-                <ul>
-                    <li>1</li>
-                    <li>1</li>
-                    <li>1</li>
-                </ul>
-            </div>
-
-            <div class="search-bar">
-                <h2>會員資料查詢</h2>
-                <table>
-                    <tr>
-                        <td>會員編號</td>
-                        <td><input type="text"></td>
-                    </tr>
-                    <tr>
-                        <td>會員名稱</td>
-                        <td><input type="text"></td>
-                    </tr>
-                    <tr>
-                        <td>Email</td>
-                        <td><input type="text"></td>
-                    </tr>
-                    <tr>
-                        <td>會員身分</td>
-                        <td>
-                            <select>
-                                <option selected>一般</option>
-                                <option>管理員</option>
-                            </select>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>會員狀態</td>
-                        <td>
-                            <select>
-                                <option selected>正常</option>
-                                <option>警告</option>
-                                <option>禁言</option>
-                                <option>封鎖</option>
-                            </select>
-                        </td>
-                    </tr>
-                </table>
-                <button class="search-btn">查看</button>
-            </div>
-            <div class="usertext search-bar">
-                <div class="usertext-left">
-                    <table>
-                        <tr>
-                            <td>性別</td>
-                            <td>男/女</td>
-                        </tr>
-                        <td>身高</td>
-                        <td>202CM</td>
-                        <tr>
-                            <td>e-mail</td>
-                            <td>nehao@gmail.com</td>
-                        </tr>
-                        <tr>
-                            <td>興趣</td>
-                            <td>背ABC</td>
-                        </tr>
-                    </table>
-
+           
+                <div class="m-text-search-banner">
+                    <ul>
+                        <li>1</li>
+                        <li>1</li>
+                        <li>1</li>
+                    </ul>
                 </div>
-                <div class="usertext-right ">
-                    <table>
-                        <tr>
-                            <td>ID</td>
-                            <td>1</td>
-                        </tr>
-                        <tr>
-                            <td>暱稱</td>
-                            <td>1</td>
-                        </tr>
-                        <tr>
-                            <td>年齡</td>
-                            <td>1</td>
-                        </tr>
-                        <tr>
-                            <td>體重</td>
-                            <td>1</td>
-                        </tr>
-                        <tr>
-                            <td>星座</td>
-                            <td>1</td>
-                        </tr>
-                        <tr>
-                            <td>生日</td>
-                            <td>1</td>
-                        </tr>
-                        <tr>
-                            <td>個性簽名</td>
-                            <td>1</td>
-                        </tr>
 
-                    </table>
-                </div>
-            </div>
-            <div class="membertext search-bar">
-                <div class="membertext-left">
+                <div id="memberdata-search" class="search-bar">
+                    <h2>會員資料查詢</h2>
                     <table>
                         <tr>
                             <td>會員編號</td>
-                            <td>男/女</td>
+                            <td><input type="text"></td>
                         </tr>
-                        <td>會員暱稱</td>
-                        <td>202CM</td>
                         <tr>
-                            <td>EMAIL</td>
-                            <td>nehao@gmail.com</td>
+                            <td>會員名稱</td>
+                            <td><input type="text"></td>
+                        </tr>
+                        <tr>
+                            <td>Email</td>
+                            <td><input type="text"></td>
                         </tr>
                         <tr>
                             <td>會員身分</td>
-                            <td>背ABC</td>
+                            <td>
+                                <select>
+                                    <option selected>一般</option>
+                                    <option>管理員</option>
+                                </select>
+                            </td>
                         </tr>
                         <tr>
                             <td>會員狀態</td>
-                            <td>1</td>
-                        </tr>
-                        <tr>
-                            <td>遊戲紀錄</td>
-                            <td>1</td>
-                        </tr>
-                        <tr>
-                            <td>會員備註</td>
-                            <td>1</td>
-                        </tr>
-                    </table>
-                </div>
-                <!-- <input type="button" value="變更"> -->
-                <div class="membertext-right">
-                    <table>
-                        <tr>
-                            <td>會員身高</td>
-                            <td>1</td>
-                        </tr>
-                        <tr>
-                            <td>會員體重</td>
-                            <td>1</td>
-                        </tr>
-                        <tr>
-                            <td>年齡</td>
-                            <td>1</td>
-                        </tr>
-                        <tr>
-                            <td>會員星座</td>
-                            <td>1</td>
-                        </tr>
-                        <tr>
-                            <td>會員年齡</td>
-                            <td>1</td>
-                        </tr>
-                        <tr>
-                            <td>會員生日</td>
-                            <td>1</td>
-                        </tr>
-                        <tr>
-                            <td>會員興趣</td>
-                            <td>1</td>
-                        </tr>
-                        <tr>
-                            <td>個性簽名</td>
-                            <td>1</td>
-                        </tr>
-                        <tr>
-                            <td>遊戲幣</td>
-                            <td>1</td>
+                            <td>
+                                <select>
+                                    <option selected>正常</option>
+                                    <option>警告</option>
+                                    <option>禁言</option>
+                                    <option>封鎖</option>
+                                </select>
+                            </td>
                         </tr>
                     </table>
-
+                    <button id="memberdata-btn" class="search-btn">查看</button>
                 </div>
+                <div id="memberdata" class="membertext hide-bar">
+                    <h2>會員資料</h2>                      
+                        <img id="back-btn" src="IMG/chat/Vector.svg" alt="">                       
+                    <div class="membertext-left">
+                        <table>
+                            <tr>
+                                <td>會員編號</td>
+                                <td>男/女</td>
+                            </tr>
+                            <td>會員暱稱</td>
+                            <td>202CM</td>
+                            <tr>
+                                <td>EMAIL</td>
+                                <td>nehao@gmail.com</td>
+                            </tr>
+                            <tr>
+                                <td>會員身分</td>
+                                <td>背ABC</td>
+                            </tr>
+                            <tr>
+                                <td>會員狀態</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>遊戲紀錄</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>會員備註</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                
+                            </tr>
+                        </table>
+                    </div>
 
-            </div>
-            <div class="list-bottom">
-                <h3>會員列表</h3>
-                <div class="list-bottom-first">
-                    <div>
+                    <div class="membertext-right">
+                        <table>
+                            <tr>
+                                <td>會員身高</td>
+                                <td>11111111111</td>
+                            </tr>
+                            <tr>
+                                <td>會員體重</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>會員星座</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>會員年齡</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>會員生日</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>會員興趣</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>個性簽名</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>遊戲幣</td>
+                                <td>1</td>
+                            </tr>
+                        </table>
+                        
+                    </div>
+                    <button class="search-btn">變更</button>
+                </div>
+                <div class="list-bottom">
+                    <h3>會員列表</h3>
+                    <div class="list-bottom-first">
+                       <div>
                         <span>會員編號</span>
                         <span>會員名稱</span>
                         <span>Email</span>
@@ -239,78 +187,78 @@
                         <span>會員狀態</span>
                         <span>處罰紀錄</span>
                         <span>查看</span>
+                       </div> 
+                        
+                        
                     </div>
-
-
+                    <ul>                       
+                        <li>
+                            <span>會員編號</span>
+                            <span>會員名稱</span>
+                            <span>Email</span>
+                            <span>會員身分</span>
+                            <span>會員狀態</span>
+                            <span>處罰紀錄</span>
+                            <a href="#">查看</a>
+                        </li>
+                        <li>
+                            <span>會員編號</span>
+                            <span>會員名稱</span>
+                            <span>Email</span>
+                            <span>會員身分</span>
+                            <span>會員狀態</span>
+                            <span>處罰紀錄</span>
+                            <a href="#">查看</a>
+                        </li>
+                        <li>
+                            <span>會員編號</span>
+                            <span>會員名稱</span>
+                            <span>Email</span>
+                            <span>會員身分</span>
+                            <span>會員狀態</span>
+                            <span>處罰紀錄</span>
+                            <a href="#">查看</a>
+                        </li>
+                        <li>
+                            <span>會員編號</span>
+                            <span>會員名稱</span>
+                            <span>Email</span>
+                            <span>會員身分</span>
+                            <span>會員狀態</span>
+                            <span>處罰紀錄</span>
+                            <a href="#">查看</a>
+                        </li>
+                        <li>
+                            <span>會員編號</span>
+                            <span>會員名稱</span>
+                            <span>Email</span>
+                            <span>會員身分</span>
+                            <span>會員狀態</span>
+                            <span>處罰紀錄</span>
+                            <a href="#">查看</a>
+                        </li>
+                        <li>
+                            <span>會員編號</span>
+                            <span>會員名稱</span>
+                            <span>Email</span>
+                            <span>會員身分</span>
+                            <span>會員狀態</span>
+                            <span>處罰紀錄</span>
+                            <a href="#">查看</a>
+                        </li>
+                        <li>
+                            <span>會員編號</span>
+                            <span>會員名稱</span>
+                            <span>Email</span>
+                            <span>會員身分</span>
+                            <span>會員狀態</span>
+                            <span>處罰紀錄</span>
+                            <a href="#">查看</a>
+                        </li>
+                    </ul>
                 </div>
-                <ul>
-                    <li>
-                        <span>會員編號</span>
-                        <span>會員名稱</span>
-                        <span>Email</span>
-                        <span>會員身分</span>
-                        <span>會員狀態</span>
-                        <span>處罰紀錄</span>
-                        <a href="#">查看</a>
-                    </li>
-                    <li>
-                        <span>會員編號</span>
-                        <span>會員名稱</span>
-                        <span>Email</span>
-                        <span>會員身分</span>
-                        <span>會員狀態</span>
-                        <span>處罰紀錄</span>
-                        <a href="#">查看</a>
-                    </li>
-                    <li>
-                        <span>會員編號</span>
-                        <span>會員名稱</span>
-                        <span>Email</span>
-                        <span>會員身分</span>
-                        <span>會員狀態</span>
-                        <span>處罰紀錄</span>
-                        <a href="#">查看</a>
-                    </li>
-                    <li>
-                        <span>會員編號</span>
-                        <span>會員名稱</span>
-                        <span>Email</span>
-                        <span>會員身分</span>
-                        <span>會員狀態</span>
-                        <span>處罰紀錄</span>
-                        <a href="#">查看</a>
-                    </li>
-                    <li>
-                        <span>會員編號</span>
-                        <span>會員名稱</span>
-                        <span>Email</span>
-                        <span>會員身分</span>
-                        <span>會員狀態</span>
-                        <span>處罰紀錄</span>
-                        <a href="#">查看</a>
-                    </li>
-                    <li>
-                        <span>會員編號</span>
-                        <span>會員名稱</span>
-                        <span>Email</span>
-                        <span>會員身分</span>
-                        <span>會員狀態</span>
-                        <span>處罰紀錄</span>
-                        <a href="#">查看</a>
-                    </li>
-                    <li>
-                        <span>會員編號</span>
-                        <span>會員名稱</span>
-                        <span>Email</span>
-                        <span>會員身分</span>
-                        <span>會員狀態</span>
-                        <span>處罰紀錄</span>
-                        <a href="#">查看</a>
-                    </li>
-                </ul>
-            </div>
-
+            
         </div>
 </body>
-
+<script src="JS/chat/memberdata.js"></script>
 </html>

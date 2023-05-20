@@ -52,120 +52,120 @@
         </ul>
 
         <div class="m-text-search">
+           
+                <div class="m-text-search-banner">
+                    <ul>
+                        <li>1</li>
+                        <li>1</li>
+                        <li>1</li>
+                    </ul>
+                </div>
 
-            <div class="m-text-search-banner">
-                <ul>
-                    <li>1</li>
-                    <li>1</li>
-                    <li>1</li>
-                </ul>
-            </div>
+                <div class="search-bar">
 
-            <div class="search-bar">
-
-                <table>
-                    <h2>遊戲資料查詢</h2>
-                    <tr>
-                        <td>遊戲名稱</td>
-                        <td>
-                            <select>
-                                <option checked>你畫我猜</option>
-                                <option>狼人殺</option>
-                            </select>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>遊戲狀態</td>
-                        <td>
-                            <input type="radio" checked>開啟
-                            <input type="radio">關閉
-                        </td>
-                    </tr>
-                </table>
-                <button class="search-btn">查看</button>
-
-            </div>
-            <div class="list-bottom">
-                <h3>會員列表</h3>
-                <div class="list-bottom-first">
-                    <div>
-                        <span>會員編號</span>
-                        <span>會員名稱</span>
-                        <span>Email</span>
-                        <span>會員身分</span>
-                        <span>會員狀態</span>
-                        <span>處罰紀錄</span>
-                        <span>查看</span>
-                    </div>
+                    <table>
+                        <h2>遊戲資料查詢</h2>
+                        <tr>
+                            <td>遊戲名稱</td>
+                            <td>
+                                <select>
+                                    <option checked>你畫我猜</option>
+                                    <option>狼人殺</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>遊戲狀態</td>
+                            <td>
+                                <input type="radio" checked>開啟
+                                <input type="radio">關閉
+                            </td>
+                        </tr>
+                    </table>
+                    <button class="search-btn">查看</button>
 
                 </div>
-                <ul>
-                    <li>
-                        <span>會員編號</span>
-                        <span>會員名稱</span>
-                        <span>Email</span>
-                        <span>會員身分</span>
-                        <span>會員狀態</span>
-                        <span>處罰紀錄</span>
-                        <a href="#">查看</a>
-                    </li>
-                    <li>
-                        <span>會員編號</span>
-                        <span>會員名稱</span>
-                        <span>Email</span>
-                        <span>會員身分</span>
-                        <span>會員狀態</span>
-                        <span>處罰紀錄</span>
-                        <a href="#">查看</a>
-                    </li>
-                    <li>
-                        <span>會員編號</span>
-                        <span>會員名稱</span>
-                        <span>Email</span>
-                        <span>會員身分</span>
-                        <span>會員狀態</span>
-                        <span>處罰紀錄</span>
-                        <a href="#">查看</a>
-                    </li>
-                    <li>
-                        <span>會員編號</span>
-                        <span>會員名稱</span>
-                        <span>Email</span>
-                        <span>會員身分</span>
-                        <span>會員狀態</span>
-                        <span>處罰紀錄</span>
-                        <a href="#">查看</a>
-                    </li>
-                    <li>
-                        <span>會員編號</span>
-                        <span>會員名稱</span>
-                        <span>Email</span>
-                        <span>會員身分</span>
-                        <span>會員狀態</span>
-                        <span>處罰紀錄</span>
-                        <a href="#">查看</a>
-                    </li>
-                    <li>
-                        <span>會員編號</span>
-                        <span>會員名稱</span>
-                        <span>Email</span>
-                        <span>會員身分</span>
-                        <span>會員狀態</span>
-                        <span>處罰紀錄</span>
-                        <a href="#">查看</a>
-                    </li>
-                    <li>
-                        <span>會員編號</span>
-                        <span>會員名稱</span>
-                        <span>Email</span>
-                        <span>會員身分</span>
-                        <span>會員狀態</span>
-                        <span>處罰紀錄</span>
-                        <a href="#">查看</a>
-                    </li>
-                </ul>
-            </div>
-
+                <div class="list-bottom">
+                    <h3>會員列表</h3>
+                    <div class="list-bottom-first">
+                        <div>
+                            <span>會員編號</span>
+                            <span>會員名稱</span>
+                            <span>Email</span>
+                            <span>會員身分</span>
+                            <span>會員狀態</span>
+                            <span>處罰紀錄</span>
+                            <span>查看</span>
+                        </div>
+    
+                    </div>
+                    <ul>                       
+                        <li>
+                            <span>會員編號</span>
+                            <span>會員名稱</span>
+                            <span>Email</span>
+                            <span>會員身分</span>
+                            <span>會員狀態</span>
+                            <span>處罰紀錄</span>
+                            <a href="#">查看</a>
+                        </li>
+                        <li>
+                            <span>會員編號</span>
+                            <span>會員名稱</span>
+                            <span>Email</span>
+                            <span>會員身分</span>
+                            <span>會員狀態</span>
+                            <span>處罰紀錄</span>
+                            <a href="#">查看</a>
+                        </li>
+                        <li>
+                            <span>會員編號</span>
+                            <span>會員名稱</span>
+                            <span>Email</span>
+                            <span>會員身分</span>
+                            <span>會員狀態</span>
+                            <span>處罰紀錄</span>
+                            <a href="#">查看</a>
+                        </li>
+                        <li>
+                            <span>會員編號</span>
+                            <span>會員名稱</span>
+                            <span>Email</span>
+                            <span>會員身分</span>
+                            <span>會員狀態</span>
+                            <span>處罰紀錄</span>
+                            <a href="#">查看</a>
+                        </li>
+                        <li>
+                            <span>會員編號</span>
+                            <span>會員名稱</span>
+                            <span>Email</span>
+                            <span>會員身分</span>
+                            <span>會員狀態</span>
+                            <span>處罰紀錄</span>
+                            <a href="#">查看</a>
+                        </li>
+                        <li>
+                            <span>會員編號</span>
+                            <span>會員名稱</span>
+                            <span>Email</span>
+                            <span>會員身分</span>
+                            <span>會員狀態</span>
+                            <span>處罰紀錄</span>
+                            <a href="#">查看</a>
+                        </li>
+                        <li>
+                            <span>會員編號</span>
+                            <span>會員名稱</span>
+                            <span>Email</span>
+                            <span>會員身分</span>
+                            <span>會員狀態</span>
+                            <span>處罰紀錄</span>
+                            <a href="#">查看</a>
+                        </li>
+                    </ul>
+                </div>
+            
         </div>
 </body>
 
