@@ -99,6 +99,9 @@ body {
     height: 4rem;
 }
 
+.search-bar tr,.hide-bar td{
+    font-size: 2rem;
+} 
 .hide-bar{
     background-color: #ECE3D7;
     display: none;
@@ -216,7 +219,7 @@ tr:nth-child(3) td:nth-child(1) input[type="text"] {
     cursor: pointer;
 }
 
-#back-btn,#back-btn2{
+#back-btn,#back-btn2,#back-btn3{
     display: block;
     position: absolute;
     right: 20%;
@@ -292,6 +295,32 @@ tr:nth-child(3) td:nth-child(1) input[type="text"] {
     padding-bottom: 1rem;
 }
 
+/* 聊天室資料查詢 */
+
+#chatroom-create tr:not(:last-child) td:nth-child(2),#chatroom-data tr:not(:last-child) td:nth-child(2){
+
+    border-bottom: 1px solid #000;
+    display: inline-block;
+    padding-bottom: 1rem;
+}
+
+/* 會員文章查詢 */
+
+#article-edit tr:not(:last-child) td:nth-child(2),#article-create tr:not(:last-child) td:nth-child(2),#member-article-edit tr:not(:last-child) td:nth-child(2){
+
+    border-bottom: 1px solid #000;
+    display: inline-block;
+    padding-bottom: 1rem;
+}
+
+/* 檢舉系統查詢 */
+
+.membertext-right tr:last-child td:nth-child(2){
+
+    border-bottom: none;
+    display: inline-block;
+    padding-bottom: 1rem;
+}
 
 
 

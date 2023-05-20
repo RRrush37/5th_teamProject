@@ -61,7 +61,7 @@
       <div id="chatroomdata-search" class="search-bar">
         <h2>聊天室資料查詢</h2>
         <table>
-          <button class="add-btn">新增</button>
+          <button id="chatroom-create-btn" class="add-btn">新增</button>
           <tr>
             <td>聊天室編號</td>
             <td><input type="text" /></td>
@@ -77,12 +77,12 @@
             </td>
           </tr>
         </table>
-        <button id="general-search" class="search-btn">查看</button>
+        <button id="chatroomdata-btn" class="search-btn">查看</button>
       </div>
       <div id="chatroom-data" class="hide-bar">
         <table>
           <h2>聊天室資料</h2>
-          <!-- <button class="add-btn">新增</button> -->
+          <img id="back-btn" src="IMG/chat/Vector.svg" alt="">     
           <tr>
             <td>聊天室名稱</td>
             <td>1</td>
@@ -119,6 +119,40 @@
           </tr>
         </table>
         <button class="search-btn">變更</button>
+      </div>
+
+      <div id="chatroom-create" class="hide-bar">
+        <table>
+          <h2>新建聊天室</h2>
+          <img id="back-btn2" src="IMG/chat/Vector.svg" alt="">     
+          <tr>
+            <td>聊天室名稱</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <td>聊天室類型</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <td>聊天室狀態</td>
+            <td>
+              <select>
+                <option selected>開啟</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>人數上限</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <td>聊天室狀態</td>
+            <td>
+              <input type="radio" checked />開啟 <input type="radio" />關閉
+            </td>
+          </tr>
+        </table>
+        <button class="search-btn">建立</button>
       </div>
       <div class="list-bottom">
         <h3>會員列表</h3>
@@ -203,5 +237,5 @@
     </div>
   </div>
 </body>
-
+<script src="js/chat/chatroomdata.js"></script>
 </html>

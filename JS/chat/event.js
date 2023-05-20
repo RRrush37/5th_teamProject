@@ -3,12 +3,15 @@ const eventDataBtn = document.getElementById('eventdata-btn');
 const eventData = document.getElementById('eventdata');
 const backBtn = document.getElementById('back-btn');
 const backBtn2 = document.getElementById('back-btn2');
+const backBtn3 = document.getElementById('back-btn3');
 const eventCreateBtn = document.getElementById('eventcreate-btn');
 const eventDataCreate = document.getElementById('eventdata-create');
 const generalInfo = document.getElementById('general-info');
 const eventInfo = document.getElementById('event-info');
 const elementsToHide = document.querySelectorAll('.hide-bar');
 const memberDataSearch = document.getElementById('memberdata-search');
+const memberData = document.getElementById('memberdata');
+const memberDataBtn = document.getElementById('memberdata-btn');
 
 // 点击memberdataBtn时显示eventData，隐藏eventDataSearch
 eventDataBtn.addEventListener('click', function() {
@@ -39,8 +42,7 @@ backBtn2.addEventListener('click', function() {
 
    // 点击general-info时显示search-bar，隐藏mallBar
    generalInfo.addEventListener('click', function() {
-    eventDataSearch.style.display = 'block';
-  
+
     for (var i = 0; i < elementsToHide.length; i++) {
       elementsToHide[i].style.display = 'none';
     }
@@ -48,13 +50,26 @@ backBtn2.addEventListener('click', function() {
     eventDataSearch.style.display = 'block';
   });
 
-  // 点击general-info时显示search-bar，隐藏mallBar
+  // 点击eventInfo时显示search-bar，隐藏mallBar
   eventInfo.addEventListener('click', function() {
-    memberDataSearch.style.display = 'block';
-  
+    
     for (var i = 0; i < elementsToHide.length; i++) {
       elementsToHide[i].style.display = 'none';
     }
     eventDataSearch.style.display = 'none';
     memberDataSearch.style.display = 'block';
+  });
+
+  // 点击memberdataBtn时显示memberData，隐藏memberData
+memberDataBtn.addEventListener('click', function() {
+    
+    memberData.style.display = 'block';
+    memberDataSearch.style.display = 'none';
+  });
+
+    // 点击backBtn时显示eventDataSearch，隐藏
+backBtn3.addEventListener('click', function() {
+    memberDataSearch.style.display = 'block';
+    memberData.style.display = 'none';
+    
   });

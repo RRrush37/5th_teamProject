@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>會員文章查詢</title>
+    <title>遊戲資料查詢</title>
     <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="css/chat/style3.css">
 
@@ -61,32 +61,57 @@
                     </ul>
                 </div>
 
-                <div class="search-bar">
+                <div id="mix-bar">
+                    <span id="general-info">你畫我猜</span>
+                    <span id="event-info">狼人殺</span>
+                </div>
+                <div id="draw" class="search-bar">
 
                     <table>
-                        <h2>會員文章查詢</h2>
-                        <button class="add-btn">新增</button>
+                        <h2>你畫我猜</h2>
+
                         <tr>
-                            <td>文章編號</td>
-                            <td><input type="text"></td>
-                        </tr>
-                        <tr>
-                            <td>文章名稱</td>
-                                <td><input type="text"></td>
-                       </tr>
-                        <tr>
-                            <td>文章狀態</td>
+                            <td>遊戲狀態</td>
                             <td>
-                                <select>
-                                    <option checked>正常</option>
-                               <option>封鎖</option>
-                                </select>
-                               
+                                <input type="radio" checked>開啟
+                                <input type="radio">關閉
                             </td>
                         </tr>
+                        <tr>
+                            <td>勝利機制</td>
+                            <td>+3分</td>
+                        </tr>
+                        <tr>
+                            <td>失敗機制</td>
+                            <td>-1分</td>
+                        </tr>
                     </table>
-                    <button class="search-btn">查看</button>
+                    <button class="search-btn">變更</button>
 
+                </div>
+                <div id="werewolf" class="hide-bar">
+
+                    <table>
+                        <h2>狼人殺</h2>
+
+                        <tr>
+                            <td>遊戲狀態</td>
+                            <td>
+                                <input type="radio" checked>開啟
+                                <input type="radio">關閉
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>勝利機制</td>
+                            <td>+5分</td>
+                        </tr>
+                        <tr>
+                            <td>失敗機制</td>
+                            <td>-2分</td>
+                        </tr>
+                    </table>
+                    <button class="search-btn">變更</button>
+                    
                 </div>
                 <div class="list-bottom">
                     <h3>會員列表</h3>
@@ -171,5 +196,5 @@
             
         </div>
 </body>
-
+<script src="js/chat/game.js"></script>
 </html>
