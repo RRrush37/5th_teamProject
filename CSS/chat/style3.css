@@ -106,6 +106,8 @@ body {
 
 #event-bar tr td:nth-child(2),#generalEdit-bar tr td:nth-child(2){
     border-bottom: 1px solid black;
+    display: inline-block;
+    padding-bottom: 1rem;
 }
 
 #generalEdit-bar{
@@ -121,100 +123,6 @@ body {
 
 tr:nth-child(3) td:nth-child(1) input[type="text"] {
     padding-left: 10px;
-}
-
-.search-btn {
-    display: inline-block;
-    background-color: #CB963D;
-    border: none;
-    color: #fff;
-    font-size: 16px;
-    font-weight: 600;
-    padding: .7rem 2rem;
-    border-radius: 1rem;
-    margin-left: 46%;
-    margin-bottom: 3rem;
-    cursor: pointer;
-}
-
-.add-btn{
-    background-color: #CB963D;
-    border: none;
-    color: #fff;
-    font-size: 16px;
-    font-weight: 600;
-    padding: .7rem 2rem;
-    border-radius: 1rem;
-    position: absolute;
-    right: 10%;
-    top: 10%;
-    cursor: pointer;
-}
-
-/* 聊天室資料查詢*/
-
-earch-bar2
-
-
-/* 會員資料查詢 */
-
-.wrapper .membertext{
-    width: 50%;
-    background-color: #ECE3D7;
-    width: 80%;
-    margin: 0 auto;
-
-}
-
-.membertext-left table,.membertext-right table{
-    display: inline-block;
-    margin-left: 0;
-    
-}
-
-.membertext-left,.membertext-right {
-    width: 45%;
-    
-    display: inline-block;
-   
-}
-
-.membertext-left td,.membertext-right td {
-    padding: 1rem;
-    font-size: 2rem;
-   
-}
-
-.membertext-left tr td:nth-child(2),
-.membertext-right tr td:nth-child(2) {
-    border-bottom: 1px solid #000;
-    padding-bottom: 0;
-}
-
-
-
-.membertext-left input {
-    background-color: #56493f;
-    color: white;
-    padding: .2rem.5rem;
-    border-radius: .5rem;
-    margin: 1rem;
-    margin-top: 7rem;
-
-}
-
-.membertext input{
-    background-color: #704214;
-    padding: 1rem 2rem;
-    border-radius: 1rem;
-    text-align: center;
-    height: 3rem;
-    line-height: 1rem;
-    display: inline-block;
-    position: absolute;
-    margin-bottom: 1rem;
-    left: 40%;
-    bottom: 0;
 }
 
 /* 下方表格 */
@@ -291,6 +199,99 @@ earch-bar2
     border-radius: .7rem;
     background-color: #959595;
 }
+
+/* 按鈕btn */
+
+.search-btn {
+    display: inline-block;
+    background-color: #CB963D;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    padding: .7rem 2rem;
+    border-radius: 1rem;
+    margin-left: 46%;
+    margin-bottom: 3rem;
+    cursor: pointer;
+}
+
+#back-btn,#back-btn2{
+    display: block;
+    position: absolute;
+    right: 20%;
+    top: 15%;
+    cursor: pointer;
+}
+
+.add-btn{
+    background-color: #CB963D;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    padding: .7rem 2rem;
+    border-radius: 1rem;
+    position: absolute;
+    right: 10%;
+    top: 10%;
+    cursor: pointer;
+}
+
+
+
+/* 會員資料查詢 */
+
+
+.wrapper .membertext{
+    width: 500px;
+    background-color: #ECE3D7;
+    width: 80%;
+    margin: 0 auto;
+    position: relative;
+}
+
+
+
+.membertext-left table,.membertext-right table{
+    display: inline-block;
+    margin-left: 3rem;    
+    white-space:nowrap;
+    
+}
+
+
+
+.membertext-left,.membertext-right {
+    width: 45%;
+    display: inline-block;
+   
+}
+
+.membertext-left td,.membertext-right td {
+    padding: 1rem;
+    font-size: 2rem;
+   
+}
+
+.membertext-left tr td:nth-child(2),
+.membertext-right tr td:nth-child(2) {
+    border-bottom: 1px solid #000;
+    padding-bottom: 0;
+}
+
+
+
+
+/* 商品資料查詢 */
+
+#mall-bar tr td:nth-child(2){
+
+    border-bottom: 1px solid #000;
+    display: inline-block;
+    padding-bottom: 1rem;
+}
+
 
 
 

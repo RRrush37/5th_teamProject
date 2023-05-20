@@ -103,6 +103,7 @@
                 <button id="general-search" class="search-btn">查看</button>
             </div>
             <div id="generalEdit-bar" class="hide-bar">
+                <img id="back-btn" src="IMG/chat/Vector.svg" alt="">      
                 <h2>一般商品資料編輯</h2>
                 <table>
                     <tr>
@@ -174,6 +175,8 @@
                 </table>
                 <button class="search-btn">變更</button>
             </div>
+
+            
             <div class="list-bottom">
                 <h3>會員列表</h3>
                 <div class="list-bottom-first">
@@ -257,6 +260,6 @@
 
         </div>
 </body>
-<script src="JS/script.js"></script>
+<script src="JS/chat/malldata.js"></script>
 
 </html>
