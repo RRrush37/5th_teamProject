@@ -11,7 +11,6 @@
 </head>
 
 <body>
-  <?php require("common.php"); ?>
 
   <div class="return">
     <img src="./img/index/return.png" alt="" height="60" />

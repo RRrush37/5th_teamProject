@@ -34,21 +34,21 @@
                     <ul class="ability">
                         <li><span>體力VIT</span><span class="colorBar">
                                 <p class="fillBGC"></p>
-                                <div class="abilityVal"><?= $isLogin ? $data['strength'] : "--" ?></div>
+                                <div class="abilityVal"><?= $isLogin ? $data['strength'] : "-" ?></div>
                             </span></li>
                         <li><span>魅力CHR</span><span class="colorBar">
                                 <p class="fillBGC"></p>
-                                <div class="abilityVal"><?= $isLogin ? $data['charm'] : "--" ?></div>
+                                <div class="abilityVal"><?= $isLogin ? $data['charm'] : "-" ?></div>
 
                             </span></li>
                         <li><span>智力INT</span><span class="colorBar">
                                 <p class="fillBGC"></p>
-                                <div class="abilityVal"><?= $isLogin ? $data['intelligence'] : "--" ?></div>
+                                <div class="abilityVal"><?= $isLogin ? $data['intelligence'] : "-" ?></div>
 
                             </span></li>
                         <li><span>幸運LUK</span><span class="colorBar">
                                 <p class="fillBGC"></p>
-                                <div class="abilityVal"><?= $isLogin ? $data['luck'] : "--" ?></div>
+                                <div class="abilityVal"><?= $isLogin ? $data['luck'] : "-" ?></div>
 
                             </span></li>
                     </ul>
@@ -106,3 +106,5 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="js/index/common.js"></script>
 </body>
+
+</html>
