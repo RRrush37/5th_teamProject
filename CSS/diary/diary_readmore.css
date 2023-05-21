@@ -1,0 +1,336 @@
+.readmore_lightbox{
+    background-color: rgba(0,0,0, 0.6);
+    background-blend-mode: multiply;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top:0;
+    left:0;
+    z-index:100;
+}
+
+/*-------整份頁面--
+margin: 0 auto?
+--------------------*/
+.wrapper02{
+    width: auto;
+    height: 90vh;
+    
+    background-color: #fff;
+    position: absolute;
+    left: 50%;
+    top:50%;
+    transform: translate(-50%,-50%);
+    border-radius: 40px;
+    box-shadow:0px 0px 20px rgba(255,255,255,0.9);
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between;同 */
+    /* margin: 50px; */
+}
+
+
+
+h2{
+    font-size: 1rem;
+    /* margin-left: 3px; */
+}
+
+.img{
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+}
+
+.img img{
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    border-radius: 50%;
+    /* padding: 30px;同 */
+    /* box-sizing: border-box; 同*/
+}
+
+
+.white{
+    margin: 10px 50px;
+    overflow: visible;
+    height: 70%;
+    /*  無法致中 
+    margin: 0 auto; */
+}
+
+/*-------中上方----------*/
+.top{
+    display: flex;
+    align-items: center;
+    overflow: visible;
+    height: auto;
+}
+
+.top > img{}
+
+
+.ID{
+    margin-left: 1rem;
+}
+
+.ID > h2{
+    font-size: 1rem;
+    color: black;
+    margin:0;
+}
+
+
+.ID > P{
+    font-size: 1rem;
+}
+
+
+.fa-times{
+    position: absolute;
+    right: 30px;
+    top: 10px;
+    font-weight: bolder;
+    font-size: 2rem;
+}
+
+/*--------文章標題---------*/
+.title{
+    line-height: 1.6;
+}
+
+.title .article{
+    text-align:start;
+    padding: 2px 28px;
+    color: black;
+    font-size: 2rem;
+}
+
+.hour{
+    font-size: .5rem;
+    padding-left: 30px;
+}
+
+
+
+
+.title .text{
+    font-size: 1.5rem;
+    overflow: auto;
+    height: 50px;
+    margin:10px 30px;
+    /* width: 50%; */
+}
+
+/*-----中間版面-------*/
+.middle{
+    position: relative;
+}
+
+
+
+
+.middle .message{
+    padding: 10px 35px;
+}
+
+.white .middle .fa-bookmark {
+    position: absolute;
+    right: 50px;
+    top: 15px;
+}
+
+
+
+
+
+/*--中下方版面------------*/
+.all{
+    font-size: 1.5rem;
+    padding: 10px 32px;
+}
+
+
+.feedback{
+    line-height: 1.6;
+    position: relative;
+    /* display: flex; */
+}   
+
+
+.feedbacktop{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+}
+
+.feedbacktop h2{
+    color: black;
+    font-size: 1rem;
+}
+
+
+.feedbackout{
+    /* display: flex;
+    flex-direction: column; */
+} 
+.feedbackbottom{
+    overflow:auto;
+    height: 50px;
+    margin: 10px 30px;  
+}
+
+.feedbackbottom p{
+    font-size: .5rem;
+}
+
+
+/*------------*/
+.clickbox{
+    position: absolute;
+    right:10px;
+    top:10px;
+}
+
+.click{
+    position: relative;
+}
+
+.clickedit{
+    display: none;
+    border: 1px solid black;
+    width: 172px;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    padding: 10px;
+    background-color: antiquewhite;
+    z-index: 1;
+}
+.clickedit p{
+    font-size: 1.5rem;
+    line-height: 1.1;
+}
+
+
+
+.threepoint{
+    z-index: 3;
+    position: relative;
+    width: 50%;
+
+}
+
+
+/*----最下方--------*/
+
+.green{
+    /* display: flex; */
+    height : 25%;
+    justify-content: space-between;
+    background-color: #BDD36B;
+    border-radius: 0 0 40px 40px;
+    /* padding-top: 30px; */
+    padding: 10px 50px;
+/* 
+    flex-direction: column; */ 
+    margin-top: auto;
+}
+
+.greenleft{
+    display: flex;
+    width: 100%;
+    justify-content: flex-start;
+    align-items: center;
+    padding-bottom: 10px;
+}
+
+
+.green h2{
+    font-size: 1rem;
+    color: black;
+}
+
+.send{
+    display: flex;
+    width: 100%;
+}
+
+
+.send textarea{
+    width: 90%;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid black;
+    resize: none;
+}
+
+
+
+
+.send input{
+    border:none;
+    /* padding: 10px 20px; */
+    background-color:#665448;
+    color: white;
+    border-radius: 40px;
+    margin: 8px 4px;
+}
+
+
+
+.title .text::-webkit-scrollbar {
+    width: 10px;
+}
+
+.title .text::-webkit-scrollbar-thumb {
+    background: #4b6264;
+    border-radius: 10px;
+}
+
+.title .text::-webkit-scrollbar-track {
+    background: #79A0A5;
+    border-radius: 10px;
+}
+
+
+
+.feedbackbottom::-webkit-scrollbar {
+    width: 10px;
+}
+
+.feedbackbottom::-webkit-scrollbar-thumb {
+    background: #4b6264;
+    border-radius: 10px;
+}
+
+.feedbackbottom::-webkit-scrollbar-track {
+    background: #79A0A5;
+    border-radius: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+
+<body>
+    <div>
+        <label for="upload-input">
+            <!--透過icon去點擊-->
+            <i class="fa-solid fa-image"></i>
+        </label>
+
+        <!--文件輸入--->
+        <input id="upload-input" type="file" style="display: none;">
+
+
+        <!--用來顯示上傳圖片的容器-->
+        <div id="image-container">
+
+    </div>
+
+</body>
+        <script>
+// JavaScript 部分
+
+        //取得文件元素跟圖片元素
+        const uploadInput = document.getElementById('upload-input');
+        const imageContainer = document.getElementById('image-container');
+
+        //當標籤(label)點擊到時,會觸發uploadInput上傳圖片
+        document.querySelector('label').addEventListener('click', () => {
+            // uploadInput.click();
+        });
+
+
+        //當改變上傳圖片時,觸發
+        uploadInput.addEventListener('change', () => {
+        
+        //獲取選擇的文件
+        const file = uploadInput.files[0];
+
+        //檢查文件大小
+        const maxSize = 5 * 1024 * 1024; // 5MB
+            if (file.size > maxSize) {
+            alert('圖片大小超過限制,請選擇比較小的文件');
+            return;
+        }
+
+        //創建對象
+        const reader = new FileReader();
+
+
+        //文件讀取完後觸發
+        reader.onload = () => {
+             // 创建一个图片元素
+            const image = document.createElement('img');
+             // 将读取的数据URL赋值给图片元素的 src 属性
+            image.src = reader.result;
+             // 将图片元素添加到图片容器中
+            imageContainer.appendChild(image);
+        };
+
+        //如果存在選擇的文件
+        if (file) {
+            reader.readAsDataURL(file);
+        }
+        });
+
+        </script>
+</html>
