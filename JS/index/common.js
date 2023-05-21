@@ -8,4 +8,24 @@ $(() => {
       backgroundColor: $(".abilityVal").eq(0).css("background-color"),
     });
   });
+
+  $.ajax({
+    url: "php/getAttribute.php",
+    type: "POST",
+    dataType: "json",
+    // data: { email: $("#email").val(), password: $("#password").val() },
+    success: function (response) {
+      // 在此處處理成功的情況
+      if (response === -1) {
+        alert("帳號或密碼錯誤");
+      } else {
+        location.href = "index_map.html";
+      }
+    },
+    error: function (xhr, status, error) {
+      // 在此處處理錯誤情況
+      alert(error);
+      console.log("Error: " + error);
+    },
+  });
 });
