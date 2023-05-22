@@ -1,3 +1,22 @@
+.activity_title a{
+  position: absolute;
+
+}
+
+.activity_title a:hover {
+  animation: left .5s infinite;
+}
+
+@keyframes left{
+  0%{
+      margin-left: 0px;
+  }
+  100%{
+      margin-left: -5px;
+  }
+}
+
+
 body{
 width: 1280px;
 background-image: url(../../IMG/index/background/room_background.jpg);
@@ -6,6 +25,8 @@ background-size: contain;
 background-attachment: fixed;
 background-size: cover;
 }
+
+
 
 body::before {
   content: "";
@@ -17,27 +38,13 @@ body::before {
   /* background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(0, 0, 0, 0.1));  */
 } 
 
-.return {
-  display: flex; /* 使用flexbox佈局方式 */
-  align-items: center; /* 垂直居中對齊 */
-  position: relative;
-  margin-bottom: 3rem;
-}
-
-.return img {
-  margin-right: 10px; /* 設定圖片和文字之間的距離 */
-position: absolute;
-}
-
-.return h2 {
-  margin: 0 auto; /* 在容器內水平居中 */
+.activity_title h2 {
+  margin: 0 auto; 
   color: white;
   font-size: 3rem;
+  text-align: center;
 }
-.return{
-  padding-left: 100px;
-  filter: drop-shadow(3px 3px 3px rgb(0, 0, 0));
-}
+
 
 
 
@@ -174,9 +181,9 @@ padding: 20px;
 }
 
 .baby img {
-  width: 30%;
-  height: 70%;
-  margin-top: 3rem;
+ height: 100%;
+ 
+  
   
 }
 .button {
@@ -218,8 +225,8 @@ background-color: #634921;
 .boxs {
   width: calc(33.33% - 10px); /* 每個方框寬度為 33.33% - 10px（用於間距） */
   margin: 10px; /* 每個方框的間距為 5px */
-  background-color: #fff;
-  border: 1px solid #ccc;
+  /* background-color: #ffffff6d; */
+  /* border: 1px solid #ccc; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -230,17 +237,36 @@ background-color: #634921;
     scroll-snap-align: center; /* 將圖像置中 */
     transition: all 0.5s ease-in-out; /* 添加滾動動畫 */
     flex-shrink: 0;
-    border: 1px solid black;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  padding: 20px;
-  background-color: #fff;
-  
+   
+    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); */ 
 }
 
-.boxs img {
-  max-width: 100%; 
-  max-height: 100%;
+/* 滑動動畫效果 */
+.slider.active {
+  cursor: grabbing;
 }
+
+/* 放大效果 */
+.boxs.enlarged {
+  transform: scale(1.1); /* 控制放大倍率 */
+  transition: transform 0.3s ease; /* 控制動畫時間和效果 */
+}
+
+
+.boxs img {
+
+  max-width: 100%; /* 设置图像的最大宽度为父元素的宽度 */
+  max-height: 100%; /* 设置图像的最大高度为父元素的高度 */
+  width: auto; /* 根据图像的宽高比自动调整宽度 */
+  height: auto;
+  transform: scale(1.7); /* 控制放大倍率 */
+  transition: transform 0.3s ease; /* 控制動畫時間和效果 */
+  margin-top: 30px;
+  overflow: hidden;
+}
+
+
+
 
 .slider {
   scroll-snap-type: x mandatory; /* 強制滾動一次只滾動一張圖像 */
@@ -253,12 +279,13 @@ background-color: #634921;
   height: 30%;
   display: flex;
   flex-shrink: 0;
-  overflow-x: scroll; /* 設定水平滾動 */
-  white-space: nowrap; /* 防止換行 */
-  border-radius: 20px;
-padding: auto 20px;
-background-color: #00000075;
 
+  white-space: nowrap; /* 防止換行 */
+  /* border-radius: 20px; */
+padding: auto 20px;
+background-color: #ffffffaa;;
+overflow: hidden;
+overflow-x: scroll; /* 設定水平滾動 */
 }
 
 
@@ -275,11 +302,34 @@ background-color: #00000075;
 }
 
 .slider::-webkit-scrollbar-thumb {
-  background: #cd9765;
+  background: #623307;
   border-radius: 5px;
   width: 30px;
 }
 
 .slider::-webkit-scrollbar-thumb:hover {
   background:  #CCD7B5;
+}
+
+
+.boxs:nth-child(n+6):nth-child(-n+20) img {
+  transform: scale(3); /* 將第3到第9個子層div的圖片放大到200% */
+  transition: transform 0.3s ease; /* 添加動畫效果 */
+}
+
+.boxs:nth-child(n+21):nth-child(-n+23) img {
+  transform: scale(3); /* 將第3到第9個子層div的圖片放大到200% */
+  transition: transform 0.3s ease; /* 添加動畫效果 */
+  padding-bottom: 25px;
+}
+
+.boxs:nth-child(n+24):nth-child(-n+27) img {
+  transform: scale(3.5); /* 將第3到第9個子層div的圖片放大到200% */
+  transition: transform 0.3s ease; /* 添加動畫效果 */
+  padding-bottom: 15px;
+}
+.boxs:nth-child(28) img {
+  transform: scale(3); /* 將第3到第9個子層div的圖片放大到200% */
+  transition: transform 0.3s ease; /* 添加動畫效果 */
+  padding-bottom: 20px;
 }
