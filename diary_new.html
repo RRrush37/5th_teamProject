@@ -1,24 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>活動列表</title>
 
-    <link rel="stylesheet" href="./CSS/global.css" />
-    <link rel="stylesheet" href="./CSS/diary/diary_new.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-  </head>
+    <link rel="stylesheet" href="./CSS/global.css">
+    <link rel="stylesheet" href="./CSS/diary/diary_new.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-  <body>
+    </head>
+
+<body>
     <div class="page">
+<<<<<<< HEAD
       <div class="header"></div>
       <!-- 用來載入 common.html 裡頭的 header -->
       <div class="activity">
@@ -141,545 +140,663 @@
                     class="fa-solid fa-circle-exclamation"
                     style="color: #665448"
                   ></i>
+=======
+        <div class="header"></div> <!-- 用來載入 common.html 裡頭的 header -->
+        <div class="activity">
+            <span>
+                <div class="activity_title">
+                    </a>
+                        <svg width="40" height="40" viewBox="0 0 83 83" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g filter="url(#filter0_dd_668_6)">
+                                <path d="M9 37.5L34.2778 5V23.018L74 23.0556V51.9444H34.2778V70L9 37.5Z" fill="#634921"
+                                    stroke="#634921" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" />
+                            </g>
+                            <defs>
+                                <filter id="filter0_dd_668_6" x="0" y="0" width="83" height="83"
+                                    filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                    <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                    <feColorMatrix in="SourceAlpha" type="matrix"
+                                        values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+                                    <feOffset dy="4" />
+                                    <feGaussianBlur stdDeviation="2" />
+                                    <feComposite in2="hardAlpha" operator="out" />
+                                    <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" />
+                                    <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_668_6" />
+                                    <feColorMatrix in="SourceAlpha" type="matrix"
+                                        values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+                                    <feOffset dy="4" />
+                                    <feGaussianBlur stdDeviation="2" />
+                                    <feComposite in2="hardAlpha" operator="out" />
+                                    <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" />
+                                    <feBlend mode="normal" in2="effect1_dropShadow_668_6"
+                                        result="effect2_dropShadow_668_6" />
+                                    <feBlend mode="normal" in="SourceGraphic" in2="effect2_dropShadow_668_6"
+                                        result="shape" />
+                                </filter>
+                            </defs>
+                        </svg>
+                    </a>
+                    
+                    <h1>文章列表</h1>
+>>>>>>> 94267f40482623f524558404f5a074b06b7809e6
                 </div>
+                <!-----主要版面------------------->
+                <div class="activity_main">
+                    <!----左方欄位----------->
+                    <div class="left">
 
-                <div class="activity_article_cards">
-                  <div class="cards_top">
-                    <!------最上方--------->
-                    <div class="middletop">
-                      <div class="big_girl">
-                        <img src="./IMG/diary/big_girl.png" alt="" />
-                      </div>
-                      <div class="idsign">
-                        <h1 class="username">e44444444</h1>
-                        <p id="idname">ID:44444</p>
-                        <p id="sign">夢想這條路跪著也要走完</p>
-                      </div>
-                    </div>
-
-                    <!--搜尋框框-->
-                    <form class="search">
-                      <input
-                        class="search-bar"
-                        type="text"
-                        name="search"
-                        id="search"
-                        placeholder="輸入文字內容"
-                      />
-                      <button class="search-btn">
-                        <i class="fa-solid fa-magnifying-glass"></i>
-                      </button>
-                    </form>
-                  </div>
-
-                  <!-----收藏-------->
-                  <div class="collect">
-                    <div class="card_user">
-                      <div class="card_article">
-                        <img src="./IMG/diary/big_girl.png" alt="" />
-                        <h2>文章標題</h2>
-                      </div>
-                      <span class="more_action">...</span>
-                    </div>
-
-                    <div class="card_text">
-                      <div class="text_title">
-                        <p>
-                          內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文
-                        </p>
-                      </div>
-                    </div>
-                    <!-- <div class="card_pics">
-                                    </div> -->
-
-                    <div class="interact">
-                      <div class="icon">
-                        <a href="#"
-                          ><i class="fa-regular fa-heart"></i><span>66</span></a
-                        >
-                        <a href="#"
-                          ><i class="fa-regular fa-comment-dots"></i
-                          ><span>7</span></a
-                        >
-                        <a href="#"><i class="fa-regular fa-bookmark"></i></a>
-                      </div>
-                      <button class="moreButton">Read more</button>
-                    </div>
-                  </div>
-                  <div class="cards_content">
-                    <div class="card_user">
-                      <div class="card_article">
-                        <img src="./IMG/diary/big_girl.png" alt="" />
-                        <h2>文章標題</h2>
-                      </div>
-                      <span class="more_action">...</span>
-                    </div>
-
-                    <div class="card_text">
-                      <div class="text_title">
-                        <p>
-                          內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文
-                        </p>
-                      </div>
-                    </div>
-                    <!-- <div class="card_pics">
-                                    </div> -->
-
-                    <div class="interact">
-                      <div class="icon">
-                        <a href="#"
-                          ><i class="fa-regular fa-heart"></i><span>66</span></a
-                        >
-                        <a href="#"
-                          ><i class="fa-regular fa-comment-dots"></i
-                          ><span>7</span></a
-                        >
-                        <a href="#"><i class="fa-regular fa-bookmark"></i></a>
-                      </div>
-                      <button
-                        class="moreButton"
-                        style="
-                          background-color: #90a349;
-                          color: white;
-                          border-radius: 30px;
-                        "
-                      >
-                        Read more
-                      </button>
-                    </div>
-                  </div>
-
-                  <!---正文-->
-                  <div class="myPost">
-                    <div class="cards_content">
-                      <div class="card_user">
-                        <div class="card_article">
-                          <img src="./IMG/diary/big_girl.png" alt="" />
-                          <h2>文章標題</h2>
+                        <div class="member_photo">
+                            <img src="./IMG/diary/girl.png" alt="">
                         </div>
-                        <span class="more_action">...</span>
-                      </div>
 
-                      <div class="card_text">
-                        <div class="text_title">
-                          <p>
-                            內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文
-                          </p>
+                        <div class="text_nav">
+                                <div class="on"><a href="./diary_new.html">個人文章</a></div>
+                                <div><a href="./diary_myself.html">會員個人資料</a></div>
+                                <div><a href="./activity.html">我的活動</a></div>
+                                <div><a href="./diary_wardrobe.html">我的衣櫃</a></div>
                         </div>
-                      </div>
-                      <!-- <div class="card_pics">
-                                    </div> -->
 
-                      <div class="interact">
-                        <div class="icon">
-                          <a href="#"
-                            ><i class="fa-regular fa-heart"></i
-                            ><span>66</span></a
-                          >
-                          <a href="#"
-                            ><i class="fa-regular fa-comment-dots"></i
-                            ><span>7</span></a
-                          >
-                          <a href="#"><i class="fa-regular fa-bookmark"></i></a>
-                        </div>
-                        <button class="moreButton">Read more</button>
-                      </div>
                     </div>
 
-                    <div class="cards_content">
-                      <div class="card_user">
-                        <div class="card_article">
-                          <img src="./IMG/diary/big_girl.png" alt="" />
-                          <h2>文章標題</h2>
-                        </div>
-                        <span class="more_action">...</span>
-                      </div>
+                    <div class="middle">
+                        <div class="activity_tab">
+                            <span>
+                                <h2 class="activity_tab_active list_btn on">創作列表</h2>
 
-                      <div class="card_text">
-                        <div class="text_title">
-                          <p>
-                            內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文
-                          </p>
+                                <h2 class="activity_tab_active collect_btn">收藏</h2>
+                            </span>
                         </div>
-                      </div>
-                      <!-- <div class="card_pics">
-                                    </div> -->
 
-                      <div class="interact">
-                        <div class="icon">
-                          <a href="#"
-                            ><i class="fa-regular fa-heart"></i
-                            ><span>66</span></a
-                          >
-                          <a href="#"
-                            ><i class="fa-regular fa-comment-dots"></i
-                            ><span>7</span></a
-                          >
-                          <a href="#"><i class="fa-regular fa-bookmark"></i></a>
+
+                            <!-- <div class="activity_article"></div> -->
+                        <!-----中間頁面----------->
+                        <div class="activity_article">
+
+
+
+                            <!-- 文章 -->
+                            <div class="pen">
+                                <!--編輯頁面-->
+                                <i class="fa-solid fa-pen-to-square" style="color: #665448;"></i> 
+                                <i class="fa-solid fa-circle-exclamation" style="color: #665448;"></i>
+                            </div>
+                            
+                            <div class="activity_article_cards">
+
+                                <div class="cards_top">
+                                    <!------最上方--------->
+                                    <div class="middletop">
+                                        <div class="big_girl">
+                                            <img src="./IMG/diary/big_girl.png" alt="">
+                                        </div>
+                                        <div class="idsign">
+                                            <h1 class="username">e44444444</h1>
+                                            <p id="idname">ID:44444</p>
+                                            <p id="sign">夢想這條路跪著也要走完</p>
+                                        </div>
+                                    </div>
+
+                                    <!--搜尋框框-->
+                                    <form class="search">
+                                        <input class="search-bar" type="text" name="search" id="search" placeholder="輸入文字內容">
+                                        <button class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+                                    </form>
+                                </div>
+
+                                <!-----收藏-------->
+                                <div class="collect none">
+                                    <div class="cards_content">
+                                        <div class="card_user">
+                                            <div class="card_article">
+                                                <img src="./IMG/diary/big_girl.png" alt="">
+                                                <h2>文章標題</h2>
+                                            </div>
+
+
+                                            <div class="delete">
+                                                <span class="more_action">...</span>
+                                                <div class="delete_edit delete_edit_none">
+                                                    <p>刪除</p>
+                                                    <p>編輯</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="card_text">
+                                            <div class="text_title">
+                                                <p>內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文</p>
+                                            </div>
+                                        </div>
+                                        <!-- <div class="card_pics">
+                                        </div> -->
+
+                                        <div class="interact">
+                                            <div class="icon">
+                                                <a href="#"><i class="fa-regular fa-heart"></i><span>66</span></a>
+                                                <a href="#"><i class="fa-regular fa-comment-dots"></i><span>7</span></a>
+                                                <a href="#"><i class="fa-regular fa-bookmark"></i></a>
+                                            </div>
+                                                <button class="moreButton"  >Read more</button>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="cards_content">
+                                        <div class="card_user">
+                                            <div class="card_article">
+                                                <img src="./IMG/diary/big_girl.png" alt="">
+                                                <h2>文章標題</h2>
+                                            </div>
+
+
+                                            <div class="delete">
+                                                <span class="more_action">...</span>
+                                                <div class="delete_edit delete_edit_none">
+                                                    <p>刪除</p>
+                                                    <p>編輯</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="card_text">
+                                            <div class="text_title">
+                                                <p>內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文</p>
+                                            </div>
+                                        </div>
+                                        <!-- <div class="card_pics">
+                                        </div> -->
+
+                                        <div class="interact">
+                                            <div class="icon">
+                                                <a href="#"><i class="fa-regular fa-heart"></i><span>66</span></a>
+                                                <a href="#"><i class="fa-regular fa-comment-dots"></i><span>7</span></a>
+                                                <a href="#"><i class="fa-regular fa-bookmark"></i></a>
+                                            </div>
+                                                <button class="moreButton"  >Read more</button>
+                                        </div>
+
+                                        
+                                    </div>
+
+                                    <div class="cards_content">
+                                        <div class="card_user">
+                                            <div class="card_article">
+                                                <img src="./IMG/diary/big_girl.png" alt="">
+                                                <h2>文章標題</h2>
+                                            </div>
+
+
+                                            <div class="delete">
+                                                <span class="more_action">...</span>
+                                                <div class="delete_edit delete_edit_none">
+                                                    <p>刪除</p>
+                                                    <p>編輯</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="card_text">
+                                            <div class="text_title">
+                                                <p>內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文</p>
+                                            </div>
+                                        </div>
+                                        <!-- <div class="card_pics">
+                                        </div> -->
+
+                                        <div class="interact">
+                                            <div class="icon">
+                                                <a href="#"><i class="fa-regular fa-heart"></i><span>66</span></a>
+                                                <a href="#"><i class="fa-regular fa-comment-dots"></i><span>7</span></a>
+                                                <a href="#"><i class="fa-regular fa-bookmark"></i></a>
+                                            </div>
+                                                <button class="moreButton"  >Read more</button>
+                                        </div>
+
+                                        
+                                    </div>
+                                </div>
+
+
+
+
+
+                                <!---正文-->
+                                <div class="create_list">
+                                    <div class="cards_content">
+                                        <div class="card_user">
+                                            <div class="card_article">
+                                                <img src="./IMG/diary/big_girl.png" alt="">
+                                                <h2>文章標題</h2>
+                                            </div>
+                                            <span class="more_action">...</span>
+    
+    
+                                        </div>
+    
+                                        <div class="card_text">
+                                            <div class="text_title">
+                                                <p>內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文</p>
+                                            </div>
+                                        </div>
+                                        <!-- <div class="card_pics">
+                                        </div> -->
+    
+                                        <div class="interact">
+                                            <div class="icon">
+                                                <a href="#"><i class="fa-regular fa-heart"></i><span>66</span></a>
+                                                <a href="#"><i class="fa-regular fa-comment-dots"></i><span>7</span></a>
+                                                <a href="#"><i class="fa-regular fa-bookmark"></i></a>
+                                            </div>
+                                                <button class="moreButton">Read more</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+
+
+
+                            </div>
                         </div>
-                        <button
-                          class="moreButton"
-                          style="
-                            background-color: #90a349;
-                            color: white;
-                            border-radius: 30px;
-                          "
-                        >
-                          Read more
-                        </button>
-                      </div>
                     </div>
-                  </div>
+
+
+
+                    <!--右側欄位--->
+                    <div class="right">
+                        <div class="calendar">
+                            <div class="title">
+                                <h1 class="main_color" id="calendar-title" style="text-align: center;">Month</h1>
+                                <h2 class="main_color small" id="calendar-year" style="text-align: center;">Year</h2>
+                                <a href="" id="prev"><i class="fa-solid fa-angle-left"></i> Prev Month</a>
+                                <a href="" id="next" style="float: right;">Next Month <i
+                                        class="fa-solid fa-angle-right"></i></a>
+                            </div>
+                            <div class="body">
+                                <div class="dark body-list">
+                                    <ul class="weekdays">
+                                        <li>MON</li>
+                                        <li>TUE</li>
+                                        <li>WED</li>
+                                        <li>THU</li>
+                                        <li>FRI</li>
+                                        <li>SAT</li>
+                                        <li>SUN</li>
+                                    </ul>
+                                </div>
+                                <div class="dark body-list">
+                                    <ul id="days">
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="my_activity">
+                            <h3>我的文章列表</h3>
+                            <p>6月1日<br>
+                                文章標題</p>
+                            <section>
+                                沒人約我沒人約我沒人約我沒人約我沒人約我沒人約我沒人約我沒人約我沒人約我沒人約我沒人約我沒人約我沒人約我沒人約我沒人約我沒人約我沒人約我沒人約我沒人約我
+                            </section>
+                        </div>
+
+                        <div class="my_activity">
+                            <h3>廣告</h3>
+                            <a href=""><img src="./IMG/activity/ad1.jpg" alt=""></a>
+                            <a href=""><img src="./IMG/activity/ad2.jpg" alt=""></a>
+                        </div>
+                    </div>
                 </div>
-              </div>
-            </div>
-
-            <!--右側欄位--->
-            <div class="right">
-              <div class="calendar">
-                <div class="title">
-                  <h1
-                    class="main_color"
-                    id="calendar-title"
-                    style="text-align: center"
-                  >
-                    Month
-                  </h1>
-                  <h2
-                    class="main_color small"
-                    id="calendar-year"
-                    style="text-align: center"
-                  >
-                    Year
-                  </h2>
-                  <a href="" id="prev"
-                    ><i class="fa-solid fa-angle-left"></i> Prev Month</a
-                  >
-                  <a href="" id="next" style="float: right"
-                    >Next Month <i class="fa-solid fa-angle-right"></i
-                  ></a>
-                </div>
-                <div class="body">
-                  <div class="dark body-list">
-                    <ul class="weekdays">
-                      <li>MON</li>
-                      <li>TUE</li>
-                      <li>WED</li>
-                      <li>THU</li>
-                      <li>FRI</li>
-                      <li>SAT</li>
-                      <li>SUN</li>
-                    </ul>
-                  </div>
-                  <div class="dark body-list">
-                    <ul id="days"></ul>
-                  </div>
-                </div>
-              </div>
-              <div class="my_activity">
-                <h3>我的文章列表</h3>
-                <p>
-                  6月1日<br />
-                  文章標題
-                </p>
-                <section>
-                  沒人約我沒人約我沒人約我沒人約我沒人約我沒人約我沒人約我沒人約我沒人約我沒人約我沒人約我沒人約我沒人約我沒人約我沒人約我沒人約我沒人約我沒人約我沒人約我
-                </section>
-              </div>
-
-              <div class="my_activity">
-                <h3>廣告</h3>
-                <a href=""><img src="./IMG/activity/ad1.jpg" alt="" /></a>
-                <a href=""><img src="./IMG/activity/ad2.jpg" alt="" /></a>
-              </div>
-            </div>
-          </div>
-        </span>
-      </div>
-      <div class="footer"></div>
-      <!-- 用來載入 common.html 裡頭的 footer -->
+            </span>
+        </div>
+        <div class="footer"></div> <!-- 用來載入 common.html 裡頭的 footer -->
     </div>
+
+
 
     <!------規則燈箱-------->
     <div class="bag_rule_lightbox none">
-      <div class="bag">
-        <h1>文章編輯</h1>
-        <ul>
-          <li>
-            禁止抄襲：請勿從其他文章、網站或任何其他資源中抄襲內容。
-            如果有需要引用或摘錄他人的內容，請務必加上引用來源。
-          </li>
-          <li>注意文法和拼寫：請確保文章中的文法和拼寫無誤。</li>
-          <li>
-            避免不當言詞和內容：請勿使用粗俗、歧視性、暴力或不雅的言詞和內容，
-            並確保 文章符合社交規範和道德準則。
-          </li>
-          <li>
-            遵守版權和法律：請確保文章不侵犯任何版權或法律問題，
-            並遵守所有相關的法規 和法律。
-          </li>
-        </ul>
+        <div class="bag">
+            <h1>文章編輯</h1>
+            <ul >
+                <li>禁止抄襲：請勿從其他文章、網站或任何其他資源中抄襲內容。
+                    如果有需要引用或摘錄他人的內容，請務必加上引用來源。</li>
+                <li>注意文法和拼寫：請確保文章中的文法和拼寫無誤。</li>
+                <li> 避免不當言詞和內容：請勿使用粗俗、歧視性、暴力或不雅的言詞和內容，
+                    並確保   文章符合社交規範和道德準則。</li>
+                <li>遵守版權和法律：請確保文章不侵犯任何版權或法律問題，
+                    並遵守所有相關的法規 和法律。</li>
+            </ul>
 
-        <div class="read">
-          <input type="checkbox" id="rule" name="rule" />
-          <label for="rule">已經閱讀規則</label>
-        </div>
+            <div class="read">
+                <input type="checkbox" id="rule" name="rule">
+                <label for="rule">已經閱讀規則</label>
+            </div>
 
-        <div class="use">
-          <input type="submit" value="進入編輯" />
-        </div>
-      </div>
+            <div class="use">
+                <input type="submit" value="進入編輯">
+            </div>
+        </div> 
+
     </div>
+
+
 
     <!----------編輯--------------------->
-
+    
     <div class="edit_lightbox none">
-      <div class="wrapper1">
-        <div class="title">
-          <h2>新增文章</h2>
-          <hr color="black" width="90%" />
-        </div>
-
-        <div class="top">
-          <img class="avatar" src="./IMG/diary/photo.png" alt="" />
-          <h4 class="nickname">用戶暱稱</h4>
-        </div>
-
-        <div>
-          <form class="middle">
-            <h3>文章標題填寫</h3>
-            <input
-              id="title"
-              type="text"
-              placeholder="請輸入文章標題"
-              class="title-input"
-            />
-
-            <div class="editarea">
-              <!------border有框,裡面兩個不要有border跟outline-------->
-              <!----點擊icon 可以直接開啟本地端--------------->
-              <!----法1----------->
-              <div class="bottom">
-                <div class="upload">
-                  <label for="upload-input">
-                    <!--透過icon去點擊-->
-                    <i class="fa-solid fa-image"></i>
-                  </label>
-                  <i class="fa-regular fa-face-laugh-squint"></i>
-
-                  <!--文件輸入--->
-                  <input id="upload-input" type="file" style="display: none" />
-
-                  <!--用來顯示上傳圖片的容器-->
-                  <div id="image-container"></div>
-                </div>
-
-                <div class="text">
-                  <h3>文章內容填寫</h3>
-                  <textarea
-                    id="content"
-                    placeholder="請輸入內容"
-                    class="content-input"
-                    required
-                  ></textarea>
-                </div>
-              </div>
+        <div class="wrapper1">
+            <div class="title">
+                <h2>新增文章</h2>
+                <hr color="black" width="90%" />
             </div>
-          </form>
-        </div>
 
-        <div class="button">
-          <input class="cancel" type="submit" value="取消" />
-          <input class="send" type="submit" value="送出" />
+
+            <div class="top">
+                <img class="avatar" src="./IMG/diary/photo.png" alt="" />
+                <h4 class="nickname">用戶暱稱</h4>
+            </div>
+
+
+            <div>
+                <form class="middle">
+                <h3>文章標題填寫</h3>
+                <input
+                    id="title"
+                    type="text"
+                    placeholder="請輸入文章標題"
+                    class="title-input"/>
+
+
+                <div class="editarea">
+                    <!------border有框,裡面兩個不要有border跟outline-------->
+                    <!----點擊icon 可以直接開啟本地端--------------->
+                    <!----法1----------->
+                    <div class="bottom">
+                    
+                    <div class="upload">
+
+                        <label for="upload-input">
+                            <!--透過icon去點擊-->
+                            <i class="fa-solid fa-image"></i>
+                        </label>
+                        <i class="fa-regular fa-face-laugh-squint"></i>
+                
+                        <!--文件輸入--->
+                        <input id="upload-input" type="file" style="display: none;">
+                
+                        <!--用來顯示上傳圖片的容器-->
+                        <div id="image-container">
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="text">
+                        <h3>文章內容填寫</h3>
+                        <textarea
+                        id="content"
+                        placeholder="請輸入內容"
+                        class="content-input"
+                        required></textarea>
+                    </div>
+                    </div>
+                </div>
+                </form>
+            </div>
+
+
+            <div class="button">
+                <input class="cancel" type="submit" value="取消" />
+                <input class="send" type="submit" value="送出" />
+            </div>
         </div>
-      </div>
     </div>
+
 
     <!-----readmore-------------->
-
+    
     <div class="readmore_lightbox none">
-      <div class="wrapper02">
-        <!-- <i class="fa-sharp fa-solid fa-x"></i> -->
-        <i class="fas fa-times"></i>
-        <div class="white">
-          <div class="top">
-            <div class="img">
-              <img src="./IMG/diary/forest.png" alt="" />
-            </div>
-            <div class="ID">
-              <h2>用戶暱稱</h2>
-              <p>用戶ID</p>
-            </div>
-          </div>
-
-          <div class="title">
-            <h2 class="article">文章title</h2>
-            <p class="hour">兩小時前公布</p>
-            <p class="text">
-              內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文
-            </p>
-          </div>
-          <!------中間版面------------->
-          <div class="middle">
-            <div class="message">
-              <i class="fa-sharp fa-regular fa-heart"></i>
-              <span id="love_number">66</span>
-              <i class="fa-regular fa-comment-dots"></i>
-              <span id="message_number">7</span>
-            </div>
-
-            <i class="fa-regular fa-bookmark"></i>
-          </div>
-
-          <div class="middlebottom">
-            <p class="all">共7則留言</p>
-            <div class="feedback">
-              <div class="feedbacktop">
-                <div class="img">
-                  <img src="./IMG/diary/photo.png" alt="" />
+        <div class="wrapper02">
+            <!-- <i class="fa-sharp fa-solid fa-x"></i> -->
+            <i class="fas fa-times"></i>
+            <div class="white">
+                <div class="top">
+                    <div class="img">
+                        <img src="./IMG/diary/forest.png" alt="">
+                    </div>
+                    <div class="ID">
+                        <h2>用戶暱稱</h1>
+                        <p>用戶ID</p>
+                    </div>
                 </div>
-                <h2>用戶暱稱</h2>
-              </div>
-              <div class="feedbackbottom">
-                <p>
-                  留言留言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留留言言留言留言留言留言留言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留留言言留言留言留留言留言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留留言言留言留言留留言留言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留留言言留言留言留
-                </p>
-                <p>B1 1小時前</p>
-              </div>
 
-              <div class="clickbox">
-                <div class="click">
-                  <div class="clickedit">
-                    <p>私訊這個人</p>
-                    <p>刪除留言</p>
-                    <p>！檢舉留言</p>
-                    <p>！將這個人加入黑名單</p>
-                  </div>
-
-                  <img
-                    class="threepoint"
-                    src="./IMG/diary/threepoint.png"
-                    alt=""
-                  />
+                <div class="title">
+                    <h2 class="article">文章title</h2>
+                    <p class="hour">兩小時前公布</p>
+                    <p class="text">內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文</p>
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>
+                <!------中間版面------------->
+                <div class="middle"> 
+                    <div class="message">
+                        <i class="fa-sharp fa-regular fa-heart"></i>
+                        <span id="love_number">66</span>    
+                        <i class="fa-regular fa-comment-dots"></i>
+                        <span id="message_number">7</span>
+                    </div>
 
-        <div class="green">
-          <div class="greenleft">
-            <div class="img">
-              <img src="./IMG/diary/photo.png" alt="" />
-            </div>
-            <h2>用戶暱稱</h2>
-          </div>
+                    <i class="fa-regular fa-bookmark"></i>
+                </div>
 
-          <form>
-            <textarea rows="1" name="content" placeholder="留言..."></textarea>
-            <input type="submit" value="送出" />
-          </form>
+                <div class="middlebottom">
+                    <p class="all">共7則留言</p>
+                    <div class="feedback">
+                        <div class="feedbacktop">
+                            <div class="img">
+                                <img src="./IMG/diary/photo.png" alt="">
+                            </div>
+                                <h2>用戶暱稱</h2>
+                        </div>
+                        <div class="feedbackbottom">
+                            <p>留言留言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留留言言留言留言留言留言留言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留留言言留言留言留留言留言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留留言言留言留言留留言留言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留留言言留言留言留</p>
+                            <p>B1 1小時前</p>
+                        </div>
+
+                        <div class="clickbox">
+                            <div class="click">
+                                <div class="clickedit">
+                                    <p>私訊這個人</p>
+                                    <p>刪除留言</p>
+                                    <p>！檢舉留言</p>
+                                    <p>！將這個人加入黑名單</p>
+                                </div>
+                                
+                                <img class="threepoint" src="./IMG/diary/threepoint.png" alt="">
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="feedback">
+                        <div class="feedbacktop">
+                            <div class="img">
+                                <img src="./IMG/diary/photo.png" alt="">
+                            </div>
+                                <h2>用戶暱稱</h2>
+                        </div>
+                        <div class="feedbackbottom">
+                            <p>留言留言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留留言言留言留言留言留言留言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留留言言留言留言留留言留言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留留言言留言留言留留言留言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留留言言留言留言留</p>
+                            <p>B1 1小時前</p>
+                        </div>
+
+                        <div class="clickbox">
+                            <div class="click">
+                                <div class="clickedit">
+                                    <p>私訊這個人</p>
+                                    <p>刪除留言</p>
+                                    <p>！檢舉留言</p>
+                                    <p>！將這個人加入黑名單</p>
+                                </div>
+                                
+                                <img class="threepoint" src="./IMG/diary/threepoint.png" alt="">
+                            </div>
+                            
+                        </div>
+                    </div><div class="feedback">
+                        <div class="feedbacktop">
+                            <div class="img">
+                                <img src="./IMG/diary/photo.png" alt="">
+                            </div>
+                                <h2>用戶暱稱</h2>
+                        </div>
+                        <div class="feedbackbottom">
+                            <p>留言留言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留留言言留言留言留言留言留言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留留言言留言留言留留言留言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留留言言留言留言留留言留言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留留言言留言留言留</p>
+                            <p>B1 1小時前</p>
+                        </div>
+
+                        <div class="clickbox">
+                            <div class="click">
+                                <div class="clickedit">
+                                    <p>私訊這個人</p>
+                                    <p>刪除留言</p>
+                                    <p>！檢舉留言</p>
+                                    <p>！將這個人加入黑名單</p>
+                                </div>
+                                
+                                <img class="threepoint" src="./IMG/diary/threepoint.png" alt="">
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="green">
+                <div class="greenleft">
+                    <div class="img">
+                        <img src="./IMG/diary/photo.png" alt="">
+                    </div>
+                    <h2>用戶暱稱</h2>
+                </div>
+
+                <form class="send">
+                    <textarea  rows="1" name="content" placeholder="留言..."></textarea>
+                    <input type="submit" value="送出">
+                </form>
+
+            </div>
         </div>
-      </div>
     </div>
 
+
+    <!-- <script src="JS/new.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="JS/index/diary_new.js"></script>
+    <script src="./JS/diary/diary_new.js"></script>
+    <script src="./JS/diary/diary_rule.js"></script>
+    <script src="./JS/diary/diary_edit.js"></script>
 
     <script>
-      $(function () {
+        let list_btn = document.getElementsByClassName("list_btn")[0];
+        let collect_btn = document.getElementsByClassName("collect_btn")[0];
+        let create_list = document.getElementsByClassName("create_list")[0];
+        let collect = document.getElementsByClassName("collect")[0];
+
+        list_btn.addEventListener("click",function(){
+            list_btn.classList.add("on");
+            collect_btn.classList.remove("on");
+            create_list.classList.remove("none");
+            collect.classList.add("none");
+        })
+
+        collect_btn.addEventListener("click",function(){
+            list_btn.classList.remove("on");
+            collect_btn.classList.add("on");
+            create_list.classList.add("none");
+            collect.classList.remove("none");
+        })
+
+    </script>
+    <script>
+        $(function () {
+            $(".header").load("common.html .header>div");
+            $(".footer").load("common.html .footer>div");
+        });
+
+        var month_olympic = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+        var month_normal = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+        var month_name = ["January", "Febrary", "March", "April", "May", "June", "July", "Auguest", "September", "October", "November", "December"];
+        var holder = document.getElementById("days");
+        var prev = document.getElementById("prev");
+        var next = document.getElementById("next");
+        var ctitle = document.getElementById("calendar-title");
+        var cyear = document.getElementById("calendar-year");
+        var my_date = new Date();
+        var my_year = my_date.getFullYear();
+        var my_month = my_date.getMonth();
+        var my_day = my_date.getDate();
+        function dayStart(month, year) {
+            var tmpDate = new Date(year, month, 1);
+            return (tmpDate.getDay());
+        }
+        function daysMonth(month, year) {
+            var tmp = year % 4;
+            if (tmp == 0) {
+                return (month_olympic[month]);
+            } else {
+                return (month_normal[month]);
+            }
+        }
+        function refreshDate() {
+            var str = "";
+            var totalDay = daysMonth(my_month, my_year); //取得該月總天數
+            var firstDay = dayStart(my_month, my_year); //取得該月第一天是星期幾
+            var myclass;
+            for (var i = 1; i < firstDay; i++) {
+                str += "<li></li>"; //為起始日之前的日期創造空白節點
+            }
+            for (var i = 1; i <= totalDay; i++) {
+                if ((i < my_day && my_year == my_date.getFullYear() && my_month == my_date.getMonth()) || my_year < my_date.getFullYear() || (my_year == my_date.getFullYear() && my_month < my_date.getMonth())) {
+                    myclass = " class='light'"; //日期在今天之前時，以淺色字表示
+                } else if (i == my_day && my_year == my_date.getFullYear() && my_month == my_date.getMonth()) {
+                    myclass = " class='main_color todaybox'"; //當天顯示
+                } else {
+                    myclass = " class='dark'"; //今天之後，深色字體
+                }
+                str += "<li" + myclass + ">" + i + "</li>"; //日期節點
+            }
+            holder.innerHTML = str; //設置日期顯示
+            ctitle.innerHTML = month_name[my_month]; //設置英文月份顯示
+            cyear.innerHTML = my_year; //設置年分顯示
+        }
+        refreshDate(); //執行
+        prev.onclick = function (e) {
+            e.preventDefault();
+            my_month--;
+            if (my_month < 0) {
+                my_year--;
+                my_month = 11;
+            }
+            refreshDate();
+        }
+        next.onclick = function (e) {
+            e.preventDefault();
+            my_month++;
+            if (my_month > 11) {
+                my_year++;
+                my_month = 0;
+            }
+            refreshDate();
+        }
+    </script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+    $(function () {
         $(".header").load("common.html .header>div");
         $(".footer").load("common.html .footer>div");
-      });
+    });
+</script>
 
-      var month_olympic = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
-      var month_normal = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
-      var month_name = [
-        "January",
-        "Febrary",
-        "March",
-        "April",
-        "May",
-        "June",
-        "July",
-        "Auguest",
-        "September",
-        "October",
-        "November",
-        "December",
-      ];
-      var holder = document.getElementById("days");
-      var prev = document.getElementById("prev");
-      var next = document.getElementById("next");
-      var ctitle = document.getElementById("calendar-title");
-      var cyear = document.getElementById("calendar-year");
-      var my_date = new Date();
-      var my_year = my_date.getFullYear();
-      var my_month = my_date.getMonth();
-      var my_day = my_date.getDate();
-      function dayStart(month, year) {
-        var tmpDate = new Date(year, month, 1);
-        return tmpDate.getDay();
-      }
-      function daysMonth(month, year) {
-        var tmp = year % 4;
-        if (tmp == 0) {
-          return month_olympic[month];
-        } else {
-          return month_normal[month];
-        }
-      }
-      function refreshDate() {
-        var str = "";
-        var totalDay = daysMonth(my_month, my_year); //取得該月總天數
-        var firstDay = dayStart(my_month, my_year); //取得該月第一天是星期幾
-        var myclass;
-        for (var i = 1; i < firstDay; i++) {
-          str += "<li></li>"; //為起始日之前的日期創造空白節點
-        }
-        for (var i = 1; i <= totalDay; i++) {
-          if (
-            (i < my_day &&
-              my_year == my_date.getFullYear() &&
-              my_month == my_date.getMonth()) ||
-            my_year < my_date.getFullYear() ||
-            (my_year == my_date.getFullYear() && my_month < my_date.getMonth())
-          ) {
-            myclass = " class='light'"; //日期在今天之前時，以淺色字表示
-          } else if (
-            i == my_day &&
-            my_year == my_date.getFullYear() &&
-            my_month == my_date.getMonth()
-          ) {
-            myclass = " class='main_color todaybox'"; //當天顯示
-          } else {
-            myclass = " class='dark'"; //今天之後，深色字體
-          }
-          str += "<li" + myclass + ">" + i + "</li>"; //日期節點
-        }
-        holder.innerHTML = str; //設置日期顯示
-        ctitle.innerHTML = month_name[my_month]; //設置英文月份顯示
-        cyear.innerHTML = my_year; //設置年分顯示
-      }
-      refreshDate(); //執行
-      prev.onclick = function (e) {
-        e.preventDefault();
-        my_month--;
-        if (my_month < 0) {
-          my_year--;
-          my_month = 11;
-        }
-        refreshDate();
-      };
-      next.onclick = function (e) {
-        e.preventDefault();
-        my_month++;
-        if (my_month > 11) {
-          my_year++;
-          my_month = 0;
-        }
-        refreshDate();
-      };
-    </script>
-  </body>
+
+</body>
+
 </html>
