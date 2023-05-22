@@ -203,6 +203,7 @@ padding: 20px;
   align-items: center;
   border: 1px solid #000;
   box-shadow: 2px 2px 40px 0 rgba(0, 0, 0, 0.2);
+  color: #000;
 }
 
 .button span {
@@ -213,6 +214,7 @@ padding: 20px;
   font-weight: bold;
   
 }
+
 
 .button:hover{
 color: #ffffff;
