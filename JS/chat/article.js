@@ -70,3 +70,13 @@ backBtn3.addEventListener('click', function() {
     memberArticleSearch.style.display = 'block';
     memberArticleEdit.style.display = 'none'; 
   });
+
+  generalInfo.addEventListener('click', function(){
+    eventInfo.classList.remove("on");
+    generalInfo.classList.add("on");
+  });
+
+  eventInfo.addEventListener('click', function(){
+    eventInfo.classList.add("on");
+    generalInfo.classList.remove("on");
+  })
