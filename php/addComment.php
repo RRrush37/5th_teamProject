@@ -12,12 +12,14 @@ if (isset($_POST["articleID"]) && isset($_SESSION["ID"])) {
   }
   $statement->bindValue(3, htmlspecialchars($_POST["commentText"]));
   $result = $statement->execute();
-  $result = 1;
-  if ($result) {
-    echo 1;
-  } else {
-    echo -1;
-  }
+
+  $sql = 'select count(*) from articleComment where articleID = ?';
+  $statement = $pdo->prepare($sql);
+  $statement->bindValue(1, htmlspecialchars($_POST["articleID"]));
+  $statement->execute();
+  $commentNum = $statement->fetchAll();
+
+  echo $commentNum[0][0];
 } else {
   echo -1;
 }
