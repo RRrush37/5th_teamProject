@@ -78,7 +78,7 @@ body{
 
 /* 左邊選單 */
 .nav_left{
-    background-image: url(../../IMG/store/photo_frame.png);
+    background-image: url(/IMG/store/photo_frame.png);
     width: 195px;
     height: 424px;
     opacity: 0.8;

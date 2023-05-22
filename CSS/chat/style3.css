@@ -1,5 +1,6 @@
 body {
     margin: 0;
+    
 }
 
 #wrapper {
@@ -7,54 +8,25 @@ body {
 
 }
 
-.navbar-nav {
-    display: flex;
-    flex-direction: column;
-    margin: 5rem 0 0 3rem;
-    background-color: #DCD1C8;
-    font-size: 2rem;
-    height: 34rem;
 
-}
-
-.nav-item:not(:last-child) {
-    border-bottom: 1px solid black;
-}
-
-.nav-link {
-    display: block;
-    padding: .7em 3rem;
-
-    text-decoration: none;
-    text-align: center;
-}
-
-.nav-link span {
-    font-size: 20px;
-    color: black;
-    font-weight: 700;
-}
-
-.nav-link:focus,
-.nav-link:hover {
-    text-decoration: none
-}
 
 .m-text-search {
+    padding-top: 60px;
     margin: 0 auto;
-    margin-left: 5rem;
+    width: 100%;
+    background-color: #ECE3D7;;
 }
 
 .m-text-search ul{
     margin-bottom: 0;
 }
 
-.m-text-search-banner {
-
-    background-color: #C0B7AA;
-    width: 800px;
-
+#memberdata-search{
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
 }
+
 
 /* bar */
 #mix-bar{
@@ -130,8 +102,28 @@ tr:nth-child(3) td:nth-child(1) input[type="text"] {
 
 /* 下方表格 */
 
-.list-bottom-first {
+.list_title_box{
+    /* width: 100vw; */
+    background-color: #2C4340;
+}
+
+.list_title_box h3{
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.list_box{
+    /* width: 100vw; */
     background-color: #CFC7C4;
+}
+
+
+
+.list-bottom-first {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
     
 
 }
@@ -151,7 +143,7 @@ tr:nth-child(3) td:nth-child(1) input[type="text"] {
 
 
 .list-bottom h3 {
-    background-color: #2C4340;
+
     margin-top: 0;
     color: white;
     padding: 1rem 3rem;
@@ -161,8 +153,9 @@ tr:nth-child(3) td:nth-child(1) input[type="text"] {
 
 
 .list-bottom ul {
+    max-width: 1200px;
     width: 100%;
-    margin-top: 0;
+    margin: 0 auto;
     list-style: none;
     padding-left: 0;
     border-left: 3rem solid #CFC7C4;
