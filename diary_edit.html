@@ -1,84 +1,96 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>編輯頁面</title>
-    <link rel="stylesheet" href="./CSS/global.css" />
-    <link rel="stylesheet" href="./CSS/diary/diart_edit.css" />
-    <!----fontawesome---------->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="JS/index/diary_edit.js"></script>
-  </head>
-  <body>
-    <div class="edit_lightbox">
-      <div class="wrapper1">
-        <div class="title">
-          <h2>新增文章</h2>
-          <hr color="black" width="90%" />
-        </div>
-
-        <div class="top">
-          <img class="avatar" src="./IMG/diary/photo.png" alt="" />
-          <h4 class="nickname">用戶暱稱</h4>
-        </div>
-
-        <div>
-          <form class="middle">
-            <h3>文章標題填寫</h3>
-            <input
-              id="title"
-              type="text"
-              placeholder="請輸入文章標題"
-              class="title-input"
-            />
-
-            <div class="editarea">
-              <!------border有框,裡面兩個不要有border跟outline-------->
-              <!----點擊icon 可以直接開啟本地端--------------->
-              <!----法1----------->
-              <div class="bottom">
-                <div class="upload">
-                  <label for="upload-input">
-                    <!--透過icon去點擊-->
-                    <i class="fa-solid fa-image"></i>
-                  </label>
-                  <i class="fa-regular fa-face-laugh-squint"></i>
-
-                  <!--文件輸入--->
-                  <input id="upload-input" type="file" style="display: none" />
-
-                  <!--用來顯示上傳圖片的容器-->
-                  <div id="image-container"></div>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>編輯頁面</title>
+        <link rel="stylesheet" href="./CSS/global.css" />
+        <link rel="stylesheet" href="./CSS/diary/diart_edit.css" />
+        <!----fontawesome---------->
+        <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+        />
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="JS/new.js"></script>
+    </head>
+    <body>
+        <div class="edit_lightbox none ">
+            <div class="wrapper1">
+                <div class="title">
+                    <h2>新增文章</h2>
+                    <hr color="black" width="90%" />
                 </div>
 
-                <div class="text">
-                  <h3>文章內容填寫</h3>
-                  <textarea
-                    id="content"
-                    placeholder="請輸入內容"
-                    class="content-input"
-                    required
-                  ></textarea>
+
+                <div class="top">
+                    <img class="avatar" src="./IMG/diary/photo.png" alt="" />
+                    <h4 class="nickname">用戶暱稱</h4>
                 </div>
-              </div>
+
+
+                <div>
+                    <form class="middle">
+                    <h3>文章標題填寫</h3>
+                    <input
+                        id="title"
+                        type="text"
+                        placeholder="請輸入文章標題"
+                        class="title-input"/>
+
+
+                    <div class="editarea">
+                        <!------border有框,裡面兩個不要有border跟outline-------->
+                        <!----點擊icon 可以直接開啟本地端--------------->
+                        <!----法1----------->
+                        <div class="bottom">
+                        
+                        <div class="upload">
+
+                            <label for="upload-input">
+                                <!--透過icon去點擊-->
+                                <i class="fa-solid fa-image"></i>
+                            </label>
+                            <i class="fa-regular fa-face-laugh-squint"></i>
+                    
+                            <!--文件輸入--->
+                            <input id="upload-input" type="file" style="display: none;">
+                    
+                            <!--用來顯示上傳圖片的容器-->
+                            <div id="image-container">
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="text">
+                            <h3>文章內容填寫</h3>
+                            <textarea
+                            id="content"
+                            placeholder="請輸入內容"
+                            class="content-input"
+                            required></textarea>
+                        </div>
+                        </div>
+                    </div>
+                    </form>
+                </div>
+
+
+                <div class="button">
+                    <input class="cancel" type="submit" value="取消" />
+                    <input class="send" type="submit" value="送出" />
+                </div>
             </div>
-          </form>
         </div>
+    </body>
+    </html>
 
-        <div class="button">
-          <input class="cancel" type="submit" value="取消" />
-          <input class="send" type="submit" value="送出" />
-        </div>
-      </div>
-    </div>
-  </body>
-</html>
+
+
+
