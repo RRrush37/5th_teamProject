@@ -69,18 +69,25 @@
                             </select>
                         </label>
                         <br>
-                        <p>主題：</p>
-                        <br>
-                        <label for="outdoor"><input type="checkbox" id="outdoor" name="">戶外</label>
-                        <label for="leisure"><input type="checkbox" id="leisure" name="">休閒</label>
-                        <label for="indoor"><input type="checkbox" id="indoor" name="">室內</label>
-                        <label for="puzzle"><input type="checkbox" id="puzzle" name="">益智</label>
-                        <label for="handcraft"><input type="checkbox" id="handcraft" name="">手作</label>
-                        <label for="chill"><input type="checkbox" id="chill" name="">夜生活</label>
-                        <br>
-                        <label for="count">
+                        <div class="topic_wrap">
+                            <p>主題：</p>
+                            <br>
+                            <input type="checkbox" id="outdoor" name="" class="byebye"><label for="outdoor"
+                                class="color-button">戶外</label>
+                            <input type="checkbox" id="leisure" name="" class="byebye"><label for="leisure"
+                                class="color-button">休閒</label>
+                            <input type="checkbox" id="indoor" name="" class="byebye"><label for="indoor"
+                                class="color-button">室內</label>
+                            <input type="checkbox" id="puzzle" name="" class="byebye"><label for="puzzle"
+                                class="color-button">益智</label>
+                            <input type="checkbox" id="handcraft" name="" class="byebye"><label for="handcraft"
+                                class="color-button">手作</label>
+                            <input type="checkbox" id="chill" name="" class="byebye"><label for="chill"
+                                class="color-button">夜生活</label>
+                        </div>
+                        <label for="during">
                             <p>時長：</p>
-                            <select name="count" id="count">
+                            <select name="during" id="during">
                                 <option value="1">一天內</option>
                                 <option value="2">二天</option>
                                 <option value="3">三天</option>
@@ -91,11 +98,14 @@
                         <br>
                         <p>出發日期：</p>
                         <br>
-                        <label for="aweek"><input type="radio" id="aweek" name="depart">一周內</label>
+                        <label for="aweek"><input type="radio" id="aweek" name="depart"><span
+                                class="radio-button"></span>一周內</label>
                         <br>
-                        <label for="amonth"><input type="radio" id="amonth" name="depart">一周～一個月</label>
+                        <label for="amonth"><input type="radio" id="amonth" name="depart"><span
+                                class="radio-button"></span>一周～一個月</label>
                         <br>
-                        <label for="months"><input type="radio" id="months" name="depart">一個月以上</label>
+                        <label for="months"><input type="radio" id="months" name="depart" class="saddd"><span
+                                class="radio-button"></span>一個月以上</label>
                         <br>
                         <label for="place">
                             <p>地點：</p>
@@ -109,17 +119,26 @@
                             <br>
                             <p>特殊條件：</p>
                             <br>
-                            <label for="chr_restrict"><input type="checkbox" id="chr_restrict" name="">魅力值不得低於70</label>
+                            <label for="chr_restrict"><input type="checkbox" id="chr_restrict" name=""><span
+                                    class="check-button"></span>魅力值不得低於70</label>
                             <br>
-                            <label for="boyonly"><input type="checkbox" id="boyonly" name="">限男</label>
+                            <label for="boyonly"><input type="checkbox" id="boyonly" name=""><span
+                                    class="check-button"></span>限男</label>
                             <br>
-                            <label for="girlonly"><input type="checkbox" id="girlonly" name="">限女</label>
+                            <label for="girlonly"><input type="checkbox" id="girlonly" name=""><span
+                                    class="check-button"></span>限女</label>
                             <br>
-                            <label for="licence"><input type="checkbox" id="licence" name="">須有機車駕照</label>
+                            <label for="licence"><input type="checkbox" id="licence" name=""><span
+                                    class="check-button"></span>須有機車駕照</label>
                             <br>
-                            <label for="adult"><input type="checkbox" id="adult" name="">須年滿18</label>
+                            <label for="adult"><input type="checkbox" id="adult" name=""><span
+                                    class="check-button"></span>須年滿18</label>
                             <br>
-                            <button type="submit">確認</button>
+                            <div class="btn_wrap">
+                                <button type="submit" class="selector_submit">確認</button>
+                                <button type="submit" class="selector_reset">重新整理</button>
+                            </div>
+
                     </div>
                     <div class="middle">
                         <div class="activity_tab">
@@ -136,23 +155,33 @@
                             </span>
                             <a href="#">
                                 <input type="checkbox" id="displayAScalendar">
-                                <label for="displayAScalendar">日曆顯示</label> 
+                                <label for="displayAScalendar" class="displayAScalendar color-button"><i
+                                        class="fa-regular fa-calendar-check"></i><i
+                                        class="fa-regular fa-calendar-xmark"></i>日曆顯示</label>
                             </a>
                         </div>
                         <div class="activity_article">
                             <div class="activity_article_cards">
                                 <div class="cards_top">
-                                    <span class="topic">好邊緣</span>
-                                    <section class="post_time">2小時前發布</section>
-                                    <span class="more_action">...</span>>
+                                    <div class="cards_top_left">
+                                        <span class="topic">好邊緣</span>
+                                        <section class="post_time">2小時前發布</section>
+                                    </div>
+                                    <span class="more_action">‧‧‧</span>
                                 </div>
                                 <div class="cards_content">
-                                    <div class="card_user"></div>
-                                    <div class="card_text">
-                                        <div class="text_title"></div>
-                                        <div class="text_content"></div>
+                                    <div class="card_user"><img class="user" src="./IMG/activity/lonely.png" alt=""
+                                            width="60">
                                     </div>
-                                    <div class="card_pics"></div>
+                                    <div class="card_text">
+                                        <div class="text_title">
+                                            <h2>沒人約我</h2>
+                                        </div>
+                                        <div class="text_content">
+                                            我想吃品田牧場我想吃品田牧場我想吃品田牧場我想吃品田牧場我想吃品田牧場我想吃品田牧場我想吃品田牧場我想吃品田牧場我想吃品田牧場我想吃品田牧場我想吃品田牧場我想吃品田牧場我想吃品田牧場我想吃品田牧場我想吃品田牧場我想吃品田牧場我想吃品田牧場我想吃品田牧場我想吃品田牧場我想吃品田牧場
+                                        </div>
+                                    </div>
+                                    <div class="card_pics"><img src="./IMG/activity/ping.png" alt="" width="100"></div>
                                 </div>
                                 <div class="cards_actions">
                                     <div class="interact">
@@ -162,10 +191,188 @@
                                     </div>
                                     <div class="join">
                                         <h3>參加人數：2/5</h3>
-                                        <input type="checkbox" id>
+                                        <input type="checkbox" id="iwantjoin">
+                                        <label for="iwantjoin" class="iwantjoin color-button canceljoin">我要參加</label>
                                     </div>
                                 </div>
                             </div>
+                            <div class="activity_article_cards">
+                                <div class="cards_top">
+                                    <div class="cards_top_left">
+                                        <span class="topic">夢想</span>
+                                        <section class="post_time">2小時前發布</section>
+                                    </div>
+                                    <span class="more_action">‧‧‧</span>
+                                </div>
+                                <div class="cards_content">
+                                    <div class="card_user"><img class="user" src="./IMG/activity/luffy.png" alt=""
+                                            width="60">
+                                    </div>
+                                    <div class="card_text">
+                                        <div class="text_title">
+                                            <h2>想成為海王</h2>
+                                        </div>
+                                        <div class="text_content">
+                                            其實我是想成為海王不是海賊王其實我是想成為海王不是海賊王其實我是想成為海王不是海賊王其實我是想成為海王不是海賊王其實我是想成為海王不是海賊王其實我是想成為海王不是海賊王
+                                        </div>
+                                    </div>
+                                    <div class="card_pics"><img src="./IMG/activity/devilfruit.png" alt="" width="100">
+                                    </div>
+                                </div>
+                                <div class="cards_actions">
+                                    <div class="interact">
+                                        <a href="#"><i class="fa-regular fa-heart"></i><span>66</span></a>
+                                        <a href="#"><i class="fa-regular fa-comment-dots"></i><span>7</span></a>
+                                        <a href="#"><i class="fa-regular fa-bookmark"></i></a>
+                                    </div>
+                                    <div class="join">
+                                        <h3>參加人數：2/5</h3>
+                                        <label for="iwantjoin" class="iwantjoin color-button"><input type="checkbox"
+                                                id="iwantjoin">我要參加</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="activity_article_cards">
+                                <div class="cards_top">
+                                    <div class="cards_top_left">
+                                        <span class="topic">踩人</span>
+                                        <section class="post_time">2小時前發布</section>
+                                    </div>
+                                    <span class="more_action">‧‧‧</span>
+                                </div>
+                                <div class="cards_content">
+                                    <div class="card_user"><img class="user" src="./IMG/activity/Eren.png" alt=""
+                                            width="60">
+                                    </div>
+                                    <div class="card_text">
+                                        <div class="text_title">
+                                            <h2>想坐都可以坐</h2>
+                                        </div>
+                                        <div class="text_content">
+                                            敬告所有尤米爾的子民，我的名字是艾連葉卡。正透過始祖巨人的力量與所有尤米爾的子民萊納你坐阿萊納你坐阿萊納你坐阿萊納你坐阿萊納你坐阿萊納你坐阿萊納你坐阿萊納你坐阿萊納你坐阿萊納你坐阿萊納你坐阿萊納你坐阿萊納你坐阿萊納你坐阿
+                                        </div>
+                                    </div>
+                                    <div class="card_pics"><img src="" alt="" width="100"></div>
+                                </div>
+                                <div class="cards_actions">
+                                    <div class="interact">
+                                        <a href="#"><i class="fa-regular fa-heart"></i><span>66</span></a>
+                                        <a href="#"><i class="fa-regular fa-comment-dots"></i><span>7</span></a>
+                                        <a href="#"><i class="fa-regular fa-bookmark"></i></a>
+                                    </div>
+                                    <div class="join">
+                                        <h3>參加人數：2/5</h3>
+                                        <label for="iwantjoin" class="iwantjoin color-button"><input type="checkbox"
+                                                id="iwantjoin">我要參加</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="activity_article_cards">
+                                <div class="cards_top">
+                                    <div class="cards_top_left">
+                                        <span class="topic">踩人</span>
+                                        <section class="post_time">2小時前發布</section>
+                                    </div>
+                                    <span class="more_action">‧‧‧</span>
+                                </div>
+                                <div class="cards_content">
+                                    <div class="card_user"><img class="user" src="./IMG/activity/Eren.png" alt=""
+                                            width="60">
+                                    </div>
+                                    <div class="card_text">
+                                        <div class="text_title">
+                                            <h2>想坐都可以坐</h2>
+                                        </div>
+                                        <div class="text_content">
+                                            敬告所有尤米爾的子民，我的名字是艾連葉卡。正透過始祖巨人的力量與所有尤米爾的子民萊納你坐阿萊納你坐阿萊納你坐阿萊納你坐阿萊納你坐阿萊納你坐阿萊納你坐阿萊納你坐阿萊納你坐阿萊納你坐阿萊納你坐阿萊納你坐阿萊納你坐阿萊納你坐阿
+                                        </div>
+                                    </div>
+                                    <div class="card_pics"><img src="" alt="" width="100"></div>
+                                </div>
+                                <div class="cards_actions">
+                                    <div class="interact">
+                                        <a href="#"><i class="fa-regular fa-heart"></i><span>66</span></a>
+                                        <a href="#"><i class="fa-regular fa-comment-dots"></i><span>7</span></a>
+                                        <a href="#"><i class="fa-regular fa-bookmark"></i></a>
+                                    </div>
+                                    <div class="join">
+                                        <h3>參加人數：2/5</h3>
+                                        <label for="iwantjoin" class="iwantjoin color-button"><input type="checkbox"
+                                                id="iwantjoin">我要參加</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="activity_article_cards">
+                                <div class="cards_top">
+                                    <div class="cards_top_left">
+                                        <span class="topic">踩人</span>
+                                        <section class="post_time">2小時前發布</section>
+                                    </div>
+                                    <span class="more_action">‧‧‧</span>
+                                </div>
+                                <div class="cards_content">
+                                    <div class="card_user"><img class="user" src="./IMG/activity/Eren.png" alt=""
+                                            width="60">
+                                    </div>
+                                    <div class="card_text">
+                                        <div class="text_title">
+                                            <h2>想坐都可以坐</h2>
+                                        </div>
+                                        <div class="text_content">
+                                            敬告所有尤米爾的子民，我的名字是艾連葉卡。正透過始祖巨人的力量與所有尤米爾的子民萊納你坐阿萊納你坐阿萊納你坐阿萊納你坐阿萊納你坐阿萊納你坐阿萊納你坐阿萊納你坐阿萊納你坐阿萊納你坐阿萊納你坐阿萊納你坐阿萊納你坐阿萊納你坐阿
+                                        </div>
+                                    </div>
+                                    <div class="card_pics"><img src="" alt="" width="100"></div>
+                                </div>
+                                <div class="cards_actions">
+                                    <div class="interact">
+                                        <a href="#"><i class="fa-regular fa-heart"></i><span>66</span></a>
+                                        <a href="#"><i class="fa-regular fa-comment-dots"></i><span>7</span></a>
+                                        <a href="#"><i class="fa-regular fa-bookmark"></i></a>
+                                    </div>
+                                    <div class="join">
+                                        <h3>參加人數：2/5</h3>
+                                        <label for="iwantjoin" class="iwantjoin color-button"><input type="checkbox"
+                                                id="iwantjoin">我要參加</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="activity_article_cards">
+                                <div class="cards_top">
+                                    <div class="cards_top_left">
+                                        <span class="topic">踩人</span>
+                                        <section class="post_time">2小時前發布</section>
+                                    </div>
+                                    <span class="more_action">‧‧‧</span>
+                                </div>
+                                <div class="cards_content">
+                                    <div class="card_user"><img class="user" src="./IMG/activity/Eren.png" alt=""
+                                            width="60">
+                                    </div>
+                                    <div class="card_text">
+                                        <div class="text_title">
+                                            <h2>想坐都可以坐</h2>
+                                        </div>
+                                        <div class="text_content">
+                                            敬告所有尤米爾的子民，我的名字是艾連葉卡。正透過始祖巨人的力量與所有尤米爾的子民萊納你坐阿萊納你坐阿萊納你坐阿萊納你坐阿萊納你坐阿萊納你坐阿萊納你坐阿萊納你坐阿萊納你坐阿萊納你坐阿萊納你坐阿萊納你坐阿萊納你坐阿萊納你坐阿
+                                        </div>
+                                    </div>
+                                    <div class="card_pics"><img src="" alt="" width="100"></div>
+                                </div>
+                                <div class="cards_actions">
+                                    <div class="interact">
+                                        <a href="#"><i class="fa-regular fa-heart"></i><span>66</span></a>
+                                        <a href="#"><i class="fa-regular fa-comment-dots"></i><span>7</span></a>
+                                        <a href="#"><i class="fa-regular fa-bookmark"></i></a>
+                                    </div>
+                                    <div class="join">
+                                        <h3>參加人數：2/5</h3>
+                                        <label for="iwantjoin" class="iwantjoin color-button"><input type="checkbox"
+                                                id="iwantjoin">我要參加</label>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                     <div class="right">
@@ -213,16 +420,116 @@
                 </div>
             </span>
         </div>
+        <div class="lightbox_background -none">
+            <div class="activity_readmore">
+                <div class="activity_readmore_wrap">
+                    <i class="fa-solid fa-xmark"></i>
+                    <div class="activity_inf">
+                        <div class="article_top_left">
+                            <img class="user" src="./IMG/activity/lonely.png" alt="" width="60">
+                            <div class="user_identity">
+                                <p>用戶暱稱</p>
+                                <p>用戶ID</p>
+                            </div>
+                        </div>
+                        <span class="topic">好邊緣</span>
+                    </div>
+                    <div class="activity_content">
+                        <h2>活動標題活動標題</h2>
+                        <h3>2小時前發布(已編輯)</h3>
+                        <p>內文內文內文內文內文內文內文
+
+                            內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內
+
+                            文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文
+
+                            內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內
+
+                            文內文內文！</p>
+                        <ul>
+                            <li><span class="topic">好邊緣</span>
+                            </li>
+                            <li><span class="topic">好邊緣</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="article_actions">
+                        <div class="interact_lightbox">
+                            <a href="#"><i class="fa-regular fa-heart"></i><span>66</span></a>
+                            <a href="#"><i class="fa-regular fa-comment-dots"></i><span>7</span></a>
+                            <a href="#"><i class="fa-regular fa-bookmark"></i></a>
+                        </div>
+                        <div class="join">
+                            <h3>參加人數：2/5</h3>
+                            <input type="checkbox" id="iwantjoin_lightbox">
+                            <label for="iwantjoin_lightbox" class="iwantjoin color-button">我要參加</label>
+                        </div>
+                    </div>
+                    <div class="activity_comment">
+                        <h3>共7則留言</h3>
+                        <div class="comment_card">
+                            <span class="more_action">‧‧‧</span>
+                            <img class="user" src="./IMG/activity/lonely.png" alt="" width="60">
+                            <div class="comment_text">
+                                <h2>用戶暱稱</h2>
+                                <p>留言留言留言留言留言留言留言</p>
+                                <h3>B1 ‧ 1小時前</h3>
+                            </div>
+                        </div>
+                        <div class="comment_card">
+                            <span class="more_action">‧‧‧</span>
+                            <img class="user" src="./IMG/activity/lonely.png" alt="" width="60">
+                            <div class="comment_text">
+                                <h2>用戶暱稱</h2>
+                                <p>留言留言留言留言留言留言留言<br>
+                                    留言留言留言留言留言留言</p>
+                                <h3>B2 ‧ 1小時前</h3>
+                            </div>
+                        </div>
+                        <div class="comment_card">
+                            <span class="more_action">‧‧‧</span>
+                            <img class="user" src="./IMG/activity/lonely.png" alt="" width="60">
+                            <div class="comment_text">
+                                <h2>用戶暱稱</h2>
+                                <p>留言留言留言留言留言留言留言</p>
+                                <h3>B3 ‧ 1小時前</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="activity_myaction">
+                    <img class="user" src="./IMG/activity/lonely.png" alt="" width="40">
+                    <div class="comment_keyin">
+                        <textarea name="" id="" cols="30" rows="1" placeholder="留言..."></textarea>
+                        <div class="paste">
+                            <i class="fa-regular fa-image"></i>
+                            <i class="fa-regular fa-face-laugh-squint"></i>
+                        </div>
+                    </div>
+                    <button type="submit" class="comment_send selector_submit">送出</button>
+                    <div class="actions">
+                        <a href="#"><i class="fa-regular fa-heart"></i></a>
+                        <a href="#"><i class="fa-regular fa-bookmark"></i></a>
+                        <span class="more_action">‧‧‧</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="footer"></div> <!-- 用來載入 common.html 裡頭的 footer -->
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
+
+        // 載入header footer
+
         $(function () {
             $(".header").load("common.html .header>div");
             $(".footer").load("common.html .footer>div");
         });
 
+        // 月曆
         var month_olympic = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
         var month_normal = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
         var month_name = ["January", "Febrary", "March", "April", "May", "June", "July", "Auguest", "September", "October", "November", "December"];
@@ -287,6 +594,39 @@
                 my_month = 0;
             }
             refreshDate();
+        }
+
+        // 燈箱出現消失
+
+        let lightbox_background = document.getElementsByClassName("lightbox_background")[0];
+        let cards = document.getElementsByClassName("activity_article_cards");
+        let activity_readmore = document.getElementsByClassName("activity_readmore")[0];
+
+        for (let i = 0; i < cards.length; i++) {
+            cards[i].addEventListener("click", function () {
+                lightbox_background.classList.remove("-none");
+            });
+        }
+
+        let fa_xmark = document.getElementsByClassName("fa-xmark")[0];
+        fa_xmark.addEventListener("click", function () {
+            lightbox_background.classList.add("-none");
+        });
+
+        lightbox_background.addEventListener("click", function () {
+            this.classList.add("-none");
+        });
+
+        lightbox_background.querySelector(".activity_readmore").addEventListener("click", function (e) {
+            e.stopPropagation();
+        });
+
+        let join_btn = document.getElementsByClassName("join");
+
+        for (let j = 0; j < join_btn.length; j++) {
+            join_btn[j].addEventListener("click", function (e) {
+                e.stopPropagation();
+            });
         }
     </script>
 

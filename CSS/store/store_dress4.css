@@ -1,0 +1,410 @@
+body{
+    background-image: url(../../IMG/store/mall_room.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.2);
+    background-blend-mode: multiply;
+}
+
+.activity_title{
+    margin-left: 20px;
+}
+
+.activity_title a{
+    position: absolute;
+
+}
+
+.activity_title a:hover {
+    animation: left .5s infinite;
+}
+
+@keyframes left{
+    0%{
+        margin-left: 0px;
+    }
+    100%{
+        margin-left: -5px;
+    }
+}
+
+.bar>.ability {
+    text-shadow: #405366.1rem .1rem .4rem;
+}
+
+.bar .ability span:last-child {
+    background-color: #405366;
+}
+
+.bar .ability span div {
+    background-color: #A0C0E1;
+}
+
+.user {
+    border: #A0C0E1 solid 2px;
+}
+
+.widget{
+    color: #A0C0E1;
+}
+
+.widget a{
+    color: #A0C0E1;
+}
+
+.activity_title h1{
+    color: white;
+    text-shadow: #405366.1rem .1rem .4rem;
+}
+
+.choose_wrapper{
+    display: flex;
+}
+
+#choose{
+    font-size: 2rem;
+    text-align: center;
+    background-color: #755C5C;
+    color: white;
+    margin: 0 auto;
+    padding: 5px 0;
+}
+
+.wrapper{
+    display: flex;
+    width: 100%;
+}
+
+/* 左邊選單 */
+.nav_left{
+    background-image: url(/IMG/store/photo_frame.png);
+    width: 195px;
+    height: 424px;
+    opacity: 0.8;
+    margin: 20px 100px;
+}
+
+.nav_left ul{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.nav_left ul li{
+    color: white;
+    text-shadow: #405366.1rem .1rem .4rem;
+    border-bottom: 2px solid #4053666c;
+    width: 100px;
+    margin: 35px auto 0;
+    padding-bottom: 10px;
+}
+
+.nav_left ul li:hover{
+    color: #405366;
+}
+
+.current{
+    color: #405366;
+}
+
+/* 人偶 */
+.coutainer{
+    background-image: url(/IMG/store/photo_frame_3.png);
+    background-size: 65% auto;
+    background-repeat: no-repeat;
+    width: 606px;
+    height: 560px;
+    position: absolute;
+    top: 50%;
+    left: 52%;
+    transform: translate(-35%, -30%);
+}
+
+.coutainer > .people{
+    position: absolute;
+    top: 55%;
+    left: 60%;
+    transform: translate(-100%, -70%);
+    width: 350px;
+}
+
+.check{
+    background-color:#000;
+    color: white;
+    font-size: 2rem;
+    border-radius: 15px;
+    border: none;
+    padding: 10px 20px;
+    position: absolute;
+    top: 80%;
+    left: 75%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+}
+
+.check:hover{
+    box-shadow: 0 0 5px #ffffff;
+}
+
+/* 下方選單 */
+.nav_down{
+    background: #ffffffaa;
+    position: absolute;
+    width: 500px;
+    height: 200px;
+    left: 50%;
+    top: 95%;
+    transform: translate(-50%, -40%);
+    overflow: hidden;
+}
+
+.nav_down_wrapper{
+    display: flex;
+    height: 180px;
+    width: 480px;
+    margin: 10px auto;
+    overflow-y: hidden;
+}
+
+.number{
+    cursor: pointer;
+    display: flex;
+    margin: 10px 20px;
+}
+
+.money{
+    display: flex;
+    margin-top: 120px;
+    padding-right: 10px;
+}
+
+.money p{
+    margin-left: 5px;
+    color: #000;
+}
+
+.nav_down_wrapper::-webkit-scrollbar {
+    height: 10px;
+    width: 10px;
+}
+
+.nav_down_wrapper::-webkit-scrollbar-thumb {
+    background: #ffffff;
+    border-radius: 10px;
+}
+
+.nav_down_wrapper::-webkit-scrollbar-track {
+    background: #00000066;
+    border-radius: 10px;
+}
+
+.accessories{
+    width: 150px;
+    height: 150px;
+    background-size: 150%;
+    background-position: center;
+}
+
+.mask{
+    background-image: url(/IMG/people/mask.png);
+    background-size: 180%;
+    background-position: 50% 30%;
+}
+
+.cap{
+    background-image: url(/IMG/people/cap.png);
+    background-size: 120%;
+    background-position: 50% 0;
+}
+
+.glasses{
+    background-image: url(/IMG/people/glasses.png);
+}
+
+.eyebrow{
+    width: 150px;
+    height: 150px;
+    background-size: 250%;
+    background-position: 50% 40%;
+}
+
+.eyebrow1{
+    background-image: url(/IMG/people/eb1.png);
+}
+
+.eyebrow2{
+    background-image: url(/IMG/people/eb2.png);
+}
+
+.eyebrow3{
+    background-image: url(/IMG/people/eb3.png);
+}
+
+.eyebrow4{
+    background-image: url(/IMG/people/eb4.png);
+}
+
+.eye{
+    width: 150px;
+    height: 150px;
+    background-size: 200%;
+    background-position: 50% 40%;
+}
+
+.eye1{
+    background-image: url(/IMG/people/e1.png);
+}
+
+.eye2{
+    background-image: url(/IMG/people/e2.png);
+}
+
+.eye3{
+    background-image: url(/IMG/people/e3.png);
+}
+
+.eye4{
+    background-image: url(/IMG/people/e4.png);
+}
+
+.mouth{
+    width: 150px;
+    height: 150px;
+    background-size: 300%;
+    background-position: 50% 40%;
+}
+
+.mouth1{
+    background-image: url(/IMG/people/m1.png);
+    background-size: 500%;
+}
+
+.mouth2{
+    background-image: url(/IMG/people/m2.png);
+    background-size: 400%;
+}
+
+.mouth3{
+    background-image: url(/IMG/people/m3.png);
+}
+
+.mouth4{
+    background-image: url(/IMG/people/m4.png);
+}
+
+.mouth5{
+    background-image: url(/IMG/people/m5.png);
+    background-size: 400%;
+}
+
+/*--------------------------- lightbox ---------------------------*/
+
+.dresss_lightbox{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: hsla(0, 0%, 0%, .8);
+    z-index: 5;
+}
+
+.dresss{
+    background-color: #ffffffbb;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 500px;
+    border-radius: 30px;
+}
+
+.dresss_none{
+    display: none;
+}
+    
+.dresss > article{
+    color: white;
+    width: 75%;
+    height: 70%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+}
+
+.fa-xmark{
+    font-size: 3rem;
+    margin-left: 90%;
+    margin-top: 5%;
+    cursor: pointer;
+}
+
+.buy_wrapper{
+    display: flex;
+    align-items: center;
+    justify-content:space-evenly;
+}
+
+.dresss_choose{
+    background-image: url(/IMG/store/photo_frame_3.png);
+    background-size: 53% auto;
+    background-repeat: no-repeat;
+    width: 606px;
+    height: 562px;
+    display: flex;
+    margin-left: 60px;
+}
+
+.dresss_choose > .people_choose{
+    position: absolute;
+    top: 70%;
+    left: 75%;
+    transform: translate(-100%, -70%);
+    width: 250px;
+}
+
+.money1{
+    display: flex;
+    align-items: center;
+}
+
+.money1 #result{
+    font-size: 3rem;
+    color: #000;
+    margin-left: 10px;
+}
+
+.send{
+    background-color:#ffff;
+    color: #000;
+    font-size: 2rem;
+    border-radius: 15px;
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+}
+
+.send:hover{
+    box-shadow: 0 0 5px #727272;
+}
+
+.send_check{
+    background-color:#000;
+    color: white;
+    font-size: 2rem;
+    border-radius: 15px;
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+.send_check:hover{
+    box-shadow: 0 0 5px #000000;
+}

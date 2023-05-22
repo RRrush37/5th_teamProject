@@ -48,12 +48,13 @@
     </div>
     <div class="wrapper">
         <section class="room">
-            <p class="room_num">房號:{{room_num}}</p>
-            <p class="room_password">密碼:{{room_password}}</p>
+
+            <p class="room_num">房號:1234</p>
+            <p class="room_password">密碼:5678</p>
 
             <!-- 遊戲狀態 -->
             <div id="game_state_box">
-                <h2 id="game_state">等待開局</h2>
+                <h2 id="game_state" data-ready="等待開局" data-start="遊戲中">等待開局</h2>
             </div>
 
             <!-- 玩家狀態 -->
@@ -338,7 +339,7 @@
         let loser_box = document.getElementById("loser_box");
         //遊戲區面板
         let room_el = document.getElementsByClassName("room")[0];
-
+        let game_state = document.getElementById("game_state");
         //陣列設計
         let player_index = 0 ; //用來儲存目前玩家的座位
         let idArr = []; //儲存目前已進入玩家的ID
@@ -515,7 +516,8 @@
                         ready.classList.toggle("ready");
                         ready.innerHTML = ready.getAttribute("data-cancel");
                     }
-
+                    
+                    game_state.innerHTML = game_state.getAttribute("data-start");
                     //用於儲存目前回合狀態，{開局階段、狼人回合、女巫回合、預言家回合、夜晚出局回合、發言回合、投票回合、白天出局回合、遊戲結束、結算回合}
                     round[1] = ["開局階段"];
                     ready_box_el.classList.add("none");
@@ -725,7 +727,7 @@
                     break;
                 default: //其他人顯示文字面板
                     text_el.classList.remove("none");
-                    text_el.innerHTML = text.getAttribute("data-dark");
+                    text_el.innerHTML = text_el.getAttribute("data-dark");
                     break;
             }
 
@@ -789,14 +791,14 @@
             time_el.style.animationDuration = second+1+"s";
             witch_poison_btn.classList.add("none");
             switch (player_state[player_index].role){
-                
+
                 case "女巫": //女巫顯示女巫面板
                     text_el.classList.add("none");
                     witch_box_el.classList.remove("none");
                     break;
                 default: //其他人顯示文字面板
                     text_el.classList.remove("none");
-                    text_el.innerHTML = text.getAttribute("data-dark");
+                    text_el.innerHTML = text_el.getAttribute("data-dark");
                     break;
             }
 
@@ -841,7 +843,8 @@
                 }
             }, 1000);
             //console.log("witchArr.saved:"+witchArr.saved+" killed[round[0]-1]:"+killed[round[0]-1]+" player_state[1].alive:"+player_state[1].alive);
-            if (player_state[player_index].role == "女巫" && player_state[player_index].alive == true) {
+            if ( player_state[player_index].role == "女巫" && player_state[player_index].alive == true) {
+
                 if ( witchArr.saved == -1 && killed[round[0]-1] > -1 ){
                     //有人死亡 //還沒使用過解藥
                     console.log("witchArr.saved"+witchArr.saved);
@@ -869,8 +872,9 @@
                         witch_no_btn.disabled = true ;
                         player_state[killed[round[0]-1]-1].out = false ;
                         witchArr.saved = killed[round[0]-1] ;
-                        killed[round[0]] = -1 ; // 此局無人死亡
+                        killed[round[0]-1] = -1 ; // 此局無人死亡
                         this_round_save = true ;
+                        
                     })
 
                 } else if ( witchArr.poisoned == -1 ) {
@@ -951,7 +955,7 @@
                     break;
                 default: //其他人顯示文字面板
                     text_el.classList.remove("none");
-                    text_el.innerHTML = text.getAttribute("data-dark");
+                    text_el.innerHTML = text_el.getAttribute("data-dark");
                     break;
             }
 
