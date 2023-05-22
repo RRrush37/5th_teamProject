@@ -67,6 +67,9 @@ $(() => {
           if (response["loginID"] === -1) {
             $("#commentForm").html("請登入以留言");
           }
+          if (response["ILikeThis"]) {
+            $("#like").css({ color: "red" });
+          }
 
           // $("#artAuthorName").html(articleID);
         }
@@ -89,6 +92,26 @@ $(() => {
             renderComment();
             $("#commentText").val("");
           } else alert("新增失敗");
+        },
+        error: (xhr, status, error) => {
+          alert(error);
+        },
+      });
+    });
+
+    $("#like").click(() => {
+      $.ajax({
+        url: "php/addLike.php",
+        method: "POST",
+        dataType: "json",
+        data: { articleID: paramValue },
+        success: (response) => {
+          $("#love_number").html(response[0]);
+          if (response[1]) {
+            $("#like").css({ color: "red" });
+          } else {
+            $("#like").css({ color: "" });
+          }
         },
         error: (xhr, status, error) => {
           alert(error);
