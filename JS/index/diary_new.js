@@ -10,42 +10,49 @@ $(() => {
       dataType: "json",
       data: { memberID: paramValue },
       success: (response) => {
-        alert(response);
+        console.log(response);
         let str = "";
         for (let i = 0; i < response.length; i++) {
-          str += `<div class="feedback">
-              <div class="feedbacktop">
-                <div class="img">
-                  <img src="./IMG/diary/photo.png" alt="" />
-                </div>
-                <h2>用戶暱稱</h2>
-              </div>
-              <div class="feedbackbottom">
-                <p>
-                  留言留言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留留言言留言留言留言留言留言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留留言言留言留言留留言留言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留留言言留言留言留留言留言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留留言言留言留言留
-                </p>
-                <p>B1 1小時前</p>
-              </div>
+          str += `<div class="cards_content">
+          <div class="card_user">
+            <div class="card_article">
+              <img src="./IMG/diary/big_girl.png" alt="" />
+              <h2>${response[i]["articleTitle"]}</h2>
+            </div>
+            <span class="more_action">...</span>
+          </div>
 
-              <div class="clickbox">
-                <div class="click">
-                  <div class="clickedit">
-                    <p>私訊這個人</p>
-                    <p>刪除留言</p>
-                    <p>！檢舉留言</p>
-                    <p>！將這個人加入黑名單</p>
-                  </div>
+          <div class="card_text">
+            <div class="text_title">
+              <p>
+              ${response[i]["articleContent"]}
+              </p>
+            </div>
+          </div>
+          <!-- <div class="card_pics">
+                          </div> -->
 
-                  <img
-                    class="threepoint"
-                    src="./IMG/diary/threepoint.png"
-                    alt=""
-                  />
-                </div>
-              </div>
-            </div>`;
+          <div class="interact">
+            <div class="icon">
+              <a href="#"
+                ><i class="fa-regular fa-heart"></i><span>${response[i]["likeNum"]}</span></a
+              >
+              <a href="#"
+                ><i class="fa-regular fa-comment-dots"></i
+                ><span>${response[i]["commentNum"]}</span></a
+              >
+              <a href="#"><i class="fa-regular fa-bookmark"></i></a>
+            </div>
+            <button class="moreButton" postid="${response[i]["articleID"]}">Read more</button>
+          </div>
+        </div>`;
         }
-        $(".middlebottom").html($(".middlebottom").html() + str);
+        $(".myPost").html($(".myPost").html() + str);
+        $(".moreButton").click(function () {
+          location.assign(
+            "diary_readmore.html?postID=" + $(this).attr("postid")
+          );
+        });
       },
       error: (xhr, status, error) => {
         alert(error);
