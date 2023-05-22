@@ -1,0 +1,25 @@
+    .upload-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    
+    .upload-icon {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        cursor: pointer;
+    }
+    
+    .upload-icon img {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .upload-icon span {
+        margin-top: 10px;
+        font-size: 16px;
+        font-weight: bold;
+    }
+    
