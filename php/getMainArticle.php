@@ -44,7 +44,6 @@ if (isset($_POST["articleID"])) {
     $statement = $pdo->prepare($sql);
     $statement->bindValue(1, $_POST["articleID"]);
     $statement->execute();
-    $statement->execute();
     $thumbUpNum = $statement->fetchAll();
     $data["thumbUpNum"] = $thumbUpNum[0][0];
 
@@ -54,9 +53,21 @@ if (isset($_POST["articleID"])) {
     $statement = $pdo->prepare($sql);
     $statement->bindValue(1, $_POST["articleID"]);
     $statement->execute();
-    $statement->execute();
     $commentNum = $statement->fetchAll();
     $data["commentNum"] = $commentNum[0][0];
+
+    if (isset($_SESSION["ID"])) {
+      $sql = "select count(*) from articleThumbUp where articleID = ? and thumbUpMemberID = ?";
+      $statement = $pdo->prepare($sql);
+      $statement->bindValue(1, $_POST["articleID"]);
+      $statement->bindValue(2, $_SESSION["ID"]);
+      $statement->execute();
+      $commentNum = $statement->fetchAll();
+      $data["ILikeThis"] = $commentNum[0][0];
+    }
+
+
+
     echo json_encode($data);
   } else {
     echo "-1";
