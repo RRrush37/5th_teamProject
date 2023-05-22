@@ -110,11 +110,30 @@ section{
     /* display: none; */
 }
 
+
 .room .room_num{
     position: absolute;
     left: 5%;
     top: -8%;
+
     color: white;
+
+}
+
+.room .room_num:before,
+.room .room_password:before{
+    content: '';
+    display: block;
+    background-color: #223F68;
+    width: 150%;
+    height: 150%;
+    clip-path: polygon(100% 0%, 95% 55%, 100% 100%, 0 100%, 5% 55%, 0 0);
+;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
 }
 
 .room .room_password{
@@ -167,7 +186,7 @@ section{
     margin-bottom: 10px;
 
     position: absolute;
-    left: 40%;
+    left: 42%;
     bottom: 0 ;
     transform: translateX(-50%);
     cursor: pointer;
