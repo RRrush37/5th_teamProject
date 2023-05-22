@@ -90,6 +90,7 @@ $(() => {
         success: (response) => {
           if (response > 0) {
             renderComment();
+            $("#message_number").html(response);
             $("#commentText").val("");
           } else alert("新增失敗");
         },
@@ -111,6 +112,25 @@ $(() => {
             $("#like").css({ color: "red" });
           } else {
             $("#like").css({ color: "" });
+          }
+        },
+        error: (xhr, status, error) => {
+          alert(error);
+        },
+      });
+    });
+
+    $("#keep").click(() => {
+      $.ajax({
+        url: "php/addKeep.php",
+        method: "POST",
+        dataType: "json",
+        data: { articleID: paramValue },
+        success: (response) => {
+          if (!response) {
+            $("#keep").css({ color: "blue" });
+          } else {
+            $("#keep").css({ color: "" });
           }
         },
         error: (xhr, status, error) => {
