@@ -8,7 +8,6 @@ $(() => {
       dataType: "json",
       data: { articleID: paramValue },
       success: (response) => {
-        console.log(response);
         let str = `<p class="all">共${response.length}則留言</p>`;
         for (let i = 0; i < response.length; i++) {
           str += `<div class="feedback">

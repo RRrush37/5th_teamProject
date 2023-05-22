@@ -10,17 +10,16 @@ $(() => {
       return;
     }
     $.ajax({
-      url: "insetArticle.php",
+      url: "php/renderArticle.php",
       method: "post",
       type: "json",
       data: {
-        memberID: 1,
         title: document.getElementById("title").value,
         content: document.getElementById("content").value,
       },
       success: (response) => {
         alert(response);
-        location.href = "diary_new.php";
+        location.href = "diary_new.html";
       },
       error: (xhr, status, error) => {
         // 在此處處理錯誤情況
