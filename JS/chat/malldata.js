@@ -34,3 +34,13 @@ backBtn.addEventListener('click', function() {
   generalEditBar.style.display = 'none';
 });
 
+generalInfo.addEventListener('click', function(){
+  eventInfo.classList.remove("on");
+  generalInfo.classList.add("on");
+});
+
+eventInfo.addEventListener('click', function(){
+  eventInfo.classList.add("on");
+  generalInfo.classList.remove("on");
+})
+

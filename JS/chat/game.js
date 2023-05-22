@@ -16,3 +16,14 @@ const werewolf = document.getElementById('werewolf');
     draw.style.display = 'none';
     werewolf.style.display = 'block';
   });
+
+  generalInfo.addEventListener('click', function(){
+    eventInfo.classList.remove("on");
+    generalInfo.classList.add("on");
+  });
+  
+  eventInfo.addEventListener('click', function(){
+    eventInfo.classList.add("on");
+    generalInfo.classList.remove("on");
+  })
+  
