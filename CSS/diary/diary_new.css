@@ -15,11 +15,13 @@ h1 {
 } */
 
 /*---收藏css-------*/
-.collect{
+.collect, .create_list{
     margin-top: 20px;
     background-color:#d5e3a1b3;
     width: 100%;
     padding: 15px;
+
+
 }
 
 /*------收藏頁面做切換---------------*/
@@ -135,6 +137,9 @@ body {
     font-weight: bold;
 }
 
+
+
+
 .text_nav > div {
     text-align: center;
     /* width: 100%; */
@@ -148,18 +153,23 @@ body {
     /* margin: 1rem auto; */
 }
 
-.text_nav > div ~ div {
+.text_nav  div a{
+    color:#634921;
+}
+
+
+.text_nav  div ~ div {
     margin-top: 1.5rem;
 }
 
-.text_nav > div:hover {
+.text_nav div a:hover {
     font-weight: bold;
     color: black;
     /* background-color: #ffffff45; */
     /* border-radius: 10px; */
 }
 
-.text_nav > div.on{
+.text_nav div.on a{
     font-weight: bold;
     color: black;
     /* background-color: #ffffff45; */
@@ -167,7 +177,7 @@ body {
 }
 
 
-.text_nav > div::before {
+.text_nav div::before {
     content: "";
     position: absolute;
     bottom: 0;
@@ -180,7 +190,7 @@ body {
     transition: transform 0.2s ease-in-out;
 }
 
-.text_nav > div:hover::before {
+.text_nav div:hover::before {
     transform: scaleX(1);
 }
 
@@ -219,6 +229,17 @@ margin: auto;
     margin-bottom: 5px;
 }
 
+
+.activity_tab>span {
+    display: flex;
+    cursor: pointer;
+}
+
+.activity_tab>span>h2 ~ h2{
+    margin-left: 10px;
+}
+
+
 /* .activity_tab_active {
     -webkit-text-stroke: #000 1px;
     font-weight: 600;
@@ -241,19 +262,6 @@ margin: auto;
     text-decoration-line: underline;
 }
 
-
-
-
-
-.activity_tab>span {
-    display: flex;
-}
-
-.activity_tab>span>a ~ a{
-    margin-left: 10px;
-}
-
-
 .activity_main .middle {
     width: 55%;
     margin: 0 auto;
@@ -265,7 +273,6 @@ margin: auto;
     position: relative;
     background-color: #847062cf;
     padding: 25px;
-
     border: 1ps solid red;
 
     height: 69vh;
@@ -343,7 +350,7 @@ margin: auto;
     width: 100%;
     padding: 15px;
     
-    display: none;
+
 }
 
 /* .cards_content:last-child{
@@ -370,6 +377,7 @@ margin: auto;
 .card_article h2{
     color: black;
     line-height: 2;
+    font-size: 2rem;
 }
 
 
@@ -384,6 +392,31 @@ margin: auto;
     cursor: pointer;
 }
 
+.delete{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.delete_edit{
+    background-color: white;
+    border: 1px solid gray;
+    padding: 5px;
+    color: #000;
+    line-height: 1.6;
+    position: absolute;
+    left: 90%;
+    top: 50%;
+    cursor: pointer;
+
+}
+
+
+
+
+
+
+
 
 /*-----內文--------*/
 
@@ -394,7 +427,7 @@ margin: auto;
 
 .card_text P{
     white-space: nowrap;
-     /* 禁止文本换行*/
+    /* 禁止文本换行*/
     overflow: hidden; /* 超出父容器部分隐藏 */
     text-overflow: ellipsis; /* 超出部分显示省略号 */
     font-size: fit-content; /* 文字大小自适应容器 */    
@@ -554,7 +587,11 @@ ul.weekdays li{
 }
 
 #next {
-    color: #502e2e;
+    color: white;
+}
+
+#prev{
+    color: white;
 }
 
 .light {
@@ -655,6 +692,9 @@ h3{
 
 
 
+.delete_edit_none{
+    display: none;
+}
 
 
 

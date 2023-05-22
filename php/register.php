@@ -26,53 +26,53 @@ $statement->bindValue(1, $name);
 $statement->execute();
 $data = $statement->fetchAll();
 if (count($data) > 0) {
-       // echo json_encode([$data["0"]["memberID"]]);
-       echo -1;
+  // echo json_encode([$data["0"]["memberID"]]);
+  echo -1;
 } else {
 
-       $sql = "SELECT * FROM memberData where email = ?";
-       $statement = $pdo->prepare($sql);
-       $statement->bindValue(1, $email);
-       $statement->execute();
-       $data = $statement->fetchAll();
-       if (count($data) > 0) {
-              // echo json_encode([$data["0"]["memberID"]]);
-              echo -2;
-       } else {
-              $sql = "INSERT into memberData(memberName, email, gender,permissions,state,password,coin,punishmentCount,wolfkillWin,wolfkillLose,signinDaysInThisMonth)
+  $sql = "SELECT * FROM memberData where email = ?";
+  $statement = $pdo->prepare($sql);
+  $statement->bindValue(1, $email);
+  $statement->execute();
+  $data = $statement->fetchAll();
+  if (count($data) > 0) {
+    // echo json_encode([$data["0"]["memberID"]]);
+    echo -2;
+  } else {
+    $sql = "INSERT into memberData(memberName, email, gender,permissions,state,password,coin,punishmentCount,wolfkillWin,wolfkillLose,signinDaysInThisMonth)
        values(?, ?, 1,'normal','normal', ? ,0,0,0,0,0)";
 
-              //    $sql = 'INSERT into memberData(memberName, email, permissions, state, `password`, coin, punishmentCount, wolfkillWin, wolfkillLose, signinDaysInThisMonth) 
-              //    values (?, ?, "user", "normal", dd, 0, 0, 0, 0, 0)';
-              $statement = $pdo->prepare($sql);
-              $statement->bindValue(1, $name);
-              $statement->bindValue(2, $email);
-              $statement->bindValue(3, password_hash($password, PASSWORD_DEFAULT));
-              $success = $statement->execute();
-              // $statement->bindValue(2 , $table); 
+    //    $sql = 'INSERT into memberData(memberName, email, permissions, state, `password`, coin, punishmentCount, wolfkillWin, wolfkillLose, signinDaysInThisMonth) 
+    //    values (?, ?, "user", "normal", dd, 0, 0, 0, 0, 0)';
+    $statement = $pdo->prepare($sql);
+    $statement->bindValue(1, $name);
+    $statement->bindValue(2, $email);
+    $statement->bindValue(3, password_hash($password, PASSWORD_DEFAULT));
+    $success = $statement->execute();
+    // $statement->bindValue(2 , $table); 
 
-              if ($success) {
-                     $sql = "SELECT memberID FROM memberData where email = ?";
-                     $statement = $pdo->prepare($sql);
-                     $statement->bindValue(1, $email);
-                     $statement->execute();
-                     $data = $statement->fetchAll();
+    if ($success) {
+      $sql = "SELECT memberID FROM memberData where email = ?";
+      $statement = $pdo->prepare($sql);
+      $statement->bindValue(1, $email);
+      $statement->execute();
+      $data = $statement->fetchAll();
 
-                     $sql = "INSERT into Attributes(`memberID`, `luck`, `strength`, `intelligence`, `charm`)
+      $sql = "INSERT into Attributes(`memberID`, `luck`, `strength`, `intelligence`, `charm`)
                      values(?, Round(RAND() * 100, 0) , Round(RAND() * 100, 0) , Round(RAND() * 100, 0) , Round(RAND() * 100, 0) )";
-                     $statement = $pdo->prepare($sql);
-                     $statement->bindValue(1, $data[0][0]);
-                     $statement->execute();
+      $statement = $pdo->prepare($sql);
+      $statement->bindValue(1, $data[0][0]);
+      $statement->execute();
 
-                     $sql = "INSERT into dollData(memberID) values(?)";
-                     $statement = $pdo->prepare($sql);
-                     $statement->bindValue(1, $data[0][0]);
-                     $statement->execute();
+      $sql = "INSERT into dollData(memberID) values(?)";
+      $statement = $pdo->prepare($sql);
+      $statement->bindValue(1, $data[0][0]);
+      $statement->execute();
 
-                     echo 1;
-              }
-       }
-       /*foreach($data as $index => $row){
+      echo 1;
+    }
+  }
+  /*foreach($data as $index => $row){
                      echo $row["password"];   //欄位名稱
                      echo '<br>';
                      echo $row["memberID"];    //欄位名稱

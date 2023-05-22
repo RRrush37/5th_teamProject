@@ -21,35 +21,38 @@
         <div class="activity">
             <span>
                 <div class="activity_title">
-                    <svg width="40" height="40" viewBox="0 0 83 83" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <g filter="url(#filter0_dd_668_6)">
-                            <path d="M9 37.5L34.2778 5V23.018L74 23.0556V51.9444H34.2778V70L9 37.5Z" fill="#634921"
-                                stroke="#634921" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" />
-                        </g>
-                        <defs>
-                            <filter id="filter0_dd_668_6" x="0" y="0" width="83" height="83"
-                                filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                                <feFlood flood-opacity="0" result="BackgroundImageFix" />
-                                <feColorMatrix in="SourceAlpha" type="matrix"
-                                    values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
-                                <feOffset dy="4" />
-                                <feGaussianBlur stdDeviation="2" />
-                                <feComposite in2="hardAlpha" operator="out" />
-                                <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" />
-                                <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_668_6" />
-                                <feColorMatrix in="SourceAlpha" type="matrix"
-                                    values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
-                                <feOffset dy="4" />
-                                <feGaussianBlur stdDeviation="2" />
-                                <feComposite in2="hardAlpha" operator="out" />
-                                <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" />
-                                <feBlend mode="normal" in2="effect1_dropShadow_668_6"
-                                    result="effect2_dropShadow_668_6" />
-                                <feBlend mode="normal" in="SourceGraphic" in2="effect2_dropShadow_668_6"
-                                    result="shape" />
-                            </filter>
-                        </defs>
-                    </svg>
+                    </a>
+                        <svg width="40" height="40" viewBox="0 0 83 83" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g filter="url(#filter0_dd_668_6)">
+                                <path d="M9 37.5L34.2778 5V23.018L74 23.0556V51.9444H34.2778V70L9 37.5Z" fill="#634921"
+                                    stroke="#634921" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" />
+                            </g>
+                            <defs>
+                                <filter id="filter0_dd_668_6" x="0" y="0" width="83" height="83"
+                                    filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                    <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                    <feColorMatrix in="SourceAlpha" type="matrix"
+                                        values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+                                    <feOffset dy="4" />
+                                    <feGaussianBlur stdDeviation="2" />
+                                    <feComposite in2="hardAlpha" operator="out" />
+                                    <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" />
+                                    <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_668_6" />
+                                    <feColorMatrix in="SourceAlpha" type="matrix"
+                                        values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+                                    <feOffset dy="4" />
+                                    <feGaussianBlur stdDeviation="2" />
+                                    <feComposite in2="hardAlpha" operator="out" />
+                                    <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" />
+                                    <feBlend mode="normal" in2="effect1_dropShadow_668_6"
+                                        result="effect2_dropShadow_668_6" />
+                                    <feBlend mode="normal" in="SourceGraphic" in2="effect2_dropShadow_668_6"
+                                        result="shape" />
+                                </filter>
+                            </defs>
+                        </svg>
+                    </a>
+                    
                     <h1>文章列表</h1>
                 </div>
                 <!-----主要版面------------------->
@@ -62,10 +65,10 @@
                         </div>
 
                         <div class="text_nav">
-                                <div class="on">個人文章</div>
-                                <div>會員個人資料</div>
-                                <div>我的活動</div>
-                                <div>我的衣櫃</div>
+                                <div class="on"><a href="./diary_new.html">個人文章</a></div>
+                                <div><a href="./diary_myself.html">會員個人資料</a></div>
+                                <div><a href="./activity.html">我的活動</a></div>
+                                <div><a href="./diary_wardrobe.html">我的衣櫃</a></div>
                         </div>
 
                     </div>
@@ -73,12 +76,9 @@
                     <div class="middle">
                         <div class="activity_tab">
                             <span>
-                                <a  href>
-                                    <h2 class="activity_tab_active on">創作列表</h2>
-                                </a>
-                                <a href >
-                                    <h2 class="activity_tab_active">收藏</h2>
-                                </a>
+                                <h2 class="activity_tab_active list_btn on">創作列表</h2>
+
+                                <h2 class="activity_tab_active collect_btn">收藏</h2>
                             </span>
                         </div>
 
@@ -119,133 +119,156 @@
                                 </div>
 
                                 <!-----收藏-------->
-                                <div class="collect">
-                                    <div class="card_user">
-                                        <div class="card_article">
-                                            <img src="./IMG/diary/big_girl.png" alt="">
-                                            <h2>文章標題</h2>
+                                <div class="collect none">
+                                    <div class="cards_content">
+                                        <div class="card_user">
+                                            <div class="card_article">
+                                                <img src="./IMG/diary/big_girl.png" alt="">
+                                                <h2>文章標題</h2>
+                                            </div>
+
+
+                                            <div class="delete">
+                                                <span class="more_action">...</span>
+                                                <div class="delete_edit delete_edit_none">
+                                                    <p>刪除</p>
+                                                    <p>編輯</p>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <span class="more_action">...</span>
+
+                                        <div class="card_text">
+                                            <div class="text_title">
+                                                <p>內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文</p>
+                                            </div>
+                                        </div>
+                                        <!-- <div class="card_pics">
+                                        </div> -->
+
+                                        <div class="interact">
+                                            <div class="icon">
+                                                <a href="#"><i class="fa-regular fa-heart"></i><span>66</span></a>
+                                                <a href="#"><i class="fa-regular fa-comment-dots"></i><span>7</span></a>
+                                                <a href="#"><i class="fa-regular fa-bookmark"></i></a>
+                                            </div>
+                                                <button class="moreButton"  >Read more</button>
+                                        </div>
+
                                     </div>
 
-                                    <div class="card_text">
-                                        <div class="text_title">
-                                            <p>內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文</p>
-                                        </div>
-                                    </div>
-                                    <!-- <div class="card_pics">
-                                    </div> -->
+                                    <div class="cards_content">
+                                        <div class="card_user">
+                                            <div class="card_article">
+                                                <img src="./IMG/diary/big_girl.png" alt="">
+                                                <h2>文章標題</h2>
+                                            </div>
 
-                                    <div class="interact">
-                                        <div class="icon">
-                                            <a href="#"><i class="fa-regular fa-heart"></i><span>66</span></a>
-                                            <a href="#"><i class="fa-regular fa-comment-dots"></i><span>7</span></a>
-                                            <a href="#"><i class="fa-regular fa-bookmark"></i></a>
+
+                                            <div class="delete">
+                                                <span class="more_action">...</span>
+                                                <div class="delete_edit delete_edit_none">
+                                                    <p>刪除</p>
+                                                    <p>編輯</p>
+                                                </div>
+                                            </div>
                                         </div>
-                                            <button class="moreButton"  >Read more</button>
+
+                                        <div class="card_text">
+                                            <div class="text_title">
+                                                <p>內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文</p>
+                                            </div>
+                                        </div>
+                                        <!-- <div class="card_pics">
+                                        </div> -->
+
+                                        <div class="interact">
+                                            <div class="icon">
+                                                <a href="#"><i class="fa-regular fa-heart"></i><span>66</span></a>
+                                                <a href="#"><i class="fa-regular fa-comment-dots"></i><span>7</span></a>
+                                                <a href="#"><i class="fa-regular fa-bookmark"></i></a>
+                                            </div>
+                                                <button class="moreButton"  >Read more</button>
+                                        </div>
+
+                                        
+                                    </div>
+
+                                    <div class="cards_content">
+                                        <div class="card_user">
+                                            <div class="card_article">
+                                                <img src="./IMG/diary/big_girl.png" alt="">
+                                                <h2>文章標題</h2>
+                                            </div>
+
+
+                                            <div class="delete">
+                                                <span class="more_action">...</span>
+                                                <div class="delete_edit delete_edit_none">
+                                                    <p>刪除</p>
+                                                    <p>編輯</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="card_text">
+                                            <div class="text_title">
+                                                <p>內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文</p>
+                                            </div>
+                                        </div>
+                                        <!-- <div class="card_pics">
+                                        </div> -->
+
+                                        <div class="interact">
+                                            <div class="icon">
+                                                <a href="#"><i class="fa-regular fa-heart"></i><span>66</span></a>
+                                                <a href="#"><i class="fa-regular fa-comment-dots"></i><span>7</span></a>
+                                                <a href="#"><i class="fa-regular fa-bookmark"></i></a>
+                                            </div>
+                                                <button class="moreButton"  >Read more</button>
+                                        </div>
+
+                                        
                                     </div>
                                 </div>
-                                <div class="cards_content">
-                                    <div class="card_user">
-                                        <div class="card_article">
-                                            <img src="./IMG/diary/big_girl.png" alt="">
-                                            <h2>文章標題</h2>
-                                        </div>
-                                        <span class="more_action">...</span>
-                                    </div>
-
-                                    <div class="card_text">
-                                        <div class="text_title">
-                                            <p>內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文</p>
-                                        </div>
-
-                                    </div>
-                                    <!-- <div class="card_pics">
-                                    </div> -->
-
-                                    <div class="interact">
-                                        <div class="icon">
-                                            <a href="#"><i class="fa-regular fa-heart"></i><span>66</span></a>
-                                            <a href="#"><i class="fa-regular fa-comment-dots"></i><span>7</span></a>
-                                            <a href="#"><i class="fa-regular fa-bookmark"></i></a>
-                                        </div>
-                                            <button class="moreButton" style="background-color:#90A349;color: white;border-radius: 30px;" >Read more</button>
-                                    </div>
-                                </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
 
 
                                 <!---正文-->
-                                <div class="cards_content">
-                                    <div class="card_user">
-                                        <div class="card_article">
-                                            <img src="./IMG/diary/big_girl.png" alt="">
-                                            <h2>文章標題</h2>
+                                <div class="create_list">
+                                    <div class="cards_content">
+                                        <div class="card_user">
+                                            <div class="card_article">
+                                                <img src="./IMG/diary/big_girl.png" alt="">
+                                                <h2>文章標題</h2>
+                                            </div>
+                                            <span class="more_action">...</span>
+    
+    
                                         </div>
-                                        <span class="more_action">...</span>
-                                    </div>
-
-                                    <div class="card_text">
-                                        <div class="text_title">
-                                            <p>內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文</p>
+    
+                                        <div class="card_text">
+                                            <div class="text_title">
+                                                <p>內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文</p>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <!-- <div class="card_pics">
-                                    </div> -->
-
-                                    <div class="interact">
-                                        <div class="icon">
-                                            <a href="#"><i class="fa-regular fa-heart"></i><span>66</span></a>
-                                            <a href="#"><i class="fa-regular fa-comment-dots"></i><span>7</span></a>
-                                            <a href="#"><i class="fa-regular fa-bookmark"></i></a>
+                                        <!-- <div class="card_pics">
+                                        </div> -->
+    
+                                        <div class="interact">
+                                            <div class="icon">
+                                                <a href="#"><i class="fa-regular fa-heart"></i><span>66</span></a>
+                                                <a href="#"><i class="fa-regular fa-comment-dots"></i><span>7</span></a>
+                                                <a href="#"><i class="fa-regular fa-bookmark"></i></a>
+                                            </div>
+                                                <button class="moreButton">Read more</button>
                                         </div>
-                                            <button class="moreButton"  >Read more</button>
-                                    </div>
-                                </div>
-
-                                <div class="cards_content">
-                                    <div class="card_user">
-                                        <div class="card_article">
-                                            <img src="./IMG/diary/big_girl.png" alt="">
-                                            <h2>文章標題</h2>
-                                        </div>
-                                        <span class="more_action">...</span>
-                                    </div>
-
-                                    <div class="card_text">
-                                        <div class="text_title">
-                                            <p>內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文</p>
-                                        </div>
-
-                                    </div>
-                                    <!-- <div class="card_pics">
-                                    </div> -->
-
-                                    <div class="interact">
-                                        <div class="icon">
-                                            <a href="#"><i class="fa-regular fa-heart"></i><span>66</span></a>
-                                            <a href="#"><i class="fa-regular fa-comment-dots"></i><span>7</span></a>
-                                            <a href="#"><i class="fa-regular fa-bookmark"></i></a>
-                                        </div>
-                                            <button class="moreButton" style="background-color:#90A349;color: white;border-radius: 30px;" >Read more</button>
                                     </div>
                                 </div>
+                                
+
+
 
                             </div>
                         </div>
@@ -467,7 +490,57 @@
                             
                         </div>
                     </div>
+                    <div class="feedback">
+                        <div class="feedbacktop">
+                            <div class="img">
+                                <img src="./IMG/diary/photo.png" alt="">
+                            </div>
+                                <h2>用戶暱稱</h2>
+                        </div>
+                        <div class="feedbackbottom">
+                            <p>留言留言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留留言言留言留言留言留言留言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留留言言留言留言留留言留言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留留言言留言留言留留言留言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留留言言留言留言留</p>
+                            <p>B1 1小時前</p>
+                        </div>
 
+                        <div class="clickbox">
+                            <div class="click">
+                                <div class="clickedit">
+                                    <p>私訊這個人</p>
+                                    <p>刪除留言</p>
+                                    <p>！檢舉留言</p>
+                                    <p>！將這個人加入黑名單</p>
+                                </div>
+                                
+                                <img class="threepoint" src="./IMG/diary/threepoint.png" alt="">
+                            </div>
+                            
+                        </div>
+                    </div><div class="feedback">
+                        <div class="feedbacktop">
+                            <div class="img">
+                                <img src="./IMG/diary/photo.png" alt="">
+                            </div>
+                                <h2>用戶暱稱</h2>
+                        </div>
+                        <div class="feedbackbottom">
+                            <p>留言留言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留留言言留言留言留言留言留言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留留言言留言留言留留言留言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留留言言留言留言留留言留言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留留言言留言留言留</p>
+                            <p>B1 1小時前</p>
+                        </div>
+
+                        <div class="clickbox">
+                            <div class="click">
+                                <div class="clickedit">
+                                    <p>私訊這個人</p>
+                                    <p>刪除留言</p>
+                                    <p>！檢舉留言</p>
+                                    <p>！將這個人加入黑名單</p>
+                                </div>
+                                
+                                <img class="threepoint" src="./IMG/diary/threepoint.png" alt="">
+                            </div>
+                            
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -479,7 +552,7 @@
                     <h2>用戶暱稱</h2>
                 </div>
 
-                <form>
+                <form class="send">
                     <textarea  rows="1" name="content" placeholder="留言..."></textarea>
                     <input type="submit" value="送出">
                 </form>
@@ -489,25 +562,34 @@
     </div>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <script src="JS/new.js"></script>
+    <!-- <script src="JS/new.js"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="./JS/diary/diary_new.js"></script>
+    <script src="./JS/diary/diary_rule.js"></script>
+    <script src="./JS/diary/diary_edit.js"></script>
+
+    <script>
+        let list_btn = document.getElementsByClassName("list_btn")[0];
+        let collect_btn = document.getElementsByClassName("collect_btn")[0];
+        let create_list = document.getElementsByClassName("create_list")[0];
+        let collect = document.getElementsByClassName("collect")[0];
+
+        list_btn.addEventListener("click",function(){
+            list_btn.classList.add("on");
+            collect_btn.classList.remove("on");
+            create_list.classList.remove("none");
+            collect.classList.add("none");
+        })
+
+        collect_btn.addEventListener("click",function(){
+            list_btn.classList.remove("on");
+            collect_btn.classList.add("on");
+            create_list.classList.add("none");
+            collect.classList.remove("none");
+        })
+
+    </script>
     <script>
         $(function () {
             $(".header").load("common.html .header>div");

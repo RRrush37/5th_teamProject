@@ -49,6 +49,11 @@ body {
     color: #FFF;
 }
 
+.activity_title h2{
+    font-size: 3rem;
+    text-align: center;
+}
+
 .activity select {
     background-color: #D6D1F0;
 }
@@ -84,8 +89,6 @@ body {
 
 
 
-
-
 .text_nav {
     /* height: 80%; */
     display: flex;
@@ -100,6 +103,9 @@ body {
     font-weight: bold;
 }
 
+
+
+
 .text_nav > div {
     text-align: center;
     /* width: 100%; */
@@ -113,18 +119,23 @@ body {
     /* margin: 1rem auto; */
 }
 
-.text_nav > div ~ div {
+.text_nav div a{
+    color:#634921;
+}
+
+
+.text_nav div ~ div {
     margin-top: 1.5rem;
 }
 
-.text_nav > div:hover {
+.text_nav div a:hover {
     font-weight: bold;
     color: black;
     /* background-color: #ffffff45; */
     /* border-radius: 10px; */
 }
 
-.text_nav > div.on{
+.text_nav div.on a{
     font-weight: bold;
     color: black;
     /* background-color: #ffffff45; */
@@ -132,7 +143,7 @@ body {
 }
 
 
-.text_nav > div::before {
+.text_nav div::before {
     content: "";
     position: absolute;
     bottom: 0;
@@ -145,10 +156,9 @@ body {
     transition: transform 0.2s ease-in-out;
 }
 
-.text_nav > div:hover::before {
+.text_nav div:hover::before {
     transform: scaleX(1);
 }
-
 
 
 /* -------------導覽列裡面的大頭貼------- */
@@ -227,9 +237,9 @@ body {
 .middle{
     background-color: #847062cf;
     padding: 25px;
-    height: 69vh;
+    /* height: 69vh;
     overflow-y: scroll;
-    scrollbar-gutter: stable both-edges;
+    scrollbar-gutter: stable both-edges; */
 }
 
 
@@ -269,10 +279,10 @@ body {
     padding: 25px;
 
     border: 1ps solid red;
-
-    height: 69vh;
-    overflow-y: scroll;
-    scrollbar-gutter: stable both-edges;
+/* 
+    height: 69vh; */
+    /* overflow-y: scroll;
+    scrollbar-gutter: stable both-edges; */
 }
 
 .activity_article {
@@ -306,7 +316,11 @@ body {
     border-bottom-width:1px ;
     margin: 3px 5px;
     padding: 3px;
+    color: white;
 }
+
+
+
 
 .introduce .introduce_left .sex{
     width: auto;
@@ -332,12 +346,11 @@ body {
     border-bottom-width:1px ;
     margin: 3px 5px;
     padding: 3px;
-    color: #000;
+    color: white;
 }
 
-
-
-.introduce .introduce_right input{
+.introduce .introduce_right input,
+.introduce .introduce_left input{
     background-color: white;
     color: #000;
 }
@@ -602,7 +615,7 @@ h3{
 
 
 /*-----捲軸改色--------*/
-.activity_article::-webkit-scrollbar-thumb {
+/* .activity_article::-webkit-scrollbar-thumb {
     background: #634921;
 }
 
@@ -613,7 +626,7 @@ h3{
 .activity_article::-webkit-scrollbar-track {
     background: #634921;
     border-radius: 10px;
-}
+} */
 
 
 
