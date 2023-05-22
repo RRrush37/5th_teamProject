@@ -1,12 +1,12 @@
 // 連結頁面
-function navigateToUrl() {
+  function navigateToUrl() {
     const selectElement = document.getElementById("choose");
     const selectedValue = selectElement.value;
     window.location.href = selectedValue;
   }
   
   
-  // lightbox
+// lightbox
   let dresss_lightbox = document.getElementsByClassName("dresss_lightbox")[0];
   let check = document.getElementsByClassName("check")[0];
   let dresss = document.getElementsByClassName("dresss");
@@ -34,7 +34,7 @@ function navigateToUrl() {
   });
   
   
-  // 下面的js是給配件有滑動的
+// 下面的js是給配件有滑動的
   let isDown = false;
   let startX;
   let scrollLeft;
@@ -73,4 +73,26 @@ function navigateToUrl() {
   const updateScrollbar = () => {
     const scrollbarHeight = nav_down_wrapper.offsetHeight;
     const sliderHeight = nav_down_wrapper.scrollHeight;
+  }
+
+
+// num
+  let total = 0;
+  let lastClickedNumber = null;
+
+  function addToTotal(number, index) {
+    if (lastClickedNumber === index) {
+      total -= number;
+      lastClickedNumber = null;
+    } else {
+      total += number;
+      lastClickedNumber = index;
+    }
+    document.getElementById("result").textContent = "" + total;
+  }
+
+  function resetTotal() {
+    total = 0;
+    lastClickedNumber = null;
+    document.getElementById("result").textContent = "" + total;
   }

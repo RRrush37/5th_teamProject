@@ -78,7 +78,7 @@ body{
 
 /* 左邊選單 */
 .nav_left{
-    background-image: url(../../IMG/store/photo_frame.png);
+    background-image: url(/IMG/store/photo_frame.png);
     width: 195px;
     height: 424px;
     opacity: 0.8;
@@ -110,7 +110,7 @@ body{
 
 /* 人偶 */
 .coutainer{
-    background-image: url(../../IMG/store/photo_frame_3.png);
+    background-image: url(/IMG/store/photo_frame_3.png);
     background-size: 65% auto;
     background-repeat: no-repeat;
     width: 606px;
@@ -149,10 +149,10 @@ body{
 
 /* 下方選單 */
 .nav_down{
-    background: rgba(0, 0, 0, 0.45);
+    background: #ffffffaa;
     position: absolute;
-    width: 450px;
-    height: 180px;
+    width: 500px;
+    height: 200px;
     left: 50%;
     top: 95%;
     transform: translate(-50%, -40%);
@@ -161,44 +161,27 @@ body{
 
 .nav_down_wrapper{
     display: flex;
-    height: 160px;
-    width: 400px;
+    height: 180px;
+    width: 480px;
     margin: 10px auto;
-    overflow: auto;
+    overflow-y: hidden;
 }
 
-.commodity_wrapper{
+.number{
     cursor: pointer;
     display: flex;
-    margin-left: 10px;
-}
-
-.commodity_wrapper:hover{
-    color: #000;
-    background-color: rgba(255, 255, 255, 0.642);
-    box-shadow: 0 0 5px #ffffff;
-    border-radius: 10px;
-}
-
-.commodity_wrapper:hover .money .a{
-    fill: #000;
-
-}
-
-.commodity_wrapper:hover .money p{
-    color: #000;
-
+    margin: 10px 20px;
 }
 
 .money{
     display: flex;
-    margin-top: 100px;
+    margin-top: 120px;
     padding-right: 10px;
 }
 
 .money p{
     margin-left: 5px;
-    color: white;
+    color: #000;
 }
 
 .nav_down_wrapper::-webkit-scrollbar {
@@ -207,17 +190,33 @@ body{
 }
 
 .nav_down_wrapper::-webkit-scrollbar-thumb {
-    background: #ffffffcb;
+    background: #ffffff;
     border-radius: 10px;
 }
 
 .nav_down_wrapper::-webkit-scrollbar-track {
-    background: #ffffff66;
+    background: #00000066;
     border-radius: 10px;
 }
 
-.commodity{
-    width: 120px;
+.clothes{
+    width: 150px;
+    height: 150px;
+    background-size: 200%;
+    background-position: center;
+}
+
+.T-shirt{
+    background-image: url(/IMG/people/T-shirt.png);
+    background-position: 50% 60%;
+}
+
+.navytopbow{
+    background-image: url(/IMG/people/navytopbow.png);
+}
+
+.navytoptie{
+    background-image: url(/IMG/people/navytoptie.png);
 }
 
 /*--------------------------- lightbox ---------------------------*/
@@ -274,7 +273,7 @@ body{
 }
 
 .dresss_choose{
-    background-image: url(../../IMG/store/photo_frame_3.png);
+    background-image: url(/IMG/store/photo_frame_3.png);
     background-size: 53% auto;
     background-repeat: no-repeat;
     width: 606px;
@@ -285,10 +284,10 @@ body{
 
 .dresss_choose > .people_choose{
     position: absolute;
-    top: 55%;
-    left: 65%;
+    top: 70%;
+    left: 75%;
     transform: translate(-100%, -70%);
-    width: 150px;
+    width: 250px;
 }
 
 .money1{
@@ -296,7 +295,8 @@ body{
     align-items: center;
 }
 
-.money1 h2{
+.money1 #result{
+    font-size: 3rem;
     color: #000;
     margin-left: 10px;
 }
