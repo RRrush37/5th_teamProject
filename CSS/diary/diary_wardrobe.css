@@ -134,8 +134,6 @@ h1{
     left: 37%;
     transform: translate(-50%, -50%); /* 修改为平移容器的中心点 */
     width: 137px;
-    /* max-height: 100%; 添加最大高度限制 */
-    /* overflow-y: auto; 使用自动滚动条，只在需要时显示 */
 }
 
 /*----更換按鈕--------*/
@@ -157,32 +155,33 @@ h1{
 }
 /*-----下方導覽列----------*/
 .nav_down{
-    background: rgba(0, 0, 0, 0.616);
+    background: #ffffffaa;
     position: absolute;
     width: 500px;
-    /* height: 150px; */
     left: 50%;
     top: 77%;
     transform: translate(-50%, -50%);
-
-    /* overflow: hidden; */
     overflow: auto;
 }
 
 .nav_down ul{
     display: flex;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
+    align-items: center;
     height: 150px;
-    overflow: auto;
+    /* overflow: auto; */
     padding: 0;
-    justify-content:space-between ;
+    /* justify-content:space-between; */
 }
 
 .nav_down ul li{
-    background-image: url(//IMG/diary/nav_Rectangle\ .png);
+    /* background-image: url(/IMG/diary/nav_Rectangle\ .png); */
+    flex-shrink: 0;
     width: 86.56px;
     height: 86px;
-    margin: 10px;
+    margin: 10px 17px;
+    background-color: #ffffff;
+    overflow: hidden;
     /* background-color: white; */
     /* box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25); */
 }
@@ -202,11 +201,17 @@ h1{
     border-radius: 10px;
 }
 
-.commodity{
-    margin: 10px;
+/*--------------*/
+
+ul li img{
+    width: 100%;
 }
 
-
+.e1 img{
+    /* background-image:url(/IMG/people/e1.png); */
+    width:100%;
+    
+}
 
 
 
