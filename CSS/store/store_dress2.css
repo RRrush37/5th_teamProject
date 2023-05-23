@@ -122,14 +122,66 @@ body{
 }
 
 .doll{
+    /* background-image: url(/IMG/people/hair4.png),url(/IMG/people/glasses.png),url(/IMG/people/mask.png),url(/IMG/people/m2.png),url(/IMG/people/e2.png),url(/IMG/people/eb3.png),url(/IMG/people/top4.png),url(/IMG/people/bottom4.png), url(/IMG/people/body.png); */
+    background-image: url(/IMG/people/body.png);
+}
+
+.coutainer  .doll,
+.coutainer  .eyebrow,
+.coutainer  .eye,
+.coutainer  .mouth,
+.coutainer  .clothes,
+.coutainer  .bottoms,
+.coutainer  .accessories1,
+.coutainer  .hair,
+.coutainer  .accessories2,
+.coutainer  .accessories3{
     width: 250px;
     height: 250px;
-    background-image:url(/IMG/people/hair4.png),url(/IMG/people/glasses.png),url(/IMG/people/mask.png),url(/IMG/people/m2.png),url(/IMG/people/e2.png),url(/IMG/people/eb3.png),url(/IMG/people/top4.png),url(/IMG/people/bottom4.png), url(/IMG/people/body.png);
+    position: absolute;
+    top: 12%;
+    left: 12%;
     background-size: contain;
     background-repeat: no-repeat;
-    position: absolute;
-    top: 15%;
-    left: 20%;
+    background-position: center center;
+}
+
+
+.coutainer .eyebrow{
+    background-image: url(/IMG/people/eb1.png);
+}
+
+.coutainer  .eye{
+    background-image: url(/IMG/people/e1.png);
+}
+
+.coutainer  .mouth{
+    background-image: url(/IMG/people/m1.png);
+    
+}
+
+.coutainer  .clothes{
+    background-image: url(/IMG/people/top2.png);
+}
+
+.coutainer  .bottoms{
+    background-image: url(/IMG/people/bottom1.png);
+}
+
+.coutainer  .accessories1{
+    background-image: url(/IMG/people/mask.png);
+}
+
+.coutainer  .hair{
+    background-image: url(/IMG/people/hair3.png);
+}
+
+.coutainer  .accessories2{
+    background-image: url(/IMG/people/cap.png);
+}
+
+.coutainer  .accessories3{
+    background-image: url(/IMG/people/glasses.png);
 }
 
 .check{
