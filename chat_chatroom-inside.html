@@ -47,20 +47,20 @@
         </svg>
         <h1>聊天室房間</h1>
     </div>
-    <div class="chatroom-inside">
+    <div id="chatroom-inside" class="chatroom-inside">
         <h3>房間代碼:55688</h3>
         <div>
             <ul>
                 <li class="chatroom-inside-left">
                     <ul>
                         <h4>聊天列表</h4>
-                        <img src="img/chat/tree.jpg" alt="">
+                        <!-- <img src="img/chat/tree.jpg" alt=""> -->
                         <input type="text" id="chatroom-inside-placeholder" placeholder="搜尋聊天">
-                        <li><img src="img/chat/tree.jpg" alt="">好友暱稱</li>
-                        <li><img src="img/chat/tree.jpg" alt="">聊天室名稱</li>
-                        <li><img src="img/chat/tree.jpg" alt="">好友暱稱</li>
-                        <li><img src="img/chat/tree.jpg" alt="">好友暱稱</li>
-                        <li><img src="img/chat/tree.jpg" alt="">好友暱稱</li>
+                        <li><img class="userprofile-btn" src="img/chat/tree.jpg" alt="">好友暱稱</li>
+                        <li><img class="userprofile-btn" src="img/chat/tree.jpg" alt="">聊天室名稱</li>
+                        <li><img class="userprofile-btn" src="img/chat/tree.jpg" alt="">好友暱稱</li>
+                        <li><img class="userprofile-btn" src="img/chat/tree.jpg" alt="">好友暱稱</li>
+                        <li><img class="userprofile-btn" src="img/chat/tree.jpg" alt="">好友暱稱</li>
                     </ul>
                 </li>
                 <li class="chatroom-inside-middle">
@@ -73,19 +73,107 @@
                     <ul>
                         <h4>好友列表</h4>
                         <input type="text" id="chatroom-inside-placeholder" placeholder="好友列表">
-                        <li><img src="img/chat/tree.jpg" alt="">好友暱稱</li>
-                        <li><img src="img/chat/tree.jpg" alt="">好友暱稱</li>
-                        <li><img src="img/chat/tree.jpg" alt="">好友暱稱</li>
-                        <li><img src="img/chat/tree.jpg" alt="">好友暱稱</li>
-                        <li><img src="img/chat/tree.jpg" alt="">好友暱稱</li>
+                        <li><img class="userprofile-btn"  src="img/chat/tree.jpg" alt="">好友暱稱</li>
+                        <li><img class="userprofile-btn" src="img/chat/tree.jpg" alt="">好友暱稱</li>
+                        <li><img class="userprofile-btn"  src="img/chat/tree.jpg" alt="">好友暱稱</li>
+                        <li><img class="userprofile-btn"  src="img/chat/tree.jpg" alt="">好友暱稱</li>
+                        <li><img class="userprofile-btn"  src="img/chat/tree.jpg" alt="">好友暱稱</li>
                     </ul>
-                    <a href="">
-                        <img src="img/chat/plus.svg" alt="">
-                        新增好友</a>
+                    <div id="search-user-btn">
+                        <img  src="img/chat/plus.svg" alt="">
+                        新增好友</div>
                 </li>
             </ul>
         </div>
+
+       
     </div>
+    <div id="usertext-all" class="usertext-all">
+        <div class="usertext-top">
+            <img src="img/chat/tree.jpg" alt="">
+            <h4>小明</h4>
+            <p>ID:0000000</p>
+            <p>夢想這條路,跪著也要走完</p>
+        </div>
+        <div class="usertext">
+            <div class="usertext-left">
+                <table>
+                    <tr>
+                        <td>性別</td>
+                        <td>男/女</td>
+                    </tr>
+                    <td>身高</td>
+                    <td>202CM</td>
+                    <tr>
+                        <td>e-mail</td>
+                        <td>nehao@gmail.com</td>
+                    </tr>
+                    <tr>
+                        <td>興趣</td>
+                        <td>背ABC</td>
+                    </tr>
+                </table>
+
+                <input type="button" value="刪除">
+                <input type="button" value="加入">
+                <input type="button" value="檢舉">
+            </div>
+            <div class="usertext-right">
+                <table>
+                    <tr>
+                        <td>ID</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>暱稱</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>年齡</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>體重</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>星座</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>生日</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>個性簽名</td>
+                        <td>1</td>
+                    </tr>
+
+                </table>
+            </div>
+        </div>
+    </div>
+    
+    <div id="search-user_box" class="none">
+        <div id="search-user" class="search-user">
+            <h3>透過ID或暱稱尋找用戶</h3>
+            <ul>
+    
+                <li>
+                    <input type="text" placeholder="請輸入ID或暱稱">
+                </li>
+                <li>
+                    <input type="text" id="myInput" placeholder="用戶暱稱 用戶ID">
+                    <button id="clear-button1" onclick="clearInput()">取消請求</button>
+                </li>
+                <li>
+                    <input type="text" placeholder="用戶暱稱 用戶ID">
+                </li>
+    
+            </ul>
+        </div>
+    </div>
+    
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://kit.fontawesome.com/75e9abcec6.js" crossorigin="anonymous"></script>
@@ -95,6 +183,7 @@
             $(".footer").load("common.html .footer>div");
         });
     </script>
+    <script src="js/chat/chatroom-inside.js"></script>
 </body>
 
 </html>
