@@ -177,8 +177,74 @@ padding: 20px;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 1;
   border-radius: 50px;
-  
+ background-image: url(../../IMG/people/body.png);
+  max-width: 100%; 
+  max-height: 100%; 
+  background-repeat: no-repeat;
+  background-position: center center; 
+  background-size: cover;
+  background-size: 30%;
 }
+
+.baby .cap,
+.baby .hair,
+.baby .glasses,
+.baby .mask,
+.baby .m,
+.baby .e,
+.baby .eb,
+.baby .top,
+.baby .bottom{
+  position: absolute;
+  right: 50px;
+  top: 0px;
+  width: 80%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: center center; 
+  background-size: cover;
+  background-size: 38%;
+
+}
+
+.baby .cap{
+  background-image: url(../../IMG/people/cap.png);
+}
+
+.baby .hair{
+  background-image: url(../../IMG/people/hair3.png);
+}
+
+.baby .glasses{
+  background-image: url(../../IMG/people/glasses.png);
+}
+
+.baby .m{
+  background-image: url(../../IMG/people/m1.png);
+}
+
+.baby .e{
+  background-image: url(../../IMG/people/e1.png);
+}
+
+.baby .eb{
+  background-image: url(../../IMG/people/eb1.png);
+}
+
+.baby .top{
+  background-image: url(../../IMG/people/top5.png);
+}
+
+.baby .bottom{
+  background-image: url(../../IMG/people/bottom5.png);
+}
+
+
+
+
+
+
+
 
 .baby img {
  height: 100%;
@@ -313,25 +379,30 @@ overflow-x: scroll; /* 設定水平滾動 */
   background:  #CCD7B5;
 }
 
+.boxs:nth-child(n+1):nth-child(-n+5) img {
+  transform: scale(2); /* 將第3到第9個子層div的圖片放大到200% */
+  transition: transform 0.3s ease; /* 添加動畫效果 */
+  padding-top: 15px;
+}
 
 .boxs:nth-child(n+6):nth-child(-n+20) img {
   transform: scale(3); /* 將第3到第9個子層div的圖片放大到200% */
   transition: transform 0.3s ease; /* 添加動畫效果 */
 }
 
-.boxs:nth-child(n+21):nth-child(-n+23) img {
+.boxs:nth-child(n+21):nth-child(-n+26) img {
   transform: scale(3); /* 將第3到第9個子層div的圖片放大到200% */
   transition: transform 0.3s ease; /* 添加動畫效果 */
   padding-bottom: 25px;
 }
 
-.boxs:nth-child(n+24):nth-child(-n+27) img {
-  transform: scale(3.5); /* 將第3到第9個子層div的圖片放大到200% */
-  transition: transform 0.3s ease; /* 添加動畫效果 */
-  padding-bottom: 15px;
-}
-.boxs:nth-child(28) img {
+.boxs:nth-child(n+25):nth-child(-n+27) img {
   transform: scale(3); /* 將第3到第9個子層div的圖片放大到200% */
   transition: transform 0.3s ease; /* 添加動畫效果 */
-  padding-bottom: 20px;
+  padding-bottom: 30px;
+}
+.boxs:nth-child(28) img {
+  transform: scale(2.6); /* 將第3到第9個子層div的圖片放大到200% */
+  transition: transform 0.3s ease; /* 添加動畫效果 */
+  padding-bottom: 30px;
 }
