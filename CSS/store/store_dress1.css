@@ -121,12 +121,67 @@ body{
     transform: translate(-35%, -30%);
 }
 
-.coutainer > .people{
+.doll{
+    /* background-image: url(/IMG/people/hair4.png),url(/IMG/people/glasses.png),url(/IMG/people/mask.png),url(/IMG/people/m2.png),url(/IMG/people/e2.png),url(/IMG/people/eb3.png),url(/IMG/people/top4.png),url(/IMG/people/bottom4.png), url(/IMG/people/body.png); */
+    background-image: url(/IMG/people/body.png);
+}
+
+.coutainer  .doll,
+.coutainer  .eyebrow,
+.coutainer  .eye,
+.coutainer  .mouth,
+.coutainer  .clothes,
+.coutainer  .bottoms,
+.coutainer  .accessories1,
+.coutainer  .hair,
+.coutainer  .accessories2,
+.coutainer  .accessories3{
+    width: 250px;
+    height: 250px;
     position: absolute;
-    top: 55%;
-    left: 60%;
-    transform: translate(-100%, -70%);
-    width: 350px;
+    top: 12%;
+    left: 12%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+
+.coutainer .eyebrow{
+    background-image: url(/IMG/people/eb1.png);
+}
+
+.coutainer  .eye{
+    background-image: url(/IMG/people/e1.png);
+}
+
+.coutainer  .mouth{
+    background-image: url(/IMG/people/m1.png);
+    
+}
+
+.coutainer  .clothes{
+    background-image: url(/IMG/people/top2.png);
+}
+
+.coutainer  .bottoms{
+    background-image: url(/IMG/people/bottom1.png);
+}
+
+.coutainer  .accessories1{
+    background-image: url(/IMG/people/mask.png);
+}
+
+.coutainer  .hair{
+    background-image: url(/IMG/people/hair3.png);
+}
+
+.coutainer  .accessories2{
+    background-image: url(/IMG/people/cap.png);
+}
+
+.coutainer  .accessories3{
+    background-image: url(/IMG/people/glasses.png);
 }
 
 .check{
@@ -202,24 +257,29 @@ body{
 .hair{
     width: 150px;
     height: 150px;
-    background-size: 120%;
+    background-size: 80%;
     background-position: 50% 0;
+    background-repeat: no-repeat;
 }
 
-.shortcurlhair{
-    background-image: url(/IMG/people/shortcurlhair.png);
+.hair1{
+    background-image: url(/IMG/people/hair1.png);
 }
 
-.shorthair{
-    background-image: url(/IMG/people/shorthair.png);
+.hair2{
+    background-image: url(/IMG/people/hair2.png);
 }
 
-.maruhair{
-    background-image: url(/IMG/people/maruhair.png);
+.hair3{
+    background-image: url(/IMG/people/hair3.png);
 }
 
-.longhair{
-    background-image: url(/IMG/people/longhair.png);
+.hair4{
+    background-image: url(/IMG/people/hair4.png);
+}
+
+.hair5{
+    background-image: url(/IMG/people/hair5.png);
 }
 
 /*--------------------------- lightbox ---------------------------*/
@@ -285,12 +345,15 @@ body{
     margin-left: 60px;
 }
 
-.dresss_choose > .people_choose{
+.doll_lightbox{
+    width: 200px;
+    height: 200px;
+    background-image:url(/IMG/people/hair4.png),url(/IMG/people/glasses.png),url(/IMG/people/mask.png),url(/IMG/people/m2.png),url(/IMG/people/e2.png),url(/IMG/people/eb3.png),url(/IMG/people/top4.png),url(/IMG/people/bottom4.png), url(/IMG/people/body.png);
+    background-size: contain;
+    background-repeat: no-repeat;
     position: absolute;
-    top: 70%;
-    left: 75%;
-    transform: translate(-100%, -70%);
-    width: 250px;
+    top: 20%;
+    left: 35%;
 }
 
 .money1{

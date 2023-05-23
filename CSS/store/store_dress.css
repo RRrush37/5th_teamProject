@@ -121,12 +121,67 @@ body{
     transform: translate(-35%, -30%);
 }
 
-.coutainer > .people{
+.doll{
+    /* background-image: url(/IMG/people/hair4.png),url(/IMG/people/glasses.png),url(/IMG/people/mask.png),url(/IMG/people/m2.png),url(/IMG/people/e2.png),url(/IMG/people/eb3.png),url(/IMG/people/top4.png),url(/IMG/people/bottom4.png), url(/IMG/people/body.png); */
+    background-image: url(/IMG/people/body.png);
+}
+
+.coutainer  .doll,
+.coutainer  .eyebrow,
+.coutainer  .eye,
+.coutainer  .mouth,
+.coutainer  .clothes,
+.coutainer  .bottoms,
+.coutainer  .accessories1,
+.coutainer  .hair,
+.coutainer  .accessories2,
+.coutainer  .accessories3{
+    width: 250px;
+    height: 250px;
     position: absolute;
-    top: 55%;
-    left: 60%;
-    transform: translate(-100%, -70%);
-    width: 350px;
+    top: 12%;
+    left: 12%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+
+.coutainer .eyebrow{
+    background-image: url(/IMG/people/eb1.png);
+}
+
+.coutainer  .eye{
+    background-image: url(/IMG/people/e1.png);
+}
+
+.coutainer  .mouth{
+    background-image: url(/IMG/people/m1.png);
+    
+}
+
+.coutainer  .clothes{
+    background-image: url(/IMG/people/top2.png);
+}
+
+.coutainer  .bottoms{
+    background-image: url(/IMG/people/bottom1.png);
+}
+
+.coutainer  .accessories1{
+    background-image: url(/IMG/people/mask.png);
+}
+
+.coutainer  .hair{
+    background-image: url(/IMG/people/hair3.png);
+}
+
+.coutainer  .accessories2{
+    background-image: url(/IMG/people/cap.png);
+}
+
+.coutainer  .accessories3{
+    background-image: url(/IMG/people/glasses.png);
 }
 
 .check{
@@ -202,87 +257,104 @@ body{
 .hair{
     width: 150px;
     height: 150px;
-    background-size: 120%;
+    background-size: 80%;
     background-position: 50% 0;
+    background-repeat: no-repeat;
 }
 
-.shortcurlhair{
-    background-image: url(/IMG/people/shortcurlhair.png);
+.hair1{
+    background-image: url(/IMG/people/hair1.png);
 }
 
-.shorthair{
-    background-image: url(/IMG/people/shorthair.png);
+.hair2{
+    background-image: url(/IMG/people/hair2.png);
 }
 
-.maruhair{
-    background-image: url(/IMG/people/maruhair.png);
+.hair3{
+    background-image: url(/IMG/people/hair3.png);
 }
 
-.longhair{
-    background-image: url(/IMG/people/longhair.png);
+.hair4{
+    background-image: url(/IMG/people/hair4.png);
+}
+
+.hair5{
+    background-image: url(/IMG/people/hair5.png);
 }
 
 .clothes{
-    width: 150px;
-    height: 150px;
-    background-size: 200%;
-    background-position: center;
-}
-
-.T-shirt{
-    background-image: url(/IMG/people/T-shirt.png);
-    background-position: 50% 60%;
-}
-
-.navytopbow{
-    background-image: url(/IMG/people/navytopbow.png);
-}
-
-.navytoptie{
-    background-image: url(/IMG/people/navytoptie.png);
-}
-
-.bottoms{
-    width: 150px;
-    height: 150px;
-    background-size: 200%;
-    background-position: 50% 70%;
-}
-
-.navyshorts{
-    background-image: url(/IMG/people/navyshorts.png);
-}
-
-.navyskirts{
-    background-image: url(/IMG/people/navyskirts.png);
-}
-
-.jeans{
-    background-image: url(/IMG/people/jeans.png);
-    background-position: 50% 80%;
-}
-
-.overalls{
-    background-image: url(/IMG/people/overalls.png);
-}
-
-.accessories{
     width: 150px;
     height: 150px;
     background-size: 150%;
     background-position: center;
 }
 
+.top1{
+    background-image: url(/IMG/people/top1.png);
+}
+
+.top2{
+    background-image: url(/IMG/people/top2.png);
+}
+
+.top3{
+    background-image: url(/IMG/people/top3.png);
+}
+
+.top4{
+    background-image: url(/IMG/people/top4.png);
+}
+
+.bottoms{
+    width: 150px;
+    height: 150px;
+    background-size: 120%;
+    background-position: 50% 100%;
+}
+
+.bottom1{
+    background-image: url(/IMG/people/bottom1.png);
+}
+
+.bottom2{
+    background-image: url(/IMG/people/bottom2.png);
+}
+
+.bottom3{
+    background-image: url(/IMG/people/bottom3.png);
+}
+
+.bottom4{
+    background-image: url(/IMG/people/bottom4.png);
+}
+
+.accessories1{
+    width: 150px;
+    height: 150px;
+    background-size: 150%;
+    background-position: 50% 30%;
+}
+
 .mask{
     background-image: url(/IMG/people/mask.png);
-    background-size: 180%;
-    background-position: 50% 30%;
+}
+
+.accessories2{
+    width: 150px;
+    height: 150px;
+    background-size: 100%;
+    background-position: 50% -20%;
 }
 
 .cap{
     background-image: url(/IMG/people/cap.png);
-    background-size: 120%;
-    background-position: 50% 0;
+}
+
+.accessories3{
+    width: 150px;
+    height: 150px;
+    background-size: 150%;
+    background-position: 50% 20%;
 }
 
 .glasses{
@@ -292,8 +364,8 @@ body{
 .eyebrow{
     width: 150px;
     height: 150px;
-    background-size: 250%;
-    background-position: 50% 40%;
+    background-size: 150%;
+    background-position: 50% 20%;
 }
 
 .eyebrow1{
@@ -315,8 +387,8 @@ body{
 .eye{
     width: 150px;
     height: 150px;
-    background-size: 200%;
-    background-position: 50% 40%;
+    background-size: 150%;
+    background-position: 50% 30%;
 }
 
 .eye1{
@@ -338,31 +410,31 @@ body{
 .mouth{
     width: 150px;
     height: 150px;
-    background-size: 300%;
+    background-size: 200%;
     background-position: 50% 40%;
 }
 
 .mouth1{
     background-image: url(/IMG/people/m1.png);
-    background-size: 500%;
 }
 
 .mouth2{
     background-image: url(/IMG/people/m2.png);
-    background-size: 400%;
 }
 
 .mouth3{
     background-image: url(/IMG/people/m3.png);
+    background-size: 250%;
 }
 
 .mouth4{
     background-image: url(/IMG/people/m4.png);
+    background-size: 300%;
 }
 
 .mouth5{
     background-image: url(/IMG/people/m5.png);
-    background-size: 400%;
+    background-size: 250%;
 }
 
 /*--------------------------- lightbox ---------------------------*/
@@ -428,12 +500,15 @@ body{
     margin-left: 60px;
 }
 
-.dresss_choose > .people_choose{
+.doll_lightbox{
+    width: 200px;
+    height: 200px;
+    background-image:url(/IMG/people/hair4.png),url(/IMG/people/glasses.png),url(/IMG/people/mask.png),url(/IMG/people/m2.png),url(/IMG/people/e2.png),url(/IMG/people/eb3.png),url(/IMG/people/top4.png),url(/IMG/people/bottom4.png), url(/IMG/people/body.png);
+    background-size: contain;
+    background-repeat: no-repeat;
     position: absolute;
-    top: 70%;
-    left: 75%;
-    transform: translate(-100%, -70%);
-    width: 250px;
+    top: 20%;
+    left: 35%;
 }
 
 .money1{
