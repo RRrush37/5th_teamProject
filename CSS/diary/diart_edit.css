@@ -1,0 +1,229 @@
+.edit_lightbox{
+    background-color: rgba(0,0,0, 0.6);
+    background-blend-mode: multiply;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top:0;
+    left:0;
+    z-index:100;
+}
+
+/*------整個版面記得要寫卷軸-50%就破版了,如何置中
+--------*/
+.wrapper1{
+    width: 40%;
+    /* height: 95%; */
+    background-color: #fff;    
+    position: absolute;
+    left: 50%;
+    top:50%; 
+    transform: translate(-50%,-50%);
+    border-radius: 40px;
+    box-shadow:0px 0px 20px rgba(255,255,255,0.9);
+    /* margin: 0 auto; */
+}
+
+/*----最上面的版面---------*/
+.wrapper1 h2{
+    color: black;
+    padding: 10px 26px 4px;
+    font-style: normal;
+    font-size: 3rem;
+    line-height: 36px;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+/*----用戶暱稱&幾小時前公布-----------------*/
+.top{
+    display: flex;
+    padding: 0 26px;
+    align-items: center;
+    /* position: relative; */
+}
+
+/* .top > h4{
+    position: absolute;
+    right: 30px;
+    top: 0px;
+    font-size: .5rem;
+} */
+
+
+.release{
+    position: absolute;
+    top:3px;
+    right: 30px;
+    font-size: 1.5rem;
+}
+
+
+.avatar{
+    /* position: relative;
+    top: 4px;
+    left: 18px; */
+
+    /* left: 30px; */
+}
+.nickname{
+
+    margin-left: 1rem;
+    font-size: 2rem;
+}
+
+/*--------中間編輯文章的部分---------------*/
+/*-----bottom OVER FLOW :SCOLL
+有問題問佩妮
+設置高度
+------*/
+
+.wrapper1 .middle{
+    padding: 10px 26px;
+}
+
+.wrapper1 .middle h3{
+    font-size: 2rem;
+    margin: 0 43px;
+}
+
+.wrapper1 .middle .bottom h3{
+    margin: 0 10px;
+}
+
+
+/* .middle::-webkit-scrollbar {
+    width: 10px;
+}
+
+.middle::-webkit-scrollbar-thumb {
+    background: #4b6264;
+    border-radius: 10px;
+}
+
+.middle::-webkit-scrollbar-track {
+    background: #79A0A5;
+    border-radius: 10px;
+} */
+
+
+
+
+
+
+
+.bottom{
+    /*----中下方-------*/
+    padding: 10px 30px;
+}
+
+.upload{
+    min-height:fit-content;
+    margin:0px 10px 10px;
+}
+
+.editarea .text{
+    min-height: auto;
+    width: 100%;
+    /* padding: 10px; */
+    height: 100%;
+}
+
+.text h3{
+    margin: 3px 13px;
+    font-size: 2rem;
+}
+
+
+
+
+
+
+
+
+
+.title-input{
+    width: 50%;
+    margin: 20px 43px;
+    font-size: 2rem;
+}
+.content-input{
+    margin: 10px;
+    width: 93%;
+    height: fit-content;
+    height: 150px;
+    
+}
+
+.editarea{
+    border:1px solid #d5e3a1b3;
+    width: 100%;
+    background-color: #d5e3a1b3;
+    height: 250px;
+    /* height: 50%; */
+    /* max-height: auto; */
+    /* max-width:max-content */
+}
+
+/*------放貼圖跟圖片的地方-----*/
+.bottom{
+    width: 100%;
+    height: 240px;
+
+    overflow: auto;
+}
+
+.bottom::-webkit-scrollbar {
+    width: 10px;
+}
+
+.bottom::-webkit-scrollbar-thumb {
+    background: #4b6264;
+    border-radius: 10px;
+}
+
+.bottom::-webkit-scrollbar-track {
+    background: #79A0A5;
+    border-radius: 10px;
+}
+
+
+
+
+/*--------按鈕-----------*/
+
+.button{
+    display:flex;
+    justify-content: end;
+    align-items: center;
+    padding: 0px 20px  10px;
+    margin: 0 170px;
+}
+
+input.cancel{
+        /* border:none; */
+        /* width: 12%; */
+    border: 1px solid black;
+    background-color:white;
+    color: black;
+    border-radius: 30px ;
+        /* border-color:black; */
+    font-size: 2rem;
+    margin: 6px 16px;
+}
+
+input.send{
+    border: 1px solid black;
+    background-color:#665448;
+    color:white;
+        border-radius: 30px ;
+        /* border-color:black; */
+        font-size: 2rem;
+}
+
+
+
+
+
+
+
+
