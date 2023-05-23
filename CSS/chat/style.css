@@ -1,8 +1,9 @@
 body{
-    background-image: url(../../img/chat/highbackground.jpg);
+    background-image: url(../../IMG/chat/highbackground.jpg);
     background-size: cover;
     
 }
+
 .search-create{
     margin: 3rem auto;
     width: 60%;
@@ -132,12 +133,29 @@ body{
 }
 
 /* 聊天室大廳 尋找用戶*/
+#search-user_box{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#search-user_box.none{
+    display: none;
+}
 
 .search-user{
     width: 50%;
     max-width: 1200px;
     background-color: rgba(255, 251, 251, 0.34);
     margin: 2rem auto;
+    border-radius: 1rem;
+    /* display: none; */
 }
 
 .search-user h3{
@@ -146,8 +164,8 @@ body{
     color: white;
     text-shadow: .5px .5px .5px black;
     text-align: center;
-    margin: 0 auto;
-    padding-top: 1rem;
+    margin: 2rem auto;
+    padding-top: 3rem;
     
 }
 
@@ -164,6 +182,7 @@ body{
     width: 100%;
     background-color: #EFE0CC;
     border-radius: 1.2rem;
+    margin-bottom: 3rem;
 }
 
 .search-user input{
@@ -190,6 +209,9 @@ body{
     background-color: #56493f;
     margin: 1rem auto;
     padding-bottom: 3rem;
+
+    
+    display: none;
 }
 
 .usertext-top{
@@ -249,6 +271,7 @@ body{
     width: 60%;
     background-color: #56493f;
     margin: 1rem auto;
+    padding-bottom: 2rem;
    
 }
 
@@ -334,7 +357,7 @@ body{
     color: black;
 }
 
-.chatroom-inside-right a{
+.chatroom-inside-right div{
     font-size: 2rem;
     display: block;
     margin-top: 1rem;

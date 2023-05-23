@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>揪活動</title>
-    <link rel="stylesheet" href="./CSS/activity.css">
+    <link rel="stylesheet" href="CSS/activity/activity.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -19,33 +19,35 @@
             <span>
                 <div class="activity_title">
                     <svg width="40" height="40" viewBox="0 0 83 83" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <g filter="url(#filter0_dd_668_6)">
-                            <path d="M9 37.5L34.2778 5V23.018L74 23.0556V51.9444H34.2778V70L9 37.5Z" fill="#606C99"
-                                stroke="#606C99" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" />
-                        </g>
-                        <defs>
-                            <filter id="filter0_dd_668_6" x="0" y="0" width="83" height="83"
-                                filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                                <feFlood flood-opacity="0" result="BackgroundImageFix" />
-                                <feColorMatrix in="SourceAlpha" type="matrix"
-                                    values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
-                                <feOffset dy="4" />
-                                <feGaussianBlur stdDeviation="2" />
-                                <feComposite in2="hardAlpha" operator="out" />
-                                <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" />
-                                <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_668_6" />
-                                <feColorMatrix in="SourceAlpha" type="matrix"
-                                    values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
-                                <feOffset dy="4" />
-                                <feGaussianBlur stdDeviation="2" />
-                                <feComposite in2="hardAlpha" operator="out" />
-                                <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" />
-                                <feBlend mode="normal" in2="effect1_dropShadow_668_6"
-                                    result="effect2_dropShadow_668_6" />
-                                <feBlend mode="normal" in="SourceGraphic" in2="effect2_dropShadow_668_6"
-                                    result="shape" />
-                            </filter>
-                        </defs>
+                        <a href="">
+                            <g filter="url(#filter0_dd_668_6)">
+                                <path d="M9 37.5L34.2778 5V23.018L74 23.0556V51.9444H34.2778V70L9 37.5Z" fill="#606C99"
+                                    stroke="#606C99" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" />
+                            </g>
+                            <defs>
+                                <filter id="filter0_dd_668_6" x="0" y="0" width="83" height="83"
+                                    filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                    <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                    <feColorMatrix in="SourceAlpha" type="matrix"
+                                        values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+                                    <feOffset dy="4" />
+                                    <feGaussianBlur stdDeviation="2" />
+                                    <feComposite in2="hardAlpha" operator="out" />
+                                    <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" />
+                                    <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_668_6" />
+                                    <feColorMatrix in="SourceAlpha" type="matrix"
+                                        values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+                                    <feOffset dy="4" />
+                                    <feGaussianBlur stdDeviation="2" />
+                                    <feComposite in2="hardAlpha" operator="out" />
+                                    <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" />
+                                    <feBlend mode="normal" in2="effect1_dropShadow_668_6"
+                                        result="effect2_dropShadow_668_6" />
+                                    <feBlend mode="normal" in="SourceGraphic" in2="effect2_dropShadow_668_6"
+                                        result="shape" />
+                                </filter>
+                            </defs>
+                        </a>
                     </svg>
                     <h1>揪夥伴</h1>
                 </div>
@@ -167,10 +169,15 @@
                                         <span class="topic">好邊緣</span>
                                         <section class="post_time">2小時前發布</section>
                                     </div>
-                                    <span class="more_action">‧‧‧</span>
+                                    <span class="more_action">‧‧‧<ul class="list -none">
+                                            <li>
+                                                <span class="more_action_list">‧‧‧</span>
+                                                <h3>檢舉活動</h3>
+                                            </li>
+                                        </ul></span>
                                 </div>
                                 <div class="cards_content">
-                                    <div class="card_user"><img class="user" src="./IMG/activity/lonely.png" alt=""
+                                    <div class="card_user"><img class="user" src="IMG/activity/lonely.png" alt=""
                                             width="60">
                                     </div>
                                     <div class="card_text">
@@ -181,7 +188,7 @@
                                             我想吃品田牧場我想吃品田牧場我想吃品田牧場我想吃品田牧場我想吃品田牧場我想吃品田牧場我想吃品田牧場我想吃品田牧場我想吃品田牧場我想吃品田牧場我想吃品田牧場我想吃品田牧場我想吃品田牧場我想吃品田牧場我想吃品田牧場我想吃品田牧場我想吃品田牧場我想吃品田牧場我想吃品田牧場我想吃品田牧場
                                         </div>
                                     </div>
-                                    <div class="card_pics"><img src="./IMG/activity/ping.png" alt="" width="100"></div>
+                                    <div class="card_pics"><img src="IMG/activity/ping.png" alt="" width="100"></div>
                                 </div>
                                 <div class="cards_actions">
                                     <div class="interact">
@@ -205,7 +212,7 @@
                                     <span class="more_action">‧‧‧</span>
                                 </div>
                                 <div class="cards_content">
-                                    <div class="card_user"><img class="user" src="./IMG/activity/luffy.png" alt=""
+                                    <div class="card_user"><img class="user" src="IMG/activity/luffy.png" alt=""
                                             width="60">
                                     </div>
                                     <div class="card_text">
@@ -216,7 +223,7 @@
                                             其實我是想成為海王不是海賊王其實我是想成為海王不是海賊王其實我是想成為海王不是海賊王其實我是想成為海王不是海賊王其實我是想成為海王不是海賊王其實我是想成為海王不是海賊王
                                         </div>
                                     </div>
-                                    <div class="card_pics"><img src="./IMG/activity/devilfruit.png" alt="" width="100">
+                                    <div class="card_pics"><img src="IMG/activity/devilfruit.png" alt="" width="100">
                                     </div>
                                 </div>
                                 <div class="cards_actions">
@@ -241,7 +248,7 @@
                                     <span class="more_action">‧‧‧</span>
                                 </div>
                                 <div class="cards_content">
-                                    <div class="card_user"><img class="user" src="./IMG/activity/Eren.png" alt=""
+                                    <div class="card_user"><img class="user" src="IMG/activity/Eren.png" alt=""
                                             width="60">
                                     </div>
                                     <div class="card_text">
@@ -276,7 +283,7 @@
                                     <span class="more_action">‧‧‧</span>
                                 </div>
                                 <div class="cards_content">
-                                    <div class="card_user"><img class="user" src="./IMG/activity/Eren.png" alt=""
+                                    <div class="card_user"><img class="user" src="IMG/activity/Eren.png" alt=""
                                             width="60">
                                     </div>
                                     <div class="card_text">
@@ -311,7 +318,7 @@
                                     <span class="more_action">‧‧‧</span>
                                 </div>
                                 <div class="cards_content">
-                                    <div class="card_user"><img class="user" src="./IMG/activity/Eren.png" alt=""
+                                    <div class="card_user"><img class="user" src="IMG/activity/Eren.png" alt=""
                                             width="60">
                                     </div>
                                     <div class="card_text">
@@ -346,7 +353,7 @@
                                     <span class="more_action">‧‧‧</span>
                                 </div>
                                 <div class="cards_content">
-                                    <div class="card_user"><img class="user" src="./IMG/activity/Eren.png" alt=""
+                                    <div class="card_user"><img class="user" src="IMG/activity/Eren.png" alt=""
                                             width="60">
                                     </div>
                                     <div class="card_text">
@@ -409,12 +416,12 @@
                             <section>
                                 沒人約我沒人約我沒人約我沒人約我沒人約我沒人約我沒人約我沒人約我沒人約我沒人約我沒人約我沒人約我沒人約我沒人約我沒人約我沒人約我沒人約我沒人約我沒人約我
                             </section>
-                            <a href="#">管理我的活動</a>
+                            <a href="activity_my_post.html">管理我的活動</a>
                         </div>
                         <div class="my_activity">
                             <h3>廣告</h3>
-                            <a href=""><img src="./IMG/activity/ad1.jpg" alt=""></a>
-                            <a href=""><img src="./IMG/activity/ad2.jpg" alt=""></a>
+                            <a href=""><img src="IMG/activity/ad1.jpg" alt=""></a>
+                            <a href=""><img src="IMG/activity/ad2.jpg" alt=""></a>
                         </div>
                     </div>
                 </div>
@@ -426,7 +433,7 @@
                     <i class="fa-solid fa-xmark"></i>
                     <div class="activity_inf">
                         <div class="article_top_left">
-                            <img class="user" src="./IMG/activity/lonely.png" alt="" width="60">
+                            <img class="user" src="IMG/activity/lonely.png" alt="" width="60">
                             <div class="user_identity">
                                 <p>用戶暱稱</p>
                                 <p>用戶ID</p>
@@ -469,7 +476,7 @@
                         <h3>共7則留言</h3>
                         <div class="comment_card">
                             <span class="more_action">‧‧‧</span>
-                            <img class="user" src="./IMG/activity/lonely.png" alt="" width="60">
+                            <img class="user" src="IMG/activity/lonely.png" alt="" width="60">
                             <div class="comment_text">
                                 <h2>用戶暱稱</h2>
                                 <p>留言留言留言留言留言留言留言</p>
@@ -478,7 +485,7 @@
                         </div>
                         <div class="comment_card">
                             <span class="more_action">‧‧‧</span>
-                            <img class="user" src="./IMG/activity/lonely.png" alt="" width="60">
+                            <img class="user" src="IMG/activity/lonely.png" alt="" width="60">
                             <div class="comment_text">
                                 <h2>用戶暱稱</h2>
                                 <p>留言留言留言留言留言留言留言<br>
@@ -488,7 +495,7 @@
                         </div>
                         <div class="comment_card">
                             <span class="more_action">‧‧‧</span>
-                            <img class="user" src="./IMG/activity/lonely.png" alt="" width="60">
+                            <img class="user" src="IMG/activity/lonely.png" alt="" width="60">
                             <div class="comment_text">
                                 <h2>用戶暱稱</h2>
                                 <p>留言留言留言留言留言留言留言</p>
@@ -498,7 +505,7 @@
                     </div>
                 </div>
                 <div class="activity_myaction">
-                    <img class="user" src="./IMG/activity/lonely.png" alt="" width="40">
+                    <img class="user" src="IMG/activity/lonely.png" alt="" width="40">
                     <div class="comment_keyin">
                         <textarea name="" id="" cols="30" rows="1" placeholder="留言..."></textarea>
                         <div class="paste">
@@ -595,6 +602,30 @@
             }
             refreshDate();
         }
+        // more action
+
+        let more_action = document.getElementsByClassName("more_action");
+        let more_action_list = document.getElementsByClassName("more_action_list");
+        let list = document.getElementsByClassName("list");
+
+        for (let k = 0; k < more_action.length; k++) {
+            more_action[k].addEventListener("click", function (e) {
+                e.stopPropagation();
+                for (let m = 0; m < list.length; m++) {
+                    list[m].classList.remove("-none");
+                }
+            });
+        }
+        for (let n = 0; n < more_action_list.length; n++) {
+            more_action_list[n].addEventListener("click", function (e) {
+                e.stopPropagation();
+                for (let p = 0; p < list.length; p++) {
+                    list[p].classList.add("-none");
+                }
+            });
+        }
+
+
 
         // 燈箱出現消失
 

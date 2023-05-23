@@ -1,160 +1,218 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="./CSS/global.css">
-    <link rel="stylesheet" href="./CSS/diary/diary.css">
+    <link rel="stylesheet" href="CSS/global.css" />
+    <link rel="stylesheet" href="CSS/diary/diary.css" />
 
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-
-</head>
-<body>
-    <div class="header"></div> 
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="header"></div>
     <div class="activity_title">
-        <svg width="40" height="40" viewBox="0 0 83 83" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <g filter="url(#filter0_dd_668_6)">
-                <path d="M9 37.5L34.2778 5V23.018L74 23.0556V51.9444H34.2778V70L9 37.5Z" fill="#606C99"
-                    stroke="#606C99" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" />
-            </g>
-            <defs>
-                <filter id="filter0_dd_668_6" x="0" y="0" width="83" height="83"
-                    filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                    <feFlood flood-opacity="0" result="BackgroundImageFix" />
-                    <feColorMatrix in="SourceAlpha" type="matrix"
-                        values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
-                    <feOffset dy="4" />
-                    <feGaussianBlur stdDeviation="2" />
-                    <feComposite in2="hardAlpha" operator="out" />
-                    <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" />
-                    <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_668_6" />
-                    <feColorMatrix in="SourceAlpha" type="matrix"
-                        values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
-                    <feOffset dy="4" />
-                    <feGaussianBlur stdDeviation="2" />
-                    <feComposite in2="hardAlpha" operator="out" />
-                    <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" />
-                    <feBlend mode="normal" in2="effect1_dropShadow_668_6"
-                        result="effect2_dropShadow_668_6" />
-                    <feBlend mode="normal" in="SourceGraphic" in2="effect2_dropShadow_668_6"
-                        result="shape" />
-                </filter>
-            </defs>
-        </svg>
-        <h1>文章列表</h1>
+      <svg
+        width="40"
+        height="40"
+        viewBox="0 0 83 83"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <g filter="url(#filter0_dd_668_6)">
+          <path
+            d="M9 37.5L34.2778 5V23.018L74 23.0556V51.9444H34.2778V70L9 37.5Z"
+            fill="#606C99"
+            stroke="#606C99"
+            stroke-width="10"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </g>
+        <defs>
+          <filter
+            id="filter0_dd_668_6"
+            x="0"
+            y="0"
+            width="83"
+            height="83"
+            filterUnits="userSpaceOnUse"
+            color-interpolation-filters="sRGB"
+          >
+            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+            <feColorMatrix
+              in="SourceAlpha"
+              type="matrix"
+              values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+              result="hardAlpha"
+            />
+            <feOffset dy="4" />
+            <feGaussianBlur stdDeviation="2" />
+            <feComposite in2="hardAlpha" operator="out" />
+            <feColorMatrix
+              type="matrix"
+              values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"
+            />
+            <feBlend
+              mode="normal"
+              in2="BackgroundImageFix"
+              result="effect1_dropShadow_668_6"
+            />
+            <feColorMatrix
+              in="SourceAlpha"
+              type="matrix"
+              values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+              result="hardAlpha"
+            />
+            <feOffset dy="4" />
+            <feGaussianBlur stdDeviation="2" />
+            <feComposite in2="hardAlpha" operator="out" />
+            <feColorMatrix
+              type="matrix"
+              values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"
+            />
+            <feBlend
+              mode="normal"
+              in2="effect1_dropShadow_668_6"
+              result="effect2_dropShadow_668_6"
+            />
+            <feBlend
+              mode="normal"
+              in="SourceGraphic"
+              in2="effect2_dropShadow_668_6"
+              result="shape"
+            />
+          </filter>
+        </defs>
+      </svg>
+      <h1>文章列表</h1>
     </div>
     <!-- 用來載入 common.html 裡頭的 header -->
     <div class="wrapper">
-        <!-------------------------->
-        <div class="smallnav">
-            <span>
-                創作列表
-            </span>
-            <span>
-                收藏
-            </span>
+      <!-------------------------->
+      <div class="smallnav">
+        <span> 創作列表 </span>
+        <span> 收藏 </span>
+      </div>
+      <div class="wrapper01">
+        <!---最左欄位(有女人)----------------------->
+        <div class="left">
+          <img class="girl" src="IMG/diary/girl.png" alt="" />
+          <ul class="myself">
+            <!---gg--------------------->
+            <li><h2>個人文章</h2></li>
+            <h2>會員個人資料</h2>
+            <h2>我的活動</h2>
+            <h2>我的衣櫃</h2>
+          </ul>
         </div>
-        <div class="wrapper01">
-            <!---最左欄位(有女人)----------------------->
-            <div class="left">
-                <img  class="girl" src="./IMG/diary/girl.png" alt="">
-                <ul class="myself">
-                    <!---gg--------------------->
-                    <li><h2>個人文章</h2></li>
-                    <h2>會員個人資料</h2>
-                    <h2>我的活動</h2>
-                    <h2>我的衣櫃</h2>
-                </ul>
+        <!---中間欄位(主要欄位)----------------------->
+        <div class="middle">
+          <!---中上方-------------------------->
+          <div class="middletop">
+            <div class="big_girl">
+              <img src="IMG/diary/big_girl.png" alt="" />
             </div>
-            <!---中間欄位(主要欄位)----------------------->
-            <div class="middle">
-                <!---中上方-------------------------->
-                <div class="middletop">
-                    <div class="big_girl">
-                        <img src="./IMG/diary/big_girl.png" alt="">
-                    </div>
-                    <div class="idsign">
-                        <h1>e44444444</h1>
-                        <!---用div--------------------->
-                        <p id="username">ID:44444</p>
-                        <p id="sign">夢想這條路跪著也要走完</p>
-                    </div>
-
-                    <div class="pen">
-                        <img src="./IMG/diary/Group.png" alt="">
-                    </div>
-                </div>
-                <!-------搜尋框-------------------->
-                <form class="search">
-                    <input class="search-bar" type="text" name="search" id="search" placeholder="輸入文字內容">
-                    <button class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
-                </form>
-
-                <div class="title">
-                    <div class="title_left">
-                        <div class="big">
-                            <img src="./IMG/diary/Ellipse 16.png" alt="">
-                        </div>
-                        <div class="big02">
-                            <h2 class="title">文章標題</h2>
-                            <p class="text02">內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文</p>
-                            <!------文章--小時用output-(修改成icon)------------------------>
-                            <p id="hours">2小時前公布</p>
-                            <div class="love">
-                                <img src="./IMG/diary/love.png" alt="">
-                                <span>66</span>
-                                <img src="./IMG/diary/chat.png" alt="">
-                                <span>77</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="title_right">
-                        <div class="threepoint">
-                            <img src="./IMG/diary/threepoint.png" alt="">
-                        </div>
-                        <div class="titlepic">
-                            <img src="./IMG/diary/titlepic.png" alt="">
-                        </div>
-                        <div class="readmore">
-                            <button class="moreButton" style="background-color:#90A349;color: white;border-radius: 30px;" >Read more</button>
-                        </div>
-                    </div>
-                </div>
+            <div class="idsign">
+              <h1>e44444444</h1>
+              <!---用div--------------------->
+              <p id="username">ID:44444</p>
+              <p id="sign">夢想這條路跪著也要走完</p>
             </div>
 
-            <div class="right">
-                <div>
-                    <img src="./IMG/diary/calender.png" alt="">
-                </div>
-                <div class="right01">
-                    <h2>我的文章</h2>
-                    <h3>6/1 文章標題</h3>
-                    <p>內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文</p>
-                </div>
-                <div class="right02">
-                    <h1>廣告</h1>
-                    <img src="./IMG/diary/marketing.png" alt="">
-                </div>
+            <div class="pen">
+              <img src="IMG/diary/Group.png" alt="" />
             </div>
+          </div>
+          <!-------搜尋框-------------------->
+          <form class="search">
+            <input
+              class="search-bar"
+              type="text"
+              name="search"
+              id="search"
+              placeholder="輸入文字內容"
+            />
+            <button class="search-btn">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+          </form>
+
+          <div class="title">
+            <div class="title_left">
+              <div class="big">
+                <img src="IMG/diary/Ellipse 16.png" alt="" />
+              </div>
+              <div class="big02">
+                <h2 class="title">文章標題</h2>
+                <p class="text02">
+                  內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文
+                </p>
+                <!------文章--小時用output-(修改成icon)------------------------>
+                <p id="hours">2小時前公布</p>
+                <div class="love">
+                  <img src="IMG/diary/love.png" alt="" />
+                  <span>66</span>
+                  <img src="IMG/diary/chat.png" alt="" />
+                  <span>77</span>
+                </div>
+              </div>
+            </div>
+            <div class="title_right">
+              <div class="threepoint">
+                <img src="IMG/diary/threepoint.png" alt="" />
+              </div>
+              <div class="titlepic">
+                <img src="IMG/diary/titlepic.png" alt="" />
+              </div>
+              <div class="readmore">
+                <button
+                  class="moreButton"
+                  style="
+                    background-color: #90a349;
+                    color: white;
+                    border-radius: 30px;
+                  "
+                >
+                  Read more
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
 
-
-
+        <div class="right">
+          <div>
+            <img src="IMG/diary/calender.png" alt="" />
+          </div>
+          <div class="right01">
+            <h2>我的文章</h2>
+            <h3>6/1 文章標題</h3>
+            <p>
+              內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文
+            </p>
+          </div>
+          <div class="right02">
+            <h1>廣告</h1>
+            <img src="IMG/diary/marketing.png" alt="" />
+          </div>
+        </div>
+      </div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script
-        src="https://kit.fontawesome.com/75e9abcec6.js"
-        crossorigin="anonymous"></script>
+      src="https://kit.fontawesome.com/75e9abcec6.js"
+      crossorigin="anonymous"
+    ></script>
     <script>
-        $(function () {
-            $(".header").load("common.html .header>div");
-            $(".footer").load("common.html .footer>div");
-        });
+      $(function () {
+        $(".header").load("common.html .header>div");
+        $(".footer").load("common.html .footer>div");
+      });
     </script>
-
-</body>
+  </body>
 </html>
