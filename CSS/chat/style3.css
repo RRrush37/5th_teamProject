@@ -1,0 +1,364 @@
+body {
+    margin: 0;
+    
+}
+
+#wrapper {
+    display: flex;
+
+}
+
+
+
+.m-text-search {
+    padding-top: 60px;
+    margin: 0 auto;
+    width: 100%;
+    background-color: #ECE3D7;;
+}
+
+.m-text-search ul{
+    margin-bottom: 0;
+}
+
+#memberdata-search{
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+#memberdata{
+    position: relative;
+    width: 100%;
+}
+
+
+/* bar */
+#mix-bar{
+    background-color: #fff;
+    border: 1px solid black;
+}
+
+
+#mix-bar span{
+        /* width: 100%; */
+    border-right: 1px solid black;
+    padding: 1.5rem 4rem;
+    display: inline-block;
+    cursor: pointer;
+    background-color: #fff;
+}
+
+#mix-bar span.on{
+    
+    background-color: #ECE3D7;
+}
+
+.search-bar{
+    background-color: #ECE3D7;
+    position: relative;
+}
+
+.search-bar>h2,.hide-bar>h2 {
+    text-align: center;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 3rem;
+    padding-top: 3rem;
+}
+
+
+.search-bar table,.hide-bar table {
+    width: 60%;
+    /* margin-left: 30%; */
+    margin: 0 auto;
+    margin-bottom: 40px;
+    height: 100%;
+    list-style: none;
+    padding-top: 3rem;
+
+}
+
+.search-bar tr,.hide-bar tr {
+    height: 4rem;
+}
+
+
+
+.search-bar td,.hide-bar td{
+    padding-left: 14rem;
+    font-size: 2rem;
+} 
+
+.search-bar td ~ td,.hide-bar td ~ td{
+    padding-left: 0rem;
+}
+
+.hide-bar{
+    background-color: #ECE3D7;
+    display: none;
+    margin: 0 auto;
+    width: 80%;
+}
+
+.hide-bar table{
+    margin: 0 auto;
+    width: 80%;
+
+}
+
+#event-bar tr td:nth-child(2),#generalEdit-bar tr td:nth-child(2){
+    border-bottom: 1px solid black;
+    display: inline-block;
+    padding-bottom: 1rem;
+}
+
+#generalEdit-bar{
+    display:none;
+}
+
+
+
+.search-bar table:nth-of-type(2) td {
+    width: auto;
+    display: inline-block;
+}
+
+tr:nth-child(3) td:nth-child(1) input[type="text"] {
+    padding-left: 10px;
+}
+
+/* 下方表格 */
+
+.list_title_box{
+    /* width: 100vw; */
+    background-color: #2C4340;
+}
+
+.list_title_box h3{
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.list_box{
+    /* width: 100vw; */
+    background-color: #CFC7C4;
+}
+
+
+
+.list-bottom-first {
+    max-width: 1200px;
+    width: 85%;
+    margin: 0 auto;
+    
+
+}
+
+.list-bottom-first div{
+    display: flex;
+    justify-content: space-around; 
+    width: 100%;
+    margin: 0 auto;
+
+    padding: 1rem ;
+}
+
+.list-bottom-first  span:last-child{
+    padding: .7rem 1rem;
+}
+
+
+.list-bottom h3 {
+
+    margin-top: 0;
+    color: white;
+    padding: 1rem 3rem;
+    margin-bottom: 0;
+}
+
+
+
+.list-bottom ul {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    list-style: none;
+    padding-left: 0;
+    border-left: 3rem solid #CFC7C4;
+    border-right: 3rem solid #CFC7C4;
+    border-bottom: 3rem solid #CFC7C4;
+    padding: 2rem 0;
+
+}
+
+.list-bottom ul{
+    background-color: #D9D9D9;
+}
+
+
+.list-bottom li {
+    display: flex;
+    width: 95%;
+    margin: 0 auto;
+    background-color: white;
+    justify-content: space-around;
+    padding: 1rem ;
+    border: 1px solid black;
+}
+/* 
+.list-bottom li:first-child{
+    margin-top: 2rem;
+} */
+.list-bottom li:not(:last-child){
+    margin-bottom: 2rem;
+}
+
+.list-bottom span {
+    padding-top: .7rem;
+}
+
+.list-bottom a {
+    color: white;
+    padding: .7rem 1rem;
+    text-align: center;
+    border-radius: .7rem;
+    background-color: #959595;
+}
+
+/* 按鈕btn */
+
+.search-btn {
+    display: inline-block;
+    background-color: #CB963D;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    padding: .7rem 2rem;
+    border-radius: 1rem;
+    margin-left: 46%;
+    margin-bottom: 3rem;
+    cursor: pointer;
+}
+
+#back-btn,#back-btn2,#back-btn3{
+    display: block;
+    position: absolute;
+    right: 10%;
+    top: 20%;
+    cursor: pointer;
+}
+
+.add-btn{
+    background-color: #CB963D;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    padding: .7rem 1.5rem;
+    border-radius: 1rem;
+    position: absolute;
+    right: 10%;
+    top: 10%;
+    cursor: pointer;
+}
+
+.add-btn img{
+    margin-left: 0.5rem;
+    width: 15px;
+}
+
+
+
+/* 會員資料查詢 */
+
+
+.membertext{
+    width: 500px;
+    background-color: #ECE3D7;
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.membertext-left h2,.membertext-right h2{
+    padding-left: 12rem;
+}
+
+.membertext-left table,.membertext-right table{
+    display: inline-block;
+    margin-left: 8rem;    
+    white-space:nowrap;
+    
+}
+
+
+
+.membertext-left,.membertext-right {
+    width: 45%;
+    display: inline-block;
+   
+}
+
+.membertext-left td,.membertext-right td {
+    padding: 1rem;
+    font-size: 2rem;
+   
+}
+
+.membertext-left tr td:nth-child(2),
+.membertext-right tr td:nth-child(2) {
+    border-bottom: 1px solid #000;
+    padding-bottom: 0;
+}
+
+
+
+
+/* 商品資料查詢 */
+
+#mall-bar tr td:nth-child(2){
+
+    border-bottom: 1px solid #000;
+    display: inline-block;
+    padding-bottom: 1rem;
+}
+
+/* 聊天室資料查詢 */
+
+#chatroom-create tr:not(:last-child) td:nth-child(2),#chatroom-data tr:not(:last-child) td:nth-child(2){
+
+    border-bottom: 1px solid #000;
+    display: inline-block;
+    padding-bottom: 1rem;
+}
+
+/* 會員文章查詢 */
+
+#article-edit tr:not(:last-child) td:nth-child(2),#article-create tr:not(:last-child) td:nth-child(2),#member-article-edit tr:not(:last-child) td:nth-child(2){
+
+    border-bottom: 1px solid #000;
+    display: inline-block;
+    padding-bottom: 1rem;
+}
+
+/* 檢舉系統查詢 */
+
+.membertext-right tr:last-child td:nth-child(2){
+
+    border-bottom: none;
+    display: inline-block;
+    padding-bottom: 1rem;
+}
+
+
+
+
+
+
+
+
+
