@@ -1,5 +1,5 @@
 body{
-    background-image: url(../../img/chat/highbackground.jpg);
+    background-image: url(../../Img/chat/highbackground.jpg);
     background-size: cover;
     
 }
@@ -50,6 +50,25 @@ body{
     height: 65vh;
     
 }
+
+.custom-room ul::-webkit-scrollbar {
+    width: 10px; /* 设置滚动条宽度 */
+    height: 20px;
+    background-color: transparent;
+    border-radius: 0;
+  }
+  
+  .custom-room ul::-webkit-scrollbar-thumb {
+    background-color: rgba(142, 89, 57, 1); /* 设置滚动条滑块的颜色 */
+  }
+  
+  .custom-room ul::-webkit-scrollbar-thumb:hover {
+    background-color: #555; /* 设置滚动条滑块在悬停时的颜色 */
+  }
+  
+  .custom-room ul::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
 
 .custom-room  li{
     width: 28%;
