@@ -1,32 +1,28 @@
-.activity_title a{
+.activity_title a {
   position: absolute;
-
 }
 
 .activity_title a:hover {
-  animation: left .5s infinite;
+  animation: left 0.5s infinite;
 }
 
-@keyframes left{
-  0%{
-      margin-left: 0px;
+@keyframes left {
+  0% {
+    margin-left: 0px;
   }
-  100%{
-      margin-left: -5px;
+  100% {
+    margin-left: -5px;
   }
 }
 
-
-body{
-width: 1280px;
-background-image: url(../../IMG/index/background/room_background.jpg);
-background-repeat: no-repeat;
-background-size: contain;
-background-attachment: fixed;
-background-size: cover;
+body {
+  width: 1280px;
+  background-image: url(../../IMG/index/background/room_background.jpg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-attachment: fixed;
+  background-size: cover;
 }
-
-
 
 body::before {
   content: "";
@@ -36,30 +32,26 @@ body::before {
   width: 100%;
   height: 100%;
   /* background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(0, 0, 0, 0.1));  */
-} 
+}
 
 .activity_title h2 {
-  margin: 0 auto; 
+  margin: 0 auto;
   color: white;
   font-size: 3rem;
   text-align: center;
 }
 
-
-
-
-.box{
+.box {
   width: 70vw;
   height: 70vh;
-/* border: 5px solid #000; */
-display: flex;
-justify-content: center;
-align-items: center;
-margin: 0 auto;
-position: relative;
-text-align: center;
+  /* border: 5px solid #000; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  position: relative;
+  text-align: center;
 }
-
 
 .choose::before {
   content: "";
@@ -72,24 +64,21 @@ text-align: center;
   z-index: -1; /* 将遮罩层置于.choose下方 */
 }
 
-.choose{
+.choose {
+  /* border: 2px solid #000; */
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 31%;
+  height: 100%;
+  background-image: url(../../IMG/index/photo_frame.png);
+  background-size: cover;
+  background-repeat: no-repeat;
 
-/* border: 2px solid #000; */
-position: absolute;
-left: 0;
-top: 0;
-width: 31%;
-height: 100%;
-background-image: url(../../IMG/index/photo_frame.png);
-background-size: cover;
-background-repeat: no-repeat;
-
-background-position: center center;
-background-size: 190% 132%;
-box-shadow: 0 2px 14px rgba(0, 0, 0, 0.2);
-padding: 20px;
-  
-
+  background-position: center center;
+  background-size: 190% 132%;
+  box-shadow: 0 2px 14px rgba(0, 0, 0, 0.2);
+  padding: 20px;
 }
 
 .text {
@@ -100,13 +89,12 @@ padding: 20px;
   align-items: center;
   text-decoration-color: #634921;
   text-underline-offset: 6px;
-  font-size:2rem;
+  font-size: 2rem;
   transition: all 0.3s ease-in-out;
   cursor: pointer;
   margin-top: 5rem;
   font-weight: bold;
   margin: 1rem auto;
-  
 }
 
 .text > div {
@@ -141,19 +129,12 @@ padding: 20px;
   color: #634921;
   background-color: #ffffff45;
   border-radius: 10px;
-  
 }
 
-
-
-
-
-
-.role{
-
+.role {
   /* border: 2px solid #000; */
 
-  right:0;
+  right: 0;
   top: 0;
   width: 70%;
   height: 100%;
@@ -162,28 +143,26 @@ padding: 20px;
   position: relative;
 }
 
-
-
-
-.baby{
-
+.baby {
   /* border: 3px solid #000; */
-  
+
   position: absolute;
   right: 0;
-  top: 0;
+  top: 35%;
   width: 80%;
   height: 65%;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 1;
   border-radius: 50px;
- background-image: url(../../IMG/people/body.png);
-  max-width: 100%; 
-  max-height: 100%; 
+  background-image: url(../../IMG/people/body.png);
+  max-width: 100%;
+  max-height: 100%;
   background-repeat: no-repeat;
-  background-position: center center; 
+  background-position: center center;
   background-size: cover;
   background-size: 30%;
+  left: 60%;
+  transform: translate(-50%, -50%);
 }
 
 .baby .cap,
@@ -194,63 +173,58 @@ padding: 20px;
 .baby .e,
 .baby .eb,
 .baby .top,
-.baby .bottom{
+.baby .bottom {
   position: absolute;
   right: 50px;
   top: 0px;
   width: 80%;
   height: 100%;
   background-repeat: no-repeat;
-  background-position: center center; 
+  background-position: center center;
   background-size: cover;
   background-size: 38%;
-
+  left: 50%;
+  right: 0;
+  top: 50%;
+  width: 80%;
+  height: 85%;
+  transform: translate(-50%, -50%);
 }
 
-.baby .cap{
-  background-image: url(../../IMG/people/cap.png);
+.baby .cap {
+  background-image: url(../../IMG/people/cap2.png);
 }
 
-.baby .hair{
+.baby .hair {
   background-image: url(../../IMG/people/hair3.png);
 }
 
-.baby .glasses{
-  background-image: url(../../IMG/people/glasses.png);
+.baby .glasses {
+  background-image: url(../../IMG/people/glasses2.png);
 }
 
-.baby .m{
-  background-image: url(../../IMG/people/m1.png);
+.baby .m {
+  background-image: url(../../IMG/people/m5.png);
 }
 
-.baby .e{
-  background-image: url(../../IMG/people/e1.png);
+.baby .e {
+  background-image: url(../../IMG/people/e5.png);
 }
 
-.baby .eb{
-  background-image: url(../../IMG/people/eb1.png);
+.baby .eb {
+  background-image: url(../../IMG/people/eb3.png);
 }
 
-.baby .top{
-  background-image: url(../../IMG/people/top5.png);
+.baby .top {
+  background-image: url(../../IMG/people/top4.png);
 }
 
-.baby .bottom{
+.baby .bottom {
   background-image: url(../../IMG/people/bottom5.png);
 }
 
-
-
-
-
-
-
-
 .baby img {
- height: 100%;
- 
-  
-  
+  height: 100%;
 }
 .button {
   position: absolute;
@@ -258,7 +232,7 @@ padding: 20px;
   right: 0;
   width: 50px;
   height: 30px;
-  background-color: #CCD7B5;
+  background-color: #ccd7b5;
   border-radius: 20px;
   cursor: pointer;
   z-index: 1;
@@ -278,17 +252,12 @@ padding: 20px;
   margin: 0 0.3em;
   font-size: 1.5rem;
   font-weight: bold;
-  
 }
 
-
-.button:hover{
-color: #ffffff;
-background-color: #634921;
-
+.button:hover {
+  color: #ffffff;
+  background-color: #634921;
 }
-
-
 
 .boxs {
   width: calc(33.33% - 10px); /* 每個方框寬度為 33.33% - 10px（用於間距） */
@@ -298,15 +267,15 @@ background-color: #634921;
   display: flex;
   align-items: center;
   justify-content: center;
-  
-    width: 100px;
-    height: 90px;
-    margin-right: 10px;
-    scroll-snap-align: center; /* 將圖像置中 */
-    transition: all 0.5s ease-in-out; /* 添加滾動動畫 */
-    flex-shrink: 0;
-   
-    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); */ 
+
+  width: 100px;
+  height: 90px;
+  margin-right: 10px;
+  scroll-snap-align: center; /* 將圖像置中 */
+  transition: all 0.5s ease-in-out; /* 添加滾動動畫 */
+  flex-shrink: 0;
+
+  /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); */
 }
 
 /* 滑動動畫效果 */
@@ -320,9 +289,7 @@ background-color: #634921;
   transition: transform 0.3s ease; /* 控制動畫時間和效果 */
 }
 
-
 .boxs img {
-
   max-width: 100%; /* 设置图像的最大宽度为父元素的宽度 */
   max-height: 100%; /* 设置图像的最大高度为父元素的高度 */
   width: auto; /* 根据图像的宽高比自动调整宽度 */
@@ -332,9 +299,6 @@ background-color: #634921;
   margin-top: 30px;
   overflow: hidden;
 }
-
-
-
 
 .slider {
   scroll-snap-type: x mandatory; /* 強制滾動一次只滾動一張圖像 */
@@ -350,19 +314,15 @@ background-color: #634921;
 
   white-space: nowrap; /* 防止換行 */
   /* border-radius: 20px; */
-padding: auto 20px;
-background-color: #ffffffaa;;
-overflow: hidden;
-overflow-x: scroll; /* 設定水平滾動 */
+  padding: auto 20px;
+  background-color: #ffffffaa;
+  overflow: hidden;
+  overflow-x: scroll; /* 設定水平滾動 */
 }
-
-
 
 .slider::-webkit-scrollbar {
   height: 10px;
   width: 20px;
-
-  
 }
 
 .slider::-webkit-scrollbar-track {
@@ -376,27 +336,27 @@ overflow-x: scroll; /* 設定水平滾動 */
 }
 
 .slider::-webkit-scrollbar-thumb:hover {
-  background:  #CCD7B5;
+  background: #ccd7b5;
 }
 
-.boxs:nth-child(n+1):nth-child(-n+5) img {
+.boxs:nth-child(n + 1):nth-child(-n + 5) img {
   transform: scale(2); /* 將第3到第9個子層div的圖片放大到200% */
   transition: transform 0.3s ease; /* 添加動畫效果 */
   padding-top: 15px;
 }
 
-.boxs:nth-child(n+6):nth-child(-n+20) img {
+.boxs:nth-child(n + 6):nth-child(-n + 20) img {
   transform: scale(3); /* 將第3到第9個子層div的圖片放大到200% */
   transition: transform 0.3s ease; /* 添加動畫效果 */
 }
 
-.boxs:nth-child(n+21):nth-child(-n+26) img {
+.boxs:nth-child(n + 21):nth-child(-n + 26) img {
   transform: scale(3); /* 將第3到第9個子層div的圖片放大到200% */
   transition: transform 0.3s ease; /* 添加動畫效果 */
   padding-bottom: 25px;
 }
 
-.boxs:nth-child(n+25):nth-child(-n+27) img {
+.boxs:nth-child(n + 25):nth-child(-n + 27) img {
   transform: scale(3); /* 將第3到第9個子層div的圖片放大到200% */
   transition: transform 0.3s ease; /* 添加動畫效果 */
   padding-bottom: 30px;

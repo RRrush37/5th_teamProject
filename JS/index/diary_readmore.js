@@ -13,7 +13,7 @@ $(() => {
           str += `<div class="feedback">
           <div class="feedbacktop">
               <div class="img">
-                  <img src="./IMG/diary/photo.png" alt="">
+                  <img src="IMG/diary/photo.png" alt="">
               </div>
                   <h2>${response[i]["name"]}</h2>
           </div>
@@ -31,7 +31,7 @@ $(() => {
                       <p>！將這個人加入黑名單</p>
                   </div>
     
-                  <img class="threepoint" src="./IMG/diary/threepoint.png" alt="">
+                  <img class="threepoint" src="IMG/diary/threepoint.png" alt="">
               </div>
     
           </div>
