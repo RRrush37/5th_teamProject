@@ -1,0 +1,277 @@
+body {
+  background-image: url(../../IMG/diary/forest.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.2);
+  background-blend-mode: multiply;
+}
+
+h1 {
+  margin: -23px 38px;
+  color: #ffffff;
+}
+
+.activity_title {
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+.activity_title > svg:hover {
+  animation: left 0.5s infinite;
+}
+
+@keyframes left {
+  0% {
+    left: 0px;
+  }
+  100% {
+    left: -5px;
+  }
+}
+
+.bar > .ability {
+  text-shadow: #405366.1rem 0.1rem 0.4rem;
+}
+
+.bar .ability span:last-child {
+  background-color: #775050;
+}
+
+.bar .ability span div {
+  background-color: #f9de9a;
+  color: #000;
+}
+
+.user {
+  border: #a0c0e1 solid 2px;
+}
+
+.activity_title h1 {
+  color: white;
+  text-shadow: #405366.1rem 0.1rem 0.4rem;
+}
+
+.choose_wrapper {
+  display: flex;
+}
+
+/*-----所有版面進行致中---------*/
+.wrapper {
+  display: flex;
+  /* position: relative; */
+}
+
+/*-----左邊導覽列-----------------------*/
+.nav_left {
+  background-image: url(../../IMG/diary/_Pngtree_frame_5628982_2-removebg-preview.png);
+  width: 195px;
+  height: 360px;
+  opacity: 0.8;
+  margin: 25px 160px 10px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 190% 132%;
+  background-color: rgb(231, 231, 231);
+}
+
+.nav_left ul {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.nav_left ul li {
+  color: white;
+  text-shadow: #405366.1rem 0.1rem 0.4rem;
+  border-bottom: 2px solid #6f632588;
+  width: 100px;
+  margin: 32px auto 0px;
+}
+
+.nav_left ul li :hover {
+  color: black;
+  font-weight: bold;
+  border-bottom: 2px solid black;
+  box-sizing: border-box;
+}
+
+.nav_left ul li.on {
+  color: black;
+  font-weight: bold;
+  border-bottom: 2px solid black;
+  box-sizing: border-box;
+}
+
+/*------中間人物---------------*/
+/* .coutainer{
+    background-image: url(../../IMG/diary/leaf.png);
+    background-size: 70% auto;
+    background-repeat: no-repeat;
+    width:370px;
+    height: 562px;
+    position: absolute;
+    top:29%;
+
+    left: 50%;
+    transform: translate(-35%, -30%);
+    background-position: 5px 91px;
+}
+
+.coutainer > .people {
+    position: absolute;
+    top: 42%;
+    left: 37%;
+    transform: translate(-50%, -50%); /* 修改为平移容器的中心点 */
+/* width: 137px; */
+/* } */
+
+.coutainer {
+  /* border: 200px solid red; */
+  /* position: absolute;
+    top: 20%;
+    left: 36%;
+
+    background-image: url(../../IMG/diary/leaf.png);
+    background-size: 70% auto;
+    background-repeat: no-repeat;
+
+    width: 300px;
+    height: 100px; */
+
+  position: absolute;
+  top: 3%;
+  left: 36%;
+  background-image: url(../../IMG/diary/leaf.png);
+  background-size: 70% auto;
+  background-repeat: no-repeat;
+  width: 400px;
+  height: 372px;
+  background-position: 5px 91px;
+}
+
+.coutainer .doll,
+.coutainer .eyebrow,
+.coutainer .eye,
+.coutainer .mouth,
+.coutainer .clothes,
+.coutainer .bottoms,
+.coutainer .accessories1,
+.coutainer .hair,
+.coutainer .accessories2,
+.coutainer .accessories3 {
+  width: 250px;
+  height: 250px;
+  position: absolute;
+  top: 32%;
+  left: 10%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.doll {
+  background-image: url(../../IMG/people/body.png);
+}
+
+.coutainer .eyebrow {
+  background-image: url(../../IMG/people/eb1.png);
+}
+
+.coutainer .eye {
+  background-image: url(../../IMG/people/e1.png);
+}
+
+.coutainer .mouth {
+  background-image: url(../../IMG/people/m1.png);
+}
+
+.coutainer .clothes {
+  background-image: url(../../IMG/people/top3.png);
+}
+
+.coutainer .bottoms {
+  background-image: url(../../IMG/people/bottom3.png);
+}
+
+.coutainer .accessories1 {
+  background-image: url(../../IMG/people/mask.png);
+}
+
+.coutainer .hair {
+  background-image: url(../../IMG/people/hair1.png);
+}
+
+.coutainer .accessories2 {
+  background-image: url(../../IMG/people/cap.png);
+}
+
+.coutainer .accessories3 {
+  background-image: url(../../IMG/people/glasses.png);
+}
+
+/*----更換按鈕--------*/
+.check {
+  background-color: #f9de9a;
+  color: black;
+  font-size: 2rem;
+  border-radius: 15px;
+  border: none;
+  padding: 10px 20px;
+  position: absolute;
+  top: 80%;
+  left: 75%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  box-shadow: 0 0 5px #ffffff;
+}
+/*-----下方導覽列----------*/
+.nav_down {
+  background: #ffffffaa;
+  position: absolute;
+  width: 500px;
+  left: 50%;
+  top: 83%;
+  transform: translate(-50%, -50%);
+  overflow: auto;
+}
+
+.nav_down ul {
+  display: flex;
+  align-items: center;
+  height: 150px;
+  padding: 0;
+}
+
+.nav_down ul li {
+  flex-shrink: 0;
+  width: 86.56px;
+  height: 86px;
+  margin: 10px 17px;
+  /* background-color: #ffffff; */
+  overflow: hidden;
+}
+
+.nav_down ul::-webkit-scrollbar {
+  width: 10px;
+}
+
+.nav_down ul::-webkit-scrollbar-thumb {
+  background: #ffffffcb;
+  border-radius: 10px;
+}
+
+.nav_down ul::-webkit-scrollbar-track {
+  background: #77747595;
+  border-radius: 10px;
+}
+
+/*--------------*/
+
+ul li img {
+  width: 100%;
+}
+
+.e1 img {
+  width: 100%;
+}

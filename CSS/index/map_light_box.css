@@ -1,0 +1,394 @@
+/* body {
+  background-image: url(../../IMG/index/background/home_page_background_3\ 1.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+} */
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.875);
+  /* 設置遮罩的顏色和透明度 */
+  z-index: -1;
+  /* 将遮罩层的层级设为比body低，使body内容可以在其上方 */
+}
+
+
+
+
+
+.overlay::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: -1;
+}
+
+
+
+
+.return>img:hover {
+  animation: left 5s alternate;
+  animation-iteration-count: 1;
+}
+
+@keyframes left {
+  0% {
+    left: 100px;
+  }
+
+  100% {
+    left: -95px;
+  }
+}
+
+
+
+
+
+
+.return {
+  position: relative;
+  padding-left: 100px;
+  filter: drop-shadow(3px 3px 3px rgb(0, 0, 0));
+}
+
+
+.return img {
+  position: absolute;
+  left: 100px;
+}
+
+
+
+.map {
+ width: 50rem;   /* 使用相对单位rem来设置宽度 */
+  height: 25rem;  /* 使用相对单位rem来设置高度 */
+  border-radius: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  background-color: rgba(0, 0, 0, 0.744);
+  position: relative;
+  text-align: center;
+
+
+
+}
+
+.map .map_1 {
+  width: 600px;
+}
+
+
+
+
+
+
+.map .house_1 {
+  position: absolute;
+  font-weight: bold;
+  bottom: 124px;
+  left: 214px;
+  display: block;
+  width: 80px;
+  filter: drop-shadow(3px 3px 3px rgb(0, 0, 0));
+  text-align: center;
+  display: none;
+  position: absolute;
+  z-index: 11;
+}
+
+
+
+
+
+.map .house_2 {
+  position: absolute;
+  font-weight: bold;
+  bottom: 124px;
+  left: 214px;
+  display: block;
+  width: 80px;
+  filter: drop-shadow(3px 3px 3px rgb(0, 0, 0));
+  text-align: center;
+  position: absolute;
+  z-index: 10;
+
+}
+
+
+
+
+.bulletin_board_2 {
+  position: absolute;
+  font-weight: bold;
+  bottom: 105px;
+  left: 167px;
+  display: block;
+  width: 80px;
+  filter: drop-shadow(3px 3px 3px rgb(0, 0, 0));
+  text-align: center;
+}
+
+.map .house_2,
+.bulletin_board_2 {
+
+  transform: scale(1);
+  transition: transform 0.5s ease;
+}
+
+.map .house_2:hover,
+.bulletin_board_2:hover~.house_2 {
+  transform: scale(1.5);
+
+}
+
+.bulletin_board_2:hover,
+.house_2:hover~.bulletin_board_2 {
+  transform: scale(1.5);
+}
+
+
+
+
+.map .house_6 {
+  position: absolute;
+  font-weight: bold;
+  top: 58px;
+  left: 187px;
+  display: block;
+  width: 100px;
+  filter: drop-shadow(3px 3px 3px rgb(0, 0, 0));
+  text-align: center;
+  transform: rotateY(180deg);
+  position: absolute;
+  z-index: 10;
+
+}
+
+.bulletin_board_6 {
+  position: absolute;
+  font-weight: bold;
+  top: 62px;
+  right: 565px;
+  display: block;
+  width: 102px;
+  filter: drop-shadow(3px 3px 3px rgb(0, 0, 0));
+  text-align: center;
+}
+
+.map .house_6,
+.bulletin_board_6 {
+
+  transform: scale(1);
+  transition: transform 0.5s ease;
+}
+
+.map .house_6:hover,
+.bulletin_board_6:hover~.house_6 {
+  transform: scale(1.5);
+}
+
+.bulletin_board_6:hover,
+.house_6:hover~.bulletin_board_6 {
+  transform: scale(1.5);
+}
+
+.map .house_3 {
+  position: absolute;
+  font-weight: bold;
+  bottom: 40px;
+  left: 260px;
+  display: block;
+  width: 80px;
+  filter: drop-shadow(3px 3px 3px rgb(0, 0, 0));
+  text-align: center;
+  position: absolute;
+  z-index: 10;
+
+}
+
+.bulletin_board_3 {
+  position: absolute;
+  font-weight: bold;
+  bottom: 20px;
+  left: 302px;
+  display: block;
+  width: 80px;
+  filter: drop-shadow(3px 3px 3px rgb(0, 0, 0));
+  text-align: center;
+}
+
+.map .house_3,
+.bulletin_board_3 {
+
+  transform: scale(1);
+  transition: transform 0.5s ease;
+}
+
+.map .house_3:hover,
+.bulletin_board_3:hover~.house_3 {
+  transform: scale(1.5);
+}
+
+.bulletin_board_3:hover,
+.house_3:hover~.bulletin_board_3 {
+  transform: scale(1.5);
+}
+
+
+
+.map .house_5 {
+  position: absolute;
+  font-weight: bold;
+  top: 47px;
+  right: 390px;
+  display: block;
+  width: 100px;
+  filter: drop-shadow(3px 3px 3px rgb(0, 0, 0));
+  text-align: center;
+  transform: rotateY(180deg);
+  position: absolute;
+  z-index: 10;
+}
+
+.bulletin_board_5 {
+  position: absolute;
+  font-weight: bold;
+  top: 68px;
+  right: 350px;
+  display: block;
+  width: 86px;
+  filter: drop-shadow(3px 3px 3px rgb(0, 0, 0));
+  text-align: center;
+}
+
+.map .house_5,
+.bulletin_board_5 {
+
+  transform: scale(1);
+  transition: transform .5s ease;
+}
+
+.map .house_5:hover,
+.bulletin_board_5:hover~.house_5 {
+  transform: scale(1.5);
+}
+
+.bulletin_board_5:hover,
+.house_5:hover~.bulletin_board_5 {
+  transform: scale(1.5);
+}
+
+
+
+
+.map .house_4 {
+  position: absolute;
+  font-weight: bold;
+  top: 37px;
+  right: 182px;
+  display: block;
+  width: 127px;
+  filter: drop-shadow(3px 3px 3px rgb(0, 0, 0));
+  text-align: center;
+  position: absolute;
+  z-index: 10;
+}
+
+.bulletin_board_4 {
+  position: absolute;
+  font-weight: bold;
+  top: 89px;
+  right: 174px;
+  display: block;
+  width: 80px;
+  filter: drop-shadow(3px 3px 3px rgb(0, 0, 0));
+  text-align: center;
+}
+
+
+.map .house_4,
+.bulletin_board_4 {
+
+  transform: scale(1);
+  transition: transform 0.5s ease;
+}
+
+.map .house_4:hover,
+.bulletin_board_4:hover~.house_4 {
+  transform: scale(1.5);
+}
+
+.bulletin_board_4:hover,
+.house_4:hover~.bulletin_board_4 {
+  transform: scale(1.5);
+}
+
+
+
+.think_2 {
+  position: absolute;
+  display: none;
+  width: 100px;
+  left: 100px;
+  top: 300;
+  opacity: 0;
+  filter: drop-shadow(3px 3px 3px rgb(0, 0, 0));
+  transition: opacity 0.5s ease-in-out;
+}
+
+.think_6 {
+  position: absolute;
+  display: none;
+  width: 100px;
+  left: 85px;
+  top: 0;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  filter: drop-shadow(3px 3px 3px rgb(0, 0, 0));
+
+}
+
+.think_5 {
+  position: absolute;
+  width: 100px;
+  left: 250px;
+  top: 0px;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  filter: drop-shadow(3px 3px 3px rgb(0, 0, 0));
+
+}
+
+.think_4 {
+  position: absolute;
+  width: 100px;
+  right: 100px;
+  top: 10px;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  filter: drop-shadow(3px 3px 3px rgb(0, 0, 0));
+
+}
+
+.think_3 {
+  position: absolute;
+  width: 100px;
+  left: 180px;
+  bottom: 40px;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  filter: drop-shadow(3px 3px 3px rgb(0, 0, 0));
+
+}

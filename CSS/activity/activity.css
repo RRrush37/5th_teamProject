@@ -1,0 +1,719 @@
+@import url(../global.css);
+
+/* --------------NAV改色-------------- */
+
+.bar .ability span:last-child {
+    /* border: 1px solid #FFF; */
+    background-color: #3D2E96;
+}
+
+.bar .ability span div {
+    background-color: #D6D1F0;
+}
+
+.bar>.ability {
+    text-shadow: #3D2E96 .1rem .1rem .4rem;
+}
+
+.user_header {
+    border: #D6D1F0 solid 2px;
+}
+
+.widget {
+    color: #D6D1F0;
+}
+
+.widget a {
+    color: #D6D1F0;
+}
+
+.bar .ability span div {
+    color: #000;
+}
+
+/* --------------卷軸改色-------------- */
+
+::-webkit-scrollbar-thumb {
+    background: rgba(61, 46, 150, 0.3);
+}
+
+::-webkit-scrollbar-track {
+    background: none;
+}
+
+/* --------------活動主內容-------------- */
+
+body {
+    background-image: url(../../IMG/activity/activity_background.jpeg);
+    background-size: 100%;
+    background-attachment: fixed;
+    overflow: hidden;
+}
+
+.activity {
+    color: #FFF;
+}
+
+.activity select {
+    background-color: #D6D1F0;
+    padding: 3px;
+}
+
+.activity>span {
+    display: block;
+    /* margin-left: 20px;
+    margin-right: 20px; */
+    max-width: 1280px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.activity_main {
+    /* max-width: 1200px;
+    width: 100%;
+    margin: 0 auto; */
+    display: flex;
+}
+
+.activity_main p {
+    display: inline-block;
+}
+
+/* --------------活動篩選欄-------------- */
+
+.activity_main .left {
+    width: 20.8%;
+    background-color: rgba(217, 212, 239, 0.7);
+    color: #000;
+    line-height: 1.6;
+    padding: 20px;
+    height: 77vh;
+    overflow-y: scroll;
+    scrollbar-gutter: stable both-edges;
+}
+
+.activity_main .left h2 {
+    color: #FFF;
+    -webkit-text-stroke: #000 1px;
+    font-weight: 700;
+    text-shadow: 0 4px 4px #0000004e;
+    text-align: center;
+}
+
+.radio-button {
+    /* 自定義樣式的span */
+    height: 1.5rem;
+    width: 1.5rem;
+    background-color: #D6D1F0;
+    border-radius: 50%;
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.check-button {
+    /* 自定義樣式的span */
+    height: 1.5rem;
+    width: 1.5rem;
+    background-color: #D6D1F0;
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.byebye {
+    display: none;
+}
+
+.topic_wrap {
+    margin-bottom: 10px;
+}
+
+label.color-button {
+    background-color: #D6D1F0;
+    color: #000;
+    padding: 5px 10px;
+    line-height: 3;
+    border-radius: 40px;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    word-break: keep-all;
+}
+
+.byebye:checked+label.color-button {
+    background-color: rgba(61, 46, 150, 0.8);
+    color: #FFF;
+}
+
+label {
+    cursor: pointer;
+}
+
+.left label {
+    position: relative;
+    user-select: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+input[type=radio]:checked~span {
+    /* 選中radio時 才顯示中間點點 */
+    border: 2px solid #D6D1F0;
+    background-color: rgba(61, 46, 150, 0.8);
+}
+
+input[type=checkbox]:checked~span::before {
+    content: '\2714';
+    display: inline-block;
+    color: rgba(61, 46, 150, 0.8);
+    font-size: 2rem;
+    opacity: 0;
+    transition: all .2s ease;
+    position: absolute;
+    top: -10px;
+}
+
+input[type="checkbox"]:checked+span::before {
+    opacity: 1;
+}
+
+input[type=radio],
+input[type=checkbox] {
+    visibility: hidden;
+}
+
+.saddd {
+    margin-bottom: 15px;
+}
+
+.left p {
+    margin-bottom: 5px;
+}
+
+.btn_wrap {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.selector_submit {
+    background-color: #3D2E96;
+    border: none;
+    color: #fff;
+    padding: 5px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.selector_submit:active {
+    background-color: #3e2e96d4;
+}
+
+.selector_reset {
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.selector_reset:hover {
+    background-color: #e8e8e8ed;
+}
+
+.selector_reset:active {
+    background-color: #ffffff;
+}
+
+/* --------------活動內容-------------- */
+
+.activity_tab {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.activity_tab_active {
+    -webkit-text-stroke: #000 1px;
+    font-weight: 600;
+    text-decoration: underline #5e51a7;
+}
+
+.activity_tab>a>label>.fa-calendar-xmark {
+    display: none;
+}
+
+#displayAScalendar:checked+label>.fa-calendar-xmark {
+    display: inline-block;
+}
+
+#displayAScalendar:checked+label>.fa-calendar-check {
+    display: none;
+}
+
+#displayAScalendar:checked+label {
+    box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.514);
+}
+
+.activity_tab>a>label {
+    font-size: 1.5rem;
+    color: rgb(62, 46, 150);
+    background-color: #fff;
+    box-shadow: inset -2px -2px 3px rgba(0, 0, 0, 0.514);
+}
+
+.activity_tab>span {
+    display: flex;
+}
+
+.activity_tab a {
+    color: #FFF;
+    margin-right: 20px;
+}
+
+.activity_main .middle {
+    width: 55%;
+    margin: 0 auto;
+    /* background-color: rgba(214, 209, 240, 0.9); */
+}
+
+.activity_article {
+    background-color: rgba(214, 209, 240, 0.9);
+    padding: 25px;
+    height: 77vh;
+    overflow-y: scroll;
+    scrollbar-gutter: stable both-edges;
+}
+
+
+/* --------------活動內容-卡片-------------- */
+
+.activity_article_cards {
+    background-color: rgba(61, 46, 150, 0.8);
+    padding: 10px 15px;
+    position: relative;
+    width: 100%;
+    margin: 30px auto;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.topic {
+    display: inline-block;
+    width: fit-content;
+    padding: 8px 16px;
+    background-color: #D6D1F0;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.cards_top {
+    display: flex;
+    justify-content: space-between;
+    color: #000;
+}
+
+.cards_top_left {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cards_top_left section {
+    margin-left: 8px;
+}
+
+.more_action,.more_action_list {
+    font-size: 30px;
+    position: absolute;
+    top: 0;
+    right: 15px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.more_action ul{
+    position: absolute;
+    display: flex;
+    background-color: #fff;
+    border-radius: 0 0 5px 5px;
+    border: #000 1px solid;
+    color: #7C7C7C;
+    padding: 40px 20px 10px;
+    right: -15px;
+    top: 0px;
+}
+
+.more_action ul h3:hover,.more_action_list:hover{
+    color: #4B4B4B;
+}
+
+
+.cards_content {
+    vertical-align: middle;
+    display: flex;
+}
+
+.card_user {
+    float: left;
+}
+
+.card_user img {
+    border: none;
+}
+
+.post_time {
+    font-size: 1.5rem;
+}
+
+.card_text {
+    min-width: 0;
+}
+
+.text_content {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 2rem;
+}
+
+.text_title {
+    margin-bottom: 10px;
+}
+
+.card_pics img {
+    min-width: 100px;
+    max-height: 67.54px;
+    object-fit: contain;
+    object-position: center center
+}
+
+.cards_actions {
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cards_actions a {
+    color: #FFF;
+    margin-right: 10px;
+}
+
+.cards_actions a i {
+    margin-right: 5px;
+}
+
+.join {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.join .iwantjoin {
+    margin-left: 15px;
+    box-shadow: inset white 0px 0px 0px 1px;
+    line-height: 1.3;
+    text-align: center;
+    color: #fff;
+    background-color: rgb(62, 46, 150);
+    padding: 7px 15px;
+    user-select: none;
+}
+
+#iwantjoin {
+    display: none;
+}
+
+#iwantjoin:checked+label {
+    color: #000;
+    background-color: #D6D1F0;
+    box-shadow: inset #fff 0px 0px 0px 1px;
+}
+
+/* .join .canceljoin {
+    color: #000;
+    background-color: #D6D1F0;
+    box-shadow: inset #fff 0px 0px 0px 1px;
+} */
+
+/* --------------活動右側欄-------------- */
+
+.activity_main .right {
+    width: 20.8%;
+    color: #000;
+    height: 77vh;
+    overflow-y: scroll;
+    /* scrollbar-gutter: stable both-edges; */
+}
+
+/* --------------活動右側欄-日曆-------------- */
+
+.calendar {
+    color: #fff;
+    background-color: #5e51a7;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);
+    padding: 0 5px;
+    border-bottom: #5e51a7 5px solid;
+}
+
+.right .body {
+    height: 251.97px;
+    background-color: #fff;
+}
+
+.body-list ul {
+    width: 100%;
+    font-size: 14px;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+.body-list ul li {
+    width: 14.28%;
+    height: 36px;
+    line-height: 36px;
+    display: block;
+    box-sizing: border-box;
+    float: left;
+    text-align: center;
+    cursor: pointer;
+}
+
+ul.weekdays li {
+    cursor: default;
+}
+
+#prev,
+#next {
+    color: #beb9dc;
+}
+
+.light {
+    color: #42424256;
+}
+
+.dark {
+    color: #424242;
+}
+
+.main_color {
+    color: #FFF;
+}
+
+.todaybox {
+    border: 1px solid #3D2E96;
+    background: #D6D1F0;
+}
+
+/* --------------活動右側欄-活動簡述-------------- */
+
+.right .my_activity {
+    padding: 20px;
+    background-color: rgba(217, 212, 239, 0.7);
+    margin-top: 20px;
+    clear: both;
+}
+
+.right .my_activity h2 {
+    color: #FFF;
+    -webkit-text-stroke: #000 1px;
+    font-weight: 700;
+    text-shadow: 0 4px 4px #0000004e;
+    text-align: center;
+    padding: 9px 0;
+}
+
+.right .my_activity p {
+    color: #3D2E96;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.right .my_activity section {
+    font-size: 1.5rem;
+    line-height: 1.25;
+    margin-bottom: 50px;
+}
+
+.right .my_activity a {
+    display: block;
+    text-decoration: underline;
+    text-align: center;
+    font-size: 2rem;
+    color: #000;
+}
+
+.right .my_activity a img {
+    width: 80%;
+}
+
+/* --------------活動詳細燈箱-------------- */
+
+.lightbox_background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: hsla(0, 0%, 0%, .8);
+    z-index: 5;
+}
+
+.activity_readmore {
+    width: 50%;
+    margin: auto;
+}
+
+.activity_readmore_wrap {
+    background-color: #fff;
+    border-radius: 5px 5px 0 0;
+    overflow-y: scroll;
+    height: 90vh;
+    position: relative;
+    padding: 30px;
+}
+
+.user {
+    float: none;
+    border: none;
+}
+
+.fa-xmark {
+    position: absolute;
+    font-size: 3rem;
+    top: 0;
+    right: 1%;
+    cursor: pointer;
+}
+
+.activity_inf {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.article_top_left {
+    display: flex;
+}
+
+.user_identity {
+    margin: auto;
+    color: #7C7C7C;
+}
+
+.activity_content h2 {
+    margin: 20px 0;
+    color: #4B4B4B;
+
+}
+
+.activity_content h3 {
+    margin: 20px 0;
+    color: #7C7C7C;
+}
+
+.activity_content p {
+    color: #7C7C7C;
+}
+
+.activity_content ul {
+    display: flex;
+}
+
+.activity_content ul>li {
+    margin: 20px 10px 10px 0;
+}
+
+.article_actions {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.5rem;
+    margin: 20px 0;
+}
+
+.interact_lightboxt a {
+    margin-right: 10px;
+    color: #4B4B4B;
+}
+
+.interact_lightbox a i {
+    color: #3D2E96;
+    margin-right: 3px;
+}
+
+.interact_lightboxt>a>span {
+    color: #4B4B4B;
+}
+
+.activity_comment h3 {
+    margin-bottom: 20px;
+}
+
+.comment_card {
+    display: flex;
+    align-items: start;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.comment_text h2,
+.comment_text h3,
+.comment_text p {
+    margin-bottom: 5px;
+    color: #7C7C7C;
+}
+
+.comment_text h3 {
+    color: #000;
+}
+
+.activity_myaction {
+    background-color: #D9D4EF;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 40px;
+    position: relative;
+}
+
+.comment_keyin textarea {
+    height: 30px;
+    background: none;
+    border: none;
+    resize: none;
+    color: #7C7C7C;
+    /* font-size: 1.5rem; */
+}
+
+.comment_keyin textarea:focus {
+    outline: none;
+}
+
+.paste i {
+    color: #3D2E96;
+    font-size: 1.5rem;
+}
+
+.actions a {
+    color: #292D32;
+    margin-left: 10px;
+    font-size: 1.5rem;
+}
+
+.comment_send {
+    margin-left: auto;
+}
+
+#iwantjoin_lightbox {
+    display: none;
+}
+
+#iwantjoin_lightbox:checked+label {
+    color: #000;
+    background-color: #D6D1F0;
+    box-shadow: inset #fff 0px 0px 0px 1px;
+}
