@@ -1,4 +1,4 @@
-@import url("./reset.css");
+@import url("reset.css");
 
 @font-face {
     font-family: 'Makinas-4-Square';
@@ -32,6 +32,10 @@ h3 {
 
 p {
     font-size: 2rem;
+}
+
+.-none {
+    display: none !important;
 }
 
 /* --------------NAV-------------- */
@@ -94,6 +98,13 @@ p {
 }
 
 .user {
+    margin-right: 10px;
+    border-radius: 50%;
+    float: right;
+    border: #E3CEA1 solid 2px;
+}
+
+.user_header {
     margin-right: 10px;
     border-radius: 50%;
     float: right;
