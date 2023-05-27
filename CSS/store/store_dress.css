@@ -5,6 +5,8 @@ body {
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.2);
   background-blend-mode: multiply;
+  min-width: 1200px;
+  max-width: 1920px;
 }
 
 .activity_title {
