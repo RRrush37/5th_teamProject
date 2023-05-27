@@ -1,6 +1,7 @@
 
-
 $(function(){
+    // const fs = require('fs');
+    // const download = require('download');
 
     $('.check').click(function(){
         // 獲取所有照片
@@ -30,6 +31,9 @@ $(function(){
         // 設定下載檔案的檔名
         downloadLink.download = Math.floor(Math.random() * 10000) + ".jpg";
         // 模擬點擊下載連結，觸發下載功能
+        // (async () => {
+        // fs.writeFileSync('IMG/foo.jpg', await download(dataURL));
+        // })
         downloadLink.click();
     })
 })

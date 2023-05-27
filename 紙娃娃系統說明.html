@@ -37,8 +37,8 @@ $.ajax({
     success: function (response) {
 
         $.each(response, function(index, row) {
-            str1 = "IMG/people/"
-            str2 = ${row.path} // 檔名
+            let str1 = "IMG/people/"
+            let str2 = ${row.path} // 檔名
             str1 += str2 //完整路徑
 
             $("#nav_down_wrapper").append(

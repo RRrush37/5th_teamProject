@@ -194,31 +194,21 @@
       <!-- 左邊選單 -->
       <div class="nav_left">
         <ul>
-          <a href="store_dress.html">
-            <li>
+            <li class="all_type">
               <h2 class="current">全部</h2>
             </li>
-          </a>
-          <a href="store_dress1.html">
-            <li>
+            <li class="hair_type">
               <h2>頭髮</h2>
             </li>
-          </a>
-          <a href="store_dress2.html">
-            <li>
+            <li class="clothes_type">
               <h2>上衣</h2>
             </li>
-          </a>
-          <a href="store_dress3.html">
-            <li>
+            <li class="bottoms_type">
               <h2>下裝</h2>
             </li>
-          </a>
-          <a href="store_dress4.html">
-            <li>
+            <li class="accessories_type">
               <h2>配件</h2>
             </li>
-          </a>
         </ul>
       </div>
 
@@ -297,8 +287,6 @@
                 <p>100</p>
               </div>
             </li>
-            <!-- <li class="number">
-              <div class="hair hair2" data-index="1" data-money="100"></div>
             <li class="number">
               <div class="hair" data-index="1" data-money="100">
                 <img src="IMG/people/hair2.png" alt="">
@@ -1194,7 +1182,7 @@
                 </svg>
                 <p>60</p>
               </div>
-            </li> -->
+            </li>
           </ul>
         </div>
       </div>
@@ -1286,7 +1274,10 @@
         $(".footer").load("common.html .footer>div");
       });
     </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/downloadjs/1.4.8/download.min.js" integrity="sha512-WiGQZv8WpmQVRUFXZywo7pHIO0G/o3RyiAJZj8YXNN4AV7ReR1RYWVmZJ6y3H06blPcjJmG/sBpOVZjTSFFlzQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
     <script src="JS/store/store_dress.js"></script>
     <!-- <script src="JS/store/catch_image.js"></script> -->
+    <script src="JS/store/change_type.js"></script>
   </body>
 </html>
