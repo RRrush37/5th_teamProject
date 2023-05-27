@@ -110,19 +110,20 @@ body {
 /* 人偶 */
 .coutainer {
   background-image: url(../../IMG/store/photo_frame_3.png);
-  background-size: 65% auto;
+  background-size: contain;
   background-repeat: no-repeat;
-  width: 606px;
-  height: 560px;
+  background-position: center center;
+  width: 363.6px;
+  height: 337.2px;
   position: absolute;
-  top: 50%;
-  left: 52%;
-  transform: translate(-35%, -30%);
+  top: 52%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .doll {
   /* background-image: url(../../IMG/people/hair4.png),url(../../IMG/people/glasses.png),url(../../IMG/people/mask.png),url(../../IMG/people/m2.png),url(../../IMG/people/e2.png),url(../../IMG/people/eb3.png),url(../../IMG/people/top4.png),url(../../IMG/people/bottom4.png), url(../../IMG/people/body.png); */
-  background-image: url(../../IMG/people/body.png);
+  /* background-image: url(../../IMG/people/body.png); */
 }
 
 .coutainer .doll,
@@ -135,11 +136,11 @@ body {
 .coutainer .hair,
 .coutainer .accessories2,
 .coutainer .accessories3 {
-  width: 250px;
+  width: 162.5px;
   height: 250px;
   position: absolute;
-  top: 12%;
-  left: 12%;
+  top: 15%;
+  left: 28%;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center center;
@@ -215,6 +216,13 @@ body {
   border-radius: 10px;
 }
 
+
+.doll {
+  width: 150px;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+}
 .hair {
   width: 150px;
   height: 150px;
@@ -271,6 +279,7 @@ body {
   overflow: hidden;
 }
 
+.doll img,
 .hair img,
 .clothes img,
 .bottoms img,
@@ -353,16 +362,19 @@ body {
 }
 
 .doll_lightbox {
-  background-image: url(../../IMG/people/body.png);
-  width: 200px;
+  /* background-image: url(../../IMG/people/body.png); */
+  width: 130px;
   height: 200px;
   background-size: contain;
   background-repeat: no-repeat;
   position: absolute;
-  top: 20%;
+  top: 15%;
   left: 35%;
+  display: flex;
+  justify-content: center;
 }
 
+.doll_lightbox .doll,
 .doll_lightbox .hair,
 .doll_lightbox .clothes,
 .doll_lightbox .bottoms,
@@ -372,11 +384,11 @@ body {
 .doll_lightbox .eyebrow,
 .doll_lightbox .eye,
 .doll_lightbox .mouth{
-  width: 200px;
+  width: 130px;
   height: 200px;
   position: absolute;
   top: 0;
-  left: -35px;
+  left: 0px;
 }
 
 
