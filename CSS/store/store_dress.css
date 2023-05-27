@@ -433,3 +433,7 @@ body {
 .send_check:hover {
   box-shadow: 0 0 5px #000000;
 }
+
+.none{
+  display: none;
+}
