@@ -407,16 +407,3 @@
     result.innerText = total;
   }
 
-
-// 換置衣服
-let body = document.getElementsByClassName("doll");
-let eyebrow = document.getElementsByClassName("eyebrow");
-let eye = document.getElementsByClassName("eye");
-let mouth = document.getElementsByClassName("mouth");
-let clothes = document.getElementsByClassName("clothes");
-let bottoms = document.getElementsByClassName("bottoms");
-let accessories1 = document.getElementsByClassName("accessories1");
-let hair = document.getElementsByClassName("hair");
-let accessories2 = document.getElementsByClassName("accessories2");
-let accessories3 = document.getElementsByClassName("accessories3");
-

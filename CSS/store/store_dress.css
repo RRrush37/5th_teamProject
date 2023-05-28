@@ -30,7 +30,7 @@ body {
   }
 }
 
-.bar > .ability {
+/* .bar > .ability {
   text-shadow: #405366.1rem 0.1rem 0.4rem;
 }
 
@@ -40,7 +40,7 @@ body {
 
 .bar .ability span div {
   background-color: #a0c0e1;
-}
+} */
 
 .user {
   border: #a0c0e1 solid 2px;
@@ -60,17 +60,22 @@ body {
 }
 
 .choose_wrapper {
+  margin-top: 20px;
   display: flex;
 }
 
-#choose {
+.choose_wrapper h1{
+  margin: 0 auto;
+}
+
+/* #choose {
   font-size: 2rem;
   text-align: center;
   background-color: #755c5c;
   color: white;
   margin: 0 auto;
   padding: 5px 0;
-}
+} */
 
 .wrapper {
   display: flex;
@@ -99,15 +104,16 @@ body {
   width: 100px;
   margin: 35px auto 0;
   padding-bottom: 10px;
+  cursor: pointer;
 }
 
 .nav_left ul li:hover {
   color: #405366;
 }
 
-.current {
+/* .current {
   color: #405366;
-}
+} */
 
 /* 人偶 */
 .coutainer {
@@ -118,7 +124,7 @@ body {
   width: 363.6px;
   height: 337.2px;
   position: absolute;
-  top: 52%;
+  top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
@@ -173,7 +179,7 @@ body {
   width: 500px;
   height: 200px;
   left: 50%;
-  top: 95%;
+  top: 85%;
   transform: translate(-50%, -40%);
   overflow: hidden;
 }
@@ -390,7 +396,7 @@ body {
   height: 200px;
   position: absolute;
   top: 0;
-  left: 0px;
+  left: 0;
 }
 
 
@@ -436,4 +442,132 @@ body {
 
 .none{
   display: none;
+}
+
+/*------------------------------- 414 --------------------------------*/
+
+@media screen and (max-width: 414px){
+  
+  body{
+    background-image: url(../../IMG/store/mall_room2.png);
+    min-width:100%;
+    max-width:100%;
+    width: auto;
+  }
+
+  .coutainer{
+    background-image: url();
+  }
+
+  .wrapper{
+    
+  }
+
+  .nav_down{
+    width: 430px;
+    height: 230px;
+    top: 87%;
+  }
+
+  #nav_down_wrapper{
+    width: 380px;
+    height: 200px;
+  }
+
+  #nav_down_wrapper::-webkit-scrollbar{
+    height: 20px;
+  }
+
+  .nav_left{
+    background-image: url();
+    margin: 0 auto;
+    width: 400px;
+    height: 100px;
+    position: absolute;
+    top: 65%;
+    left: 5px;
+  }
+
+  .nav_left ul{
+    flex-direction: row;
+  }
+
+  .nav_left ul li{
+    border-bottom: none;
+  }
+
+  .nav_left ul li:hover{
+    color: #a0c0e1;
+  }
+
+  .money{
+    margin-top: 100px;
+  }
+
+  .number{
+    margin: 10px;
+  }
+
+  .check{
+    font-size: 2.5rem;
+    top: 60%;
+    left: 80%;
+    box-shadow: 0 0 5px #ffffff;
+    border-radius: 20px;
+  }
+
+  .dresss_lightbox{
+    height: 100%;
+  }
+
+  .dresss{
+    width: 380px;
+    height: 520px;
+  }
+
+  .dresss_choose{
+    margin-left: 0;
+    background-size: 79%;
+    width: 480px;
+  }
+
+  .dresss > article{
+    width: 100%;
+    height: 82%;
+    top: 55%;
+  }
+
+  .fa-xmark{
+    font-size: 4rem;
+    margin-left: 85%;
+  }
+
+  .doll_lightbox{
+    left: 30%;
+  }
+
+  .doll_lightbox .doll,
+  .doll_lightbox .hair,
+  .doll_lightbox .clothes,
+  .doll_lightbox .bottoms,
+  .doll_lightbox .accessories1,
+  .doll_lightbox .accessories2,
+  .doll_lightbox .accessories3,
+  .doll_lightbox .eyebrow,
+  .doll_lightbox .eye,
+  .doll_lightbox .mouth{
+    width: 150px;
+    height: 250px;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .send{
+    font-size: 2.5rem;
+  }
+
+  .send_check{
+    font-size: 2.5rem;
+  }
 }
