@@ -1,5 +1,5 @@
 // 連結頁面
-  function navigateToUrl() {
+function navigateToUrl() {
     const selectElement = document.getElementById("choose");
     const selectedValue = selectElement.value;
     window.location.href = selectedValue;
@@ -7,31 +7,31 @@
 
 
 // lightbox
-  let dresss_lightbox = document.getElementsByClassName("dresss_lightbox")[0];
-  let check = document.getElementsByClassName("check")[0];
-  let dresss = document.getElementsByClassName("dresss");
+  // let dresss_lightbox = document.getElementsByClassName("dresss_lightbox")[0];
+  // let check = document.getElementsByClassName("check")[0];
+  // let dresss = document.getElementsByClassName("dresss");
 
-  check.addEventListener("click", function(){
-      dresss_lightbox.classList.remove("dresss_none");
-  });
+  // check.addEventListener("click", function(){
+  //     dresss_lightbox.classList.remove("dresss_none");
+  // });
 
-  let send = document.getElementsByClassName("send")[0];
-  send.addEventListener("click", function(){
-      dresss_lightbox.classList.add("dresss_none");
-  });
+  // let send = document.getElementsByClassName("send")[0];
+  // send.addEventListener("click", function(){
+  //     dresss_lightbox.classList.add("dresss_none");
+  // });
 
-  let fa_xmark = document.getElementsByClassName("fa-xmark")[0];
-  fa_xmark.addEventListener("click", function(){
-      dresss_lightbox.classList.add("dresss_none");
-  });
+  // let fa_xmark = document.getElementsByClassName("fa-xmark")[0];
+  // fa_xmark.addEventListener("click", function(){
+  //     dresss_lightbox.classList.add("dresss_none");
+  // });
 
-  dresss_lightbox.addEventListener("click", function(){
-    this.classList.add("dresss_none");
-  });
+  // dresss_lightbox.addEventListener("click", function(){
+  //   this.classList.add("dresss_none");
+  // });
 
-  dresss_lightbox.querySelector(".dresss").addEventListener("click", function(e){
-    e.stopPropagation();
-  });
+  // dresss_lightbox.querySelector(".dresss").addEventListener("click", function(e){
+  //   e.stopPropagation();
+  // });
 
 
 // 下面的js是給配件有滑動的
@@ -87,7 +87,7 @@
     "accessories1": -1,
     "accessories2": -1,
     "accessories3": -1,
-    "eyebrow": -1,ㄖ
+    "eyebrow": -1,
     "eye": -1,
     "mouth": -1
   };
@@ -107,17 +107,17 @@
   let doll_box_eye = doll_box.querySelector(".eye").querySelector("img");
   let doll_box_mouth = doll_box.querySelector(".mouth").querySelector("img");
 
-  // 購物車小人及物件
-  let doll_lightbox = document.getElementsByClassName("doll_lightbox")[0];
-  let doll_lightbox_hair = doll_lightbox.querySelector(".hair").querySelector("img");
-  let doll_lightbox_clothes = doll_lightbox.querySelector(".clothes").querySelector("img");
-  let doll_lightbox_bottoms = doll_lightbox.querySelector(".bottoms").querySelector("img");
-  let doll_lightbox_accessories1 = doll_lightbox.querySelector(".accessories1").querySelector("img");
-  let doll_lightbox_accessories2 = doll_lightbox.querySelector(".accessories2").querySelector("img");
-  let doll_lightbox_accessories3 = doll_lightbox.querySelector(".accessories3").querySelector("img");
-  let doll_lightbox_eyebrow = doll_lightbox.querySelector(".eyebrow").querySelector("img");
-  let doll_lightbox_eye = doll_lightbox.querySelector(".eye").querySelector("img");
-  let doll_lightbox_mouth = doll_lightbox.querySelector(".mouth").querySelector("img");
+  // // 購物車小人及物件
+  // let doll_lightbox = document.getElementsByClassName("doll_lightbox")[0];
+  // // let doll_lightbox_hair = doll_lightbox.querySelector(".hair").querySelector("img");
+  // let doll_lightbox_clothes = doll_lightbox.querySelector(".clothes").querySelector("img");
+  // let doll_lightbox_bottoms = doll_lightbox.querySelector(".bottoms").querySelector("img");
+  // let doll_lightbox_accessories1 = doll_lightbox.querySelector(".accessories1").querySelector("img");
+  // let doll_lightbox_accessories2 = doll_lightbox.querySelector(".accessories2").querySelector("img");
+  // let doll_lightbox_accessories3 = doll_lightbox.querySelector(".accessories3").querySelector("img");
+  // let doll_lightbox_eyebrow = doll_lightbox.querySelector(".eyebrow").querySelector("img");
+  // let doll_lightbox_eye = doll_lightbox.querySelector(".eye").querySelector("img");
+  // let doll_lightbox_mouth = doll_lightbox.querySelector(".mouth").querySelector("img");
 
 
   for ( let i = 0 ; i < items.length ; i++) {
@@ -409,14 +409,14 @@
 
 
 // 換置衣服
-let body = document.getElementsByClassName("doll");
-let eyebrow = document.getElementsByClassName("eyebrow");
-let eye = document.getElementsByClassName("eye");
-let mouth = document.getElementsByClassName("mouth");
-let clothes = document.getElementsByClassName("clothes");
-let bottoms = document.getElementsByClassName("bottoms");
-let accessories1 = document.getElementsByClassName("accessories1");
-let hair = document.getElementsByClassName("hair");
-let accessories2 = document.getElementsByClassName("accessories2");
-let accessories3 = document.getElementsByClassName("accessories3");
+// let body = document.getElementsByClassName("doll");
+// let eyebrow = document.getElementsByClassName("eyebrow");
+// let eye = document.getElementsByClassName("eye");
+// let mouth = document.getElementsByClassName("mouth");
+// let clothes = document.getElementsByClassName("clothes");
+// let bottoms = document.getElementsByClassName("bottoms");
+// let accessories1 = document.getElementsByClassName("accessories1");
+// let hair = document.getElementsByClassName("hair");
+// let accessories2 = document.getElementsByClassName("accessories2");
+// let accessories3 = document.getElementsByClassName("accessories3");
 
