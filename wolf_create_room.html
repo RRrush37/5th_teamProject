@@ -49,7 +49,7 @@
 
     <div class="wrapper">
         <section class="create_room">
-            <h2>房號:1234</h2>
+            <h2 data-roomNum="">房號:</h2>
             <div class="game_mode">
                 <span>遊戲模式:</span>
                 <span>狼人殺7人局</span>
@@ -67,7 +67,7 @@
 
         </section>
 
-        <div class="bottom_nav">
+        <!-- <div class="bottom_nav">
             <p>
                 <span>
                     關於我們
@@ -79,7 +79,7 @@
                     常見問題
                 </span>
             </p>
-        </div>
+        </div> -->
     </div>
 
 
@@ -98,17 +98,50 @@
 
         let lock_el = document.getElementsByClassName("lock")[0];
         let password_input = document.getElementsByClassName("password")[0];
+        let create_room_num = document.getElementsByClassName("create_room")[0].querySelector("h2") ;
+
+        create_room_num.setAttribute("data-roomNum",getRandomInt(10));
+        create_room_num.innerHTML = create_room_num.innerHTML+create_room_num.getAttribute("data-roomNum");
 
         lock_el.addEventListener("click", function(){
+
             if( !lock_el.classList.contains("on") ){
                 lock_el.classList.add("on");
                 password_input.disabled = false;
                 password_input.focus() ;
+                password_input.classList.add("on");
             } else {
                 lock_el.classList.remove("on");
                 password_input.disabled = true;
+                password_input.value = "" ;
+                password_input.classList.remove("on");
             }
         })
+
+        function getRandomInt(max) {
+            let str = "" ;
+
+            for ( let i = 0 ; i < 4 ; i++ ) {
+
+                str += Math.floor(Math.random() * max);
+
+                if ( str.length == 4 ) {
+                    if ( !isUnique(str) ){ //與資料庫遊戲是重複，重製房號
+                        str = "" ;
+                        i = 0 ;
+                    }
+                }
+
+            }
+
+            return str;
+        }
+        
+        function isUnique( str ) { //與資料庫資料做比對
+            //Ajax放這邊
+            return true;
+        }
+        
     </script>
 </body>
 </html>

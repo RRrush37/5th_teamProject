@@ -44,6 +44,7 @@ body{
 
 .activity_title > svg {
     color: #606C99;
+    margin-left: 20px;
 }
 
 .activity_title > svg:hover {
