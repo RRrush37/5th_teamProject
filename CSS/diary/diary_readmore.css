@@ -170,6 +170,7 @@ h2{
 .feedbacktop h2{
     color: black;
     font-size: 1rem;
+    margin: 13px;
 }
 
 
@@ -252,6 +253,7 @@ h2{
 .green h2{
     font-size: 1rem;
     color: black;
+    margin: 13px;
 }
 
 .send{
@@ -278,6 +280,7 @@ h2{
     color: white;
     border-radius: 40px;
     margin: 8px 4px;
+    font-size: 2rem;
 }
 
 
