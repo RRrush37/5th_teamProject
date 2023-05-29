@@ -19,7 +19,8 @@ let room_start = [{ // 用來儲存遊戲開始後的資訊
   "player_state": [],// 用於讓伺服器知道玩家狀態
   "gameover":[], //用於儲存遊戲是否結束
   "speaker" : [], //用於儲存發言序列
-  "num_of_speaker" : 0  //用於儲存發言人數
+  "num_of_speaker" : 0,  //用於儲存發言人數
+  "isvoted" : false  //用於儲存是否已投過票
 }]
 
 let first = true ; // go階段使用
@@ -142,7 +143,8 @@ wss.on('connection', ws => {
         "player_state": [],// 用於讓伺服器知道玩家狀態
         "gameover":[], //用於儲存遊戲是否結束
         "speaker" : [], //用於儲存發言序列
-        "num_of_speaker" : 0  //用於儲存發言人數
+        "num_of_speaker" : 0,  //用於儲存發言人數
+        "isvoted" : false  //用於儲存是否已投過票
       }
       data[1].wait = true ;
       data[1].second = [3,3,3,3,3,3,3] ;
@@ -173,7 +175,7 @@ wss.on('connection', ws => {
           console.log("first"+first);
           if ( room_start[i].second.toString() == "0,0,0,0,0,0,0" && first) { // 第一次全部都回來了
             data[1].wait = true ;
-            data[1].second = [10,10,10,10,10,10,10] ;
+            data[1].second = [5,5,5,5,5,5,5] ;
             data[1].round[1] = "抿牌階段";
             data[0] = "go" ;
             room_start[i] = data[1] ;
@@ -188,7 +190,7 @@ wss.on('connection', ws => {
 
           } else if ( room_start[i].second.toString() == "0,0,0,0,0,0,0" && !first) { //第二次全部都回來了
             data[1].wait = true ;
-            data[1].second = [10,10,10,10,10,10,10] ;
+            data[1].second = [5,5,5,5,5,5,5] ;
             data[1].round[1] = "狼人回合";
             data[0] = "start" ;
             room_start[i] = data[1] ;
@@ -242,7 +244,7 @@ wss.on('connection', ws => {
                     out_num = room_start[i].player_state[k].vote; //玩家票數定為目前最高票
                     // room_start[i].player_state[k].vote = 0 ;//將票數歸零
                     out_index = k ;
-
+                    no_one_out = false ;
                 } else if( room_start[i].player_state[k].alive == true &&
                     room_start[i].player_state[k].vote > 0 &&
                     room_start[i].player_state[k].vote == out_num ) {
@@ -342,16 +344,24 @@ wss.on('connection', ws => {
               room_start[i].killed = data[1].killed ;
               first = false ;
               console.log("room_start[i].killed "+ room_start[i].killed);
-              for ( let j = 0 ; j < data[1].player_state.length ; j++) {
-                room_start[i].player_state[j].out = false ;
-                console.log("solve");
-              }
             }
+
             console.log("找到同房號");
             console.log("room_start[i].second"+room_start[i].second);
             if ( room_start[i].second.toString() == "0,0,0,0,0,0,0" ) {
               // 第一次全部都回來了
               //進入預言家回合
+
+              if ( data[1].killed.toString() != room_start[i].killed.toString() ) {
+                //第一次有異動//救人
+                room_start[i].killed = data[1].killed ;
+                first = false ;
+                console.log("room_start[i].killed "+ room_start[i].killed);
+                for ( let j = 0 ; j < data[1].player_state.length ; j++) {
+                  room_start[i].player_state[j].out = false ;
+                  console.log("solve");
+                }
+              }
 
               data[1].killed = room_start[i].killed ; // 更新夜晚女巫是否救人
               data[1].player_state = room_start[i].player_state; // 更新夜晚女巫是否殺人
@@ -405,6 +415,7 @@ wss.on('connection', ws => {
               for ( let j = 0 ; j < data[1].player_state.length ; j++) {
                 room_start[i].player_state[j].record = "" ;
                 room_start[i].player_state[j].out = false ;
+                room_start[i].player_state[j].vote = 0 ; // 清空
               }
 
               //檢查是否已結束比賽
@@ -439,6 +450,7 @@ wss.on('connection', ws => {
             for ( let j = 0 ; j < data[1].player_state.length ; j++) {
               if ( data[1].second[j] == 0 ) {
                 room_start[i].second[j] = data[1].second[j] ;
+                room_start[i].player_state[j].vote = 0 ; // 清空
               }
             }
 
@@ -452,7 +464,7 @@ wss.on('connection', ws => {
                 room_start[i].round[1] = "投票回合";
               }
               
-              data[1].round[1] =room_start[i].round[1] ;
+              data[1].round[1] = room_start[i].round[1] ;
               room_start[i] = data[1]; //更新資料
               room_start[i].second = [5,5,5,5,5,5,5] ;
               data[1] = room_start[i];
@@ -500,19 +512,22 @@ wss.on('connection', ws => {
               //=================================
               let vote_num = 0, out_index = -1, no_one_out = false ;
               for ( let k = 0 ; k < room_start[i].player_state.length ; k++) {
-                  if (  room_start[i].player_state[k].alive == true &&
-                        room_start[i].player_state[k].vote > 0 &&
-                        room_start[i].player_state[k].vote > vote_num ) {
+                if (  room_start[i].player_state[k].alive == true &&
+                      room_start[i].player_state[k].vote > 0 &&
+                      room_start[i].player_state[k].vote > vote_num ) {
 
-                      vote_num = room_start[i].player_state[k].vote; //票數定為目前最高票
-                      out_index = k ;
-                  } else if( room_start[i].player_state[k].alive == true &&
-                              room_start[i].player_state[k].vote > 0 &&
-                              room_start[i].player_state[k].vote == vote_num ) {
+                    vote_num = room_start[i].player_state[k].vote; //票數定為目前最高票
+                    out_index = k ;
+                    no_one_out = false ;
+                } else if( room_start[i].player_state[k].alive == true &&
+                            room_start[i].player_state[k].vote > 0 &&
+                            room_start[i].player_state[k].vote == vote_num ) {
 
-                      // 檢查是否平票
-                      no_one_out = true ;
-                  }
+                    // 檢查是否平票
+                    no_one_out = true ;
+                }
+
+                console.log("no_one_out"+no_one_out);
               }
 
               console.log("驗票"+room_start[i].round[1]);
@@ -522,23 +537,15 @@ wss.on('connection', ws => {
                 console.log("out_index"+out_index);
 
                 room_start[i].player_state[out_index].out = true ;
-
-                room_start[i].round[1] = "白天出局回合"; // 再進到出局發言
-                settleOut() ;
-                isvoted = false ;
-                console.log("room_start[i].player_state[out_index].record:"+room_start[i].player_state[out_index].record);
-                
-                //檢查是否已結束比賽
-                if ( isgameover() ) {
-                  room_start[i].round[1] = "結算";
-                }
-                
+                room_start[i].round[1] = "白天回合結算"; // 再進到出局發言
+                 
               } else { // 票數相同
                 // 洗掉票數最低的玩家
                 for ( let j = 0 ; j < room_start[i].player_state.length ; j++) {
                     if ( room_start[i].player_state[j].vote < vote_num ) {
                       room_start[i].player_state[j].vote = 0 ; //非最高票的玩家票數歸零
                     }
+                    room_start[i].player_state[j].record = "" ;
                 }
                 console.log("票數相同再進發言回合");
                 //票數相同者再發言投票
@@ -552,6 +559,7 @@ wss.on('connection', ws => {
               }
               //=================================
 
+              room_start[i].isvoted = isvoted ;
               room_start[i].wait = true ;
               room_start[i].second = [5,5,5,5,5,5,5] ;
               data[1] = room_start[i] ; //更新資料
@@ -567,7 +575,7 @@ wss.on('connection', ws => {
             }
           }
         }
-      } else if ( data[1].round[1] == "白天出局回合" ) {
+      } else if ( data[1].round[1] == "白天回合結算" ) {
         for ( let i = 0 ; i < room_start.length ; i++) { //找同房號
           if ( data[1].num == room_start[i].num ) { //找到同房號
             for ( let j = 0 ; j < data[1].player_state.length ; j++) {
@@ -575,13 +583,12 @@ wss.on('connection', ws => {
               if ( data[1].second[j] == 0 ) {
                 room_start[i].second[j] = data[1].second[j] ;
                 room_start[i].player_state[j].vote = 0 ;
-                room_start[i].player_state[j].record = ""
-                room_start[i].player_state[j].out = false ;
+                room_start[i].player_state[j].record = "" ;
               }
             }
             console.log("找到同房號");
             console.log("room_start[i].second"+room_start[i].second);
-            console.log("first"+first);
+            console.log("白天出局回合");
             
             if ( room_start[i].second.toString() == "0,0,0,0,0,0,0" ) {
               // 第一次全部都回來了
@@ -590,20 +597,71 @@ wss.on('connection', ws => {
               room_start[i].second = [5,5,5,5,5,5,5] ;
               data[1] = room_start[i] ; //更新資料
               first = true ;
-              data[1].round[1] == "狼人回合"
+              data[1].round[1] = "白天出局回合"
               console.log("data[1].round[1]"+data[1].round[1]);
+              console.log("ddddddddddddddddd");
+              //room_start[i].round[1] = "白天出局回合"; // 再進到出局發言
+              settleOut() ;
+              isvoted = false ;
+              room_start[i].isvoted = isvoted ;
+
+              //檢查是否已結束比賽
+              if ( isgameover() ) {
+                room_start[i].round[1] = "結算";
+              }
 
               // 發送給所有client： 
-              // let data2 = JSON.stringify(data);
-              // let clients = wss.clients  //取得所有連接中的 client
-              // clients.forEach(client => {
-              //   client.send(data2)  // 發送至每個 client
-              // })
+              let data2 = JSON.stringify(data);
+              let clients = wss.clients  //取得所有連接中的 client
+              clients.forEach(client => {
+                client.send(data2)  // 發送至每個 client
+              })
+
+            }
+          }
+        }
+      } else if ( data[1].round[1] == "白天出局回合" ) {
+        for ( let i = 0 ; i < room_start.length ; i++) { //找同房號
+          if ( data[1].num == room_start[i].num ) { //找到同房號
+            for ( let j = 0 ; j < data[1].player_state.length ; j++) {
+
+              if ( data[1].second[j] == 0 ) {
+                room_start[i].second[j] = data[1].second[j] ;
+                room_start[i].player_state[j].vote = 0 ;
+                room_start[i].player_state[j].record = "";
+                room_start[i].player_state[j].out = false ;
+              }
+            }
+            console.log("找到同房號");
+            console.log("room_start[i].second"+room_start[i].second);
+            console.log("出局發言結束");
+            
+            if ( room_start[i].second.toString() == "0,0,0,0,0,0,0" ) {
+              // 第一次全部都回來了
+
+              room_start[i].wait = true ;
+              room_start[i].second = [5,5,5,5,5,5,5] ;
+              room_start[i].round[0]++;
+
+              data[1] = room_start[i] ; //更新資料
+              first = true ;
+              data[1].round[1] = "狼人回合";
+              console.log("data[1].round[1]"+data[1].round[1]);
+              //room_start[i].round[1] = "白天出局回合"; // 再進到出局發言
+              
+              // 發送給所有client： 
+              let data2 = JSON.stringify(data);
+              let clients = wss.clients  //取得所有連接中的 client
+              clients.forEach(client => {
+                client.send(data2)  // 發送至每個 client
+              })
+
             }
           }
         }
       } else {
         console.log("what");
+        console.log("data[1].round[1]"+data[1].round[1]);
       }
     }
 
@@ -654,7 +712,7 @@ wss.on('connection', ws => {
         if ( data[1].num == room_start[i].num ) { //找到同房號
           for ( let j = 0 ; j < data[1].player_state.length ; j++) {
     
-            if ( data[1].player_state[j].out == true ) {
+            if ( room_start[i].player_state[j].out == true ) {
               console.log("out=true");
               // playerID[i].querySelector("div.player_img").classList.add("out");
               room_start[i].player_state[j].alive = false ; // 判定死亡

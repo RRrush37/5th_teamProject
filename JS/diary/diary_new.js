@@ -1,4 +1,9 @@
 
+
+
+
+
+
 // 透過 class 名稱取得 readmore_lightbox 元素
 let readmore_lightbox = document.getElementsByClassName("readmore_lightbox")[0];
 

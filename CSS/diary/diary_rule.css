@@ -70,6 +70,7 @@
 }
 
 
+
 .use input{
     /* padding: 10px; */
     border:none;
@@ -81,6 +82,12 @@
     /* border-color:#665448; */
     font-size: 2rem;
 }
+
+.use input:hover{
+    transform: scale(1.1);
+}
+
+
 
 #rule{
     font-size: 3rem;
