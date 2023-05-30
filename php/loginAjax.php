@@ -32,7 +32,7 @@ if (count($data) > 0) {
               echo json_encode($data[0][0]);
               // setcookie("sessionID",session_id(),time()+360000, '/');
               $_SESSION["ID"] = $data[0][0];
-              // setcookie("ID",$data[0][0],time()+360000, '/');
+              setcookie("ID", $data[0][0], time() + 360000, '/');
               // session_regenerate_id(true);
        } else
               echo -1;
