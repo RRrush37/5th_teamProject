@@ -34,7 +34,7 @@ $(() => {
         // 在此處處理成功的情況
         if (response === 1) {
           alert("註冊成功");
-          location.href = "member_login.php";
+          location.href = "member_login.html";
         } else if (response === -1) {
           alert("暱稱已被使用");
         } else if (response === -2) {
