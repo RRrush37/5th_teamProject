@@ -116,13 +116,23 @@ p {
     z-index: 5;
 }
 
-.user {
+.nav > a{
     margin-right: 10px;
     border-radius: 50%;
     float: right;
     border: #E3CEA1 solid 2px;
     z-index: 1;
     position: relative;
+    overflow: hidden;
+}
+.user {
+    /* margin-right: 10px;
+    border-radius: 50%;
+    float: right;
+    border: #E3CEA1 solid 2px;
+    z-index: 1;
+    position: relative; */
+    transform: scale(2) translateY(13%);
 }
 
 /* .user_header {
@@ -179,21 +189,21 @@ p {
 
 .widget .fa-shopify{
     position: absolute;
-    top: 1px;
-    right: 78px;
+    top: 5px;
+    right: 82px;
     z-index: -1;
 }
 
 .widget .fa-calendar-check{
     position: absolute;
-    top: 50px;
-    right: 75px;
+    top: 55px;
+    right: 80px;
     z-index: -1;
 }
 
 .widget .fa-gamepad{
     position: absolute;
-    top: 83px;
+    top: 90px;
     right: 10px;
     z-index: -1;
 }
