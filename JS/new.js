@@ -1,4 +1,4 @@
-$(() => {
+$(function()  {
   let send = document.querySelector(".button .send");
   send.addEventListener("click", () => {
     if (!document.getElementById("title").value) {

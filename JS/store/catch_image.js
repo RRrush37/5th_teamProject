@@ -22,18 +22,31 @@ $(function(){
             // 繪製照片到Canvas元素上
             ctx.drawImage(img, position.left, position.top, width, height);
         });
-        // 將Canvas元素轉換為Data URL
-        var dataURL = canvas.toDataURL();
-        console.log(dataURL);
-        // 建立一個下載連結，將Data URL 設為下載連結的 href 屬性
-        var downloadLink = document.createElement("a");
-        downloadLink.href = dataURL;
-        // 設定下載檔案的檔名
-        downloadLink.download = Math.floor(Math.random() * 10000) + ".jpg";
-        // 模擬點擊下載連結，觸發下載功能
-        // (async () => {
-        // fs.writeFileSync('IMG/foo.jpg', await download(dataURL));
-        // })
-        downloadLink.click();
+
+        canvas.toBlob(function(blob) {
+            // 使用 Blob 物件建立 File 物件
+            var file = new File([blob], "image.png", { type: "image/png" });
+          
+            // 建立 FormData 物件並將 File 物件添加到其中
+            var formData = new FormData();
+            formData.append("imageFile", file);
+          
+            // 使用 AJAX 傳送 FormData 至後端
+            $.ajax({
+              url: "php/catch_image.php",  // 請更改為後端接收請求的 URL
+              type: "POST",
+              data: formData,
+              processData: false,
+              contentType: false,
+              success: function(response) {
+                console.log("圖片上傳成功");
+              },
+              error: function(xhr, status, error) {
+                console.error("圖片上傳失敗:", error);
+              }
+            });
+          
+          }, "image/png");
+
     })
 })
