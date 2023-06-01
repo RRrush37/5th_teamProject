@@ -14,7 +14,6 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 </head>
-
 <body>
     <div class="page">
         <div class="header"></div> <!-- 用來載入 common.html 裡頭的 header -->
@@ -67,8 +66,8 @@
                         <div class="text_nav">
                                 <div class="on"><a href="diary_new.html">個人文章</a></div>
                                 <div><a href="diary_myself.html">會員個人資料</a></div>
-                                <div><a href="activity.html">我的活動</a></div>
-                                <div><a href="diary_wardrobe.html">我的衣櫃</a></div>
+                                <div><a href="activity.html">儲值紀錄</a></div>
+                                <div><a href="diary_wardrobe_copy.html">我的衣櫃</a></div>
                         </div>
 
                     </div>
@@ -92,22 +91,23 @@
                             <!-- 文章 -->
                             <div class="pen">
                                 <!--編輯頁面-->
-                                <i class="fa-solid fa-pen-to-square" style="color: #665448;"></i> 
-                                <i class="fa-solid fa-circle-exclamation" style="color: #665448;"></i>
+                                <!-- <i class="fa-solid fa-pen-to-square" style="color: #665448;"></i>  -->
+                                <i class="fa-solid fa-pen-to-square" style="color: #665448;"></i>
+                                <!-- <i class="fa-solid fa-circle-exclamation" style="color: #665448;"></i> -->
                             </div>
                             
                             <div class="activity_article_cards">
 
                                 <div class="cards_top">
-                                    <!------最上方--------->
+                                    <!------最上方------->
                                     <div class="middletop">
                                         <div class="big_girl">
                                             <img src="IMG/diary/big_girl.png" alt="">
                                         </div>
                                         <div class="idsign">
-                                            <h1 class="username">e44444444</h1>
-                                            <p id="idname">ID:44444</p>
-                                            <p id="sign">夢想這條路跪著也要走完</p>
+                                            <h1 class="username">靜靜</h1>
+                                            <p id="idname">ID:1111111111</p>
+                                            <p id="sign">有趣~</p>
                                         </div>
                                     </div>
 
@@ -187,7 +187,7 @@
                                                 <a href="#"><i class="fa-regular fa-comment-dots"></i><span>7</span></a>
                                                 <a href="#"><i class="fa-regular fa-bookmark"></i></a>
                                             </div>
-                                                <button class="moreButton"  >Read more</button>
+                                                <button class="moreButton">Read more</button>
                                         </div>
 
                                         
@@ -305,7 +305,7 @@
                             </div>
                         </div>
                         <div class="my_activity">
-                            <h3>我的文章列表</h3>
+                            <h3>最新文章列表</h3>
                             <p>6月1日<br>
                                 文章標題</p>
                             <section>
@@ -342,7 +342,7 @@
             </ul>
 
             <div class="read">
-                <input type="checkbox" id="rule" name="rule">
+                <input type="checkbox" id="rule" name="rule" required>
                 <label for="rule">已經閱讀規則</label>
             </div>
 
@@ -393,7 +393,7 @@
                             <!--透過icon去點擊-->
                             <i class="fa-solid fa-image"></i>
                         </label>
-                        <i class="fa-regular fa-face-laugh-squint"></i>
+                        <!-- <i class="fa-regular fa-face-laugh-squint"></i> -->
                 
                         <!--文件輸入--->
                         <input id="upload-input" type="file" style="display: none;">
@@ -428,7 +428,7 @@
     </div>
 
 
-    <!-----readmore-------------->
+    <!-----readmore 燈箱-------------->
     
     <div class="readmore_lightbox none">
         <div class="wrapper02">
@@ -460,6 +460,7 @@
                     </div>
 
                     <i class="fa-regular fa-bookmark"></i>
+                    <!-- <i class="fa-solid fa-bookmark"></i> -->
                 </div>
 
                 <div class="middlebottom">
@@ -475,7 +476,7 @@
                             <p>留言留言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留留言言留言留言留言留言留言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留留言言留言留言留留言留言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留留言言留言留言留留言留言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留留言言留言留言留</p>
                             <p>B1 1小時前</p>
                         </div>
-
+<!-- 
                         <div class="clickbox">
                             <div class="click">
                                 <div class="clickedit">
@@ -488,7 +489,7 @@
                                 <img class="threepoint" src="IMG/diary/threepoint.png" alt="">
                             </div>
                             
-                        </div>
+                        </div> -->
                     </div>
                     <div class="feedback">
                         <div class="feedbacktop">
@@ -502,7 +503,7 @@
                             <p>B1 1小時前</p>
                         </div>
 
-                        <div class="clickbox">
+                        <!-- <div class="clickbox">
                             <div class="click">
                                 <div class="clickedit">
                                     <p>私訊這個人</p>
@@ -513,9 +514,11 @@
                                 
                                 <img class="threepoint" src="IMG/diary/threepoint.png" alt="">
                             </div>
-                            
-                        </div>
-                    </div><div class="feedback">
+                        </div> -->
+
+                    </div>
+
+                    <div class="feedback">
                         <div class="feedbacktop">
                             <div class="img">
                                 <img src="IMG/diary/photo.png" alt="">
@@ -526,7 +529,7 @@
                             <p>留言留言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留留言言留言留言留言留言留言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留留言言留言留言留留言留言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留留言言留言留言留留言留言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留言言留留言言留言留言留</p>
                             <p>B1 1小時前</p>
                         </div>
-
+<!-- 
                         <div class="clickbox">
                             <div class="click">
                                 <div class="clickedit">
@@ -538,8 +541,8 @@
                                 
                                 <img class="threepoint" src="IMG/diary/threepoint.png" alt="">
                             </div>
-                            
-                        </div>
+                        </div> -->
+
                     </div>
                 </div>
             </div>
@@ -567,7 +570,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="JS/diary/diary_new.js"></script>
     <script src="JS/diary/diary_rule.js"></script>
-    <script src="JS/diary/diary_edit.js"></script>
+    <script src="JS/diary/diary_message.js"></script>
 
     <script>
         let list_btn = document.getElementsByClassName("list_btn")[0];

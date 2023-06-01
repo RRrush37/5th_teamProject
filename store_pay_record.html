@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>store_pay_record</title>
+    <link rel="stylesheet" href="CSS/global.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="./CSS/store/store_pay_record.css">
+</head>
+<body>
+    <div class="header"></div> 
+    <!-- 用來載入 common.html 裡頭的 header -->
+    
+    <!-- <div class="stored none">
+        <i class="fa-solid fa-xmark"></i> -->
+
+        <!-- <article> -->
+         
+            <!-- <div class="stored_container"> -->
+
+                <!-- <ul class="nav nav-tabs">
+                      <li><a data-toggle="tab" href="#menu1">加值</a></li>
+                      <li><a data-toggle="tab" href="#menu2">消費紀錄</a></li>
+                      <li><a data-toggle="tab" href="#menu3">儲值紀錄</a></li>
+                </ul> -->
+                
+                <div class="activity_title">
+                    <a href="store.html">
+                      <svg
+                        width="40"
+                        height="40"
+                        viewBox="0 0 83 83"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <g filter="url(#filter0_dd_668_6)">
+                          <path
+                            d="M9 37.5L34.2778 5V23.018L74 23.0556V51.9444H34.2778V70L9 37.5Z"
+                            fill="#A0C0E1"
+                            stroke="#A0C0E1"
+                            stroke-width="10"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </g>
+                        <defs>
+                          <filter
+                            id="filter0_dd_668_6"
+                            x="0"
+                            y="0"
+                            width="83"
+                            height="83"
+                            filterUnits="userSpaceOnUse"
+                            color-interpolation-filters="sRGB"
+                          >
+                            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                            <feColorMatrix
+                              in="SourceAlpha"
+                              type="matrix"
+                              values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                              result="hardAlpha"
+                            />
+                            <feOffset dy="4" />
+                            <feGaussianBlur stdDeviation="2" />
+                            <feComposite in2="hardAlpha" operator="out" />
+                            <feColorMatrix
+                              type="matrix"
+                              values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"
+                            />
+                            <feBlend
+                              mode="normal"
+                              in2="BackgroundImageFix"
+                              result="effect1_dropShadow_668_6"
+                            />
+                            <feColorMatrix
+                              in="SourceAlpha"
+                              type="matrix"
+                              values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                              result="hardAlpha"
+                            />
+                            <feOffset dy="4" />
+                            <feGaussianBlur stdDeviation="2" />
+                            <feComposite in2="hardAlpha" operator="out" />
+                            <feColorMatrix
+                              type="matrix"
+                              values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"
+                            />
+                            <feBlend
+                              mode="normal"
+                              in2="effect1_dropShadow_668_6"
+                              result="effect2_dropShadow_668_6"
+                            />
+                            <feBlend
+                              mode="normal"
+                              in="SourceGraphic"
+                              in2="effect2_dropShadow_668_6"
+                              result="shape"
+                            />
+                          </filter>
+                        </defs>
+                      </svg>
+                    </a>
+                    <div class="choose_wrapper">
+                      <h1>金幣儲值</h1>
+                    </div>
+                </div>
+                  
+                <div class="tab-content">
+                    <ul class="stored_container">
+                        <li class="checkbox_money" data-index="0" data-money="100">
+                            <label for="checkbox1">
+                                <img class="money_100" src="IMG/store/coin1.jpg" alt="">
+                                <div class="in">    
+                                    <input type="checkbox" id="checkbox1" onclick="toggleCheckboxes('checkbox1')"/>
+                                    <span class="checkbox"></span>
+                                    <span>$80</span>
+                                </div>
+                            </label>
+                        </li>
+                        <li class="checkbox_money" data-index="1" data-money="250">
+                            <label for="checkbox2">
+                                <img class="money_250" src="IMG/store/coin2.jpg" alt="">
+                                <div class="in">
+                                    <input type="checkbox" id="checkbox2" onclick="toggleCheckboxes('checkbox2')"/>
+                                    <span class="checkbox"></span>
+                                    <span>$150</span>
+                                </div>
+                            </label>
+                        </li>
+                        <li class="checkbox_money" data-index="2" data-money="200">
+                            <label for="checkbox3">
+                                <img class="money_500" src="IMG/store/coin3.jpg" alt="">
+                                <div class="in">
+                                    <input type="checkbox" id="checkbox3" onclick="toggleCheckboxes('checkbox3')"/>
+                                    <span class="checkbox"></span>
+                                    <span>$200</span>
+                                </div>
+                            </label>
+                        </li>
+                        <li class="checkbox_money" data-index="3" data-money="300">
+                            <label for="checkbox4">
+                                <img class="money_1000" src="IMG/store/coin4.jpg" alt="">
+                                <div class="in">
+                                    <input type="checkbox" id="checkbox4" onclick="toggleCheckboxes('checkbox4')"/>
+                                    <span class="checkbox"></span>
+                                    <span>$300</span>
+                                </div>
+                            </label>
+                        </li>
+                        <li class="checkbox_money" data-index="4" data-money="400">
+                            <label for="checkbox5">
+                                <img class="money_1500" src="IMG/store/coin5.jpg" alt="">
+                                <div class="in">
+                                    <input type="checkbox" id="checkbox5" onclick="toggleCheckboxes('checkbox5')"/>
+                                    <span class="checkbox"></span>
+                                    <span>$400</span>
+                                </div>
+                            </label>
+                        </li>
+                        <li class="checkbox_money" data-index="5" data-money="450">
+                            <label for="checkbox6">
+                                <img class="money_2000" src="IMG/store/coin6.jpg" alt="">
+                                <div class="in">
+                                    <input type="checkbox" id="checkbox6" onclick="toggleCheckboxes('checkbox6')"/>
+                                    <span class="checkbox"></span>
+                                    <span>$450</span>
+                                </div>
+                            </label>
+                        </li>
+                        <li class="checkbox_money" data-index="6" data-money="500">
+                            <label for="checkbox7">
+                                <img class="money_2500" src="IMG/store/coin7.jpg" alt="">
+                                <div class="in">
+                                    <input type="checkbox" id="checkbox7" onclick="toggleCheckboxes('checkbox7')"/>
+                                    <span class="checkbox"></span>
+                                    <span>$500</span>
+                                </div>
+                            </label>
+                        </li>
+                        <li class="checkbox_money" data-index="7" data-money="550">
+                            <label for="checkbox8">
+                                <img class="money_3000" src="IMG/store/coin8.jpg" alt="">
+                                <div class="in">
+                                    <input type="checkbox" id="checkbox8" onclick="toggleCheckboxes('checkbox8')"/>
+                                    <span class="checkbox"></span>
+                                    <span>$550</span>
+                                </div>
+                            </label>
+                        </li>
+                    </ul>
+                </div>
+
+    <input class="buy" type="submit" value="購買" onclick="buy()">
+
+    <div class="record">
+        <img id="pay_record" src="IMG/store/pay_record3.png" alt="">
+        <img id="stored_record" src="IMG/store/stored_record3.png" alt="">
+    </div>
+
+    <!----------------------------------------------------- lightbox ------------------------------------------------------------->
+
+    <!-- 消費紀錄 -->
+    <div class="pay_lightbox pay_none">
+        <article class="pay_wrapper">
+            <div class="pay_close">
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+            <h2>消費紀錄</h2>
+            <div class="pay_title">
+                <h2>日期</h2>
+                <h2>金額</h2>
+                <h2>餘額</h2>
+            </div>
+            <ul class="pay">
+                <li>
+                    <p>04/28</p>
+                    <p>1000</p>
+                    <p>1000</p>
+                </li>
+                <li>
+                    <p>04/29</p>
+                    <p>1000</p>
+                    <p>1000</p>
+                </li>
+                <li>
+                    <p>04/30</p>
+                    <p>1000</p>
+                    <p>1000</p>
+                </li>
+                <li>
+                    <p>05/01</p>
+                    <p>1000</p>
+                    <p>1000</p>
+                </li>
+                <li>
+                    <p>05/02</p>
+                    <p>1000</p>
+                    <p>1000</p>
+                </li>
+                <li>
+                    <p>05/03</p>
+                    <p>1000</p>
+                    <p>1000</p>
+                </li>
+                <li>
+                    <p>05/04</p>
+                    <p>1000</p>
+                    <p>1000</p>
+                </li>
+                <li>
+                    <p>05/05</p>
+                    <p>1000</p>
+                    <p>1000</p>
+                </li>
+            </ul>
+        </article>
+    </div>
+
+    <!-- 儲值紀錄 -->
+    <div class="stored_lightbox stored_none">
+        <article class="stored_wrapper">
+            <div class="stored_close">
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+            <h2>儲值紀錄</h2>
+            <div class="stored_title">
+                <h2>日期</h2>
+                <h2>金額</h2>
+                <h2>餘額</h2>
+            </div>
+            <ul class="stored">
+                <li>
+                    <p>04/28</p>
+                    <p>1000</p>
+                    <p>1000</p>
+                </li>
+                <li>
+                    <p>04/29</p>
+                    <p>1000</p>
+                    <p>1000</p>
+                </li>
+                <li>
+                    <p>04/30</p>
+                    <p>1000</p>
+                    <p>1000</p>
+                </li>
+                <li>
+                    <p>05/01</p>
+                    <p>1000</p>
+                    <p>1000</p>
+                </li>
+                <li>
+                    <p>05/02</p>
+                    <p>1000</p>
+                    <p>1000</p>
+                </li>
+                <li>
+                    <p>05/03</p>
+                    <p>1000</p>
+                    <p>1000</p>
+                </li>
+                <li>
+                    <p>05/04</p>
+                    <p>1000</p>
+                    <p>1000</p>
+                </li>
+                <li>
+                    <p>05/05</p>
+                    <p>1000</p>
+                    <p>1000</p>
+                </li>
+            </ul>
+        </article>
+    </div>
+
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="JS/store/store_pay_record.js"></script>
+    <script>
+        $(function () {
+            $(".header").load("common.html .header>div");
+            $(".footer").load("common.html .footer>div");
+        });
+    </script>
+</body>
+</html>

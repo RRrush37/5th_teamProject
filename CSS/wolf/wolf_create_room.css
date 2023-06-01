@@ -40,6 +40,7 @@ body{
 
 .activity_title > svg {
     color: #606C99;
+    margin-left: 20px;
 }
 
 .activity_title > svg:hover {
@@ -58,7 +59,7 @@ body{
 .wrapper{
     /* max-width: 1200px; */
     width: 100%;
-    padding: 20px 0 60px;
+    padding: 20px 20px 60px;
     height: 77vh;
     margin: 0 auto;
 }
@@ -119,7 +120,7 @@ section{
 }
 
 .create_room div{
-    width: 50%;
+    width: 60%;
     height: 60px;
     background-color: #23406A;
     box-shadow: 0px 5px 10px rgba(0, 0, 0, .7);
@@ -137,16 +138,42 @@ section{
 
 }
 
-.create_room_password .password{
+.create_room_password .password:disabled{
     font-size: 3rem;
-    width: 28%;
+    width: 30%;
     text-align: left;
     color: white;
     letter-spacing: 1rem;
-    background-color: transparent;
+    background: linear-gradient(to left, transparent 0%, transparent 100%);
     border: none;
-    /* border-bottom: 1px solid #fff; */
     outline: none;
+    padding-left: 1rem;
+
+}
+
+.create_room_password .password.on{
+    font-size: 3rem;
+    width: 30%;
+    text-align: left;
+    
+    letter-spacing: 1rem;
+    color: #23406A;
+    border: none;
+    outline: none;
+    padding-left: 1rem;
+    background: linear-gradient(to left,transparent 0%,transparent 50%,#F7ECBE 0%,#F7ECBE 100%);
+	background-size: 200% 200%;
+    background-position: 0% 200%;
+	animation: gradient 1s ease ;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 100% 100%;
+	}
+	100% {
+		background-position: 0% 100%;
+	}
 }
 
 .create_room span.lock{

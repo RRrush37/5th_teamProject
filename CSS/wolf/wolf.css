@@ -40,6 +40,7 @@ body{
 
 .activity_title > svg {
     color: #606C99;
+    margin-left: 20px;
 }
 
 .activity_title > svg:hover {
@@ -58,7 +59,7 @@ body{
 .wrapper{
     /* max-width: 1200px; */
     width: 100%;
-    padding: 20px 0 60px;
+    padding: 20px 20px 60px;
     height: 77vh;
     margin: 0 auto;
 
@@ -179,11 +180,26 @@ section{
     cursor: pointer;
 }
 
+.rule .must_read{
+    position: relative;
+}
+
 .rule .must_read label{
     font-size: 2rem;
     margin-left: 10px;
     font-weight: bold;
     cursor: pointer;
+}
+
+.rule .must_read span{
+    position: absolute;
+    top: 50%;
+    right: 170px;
+    font-size: 1rem;
+    margin-left: 10px;
+    font-weight: bold;
+    color: red;
+    transform: translateY(-50%);
 }
 
 .enter{
@@ -216,4 +232,8 @@ section{
 #enter_btn:hover{
     color: white;
     background-color: #77692E;
+}
+
+.none{
+    display: none;
 }

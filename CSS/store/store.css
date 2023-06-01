@@ -5,6 +5,8 @@ body {
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.2);
   background-blend-mode: multiply;
+  min-width: 1200px;
+  max-width: 1920px;
 }
 
 .activity_title {
@@ -61,8 +63,6 @@ body {
 
 .store_choose ul li {
   background-color: #375e85;
-  box-shadow: 0px 4px 4px rgba(255, 255, 255, 0.25),
-    0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
   width: 250px;
   height: 400px;
   margin: 30px;
@@ -70,14 +70,25 @@ body {
   padding-top: 30px;
 }
 
+.store_choose ul li:hover{
+  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.25),
+  0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
 .img_wrapper {
   background-color: white;
-  box-shadow: 0px 4px 4px rgba(255, 255, 255, 0.25),
-    0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.25),
+  0px 0px 10px rgba(0, 0, 0, 0.25), 0px 0px 10px rgba(0, 0, 0, 0.25);
   width: 200px;
   height: 200px;
   margin: 0 auto;
   border-radius: 20px;
+}
+
+.img_wrapper .fa-sack-dollar{
+  color: #375e85;
+  font-size: 10rem;
+  margin: 50px;
 }
 
 .store_choose ul li img {
@@ -157,4 +168,99 @@ p {
   margin-left: 60%;
   position: absolute;
   top: 30%;
+}
+
+/*----------------------------------- 414 ------------------------------------*/
+
+@media screen and (max-width: 414px){
+
+  body{
+    background-image: url(../../IMG/store/background2.png);
+    min-width:100%;
+    max-width:100%;
+    width: auto;
+  }
+
+  .activity_lightbox{
+    height: 100%;
+  }
+
+  .activity{
+    width: 360px;
+    top: 50%;
+  }
+
+  .fa-xmark{
+    font-size: 4rem;
+    margin-left: 85%;
+  }
+
+  .activity > article{
+    width: 85%;
+    height: 75%;
+    top: 55%;
+  }
+
+  .discount{
+    margin-left: 10%;
+    margin-top: 15%;
+  }
+
+  .wooden{
+    width: 45%;
+    margin-left: 50%;
+    top: 50%;
+  }
+
+  .discount > h1{
+    font-size: 5rem;
+  }
+
+  .discount > h2{
+    font-size: 4rem;
+  }
+
+  .discount > p{
+    font-size: 3rem;
+  }
+
+  .activity_title{
+    margin-top: 20px;
+  }
+
+  .store_choose ul{
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+  }
+
+  .store_choose ul li{
+    width: 360px;
+    height: 200px;
+    margin-top: 20px;
+    display: flex;
+    box-shadow: 5px 5px 20px rgba(255, 255, 255, 0.25),
+    5px 5px 20px rgba(0, 0, 0, 0.25), 5px 5px 20px rgba(0, 0, 0, 0.25);
+  }
+
+  .img_wrapper{
+    width: 180px;
+    height: 150px;
+    margin: 0px 20px;
+  }
+
+  .store_choose ul li img{
+    width: 150px;
+    margin: 0 10px;
+  }
+
+  .img_wrapper .fa-sack-dollar{
+    font-size: 8rem;
+    margin: 50px;
+  }
+
+  .store_choose ul li h2{
+    margin-top: 60px;
+  }
 }

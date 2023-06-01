@@ -39,16 +39,30 @@ p {
 }
 
 /* --------------NAV-------------- */
-
 .bar {
     display: flex;
-    padding-top: 8px;
-    padding-right: 10px;
+    justify-content: space-between;
+    padding: 8px 10px 0px;
     max-width: 1280px;
     width: 100%;
     margin: 0 auto;
 }
 
+.bar > a{
+    position: relative;
+
+}
+
+.bar .logo{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    margin-left: -5px;
+}
+/* 
 .bar>.ability {
     display: flex;
     width: fit-content;
@@ -63,7 +77,7 @@ p {
 
 
 .bar .ability span:last-child {
-    /* border: 1px solid #FFF; */
+    border: 1px solid #FFF;
     background-color: #45300D;
     width: 60px;
     height: 1.5rem;
@@ -88,28 +102,45 @@ p {
 
 .ability {
     flex: 0 0 calc(50% - 50px);
-}
+} */
 
 .nav {
     text-align: right;
-    flex: 1 0 calc(50% - 50px);
+    /* flex: 1 0 calc(50% - 50px); */
+    /* flex-grow: 1;
+    flex-shrink: 0;
+    flex-basis: calc(50% - 50px); */
+    /* display: flex;
+    justify-content: end; */
     position: relative;
-    z-index: 3;
+    z-index: 5;
 }
 
+.nav > a{
+    margin-right: 10px;
+    border-radius: 50%;
+    float: right;
+    border: #E3CEA1 solid 2px;
+    z-index: 1;
+    position: relative;
+    overflow: hidden;
+}
 .user {
-    margin-right: 10px;
+    /* margin-right: 10px;
     border-radius: 50%;
     float: right;
     border: #E3CEA1 solid 2px;
+    z-index: 1;
+    position: relative; */
+    transform: scale(2) translateY(13%);
 }
 
-.user_header {
+/* .user_header {
     margin-right: 10px;
     border-radius: 50%;
     float: right;
     border: #E3CEA1 solid 2px;
-}
+} */
 
 .widget {
     display: flex;
@@ -119,6 +150,7 @@ p {
 
 .widget a {
     color: #E3CEA1;
+    width: 50px;
 }
 
 .widget i {
@@ -142,29 +174,101 @@ p {
     white-space: nowrap;
 } */
 
-.widget .fa-bell {
+
+
+/* .widget i a:hover{
+    opacity: 1;
+    cursor: pointer;
+} */
+
+/* .nav > a:hover + .widget{
+    opacity: 1;
+    transition: .3s;
+    cursor: pointer;
+} */
+
+.widget .fa-shopify{
+    position: absolute;
+    top: 5px;
+    right: 82px;
+    z-index: -1;
+}
+
+.widget .fa-calendar-check{
+    position: absolute;
+    top: 55px;
+    right: 80px;
+    z-index: -1;
+}
+
+.widget .fa-gamepad{
+    position: absolute;
+    top: 90px;
+    right: 10px;
+    z-index: -1;
+}
+
+.widget .fa-shopify:hover:after{
+    content: '商城';
+    position: absolute;
+    top: 5px;
+    right: 30px;
+    width: 60px;
+    font-size: 2rem;
+}
+
+.widget .fa-calendar-check:hover:after{
+    content: '行程';
+    position: absolute;
+    top: 5px;
+    right: 30px;
+    width: 60px;
+    font-size: 2rem;
+}
+
+.widget .fa-gamepad:hover:after{
+    content: '遊戲';
+    position: absolute;
+    top: 5px;
+    right: 40px;
+    width: 60px;
+    font-weight: 400;
+    font-size: 2rem;
+}
+
+/* 
+.nav > a:hover + .widget .fa-shopify {
     position: absolute;
     top: 5px;
     right: 78px;
+    opacity: 1;
+    z-index: -1;
+
 }
 
-.widget .fa-sack-dollar {
+.nav > a:hover + .widget .fa-calendar-check {
     position: absolute;
-    top: 49px;
+    top: 60px;
     right: 72px;
+    opacity: 1;
+    z-index: -1;
+    transition: .4s;
 }
 
-.widget .fa-briefcase {
+.nav > a:hover + .widget .fa-gamepad {
     position: absolute;
     top: 83px;
-    right: 34px;
-}
+    right: 10px;
+    opacity: 1;
+    z-index: -1;
+    transition: .5s;
+} */
 
-.widget .fa-compass {
+/* .widget .fa-compass {
     position: absolute;
     top: 82px;
     right: -13px;
-}
+} */
 
 
 /* --------------頁面標題及返回鍵-------------- */

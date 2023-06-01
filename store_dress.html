@@ -16,94 +16,8 @@
     />
   </head>
   <body>
-    <!-- <div class="header"></div>  -->
+    <div class="header"></div> 
     <!-- 用來載入 common.html 裡頭的 header -->
-    <div class="header">
-      <div>
-        <span>
-          <div class="bar">
-            <ul class="ability">
-              <li>
-                <span>體力VIT</span
-                ><span>
-                  <div>20</div>
-                </span>
-              </li>
-              <li>
-                <span>魅力CHR</span
-                ><span>
-                  <div>20</div>
-                </span>
-              </li>
-              <li>
-                <span>智力INT</span
-                ><span>
-                  <div>20</div>
-                </span>
-              </li>
-              <li>
-                <span>幸運LUK</span
-                ><span>
-                  <div>20</div>
-                </span>
-              </li>
-            </ul>
-            <a href="#"
-              ><img class="logo" src="IMG/logo_1.png" alt="" width="100"
-            /></a>
-            <div class="nav">
-              <a href="#"
-                ><img class="user" src="IMG/model2cut.jpg" alt="" width="80"
-              /></a>
-              <ul class="widget">
-                <a href="#">
-                  <li><i class="fa-solid fa-bell"></i></li>
-                </a>
-                <a href="">
-                  <li>
-                    <i class="fa-solid fa-sack-dollar"></i>
-                  </li>
-                </a>
-                <a href="">
-                  <li><i class="fa-solid fa-briefcase"></i></li>
-                </a>
-                <li>
-                  <i class="fa-solid fa-compass" style="cursor: pointer"></i>
-                  <!-- <ol >
-                                <a href="">
-                                    <li>聊天室大廳 <h4> CHAT ROOM</h4>
-                                    </li>
-                                </a>
-                                <a href="">
-                                    <li>會員房間<h4>USER SPACE</h4>
-                                    </li>
-                                </a>
-                                <a href="">
-                                    <li>揪活動<h4>ACTIVITIES</h4>
-                                    </li>
-                                </a>
-                                <a href="">
-                                    <li>玩遊戲<h4>GAMES</h4>
-                                    </li>
-                                </a>
-                                <a href="">
-                                    <li>商城<h4>STORE</h4>
-                                    </li>
-                                </a>
-                            </ol> -->
-                </li>
-              </ul>
-            </div>
-          </div>
-        </span>
-      </div>
-    </div>
-
-    <!-- <div class="footer">
-        <div>
-            <span>我是AJAX載入共用檔案的 footer 內容</span>
-        </div>
-    </div> -->
 
     <div class="activity_title">
       <a href="store.html">
@@ -182,11 +96,12 @@
         </svg>
       </a>
       <div class="choose_wrapper">
-        <select id="choose" onchange="navigateToUrl()">
+        <h1>角色配件</h1>
+        <!-- <select id="choose" onchange="navigateToUrl()">
           <option value="store_dress.html">角色配件</option>
           <option value="store_value.html">遊戲能力值</option>
           <option value="store_sticker.html">貼圖</option>
-        </select>
+        </select> -->
       </div>
     </div>
 
@@ -194,47 +109,61 @@
       <!-- 左邊選單 -->
       <div class="nav_left">
         <ul>
-          <a href="store_dress.html">
-            <li>
-              <h2 class="current">全部</h2>
+            <li class="all_type">
+              <h2>全部</h2>
             </li>
-          </a>
-          <a href="store_dress1.html">
-            <li>
+            <li class="face_type">
+              <h2>臉部</h2>
+            </li>
+            <li class="hair_type">
               <h2>頭髮</h2>
             </li>
-          </a>
-          <a href="store_dress2.html">
-            <li>
+            <li class="clothes_type">
               <h2>上衣</h2>
             </li>
-          </a>
-          <a href="store_dress3.html">
-            <li>
+            <li class="bottoms_type">
               <h2>下裝</h2>
             </li>
-          </a>
-          <a href="store_dress4.html">
-            <li>
+            <li class="accessories_type">
               <h2>配件</h2>
             </li>
-          </a>
         </ul>
       </div>
 
       <!-- 人偶 -->
       <div class="main">
         <div class="coutainer">
-          <div class="doll"></div>
-          <div class="eyebrow"></div>
-          <div class="eye"></div>
-          <div class="mouth"></div>
-          <div class="clothes"></div>
-          <div class="bottoms"></div>
-          <div class="accessories1"></div>
-          <div class="hair"></div>
-          <div class="accessories2"></div>
-          <div class="accessories3"></div>
+          <div class="doll">
+            <img src="IMG/people/body.png" alt="">
+          </div>
+          <div class="eyebrow">
+            <img src="" alt="">
+          </div>
+          <div class="eye">
+            <img src="" alt="">
+          </div>
+          <div class="mouth">
+            <img src="" alt="">
+          </div>
+          <div class="clothes">
+            <img src="" alt="">
+          </div>
+          <div class="bottoms">
+            <img src="" alt="">
+          </div>
+          <div class="accessories1">
+            <img src="" alt="">
+          </div>
+          <div class="hair">
+            <img src="" alt="">
+          </div>
+          <div class="accessories2">
+            <img src="" alt="">
+          </div>
+          <div class="accessories3">
+            <img src="" alt="">
+          </div>
+          
         </div>
 
         <div class="buy">
@@ -243,9 +172,11 @@
 
         <!-- 下方選單 -->
         <div class="nav_down">
-          <ul class="nav_down_wrapper">
+          <ul id="nav_down_wrapper">
             <li class="number">
-              <div class="hair hair1" data-index="0" data-money="100"></div>
+              <div class="hair" data-index="0" data-money="100">
+                <img src="IMG/people/hair1.png" alt="">
+              </div>
               <div class="money">
                 <svg
                   width="20"
@@ -275,7 +206,9 @@
               </div>
             </li>
             <li class="number">
-              <div class="hair hair2" data-index="1" data-money="100"></div>
+              <div class="hair" data-index="1" data-money="100">
+                <img src="IMG/people/hair2.png" alt="">
+              </div>
               <div class="money">
                 <svg
                   width="20"
@@ -305,7 +238,9 @@
               </div>
             </li>
             <li class="number">
-              <div class="hair hair3" data-index="2" data-money="100"></div>
+              <div class="hair" data-index="2" data-money="100">
+                <img src="IMG/people/hair3.png" alt="">
+              </div>
               <div class="money">
                 <svg
                   width="20"
@@ -335,7 +270,9 @@
               </div>
             </li>
             <li class="number">
-              <div class="hair hair4" data-index="3" data-money="100"></div>
+              <div class="hair" data-index="3" data-money="100">
+                <img src="IMG/people/hair4.png" alt="">
+              </div>
               <div class="money">
                 <svg
                   width="20"
@@ -365,7 +302,9 @@
               </div>
             </li>
             <li class="number">
-              <div class="hair hair5" data-index="4" data-money="100"></div>
+              <div class="hair" data-index="4" data-money="100">
+                <img src="IMG/people/hair5.png" alt="">
+              </div>
               <div class="money">
                 <svg
                   width="20"
@@ -395,7 +334,9 @@
               </div>
             </li>
             <li class="number">
-              <div class="clothes top1" data-index="5" data-money="50"></div>
+              <div class="clothes" data-index="5" data-money="50">
+                <img src="IMG/people/top1.png" alt="">
+              </div>
               <div class="money">
                 <svg
                   width="20"
@@ -425,7 +366,9 @@
               </div>
             </li>
             <li class="number">
-              <div class="clothes top2" data-index="6" data-money="50"></div>
+              <div class="clothes" data-index="6" data-money="50">
+                <img src="IMG/people/top2.png" alt="">
+              </div>
               <div class="money">
                 <svg
                   width="20"
@@ -455,7 +398,9 @@
               </div>
             </li>
             <li class="number">
-              <div class="clothes top3" data-index="7" data-money="50"></div>
+              <div class="clothes" data-index="7" data-money="50">
+                <img src="IMG/people/top3.png" alt="">
+              </div>
               <div class="money">
                 <svg
                   width="20"
@@ -485,7 +430,9 @@
               </div>
             </li>
             <li class="number">
-              <div class="clothes top4" data-index="8" data-money="50"></div>
+              <div class="clothes" data-index="8" data-money="50">
+                <img src="IMG/people/top4.png" alt="">
+              </div>
               <div class="money">
                 <svg
                   width="20"
@@ -515,7 +462,9 @@
               </div>
             </li>
             <li class="number">
-              <div class="bottoms bottom1" data-index="9" data-money="80"></div>
+              <div class="bottoms" data-index="9" data-money="80">
+                <img src="IMG/people/bottom1.png" alt="">
+              </div>
               <div class="money">
                 <svg
                   width="20"
@@ -545,11 +494,9 @@
               </div>
             </li>
             <li class="number">
-              <div
-                class="bottoms bottom2"
-                data-index="10"
-                data-money="80"
-              ></div>
+              <div class="bottoms" data-index="10" data-money="80">
+                <img src="IMG/people/bottom2.png" alt="">
+              </div>
               <div class="money">
                 <svg
                   width="20"
@@ -579,11 +526,9 @@
               </div>
             </li>
             <li class="number">
-              <div
-                class="bottoms bottom3"
-                data-index="11"
-                data-money="80"
-              ></div>
+              <div class="bottoms" data-index="11" data-money="80">
+                <img src="IMG/people/bottom3.png" alt="">
+              </div>
               <div class="money">
                 <svg
                   width="20"
@@ -613,11 +558,9 @@
               </div>
             </li>
             <li class="number">
-              <div
-                class="bottoms bottom4"
-                data-index="12"
-                data-money="80"
-              ></div>
+              <div class="bottoms" data-index="12" data-money="80">
+                <img src="IMG/people/bottom4.png" alt="">
+              </div>
               <div class="money">
                 <svg
                   width="20"
@@ -647,11 +590,9 @@
               </div>
             </li>
             <li class="number">
-              <div
-                class="accessories1 mask"
-                data-index="13"
-                data-money="20"
-              ></div>
+              <div class="accessories1" data-index="13" data-money="20">
+                <img src="IMG/people/mask.png" alt="">
+              </div>
               <div class="money">
                 <svg
                   width="20"
@@ -681,11 +622,9 @@
               </div>
             </li>
             <li class="number">
-              <div
-                class="accessories2 cap"
-                data-index="14"
-                data-money="20"
-              ></div>
+              <div class="accessories2" data-index="14" data-money="20">
+                <img src="IMG/people/cap.png" alt="">
+              </div>
               <div class="money">
                 <svg
                   width="20"
@@ -715,11 +654,9 @@
               </div>
             </li>
             <li class="number">
-              <div
-                class="accessories3 glasses"
-                data-index="15"
-                data-money="20"
-              ></div>
+              <div class="accessories3" data-index="15" data-money="20">
+                <img src="IMG/people/glasses.png" alt="">
+              </div>
               <div class="money">
                 <svg
                   width="20"
@@ -749,11 +686,9 @@
               </div>
             </li>
             <li class="number">
-              <div
-                class="eyebrow eyebrow1"
-                data-index="16"
-                data-money="30"
-              ></div>
+              <div class="eyebrow" data-index="16" data-money="30">
+                <img src="IMG/people/eb1.png" alt="">
+              </div>
               <div class="money">
                 <svg
                   width="20"
@@ -783,11 +718,9 @@
               </div>
             </li>
             <li class="number">
-              <div
-                class="eyebrow eyebrow2"
-                data-index="17"
-                data-money="30"
-              ></div>
+              <div class="eyebrow" data-index="17" data-money="30">
+                <img src="IMG/people/eb2.png" alt="">
+              </div>
               <div class="money">
                 <svg
                   width="20"
@@ -817,11 +750,9 @@
               </div>
             </li>
             <li class="number">
-              <div
-                class="eyebrow eyebrow3"
-                data-index="18"
-                data-money="30"
-              ></div>
+              <div class="eyebrow" data-index="18" data-money="30">
+                <img src="IMG/people/eb3.png" alt="">
+              </div>
               <div class="money">
                 <svg
                   width="20"
@@ -851,11 +782,9 @@
               </div>
             </li>
             <li class="number">
-              <div
-                class="eyebrow eyebrow4"
-                data-index="19"
-                data-money="30"
-              ></div>
+              <div class="eyebrow" data-index="19" data-money="30">
+                <img src="IMG/people/eb4.png" alt="">
+              </div>
               <div class="money">
                 <svg
                   width="20"
@@ -885,7 +814,9 @@
               </div>
             </li>
             <li class="number">
-              <div class="eye eye1" data-index="20" data-money="40"></div>
+              <div class="eye" data-index="20" data-money="40">
+                <img src="IMG/people/e1.png" alt="">
+              </div>
               <div class="money">
                 <svg
                   width="20"
@@ -915,7 +846,9 @@
               </div>
             </li>
             <li class="number">
-              <div class="eye eye2" data-index="21" data-money="40"></div>
+              <div class="eye" data-index="21" data-money="40">
+                <img src="IMG/people/e2.png" alt="">
+              </div>
               <div class="money">
                 <svg
                   width="20"
@@ -945,7 +878,9 @@
               </div>
             </li>
             <li class="number">
-              <div class="eye eye3" data-index="22" data-money="40"></div>
+              <div class="eye" data-index="22" data-money="40">
+                <img src="IMG/people/e3.png" alt="">
+              </div>
               <div class="money">
                 <svg
                   width="20"
@@ -975,7 +910,9 @@
               </div>
             </li>
             <li class="number">
-              <div class="eye eye4" data-index="23" data-money="40"></div>
+              <div class="eye" data-index="23" data-money="40">
+                <img src="IMG/people/e4.png" alt="">
+              </div>
               <div class="money">
                 <svg
                   width="20"
@@ -1005,7 +942,9 @@
               </div>
             </li>
             <li class="number">
-              <div class="mouth mouth1" data-index="24" data-money="60"></div>
+              <div class="mouth" data-index="24" data-money="60">
+                <img src="IMG/people/m1.png" alt="">
+              </div>
               <div class="money">
                 <svg
                   width="20"
@@ -1035,7 +974,9 @@
               </div>
             </li>
             <li class="number">
-              <div class="mouth mouth2" data-index="25" data-money="60"></div>
+              <div class="mouth" data-index="25" data-money="60">
+                <img src="IMG/people/m2.png" alt="">
+              </div>
               <div class="money">
                 <svg
                   width="20"
@@ -1065,7 +1006,9 @@
               </div>
             </li>
             <li class="number">
-              <div class="mouth mouth3" data-index="26" data-money="60"></div>
+              <div class="mouth" data-index="26" data-money="60">
+                <img src="IMG/people/m3.png" alt="">
+              </div>
               <div class="money">
                 <svg
                   width="20"
@@ -1095,7 +1038,9 @@
               </div>
             </li>
             <li class="number">
-              <div class="mouth mouth4" data-index="27" data-money="60"></div>
+              <div class="mouth" data-index="27" data-money="60">
+                <img src="IMG/people/m4.png" alt="">
+              </div>
               <div class="money">
                 <svg
                   width="20"
@@ -1125,7 +1070,9 @@
               </div>
             </li>
             <li class="number">
-              <div class="mouth mouth5" data-index="28" data-money="60"></div>
+              <div class="mouth" data-index="28" data-money="60">
+                <img src="IMG/people/m5.png" alt="">
+              </div>
               <div class="money">
                 <svg
                   width="20"
@@ -1166,7 +1113,38 @@
         <i class="fa-solid fa-xmark"></i>
         <article>
           <div class="dresss_choose">
-            <div class="doll_lightbox"></div>
+            <div class="doll_lightbox">
+              <div class="doll">
+                <img src="IMG/people/body.png" alt="">
+              </div>
+              <div class="eyebrow">
+                <img src="" alt="">
+              </div>
+              <div class="eye">
+                <img src="" alt="">
+              </div>
+              <div class="mouth">
+                <img src="" alt="">
+              </div>
+              <div class="clothes">
+                <img src="" alt="">
+              </div>
+              <div class="bottoms">
+                <img src="" alt="">
+              </div>
+              <div class="accessories1">
+                <img src="" alt="">
+              </div>
+              <div class="hair">
+                <img src="" alt="">
+              </div>
+              <div class="accessories2">
+                <img src="" alt="">
+              </div>
+              <div class="accessories3">
+                <img src="" alt="">
+              </div>
+            </div>
           </div>
 
           <div class="buy_wrapper">
@@ -1214,6 +1192,9 @@
         $(".footer").load("common.html .footer>div");
       });
     </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/downloadjs/1.4.8/download.min.js" integrity="sha512-WiGQZv8WpmQVRUFXZywo7pHIO0G/o3RyiAJZj8YXNN4AV7ReR1RYWVmZJ6y3H06blPcjJmG/sBpOVZjTSFFlzQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="JS/store/store_dress.js"></script>
+    <script src="JS/store/catch_image.js"></script>
+    <script src="JS/store/change_type.js"></script>
   </body>
 </html>

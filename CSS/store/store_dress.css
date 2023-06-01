@@ -5,6 +5,8 @@ body {
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.2);
   background-blend-mode: multiply;
+  min-width: 1200px;
+  max-width: 1920px;
 }
 
 .activity_title {
@@ -28,7 +30,7 @@ body {
   }
 }
 
-.bar > .ability {
+/* .bar > .ability {
   text-shadow: #405366.1rem 0.1rem 0.4rem;
 }
 
@@ -38,7 +40,7 @@ body {
 
 .bar .ability span div {
   background-color: #a0c0e1;
-}
+} */
 
 .user {
   border: #a0c0e1 solid 2px;
@@ -58,17 +60,22 @@ body {
 }
 
 .choose_wrapper {
+  margin-top: 20px;
   display: flex;
 }
 
-#choose {
+.choose_wrapper h1{
+  margin: 0 auto;
+}
+
+/* #choose {
   font-size: 2rem;
   text-align: center;
   background-color: #755c5c;
   color: white;
   margin: 0 auto;
   padding: 5px 0;
-}
+} */
 
 .wrapper {
   display: flex;
@@ -95,34 +102,36 @@ body {
   text-shadow: #405366.1rem 0.1rem 0.4rem;
   border-bottom: 2px solid #4053666c;
   width: 100px;
-  margin: 35px auto 0;
-  padding-bottom: 10px;
+  margin: 30px auto 0;
+  padding-bottom: 5px;
+  cursor: pointer;
 }
 
 .nav_left ul li:hover {
   color: #405366;
 }
 
-.current {
+/* .current {
   color: #405366;
-}
+} */
 
 /* 人偶 */
 .coutainer {
   background-image: url(../../IMG/store/photo_frame_3.png);
-  background-size: 65% auto;
+  background-size: contain;
   background-repeat: no-repeat;
-  width: 606px;
-  height: 560px;
+  background-position: center center;
+  width: 363.6px;
+  height: 337.2px;
   position: absolute;
-  top: 50%;
-  left: 52%;
-  transform: translate(-35%, -30%);
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .doll {
   /* background-image: url(../../IMG/people/hair4.png),url(../../IMG/people/glasses.png),url(../../IMG/people/mask.png),url(../../IMG/people/m2.png),url(../../IMG/people/e2.png),url(../../IMG/people/eb3.png),url(../../IMG/people/top4.png),url(../../IMG/people/bottom4.png), url(../../IMG/people/body.png); */
-  background-image: url(../../IMG/people/body.png);
+  /* background-image: url(../../IMG/people/body.png); */
 }
 
 .coutainer .doll,
@@ -135,50 +144,14 @@ body {
 .coutainer .hair,
 .coutainer .accessories2,
 .coutainer .accessories3 {
-  width: 250px;
+  width: 162.5px;
   height: 250px;
   position: absolute;
-  top: 12%;
-  left: 12%;
+  top: 15%;
+  left: 28%;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center center;
-}
-
-.coutainer .eyebrow {
-  background-image: url(../../IMG/people/eb1.png);
-}
-
-.coutainer .eye {
-  background-image: url(../../IMG/people/e1.png);
-}
-
-.coutainer .mouth {
-  background-image: url(../../IMG/people/m1.png);
-}
-
-.coutainer .clothes {
-  background-image: url(../../IMG/people/top2.png);
-}
-
-.coutainer .bottoms {
-  background-image: url(../../IMG/people/bottom1.png);
-}
-
-.coutainer .accessories1 {
-  background-image: url(../../IMG/people/mask.png);
-}
-
-.coutainer .hair {
-  background-image: url(../../IMG/people/hair3.png);
-}
-
-.coutainer .accessories2 {
-  background-image: url(../../IMG/people/cap.png);
-}
-
-.coutainer .accessories3 {
-  background-image: url(../../IMG/people/glasses.png);
 }
 
 .check {
@@ -206,12 +179,12 @@ body {
   width: 500px;
   height: 200px;
   left: 50%;
-  top: 95%;
+  top: 85%;
   transform: translate(-50%, -40%);
   overflow: hidden;
 }
 
-.nav_down_wrapper {
+#nav_down_wrapper {
   display: flex;
   height: 180px;
   width: 480px;
@@ -236,202 +209,113 @@ body {
   margin-left: 5px;
 }
 
-.nav_down_wrapper::-webkit-scrollbar {
+#nav_down_wrapper::-webkit-scrollbar {
   height: 10px;
   width: 10px;
 }
 
-.nav_down_wrapper::-webkit-scrollbar-thumb {
+#nav_down_wrapper::-webkit-scrollbar-thumb {
   background: #ffffff;
   border-radius: 10px;
 }
 
-.nav_down_wrapper::-webkit-scrollbar-track {
+#nav_down_wrapper::-webkit-scrollbar-track {
   background: #00000066;
   border-radius: 10px;
 }
 
+
+.doll {
+  width: 150px;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+}
 .hair {
   width: 150px;
   height: 150px;
-  background-size: 80%;
-  background-position: 50% 0;
-  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
 }
-
-.hair1 {
-  background-image: url(../../IMG/people/hair1.png);
-}
-
-.hair2 {
-  background-image: url(../../IMG/people/hair2.png);
-}
-
-.hair3 {
-  background-image: url(../../IMG/people/hair3.png);
-}
-
-.hair4 {
-  background-image: url(../../IMG/people/hair4.png);
-}
-
-.hair5 {
-  background-image: url(../../IMG/people/hair5.png);
-}
-
 .clothes {
   width: 150px;
   height: 150px;
-  background-size: 150%;
-  background-position: center;
+  display: flex;
+  justify-content: center;
 }
-
-.top1 {
-  background-image: url(../../IMG/people/top1.png);
-}
-
-.top2 {
-  background-image: url(../../IMG/people/top2.png);
-}
-
-.top3 {
-  background-image: url(../../IMG/people/top3.png);
-}
-
-.top4 {
-  background-image: url(../../IMG/people/top4.png);
-}
-
 .bottoms {
   width: 150px;
   height: 150px;
-  background-size: 120%;
-  background-position: 50% 100%;
+  display: flex;
+  justify-content: center;
 }
-
-.bottom1 {
-  background-image: url(../../IMG/people/bottom1.png);
-}
-
-.bottom2 {
-  background-image: url(../../IMG/people/bottom2.png);
-}
-
-.bottom3 {
-  background-image: url(../../IMG/people/bottom3.png);
-}
-
-.bottom4 {
-  background-image: url(../../IMG/people/bottom4.png);
-}
-
 .accessories1 {
   width: 150px;
   height: 150px;
-  background-size: 150%;
-  background-position: 50% 30%;
+  display: flex;
+  justify-content: center;
 }
-
-.mask {
-  background-image: url(../../IMG/people/mask.png);
-}
-
 .accessories2 {
   width: 150px;
   height: 150px;
-  background-size: 100%;
-  background-position: 50% -20%;
+  display: flex;
+  justify-content: center;
 }
-
-.cap {
-  background-image: url(../../IMG/people/cap.png);
-}
-
 .accessories3 {
   width: 150px;
   height: 150px;
-  background-size: 150%;
-  background-position: 50% 20%;
+  display: flex;
+  justify-content: center;
 }
-
-.glasses {
-  background-image: url(../../IMG/people/glasses.png);
-}
-
 .eyebrow {
   width: 150px;
   height: 150px;
-  background-size: 150%;
-  background-position: 50% 20%;
+  display: flex;
+  justify-content: center;
 }
-
-.eyebrow1 {
-  background-image: url(../../IMG/people/eb1.png);
-}
-
-.eyebrow2 {
-  background-image: url(../../IMG/people/eb2.png);
-}
-
-.eyebrow3 {
-  background-image: url(../../IMG/people/eb3.png);
-}
-
-.eyebrow4 {
-  background-image: url(../../IMG/people/eb4.png);
-}
-
 .eye {
   width: 150px;
   height: 150px;
-  background-size: 150%;
-  background-position: 50% 30%;
+  display: flex;
+  justify-content: center;
 }
-
-.eye1 {
-  background-image: url(../../IMG/people/e1.png);
-}
-
-.eye2 {
-  background-image: url(../../IMG/people/e2.png);
-}
-
-.eye3 {
-  background-image: url(../../IMG/people/e3.png);
-}
-
-.eye4 {
-  background-image: url(../../IMG/people/e4.png);
-}
-
 .mouth {
   width: 150px;
   height: 150px;
-  background-size: 200%;
-  background-position: 50% 40%;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
 }
 
-.mouth1 {
-  background-image: url(../../IMG/people/m1.png);
+.doll img,
+.hair img,
+.clothes img,
+.bottoms img,
+.accessories1 img,
+.accessories2 img,
+.accessories3 img,
+.glasses img,
+.eyebrow img,
+.eye img,
+.mouth img{
+  height: 100%;
 }
 
-.mouth2 {
-  background-image: url(../../IMG/people/m2.png);
+/* 針對嘴巴另外設置大小 */
+#nav_down_wrapper .mouth img{
+  transform: scale( 500% ) translateY(10%);
 }
 
-.mouth3 {
-  background-image: url(../../IMG/people/m3.png);
-  background-size: 250%;
+#nav_down_wrapper .clothes img{
+  transform: scale( 200% );
 }
 
-.mouth4 {
-  background-image: url(../../IMG/people/m4.png);
-  background-size: 300%;
+#nav_down_wrapper .bottoms img{
+  transform: scale( 200% ) translateY(-25%);
 }
 
-.mouth5 {
-  background-image: url(../../IMG/people/m5.png);
-  background-size: 250%;
+#nav_down_wrapper .eyebrow img{
+  transform: scale( 200% ) translateY(10%);
 }
 
 /*--------------------------- lightbox ---------------------------*/
@@ -498,19 +382,35 @@ body {
 }
 
 .doll_lightbox {
-  width: 200px;
+  /* background-image: url(../../IMG/people/body.png); */
+  width: 130px;
   height: 200px;
-  background-image: url(../../IMG/people/hair4.png),
-    url(../../IMG/people/glasses.png), url(../../IMG/people/mask.png),
-    url(../../IMG/people/m2.png), url(../../IMG/people/e2.png),
-    url(../../IMG/people/eb3.png), url(../../IMG/people/top4.png),
-    url(../../IMG/people/bottom4.png), url(../../IMG/people/body.png);
   background-size: contain;
   background-repeat: no-repeat;
   position: absolute;
-  top: 20%;
+  top: 15%;
   left: 35%;
+  display: flex;
+  justify-content: center;
 }
+
+.doll_lightbox .doll,
+.doll_lightbox .hair,
+.doll_lightbox .clothes,
+.doll_lightbox .bottoms,
+.doll_lightbox .accessories1,
+.doll_lightbox .accessories2,
+.doll_lightbox .accessories3,
+.doll_lightbox .eyebrow,
+.doll_lightbox .eye,
+.doll_lightbox .mouth{
+  width: 130px;
+  height: 200px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
 
 .money1 {
   display: flex;
@@ -550,4 +450,136 @@ body {
 
 .send_check:hover {
   box-shadow: 0 0 5px #000000;
+}
+
+.none{
+  display: none;
+}
+
+/*------------------------------- 414 --------------------------------*/
+
+@media screen and (max-width: 414px){
+  
+  body{
+    background-image: url(../../IMG/store/mall_room2.png);
+    min-width:100%;
+    max-width:100%;
+    width: auto;
+  }
+
+  .coutainer{
+    background-image: url();
+  }
+
+  .wrapper{
+    
+  }
+
+  .nav_down{
+    width: 430px;
+    height: 230px;
+    top: 87%;
+  }
+
+  #nav_down_wrapper{
+    width: 380px;
+    height: 200px;
+  }
+
+  #nav_down_wrapper::-webkit-scrollbar{
+    height: 20px;
+  }
+
+  .nav_left{
+    background-image: url();
+    margin: 0 auto;
+    width: 400px;
+    height: 100px;
+    position: absolute;
+    top: 65%;
+    left: 5px;
+  }
+
+  .nav_left ul{
+    flex-direction: row;
+  }
+
+  .nav_left ul li{
+    border-bottom: none;
+  }
+
+  .nav_left ul li:hover{
+    color: #a0c0e1;
+  }
+
+  .money{
+    margin-top: 100px;
+  }
+
+  .number{
+    margin: 10px;
+  }
+
+  .check{
+    font-size: 2.5rem;
+    top: 60%;
+    left: 80%;
+    box-shadow: 0 0 5px #ffffff;
+    border-radius: 20px;
+  }
+
+  .dresss_lightbox{
+    height: 100%;
+  }
+
+  .dresss{
+    width: 380px;
+    height: 520px;
+  }
+
+  .dresss_choose{
+    margin-left: 0;
+    background-size: 79%;
+    width: 480px;
+  }
+
+  .dresss > article{
+    width: 100%;
+    height: 82%;
+    top: 55%;
+  }
+
+  .fa-xmark{
+    font-size: 4rem;
+    margin-left: 85%;
+  }
+
+  .doll_lightbox{
+    left: 30%;
+  }
+
+  .doll_lightbox .doll,
+  .doll_lightbox .hair,
+  .doll_lightbox .clothes,
+  .doll_lightbox .bottoms,
+  .doll_lightbox .accessories1,
+  .doll_lightbox .accessories2,
+  .doll_lightbox .accessories3,
+  .doll_lightbox .eyebrow,
+  .doll_lightbox .eye,
+  .doll_lightbox .mouth{
+    width: 150px;
+    height: 250px;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .send{
+    font-size: 2.5rem;
+  }
+
+  .send_check{
+    font-size: 2.5rem;
+  }
 }
