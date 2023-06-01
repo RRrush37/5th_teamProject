@@ -87,7 +87,7 @@
     "accessories1": -1,
     "accessories2": -1,
     "accessories3": -1,
-    "eyebrow": -1,ㄖ
+    "eyebrow": -1,
     "eye": -1,
     "mouth": -1
   };

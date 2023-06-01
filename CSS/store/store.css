@@ -27,7 +27,7 @@ body {
   }
 }
 
-/* .bar > .ability {
+.bar > .ability {
   text-shadow: #405366.1rem 0.1rem 0.4rem;
 }
 
@@ -37,7 +37,7 @@ body {
 
 .bar .ability span div {
   background-color: #a0c0e1;
-} */
+}
 
 .user {
   border: #a0c0e1 solid 2px;
