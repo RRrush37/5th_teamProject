@@ -46,7 +46,7 @@ function buy(){
     console.log(buy_cash.getAttribute("data-money"));
     $.ajax({
       url: "php/buycoin.php",
-      method: "POST",
+      method: "POST", 
       dataType: "json",
       data:{
         buyCash: buy_cash.querySelectorAll("span")[1].innerText,

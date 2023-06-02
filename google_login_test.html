@@ -1,0 +1,62 @@
+<script src="https://accounts.google.com/gsi/client" async defer></script>
+<div id="g_id_onload"
+     data-client_id="906043924289-83rv82lavu101mq65ior4n5vcs9hcad0.apps.googleusercontent.com"
+     data-context="signin"
+     data-ux_mode="popup"
+     data-login_uri="http://localhost"
+     data-auto_prompt="false">
+</div>
+
+<div class="g_id_signin"
+     data-type="standard"
+     data-shape="rectangular"
+     data-theme="outline"
+     data-text="signin_with"
+     data-size="large"
+     data-logo_alignment="left">
+</div>
+
+目前狀態：
+
+<span id="GOOGLE_STATUS_1"></span>
+
+<script>
+	// 登入之後
+	function onSignIn1(response) {
+		var credential = response.credential,
+			profile = JSON.parse(decodeURIComponent(escape(window.atob(credential.split(".")[1].replace(/-/g, "+").replace(/_/g, "/"))))), // 對 JWT 進行解碼
+			target = document.getElementById("GOOGLE_STATUS_1"),
+			html = "";
+
+		html += "ID: " + profile.sub + "<br/>";
+		html += "會員暱稱： " + profile.name + "<br/>";
+		html += "會員頭像：" + profile.picture + "<br/>";
+		html += "會員 email：" + profile.email + "<br/>";
+		target.innerHTML = html;
+	}
+</script>
+
+
+<!-- <script src="https://accounts.google.com/gsi/client" async defer></script>
+<div id="g_id_onload" data-client_id="906043924289-83rv82lavu101mq65ior4n5vcs9hcad0.apps.googleusercontent.com" data-context="signin" data-ux_mode="popup" data-callback="onSignIn2" data-auto_prompt="false"></div>
+<div class="g_id_signin" data-type="standard" data-shape="pill" data-theme="filled_blue" data-text="signin" data-size="large" data-logo_alignment="left"></div>
+
+目前狀態：
+
+<span id="GOOGLE_STATUS_2"></span>
+
+<script>
+	// 登入之後
+	function onSignIn2(response) {
+		var credential = response.credential,
+			profile = JSON.parse(decodeURIComponent(escape(window.atob(credential.split(".")[1].replace(/-/g, "+").replace(/_/g, "/"))))),
+			target = document.getElementById("GOOGLE_STATUS_2"),
+			html = "";
+
+		html += "ID: " + profile.sub + "<br/>";
+		html += "會員暱稱： " + profile.name + "<br/>";
+		html += "會員頭像：" + profile.picture + "<br/>";
+		html += "會員 email：" + profile.email + "<br/>";
+		target.innerHTML = html;
+	}
+</script> -->
