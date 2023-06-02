@@ -114,13 +114,20 @@
           </article>
         </div>
 
+        <div class="room_full none">
+          <article>
+            <div class="close"></div>
+            <p>該房間已滿，請選擇其他房間</p>
+          </article>
+        </div>
+
         <div class="room_box">
-          <div class="room">
+          <!-- <div class="room">
             <span class="name" data-name="的遊戲室">狼人殺</span>
             <span class="room_number" data-roomNum="1234" data-password="5678">房號：</span>
             <span class="num" data-player="1">人數</span>
             <span class="state" data-lock="true"></span>
-          </div>
+          </div> -->
         </div>
       </section>
 
@@ -148,124 +155,6 @@
           $(".footer").load("common.html .footer>div");
       });
     </script>
-
-    <script>
-      
-      let room_list = document.getElementsByClassName("room");
-      let room_password_el = document.getElementsByClassName("room_password")[0];
-
-      for (let i = 0; i < room_list.length; i++) {
-
-        //加上房間設定
-        room_list[i].querySelectorAll("span")[0].innerHTML = room_list[i].querySelectorAll("span")[0].innerHTML+room_list[i].querySelectorAll("span")[0].getAttribute("data-name");
-        room_list[i].querySelectorAll("span")[1].innerHTML = room_list[i].querySelectorAll("span")[1].innerHTML+room_list[i].querySelectorAll("span")[1].getAttribute("data-roomNum");
-        room_list[i].querySelectorAll("span")[2].innerHTML = room_list[i].querySelectorAll("span")[2].innerHTML+room_list[i].querySelectorAll("span")[2].getAttribute("data-player")+"/7";
-        
-        if (room_list[i].querySelectorAll("span")[3].getAttribute("data-lock") == "true" ) {
-          room_list[i].querySelectorAll("span")[3].classList.add("lock") ;
-        } else {
-          room_list[i].querySelectorAll("span")[3].classList.add("unlock") ;
-        }
-        //加上房間設定
-
-        room_list[i].addEventListener("click", function () {
-          if ( room_list[i].querySelectorAll("span")[3].classList.contains("lock")) {
-            room_password_el.classList.remove("none");
-            room_password_el.querySelector("input").focus();
-
-            keydownPassword( room_list[i].querySelectorAll("span")[1].getAttribute("data-password") );
-          } else {
-            //console.log("unlock")
-          }
-        });
-      }
-
-
-      //============================================================================燈箱
-
-      
-      let close = document.getElementsByClassName("close")[0];
-      let password_list_el = document.getElementsByClassName("password_list")[0];
-      let password_list = document.getElementsByClassName("password") ;
-      let incorrect = document.getElementById("incorrect");
-
-      room_password_el.addEventListener("click", function (e) {
-        room_password_el.classList.add("none");
-        incorrect.classList.add("none");
-        for( let i = 0 ; i < password_list.length ; i++ ){
-          password_list[i].value = "" ;
-        }
-      });
-
-      room_password_el.querySelector("article").addEventListener("click", function (e) {
-        e.stopPropagation();
-      });
-
-      close.addEventListener("click", function () {
-        room_password_el.classList.add("none");
-        incorrect.classList.add("none");
-        for( let i = 0 ; i < password_list.length ; i++ ){
-          password_list[i].value = "" ;
-        }
-      });
-
-      
-
-      function checkPassword( room_password ){
-        let str = "" ;
-        for( let i = 0 ; i < password_list.length ; i++ ) {
-          str += password_list[i].value ;
-        }
-
-        if ( str == room_password ) {
-          console.log("correct");
-          window.location.href = "wolf_room.html";
-        } else {
-          incorrect.classList.remove("none");
-        }
-      }
-
-      function keydownPassword( room_password ){
-        for ( let i = 0 ; i < password_list.length ; i++ ) {
-          password_list[i].addEventListener("keydown", function(e){
-            if( (e.which >= 48 && e.which <= 57) || e.which == 8 ){ // 8 是刪除鍵
-              if( e.which == 8 && e.target.value.length == 0 ){ //檢查是否為刪除建
-                  let previous_el = e.target.previousElementSibling ;
-                  previous_el.focus() ;
-              }
-            }else{
-              e.preventDefault(); // 停止預設行為(在欄位上出現所打的文字)
-            }
-          })
-
-          password_list[i].addEventListener("keyup", function(e){
-
-            let str = e.target.value.replace(/\D/g,""); //正規表達式
-            e.target.value = str ;
-
-            if( e.target.value.length == 1 ){ //檢查是否有值
-                let next_el = e.target.nextElementSibling ;
-                if(next_el != null ) { // 檢查是否為最後一個，不是的話就往後移一個兄弟元素
-                    next_el.focus() ;
-                }
-            } else {
-                e.preventDefault() ;
-            }
-
-            let password = "" ;
-            for( let i = 0 ; i < password_list.length ; i++ ) {
-              password += password_list[i].value ;
-            }
-
-            if ( password.length == 4 ) {
-              checkPassword( room_password );
-            }
-          })
-        }
-      }
-
-      //============================================================================燈箱
-
-    </script>
+    <script src="JS/wolf/room_list.js" type="module"></script>
   </body>
 </html>

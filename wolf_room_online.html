@@ -335,8 +335,9 @@
         });
     </script>
 
-    <script>
-
+    <script type="module">
+        import * as picture from "./JS/member_picture.js";
+        import * as getID from "./JS/get_memberID.js";
         //結算面板
         let settle_game_el = document.getElementsByClassName("gameover")[0];
         let winner_box = document.getElementById("winner_box");
@@ -471,8 +472,9 @@
         let text = [""]; // 用來儲存送出伺服器的資料
         let room_num = document.getElementsByClassName("room_num")[0] ; //房間號碼
         let room_password = document.getElementsByClassName("room_password")[0] ; //房間密碼
+
         let room_imformation = { // 用來儲存遊戲開始前的資訊
-            "num": room_num.getAttribute("data-num"), // 用於讓伺服器知道房間號碼
+            "num": "", // 用於讓伺服器知道房間號碼
             "player": 0, // 用於讓伺服器知道房間人數
             "ready": [0,0,0,0,0,0,0],// 用於讓伺服器知道玩家準備狀態
             "id": ["","","","","","",""]// 用於讓伺服器知道玩家準備狀態
@@ -490,6 +492,63 @@
             "num_of_speaker" : 0,  //用於儲存發言人數
             "isvoted" : false  //用於儲存是否已投過票
         }
+
+        // =======================================取得遊戲資訊及玩家資訊=================================
+        // let roomInfor = JSON.parse(sessionStorage.getItem("roomInfor")); // 將sessionStorage資料撈出來
+        // sessionStorage.setItem("roomInfor", JSON.stringify(roomInfor));
+        // $.ajax({
+        //     url:"php/getRoomInformation.php",
+        //     type: "post",
+        //     data:{
+        //         "roomNum" : roomInfor.roomNum
+        //     },
+        //     datatype:"json",
+        //     success: function(response){
+        //         response = JSON.parse(response);
+        //         console.log(response);
+        //         getGameMemberInformation(response) ;
+
+        //         // 更新房間資訊
+        //         room_imformation.num = response[0].roomNum ; // 號碼
+        //         room_imformation.person = response[0].person ; // 密碼
+                
+
+        //         // 更新房間號碼及密碼
+        //         room_num.setAttribute("data-num", response[0].roomNum );
+        //         room_password.setAttribute("data-password", response[0].roomPassword );
+        //         room_num.innerHTML += room_num.getAttribute("data-num") ;
+        //         room_password.innerHTML += room_password.getAttribute("data-password") ;
+
+
+        //     },
+        //     error: function( xhr, status, error){
+        //         console.error("error:", error);
+        //     }
+        // })
+
+        // function getGameMemberInformation(response) {
+            
+        //     // 取得玩家id
+        //     let memberID =0 ;
+        //     getID.getMemberID().then(function(response2) {
+        //     memberID = response2;
+
+        //     for ( let i = 1 ; i < 8 ; i++ ) { // 遊戲玩家id
+        //         let str = "player"+i ;
+        //         room_imformation.id[i-1] = response[0][str] ;
+        //         if ( memberID == room_imformation.id[i-1] ) {
+        //         // console.log(memberID);
+        //         picture.getGameMemberPictureName(playerID[i-1].querySelector("img"),playerID[i-1].querySelector(".name"),memberID); // 將頭像做修改
+        //         } else if ( !room_imformation.id[i-1] ) {
+        //         picture.getGameMemberPictureName(playerID[i-1].querySelector("img"),playerID[i-1].querySelector(".name"),response[0][str]); // 將頭像做修改
+        //         }
+
+        //     }
+        //     }).catch(function(error) {
+        //     console.error("error:", error);
+        //     });
+        // }
+        // =======================================取得遊戲資訊及玩家資訊=================================
 
         //倒計時
         let time_box_el = document.getElementById("time_box");

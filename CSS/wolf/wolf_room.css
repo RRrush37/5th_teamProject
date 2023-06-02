@@ -116,9 +116,17 @@ section{
     position: absolute;
     left: 5%;
     top: -8%;
-
+    width: 86px;
     color: white;
 
+}
+
+.room .room_password{
+    position: absolute;
+    right: 5%;
+    top: -8%;
+    width: 86px;
+    color: white;
 }
 
 .room .room_num:before,
@@ -135,13 +143,6 @@ section{
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: -1;
-}
-
-.room .room_password{
-    position: absolute;
-    right: 5%;
-    top: -8%;
-    color: white;
 }
 
 .room #game_state_box{
