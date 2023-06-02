@@ -1,0 +1,114 @@
+body{
+    background-color: rgba(0, 0, 0, 0.6);
+    background-blend-mode: multiply;
+}
+
+/* 金幣袋 */
+
+.stored{
+    background-color: #a0c0e180;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 800px;
+    height: 500px;
+    border-radius: 30px;
+}
+
+/* .none{
+    display: none;
+} */
+    
+.stored > article{
+    color: white;
+    background-color: #252833;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    width: 600px;
+    height: 350px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+}
+
+.tab-content{
+    height: 300px;
+    overflow: auto;
+}
+
+.fa-xmark{
+    font-size: 3rem;
+    margin-left: 90%;
+    margin-top: 5%;
+    cursor: pointer;
+}
+
+.stored_container >.nav{
+    font-size: 2rem;
+}
+
+/* 加值 */
+#menu1 img{
+    width: 100px;
+    margin: 40px 20px 10px;
+}
+
+#menu1 > ul{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.in{
+    margin-left: 20px;
+}
+
+.in > span{
+    font-size: 2rem;
+}
+
+.tab-content::-webkit-scrollbar {
+    width: 10px;
+}
+
+.tab-content::-webkit-scrollbar-thumb {
+    background: #A0C0E1;
+    border-radius: 10px;
+}
+
+.tab-content::-webkit-scrollbar-track {
+    border-radius: 10px;
+}
+
+/* 消費紀錄 */
+#menu2 > ul{
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+}
+
+#menu2 > ul li{
+    display: flex;
+    border-bottom: 1px solid #405366;
+    margin-top: 30px;
+    justify-content: space-around;
+}
+
+/* 儲值紀錄 */
+#menu3 > ul{
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+}
+
+#menu3 > ul li{
+    display: flex;
+    border-bottom: 1px solid #405366;
+    margin-top: 30px;
+    justify-content: space-around;
+}
+
+
+

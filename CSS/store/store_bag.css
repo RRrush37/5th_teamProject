@@ -1,0 +1,108 @@
+body{
+    background-color: rgba(0, 0, 0, 0.6);
+    background-blend-mode: multiply;
+}
+
+.bag{
+    background-color: #A0C0E1;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 800px;
+    height: 500px;
+    border-radius: 30px;
+}
+
+/* .none{
+    display: none;
+} */
+    
+.bag > article{
+    color: white;
+    width: 75%;
+    height: 70%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+}
+
+.fa-xmark{
+    font-size: 3rem;
+    margin-left: 90%;
+    margin-top: 5%;
+    cursor: pointer;
+}
+
+.props1{
+    background-color: #252833;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+    width: 40%;
+}
+
+.props1 img{
+    background-color: white;
+    margin: 20px 35px;
+    width: 70%;
+}
+
+.props1 p{
+    margin-left: 40px;
+}
+
+.props1 >.use{
+    margin: 30px 90px;
+    padding: 5px 10px;
+    color: #252833;
+    font-size: 2rem;
+    border-radius: 10px;
+    border: none;
+    background-color: #D2CAA0;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+}
+
+.props2_wrapper{
+    background-color: #252833;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+    margin-left: 30px;
+    padding: 20px;
+    overflow: hidden;
+}
+
+.props2{
+    height: 95%;
+    overflow: auto;
+}
+
+.props2 img{
+    background-color: white;
+    width: 65px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.props2::-webkit-scrollbar {
+    width: 10px;
+}
+
+.props2::-webkit-scrollbar-thumb {
+    background: #A0C0E1;
+    border-radius: 10px;
+}
+
+.props2::-webkit-scrollbar-track {
+    border-radius: 10px;
+}
+
+.snow{
+    width: 250px;
+    margin-left: 550px;
+    margin-top: 100px;
+    border-radius: 0 0 30px 0;
+}

@@ -1,26 +1,104 @@
+// $(()=>{
+//     $.ajax({
+//         url:"php/getUserData.php",
+//         datatype:"json",
+//         method:"post",
+//         data:{},
+//         success:(response)=>{
+//             if(response == -1){
+//                 alert("請先登入")
+//             }
+//             else{
+//                 response = JSON.parse(response)
+//                 response = response[0]
+//                 if(response["gender"]==0){
+//                     //選女
+//                 }
+//                 else{
+//                     //選男
+//                 }
+//                 $("#hight").val(response["height"])
+//                 $("#weight").val(response["weight"])
+//                 $("#constellation").val(response["starSign"])
+//                 $("#age").val(response["age"])
+//                 $("#birthday").val(response["birthday"])
+//                 $("#interest").val(response["interest"])
+//                 $("#soubriquet").val(response["memberName"])
+//                 $("#myselfsign").val(response["personalSign"])
+//                 $("#email").val(response["email"])
+//                 $("#username").html(response["memberName"])
+//                 $("#idname").html(response["memberID"])
+//                 $("#sign").html(response["personalSign"])
+                
+                
+//             }
+//         },
+//         error:(xhr, status, error)=>{
+//             alert("error: "+error)
+//         }
+//     })
+// })
 
 
+
+//js
 
         //1.按下編輯按鈕時,則可以進行修改
         var editBtn = document.querySelector('.editBtn');  // 選取編輯按鈕
         var confirmBtn = document.querySelector('.confirm');  // 選取確認修改按鈕
         var cancelBtn = document.querySelector('.cancel');  // 選取取消修改按鈕
         
-        //type=text
-        //未修整好
-        //設定身高的值,把input的值丟回去aaa
+        
+        //type=radio(男女)
+        var userInput = document.querySelector('input[name="sex"]:checked');
+        let sex = userInput;
+        // console.log(sex);
+        // console.log(userInput.value);
+        
+
+
+        //type=text，設定身高的值,把input的值丟回去aaa
         var input = document.getElementById('hight');
-        let aaaa= input.value;
+        let aaaa = input.value;
+
+        //興趣
+        var input = document.getElementById('interest');
+        let bbbb = input.value;
+
+        //信箱
+        var input = document.getElementById('email');
+        let cccc = input.value;
+
+        //暱稱
+        var input = document.getElementById('soubriquet');
+        let dddd = input.value;
+
+        //年齡
+        var input = document.getElementById('age');
+        let eeeee = input.value;
+
+        //星座
+        var input = document.getElementById('constellation');
+        let ffff = input.value;
+
+        //生日
+        var input = document.getElementById('birthday');
+        let gggg = input.value;
+
+        //個性簽名
+        var input = document.getElementById('myselfsign');
+        let hhhh = input.value;
+
+
+
+
+
+
 
 
 
         //判斷身高填寫欄位是否為數字
         //判斷身高要三個數字
-        //
-            // ^ 表示匹配字符串的开始位置。
-            // \d 表示匹配一个数字字符。
-            // + 表示匹配一个或多个前面的元素。
-            // $ 表示匹配字符串的结束位置
 
             // var input = document.getElementById('hight');
 
@@ -29,7 +107,7 @@
             input.addEventListener("keypress", function(e){
                 // alert(ka);^\d+$ 
                 console.log(input);
-                if (inpur_text)
+                if (inpur_text){ }
                 
                 // if else
                 //console.log("觸發了 keyup 事件, 輸入的值: " + this.value);
@@ -65,9 +143,7 @@
         
         // console.log(confirmBtn);
         // // 隱藏確認修改和取消修改按鈕
-        // confirmBtn.classList.add('none');
-        
-        // cancelBtn.classList.add('none');
+
 
         confirmBtn.style.display = 'none';
         cancelBtn.style.display = 'none';
@@ -75,8 +151,17 @@
         editBtn.addEventListener('click', function() {
             var fields = document.querySelectorAll('.introduce_right input, .introduce_left input');  // 選取欄位
             
-            aaaa= input.value;
-            //
+            aaaa = input.value;
+            bbbb = input.value;
+            cccc = input.value;
+            dddd = input.value;
+            eeee = input.value;
+            ffff = input.value;
+            gggg = input.value;
+            hhhh = input.value;
+
+
+
             // 將欄位的 disabled 屬性設定為 false
             fields.forEach(function(field) {
                 field.disabled = false;
@@ -90,39 +175,7 @@
 
         
         
-        // 获取按钮元素
-        // var editBtn = document.querySelector('.editBtn');
-        // // var reviseBtns = document.querySelector('.revise');
 
-        // // 添加点击事件监听器
-        // editBtn.addEventListener('click', function() {
-        // // 隐藏"editBtn"
-        // editBtn.style.display = 'none';
-        // // 显示"revise"按钮
-        // reviseBtns.style.display = 'block';
-        // });    
-
-
-        
-        // 获取按钮元素
-        // var editBtn = document.querySelector('.editBtn');
-        // var reviseBtns = document.querySelector('.revise');
-        // var cancelBtn = document.querySelector('.cancel');
-
-        // // 添加点击事件监听器
-        // editBtn.addEventListener('click', function() {
-        // // 隐藏"editBtn"
-        // editBtn.style.display = 'none';
-        // // 显示"revise"按钮
-        // reviseBtns.style.display = 'block';
-        // });
-
-        // cancelBtn.addEventListener('click', function() {
-        // // 显示"editBtn"
-        // editBtn.style.display = 'block';
-        // // 隐藏"revise"按钮
-        // reviseBtns.style.display = 'none';
-        // });
 
 
             //按下編輯按鈕後,選取introduce_right 和 introduce_left 中的所有input欄位都可以進行編輯,
@@ -130,6 +183,7 @@
             var editBtn = document.querySelector('.editBtn');  // 選取編輯按鈕
 
             editBtn.addEventListener('click', function() {
+            
             var fields = document.querySelectorAll('.introduce_right input, .introduce_left input');  // 選取欄位
 
                 // 將欄位的 disabled 屬性設定為 false
@@ -150,6 +204,14 @@
                 
 
                 input.value= aaaa;
+                input.value= bbbb;
+                input.value= cccc;
+                input.value= dddd;
+                input.value= eeee;
+                input.value= ffff;
+                input.value= gggg;
+                input.value= hhhh;
+
                 //if else(點選sex變數時,儲存格就會進行顯示)
                 // var userInput = document.querySelector('input[name="sex"]:checked');
                 // let sex = userInput.value;
@@ -164,8 +226,6 @@
                     // userInput.checked = true;
                     document.getElementById("female").checked = true ;
                 }
-
-
 
 
                 // 將欄位的 disabled 屬性設定為 true
@@ -183,6 +243,12 @@
             var confirmBtn = document.querySelector('.confirm');  // 選取取消修改按鈕
             
             confirmBtn.addEventListener('click',function(){
+                //身高、體重、年齡須為數字
+                //身高限2~3位數
+                //年齡限1~3位數
+                //體重限1~3位數
+                //星座為下拉式選單
+
                 var fields = document.querySelectorAll('.introduce_right input, .introduce_left input'); 
 
                 userInput.value;
@@ -190,9 +256,46 @@
 
                 fields.forEach(function(field){
                     field.disabled = true;
-                });
+            });
                 confirmBtn.style.display = 'none';
                 cancelBtn.style.display = 'none';
+
+
+
+
+
+                // $.ajax({
+                //     url:"php/updateMemberDetail.php",
+                //     method:"post",
+                //     datatype:"json",
+                //     //傳送的資料值
+                //     //data傳送到php
+                //     data:{
+                //         //把height的val設置在height
+                //         hight:$("#hight").val(),
+                //         weight:$("#weight").val(),
+                //         constellation: $("#constellation").val(),
+                //         introduce_right:$("#introduce_right").val(),
+                //         birthday:$("#birthday").val(),
+                //         interest:$("#interest").val(),
+                //         soubriquet:$("#soubriquet").val(),
+                //         myselfsign:$("#myselfsign").val(),
+                //         email:$("#email").val(),
+                //     },
+                //     //傳送成功的話
+                //     success:(response)=>{
+                //         if(response ==-1)
+                //             alert( "請先登入")
+                //         else if(response > 0)
+                //             alert("修改成功")
+                //         else
+                //             alert("修改失敗")
+                //     },
+                //     //傳送失敗
+                //     error:(xhr, status, error) =>{
+                //         alert("error: " +error)
+                //     }
+                // })
 
             });
 
@@ -206,11 +309,7 @@
 
             // var inputElement = document.getElementById('male');
 
-            //type=radio(男女)
-            var userInput = document.querySelector('input[name="sex"]:checked');
-            let sex = userInput;
-            console.log(sex);
-            console.log(userInput.value);
+
 
 
 
