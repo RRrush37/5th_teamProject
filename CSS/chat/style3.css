@@ -13,7 +13,7 @@ body {
 .m-text-search {
     padding-top: 60px;
     margin: 0 auto;
-    width: 100%;
+    width: 1272px;
     background-color: #ECE3D7;;
 }
 
@@ -57,6 +57,9 @@ body {
 .search-bar{
     background-color: #ECE3D7;
     position: relative;
+    white-space: nowrap;
+    min-width: 800px;
+    
 }
 
 .search-bar>h2,.hide-bar>h2 {
@@ -99,6 +102,7 @@ body {
     display: none;
     margin: 0 auto;
     width: 80%;
+    position: relative;
 }
 
 .hide-bar table{
@@ -146,7 +150,10 @@ tr:nth-child(3) td:nth-child(1) input[type="text"] {
     background-color: #CFC7C4;
 }
 
-
+.list-bottom{
+    width: 1272px;
+    min-width: 800px;
+}
 
 .list-bottom-first {
     max-width: 1200px;
@@ -247,7 +254,7 @@ tr:nth-child(3) td:nth-child(1) input[type="text"] {
     display: block;
     position: absolute;
     right: 10%;
-    top: 20%;
+    top: 10%;
     cursor: pointer;
 }
 
@@ -345,14 +352,6 @@ tr:nth-child(3) td:nth-child(1) input[type="text"] {
     padding-bottom: 1rem;
 }
 
-/* 檢舉系統查詢 */
-
-.membertext-right tr:last-child td:nth-child(2){
-
-    border-bottom: none;
-    display: inline-block;
-    padding-bottom: 1rem;
-}
 
 
 
