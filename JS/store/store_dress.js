@@ -407,3 +407,50 @@
     result.innerText = total;
   }
 
+
+
+
+
+// let e1 = document.getElementById(`${dataId}`);
+// let liElement = e1.closest('li');
+
+
+let sendCheck = document.getElementsByClassName('send_check')[0];
+sendCheck.addEventListener('click',function(e){
+let dresss_lightbox = document.getElementsByClassName('dresss_lightbox')[0];
+let money = document.getElementById('result').innerText;
+
+console.log(money);
+})
+function send_check() {
+
+  if (dress_buy.tagName === "LI") {
+    console.log(dress_buy.querySelector("number").innerHTML);
+    console.log(dress_buy.getAttribute("data-id"));
+    console.log(dress_buy.getAttribute("result"));
+
+    $.ajax({
+      url: "",
+      method: "POST",
+      dataType: "json",
+      data: {
+        money:money,
+        dressId: dress_buy.querySelector("number").innerHTML,
+        commodityId: dress_buy.getAttribute("data-id"),
+        priceId: dress_buy.getAttribute("result")
+      },
+      success: function(response) {
+        alert("購買成功");
+      },
+      error: function(exception) {
+        alert("數據載入失敗: " + exception.status);
+      }
+    });
+    console.log(dress_buy);
+  } else {
+    alert("請選擇新的物件");
+    console.log(dress_buy);
+  }
+}
+  
+  

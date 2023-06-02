@@ -5,12 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>store_pay_record</title>
-    <link rel="stylesheet" href="/CSS/global.css">
+    <link rel="stylesheet" href="CSS/global.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css"> -->
     <link rel="stylesheet" href="./CSS/store/store_pay_record.css">
 </head>
 <body>
+    <div class="header"></div> 
+    <!-- 用來載入 common.html 裡頭的 header -->
+    
     <!-- <div class="stored none">
         <i class="fa-solid fa-xmark"></i> -->
 
@@ -107,9 +110,9 @@
                   
                 <div class="tab-content">
                     <ul class="stored_container">
-                        <li class="checkbox_money money_box1">
+                        <li class="checkbox_money" data-index="0" data-money="100">
                             <label for="checkbox1">
-                                <img class="money_100" src="./IMG/store/coin1.jpg" alt="">
+                                <img class="money_100" src="IMG/store/coin1.jpg" alt="">
                                 <div class="in">    
                                     <input type="checkbox" id="checkbox1" onclick="toggleCheckboxes('checkbox1')"/>
                                     <span class="checkbox"></span>
@@ -117,9 +120,9 @@
                                 </div>
                             </label>
                         </li>
-                        <li class="checkbox_money money_box2">
+                        <li class="checkbox_money" data-index="1" data-money="250">
                             <label for="checkbox2">
-                                <img class="money_250" src="./IMG/store/coin2.jpg" alt="">
+                                <img class="money_250" src="IMG/store/coin2.jpg" alt="">
                                 <div class="in">
                                     <input type="checkbox" id="checkbox2" onclick="toggleCheckboxes('checkbox2')"/>
                                     <span class="checkbox"></span>
@@ -127,9 +130,9 @@
                                 </div>
                             </label>
                         </li>
-                        <li class="checkbox_money money_box3">
+                        <li class="checkbox_money" data-index="2" data-money="500">
                             <label for="checkbox3">
-                                <img class="money_500" src="./IMG/store/coin3.jpg" alt="">
+                                <img class="money_500" src="IMG/store/coin3.jpg" alt="">
                                 <div class="in">
                                     <input type="checkbox" id="checkbox3" onclick="toggleCheckboxes('checkbox3')"/>
                                     <span class="checkbox"></span>
@@ -137,9 +140,9 @@
                                 </div>
                             </label>
                         </li>
-                        <li class="checkbox_money money_box4">
+                        <li class="checkbox_money" data-index="3" data-money="1000">
                             <label for="checkbox4">
-                                <img class="money_1000" src="./IMG/store/coin4.jpg" alt="">
+                                <img class="money_1000" src="IMG/store/coin4.jpg" alt="">
                                 <div class="in">
                                     <input type="checkbox" id="checkbox4" onclick="toggleCheckboxes('checkbox4')"/>
                                     <span class="checkbox"></span>
@@ -147,9 +150,9 @@
                                 </div>
                             </label>
                         </li>
-                        <li class="checkbox_money money_box5">
+                        <li class="checkbox_money" data-index="4" data-money="1500">
                             <label for="checkbox5">
-                                <img class="money_1500" src="./IMG/store/coin5.jpg" alt="">
+                                <img class="money_1500" src="IMG/store/coin5.jpg" alt="">
                                 <div class="in">
                                     <input type="checkbox" id="checkbox5" onclick="toggleCheckboxes('checkbox5')"/>
                                     <span class="checkbox"></span>
@@ -157,9 +160,9 @@
                                 </div>
                             </label>
                         </li>
-                        <li class="checkbox_money money_box6">
+                        <li class="checkbox_money" data-index="5" data-money="2000">
                             <label for="checkbox6">
-                                <img class="money_2000" src="./IMG/store/coin6.jpg" alt="">
+                                <img class="money_2000" src="IMG/store/coin6.jpg" alt="">
                                 <div class="in">
                                     <input type="checkbox" id="checkbox6" onclick="toggleCheckboxes('checkbox6')"/>
                                     <span class="checkbox"></span>
@@ -167,9 +170,9 @@
                                 </div>
                             </label>
                         </li>
-                        <li class="checkbox_money money_box7">
+                        <li class="checkbox_money" data-index="6" data-money="2500">
                             <label for="checkbox7">
-                                <img class="money_2500" src="./IMG/store/coin7.jpg" alt="">
+                                <img class="money_2500" src="IMG/store/coin7.jpg" alt="">
                                 <div class="in">
                                     <input type="checkbox" id="checkbox7" onclick="toggleCheckboxes('checkbox7')"/>
                                     <span class="checkbox"></span>
@@ -177,9 +180,9 @@
                                 </div>
                             </label>
                         </li>
-                        <li class="checkbox_money money_box8">
+                        <li class="checkbox_money" data-index="7" data-money="3000">
                             <label for="checkbox8">
-                                <img class="money_3000" src="./IMG/store/coin8.jpg" alt="">
+                                <img class="money_3000" src="IMG/store/coin8.jpg" alt="">
                                 <div class="in">
                                     <input type="checkbox" id="checkbox8" onclick="toggleCheckboxes('checkbox8')"/>
                                     <span class="checkbox"></span>
@@ -189,6 +192,8 @@
                         </li>
                     </ul>
                 </div>
+
+    <input class="buy" type="submit" value="購買" onclick="buy()">
 
     <div class="record">
         <img id="pay_record" src="IMG/store/pay_record3.png" alt="">

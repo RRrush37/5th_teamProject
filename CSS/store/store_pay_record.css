@@ -211,6 +211,26 @@ input[type="checkbox"]:checked + span::before {
     border-radius: 10px;
 }
 
+.buy{
+    font-size: 2rem;
+    color: #fff;
+    width: 70px;
+    padding: 10px;
+    background-color: #252833;
+    border-radius: 10px;
+    border: none;
+    position: absolute;
+    top: 90%;
+    right: 48%;
+    cursor: pointer;
+}
+
+.buy:hover{
+    color: #252833;
+    background-color: #A0C0E1;
+    filter: drop-shadow(0px 0px 3px rgba(0, 0, 0, 0.32));
+}
+
 .record{
     display: flex;
 }
@@ -224,10 +244,6 @@ input[type="checkbox"]:checked + span::before {
     filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.406));
 }
 
-.record #pay_record:hover{
-    filter: drop-shadow(3px 3px 3px rgb(0, 0, 0));
-}
-
 .record #stored_record{
     width: 50px;
     position: absolute;
@@ -235,10 +251,6 @@ input[type="checkbox"]:checked + span::before {
     right: 5%;
     cursor: pointer;
     filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.406));
-}
-
-.record #stored_record:hover{
-    filter: drop-shadow(3px 3px 3px rgb(0, 0, 0));
 }
 
 /*------------------------------------- lightbox ----------------------------------*/
