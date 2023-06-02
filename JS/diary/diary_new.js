@@ -1,8 +1,27 @@
+$(function(){
+    $.ajax({
+        url:"php/getUserData.php",
+        datatype: "json",
+        method:"post",
+        data:{},
+        success:(response)=>{
+            if(response == -1){
+                alert("請先登入")
+            }
+            else{
+                response = JSON.parse(response)
 
+                $("#username").html(response[0]["memberName"])
+                $("#idname").html("ID："+response[0]["memberID"])
+                $("#sign").html(response[0]["personalSign"])
 
-
-
-
+            }
+        },
+        error: (xhr, status, error)=>{
+            alert("error:"+error)
+        }
+    })
+})
 
 // 透過 class 名稱取得 readmore_lightbox 元素
 let readmore_lightbox = document.getElementsByClassName("readmore_lightbox")[0];
