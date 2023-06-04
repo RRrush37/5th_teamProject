@@ -144,7 +144,6 @@ body {
     background-color: #ffffff30;
 }
 
-
 .in{
     margin-top: 10px;
 }
@@ -162,6 +161,10 @@ body {
     position: absolute;
     top: 160px;
     left: 70px;
+}
+
+.in > input{
+    display: none;
 }
 
 /* input[type="checkbox"] {

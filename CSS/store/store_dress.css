@@ -154,6 +154,24 @@ body {
   background-position: center center;
 }
 
+.reset{
+  background-color: #fff;
+  color: black;
+  font-size: 2rem;
+  border-radius: 15px;
+  border: none;
+  padding: 10px 20px;
+  position: absolute;
+  top: 76%;
+  left: 76%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+
+.reset:hover{
+  box-shadow: 0 0 5px #ffffff;
+}
+
 .check {
   background-color: #000;
   color: white;
@@ -162,8 +180,8 @@ body {
   border: none;
   padding: 10px 20px;
   position: absolute;
-  top: 80%;
-  left: 75%;
+  top: 88%;
+  left: 76%;
   transform: translate(-50%, -50%);
   cursor: pointer;
 }
