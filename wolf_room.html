@@ -93,8 +93,8 @@
         <h1>狼人殺</h1>
       </div>
       <section class="room">
-        <p class="room_num">房號:1234</p>
-        <p class="room_password">密碼:5678</p>
+        <p class="room_num" data-num="1234">房號:</p>
+        <p class="room_password" data-password="5678">密碼:</p>
 
         <!-- 遊戲狀態 -->
         <div id="game_state_box">
@@ -414,7 +414,14 @@
       });
     </script>
 
-    <script>
+    <script type="module">
+      import * as picture from "./JS/member_picture.js";
+      import * as getID from "./JS/get_memberID.js";
+
+
+      let go_back = document.getElementsByClassName("activity_title")[0].querySelector("a") ;
+
+
       //結算面板
       let settle_game_el = document.getElementsByClassName("gameover")[0];
       let winner_box = document.getElementById("winner_box");
@@ -560,11 +567,122 @@
         player_state[i].id = playerID[i].id;
       }
       //console.log(idArr);
+      let room_num = document.getElementsByClassName("room_num")[0] ; //房間號碼
+      let room_password = document.getElementsByClassName("room_password")[0] ; //房間密碼
+      let room_imformation = { // 用來儲存遊戲開始前的資訊
+        "num": "", // 用於讓伺服器知道房間號碼
+        "player": 0, // 用於讓伺服器知道房間人數
+        "ready": [0,0,0,0,0,0,0],// 用於讓伺服器知道玩家準備狀態
+        "id": ["","","","","","",""]// 用於讓伺服器知道玩家準備狀態
+      }
 
+      // =======================================取得遊戲資訊及玩家資訊=================================
+      let roomInfor = JSON.parse(sessionStorage.getItem("roomInfor")); // 將sessionStorage資料撈出來
+      sessionStorage.setItem("roomInfor", JSON.stringify(roomInfor));
+      let memberID =0 ;
+
+      getID.getMemberID().then(function(response2) {
+        memberID = response2;
+        $.ajax({
+          url:"php/getRoomInformation.php",
+          type: "post",
+          data:{
+              "roomNum" : roomInfor.roomNum,
+              "memberID" : memberID
+          },
+          datatype:"json",
+          success: function(response){
+            console.log(response);
+            if (response != -2) {
+              response = JSON.parse(response);
+              console.log(response);
+              getGameMemberInformation(response) ;
+
+              // 更新房間資訊
+              room_imformation.num = response[0].roomNum ; // 號碼
+              room_imformation.person = response[0].person ; // 密碼
+              
+
+              // 更新房間號碼及密碼
+              room_num.setAttribute("data-num", response[0].roomNum );
+              room_password.setAttribute("data-password", response[0].roomPassword );
+              room_num.innerHTML += room_num.getAttribute("data-num") ;
+              room_password.innerHTML += room_password.getAttribute("data-password") ;
+
+            } else {
+              alert("無此房間");
+              location.href = "wolf_list.html" ;
+            }
+            
+          },
+          error: function( xhr, status, error){
+              console.error("error:", error);
+          }
+        })
+
+      }).catch(function(error) {
+        console.error("error:", error);
+      });
+      
+
+      function getGameMemberInformation(response) {
+        
+        // 取得玩家id
+        
+        getID.getMemberID().then(function(response2) {
+          memberID = response2;
+
+          for ( let i = 1 ; i < 8 ; i++ ) { // 遊戲玩家id
+            let str = "player"+i ;
+            room_imformation.id[i-1] = response[0][str] ;
+            if ( memberID == room_imformation.id[i-1] ) { // 找到相應id
+              // console.log(memberID);
+              picture.getGameMemberPictureName(playerID[i-1].querySelector("img"),playerID[i-1].querySelector(".name"),memberID); // 將頭像做修改
+            } else if ( !room_imformation.id[i-1] ) { //目前為空位
+              picture.getGameMemberPictureName(playerID[i-1].querySelector("img"),playerID[i-1].querySelector(".name"),response[0][str]); // 將頭像做修改
+            }
+
+          }
+
+          go_back.addEventListener('click', function(e){
+            e.preventDefault();
+
+            if ( room_imformation.id[0] == memberID ) {
+              $.ajax({
+                url:"php/deleteGameRoom.php",
+                type: "post",
+                data:{
+                    "roomNum" : roomInfor.roomNum
+                },
+                datatype:"text",
+                success: function(response){
+                  if (response == 1) {
+                    console.log(response);
+                    location.href= "wolf_list.html" ;
+                  } else {
+                    console.log(response);
+                  }
+                },
+                error: function( xhr, status, error){
+                    console.error("error:", error);
+                }
+
+              })
+            }
+            
+          })
+
+        }).catch(function(error) {
+          console.error("error:", error);
+        });
+      }
+      // =======================================取得遊戲資訊及玩家資訊=================================
       //倒計時
       let time_box_el = document.getElementById("time_box");
       let time_el = document.getElementById("time");
       time_box_el.classList.add("none");
+
+      
 
       //用於儲存目前回合狀態，{開局階段、抿牌階段、狼人回合、女巫回合、預言家回合、夜晚出局回合、發言回合、投票回合、白天出局回合、遊戲結束、結算回合}
       if (round[1] == "開局階段") {
