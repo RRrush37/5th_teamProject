@@ -75,6 +75,10 @@ body {
 /*---主要版面----------*/
 .activity_main {
     display: flex;
+    width: 95%;
+    justify-content: space-between;
+    /* padding:25%; */
+    margin: 30px auto;
 }
 
 
@@ -89,9 +93,10 @@ body {
     color: #634921;
     line-height: 1.6;
     padding: 20px;
-    height: 75vh;
+    height: 70vh;
     /* overflow-y: scroll; */
     scrollbar-gutter: stable both-edges;
+    margin-top: 30px;
 }
 
 
@@ -106,7 +111,7 @@ body {
     text-underline-offset: 6px;
     font-size:2rem;
     transition: all 0.3s ease-in-out;
-    margin-top: 2.5rem;
+    margin-top: 30px;
     font-weight: bold;
 }
 
@@ -120,7 +125,7 @@ body {
     /* justify-content: center;
     align-items: center; */
     font-size: 3rem;
-    line-height: 1.6;
+    line-height: 1.2;
     position: relative;
     cursor: pointer;
     /* margin: 1rem auto; */
@@ -128,6 +133,7 @@ body {
 
 .text_nav div a{
     color:#634921;
+    font-size: 2.5rem;
 }
 
 
@@ -196,6 +202,19 @@ body {
 
 }
 
+.record_tab{
+    padding: 3px 10px;
+    padding: 5px 10px;
+    background-color: #77665A;
+    border: none;
+    font-size: 1.5rem;
+
+    margin-left: 0 5px;
+}
+.active{
+    background-color: #d9c5b7;
+
+}
 
 .activity_tab{
     margin-bottom: 5px;
@@ -235,15 +254,16 @@ body {
 
 
 .activity_main .middle {
-    width: 55%;
+    /* width: 55%; */
     margin: 0 auto;
+    height: 93%;
 
 }
 
 /*---中間版面-------------------*/
 .middle{
     background-color: #847062cf;
-    padding: 25px;
+    padding: 30px 50px;
     /* height: 69vh;
     overflow-y: scroll;
     scrollbar-gutter: stable both-edges; */
@@ -310,6 +330,9 @@ body {
     align-items: center;
     width: 100%;
     padding:3px;
+
+    line-height: 1.6;
+    text-align: center;
 }
 
 
@@ -502,7 +525,7 @@ body {
     border: none;
     padding: 10px 20px;
     background-color: #F9DE9A;
-    color: rgb(0, 0, 0);
+    color: rgb  (0, 0, 0);
     border-radius: 30px;
     font-size: 2rem;
     cursor: pointer;
@@ -524,9 +547,58 @@ body {
 .activity_main .right {
     width: 20.8%;
     color: #000;
-    height: 75vh;
+    height: 70vh;
     overflow-y: scroll;
+
+    margin-top: 30px;
 }
+
+
+
+
+.tab_content td{
+    width: 180px;
+    /* border: 1px solid black; */
+    /* border-radius: 5px; */
+    border-width: 1PX;
+    padding: 5px;
+    color: #e7e7e7;
+    font-size: 2rem;
+    border: none;
+}
+
+
+.tab_content tr{
+    border: none;
+    /* border-bottom: 1px solid red; */
+    /* border: 1px solid #540505; */
+    /* border-bottom:1px solid black; */
+}
+
+.tab_content th{
+    font-size: 2rem;
+    background-color:#38260a99;
+    color:#ffffff;
+    width:25vw;
+    height:65px;
+}
+
+tr:nth-of-type(even) td{
+    background-color:#38260a4f;
+}
+
+table tr:not(:first-child):nth-child(odd) {
+    /* 在這裡指定套用到奇數行的樣式 */
+    background-color:#c2bfbf50; /* 奇數行的背景色 */
+}
+
+
+
+
+
+
+
+
 
 /* --------------活動右側欄-日曆-------------- */
 .calendar {

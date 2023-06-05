@@ -66,7 +66,7 @@
                         <div class="text_nav">
                             <div> <a href="diary_new.html">個人文章</a> </div>
                             <div class="on"><a href="diary_myself.html">會員個人資料</a></div>
-                            <div><a href="activity.html">我的活動</a></div>
+                            <div><a href="diary_add.html">儲值紀錄</a></div>
                             <div><a href="diary_wardrobe_copy.html">我的衣櫃</a></div>
                     </div>
                     </div>
@@ -74,6 +74,8 @@
                     <div class="middle">
                         <!-----中間頁面--------------------------------------------->
                                 <!-----------------最上方--------->
+                                <!-- <button type="button" id="circle" class="switch"><i class="bi bi-sun-fill"></i></button> -->
+                                
                                 <div class="middletop">
                                     <div class="big_girl">
                                         <img src="IMG/diary/big_girl.png" alt="">
@@ -96,7 +98,8 @@
                                         </div>
                                         <div class="hight">
                                             <label for="hight">身高</label>
-                                            <input type="text" name="height"  id="hight" disabled  value="180cm">
+                                            <input type="text" name="hight"  id="hight" pattern="\d{3}" disabled  value="180">
+                                            <span>cm</span>
                                         </div>
                                         <div class="interest">
                                             <label for="interest">興趣</label>
@@ -116,16 +119,34 @@
                                     <div class="introduce_right">
                                         <div class="age">
                                             <label for="age">年齡</label>
-                                            <input type="text" id="age"disabled value="27歲">
+                                            <input type="text" id="age"disabled value="27">
+                                            <span>歲</span>
                                         </div>
                                         <div class="weight">
                                             <label for="weight">體重</label>
                                             <input type="text" id="weight" disabled value="70">
+                                            <span>kg</span>
                                         </div>
                                         <div class="constellation">
+                                            <!-- <label for="constellation"></label> -->
                                             <label for="constellation">星座</label>
-                                            <input type="text" id="constellation" disabled value="天蠍座">
+                                            <select id="constellation">
+                                                <option value="牡羊座" selected>牡羊座</option>
+                                                <option value="金牛座">金牛座</option>
+                                                <option value="雙子座">雙子座</option>
+                                                <option value="巨蟹座">巨蟹座</option>
+                                                <option value="獅子座">獅子座</option>
+                                                <option value="處女座">處女座</option>
+                                                <option value="天秤座">天秤座</option>
+                                                <option value="天蠍座">天蠍座</option>
+                                                <option value="射手座">射手座</option>
+                                                <option value="魔羯座">魔羯座</option>
+                                                <option value="水瓶座">魔羯座</option>
+                                                <option value="雙魚座">魔羯座</option>
+                                                <!-- 其他選項... -->
+                                            </select>
                                         </div>
+
                                         <div class="birthday">
                                             <label for="birthday">生日</label>
                                             <input type="date" id="birthday" disabled value="11/05">
@@ -226,11 +247,19 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="JS/diary/diary_edit.js"></script>
-    <script>
+
+    <script type="module">
+        import * as picture from "./JS/member_picture.js";
         $(function () {
-            $(".header").load("common.html .header>div");
+            $(".header").load("common.html .header>div", function(){
+                let user_img = document.getElementsByClassName("user")[0] ;
+                picture.getMemberPicture(user_img);
+            });
             $(".footer").load("common.html .footer>div");
         });
+    </script>
+
+    <script>
 
         var month_olympic = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
         var month_normal = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];

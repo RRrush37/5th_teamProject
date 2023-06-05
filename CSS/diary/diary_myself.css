@@ -55,9 +55,10 @@ body {
     text-align: center;
 }
 
+/*--------選項背景-----------*/
 .activity select {
-    background-color: #D6D1F0;
-}
+    /* background-color: #D6D1F0; */
+}   
 
 .activity>span {
     display: block;
@@ -70,9 +71,6 @@ body {
 .activity_main {
     display: flex;
 }
-
-
-
 
 
 /* --------------導覽列-------------- */
@@ -265,9 +263,7 @@ body {
 
 .idsign{
     width: 50%;
-    /* margin-left: 30px; */
     line-height: 1.6;
-
     padding:0px 24px ;
 }
 
@@ -357,96 +353,48 @@ body {
     background-color: white;
     color: #000;
 }
-/* 
-#hight{
 
+
+
+
+.introduce .constellation{
+    margin: 3px;
 }
 
-#interest{
-    width: 80%;
-    background-color: transparent;
-    border-bottom: 1px solid white;
-    border-top-width:0px ;
-    border-left-width:0px ;
-    border-right-width:0px ;
-    border-bottom-width:1px ;
-    margin: 3px 5px;
-    padding: 3px;
+.hight{
+    display: flex;
+    align-items: center;
 }
-#email{
-    width: 80%;
-    background-color: transparent;
-    border-bottom: 1px solid white;
-    border-top-width:0px ;
-    border-left-width:0px ;
-    border-right-width:0px ;
-    border-bottom-width:1px ;
-    margin: 3px 5px;
-    padding: 3px;
+.hight label{
+    /* flex-direction: row-reverse; */
+    white-space: nowrap; 
 }
 
 
+.age{
+    display: flex;
+    align-items: center;
+}
 
-#soubriquet{
-    width: 80%;
-    background-color: transparent;
-    border-bottom: 1px solid white;
-    border-top-width:0px ;
-    border-left-width:0px ;
-    border-right-width:0px ;
-    border-bottom-width:1px ;
-    margin: 3px 5px;
-    padding: 3px;
+.age label{
+    white-space: nowrap; 
 }
 
 
-#introduce_right{
-    width: 80%;
-    background-color: transparent;
-    border-bottom: 1px solid white;
-    border-top-width:0px ;
-    border-left-width:0px ;
-    border-right-width:0px ;
-    border-bottom-width:1px ;
-    margin: 3px 5px;
-    padding: 3px;
+.weight{
+    display: flex;
+    align-items: center;
 }
 
-#weight{
-    width: 80%;
-    background-color: transparent;
-    border-bottom: 1px solid white;
-    border-top-width:0px ;
-    border-left-width:0px ;
-    border-right-width:0px ;
-    border-bottom-width:1px ;
-    margin: 3px 5px;
-    padding: 3px;
+.weight label{
+    white-space: nowrap; 
 }
 
-#constellation{
-    width: 80%;
-    background-color: transparent;
-    border-bottom: 1px solid white;
-    border-top-width:0px ;
-    border-left-width:0px ;
-    border-right-width:0px ;
-    border-bottom-width:1px ;
-    margin: 3px 5px;
-    padding: 3px;
+/*-------------*/
+.wrong{
+    background-color: #d8b9b9 !important;
 }
 
-#birthday{
-    width: 80%;
-    background-color: transparent;
-    border-bottom: 1px solid white;
-    border-top-width:0px ;
-    border-left-width:0px ;
-    border-right-width:0px ;
-    border-bottom-width:1px ;
-    margin: 3px 5px;
-    padding: 3px;
-} */
 
 #myselfsign{
     width: 100%;
@@ -454,15 +402,8 @@ body {
 
 
 
-    /* background-color: transparent;
-    border-bottom: 1px solid white;
-    border-top-width:0px ;
-    border-left-width:0px ;
-    border-right-width:0px ;
-    border-bottom-width:1px ;
-    margin: 3px 5px;
-    padding: 3px; 
-}  */ 
+
+
 
 .middle .button{
     display: flex;
@@ -491,6 +432,11 @@ body {
     cursor: pointer;
 }
 
+.middle .edit_btn{
+    display: flex;
+}
+
+
 
 .middle .edit_btn .editBtn{
     border: none;
@@ -500,7 +446,6 @@ body {
     border-radius: 30px;
     font-size: 2rem;
     cursor: pointer;
-    
 }
 
 /*-------hover效果-------------*/
@@ -511,11 +456,6 @@ body {
 .button :hover{
     transform: scale(1.2);
 }
-
-
-
-
-
 
 
 /*-----------------*/
@@ -671,8 +611,6 @@ h3{
     background: #634921;
     border-radius: 10px;
 }
-
-
 
 
 
