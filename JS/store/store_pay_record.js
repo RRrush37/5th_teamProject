@@ -147,6 +147,28 @@ pay_lightbox.querySelector(".pay_wrapper").addEventListener("click", function(e)
 // });
 
 
+$.ajax({
+  url: "php/getBuyLog.php",
+  method: "post",
+  datatype: "json",
+  data: {
+    type: "2",
+  },
+  success: (reponse) => {
+    alert(reponse);
+    reponse = JSON.parse(reponse);
+    let str = "123123";
+    for (let i = 0; i < reponse.length; i++) {
+      str += reponse[0];
+    }
+    $("#tiny").html(str);
+  },
+  error: (xhr, status, error) => {
+    alert("error: " + error);
+  },
+});
+
+
 // 儲值紀錄燈箱
 let stored_lightbox = document.getElementsByClassName("stored_lightbox")[0];
 let stored_wrapper = document.getElementsByClassName("stored_wrapper");
@@ -194,6 +216,27 @@ stored_lightbox.querySelector(".stored_wrapper").addEventListener("click", funct
 // });
 
 
+$.ajax({
+  url: "php/getBuyLog.php",
+  method: "post",
+  datatype: "json",
+  data: {
+    type: "1",
+  },
+  success: (reponse) => {
+    alert(reponse);
+    reponse = JSON.parse(reponse);
+    let str = "123123";
+    for (let i = 0; i < reponse.length; i++) {
+      str += reponse[0];
+
+    }
+    $("#tiny").html(str);
+  },
+  error: (xhr, status, error) => {
+    alert("error: " + error);
+  },
+});
 
 
 

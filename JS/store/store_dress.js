@@ -24,11 +24,7 @@ let doll = { //用來儲存data-index記錄小人身上穿戴的物件
   "mouth": -1
 };
 
-// 重選
-reset.addEventListener("click", function(){
-    selectedObject.innerHTML = "";
-    // selectedObject.addEventListener("click", selectObject);
-})
+
 
 // 確認
 check.addEventListener("click", function(){
@@ -650,11 +646,41 @@ function addToTotal(number, addOrMinus) {
 
 }
 
-function resetTotal() {
+// 重選
+reset.addEventListener("click", function(){
+  doll_box_hair.src = "";
+  doll_box_clothes.src = "";
+  doll_box_bottoms.src = "";
+  doll_box_accessories1.src = "";
+  doll_box_accessories2.src = "";
+  doll_box_accessories3.src = "";
+  doll_box_eyebrow.src = "";
+  doll_box_eye.src = "";
+  doll_box_mouth.src = "";
+
+  doll_lightbox_hair.src = "";
+  doll_lightbox_clothes.src = "";
+  doll_lightbox_bottoms.src = "";
+  doll_lightbox_accessories1.src = "";
+  doll_lightbox_accessories2.src = "";
+  doll_lightbox_accessories3.src = "";
+  doll_lightbox_eyebrow.src = "";
+  doll_lightbox_eye.src = "";
+  doll_lightbox_mouth.src = "";
+  doll = { 
+    "hair": -1,
+    "clothes": -1,
+    "bottoms": -1,
+    "accessories1": -1,
+    "accessories2": -1,
+    "accessories3": -1,
+    "eyebrow": -1,
+    "eye": -1,
+    "mouth": -1
+  }; 
+
   total = 0;
-  lastClickedNumber = null;
-  result.innerText = total;
-}
+})
 
 
 let sendCheck = document.getElementsByClassName('send_check')[0];
