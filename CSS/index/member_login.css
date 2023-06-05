@@ -1,181 +1,213 @@
 @import url('../reset.css');
 
-body{
-width: 1280px;
-background-image: url(../../IMG/index/background/home_page_background_1.jpg);
-background-repeat: no-repeat;
-background-size: contain;
-background-attachment: fixed;
-background-size: cover;
+.bar{
+  height: 95px;
 }
 
-body::before {
+body {
+  width: 1280px;
+  background-image: url(../../IMG/index/background/home_page_background_1.jpg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+/* body::before {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)); /* 線性漸變遮罩 */
-}
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+  /* 線性漸變遮罩 */
+} */
 
-.nav ul{
+.nav ul {
   display: none;
 }
 
- .nav{
+.nav {
   margin-right: 8%;
-} 
+}
 
-.nav a{
+.nav a {
   display: none;
 }
 
 
-.return{
+.return {
   padding-left: 100px;
   filter: drop-shadow(3px 3px 3px rgb(0, 0, 0));
 }
 
-.box{
+.box {
   background-color: rgba(255, 255, 255, 0.5);
- 
- /* background-color: white; */
-    width: 800px;
-    height: 500px;
-    position: absolute;
+
+  /* background-color: white; */
+  width: 800px;
+  height: 500px;
+  /* position: absolute;
 top: 50%;
 left: 50%;
-transform: translate(-50%, -50%);
-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
-border-radius: 40px;
-display: flex;
-flex-direction: column;
-align-items: center;
-  
-    }
-   
-      
-    .box h2{
-      padding-bottom: 2rem;;
-      padding-top: 3rem;
-      font-size: 3rem;
-      text-shadow: 2px 2px 2px #000;
-      font-weight: bold;
-      -webkit-text-stroke-width: .2px;
-      -webkit-text-stroke-color: rgb(0, 0, 0);
-      color: rgb(255, 255, 255);
-      
-          }
-    
+transform: translate(-50%, -50%); */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+  border-radius: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
 
-     .box span, input {
-        display: block;
-        margin-bottom: .5rem;
-        margin-bottom: 10px;
-        text-align: center;
-      }
-  
-      .box span {
-        color: rgb(255, 255, 255);
-    margin-right: 22rem;
-    -webkit-text-stroke-width: .2px;
+}
+
+
+.box h2 {
+  padding-bottom: 2rem;
+  ;
+  padding-top: 3rem;
+  font-size: 3rem;
+  text-shadow: 2px 2px 2px #000;
+  font-weight: bold;
+  -webkit-text-stroke-width: .2px;
+  -webkit-text-stroke-color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+
+}
+
+
+.box span,
+input {
+  display: block;
+  margin-bottom: .5rem;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.box span {
+  color: rgb(255, 255, 255);
+  margin-right: 22rem;
+  -webkit-text-stroke-width: .2px;
   -webkit-text-stroke-color: rgb(0, 0, 0);
   font-size: 1.5rem;
   text-shadow: 2px 2px 2px #000;
   font-weight: bold;
-      }
-
-  
-      input {
-        border-color: #ADF183;
-        background-color: rgba(255, 255, 255, 0.5);
-        text-align: left;
-        width: 25rem;
-
-     
-      }
-      .push {
-        background-color: black; /* 設定背景色為黑色 */
-        color: white; /* 設定文字顏色為白色 */
-        font-weight: bold; /* 設定文字粗體 */
-        border-radius: 40px; /* 設定圓角為 40px */
-        padding: 5px 10px; /* 設定內邊距為 5px 上下 10px 左右 */
-        display: inline-block; /* 設定顯示為行內塊元素，以便設定寬度 */
-        width: 80px; /* 設定寬度為 80px */
-        text-align: center; /* 設定文字居中 */
-        box-shadow: 2px 2px 4px rgba(0,0,0,0.5); 
-     margin-bottom: 1rem;
-     margin-top: 20rem;
-      }
+}
 
 
-      .gf {
-        display: flex;
-        align-items: center; /* 垂直居中对齐 */
-        justify-content: center; /* 水平居中对齐 */
-        
-      }
+input {
+  border-color: #ADF183;
+  background-color: rgba(255, 255, 255, 0.5);
+  text-align: left;
+  width: 25rem;
 
-       .google, .facebook {
-     
-     
-        margin: 0 10px; /* 添加一些水平间距 */
-       
-        width: 9rem;
-        height: 3rem;
-        background-color: #938773; /* 設定背景色為黑色 */
-        color: white; /* 設定文字顏色為白色 */
-        font-weight: bold; /* 設定文字粗體 */
-        padding: 5px 10px; /* 設定內邊距為 5px 上下 10px 左右 */
-        display: inline-block; /* 設定顯示為行內塊元素，以便設定寬度 */
-        text-align: center; /* 設定文字居中 */
-        box-shadow: 2px 2px 4px rgba(0,0,0,0.5); 
-        
-      }
-      .google img, .facebook img {
-        filter: invert(100%);
-      }
 
-      .gf > div {
-        display: flex;
-        align-items: center;
-      }
-      
-      .gf > div > div {
-        display: flex;
-        align-items: center;
-      }
-      
-      .google p, .facebook p {
-        display: inline; /* 設置為內聯元素 */
-        margin-left: 10px; /* 加上適當的左邊距 */
-        
-      }
+}
 
-      .activity_title > svg:hover {
-        animation: left .5s infinite;
-    }
-  
-    /* ----------------414------------------------------ */
-     
-    @media screen and (max-width: 414px){
-  
-      body{
-        background-image: url(/IMG/index/rwd/background/background_2.png);
-        min-width:100%;
-        max-width:100%;
-        width: auto;
-        background-size: cover;
-        background-size: contain;
-      }
-     }
+.push {
+  background-color: black;
+  /* 設定背景色為黑色 */
+  color: white;
+  /* 設定文字顏色為白色 */
+  font-weight: bold;
+  /* 設定文字粗體 */
+  border-radius: 40px;
+  /* 設定圓角為 40px */
+  padding: 5px 10px;
+  /* 設定內邊距為 5px 上下 10px 左右 */
+  display: inline-block;
+  /* 設定顯示為行內塊元素，以便設定寬度 */
+  width: 80px;
+  /* 設定寬度為 80px */
+  text-align: center;
+  /* 設定文字居中 */
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  margin-bottom: 1rem;
+  margin-top: 20rem;
+}
 
-     .box{
-      min-width:70%;
-      max-width:70%;
-      min-height:300px;
-      max-height:700px;
-      width: auto;
 
-     }
+.gf {
+  display: flex;
+  align-items: center;
+  /* 垂直居中对齐 */
+  justify-content: center;
+  /* 水平居中对齐 */
+
+}
+
+.google,
+.facebook {
+
+
+  margin: 0 10px;
+  /* 添加一些水平间距 */
+
+  width: 9rem;
+  height: 3rem;
+  background-color: #938773;
+  /* 設定背景色為黑色 */
+  color: white;
+  /* 設定文字顏色為白色 */
+  font-weight: bold;
+  /* 設定文字粗體 */
+  padding: 5px 10px;
+  /* 設定內邊距為 5px 上下 10px 左右 */
+  display: inline-block;
+  /* 設定顯示為行內塊元素，以便設定寬度 */
+  text-align: center;
+  /* 設定文字居中 */
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+
+}
+
+.google img,
+.facebook img {
+  filter: invert(100%);
+}
+
+.gf>div {
+  display: flex;
+  align-items: center;
+}
+
+.gf>div>div {
+  display: flex;
+  align-items: center;
+}
+
+.google p,
+.facebook p {
+  display: inline;
+  /* 設置為內聯元素 */
+  margin-left: 10px;
+  /* 加上適當的左邊距 */
+
+}
+
+.activity_title>svg:hover {
+  animation: left .5s infinite;
+}
+
+/* ----------------414------------------------------ */
+
+@media screen and (max-width: 414px) {
+
+  body {
+    background-image: url(/IMG/index/rwd/background/background_2.png);
+    min-width: 100%;
+    max-width: 100%;
+    width: auto;
+    background-size: cover;
+    background-size: contain;
+  }
+}
+
+.box {
+  min-width: 70%;
+  max-width: 70%;
+  min-height: 300px;
+  max-height: 700px;
+  width: auto;
+
+}
