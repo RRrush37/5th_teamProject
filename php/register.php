@@ -39,7 +39,7 @@ if (count($data) > 0) {
     // echo json_encode([$data["0"]["memberID"]]);
     echo -2;
   } else {
-    $sql = "INSERT into memberData(memberName, email, gender,permissions,state,password,coin,punishmentCount,wolfkillWin,wolfkillLose,signinDaysInThisMonth)
+    $sql = "INSERT into memberData(memberName, email, gender,permissions,`state`,`password`,coin,punishmentCount,wolfkillWin,wolfkillLose,signinDaysInThisMonth)
        values(?, ?, 1,'normal','normal', ? ,0,0,0,0,0)";
 
     //    $sql = 'INSERT into memberData(memberName, email, permissions, state, `password`, coin, punishmentCount, wolfkillWin, wolfkillLose, signinDaysInThisMonth) 

@@ -94,5 +94,12 @@
     width: 20px;
     height: 20px;
     cursor: pointer;
+    /* outline: 1px solid red; */
 }
 
+.notChecked {
+    /* outline: 1px solid red;
+    background-color: red; */
+    color: red;
+    /* width: 100%; */
+}

@@ -7,6 +7,7 @@ if (isset($_POST["articleID"]) && isset($_SESSION["ID"])) {
   $statement = $pdo->prepare($sql);
   $statement->bindValue(1, $_SESSION["ID"]);
   $statement->bindValue(2, htmlspecialchars($_POST["articleID"]));
+  // echo $_POST["commentText"]
   if (!isset($_POST["commentText"])) {
     $_POST["commentText"]  = "";
   }
