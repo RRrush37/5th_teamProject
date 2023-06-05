@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        * {
+        box-sizing: border-box;
+        }
+        input.card{
+        width: 42px;
+        }
+        .-error{
+        border: 1px solid red;
+        }
+
+    </style>
+
+</head>
+<body>
+    
+    <form action="#" method="#" id="the_form">
+
+        <div class="group">
+          <label>帳號：</label>
+          <input type="text" id="account">
+        </div>
+      
+        <div class="group">
+          <label>email:</label>
+          <input type="email" id="email">
+        </div>
+      
+        <div class="group">
+          <label>信用卡卡號：</label>
+          <input type="text" class="card" maxlength="4">
+          <input type="text" class="card" maxlength="4">
+          <input type="text" class="card" maxlength="4">
+          <input type="text" class="card" maxlength="4">
+        </div>
+      
+        <!-- <div class="group">
+          <label>商品數量：</label>
+          <input type="range" min="1" max="10" value="5" class="product_count">
+          <span class="num" data-default="5">5</span>
+        </div> -->
+      
+        <div class="group">
+          <button type="reset">清空</button>
+          <button type="submit">資料送出</button>
+        </div>
+      
+      </form>
+      
+      <script src="JS/store/vendors/is.min.js"></script>
+
+      <script>
+
+        //var a = 'abc';
+        //var new_a = a.replace('b', '');
+        //var new_a = a.replace(/b/g, '');
+        //console.log(new_a);
+
+        // 一、介面調整：
+        // 1、信用卡介面：keydown、keyup、focus
+        // 2、商品數量的介面：mousemove 事件
+        // 3、表單：reset 事件
+      
+        document.addEventListener('DOMContentLoaded', function(){
+
+            var cards = document.getElementsByClassName('card');
+            //[input, input, input, input]
+            for(let i = 0; i < cards.length; i ++){
+                //console.log(i)
+                cards[i].addEventListener('keydown', function(e){
+                    //console.log('aaa');
+                    if( (e.which >= 48 && e.which <=57) || e.which == 8 ){
+
+                        //console.log(e.target.value.length);
+                        if( e.target.value.length == 0 && e.which == 8 ){
+                            //console.log('aaa');
+                            let previous_el = e.target.previousElementSibling;
+                            //console.log(previous_el);
+                            previous_el.focus();
+                        }
+                    }else{
+                        e.preventDefault();
+                    }
+                });
+
+                cards[i].addEventListener('keyup', function(e){
+                    //console.log('ttt');
+                    //console.log(e.target.value);
+                    let str = (e.target.value).replace(/\D/g, '');
+                    //console.log(str);
+                    e.target.value = str;
+
+                    //console.log(str.length);
+                    if(str.length == 4){
+                        //console.log(this);
+                        let next_el = this.nextElementSibling;
+                        //console.log(next_el);
+                        if(next_el != null){
+                            next_el.focus();
+                        }
+                    }
+                });
+
+            }
+
+            // //here
+            // let product_count_el = document.getElementsByClassName('product_count')[0];
+            // //console.log(product_count);
+            // let num_el = document.getElementsByClassName('num')[0];
+            // product_count_el.addEventListener('mousemove', function(){
+            //     //console.log(this.value);
+            //     num_el.innerHTML = this.value;
+            // });
+
+            //表單
+            let the_form_el = document.getElementById('the_form');
+            the_form_el.addEventListener('reset', function(){
+                //console.log('ttt');
+                num_el.innerHTML = num_el.getAttribute('data-default');
+            });
+
+            the_form_el.addEventListener('submit', function(e){
+                e.preventDefault();
+
+                let account_el = document.getElementById('account');
+                let email_el = document.getElementById('email');
+                let cards = document.getElementsByClassName('card');
+
+                let card_str = '';
+                //code
+                for(let i = 0; i < cards.length; i ++){
+                    card_str += cards[i].value;
+                    //card_str = card_str + cards[i].value;
+                }
+                //console.log(card_str);
+
+                let send_data = true;
+                //code
+
+                // if(!send_data){
+                //     e.preventDefault();
+                // }
+
+                if(account_el.value == ''){
+                    send_data = false;
+                    account_el.classList.add('-error');
+                }else{
+                    account_el.classList.remove('-error');
+                }
+
+                //驗證email
+                if( is.email(email_el.value) ){
+                    email_el.classList.remove('-error');
+                }else{ //不通過
+                    send_data = false;
+                    email_el.classList.add('-error');
+                }
+
+                if( is.creditCard(card_str) ){
+                    for(let i = 0; i < cards.length; i ++){
+                        cards[i].classList.remove('-error');
+                    }
+                }else{ //不通過
+                    send_data = false;
+                    for(let i = 0; i < cards.length; i ++){
+                        cards[i].classList.add('-error');
+                    }
+                }
+
+                if(!send_data){
+                    e.preventDefault();
+                }
+            });
+        });
+
+
+        // 二、資料送出時(submit)，資料驗證：
+        // 1、帳號必填
+        // 2、email：符合格式
+        // 3、信用卡卡號：符合格式
+
+      </script>
+
+      
+</body>
+</html>

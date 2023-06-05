@@ -17,9 +17,6 @@
 //取得bag_rule_lightbox 元素
 let readmore_open = document.getElementsByClassName("readmore_lightbox")[0];
 
-
-
-
 //取得切換按鈕的部分
 let a = document.getElementsByClassName("fa-comment-dots")[0];
 

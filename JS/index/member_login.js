@@ -19,7 +19,24 @@ $(() => {
           alert("帳號或密碼錯誤");
         } else {
           //index_build_roles.html
-          location.href = "index_map.html";
+          $.ajax({
+            url: "php/checkCreateDoll.php",
+            type: "POST",
+            dataType: "json",
+            data: {},
+            success: (response) => {
+              if (response == -1) {
+                alert("請先登入");
+              } else if (response) {
+                location.href = "index_build_roles.html";
+              } else {
+                location.href = "member_login.html";
+              }
+            },
+            error: (xhr, status, error) => {
+              alert("error: " + error);
+            },
+          });
         }
       },
       error: function (xhr, status, error) {

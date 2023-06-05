@@ -27,7 +27,7 @@ $data = $statement->fetchAll();
 
 // 將二維陣列取出顯示其值
 if (count($data) > 0) {
-       // echo json_encode([$data["0"]["memberID"]]);
+
        if (password_verify($password, $data[0][1])) {
               echo json_encode($data[0][0]);
               // setcookie("sessionID",session_id(),time()+360000, '/');

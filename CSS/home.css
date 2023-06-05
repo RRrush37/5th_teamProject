@@ -32,3 +32,41 @@
     height: 100%;
     color: white;
 }
+
+@media screen and (max-width: 414px){
+  
+    body{
+    background-image: url('../IMG/index/background/home_page_background_2.jpg');
+    
+      min-width:100%;
+      max-width:100%;
+      width: auto;
+      background-size: cover;
+      background-size: contain;
+    
+   }
+
+   .box{
+    min-width:70%;
+    max-width:70%;
+    min-height:200px;
+    max-height:500px;
+    width: auto;
+
+   }
+   
+   .wrapper .front a, .wrapper .back a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 105%;
+    height: 100%;
+    color: white;
+    font-size: 4rem;
+}
+
+.front{
+    width: 200px;
+}
+
+}

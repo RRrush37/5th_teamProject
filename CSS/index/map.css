@@ -368,3 +368,82 @@ body::before {
   filter: drop-shadow(3px 3px 3px rgb(0, 0, 0));
 
 }
+
+.wrapper{
+  display: none;
+}
+/* --------------------414-------------------------------- */
+
+
+@media screen and (max-width: 414px){
+  
+  body{
+    background-image: url(/IMG/index/rwd/background/background_1.png);
+    min-width:100%;
+    max-width:100%;
+    width: auto;
+    background-size: cover;
+  }
+
+
+  .map{
+    display: none;
+  }
+
+
+
+
+   .wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    
+    .list {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(5, 1fr);
+        gap: 10px;
+        text-align: center;
+        position: relative;
+        font-size: 3rem;
+        font-weight: bold;
+        margin-bottom: 80%;
+    }
+
+   
+    .list-item {
+        background-color:#ECEE73;
+        padding: 15px;
+        box-shadow: 0 10px 10px -5px rgba(0, 0, 0, 0.5);
+        margin: 10px;
+        color: white;
+        border-radius: 50px;
+      
+    }
+ 
+       .list-item:first-child {
+        color: #985517;
+        background-color: transparent;
+        box-shadow: none;
+    }
+
+    .list-item span {
+      -webkit-text-stroke: 1px rgba(0, 0, 0, 0.799);
+      text-stroke: 1px black;
+    }
+
+ 
+    
+
+    .list .list-item img {
+      
+      width: 30px; /* 设置图片的宽度 */
+      height: 30px; /* 设置图片的高度 */
+      position: absolute;
+      right: 30px;
+      
+    }
+
+}

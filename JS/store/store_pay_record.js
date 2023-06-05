@@ -54,6 +54,8 @@ function buy(){
       },
       success: function (response) {
           alert("購買成功");
+          // window.location.href = '../../ECPayAIO_PHP-master/AioSDK/example/sample_Credit_CreateOrder.php';
+          window.location.href = 'https://payment-stage.ecpay.com.tw/Cashier/AioCheckOut/V5';
       },
       error: function(xhr, status, error) {
           alert("數據載入失敗: " + error);
@@ -64,7 +66,6 @@ function buy(){
     alert("請選擇金幣");
   }
 }
-
 
 // 消費紀錄style更換
 let pay_record = document.getElementById("pay_record");
@@ -122,7 +123,7 @@ pay_lightbox.querySelector(".pay_wrapper").addEventListener("click", function(e)
 
 // $.ajax({
 //   method: "POST",
-//   url: "php",
+//   url: "",
 //   data:{},
 //   dataType: "json",
 //   success: function (response) {
@@ -169,7 +170,7 @@ stored_lightbox.querySelector(".stored_wrapper").addEventListener("click", funct
 
 // $.ajax({
 //   method: "POST",
-//   url: "php",
+//   url: "",
 //   data:{},
 //   dataType: "json",
 //   success: function (response) {
