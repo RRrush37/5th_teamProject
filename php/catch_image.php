@@ -9,7 +9,7 @@
         $ServerRoot = $_SERVER["DOCUMENT_ROOT"];
 
         date_default_timezone_set("Asia/Taipei"); //台北時間
-        $filename = date("YmdHis").".png" ; //年月日時分秒
+        $filename = $_SESSION["ID"].".png" ; //年月日時分秒
         //檔案最終存放位置
         $filePath = $ServerRoot."/team_5/IMG/people/member1/".$filename;
 

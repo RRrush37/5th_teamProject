@@ -11,89 +11,90 @@
   <body>
     <div class="header"></div>
     <!-- 用來載入 common.html 裡頭的 header -->
-    <div class="activity_title">
-      <svg
-        width="40"
-        height="40"
-        viewBox="0 0 83 83"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <a href="wolf_list.html">
-          <g filter="url(#filter0_dd_668_6)">
-            <path
-              d="M9 37.5L34.2778 5V23.018L74 23.0556V51.9444H34.2778V70L9 37.5Z"
-              fill="#606C99"
-              stroke="#606C99"
-              stroke-width="10"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-          </g>
-          <defs>
-            <filter
-              id="filter0_dd_668_6"
-              x="0"
-              y="0"
-              width="83"
-              height="83"
-              filterUnits="userSpaceOnUse"
-              color-interpolation-filters="sRGB"
-            >
-              <feFlood flood-opacity="0" result="BackgroundImageFix" />
-              <feColorMatrix
-                in="SourceAlpha"
-                type="matrix"
-                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-                result="hardAlpha"
-              />
-              <feOffset dy="4" />
-              <feGaussianBlur stdDeviation="2" />
-              <feComposite in2="hardAlpha" operator="out" />
-              <feColorMatrix
-                type="matrix"
-                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"
-              />
-              <feBlend
-                mode="normal"
-                in2="BackgroundImageFix"
-                result="effect1_dropShadow_668_6"
-              />
-              <feColorMatrix
-                in="SourceAlpha"
-                type="matrix"
-                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-                result="hardAlpha"
-              />
-              <feOffset dy="4" />
-              <feGaussianBlur stdDeviation="2" />
-              <feComposite in2="hardAlpha" operator="out" />
-              <feColorMatrix
-                type="matrix"
-                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"
-              />
-              <feBlend
-                mode="normal"
-                in2="effect1_dropShadow_668_6"
-                result="effect2_dropShadow_668_6"
-              />
-              <feBlend
-                mode="normal"
-                in="SourceGraphic"
-                in2="effect2_dropShadow_668_6"
-                result="shape"
-              />
-            </filter>
-          </defs>
-        </a>
-      </svg>
-
-      <h1>狼人殺</h1>
-    </div>
+    
     <div class="wrapper">
+      <div class="activity_title">
+        <svg
+          width="40"
+          height="40"
+          viewBox="0 0 83 83"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <a href="wolf_list.html">
+            <g filter="url(#filter0_dd_668_6)">
+              <path
+                d="M9 37.5L34.2778 5V23.018L74 23.0556V51.9444H34.2778V70L9 37.5Z"
+                fill="#606C99"
+                stroke="#606C99"
+                stroke-width="10"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </g>
+            <defs>
+              <filter
+                id="filter0_dd_668_6"
+                x="0"
+                y="0"
+                width="83"
+                height="83"
+                filterUnits="userSpaceOnUse"
+                color-interpolation-filters="sRGB"
+              >
+                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                <feColorMatrix
+                  in="SourceAlpha"
+                  type="matrix"
+                  values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                  result="hardAlpha"
+                />
+                <feOffset dy="4" />
+                <feGaussianBlur stdDeviation="2" />
+                <feComposite in2="hardAlpha" operator="out" />
+                <feColorMatrix
+                  type="matrix"
+                  values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"
+                />
+                <feBlend
+                  mode="normal"
+                  in2="BackgroundImageFix"
+                  result="effect1_dropShadow_668_6"
+                />
+                <feColorMatrix
+                  in="SourceAlpha"
+                  type="matrix"
+                  values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                  result="hardAlpha"
+                />
+                <feOffset dy="4" />
+                <feGaussianBlur stdDeviation="2" />
+                <feComposite in2="hardAlpha" operator="out" />
+                <feColorMatrix
+                  type="matrix"
+                  values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"
+                />
+                <feBlend
+                  mode="normal"
+                  in2="effect1_dropShadow_668_6"
+                  result="effect2_dropShadow_668_6"
+                />
+                <feBlend
+                  mode="normal"
+                  in="SourceGraphic"
+                  in2="effect2_dropShadow_668_6"
+                  result="shape"
+                />
+              </filter>
+            </defs>
+          </a>
+        </svg>
+  
+        <h1>狼人殺</h1>
+      </div>
       <section class="room">
-        <p class="room_num">房號:1234</p>
-        <p class="room_password">密碼:5678</p>
+        <p class="room_num" data-num="1234">房號:</p>
+        <p class="room_password" data-password="5678">密碼:</p>
 
         <!-- 遊戲狀態 -->
         <div id="game_state_box">
@@ -108,8 +109,8 @@
             <div id="player1" data-index="1" class="seat haveplayer">
               <div class="vote_box none">Vote:<br /></div>
               <div class="player_img">
-                <img src="../../IMG/wolf/little_red.jpg" alt="" />
-                <div class="name">Apple</div>
+                <img src="" alt="" />
+                <div class="name">none</div>
               </div>
               <div class="player_state_box">
                 <div class="player_name" data-name="玩家1">玩家1</div>
@@ -127,8 +128,8 @@
             <div id="player2" data-index="2" class="seat haveplayer">
               <div class="vote_box none">Vote:<br /></div>
               <div class="player_img">
-                <img src="../../IMG/wolf/little_red.jpg" alt="" />
-                <div class="name">Banana</div>
+                <img src="" alt="" />
+                <div class="name">none</div>
               </div>
               <div class="player_state_box">
                 <div class="player_name" data-name="玩家2">玩家2</div>
@@ -146,8 +147,8 @@
             <div id="player3" data-index="3" class="seat haveplayer">
               <div class="vote_box none">Vote:<br /></div>
               <div class="player_img">
-                <img src="../../IMG/wolf/little_red.jpg" alt="" />
-                <div class="name">Cindy</div>
+                <img src="" alt="" />
+                <div class="name">none</div>
               </div>
               <div class="player_state_box">
                 <div class="player_name" data-name="玩家3">玩家3</div>
@@ -165,8 +166,8 @@
             <div id="player4" data-index="4" class="seat haveplayer">
               <div class="vote_box none">Vote:<br /></div>
               <div class="player_img">
-                <img src="../../IMG/wolf/little_red.jpg" alt="" />
-                <div class="name">Dan</div>
+                <img src="" alt="" />
+                <div class="name">none</div>
               </div>
               <div class="player_state_box">
                 <div class="player_name" data-name="玩家4">玩家4</div>
@@ -198,8 +199,8 @@
                 <button class="v_btn none">Vote</button>
               </div>
               <div class="player_img">
-                <img src="../../IMG/wolf/little_red.jpg" alt="" />
-                <div class="name">Ellen</div>
+                <img src="" alt="" />
+                <div class="name">none</div>
               </div>
               <div class="vote_box none">Vote:<br /></div>
             </div>
@@ -217,8 +218,8 @@
                 <button class="v_btn none">Vote</button>
               </div>
               <div class="player_img">
-                <img src="../../IMG/wolf/little_red.jpg" alt="" />
-                <div class="name">Fiona</div>
+                <img src="" alt="" />
+                <div class="name">none</div>
               </div>
               <div class="vote_box none">Vote:<br /></div>
             </div>
@@ -236,8 +237,8 @@
                 <button class="v_btn none">Vote</button>
               </div>
               <div class="player_img">
-                <img src="../../IMG/wolf/little_red.jpg" alt="" />
-                <div class="name">George</div>
+                <img src="" alt="" />
+                <div class="name">none</div>
               </div>
               <div class="vote_box none">Vote:<br /></div>
             </div>
@@ -254,7 +255,7 @@
               </div>
               <div class="player_img out">
                 <img src="" alt="" />
-                <div class="name">Hawk</div>
+                <div class="name">none</div>
               </div>
               <div class="vote_box none"></div>
             </div>
@@ -402,14 +403,25 @@
       src="https://kit.fontawesome.com/75e9abcec6.js"
       crossorigin="anonymous"
     ></script>
-    <script>
+    <script type="module">
+      import * as picture from "./JS/member_picture.js";
       $(function () {
-        $(".header").load("common.html .header>div");
-        $(".footer").load("common.html .footer>div");
+          $(".header").load("common.html .header>div", function(){
+              let user_img = document.getElementsByClassName("user")[0] ;
+              picture.getMemberPicture(user_img);
+          });
+          $(".footer").load("common.html .footer>div");
       });
     </script>
 
-    <script>
+    <script type="module">
+      import * as picture from "./JS/member_picture.js";
+      import * as getID from "./JS/get_memberID.js";
+
+
+      let go_back = document.getElementsByClassName("activity_title")[0].querySelector("a") ;
+
+
       //結算面板
       let settle_game_el = document.getElementsByClassName("gameover")[0];
       let winner_box = document.getElementById("winner_box");
@@ -434,7 +446,7 @@
       let witchArr = { saved: -1, poisoned: -1 };
       // 女巫陣列:saved(playerid):用來存放救過誰，poisoned(playerid):用來存放毒過誰
       let killed = []; //狼人陣列:存放狼人階段殺誰
-      //let player_role ;//用於儲存玩家身份
+      let player_role ;//用於儲存玩家身份
       // let player_role = [ "狼人","女巫","預言家","狼人","平民","平民","平民"] ;
 
       let round = [1, ""]; //用於儲存目前回合狀態，{開局階段、狼人回合、女巫回合、預言家回合、夜晚出局回合、發言回合、投票回合、白天出局回合、遊戲結束、結算回合}
@@ -555,11 +567,148 @@
         player_state[i].id = playerID[i].id;
       }
       //console.log(idArr);
+      let room_num = document.getElementsByClassName("room_num")[0] ; //房間號碼
+      let room_password = document.getElementsByClassName("room_password")[0] ; //房間密碼
+      let room_imformation = { // 用來儲存遊戲開始前的資訊
+        "num": "", // 用於讓伺服器知道房間號碼
+        "player": 0, // 用於讓伺服器知道房間人數
+        "ready": [0,0,0,0,0,0,0],// 用於讓伺服器知道玩家準備狀態
+        "id": ["","","","","","",""]// 用於讓伺服器知道玩家準備狀態
+      }
 
+      // =======================================取得遊戲資訊及玩家資訊=================================
+      let roomInfor = JSON.parse(sessionStorage.getItem("roomInfor")); // 將sessionStorage資料撈出來
+      sessionStorage.setItem("roomInfor", JSON.stringify(roomInfor));
+      let memberID =0 ;
+
+      getID.getMemberID().then(function(response2) {
+        memberID = response2;
+        $.ajax({
+          url:"php/getRoomInformation.php",
+          type: "post",
+          data:{
+              "roomNum" : roomInfor.roomNum,
+              "memberID" : memberID
+          },
+          datatype:"json",
+          success: function(response){
+            // console.log(response);
+            if (response != -2) {
+              response = JSON.parse(response);
+              console.log(response);
+
+              // 更新房間資訊
+              room_imformation.num = response[0].roomNum ; // 號碼
+              room_imformation.person = response[0].person ; // 密碼
+              
+
+              // 更新房間號碼及密碼
+              room_num.setAttribute("data-num", response[0].roomNum );
+              room_password.setAttribute("data-password", response[0].roomPassword );
+              room_num.innerHTML += room_num.getAttribute("data-num") ;
+              room_password.innerHTML += room_password.getAttribute("data-password") ;
+
+              getGameMemberInformation(response) ;
+
+              
+            } else {
+              alert("無此房間");
+              location.href = "wolf_list.html" ;
+            }
+            
+          },
+          error: function( xhr, status, error){
+              console.error("error:", error);
+          }
+        })
+
+      }).catch(function(error) {
+        console.error("error:", error);
+      });
+      
+
+      function getGameMemberInformation(response) {
+        
+        // 取得玩家id
+        
+        getID.getMemberID().then(function(response2) {
+          memberID = response2;
+
+          for ( let i = 1 ; i < 8 ; i++ ) { // 遊戲玩家id
+            let str = "player"+i ;
+            room_imformation.id[i-1] = response[0][str] ;
+            // if ( memberID == room_imformation.id[i-1] ) { // 找到相應id
+            //   console.log("memberID"+memberID);
+            //   console.log("playerID[i-1]"+playerID[i-1]);
+            //   console.log("i"+i);
+            //   picture.getGameMemberPictureName(playerID[i-1].querySelector("img"),playerID[i-1].querySelector(".name"),memberID); // 將頭像做修改
+            // } else
+            // if ( !room_imformation.id[i-1] ) { //目前為空位
+              console.log("response[0][str]"+response[0][str]);
+              console.log("playerID[i-1]"+playerID[i-1]);
+              console.log("i"+i);
+              picture.getGameMemberPictureName(playerID[i-1].querySelector("img"),playerID[i-1].querySelector(".name"),response[0][str]); // 將頭像做修改
+            // }
+
+          }
+
+          go_back.addEventListener('click', function(e){
+            e.preventDefault();
+
+            if ( room_imformation.id[0] == memberID ) { //房主離開
+              $.ajax({
+                url:"php/deleteGameRoom.php",
+                type: "post",
+                data:{
+                    "roomNum" : roomInfor.roomNum,
+                },
+                datatype:"text",
+                success: function(response){
+                  location.href= "wolf_list.html" ;
+                },
+                error: function( xhr, status, error){
+                    console.error("error:", error);
+                }
+
+              })
+            } else { // 非房主離開
+              $.ajax({
+                url:"php/leaveGameRoom.php",
+                type: "post",
+                data:{
+                    "roomNum" : roomInfor.roomNum,
+                    "memberID" : memberID
+                },
+                datatype:"text",
+                success: function(response){
+                  if (response == 1) {
+                    console.log(response);
+                    location.href= "wolf_list.html" ;
+                  } else {
+                    console.log(response);
+                  }
+                },
+                error: function( xhr, status, error){
+                    console.error("error:", error);
+                }
+
+              })
+            }
+            
+          })
+
+        }).catch(function(error) {
+          console.error("error:", error);
+        });
+      }
+      // =======================================取得遊戲資訊及玩家資訊=================================
       //倒計時
       let time_box_el = document.getElementById("time_box");
       let time_el = document.getElementById("time");
       time_box_el.classList.add("none");
+      let second = 0 ;
+
+      
 
       //用於儲存目前回合狀態，{開局階段、抿牌階段、狼人回合、女巫回合、預言家回合、夜晚出局回合、發言回合、投票回合、白天出局回合、遊戲結束、結算回合}
       if (round[1] == "開局階段") {

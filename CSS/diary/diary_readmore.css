@@ -13,7 +13,7 @@
 margin: 0 auto?
 --------------------*/
 .wrapper02{
-    width: auto;
+    width: 40%;
     height: 90vh;
     
     background-color: #fff;
@@ -40,6 +40,7 @@ h2{
     width: 50px;
     height: 50px;
     object-fit: cover;
+    overflow: hidden;
 }
 
 .img img{
@@ -48,6 +49,7 @@ h2{
     display: block;
     object-fit: cover;
     border-radius: 50%;
+    transform: scale(2.5) translateY(15%);
     /* padding: 30px;同 */
     /* box-sizing: border-box; 同*/
 }
@@ -96,21 +98,34 @@ h2{
     font-size: 2rem;
 }
 
+/*--------文章圖片---------*/
+#readmore_article_img{
+    width: 100%;
+}
+
+#readmore_article_img img{
+    width: 48%;
+    margin: .5% 1% .5%;
+}
+
+
 /*--------文章標題---------*/
 .title{
     line-height: 1.6;
+    padding: 0px 30px;
 }
 
 .title .article{
     text-align:start;
-    padding: 2px 28px;
+    padding: 2px 0px;
     color: black;
     font-size: 2rem;
+    word-break: break-all;
 }
 
 .hour{
     font-size: .5rem;
-    padding-left: 30px;
+    /* padding-left: 30px; */
 }
 
 
@@ -120,8 +135,9 @@ h2{
     font-size: 1.5rem;
     /* overflow: auto; */
     /* height: 50px; */
-    margin:10px 30px;
+    margin:10px 0px;
     /* width: 50%; */
+    word-break: break-all;
 }
 
 /*-----中間版面-------*/

@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="CSS/global.css">
     <link rel="stylesheet" href="CSS/chat/backstage_header.css">
     <link rel="stylesheet" href="CSS/chat/style3.css">
+    <link rel="stylesheet" href="CSS/chat/chat_rwd.css">
 
 </head>
 
@@ -83,6 +84,9 @@
             </div>
             <div id="malldata-bar" class="search-bar">
                 <h2>商城資料查詢</h2>
+                <button id="mallcreate-btn" class="add-btn">
+                    新增<img src="img/chat/plus2.svg" alt="">
+                    </button>
                 <table>
                     <tr>
                         <td>商品編號</td>
@@ -97,7 +101,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>商品狀態</td>
+                        <td>商品名稱</td>
                         <td><input type="text"></td>
                     </tr>
                     <tr>
@@ -118,16 +122,47 @@
                 </table>
                 <button id="general-search" class="search-btn">查看</button>
             </div>
+            <div id="malladd-bar" class="hide-bar">
+                <img id="back-btn2" src="IMG/chat/Vector.svg" alt="">      
+                <h2>商品資料新增</h2>
+                <table>
+                    <tr>
+                        <td>商品名稱</td>
+                        <td><input type="text" id="name"></td>
+                    </tr>
+                    <tr>
+                        <td>商品狀態</td>
+                        <td><input type="text" id="status"></td>
+                    </tr>
+                    <tr>
+                        <td>商品價格</td>
+                        <td><input type="text" id="price"></td>
+                    </tr>
+                    <tr>
+                        <td>上傳圖片</td>
+                        <td><input type="file" id="file-upload" accept="image/*">
+                            <label for="file-upload" id="custom-upload-button"></label>
+                            </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><img id="preview-image" src="#" alt="預覽圖片"></td>
+                    </tr>
+                </table>
+                <button class="search-btn" id="search-btn">變更</button>
+            </div>
             <div id="generalEdit-bar" class="hide-bar">
                 <img id="back-btn" src="IMG/chat/Vector.svg" alt="">      
-                <h2>一般商品資料編輯</h2>
+                <h2>商品資料編輯</h2>
                 <table>
                     <tr>
                         <td>商品編號</td>
                         <td>111111111111111</td>
                     </tr>
-                    <td>商品類別</td>
-                    <td>1</td>
+                    <tr>
+                        <td>商品類別</td>
+                        <td>1</td>
+                    </tr>
                     <tr>
                         <td>商品狀態</td>
                         <td>1</td>
@@ -200,87 +235,130 @@
                 <div class="list_box">
                     <div class="list-bottom-first">
                         <div>
-                            <span>會員編號</span>
-                            <span>會員名稱</span>
-                            <span>Email</span>
-                            <span>會員身分</span>
-                            <span>會員狀態</span>
-                            <span>處罰紀錄</span>
+                          <span>商品編號</span>
+                          <span>商品類別</span>
+                          <span>商品名稱</span>
+                          <span>商品狀態</span>
+                          <span>銷售時間</span>
                             <span>查看</span>
                         </div>
     
                     </div>
                     <ul>
                         <li>
-                            <span>會員編號</span>
-                            <span>會員名稱</span>
-                            <span>Email</span>
-                            <span>會員身分</span>
-                            <span>會員狀態</span>
-                            <span>處罰紀錄</span>
-                            <a href="#">查看</a>
+                          <span>商品編號</span>
+                          <span>商品類別</span>
+                          <span>商品名稱</span>
+                          <span>商品狀態</span>
+                          <span>銷售時間</span>
+                          <a href="#">查看</a>
                         </li>
                         <li>
-                            <span>會員編號</span>
-                            <span>會員名稱</span>
-                            <span>Email</span>
-                            <span>會員身分</span>
-                            <span>會員狀態</span>
-                            <span>處罰紀錄</span>
-                            <a href="#">查看</a>
+                            <span>商品編號</span>
+                            <span>商品類別</span>
+                            <span>商品名稱</span>
+                            <span>商品狀態</span>
+                            <span>銷售時間</span>
+                          <a href="#">查看</a>
                         </li>
                         <li>
-                            <span>會員編號</span>
-                            <span>會員名稱</span>
-                            <span>Email</span>
-                            <span>會員身分</span>
-                            <span>會員狀態</span>
-                            <span>處罰紀錄</span>
-                            <a href="#">查看</a>
+                            <span>商品編號</span>
+                            <span>商品類別</span>
+                            <span>商品名稱</span>
+                            <span>商品狀態</span>
+                            <span>銷售時間</span>
+                          <a href="#">查看</a>
                         </li>
                         <li>
-                            <span>會員編號</span>
-                            <span>會員名稱</span>
-                            <span>Email</span>
-                            <span>會員身分</span>
-                            <span>會員狀態</span>
-                            <span>處罰紀錄</span>
-                            <a href="#">查看</a>
+                            <span>商品編號</span>
+                            <span>商品類別</span>
+                            <span>商品名稱</span>
+                            <span>商品狀態</span>
+                            <span>銷售時間</span>
+                          <a href="#">查看</a>
                         </li>
                         <li>
-                            <span>會員編號</span>
-                            <span>會員名稱</span>
-                            <span>Email</span>
-                            <span>會員身分</span>
-                            <span>會員狀態</span>
-                            <span>處罰紀錄</span>
-                            <a href="#">查看</a>
+                            <span>商品編號</span>
+                            <span>商品類別</span>
+                            <span>商品名稱</span>
+                            <span>商品狀態</span>
+                            <span>銷售時間</span>
+                          <a href="#">查看</a>
                         </li>
                         <li>
-                            <span>會員編號</span>
-                            <span>會員名稱</span>
-                            <span>Email</span>
-                            <span>會員身分</span>
-                            <span>會員狀態</span>
-                            <span>處罰紀錄</span>
-                            <a href="#">查看</a>
+                            <span>商品編號</span>
+                            <span>商品類別</span>
+                            <span>商品名稱</span>
+                            <span>商品狀態</span>
+                            <span>銷售時間</span>
+                          <a href="#">查看</a>
                         </li>
                         <li>
-                            <span>會員編號</span>
-                            <span>會員名稱</span>
-                            <span>Email</span>
-                            <span>會員身分</span>
-                            <span>會員狀態</span>
-                            <span>處罰紀錄</span>
-                            <a href="#">查看</a>
+                            <span>商品編號</span>
+                            <span>商品類別</span>
+                            <span>商品名稱</span>
+                            <span>商品狀態</span>
+                            <span>銷售時間</span>
+                          <a href="#">查看</a>
                         </li>
-                    </ul>
+                      </ul>
                 </div>
                 
             </div>
 
         </div>
 </body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="JS/chat/malldata.js"></script>
 <script src="JS/backstage/backstage_header.js"></script>
+<script>
+    document.getElementById('file-upload').addEventListener('change', handleFileSelect);
+
+    function handleFileSelect(event) {
+      const file = event.target.files[0];
+      const reader = new FileReader();
+
+      reader.onload = function(event) {
+        document.getElementById('preview-image').src = event.target.result;
+      };
+
+      reader.readAsDataURL(file);
+    }
+  </script>
+  
+  <script>
+    $("#search-btn").click(() => {
+        if (!$("#name").val()) {
+          alert("請輸入商品名稱");
+          return;
+        }
+        if (!$("#status").val()) {
+          alert("請輸入商品狀態");
+          return;
+        }
+        //img存到"img/product/0530150330.jpg"
+        let src = "img/product/0530150330.jpg"
+        $.ajax({
+          url: "php/addProduct.php",
+          method: "post",
+          datatype: "json",
+          data: {
+           name: $("#name").val(),
+           status: $("#status").val(),
+           price:$("#price").val(),
+           img: src,
+          },
+          success: (response) => {
+            if (response == -1) {
+              alert("請先登入");
+            } else if (response == 1) {
+              alert("新增成功");
+            } else alert("新增失敗");
+          },
+          error: (xhr, status, error) => {
+            alert("error: " + error);
+          },
+        });
+      });
+  </script>
 </html>

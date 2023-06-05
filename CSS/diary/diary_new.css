@@ -1,7 +1,7 @@
 @import url(../global.css);
 @import url(diary_rule.css);
-@import url(../diary/diart_edit.css);
-@import url(../diary/diary_readmore.css);
+@import url(diart_edit.css);
+@import url(diary_readmore.css);
 
 h1 {
   font-size: 4rem;
@@ -177,8 +177,8 @@ body {
 }
 
 .member_photo img {
-  width: 50%;
-  height: 50%;
+  width: 80%;
+  /* height: 50%; */
   display: block;
   margin: auto;
 }
@@ -313,17 +313,20 @@ body {
 .card_user {
   display: flex;
   position: relative;
+  margin: 10px 0;
 }
 
 .card_user img {
   width: 15%;
   height: auto;
+  transform: scale(2) translateY(20%);
 }
 
 .card_article {
   display: flex;
   justify-content: start;
   align-items: center;
+  overflow: hidden;
 }
 
 .card_article h2 {
@@ -364,7 +367,22 @@ body {
 
 .card_text {
   /* height: 30px; */
-  /* width: 300px; */
+  width: 100%;
+}
+.card_text .text_image{
+  width: 100%;
+
+}
+
+.card_text .text_image img{
+  width: 47%;
+  margin: .5% 1% .5%;
+
+  /* display: block; */
+}
+
+.card_text .text_title{
+  margin: 30px;
 }
 
 .card_text P {
@@ -373,7 +391,7 @@ body {
   overflow: hidden; /* 超出父容器部分隐藏 */
   text-overflow: ellipsis; /* 超出部分显示省略号 */
   font-size: fit-content; /* 文字大小自适应容器 */
-  margin: 30px;
+
 }
 
 .middletop {
@@ -393,11 +411,13 @@ body {
 
 .big_girl {
   width: 30%;
+  overflow: hidden;
 }
 
 .big_girl img {
   width: 100%;
   height: auto;
+  transform: scale(2.5) translateY(14%);
 }
 
 .idsign {
@@ -452,24 +472,24 @@ body {
 
 }
 
-.interact a {
+.interact .icon i {
   color: #000;
 }
 
-.interact a ~ a {
+.interact .icon i ~ i {
   margin-left: 5px;
-  border: 1px solid red;
+  /* border: 1px solid red; */
   /* font-size: 1rem; */
 
 }
-.interact a span {
+.interact .icon i span {
   margin-left: 2px;
 
 }
 
 .interact .icon {
   font-size: 2rem;
-
+  color: #000;
 }
 
 .moreButton {
@@ -591,6 +611,12 @@ ul.weekdays li {
   line-height: 1.25;
   margin-bottom: 50px;
   color: white;
+  /* width: 100%; */
+}
+
+.right .my_activity section p{
+  width: 100%;
+  word-break: break-all;
 }
 
 .right .my_activity a {

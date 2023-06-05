@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <style>
+        .active{
+            background-color: red;
+            color: white;
+        }
+
+        .tab_content{
+            border: 1px solid lightgray;
+            padding: 10px;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="the_block">
+        <!---------
+        << button-type>>
+        //v-for類似for迴圈
+        1.v-for="tab in tabs "-循環指令，会遍历 tabs 数组中的每个对象，并为每个对象生成一个按钮。
+        2.:class="{active: currentTab == tab.id}" :currentTab 等于当前循环的选项卡的 id，则为按钮添加 active 类，用于目前選中的tab。
+        3.:key="tab.id"：这是为每个循环项提供唯一的标识符，以便 Vue 可以跟踪和管理循环的元素。
+        4.@click="currentTab = tab.id"：这是事件监听器，当按钮被点击时，会将当前选项卡的 id 赋值给 currentTab，从而实现选项卡切换的功能。
+        5.{{ tab.name }}：这是插值语法，用于显示选项卡的名称。
+        --------->
+
+
+        <!-----------
+        << component>>
+        1.<component>：这是 Vue 的内置组件，用于根据指定的组件名称动态地渲染组件。
+        2.v-bind:is="current_tab_component"：这是动态绑定 is 属性的语法，is 属性指定要渲染的组件名称。在这里，current_tab_component 是一个计算属性，根据 3.3.3.currentTab 的值动态生成组件名称，用于指定要渲染的选项卡内容组件。
+        4.class="tab_content"：这是为组件添加 CSS 类的语法，将 tab_content 类应用于渲染的组件元素，用于定义选项卡内容的样式。
+        
+        -->
+
+        <!---------------
+        :class 是V-bind的縮寫(用動態綁定，bind是連結的意思)
+        item 跑整個組的
+        items 是[陣列]，因為用中括弧刮起來，陣列中包了很多物件(id=key name=value)
+        物件名稱.key = value(取值)
+        item.id物件用法
+
+        ==/=== 的意思是:判斷式，判斷是否相等
+        = 把右邊丟到左邊的值
+        :有冒號是動態綁定
+        @v-on的縮寫
+
+        currentTab 原本的值，會被item.id取代掉
+        :key 先放著(但可加可不加)
+        
+        @click="currentTab = item.id" 賦予值(這是currentTab 會變動的原因)
+        點擊事件後...
+
+        <component v-bind:is="current_tab_component" class="tab_content"></component>
+
+        
+        
+        --------------->
+
+
+
+
+        <!-- <button type="button">{{ tab.name }}</button>原本長這樣 -->
+        <button type="button" v-for="item in items" :class="{active: currentTab == item.id}" :key="item.id" @click="currentTab = item.id">{{ item.name }}</button>
+
+        <!-- <!-:class v-bind的簡寫---動態綁定(bind是連結)
+            items型態是[陣列]，陣列裡面放物件 {物件(一組一組東西)} id=key name=value 物件名稱.key =value (物件取值的方式)
+            items: [
+                        {
+                            id: "tab1",
+                            name: "頁籤一"
+                        },
+                    ]
+            
+            
+            item 跑整組
+            item.id 是物件的用法
+            :class類別(加上冒號動態綁定)
+            active: currentTab == item.id 有class:active:的頁籤時間
+
+
+            =把右邊丟到左邊的值
+            ==/===是否相等
+            :class 判斷是否相同兩者相同
+            @ =v-on的縮寫
+            currentTab 原本的值 會被item.id取代掉
+            :key (先加著，但其實可加可不加)
+
+            @click="currentTab = item.id" 賦予值(這是currentTab 會變動的原因)
+            我觸發了這個click的事件會去滿足:class這個判斷式
+            當我點擊的時候，後面的currentTab=item.id這件事情會發生，那item.id會將currentTab這個值取代掉
+
+            v-bind :is(可解釋為:是什麼，動態元件，bind是連結)
+            current_tab_component(自己寫的函式):回傳tab1 2 3 字串
+            
+            computed 計算過的屬性
+            this.currentTab 引用currenttab屬性，_current 命名選項
+
+            ---------> 
+
+
+
+        <!-- <button type="button" v-for="tab in tabs" :class="{active: currentTab == tab.id}" :key="tab.id" @click="currentTab = tab.id">{{ tab.name }}</button> -->
+
+        <component v-bind:is="current_tab_component" class="tab_content"></component>
+        <!-----------
+        動態元件
+        ---------------->
+
+
+        <!-------------
+        v-bind :is(可解釋為:是什麼，動態元件，bind是連結)
+        current_tab_component(自己寫的函式):回傳tab1 2 3 字串
+        tab_content
+        -->
+    </div>
+
+    <!--------Vue的cdn------------->
+    <script src="https://unpkg.com/vue@next"></script>
+
+    <script>
+        //Vue.createApp 創建新的Vue應用程序實例
+        var app = Vue.createApp({
+            data(){
+                return {
+                    //目前元件現在要顯示tab1
+                    //items裡面有三個物件
+                    currentTab: "tab1",
+                    items: [
+                        {
+                            id: "tab1",
+                            name: "頁籤一"
+                        },
+                        {
+                            id: "tab2",
+                            name: "頁籤二"
+                        },
+                        {
+                            id: "tab3",
+                            name: "頁籤3"
+                        },
+                    ]
+                };
+            },
+            //computed 計算過的屬性
+            //this.currentTab 引用currenttab屬性，_current 命名選項
+            computed: {
+                //回傳的原件名稱為 current_tab_component
+                // current_tab_component自己寫的函式
+                //.toLowerCase字串轉小寫
+                current_tab_component(){
+                    return (this.currentTab + "_content").toLowerCase(); // 修改这里，确保组件名称的一致性
+                    //執行後，回傳的值:tab1_content、tab2_content等等
+                    //要看currentTab目前是第一個還是第二個
+                    //當是tab1 會回傳tab1_content
+
+                }
+            }
+        });
+
+        //以下三個元件都要加上共通的tab_content
+        // app.component 全組的組件
+        //template組件模板，組件要渲染的內容
+        app.component("tab1_content", {
+            template: `
+                <div class="a">tab1 的內容</div>
+            `
+        });
+        //class a、b、c 自己設定
+        //template:會把component 替換掉
+        
+        //component 不會真的呈現在html尚
+        //template 會在html加上所有的標籤，取代component的東西
+
+        app.component("tab2_content", {
+            template: `
+                <div class="b">tab2 的內容</div>
+            `
+        });
+
+        app.component("tab3_content", {
+            template: `
+                <div class="c">tab3 的內容</div>
+            `
+        });
+
+        app.mount("#the_block");
+    </script>
+</body>
+</html>

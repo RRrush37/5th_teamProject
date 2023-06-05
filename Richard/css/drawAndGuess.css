@@ -1,0 +1,263 @@
+@import url(reset.css);
+
+body {
+}
+
+.fullScreen {
+  position: fixed;
+  width: 100vw;
+  height: 100vw;
+  background-color: #fff;
+  z-index: 10;
+}
+
+.center {
+  top: 50vh;
+  transform: translateY(-50%);
+  position: relative;
+}
+
+.nickname,
+.resetQuestion,
+.setNickname {
+  width: fit-content;
+  margin: 20px auto;
+}
+
+.outerTimer {
+  width: 100%;
+  height: 40px;
+  background-color: #fff;
+  border: 1px solid black;
+}
+
+.innerTimer {
+  width: 70%;
+  height: 40px;
+  background-color: black;
+}
+
+.reset,
+.resetQuestion {
+  padding: 10px;
+  border: 1px solid;
+  width: fit-content;
+  margin: 10px auto;
+}
+
+#canvas-container {
+  width: 90%;
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: white;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+.flexDiv {
+  display: flex;
+}
+
+.memberList {
+  background-color: green;
+}
+
+.member {
+  display: flex;
+  width: 200px;
+  align-items: center;
+  padding: 10px;
+}
+
+.member > span {
+  flex-grow: 1;
+  text-align: center;
+}
+
+.sticker {
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+}
+
+#canvas {
+  width: 100%;
+  height: 600px;
+}
+
+.outerTimer {
+  width: 100%;
+  height: 40px;
+  background-color: #fff;
+  border: 1px solid black;
+}
+
+.innerTimer {
+  width: 70%;
+  height: 40px;
+  background-color: black;
+}
+
+.reset {
+  padding: 10px;
+  border: 1px solid;
+  width: fit-content;
+  margin: 10px auto;
+}
+
+.tool-container {
+  display: flex;
+  max-width: 800px;
+  margin: auto;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.tool-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#clear-button {
+  background: linear-gradient(to bottom right, #56ab2f, #a8e063);
+}
+
+.tool-button:hover {
+  opacity: 0.8;
+}
+
+#clear-button:hover {
+  background: linear-gradient(to bottom right, #a8e063, #56ab2f);
+}
+
+.color-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 10px;
+}
+
+.color-button {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  margin: 0 5px;
+  border-radius: 50%;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  transition: box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.color-button:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.color-button.active {
+  border: 3px solid white;
+}
+
+.indicator {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: black;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.color-button:hover .indicator {
+  opacity: 0.5;
+}
+
+.color-button.active .indicator {
+  opacity: 1;
+}
+.color-button.black {
+  background-color: #000;
+}
+.color-button.red {
+  background-color: #f44336;
+}
+
+.color-button.blue {
+  background-color: #2196f3;
+}
+
+.color-button.green {
+  background-color: #4caf50;
+}
+
+.color-button.yellow {
+  background-color: #ffeb3b;
+}
+
+.color-button.orange {
+  background-color: #ff9800;
+}
+
+.color-button.purple {
+  background-color: #9c27b0;
+}
+
+.color-button.white {
+  background-color: #fff;
+}
+
+.color-button.gray {
+  background-color: #9e9e9e;
+}
+
+.color-button.eraser {
+  background-color: #fff;
+}
+
+/*橡皮擦效果*/
+
+/* 設定圖片容器的樣式 */
+#img-container {
+  position: relative;
+  width: 640px;
+  height: 426px;
+  margin: 0 auto;
+  overflow: hidden;
+  border: 1px solid #ccc;
+}
+
+/* 設定圖片的樣式 */
+#img-container img {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 設定放大鏡的樣式 */
+#magnifier {
+  display: none;
+  opacity: 0;
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border: 2px solid #333;
+  border-radius: 50%;
+  background-size: 1280px 852px;
+  background-position: -640px -426px;
+  background-repeat: no-repeat;
+  pointer-events: none;
+  cursor: none;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  z-index: 999;
+}

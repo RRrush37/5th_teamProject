@@ -1,0 +1,11 @@
+"money":money,
+// "doll_list" : doll,
+"hair" : doll.hair,
+"clothes": doll.clothes,
+"bottoms": doll.bottoms,
+"accessories1": doll.accessories1,
+"accessories2": doll.accessories2,
+"accessories3": doll.accessories3,
+"eyebrow": doll.eyebrow,
+"eye": doll.eye,
+"mouth": doll.mouth

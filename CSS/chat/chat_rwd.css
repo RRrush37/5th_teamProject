@@ -1,0 +1,92 @@
+@media screen and (max-width: 414px){
+    .m-text-search {
+        padding-top: 60px;
+        width: 414px;        
+    }
+
+    #memberdata-search{
+        max-width: 414px;
+
+    }
+
+    .search-bar{
+        min-width: 414px;
+        font-size: 1rem;
+
+    }
+
+     .hide-bar>h2{
+        margin-bottom: 0;
+    }
+
+    .search-bar td,.hide-bar td{
+        padding-left: 3rem;
+        padding-right: 3rem;
+        font-size: 2rem;
+    } 
+
+    .hide-bar{
+        white-space: nowrap;
+        width: 90%;
+    }
+
+    .hide-bar table{
+        display: flex;
+        flex-direction: column;
+        
+    }
+
+    #back-btn,#back-btn2,#back-btn3{
+        top: 3%;
+        right: 2%;
+    }
+
+    .add-btn{
+        top: 3%;
+        right: 3%;
+    }
+
+    .list-bottom{
+        width: 414px;
+        min-width: 414px;
+    }
+
+    .list-bottom-first div{
+        width: 95%;
+    }
+
+    /* 按鈕 */
+
+    .search-btn{
+        margin-top:2rem;
+        margin-bottom: 2rem;
+    }
+
+    .membertext{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .membertext-left,.membertext-right{
+        width: 90%;
+        display: inline;
+    }
+
+
+
+    .membertext-left h2,.membertext-right h2{
+        padding-left: 1rem;
+        display: inline-block;
+    }
+
+    .membertext-left h2{
+        margin-top: 3rem;
+    }
+
+    .membertext-left table,.membertext-right table{
+     
+        margin-left: 1rem;    
+      
+        
+    }
+}

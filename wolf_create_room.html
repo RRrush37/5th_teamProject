@@ -11,43 +11,44 @@
 </head>
 <body>
     <div class="header"></div> <!-- 用來載入 common.html 裡頭的 header -->
-    <div class="activity_title">
-        <svg width="40" height="40" viewBox="0 0 83 83" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <a href="wolf_list.html">
-                <g filter="url(#filter0_dd_668_6)">
-                    <path d="M9 37.5L34.2778 5V23.018L74 23.0556V51.9444H34.2778V70L9 37.5Z" fill="#606C99"
-                        stroke="#606C99" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" />
-                </g>
-                <defs>
-                    <filter id="filter0_dd_668_6" x="0" y="0" width="83" height="83"
-                        filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                        <feFlood flood-opacity="0" result="BackgroundImageFix" />
-                        <feColorMatrix in="SourceAlpha" type="matrix"
-                            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
-                        <feOffset dy="4" />
-                        <feGaussianBlur stdDeviation="2" />
-                        <feComposite in2="hardAlpha" operator="out" />
-                        <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" />
-                        <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_668_6" />
-                        <feColorMatrix in="SourceAlpha" type="matrix"
-                            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
-                        <feOffset dy="4" />
-                        <feGaussianBlur stdDeviation="2" />
-                        <feComposite in2="hardAlpha" operator="out" />
-                        <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" />
-                        <feBlend mode="normal" in2="effect1_dropShadow_668_6"
-                            result="effect2_dropShadow_668_6" />
-                        <feBlend mode="normal" in="SourceGraphic" in2="effect2_dropShadow_668_6"
-                            result="shape" />
-                    </filter>
-                </defs>
-            </a>
-        </svg>
-        
-        <h1>狼人殺</h1>
-    </div>
+    
 
     <div class="wrapper">
+        <div class="activity_title">
+            <svg width="40" height="40" viewBox="0 0 83 83" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <a href="wolf_list.html">
+                    <g filter="url(#filter0_dd_668_6)">
+                        <path d="M9 37.5L34.2778 5V23.018L74 23.0556V51.9444H34.2778V70L9 37.5Z" fill="#606C99"
+                            stroke="#606C99" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" />
+                    </g>
+                    <defs>
+                        <filter id="filter0_dd_668_6" x="0" y="0" width="83" height="83"
+                            filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                            <feColorMatrix in="SourceAlpha" type="matrix"
+                                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+                            <feOffset dy="4" />
+                            <feGaussianBlur stdDeviation="2" />
+                            <feComposite in2="hardAlpha" operator="out" />
+                            <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" />
+                            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_668_6" />
+                            <feColorMatrix in="SourceAlpha" type="matrix"
+                                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+                            <feOffset dy="4" />
+                            <feGaussianBlur stdDeviation="2" />
+                            <feComposite in2="hardAlpha" operator="out" />
+                            <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" />
+                            <feBlend mode="normal" in2="effect1_dropShadow_668_6"
+                                result="effect2_dropShadow_668_6" />
+                            <feBlend mode="normal" in="SourceGraphic" in2="effect2_dropShadow_668_6"
+                                result="shape" />
+                        </filter>
+                    </defs>
+                </a>
+            </svg>
+            
+            <h1>狼人殺</h1>
+        </div>
         <section class="create_room">
             <h2 data-roomNum="">房號:</h2>
             <div class="game_mode">
@@ -88,9 +89,13 @@
       src="https://kit.fontawesome.com/75e9abcec6.js"
       crossorigin="anonymous"
     ></script>
-    <script>
+    <script type="module">
+         import * as picture from "./JS/member_picture.js";
         $(function () {
-            $(".header").load("common.html .header>div");
+            $(".header").load("common.html .header>div", function(){
+                let user_img = document.getElementsByClassName("user")[0] ;
+                picture.getMemberPicture(user_img);
+            });
             $(".footer").load("common.html .footer>div");
         });
     </script>
@@ -99,6 +104,7 @@
         let lock_el = document.getElementsByClassName("lock")[0];
         let password_input = document.getElementsByClassName("password")[0];
         let create_room_num = document.getElementsByClassName("create_room")[0].querySelector("h2") ;
+        let create_btn = document.getElementById("create_btn");
 
         create_room_num.setAttribute("data-roomNum",getRandomInt(10));
         create_room_num.innerHTML = create_room_num.innerHTML+create_room_num.getAttribute("data-roomNum");
@@ -117,6 +123,79 @@
                 password_input.classList.remove("on");
             }
         })
+
+        create_btn.addEventListener("click", function(e){
+            let istrue ;
+            e.preventDefault();
+            if( lock_el.classList.contains("on") ){
+                istrue = 1 ;
+            } else {
+                istrue = 0 ;
+            }
+
+            $.ajax({
+                url:"php/getMemberId.php",
+                type: "post",
+                data:{},
+                datatype:"text",
+                success: function(response){
+                    let id = response;
+                    console.log(id) ;
+
+                    $.ajax({
+                        url:"php/create_room.php",
+                        type: "post",
+                        data:{
+                            "roomNum" : create_room_num.getAttribute("data-roomNum"),
+                            "roomPassword" : password_input.value,
+                            "lock" : istrue,
+                            "id" : id
+                        },
+                        datatype:"json",
+                        success: function(response2){
+                            // console.log(response2);
+                            if (response2 == 1) { // 成功建立遊戲室
+                                let roomInfor = { //餘用戶端建立遊戲室資訊存於ssesionstorage
+                                    "roomid": "",
+                                    "roomName": "",
+                                    "roomNum" : create_room_num.getAttribute("data-roomNum"),
+                                    "roomPassword" : password_input.value,
+                                    "lock" : istrue,
+                                    "person" : 1,
+                                    "player1" : id,
+                                    "player2" : "",
+                                    "player3" : "",
+                                    "player4" : "",
+                                    "player5" : "",
+                                    "player6" : "",
+                                    "player7" : "",
+                                };
+                                sessionStorage.setItem("roomInfor", JSON.stringify(roomInfor));
+                                console.log(roomInfor);
+                                location.href= "wolf_room.html" ;
+                            } else if (response2 == -1) { // 遊戲室建立失敗
+                                alert("遊戲室建立失敗，請再試一次");
+                                location.href= "wolf_create_room.html" ;
+                            } else if ( response2 == -2 ) { //未知的使用者登入
+                                alert("請先登入會員");
+                                location.href= "index_main.html" ;
+                            } else if ( response2 == -3 ) { //使用者未登入
+                                alert("請先登入會員");
+                                location.href= "index_main.html" ;
+                            }
+                            // console.log(response2) ;
+                        },
+                        error: function( xhr, status, error){
+                            console.error("error:", error);
+                        }
+                    });
+                },
+                error: function( xhr, status, error){
+                    console.error("error:", error);
+                }
+            })
+        })
+                        
 
         function getRandomInt(max) {
             let str = "" ;

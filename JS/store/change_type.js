@@ -26,6 +26,20 @@ for ( let i = 0 ; i < nav_left_list.length ; i++ ) {
                 }
             }
 
+        } else if ( this.classList.contains("face_type") ) { //確認使用者點選的物件是否包含"accessories_type"這個class名稱即點選到"配件"
+            // alert("accessories_type");
+            for ( let j = 0 ; j < number_list.length ; j++ ) {
+                if ( number_list[j].querySelector("div").classList.contains("eyebrow") ||
+                number_list[j].querySelector("div").classList.contains("eye") ||
+                number_list[j].querySelector("div").classList.contains("mouth") ) {
+                    // 檢查下方li物件底下第一個div是否含有"accessories1 or 2 or 3"這個class名稱，如果有則移除none這個class即顯示出來
+                    number_list[j].classList.remove("none");
+                } else {
+                    // 如果沒有則加上none這個class即隱藏起來
+                    number_list[j].classList.add("none");
+                }
+            }
+
         } else if ( this.classList.contains("clothes_type") ) { //確認使用者點選的物件是否包含"clothes_type"這個class名稱即點選到"上衣"
             // alert("clothes_type");
             for ( let j = 0 ; j < number_list.length ; j++ ) {
