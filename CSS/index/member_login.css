@@ -19,6 +19,18 @@ body::before {
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)); /* 線性漸變遮罩 */
 }
 
+.nav ul{
+  display: none;
+}
+
+ .nav{
+  margin-right: 8%;
+} 
+
+.nav a{
+  display: none;
+}
+
 
 .return{
   padding-left: 100px;
@@ -145,3 +157,25 @@ align-items: center;
         animation: left .5s infinite;
     }
   
+    /* ----------------414------------------------------ */
+     
+    @media screen and (max-width: 414px){
+  
+      body{
+        background-image: url(/IMG/index/rwd/background/background_2.png);
+        min-width:100%;
+        max-width:100%;
+        width: auto;
+        background-size: cover;
+        background-size: contain;
+      }
+     }
+
+     .box{
+      min-width:70%;
+      max-width:70%;
+      min-height:300px;
+      max-height:700px;
+      width: auto;
+
+     }
