@@ -220,8 +220,8 @@ font-weight: bold;
   border: none;
   padding: 10px 20px;
   position: absolute;
-  top: 88%;
-  left: 76%;
+  top: 80%;
+  left: 75%;
   transform: translate(-50%, -50%);
   cursor: pointer;
   font-weight: bold;
@@ -232,6 +232,19 @@ font-weight: bold;
   background-color: #ffffff;
   color: #000000;
   font-weight: bold;
+}
+
+.record{
+  display: flex;
+}
+
+.record #pay_record{
+  width: 50px;
+  position: absolute;
+  top: 88%;
+  right: 12%;
+  cursor: pointer;
+  filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.406));
 }
 
 /* 下方選單 */
@@ -341,21 +354,9 @@ font-weight: bold;
 }
 
 
-#nav_down_wrapper .clothes img{
-  transform: scale( 200% );
-}
-
-#nav_down_wrapper .bottoms img{
-  transform: scale( 200% ) translateY(-25%);
-}
-
-#nav_down_wrapper .eyebrow img{
-  transform: scale( 200% ) translateY(10%);
-}
-
-
 /*--------------------------- lightbox ---------------------------*/
 
+/* 確認配件 */
 .dresss_lightbox {
   position: fixed;
   top: 0;
@@ -491,6 +492,93 @@ font-weight: bold;
 .none{
   display: none;
 }
+
+/* 消費紀錄 */
+.pay_lightbox{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: hsla(0, 0%, 0%, 0.8);
+  z-index: 5;
+}
+
+.pay_none{
+  display: none;
+}
+
+.pay_wrapper{
+  background-color: #252833;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+  border-radius: 30px;
+  width: 800px;
+  height: 450px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.pay_close > .fa-xmark{
+  color: #405366;
+  font-size: 3rem;
+  margin-left: 90%;
+  margin-top: 3%;
+  cursor: pointer;
+}
+
+.pay_wrapper{
+  color: #fff;
+  text-align: center;
+  overflow: hidden;
+}
+
+.pay_wrapper > .pay_title{
+  color: #A0C0E1;
+  display: flex;
+  justify-content: space-around;
+  width: 80%;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.pay_wrapper > .pay{
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  overflow: auto;
+  height: 250px;
+  padding-right: 10px;
+}
+
+.pay_wrapper > .pay li{
+  display: flex;
+  border-bottom: 1px solid #405366;
+  margin-top: 30px;
+  justify-content: space-around;
+  padding-bottom: 10px;
+}
+
+.pay::-webkit-scrollbar {
+  width: 10px;
+}
+
+.pay::-webkit-scrollbar-thumb {
+  background: #A0C0E1;
+  border-radius: 10px;
+}
+
+.pay::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+
 
 /*------------------------------- 414 --------------------------------*/
 

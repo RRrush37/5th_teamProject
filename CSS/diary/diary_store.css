@@ -101,6 +101,9 @@ body {
 
 
 
+
+
+
 .text_nav {
     /* height: 80%; */
     display: flex;
@@ -131,9 +134,10 @@ body {
     /* margin: 1rem auto; */
 }
 
+/*------左方欄位---------------------*/
 .text_nav div a{
     color:#634921;
-    font-size: 2.5rem;
+    font-size: 2.8rem;
 }
 
 
@@ -174,6 +178,15 @@ body {
 }
 
 
+#the_block{
+    width: 50%;
+}
+
+
+
+
+
+
 /* -------------導覽列裡面的大頭貼------- */
 
 .member_photo{
@@ -205,14 +218,17 @@ body {
 .record_tab{
     padding: 3px 10px;
     padding: 5px 10px;
-    background-color: #77665A;
+    /* background-color: #77665A; */
+    
+    background-color: #d9c5b7;
     border: none;
     font-size: 1.5rem;
 
     margin-left: 0 5px;
 }
 .active{
-    background-color: #d9c5b7;
+    background-color: #78665A;
+    /* background-color: red; */
 
 }
 
@@ -767,6 +783,9 @@ table td{
 
 
 
+
+
+
 /* 
 
 #menu2 > ul{
@@ -789,6 +808,20 @@ table td{
     color: white;
 } */
 
+
+/*------------------------------- 414 --------------------------------*/
+
+@media screen and (max-width: 414px){
+    
+    body{
+        background-image: url(../../IMG/store/mall_room2.png);
+        min-width:100%;
+        max-width:100%;
+        width: auto;
+        background-size: cover;
+    }
+
+}
 
 
 

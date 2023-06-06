@@ -1,5 +1,5 @@
 body {
-  background-image: url(../../IMG/index/background/room_background.jpg);
+  background-image: url(IMG/index/background/room_background.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
@@ -78,7 +78,7 @@ body {
   top: 23%;
   width: 20%;
   height: 70%;
-  background-image: url(../../IMG/index/photo_frame.png);
+  background-image: url(IMG/index/photo_frame.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -211,9 +211,9 @@ font-weight: bold;
 }
 
 .check {
-  background-color: #ccd7b5;
-  font-weight: bold;
-  color: rgb(0, 0, 0);
+  background-color: #000;
+  box-shadow: 0 0 5px #ffffff;
+  color: white;
   font-size: 1.5rem;
   border-radius: 20px;
   border: none;
@@ -225,6 +225,7 @@ font-weight: bold;
   cursor: pointer;
   font-weight: bold;
 }
+
 
 .check:hover {
   box-shadow: 0 0 5px #ffffff;
@@ -394,7 +395,7 @@ font-weight: bold;
 }
 
 .dresss_choose {
-  background-image: url(../../IMG/store/photo_frame_3.png);
+  background-image: url(IMG/store/photo_frame_3.png);
   background-size: 53% auto;
   background-repeat: no-repeat;
   width: 606px;
@@ -484,10 +485,11 @@ font-weight: bold;
 @media screen and (max-width: 414px){
   
   body{
-    background-image: url(../../IMG/index/background/room_background.jpg);
+    background-image: url(IMG/store/mall_room2.png);
     min-width:100%;
     max-width:100%;
     width: auto;
+    background-size: cover;
   }
 
   .coutainer{
@@ -554,16 +556,32 @@ font-weight: bold;
     
     
   }
+  .nav_left::-webkit-scrollbar{
+    display: none;
+  }
 
+  
   .nav_left::before {
     content: "";
     position: absolute;
     left: 0;
     top: 0;
-    width: 140%;
+    width: 160%;
     height: 100%;
     background-color: rgba(255, 255, 255, 0.5); /* 设置白色透明度 */
     z-index: -1; /* 将遮罩层置于.choose下方 */
+  }
+
+  .nav_left::-webkit-scrollbar-thumb {
+    background-color: #ffffff; /* 設定滾動條的顏色 */
+    background-color: transparent;
+    border-radius: 5px; /* 設定滾動條的圓角 */
+    
+  }
+
+  .nav_left li:hover h2 {
+    font-size: 2.7em;
+    color: #511D1C;
   }
 
   .nav_left ul{
@@ -573,20 +591,18 @@ font-weight: bold;
 
   .nav_left ul li{
     border-bottom: none;
- 
+    left: 20%;
   }
 
   .nav_left ul li:hover{
-    color: #a0c0e1;
+    color: #fff;
   }
+
+  
 
   .money{
     margin-top: 100px;
   }
-}
-.nav_left::-webkit-scrollbar{
-  display: none;
-}
 /* 
   .number{
     margin: 10px;
@@ -599,6 +615,8 @@ font-weight: bold;
     box-shadow: rgb(255, 255, 255) 0px 0px 5px;
     border-radius: 20px;
   }
+
+  
 
   .dresss_lightbox{
     height: 100%;
@@ -665,4 +683,4 @@ font-weight: bold;
     background-repeat: no-repeat;
     background-position: center center;
 }
-
+}

@@ -39,9 +39,58 @@
 
 /* --------------我發起_發文-------------- */
 
-.activity_my_post_edit{
+.activity_article2 {
+    background-color: rgba(214, 209, 240, 0.9);
+    padding: 25px;
+    height: 77vh;
+    overflow-y: scroll;
+    scrollbar-gutter: stable both-edges;
+}
+
+.activity_my_post_edit {
     background-color: #fff;
     color: #7c7c7c;
     position: relative;
+    margin: 20px auto;
+    padding: 20px 40px;
 }
 
+label {
+    position: relative;
+    margin-bottom: 5px;
+    font-size: 1.5rem;
+}
+
+input,
+textarea,
+p,
+select {
+    margin-bottom: 5px;
+}
+
+input.title {
+    font-size: 3rem;
+    outline: none;
+    border: none;
+    color: #7c7c7c;
+    margin-bottom: 20px;
+}
+
+textarea.words {
+    width: 60%;
+    height: 100px;
+    font-size: 1.5rem;
+    border: 1px solid #3D2E96;
+    margin: 10px auto;
+    padding: 5px;
+}
+
+.btn_wrap {
+    display: flex;
+    justify-content: flex-end;
+    column-gap: 20px;
+}
+
+.btn_wrap button {
+    padding: 5px 15px;
+}
