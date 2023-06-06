@@ -128,7 +128,7 @@ body {
   text-underline-offset: 6px;
   font-size: 2rem;
   transition: all 0.3s ease-in-out;
-  margin-top: 2.5rem;
+  margin-top: 2rem;
   font-weight: bold;
 }
 
@@ -195,7 +195,7 @@ body {
 }
 
 .member_photo img {
-  width: 80%;
+  width: 45%;
   /* height: 50%; */
   display: block;
   margin: auto;
