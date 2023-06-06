@@ -24,7 +24,7 @@ if (isset($_SESSION["ID"])) {
     $statement->execute();
   }
 
-  echo json_encode($isKeep);
+  echo json_encode(!$isKeep);
 } else {
   echo -1;
 }

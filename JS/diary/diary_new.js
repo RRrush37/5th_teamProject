@@ -1,4 +1,5 @@
 import * as picture from "../../JS/member_picture.js";
+import * as collect from "./diary_collect.js";
 
 let user_img = document.getElementsByClassName("big_girl")[0] ;
 let user_img2 = document.getElementsByClassName("member_photo")[0] ;
@@ -8,6 +9,7 @@ picture.getMemberPicture(user_img2.querySelector("img"));
 picture.getMemberPicture(user_img3);
 // let card_article = document.getElementsByClassName("card_article");
 // picture.getMemberPicture(card_article[0].querySelector("img"));
+
 
 $(function(){
     $.ajax({
@@ -59,12 +61,10 @@ $.ajax({
                 rifht_my_activity.innerHTML +=
                 `
                 <h3>最新文章列表</h3>
-                <p>${row.articleTime}<br>
-                    ${row.articleTitle}</p>
+                <p>發佈:<br>${row.articleTime}</p>
+                <p>文章標題:<br>${row.articleTitle}</p>
                 <section>
-                    <p>
-                        ${row.articleContent}
-                    </p>
+                    <p>文章內容:<br>${row.articleContent}</p>
                 </section>
                 `;
 
@@ -95,14 +95,15 @@ $.ajax({
 
                     <div class="interact">
                         <div class="icon">
-                            <i class="fa-regular fa-heart"></i><span>${row.likeNum}</span>
-                            <i class="fa-regular fa-comment-dots"></i><span>${row.commentNum}</span>
-                            <i class="fa-regular fa-bookmark"></i>
+                            <i class="fa-regular fa-heart article_heart"></i><span>${row.likeNum}</span>
+                            <i class="fa-regular fa-comment-dots article_comment"></i><span>${row.commentNum}</span>
+                            <i class="fa-regular fa-bookmark article_bookmark"></i>
                         </div>
                             <button class="moreButton">Read more</button>
                     </div>
                 </div>
                 `;
+
             }
                 
         });
@@ -133,142 +134,265 @@ $.ajax({
                         
         });
 
+
+        let cards_content_list = document.getElementsByClassName("cards_content");
+        let like = document.getElementsByClassName("article_heart");
+        let all_article_like = document.getElementsByClassName("fa-heart");
+        let keep = document.getElementsByClassName("article_bookmark");
+        let all_article_keep = document.getElementsByClassName("fa-bookmark");
+        for ( let j = 0 ; j < cards_content_list.length ; j++ ) {
+            let articleID = cards_content_list[j].querySelector(".articleID").getAttribute("data-id")
+            // ================================ like on ================================
+            $.ajax({
+                url:"php/isLike.php",
+                type: "post",
+                dataType: "text",
+                data:{
+                    "articleID": articleID,
+                },
+                success:(response)=>{
+                    if (response == true) {
+                        like[j].classList.add("on");
+                    }
+                },
+                error: (xhr, status, error)=>{
+                    alert("error:"+error)
+                }
+
+            })
+            // ================================ like on ================================
+            // ================================ keep on ================================
+            $.ajax({
+                url:"php/isKeep.php",
+                type: "post",
+                dataType: "text",
+                data:{
+                    "articleID": articleID,
+                },
+                success:(response)=>{
+                    if (response == true) {
+                        keep[j].classList.add("on");
+                    }
+                },
+                error: (xhr, status, error)=>{
+                    alert("error:"+error)
+                }
+
+            })
+            // ================================ keep on ================================
+        }
+
+        
         let card_article = document.getElementsByClassName("card_article");
         for ( let i = 0 ; i < card_article.length ; i++ ) {
             getImg(card_article[i].querySelector("img"))
         }
 
+        // ====================================== readmore ========================================
         // 頁面上的按鈕//因為不只一個所以不用[0]
         // 取得頁面上所有具有 "moreButton" class 名稱的按鈕元素
         let moreButton = document.getElementsByClassName("moreButton");
         let articleID_list = document.getElementsByClassName("articleID");
+        let send_message_btn = document.getElementById("send_message"); //留言送出按鈕
+        let text_message = document.getElementById("message"); //留言內容
         let index_article = -1 ;
         //要用for迴圈去判斷目前是哪個//之後要去尋找哪個按鈕跟哪篇文章
         for ( let i = 0 ; i < moreButton.length ; i++ ) {
             // 在每個按鈕上加入點擊事件監聽器
-            moreButton[i].addEventListener("click", function(){
-                index_article = i ; //紀錄目前點到的是哪一篇文章
+            (function(index_i) {
+                moreButton[index_i].addEventListener("click", function(){
+                    index_article = index_i ; //紀錄目前點到的是哪一篇文章
 
-                // 移除 readmore_lightbox 元素的 "none" class，使其顯示出來
-                readmore_lightbox.classList.remove("none");
-                // console.log(articleID_list[i].getAttribute("data-id"));
-                let white = document.getElementsByClassName("white")[0]; //readmore內文
-                text_image = document.getElementsByClassName("text_image")[i];
-                white.innerHTML = "" ;
-                $.ajax({
-                    url:"php/getMainArticle.php",
-                    datatype: "json",
-                    method:"post",
-                    data:{
-                        "articleID":articleID_list[i].getAttribute("data-id")
-                    },
-                    success:(response)=>{
-                        response = JSON.parse(response);
-                        console.log(response);
-                        
-                        white.innerHTML =`
-                            <div class="top">
-                                <div class="img">
-                                    <img src="IMG/diary/forest.png" alt="">
-                                </div>
-                                <div id="readmore_id" data-id="${response.articleID}">
-                                    <h2>暱稱:${response.memberName}</h1>
-                                    <p>ID:${response.memberID}</p>
-                                </div>
-                            </div>
+                    // 移除 readmore_lightbox 元素的 "none" class，使其顯示出來
+                    readmore_lightbox.classList.remove("none");
+                    // console.log(articleID_list[i].getAttribute("data-id"));
+                    let white = document.getElementsByClassName("white")[0]; //readmore內文
+
+                    text_image = document.getElementsByClassName("text_image")[index_i];
+                    white.innerHTML = "" ;
+                    $.ajax({
+                        url:"php/getMainArticle.php",
+                        datatype: "json",
+                        method:"post",
+                        data:{
+                            "articleID":articleID_list[index_i].getAttribute("data-id")
+                        },
+                        success:(response)=>{
+                            response = JSON.parse(response);
+                            console.log("moreButton");
                             
-                            <div class="title">
-                                <h2 class="article">文章標題:${response.articleTitle}</h2>
-                                <p class="hour">發佈:${response.timeDiff}</p>
-                                <div id="readmore_article_img"></div>
-                                <p class="text">內文:${response.articleContent}</p>
-                            </div>
-                            <!------中間版面------------->
-                            <div class="middle"> 
-                                <div class="message">
-                                    <i class="fa-sharp fa-regular fa-heart"></i>
-                                    <span id="love_number">${response.thumbUpNum}</span>    
-                                    <i class="fa-regular fa-comment-dots"></i>
-                                    <span id="message_number">${response.commentNum}</span>
+                            white.innerHTML =`
+                                <div class="top">
+                                    <div class="img">
+                                        <img src="IMG/diary/forest.png" alt="">
+                                    </div>
+                                    <div id="readmore_id" data-id="${response.articleID}">
+                                        <h2>暱稱:${response.memberName}</h1>
+                                        <p>ID:${response.memberID}</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="title">
+                                    <h2 class="article">文章標題:${response.articleTitle}</h2>
+                                    <p class="hour">發佈:${response.timeDiff}</p>
+                                    <div id="readmore_article_img"></div>
+                                    <p class="text">內文:${response.articleContent}</p>
+                                </div>
+                                <!------中間版面------------->
+                                <div class="middle"> 
+                                    <div class="message">
+                                        <i class="fa-sharp fa-regular fa-heart"></i>
+                                        <span id="love_number">${response.thumbUpNum}</span>    
+                                        <i class="fa-regular fa-comment-dots"></i>
+                                        <span id="message_number">${response.commentNum}</span>
+                                    </div>
+
+                                    <i class="fa-regular fa-bookmark"></i>
+                                    <!-- <i class="fa-solid fa-bookmark"></i> -->
                                 </div>
 
-                                <i class="fa-regular fa-bookmark"></i>
-                                <!-- <i class="fa-solid fa-bookmark"></i> -->
-                            </div>
+                                <div class="middlebottom">
+                                    <p class="all">共${response.commentNum}則留言</p>
+                                </div>
+                            `
+                            let top_img = document.getElementsByClassName("white")[0].querySelector(".top .img");
+                            getImg(top_img.querySelector("img")); //補大頭貼
 
-                            <div class="middlebottom">
-                                <p class="all">共${response.commentNum}則留言</p>
-                            </div>
-                        `
-                        let top_img = document.getElementsByClassName("white")[0].querySelector(".top .img");
-                        getImg(top_img.querySelector("img")); //補大頭貼
+                            
+                            get_Comment_list(response.articleID); //加入留言
 
-                        
-                        get_Comment_list(response.articleID); //加入留言
+                            let readmore_article_img_el = document.getElementById("readmore_article_img"); // 文章圖片
 
-                        let readmore_article_img_el = document.getElementById("readmore_article_img"); // 文章圖片
+                            for ( let j = 0 ; j < text_image.querySelectorAll("img").length ; j++) {
+                                readmore_article_img_el.innerHTML += text_image.querySelectorAll("img")[j].outerHTML;
+                            }
 
-                        for ( let j = 0 ; j < text_image.querySelectorAll("img").length ; j++) {
-                            readmore_article_img_el.innerHTML += text_image.querySelectorAll("img")[j].outerHTML;
+                        },
+                        error: (xhr, status, error)=>{
+                            alert("error:"+error)
                         }
-
-                        let send_message_btn = document.getElementById("send_message"); //留言送出按鈕
-                        let text_message = document.getElementById("message"); //留言內容
-                        let readmore_id = document.getElementById("readmore_id");
-                        text_message.addEventListener("change",function(e){
-                            if ( text_message.value.length >= 147 && e.key != "Backspace" ){
-                                alert("內容長度不可超過150個字");
-                                e.preventDefault(); // 停止預設行為(在欄位上出現所打的文字)
-                            }
-                        })
-
-                        send_message_btn.addEventListener("click", function(e){
-                            e.preventDefault();
-                            if ( text_message.value.trim() == "" ) { //空的內容
-                                alert("請填寫留言內容");
-                            } else {
-
-                                send_comment(readmore_id.getAttribute("data-id"), text_message.value)
-                                .then((response) => {
-                                    // 在此處理成功回傳的 response
-                                    articleID_list[i].closest(".cards_content").querySelector(".icon").querySelectorAll("span")[1].innerHTML = response ;
-                                    // console.log("dadsa:"+articleID_list[i].closest(".cards_content").querySelector(".icon").querySelectorAll("span")[1].innerHTML);
-                                    
-                                    text_message.value = "" ; //清空內容
-                                    readmore_lightbox.classList.add("none"); // 關閉燈箱
-                                })
-                                .catch((error) => {
-                                    // 在此處理錯誤情況
-                                });
-                                
-                            }
-                        })
-
-                    },
-                    error: (xhr, status, error)=>{
-                        alert("error:"+error)
-                    }
-                })
-            });
+                    })
+                });
+            })(i);
         }
+
+        text_message.addEventListener("change",function(e){
+            if ( text_message.value.length >= 147 && e.key != "Backspace" ){
+                alert("內容長度不可超過150個字");
+                e.preventDefault(); // 停止預設行為(在欄位上出現所打的文字)
+            }
+        })
+
+        send_message_btn.addEventListener("click", function(e){
+            console.log("送出");
+            e.preventDefault();
+            let readmore_id = e.target.closest(".wrapper02").querySelector("#readmore_id");
+            let collect_articleID_list = document.getElementsByClassName("collect_articleID");
+            if ( text_message.value.trim() == "" ) { //空的內容
+                alert("請填寫留言內容");
+            } else {
+
+                send_comment(readmore_id.getAttribute("data-id"), text_message.value)
+                .then((response) => {
+                    // 在此處理成功回傳的 response
+                    for ( let i = 0 ; i < articleID_list.length ; i++ ) {
+                        if (articleID_list[i].getAttribute("data-id") == readmore_id.getAttribute("data-id")) {
+                            articleID_list[i].closest(".cards_content").querySelector(".icon").querySelectorAll("span")[1].innerHTML = response ;
+                            console.log("icon")
+                        }
+                    }
+
+                    for ( let j = 0 ; j < collect_articleID_list.length ; j++ ) {
+                        if (collect_articleID_list[j].getAttribute("data-id") == readmore_id.getAttribute("data-id")) {
+                            collect_articleID_list[j].closest(".collect_cards_content").querySelector(".collect_icon").querySelectorAll("span")[1].innerHTML = response ;
+                            console.log("collect_icon")
+                        }
+                    }
+                    
+                    // console.log("dadsa:"+articleID_list[i].closest(".cards_content").querySelector(".icon").querySelectorAll("span")[1].innerHTML);
+                    
+                    text_message.value = "" ; //清空內容
+                    readmore_lightbox.classList.add("none"); // 關閉燈箱
+                })
+                .catch((error) => {
+                    // 在此處理錯誤情況
+                });
+                
+            }
+        })
+        // ========================================== readmore =============================================
 
         // ============================= addlike ================================
 
-        let like = document.getElementsByClassName("fa-heart");
         for ( let i = 0 ; i < like.length ; i++ ) {
             like[i].addEventListener("click", function(e){
 
                 let article_id = e.target.closest(".cards_content").querySelector(".articleID").getAttribute("data-id");
                 let numOfLike = e.target.closest(".icon").querySelectorAll("span")[0];
+                let collect_article_id_list = document.getElementsByClassName("collect_articleID");
+                let collect_like = 0 ;
+                let collect_like_num = -1 ;
+                // console.log(collect_article_id_list); //神奇的抓到collect的物件
+                for ( let j = 0 ; j < collect_article_id_list.length ; j++) {
+                    if ( article_id == collect_article_id_list[j].getAttribute("data-id")) {
+                        collect_like = collect_article_id_list[j].closest(".collect_cards_content").querySelector(".collect_heart");
+                        collect_like_num = collect_like.nextElementSibling;
+                    }
+                }
 
-                // like[i].classList.toggle("on");
                 addLike(article_id)
                 .then((response) => {
+                    if ( response[1] == true) {
+                        like[i].classList.add("on");
+                        collect_like.classList.add("on");
+                    } else {
+                        like[i].classList.remove("on");
+                        collect_like.classList.remove("on");
+                    }
                     // 在此處理成功回傳的 response
                     response = JSON.parse(response);
-                    // articleID_list[i].closest(".cards_content").querySelector(".icon").querySelectorAll("span")[1].innerHTML = response ;
-                    
-                    // text_message.value = "" ; //清空內容
+                    numOfLike.innerHTML = response[0] ;
+                    collect_like_num.innerHTML = response[0] ;
+                    console.log("work")
+                })
+                .catch((error) => {
+                    // 在此處理錯誤情況
+                });
+            })
+        }
+
+        // ============================= addKeep ================================
+
+        for ( let i = 0 ; i < keep.length ; i++ ) {
+            keep[i].addEventListener("click", function(e){
+
+                let article_id = e.target.closest(".cards_content").querySelector(".articleID").getAttribute("data-id");
+                let collect_article_id_list = document.getElementsByClassName("collect_articleID");
+                let collect_keep = 0 ;
+                for ( let j = 0 ; j < collect_article_id_list.length ; j++) {
+                    if ( article_id == collect_article_id_list[j].getAttribute("data-id")) {
+                        collect_keep = collect_article_id_list[j].closest(".collect_cards_content").querySelector(".collect_bookmark");
+                    }
+                }
+                // keep[i].classList.toggle("on");
+                addKeep(article_id)
+                .then((response) => {
+                    response = JSON.parse(response);
+                    if ( response == true) {
+                        keep[i].classList.add("on");
+                        if (collect_keep != 0 ) {
+                            collect_keep.classList.add("on");
+                        }
+
+                        console.log("keep on")
+                    } else {
+                        keep[i].classList.remove("on");
+                        if (collect_keep != 0 ) {
+                            collect_keep.classList.remove("on");
+                        }
+                        console.log("keep off")
+                    }
+                    // 在此處理成功回傳的 response
 
                 })
                 .catch((error) => {
@@ -281,7 +405,11 @@ $.ajax({
     error: (xhr, status, error)=>{
         alert("error:"+error)
     }
+
 })
+
+
+collect.collect_list(); // 收藏
 
 function get_Comment_list(articleID){ // 取得留言
     let comment_list = document.getElementsByClassName("middlebottom")[0] ;
@@ -322,7 +450,7 @@ function get_Comment_list(articleID){ // 取得留言
 }
 
 function send_comment(articleID, message) { //送出留言
-    console.log("message"+message);
+
     return new Promise((resolve, reject) => {
         $.ajax({
             url: "php/addComment.php",
@@ -363,7 +491,7 @@ function addLike( articleID ) { //按讚或取消讚
             },
             success: (response) => {
                 resolve(response); // 回傳留言數
-                console.log("response"+response);
+
             },
             error: (xhr, status, error) => {
                 alert("error:" + error);
@@ -372,8 +500,26 @@ function addLike( articleID ) { //按讚或取消讚
         });
     });
 }
-function addKeep(){
+function addKeep(articleID){ //按收藏功能
 
+    return new Promise((resolve, reject) => {
+        $.ajax({
+            url: "php/addKeep.php",
+            datatype: "json",
+            method: "post",
+            data: {
+                "articleID": articleID
+            },
+            success: (response) => {
+                resolve(response); // 回傳留言數
+
+            },
+            error: (xhr, status, error) => {
+                alert("error:" + error);
+                reject(error);
+            }
+        });
+    });
 }
 
 //按下x的時候要不見

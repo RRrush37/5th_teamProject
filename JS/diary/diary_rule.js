@@ -242,6 +242,8 @@ $(function(){
                     }
                     
                 })
+
+                window.location.reload();
             },
             error: (xhr, status, error)=>{
                 alert("error:"+error)
