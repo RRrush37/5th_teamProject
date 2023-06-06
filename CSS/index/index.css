@@ -150,3 +150,15 @@ a:hover {
 
 /* 上面是能力直 */
   
+/*------------------------------- 414 --------------------------------*/
+
+@media screen and (max-width: 414px){
+  
+  body{
+    background-image: url(/IMG/index/rwd/background/background_2.png);
+    min-width:100%;
+    max-width:100%;
+    width: auto;
+    background-size: cover;
+  }
+}
