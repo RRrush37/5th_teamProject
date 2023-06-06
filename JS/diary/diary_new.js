@@ -9,7 +9,7 @@ picture.getMemberPicture(user_img2.querySelector("img"));
 picture.getMemberPicture(user_img3);
 // let card_article = document.getElementsByClassName("card_article");
 // picture.getMemberPicture(card_article[0].querySelector("img"));
-
+// let search_room_list = [];
 
 $(function(){
     $.ajax({
@@ -241,13 +241,13 @@ $.ajax({
                                 <!------中間版面------------->
                                 <div class="middle"> 
                                     <div class="message">
-                                        <i class="fa-sharp fa-regular fa-heart"></i>
+                                        <i class="fa-sharp fa-regular fa-heart read_heart"></i>
                                         <span id="love_number">${response.thumbUpNum}</span>    
-                                        <i class="fa-regular fa-comment-dots"></i>
+                                        <i class="fa-regular fa-comment-dots read_comment"></i>
                                         <span id="message_number">${response.commentNum}</span>
                                     </div>
 
-                                    <i class="fa-regular fa-bookmark"></i>
+                                    <i class="fa-regular fa-bookmark read_bookmark"></i>
                                     <!-- <i class="fa-solid fa-bookmark"></i> -->
                                 </div>
 
@@ -267,14 +267,164 @@ $.ajax({
                                 readmore_article_img_el.innerHTML += text_image.querySelectorAll("img")[j].outerHTML;
                             }
 
+                            let cards_content_list = document.getElementById("readmore_id");
+                            let read_like = document.getElementsByClassName("read_heart")[0];
+                            let read_keep = document.getElementsByClassName("read_bookmark")[0];
+
+                            let articleID = cards_content_list.getAttribute("data-id")
+                            // ================================ like on ================================
+                            $.ajax({
+                                url:"php/isLike.php",
+                                type: "post",
+                                dataType: "text",
+                                data:{
+                                    "articleID": articleID,
+                                },
+                                success:(response)=>{
+                                    if (response == true) {
+                                        read_like.classList.add("on");
+                                    }
+                                },
+                                error: (xhr, status, error)=>{
+                                    alert("error:"+error)
+                                }
+
+                            })
+                            // ================================ like on ================================
+                            // ================================ keep on ================================
+                            $.ajax({
+                                url:"php/isKeep.php",
+                                type: "post",
+                                dataType: "text",
+                                data:{
+                                    "articleID": articleID,
+                                },
+                                success:(response)=>{
+                                    if (response == true) {
+                                        read_keep.classList.add("on");
+                                    }
+                                },
+                                error: (xhr, status, error)=>{
+                                    alert("error:"+error)
+                                }
+
+                            })
+                            // ================================ keep on ================================
+
+                            // ============================= addlike ================================
+
+
+                            read_like.addEventListener("click", function(e){
+
+                                let numOfLike = read_like.nextElementSibling;
+                                let article_id = cards_content_list.getAttribute("data-id");
+                                let collect_article_id_list = document.getElementsByClassName("collect_articleID");
+                                let collect_like = 0 ;
+                                let collect_like_num = -1 ;
+                                // // console.log(collect_article_id_list); //神奇的抓到collect的物件
+                                for ( let j = 0 ; j < collect_article_id_list.length ; j++) {
+                                    if ( article_id == collect_article_id_list[j].getAttribute("data-id")) {
+                                        collect_like = collect_article_id_list[j].closest(".collect_cards_content").querySelector(".collect_heart");
+                                        collect_like_num = collect_like.nextElementSibling;
+                                    }
+                                }
+
+                                let article_id_list = document.getElementsByClassName("articleID");
+                                let article_like = 0 ;
+                                let article_like_num = -1 ;
+                                // console.log(collect_article_id_list); //神奇的抓到collect的物件
+                                for ( let j = 0 ; j < article_id_list.length ; j++) {
+                                    if ( article_id == article_id_list[j].getAttribute("data-id")) {
+                                        article_like = article_id_list[j].closest(".cards_content").querySelector(".article_heart");
+                                        article_like_num = article_like.nextElementSibling;
+                                    }
+                                }
+
+                                addLike(article_id)
+                                .then((response) => {
+                                    if ( response[1] == true) {
+                                        read_like.classList.add("on");
+                                        collect_like.classList.add("on");
+                                        article_like.classList.add("on");
+                                    } else {
+                                        read_like.classList.remove("on");
+                                        collect_like.classList.remove("on");
+                                        article_like.classList.remove("on");
+                                    }
+                                    // 在此處理成功回傳的 response
+                                    response = JSON.parse(response);
+                                    numOfLike.innerHTML = response[0] ;
+                                    collect_like_num.innerHTML = response[0] ;
+                                    article_like_num.innerHTML = response[0] ;
+                                    console.log("read like")
+                                })
+                                .catch((error) => {
+                                    // 在此處理錯誤情況
+                                });
+                            })
+
+                            // ============================= addKeep ================================
+
+                            read_keep.addEventListener("click", function(e){
+
+                                let article_id = cards_content_list.getAttribute("data-id");
+                                let collect_article_id_list = document.getElementsByClassName("collect_articleID");
+                                let collect_keep = 0 ;
+                                for ( let j = 0 ; j < collect_article_id_list.length ; j++) {
+                                    if ( article_id == collect_article_id_list[j].getAttribute("data-id")) {
+                                        collect_keep = collect_article_id_list[j].closest(".collect_cards_content").querySelector(".collect_bookmark");
+                                    }
+                                }
+
+                                let article_id_list = document.getElementsByClassName("articleID");
+                                let article_keep = 0 ;
+                                for ( let j = 0 ; j < article_id_list.length ; j++) {
+                                    if ( article_id == article_id_list[j].getAttribute("data-id")) {
+                                        article_keep = article_id_list[j].closest(".cards_content").querySelector(".article_bookmark");
+                                    }
+                                }
+                                // keep[i].classList.toggle("on");
+                                addKeep(article_id)
+                                .then((response) => {
+                                    response = JSON.parse(response);
+                                    if ( response == true) {
+                                        read_keep.classList.add("on");
+                                        if (collect_keep != 0 ) {
+                                            collect_keep.classList.add("on");
+                                        }
+                                        if (article_keep != 0 ) {
+                                            article_keep.classList.add("on");
+                                        }
+
+                                        console.log("read keep on")
+                                    } else {
+                                        read_keep.classList.remove("on");
+                                        if (collect_keep != 0 ) {
+                                            collect_keep.classList.remove("on");
+                                        }
+                                        if (article_keep != 0 ) {
+                                            article_keep.classList.remove("on");
+                                        }
+                                        console.log("read keep off")
+                                    }
+                                    // 在此處理成功回傳的 response
+
+                                })
+                                .catch((error) => {
+                                    // 在此處理錯誤情況
+                                });
+                            })
+
                         },
                         error: (xhr, status, error)=>{
                             alert("error:"+error)
                         }
                     })
+
                 });
             })(i);
         }
+
 
         text_message.addEventListener("change",function(e){
             if ( text_message.value.length >= 147 && e.key != "Backspace" ){
@@ -401,6 +551,17 @@ $.ajax({
             })
         }
 
+
+        // ====================================== search ========================
+        let search_btn = document.getElementsByClassName("search-btn")[0];
+        let search_el = document.getElementById("search") ;
+
+        search_btn.addEventListener("click", function(e){
+            e.preventDefault();
+            search( search_el.value );
+            console.log(search_el.value);
+        })
+
     },
     error: (xhr, status, error)=>{
         alert("error:"+error)
@@ -500,6 +661,7 @@ function addLike( articleID ) { //按讚或取消讚
         });
     });
 }
+
 function addKeep(articleID){ //按收藏功能
 
     return new Promise((resolve, reject) => {
@@ -520,6 +682,53 @@ function addKeep(articleID){ //按收藏功能
             }
         });
     });
+}
+
+function search( str ){
+    // console.log("search");
+    let search_article_list = [] ;
+    let search_collect_list = [] ;
+    let cards_content_list = document.getElementsByClassName("cards_content");
+    let collect_cards_content_list = document.getElementsByClassName("collect_cards_content");
+
+    // 文章列表_
+    Array.from(cards_content_list).filter(function(item, index) {
+        if (item.querySelector("h2").innerHTML.includes(str) == true) {
+            // console.log(item.querySelector("h2").innerHTML);
+            search_article_list.push(index); //存list中有被搜尋到的index
+        } else if (item.querySelector(".text_title").querySelector("p").innerHTML.includes(str) == true) {
+            // console.log(item.querySelector("h2").innerHTML);
+            search_article_list.push(index); //存list中有被搜尋到的index
+        }
+    });
+
+    // 收藏
+    Array.from(collect_cards_content_list).filter(function(item, index) {
+        if (item.querySelector("h2").innerHTML.includes(str) == true) {
+            // console.log(item.querySelector("h2").innerHTML);
+            search_collect_list.push(index); //存list中有被搜尋到的index
+        } else if (item.querySelector(".text_title").querySelector("p").innerHTML.includes(str) == true) {
+            // console.log(item.querySelector("h2").innerHTML);
+            search_collect_list.push(index); //存list中有被搜尋到的index
+        }
+    });
+
+    for ( let i = 0 ; i < cards_content_list.length ; i++ ) {
+        if ( search_article_list.includes(i) ) { //找到存放在list中有被搜尋到的index
+            cards_content_list[i].classList.remove("none");
+        } else {
+            cards_content_list[i].classList.add("none");
+        }
+    }
+
+    for ( let i = 0 ; i < collect_cards_content_list.length ; i++ ) {
+        if ( search_collect_list.includes(i) ) { //找到存放在list中有被搜尋到的index
+            collect_cards_content_list[i].classList.remove("none");
+        } else {
+            collect_cards_content_list[i].classList.add("none");
+        }
+    }
+
 }
 
 //按下x的時候要不見

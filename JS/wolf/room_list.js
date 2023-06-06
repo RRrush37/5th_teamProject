@@ -281,56 +281,7 @@ $.ajax({
                     }).catch(function(error) {
                         console.error("error:", error);
                     });
-    
-                    // let roomInfor = { //餘用戶端建立遊戲室資訊存於ssesionstorage
-                    //     "roomID": "",
-                    //     "roomName": "",
-                    //     "roomNum" : "",
-                    //     "roomPassword" : "",
-                    //     "lock" : "",
-                    //     "person" : 1,
-                    //     "player1" : "",
-                    //     "player2" : "",
-                    //     "player3" : "",
-                    //     "player4" : "",
-                    //     "player5" : "",
-                    //     "player6" : "",
-                    //     "player7" : "",
-                    // };
-    
-                    // $.ajax({
-                    //     url: "php/getRoomInformation.php",
-                    //     type: "POST",
-                    //     data: { 
-                    //         "roomNum" : roomNum
-                    //     },
-                    //     dataType:"json",
-                    //     success: function(response) {
-    
-                    //         roomInfor.roomID = response[0].roomID ;
-                    //         roomInfor.roomName = response[0].roomName ;
-                    //         roomInfor.roomNum = response[0].roomNum ;
-                    //         roomInfor.roomPassword = response[0].roomPassword ;
-                    //         roomInfor.lock = response[0].lock ;
-                    //         roomInfor.person = response[0].person ;
-                    //         roomInfor.player1 = response[0].player1 ;
-                    //         roomInfor.player2 = response[0].player2 ;
-                    //         roomInfor.player3 = response[0].player3 ;
-                    //         roomInfor.player4 = response[0].player4 ;
-                    //         roomInfor.player5 = response[0].player5 ;
-                    //         roomInfor.player6 = response[0].player6 ;
-                    //         roomInfor.player7 = response[0].player7 ;
-    
-                    //         sessionStorage.setItem("roomInfor", JSON.stringify(roomInfor));
-                    //         console.log(roomInfor);
-                    //         location.href= "wolf_room.html" ;
-    
-                    //     },
-                    //     error: function(xhr, status, error) {
-                    //         console.error("error:", error);
-                    //     }
-                    // })
-    
+        
                 } else {
                     incorrect.classList.remove("none");
                 }
