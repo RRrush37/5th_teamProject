@@ -238,7 +238,16 @@ input[type="checkbox"]:checked + span::before {
     display: flex;
 }
 
-.record #pay_record{
+/* .record #pay_record{
+    width: 50px;
+    position: absolute;
+    top: 88%;
+    right: 12%;
+    cursor: pointer;
+    filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.406));
+} */
+
+.record #stored_record{
     width: 50px;
     position: absolute;
     top: 88%;
@@ -247,19 +256,10 @@ input[type="checkbox"]:checked + span::before {
     filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.406));
 }
 
-.record #stored_record{
-    width: 50px;
-    position: absolute;
-    top: 88%;
-    right: 5%;
-    cursor: pointer;
-    filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.406));
-}
-
 /*------------------------------------- lightbox ----------------------------------*/
 
 /* 消費紀錄 */
-.pay_lightbox{
+/* .pay_lightbox{
     position: fixed;
     top: 0;
     left: 0;
@@ -283,7 +283,7 @@ input[type="checkbox"]:checked + span::before {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-}
+} */
 
 .fa-xmark {
     color: #405366;
@@ -293,7 +293,7 @@ input[type="checkbox"]:checked + span::before {
     cursor: pointer;
 }
 
-.pay_wrapper{
+/* .pay_wrapper{
     color: #fff;
     text-align: center;
     overflow: hidden;
@@ -342,7 +342,7 @@ input[type="checkbox"]:checked + span::before {
 
 .pay::-webkit-scrollbar-track {
     border-radius: 10px;
-}
+} */
 
 /* 儲值紀錄 */
 .stored_lightbox{
