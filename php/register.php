@@ -1,20 +1,9 @@
 <?php
 // 在 post_success.php 中
-
+ini_set("display_errors", "On");
 // 將資料編碼為 JSON 並返回給前端
 header('Content-Type: application/json');
-
-//MySQL相關資訊
-$db_host = "127.0.0.1";
-$db_user = "root";
-$db_pass = "password";
-$db_select = "5th_project";
-
-//建立資料庫連線物件
-$dsn = "mysql:host=" . $db_host . ";dbname=" . $db_select . ";charset=utf8";
-
-//建立PDO物件，並放入指定的相關資料
-$pdo = new PDO($dsn, $db_user, $db_pass);
+require("connectSQL.php");
 $name = isset($_POST['name']) ? htmlspecialchars($_POST['name']) : "";
 $email = isset($_POST['email']) ? htmlspecialchars($_POST['email']) : "";
 $password = isset($_POST['password']) ? htmlspecialchars($_POST['password']) : "";
