@@ -1,153 +1,192 @@
 body {
-  background-image: url(../../IMG/diary/forest.png);
+  background-image: url(/IMG/diary/forest.png);
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.2);
   background-blend-mode: multiply;
-}
-
-h1 {
-  margin: -23px 38px;
-  color: #ffffff;
+  min-width: 1200px;
+  max-width: 1920px;
 }
 
 .activity_title {
   margin-left: 20px;
-  cursor: pointer;
 }
 
-.activity_title > svg:hover {
+.activity_title a {
+  position: absolute;
+}
+
+.activity_title a:hover {
   animation: left 0.5s infinite;
 }
 
+
 @keyframes left {
   0% {
-    left: 0px;
+    margin-left: 0px;
   }
   100% {
-    left: -5px;
+    margin-left: -5px;
   }
 }
 
-.bar > .ability {
+/* .bar > .ability {
   text-shadow: #405366.1rem 0.1rem 0.4rem;
 }
 
 .bar .ability span:last-child {
-  background-color: #775050;
+  background-color: #405366;
 }
 
 .bar .ability span div {
-  background-color: #f9de9a;
-  color: #000;
-}
+  background-color: #a0c0e1;
+} */
 
 .user {
-  border: #a0c0e1 solid 2px;
+  border: #634921 solid 2px;
+}
+
+.widget {
+  color: #634921;
+}
+
+.widget a {
+  color: #634921;
 }
 
 .activity_title h1 {
   color: white;
-  text-shadow: #405366.1rem 0.1rem 0.4rem;
+  text-shadow: #634921.1rem 0.1rem 0.4rem;
 }
 
-.choose_wrapper {
-  display: flex;
-}
 
-/*-----所有版面進行致中---------*/
+
+
+
+
+
 .wrapper {
   display: flex;
-  /* position: relative; */
+  width: 100%;
 }
 
-/*-----左邊導覽列-----------------------*/
+/* 左邊選單 */
 .nav_left {
-  background-image: url(../../IMG/diary/_Pngtree_frame_5628982_2-removebg-preview.png);
-  width: 195px;
-  height: 360px;
-  opacity: 0.8;
-  margin: 25px 160px 10px;
+  position: absolute;
+  left: 10%;
+  top: 23%;
+  width: 20%;
+  height: 70%;
+  background-image: url(../../IMG/diary/photo_frame.png);
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
+  box-shadow: 0 2px 14px rgba(0, 0, 0, 0.2);
+  padding: 2rem;
   background-size: 190% 132%;
-  background-color: rgb(231, 231, 231);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav_left::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 95%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.5); /* 设置白色透明度 */
+  z-index: -1; /* 将遮罩层置于.choose下方 */
 }
 
 .nav_left ul {
   display: flex;
   flex-direction: column;
   text-align: center;
+
 }
 
 .nav_left ul li {
-  color: white;
-  text-shadow: #405366.1rem 0.1rem 0.4rem;
-  border-bottom: 2px solid #6f632588;
+  
+  color: rgb(0, 0, 0);
   width: 100px;
-  margin: 32px auto 0px;
+  margin: 15px auto 0;
+  padding-bottom: 10px;
+  cursor: pointer;
+  position: relative;
+overflow: hidden;
+font-weight: bold;
+
 }
 
-.nav_left ul li :hover {
-  color: black;
-  font-weight: bold;
-  border-bottom: 2px solid black;
-  box-sizing: border-box;
+
+.nav_left h2 {
+  position: relative;
+  display: inline-block;
+  transition: all 0.2s ease-in-out;
+  font-size: 2.5rem;
+  
 }
 
-.nav_left ul li.on {
-  color: black;
-  font-weight: bold;
-  border-bottom: 2px solid black;
-  box-sizing: border-box;
-}
-
-/*------中間人物---------------*/
-/* .coutainer{
-    background-image: url(../../IMG/diary/leaf.png);
-    background-size: 70% auto;
-    background-repeat: no-repeat;
-    width:370px;
-    height: 562px;
-    position: absolute;
-    top:29%;
-
-    left: 50%;
-    transform: translate(-35%, -30%);
-    background-position: 5px 91px;
-}
-
-.coutainer > .people {
-    position: absolute;
-    top: 42%;
-    left: 37%;
-    transform: translate(-50%, -50%); /* 修改为平移容器的中心点 */
-/* width: 137px; */
-/* } */
-
-.coutainer {
-  /* border: 200px solid red; */
-  /* position: absolute;
-    top: 20%;
-    left: 36%;
-
-    background-image: url(../../IMG/diary/leaf.png);
-    background-size: 70% auto;
-    background-repeat: no-repeat;
-
-    width: 300px;
-    height: 100px; */
-
+.nav_left h2::after {
+  content: "";
   position: absolute;
-  top: 3%;
-  left: 36%;
-  background-image: url(../../IMG/diary/leaf.png);
-  background-size: 70% auto;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2.5px;
+  background-color: #634921;
+  text-shadow: #000000.1rem 0.1rem 0.4rem;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease-in-out;
+}
+
+.nav_left li:hover h2 {
+  font-size: 3.5em;
+  color: #634921;
+}
+
+.nav_left li:hover h2::after {
+  transform: scaleX(1);
+}
+
+.nav_left li:hover h2 {
+  /* background-color: rgba(255, 255, 255, 0.64); */
+}
+
+
+/* 人偶 */
+.coutainer {
+  /* background-image: url(../../IMG/index/photo_frame_2.png); */
+  background-size: contain;
   background-repeat: no-repeat;
-  width: 400px;
-  height: 372px;
-  background-position: 5px 91px;
+  background-position: center center;
+  width: 363.6px;
+  height: 337.2px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.coutainer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -62px;
+  width: 135%;
+  height: 80%;
+  border-radius: 20px;
+  background: #0000008f;
+}
+
+
+.doll {
+  /* background-image: url(../../IMG/people/hair4.png),url(../../IMG/people/glasses.png),url(../../IMG/people/mask.png),url(../../IMG/people/m2.png),url(../../IMG/people/e2.png),url(../../IMG/people/eb3.png),url(../../IMG/people/top4.png),url(../../IMG/people/bottom4.png), url(../../IMG/people/body.png); */
+  /* background-image: url(../../IMG/people/body.png); */
 }
 
 .coutainer .doll,
@@ -160,62 +199,23 @@ h1 {
 .coutainer .hair,
 .coutainer .accessories2,
 .coutainer .accessories3 {
-  width: 250px;
+  width: 162.5px;
   height: 250px;
   position: absolute;
-  top: 32%;
-  left: 10%;
+  top: 5%;
+  left: 28%;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center center;
+  
 }
 
-.doll {
-  background-image: url(../../IMG/people/body.png);
-}
-
-.coutainer .eyebrow {
-  background-image: url(../../IMG/people/eb1.png);
-}
-
-.coutainer .eye {
-  background-image: url(../../IMG/people/e1.png);
-}
-
-.coutainer .mouth {
-  background-image: url(../../IMG/people/m1.png);
-}
-
-.coutainer .clothes {
-  background-image: url(../../IMG/people/top3.png);
-}
-
-.coutainer .bottoms {
-  background-image: url(../../IMG/people/bottom3.png);
-}
-
-.coutainer .accessories1 {
-  background-image: url(../../IMG/people/mask.png);
-}
-
-.coutainer .hair {
-  background-image: url(../../IMG/people/hair1.png);
-}
-
-.coutainer .accessories2 {
-  background-image: url(../../IMG/people/cap.png);
-}
-
-.coutainer .accessories3 {
-  background-image: url(../../IMG/people/glasses.png);
-}
-
-/*----更換按鈕--------*/
 .check {
-  background-color: #f9de9a;
-  color: black;
-  font-size: 2rem;
-  border-radius: 15px;
+  background-color: #ccd7b5;
+  font-weight: bold;
+  color: rgb(0, 0, 0);
+  font-size: 1.5rem;
+  border-radius: 20px;
   border: none;
   padding: 10px 20px;
   position: absolute;
@@ -223,55 +223,461 @@ h1 {
   left: 75%;
   transform: translate(-50%, -50%);
   cursor: pointer;
-  box-shadow: 0 0 5px #ffffff;
 }
-/*-----下方導覽列----------*/
+
+.check:hover {
+  box-shadow: 0 0 5px #ffffff;
+  background-color: #634921;
+  color: white;
+}
+
+/* 下方選單 */
 .nav_down {
   background: #ffffffaa;
   position: absolute;
   width: 500px;
   left: 50%;
-  top: 83%;
-  transform: translate(-50%, -50%);
-  overflow: auto;
-}
-
-.nav_down ul {
-  display: flex;
-  align-items: center;
-  height: 150px;
-  padding: 0;
-}
-
-.nav_down ul li {
-  flex-shrink: 0;
-  width: 86.56px;
-  height: 86px;
-  margin: 10px 17px;
-  /* background-color: #ffffff; */
+  top: 80%;
+  border-radius: 10px;
+  transform: translate(-50%, -40%);
   overflow: hidden;
+  cursor: pointer;
 }
 
-.nav_down ul::-webkit-scrollbar {
+#nav_down_wrapper {
+  display: flex;
+  height: 120px;
+  width: 480px;
+  margin: 10px auto;
+  overflow-y: hidden;
+}
+
+/* .number {
+  cursor: pointer;
+  display: flex;
+  margin: 10px 20px;
+} */
+
+.money {
+  display: flex;
+  margin-top: 120px;
+  padding-right: 10px;
+}
+
+.money p {
+  color: #000;
+  margin-left: 5px;
+}
+
+#nav_down_wrapper::-webkit-scrollbar {
+  height: 10px;
   width: 10px;
 }
 
-.nav_down ul::-webkit-scrollbar-thumb {
-  background: #ffffffcb;
+#nav_down_wrapper::-webkit-scrollbar-thumb {
+  background: #623307;
   border-radius: 10px;
 }
 
-.nav_down ul::-webkit-scrollbar-track {
-  background: #77747595;
+#nav_down_wrapper::-webkit-scrollbar-track {
+  background: #00000000;
   border-radius: 10px;
 }
 
-/*--------------*/
 
-ul li img {
-  width: 100%;
+.doll ,.hair ,.clothes ,.bottoms ,.accessories1 
+,.accessories2 ,.accessories3 ,.eyebrow ,.eye ,.mouth{
+  width: 150px;
+  height: 150px;
+  display: flex;
+  justify-content: center;
 }
 
-.e1 img {
+.mouth {
+  overflow: hidden;
+}
+
+.doll img,
+.hair img,
+.clothes img,
+.bottoms img,
+.accessories1 img,
+.accessories2 img,
+.accessories3 img,
+.glasses img,
+.eyebrow img,
+.eye img,
+.mouth img{
+  height: 100%;
+}
+
+/* 針對嘴巴另外設置大小 */
+#nav_down_wrapper .mouth img{
+  transform: scale( 500% ) translateY(5%);
+}
+/* 針對眼睛另外設置大小 */
+#nav_down_wrapper .eye  img{
+  transform: scale( 200% ) translateY(10%);
+}
+/* 針對眉毛另外設置大小 */
+#nav_down_wrapper .eyebrow  img{
+  transform: scale( 200% ) translateY(10%);
+}
+/* 針對褲子另外設置大小 */
+#nav_down_wrapper .bottoms img{
+  transform: scale( 100% ) translateY(-40%);
+}
+/* 針對上衣和另外設置大小 */
+#nav_down_wrapper .clothes img {
+  transform: scale( 100% ) translateY(-20%);
+}
+
+/* 針對頭髮和另外設置大小 */
+#nav_down_wrapper .hair img {
+  transform: scale( 90% ) translateY(-5%);
+}
+
+
+/*--------------------------- lightbox ---------------------------*/
+
+.dresss_lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
+  height: 100vh;
+  background-color: hsla(0, 0%, 0%, 0.8);
+  z-index: 5;
+}
+
+.dresss {
+  background-color: #ffffffbb;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 500px;
+  border-radius: 30px;
+}
+
+.dresss_none {
+  display: none;
+}
+
+.dresss > article {
+  color: white;
+  width: 75%;
+  height: 70%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+}
+
+.fa-xmark {
+  font-size: 3rem;
+  margin-left: 90%;
+  margin-top: 5%;
+  cursor: pointer;
+}
+
+.buy_wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.dresss_choose {
+  background-image: url(../../IMG/store/photo_frame_3.png);
+  background-size: 53% auto;
+  background-repeat: no-repeat;
+  width: 606px;
+  height: 562px;
+  display: flex;
+  margin-left: 60px;
+}
+
+.doll_lightbox {
+  /* background-image: url(../../IMG/people/body.png); */
+  width: 130px;
+  height: 200px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 15%;
+  left: 35%;
+  display: flex;
+  justify-content: center;
+}
+
+.doll_lightbox .doll,
+.doll_lightbox .hair,
+.doll_lightbox .clothes,
+.doll_lightbox .bottoms,
+.doll_lightbox .accessories1,
+.doll_lightbox .accessories2,
+.doll_lightbox .accessories3,
+.doll_lightbox .eyebrow,
+.doll_lightbox .eye,
+.doll_lightbox .mouth{
+  width: 130px;
+  height: 200px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+
+.money1 {
+  display: flex;
+  align-items: center;
+}
+
+.money1 #result {
+  font-size: 3rem;
+  color: #000;
+  margin-left: 10px;
+}
+
+.send {
+  background-color: #ffff;
+  color: #000;
+  font-size: 2rem;
+  border-radius: 15px;
+  border: none;
+  padding: 8px 15px;
+  cursor: pointer;
+  
+}
+
+.send:hover {
+  box-shadow: 0 0 5px #727272;
+}
+
+.send_check {
+  background-color: #000;
+  color: rgb(255, 255, 255);
+  font-size: 2rem;
+  border-radius: 15px;
+  border: none;
+  padding: 8px 15px;
+  cursor: pointer;
+  margin-left: 20px;
+}
+
+.send_check:hover {
+  box-shadow: 0 0 5px #000000;
+}
+
+.none{
+  display: none;
+}
+
+/*------------------------------- 414 --------------------------------*/
+
+@media screen and (max-width: 414px){
+  
+  body{
+    background-image: url(../../IMG/diary/forest.png);
+    min-width:100%;
+    max-width:100%;
+    width: auto;
+    background-size: cover;
+  }
+
+  .coutainer{
+    background-image: url();
+    width: 65%;
+  }
+  
+  .coutainer::before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: -48px;
+    width: 135%;
+    height: 80%;
+    border-radius: 20px;
+    background: rgba(0, 0, 0, 0.56);
+}
+
+  .wrapper{
+    
+  }
+
+  .nav_down{
+    width: 300px;
+    height: 150px;
+    top: 87%;
+  }
+
+  #nav_down_wrapper{
+    width: 330px;
+    height: 200px;
+    
+  }
+
+  /* 下方選單 */
+.nav_down {
+  background: rgba(255, 255, 255, 0.667);
+  position: absolute;
+  width: 361px;
+  left: 55%;
+  top: 85%;
+  border-radius: 10px;
+  transform: translate(-56%, -40%);
+  overflow: hidden;
+  cursor: pointer;
+}
+
+  #nav_down_wrapper::-webkit-scrollbar{
+    height: 20px;
+  }
+
+  .nav_left{
+    background-image: url(index_build_roles.html.css);
+    margin: 0px auto;
+    max-width: 100%;
+    width: 360px;
+    height: 108px;
+    position: absolute;
+    top: 65%;
+    left: 25px;
+    overflow-x: scroll;
+    white-space: nowrap;
+    border-radius: 10px;
+    
+    
+  }
+  .nav_left::-webkit-scrollbar{
+    display: none;
+  }
+
+  
+  .nav_left::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 160%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.5); /* 设置白色透明度 */
+    z-index: -1; /* 将遮罩层置于.choose下方 */
+  }
+
+  .nav_left::-webkit-scrollbar-thumb {
+    background-color: #ffffff; /* 設定滾動條的顏色 */
+    background-color: transparent;
+    border-radius: 5px; /* 設定滾動條的圓角 */
+    
+  }
+
+  .nav_left li:hover h2 {
+    font-size: 2.7em;
+    color: #511D1C;
+  }
+
+  .nav_left ul{
+    flex-direction: row;
+  }
+    
+
+  .nav_left ul li{
+    border-bottom: none;
+    left: 20%;
+  }
+
+  .nav_left ul li:hover{
+    color: #fff;
+  }
+
+  
+
+  .money{
+    margin-top: 100px;
+  }
+/* 
+  .number{
+    margin: 10px;
+  } */
+
+  .check{
+    font-size: 1.5rem;
+    top: 57%;
+    left: 80%;
+    box-shadow: rgb(255, 255, 255) 0px 0px 5px;
+    border-radius: 20px;
+  }
+
+  
+
+  .dresss_lightbox{
+    height: 100%;
+  }
+
+  .dresss{
+    width: 380px;
+    height: 520px;
+  }
+
+  .dresss_choose{
+    margin-left: 0;
+    background-size: 79%;
+    width: 480px;
+  }
+
+  .dresss > article{
+    width: 100%;
+    height: 82%;
+    top: 55%;
+  }
+
+  .fa-xmark{
+    font-size: 4rem;
+    margin-left: 85%;
+  }
+
+  .doll_lightbox{
+    left: 30%;
+  }
+
+  .doll_lightbox .doll,
+  .doll_lightbox .hair,
+  .doll_lightbox .clothes,
+  .doll_lightbox .bottoms,
+  .doll_lightbox .accessories1,
+  .doll_lightbox .accessories2,
+  .doll_lightbox .accessories3,
+  .doll_lightbox .eyebrow,
+  .doll_lightbox .eye,
+  .doll_lightbox .mouth{
+    width: 150px;
+    height: 250px;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .send{
+    font-size: 2.5rem;
+  }
+
+  .send_check{
+    font-size: 2.5rem;
+  }
+
+  .coutainer .doll, .coutainer .eyebrow, .coutainer .eye, .coutainer .mouth, .coutainer .clothes, .coutainer .bottoms, .coutainer .accessories1, .coutainer .hair, .coutainer .accessories2, .coutainer .accessories3 {
+    width: 162.5px;
+    height: 250px;
+    position: absolute;
+    top: 5%;
+    left: 17%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
 }
