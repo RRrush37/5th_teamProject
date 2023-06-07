@@ -112,15 +112,14 @@ body {
 }
 
 .nav_left ul li {
-  
   color: rgb(0, 0, 0);
   width: 100px;
   margin: 15px auto 0;
   padding-bottom: 10px;
   cursor: pointer;
   position: relative;
-overflow: hidden;
-font-weight: bold;
+  overflow: hidden;
+  font-weight: bold;
 
 }
 
@@ -354,6 +353,18 @@ font-weight: bold;
 }
 
 
+#nav_down_wrapper .clothes img{
+  transform: scale( 200% );
+}
+
+#nav_down_wrapper .bottoms img{
+  transform: scale( 200% ) translateY(-25%);
+}
+
+#nav_down_wrapper .eyebrow img{
+  transform: scale( 200% ) translateY(10%);
+}
+
 /*--------------------------- lightbox ---------------------------*/
 
 /* 確認配件 */
@@ -578,7 +589,6 @@ font-weight: bold;
 .pay::-webkit-scrollbar-track {
   border-radius: 10px;
 }
-
 
 /*------------------------------- 414 --------------------------------*/
 
