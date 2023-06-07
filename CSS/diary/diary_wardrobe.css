@@ -78,7 +78,7 @@ body {
   top: 23%;
   width: 20%;
   height: 70%;
-  background-image: url(../../IMG/diary/photo_frame.png);
+  background-image: url(/IMG/diary/photo_frame.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
