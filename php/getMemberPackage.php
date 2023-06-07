@@ -49,5 +49,7 @@ if (checkIfLogin()) {
     echo json_encode($myitem);
 
     // echo $success;
-} else
+} else{
     echo -1;
+}
+    
