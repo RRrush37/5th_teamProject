@@ -68,19 +68,19 @@ function buy(){
 }
 
 // 消費紀錄style更換
-let pay_record = document.getElementById("pay_record");
-pay_record.addEventListener("mouseenter", function() {
-  if (pay_record.src.includes("pay_record3.png")) {
-    pay_record.src = "IMG/store/pay_record1.png";
-    pay_record.style.filter = 'drop-shadow(3px 3px 3px rgb(0, 0, 0))';
-  }
-});
-pay_record.addEventListener("mouseleave", function() {
-  if (pay_record.src.includes("pay_record1.png")) {
-    pay_record.src = "IMG/store/pay_record3.png";
-    pay_record.style.filter = 'drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.406))';
-  }
-});
+// let pay_record = document.getElementById("pay_record");
+// pay_record.addEventListener("mouseenter", function() {
+//   if (pay_record.src.includes("pay_record3.png")) {
+//     pay_record.src = "IMG/store/pay_record1.png";
+//     pay_record.style.filter = 'drop-shadow(3px 3px 3px rgb(0, 0, 0))';
+//   }
+// });
+// pay_record.addEventListener("mouseleave", function() {
+//   if (pay_record.src.includes("pay_record1.png")) {
+//     pay_record.src = "IMG/store/pay_record3.png";
+//     pay_record.style.filter = 'drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.406))';
+//   }
+// });
 
 // 儲值紀錄style更換
 let stored_record = document.getElementById("stored_record");
@@ -100,73 +100,83 @@ stored_record.addEventListener("mouseleave", function() {
 
 // lightbox
 // 消費紀錄燈箱
-let pay_lightbox = document.getElementsByClassName("pay_lightbox")[0];
-let pay_wrapper = document.getElementsByClassName("pay_wrapper");
+// let pay_lightbox = document.getElementsByClassName("pay_lightbox")[0];
+// let pay_wrapper = document.getElementsByClassName("pay_wrapper");
 
-pay_record.addEventListener("click", function(){
-  pay_lightbox.classList.remove("pay_none");
-});
+// pay_record.addEventListener("click", function(){
+//   pay_lightbox.classList.remove("pay_none");
+// });
 
-let pay_close = document.getElementsByClassName("pay_close")[0];
-pay_close.addEventListener("click", function(){
-  pay_lightbox.classList.add("pay_none");
-});
+// let pay_close = document.getElementsByClassName("pay_close")[0];
+// pay_close.addEventListener("click", function(){
+//   pay_lightbox.classList.add("pay_none");
+// });
 
-pay_lightbox.addEventListener("click", function(){
-  this.classList.add("pay_none");
-});
+// pay_lightbox.addEventListener("click", function(){
+//   this.classList.add("pay_none");
+// });
 
-pay_lightbox.querySelector(".pay_wrapper").addEventListener("click", function(e){
-  e.stopPropagation();
-});
-
-
-// $.ajax({
-//   method: "POST",
-//   url: "",
-//   data:{},
-//   dataType: "json",
-//   success: function (response) {
-
-//       $.each(response, function(index, row) {
-
-//           $(".pay").append(
-//               `
-//               <li>
-//                    <p>${row.date}</p>
-//                    <p>${row.buy}</p>
-//                    <p>${row.balance}</p>
-//               </li>
-//               `
-//           );
-//       });
-//   },
-//   error: function(exception) {
-//       alert("數據載入失敗: " + exception.status);
-//   }
+// pay_lightbox.querySelector(".pay_wrapper").addEventListener("click", function(e){
+//   e.stopPropagation();
 // });
 
 
-$.ajax({
-  url: "php/getBuyLog.php",
-  method: "post",
-  datatype: "json",
-  data: {
-    type: "2",
-  },
-  success: (reponse) => {
-    alert(reponse);
-    reponse = JSON.parse(reponse);
-    let str = "123123";
-    for (let i = 0; i < reponse.length; i++) {
-      str += reponse[0];
-    }
-    $("#tiny").html(str);
-  },
-  error: (xhr, status, error) => {
-    alert("error: " + error);
-  },
-});
+// 消費
+// $.ajax({
+//   url: "php/getBuyLog.php",
+//   method: "post",
+//   datatype: "json",
+//   data: {
+//     type: "1",
+//   },
+//   success: (response) => {
+//     alert(response);
+//     response = JSON.parse(response);
+//     console.log(response[0].totalCoin);
+//     console.log(response[0]);
+//     let str = "";
+    
+//     for (let i = 0; i < response.length; i++) {
+//       let month = Math.floor(response[i].date/100);
+//       let day = response[i].date%100;
+//       let str1 =
+//       `
+//         <li>
+//             <p>${month}/${day}</p>
+//             <p>${response[i].coinChange}</p>
+//             <p>${response[i].totalCoin}</p>
+//         </li>
+//       `
+//       str += str1;
+//     }
+//     document.querySelector(".pay").innerHTML = str
+//   },
+//   error: (xhr, status, error) => {
+//     alert("error: " + error);
+//   },
+// });
+
+// $.ajax({
+//   url: "",
+//   method: "post",
+//   datatype: "json",
+//   data: {
+//     type: "2",
+//   },
+//   success: (response) => {
+//     // alert(response);
+//     console.log(response);
+//     response = JSON.parse(response);
+//     let str = "123123";
+//     for (let i = 0; i < response.length; i++) {s
+//       str += response[0];
+//     }
+//     $("#tiny").html(str);
+//   },
+//   error: (xhr, status, error) => {
+//     // alert("error: " + error);
+//   },
+// });
 
 
 // 儲值紀錄燈箱
@@ -190,32 +200,8 @@ stored_lightbox.querySelector(".stored_wrapper").addEventListener("click", funct
   e.stopPropagation();
 });
 
-// $.ajax({
-//   method: "POST",
-//   url: "",
-//   data:{},
-//   dataType: "json",
-//   success: function (response) {
 
-//       $.each(response, function(index, row) {
-
-//           $(".stored").append(
-//               `
-//               <li>
-//                    <p>${row.date}</p>
-//                    <p>${row.coin}</p>
-//                    <p>${row.remain}</p>
-//               </li>
-//               `
-//           );
-//       });
-//   },
-//   error: function(exception) {
-//       alert("數據載入失敗: " + exception.status);
-//   }
-// });
-
-
+// 儲值
 $.ajax({
   url: "php/getBuyLog.php",
   method: "post",
@@ -223,15 +209,28 @@ $.ajax({
   data: {
     type: "1",
   },
-  success: (reponse) => {
-    alert(reponse);
-    reponse = JSON.parse(reponse);
-    let str = "123123";
-    for (let i = 0; i < reponse.length; i++) {
-      str += reponse[0];
-
+  success: (response) => {
+    alert(response);
+    response = JSON.parse(response);
+    console.log(response[0].totalCoin);
+    console.log(response[0]);
+    let str = "";
+    
+    for (let i = 0; i < response.length; i++) {
+      let month = Math.floor(response[i].date/100);
+      let day = response[i].date%100;
+      let str1 =
+      `
+        <li>
+            <p>${month}/${day}</p>
+            <p>${response[i].coinChange}</p>
+            <p>${response[i].totalCoin}</p>
+        </li>
+      `
+      str += str1;
     }
-    $("#tiny").html(str);
+    document.querySelector(".stored").innerHTML = str
+    // $(".stored").html(str);
   },
   error: (xhr, status, error) => {
     alert("error: " + error);

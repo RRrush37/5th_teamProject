@@ -1,12 +1,50 @@
 // 連結頁面
-function navigateToUrl() {
-  const selectElement = document.getElementById("choose");
-  const selectedValue = selectElement.value;
-  window.location.href = selectedValue;
-}
+// function navigateToUrl() {
+//   const selectElement = document.getElementById("choose");
+//   const selectedValue = selectElement.value;
+//   window.location.href = selectedValue;
+// }
+
+
+// 先要錢金幣資料
+// $.ajax({
+//   url: "php/getBuyLog.php",
+//   method: "post",
+//   datatype: "json",
+//   data: {
+//     type: "1",
+//   },
+//   success: (response) => {
+//     alert(response);
+//     response = JSON.parse(response);
+//     console.log(response[0].totalCoin);
+//     console.log(response[0]);
+//     let str = "";
+    
+//     for (let i = 0; i < response.length; i++) {
+//       let month = Math.floor(response[i].date/100);
+//       let day = response[i].date%100;
+//       let str1 =
+//       `
+//         <li>
+//             <p>${month}/${day}</p>
+//             <p>${response[i].coinChange}</p>
+//             <p>${response[i].totalCoin}</p>
+//         </li>
+//       `
+//       str += str1;
+//     }
+//     document.querySelector(".stored").innerHTML = str
+//     // $(".stored").html(str);
+//   },
+//   error: (xhr, status, error) => {
+//     alert("error: " + error);
+//   },
+// });
 
 
 // lightbox
+// 確認配件
 let dresss_lightbox = document.getElementsByClassName("dresss_lightbox")[0];
 let check = document.getElementsByClassName("check")[0];
 let reset = document.getElementsByClassName("reset")[0];
@@ -23,7 +61,6 @@ let doll = { //用來儲存data-index記錄小人身上穿戴的物件
   "eye": -1,
   "mouth": -1
 };
-
 
 
 // 確認
@@ -47,6 +84,7 @@ check.addEventListener("click", function(){
 
 
 // lightbox
+// 確認配件
 let send = document.getElementsByClassName("send")[0];
 send.addEventListener("click", function(){
     dresss_lightbox.classList.add("dresss_none");
@@ -63,6 +101,81 @@ dresss_lightbox.addEventListener("click", function(){
 
 dresss_lightbox.querySelector(".dresss").addEventListener("click", function(e){
   e.stopPropagation();
+});
+
+
+// 消費紀錄style更換
+let pay_record = document.getElementById("pay_record");
+pay_record.addEventListener("mouseenter", function() {
+  if (pay_record.src.includes("pay_record3.png")) {
+    pay_record.src = "IMG/store/pay_record1.png";
+    pay_record.style.filter = 'drop-shadow(3px 3px 3px rgb(0, 0, 0))';
+  }
+});
+pay_record.addEventListener("mouseleave", function() {
+  if (pay_record.src.includes("pay_record1.png")) {
+    pay_record.src = "IMG/store/pay_record3.png";
+    pay_record.style.filter = 'drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.406))';
+  }
+});
+
+
+// lightbox
+// 消費紀錄燈箱
+let pay_lightbox = document.getElementsByClassName("pay_lightbox")[0];
+let pay_wrapper = document.getElementsByClassName("pay_wrapper");
+
+pay_record.addEventListener("click", function(){
+  pay_lightbox.classList.remove("pay_none");
+});
+
+let pay_close = document.getElementsByClassName("pay_close")[0];
+pay_close.addEventListener("click", function(){
+  pay_lightbox.classList.add("pay_none");
+});
+
+pay_lightbox.addEventListener("click", function(){
+  this.classList.add("pay_none");
+});
+
+pay_lightbox.querySelector(".pay_wrapper").addEventListener("click", function(e){
+  e.stopPropagation();
+});
+
+
+// 消費
+$.ajax({
+  url: "php/getBuyLog.php",
+  method: "post",
+  datatype: "json",
+  data: {
+    type: "1",
+  },
+  success: (response) => {
+    alert(response);
+    response = JSON.parse(response);
+    console.log(response[0].totalCoin);
+    console.log(response[0]);
+    let str = "";
+    
+    for (let i = 0; i < response.length; i++) {
+      let month = Math.floor(response[i].date/100);
+      let day = response[i].date%100;
+      let str1 =
+      `
+        <li>
+            <p>${month}/${day}</p>
+            <p>${response[i].coinChange}</p>
+            <p>${response[i].totalCoin}</p>
+        </li>
+      `
+      str += str1;
+    }
+    document.querySelector(".pay").innerHTML = str
+  },
+  error: (xhr, status, error) => {
+    alert("error: " + error);
+  },
 });
 
 
@@ -647,7 +760,9 @@ function addToTotal(number, addOrMinus) {
 }
 
 // 重選
-reset.addEventListener("click", function(){
+reset.addEventListener("click", resetAll())
+
+function resetAll(){
   doll_box_hair.src = "";
   doll_box_clothes.src = "";
   doll_box_bottoms.src = "";
@@ -680,52 +795,185 @@ reset.addEventListener("click", function(){
   }; 
 
   total = 0;
-})
-
+}
 
 let sendCheck = document.getElementsByClassName('send_check')[0];
 
 sendCheck.addEventListener('click',function(e){
-// let dresss_lightbox = document.getElementsByClassName('dresss_lightbox')[0];
-let money = document.getElementById('result').innerText;
+  // let dresss_lightbox = document.getElementsByClassName('dresss_lightbox')[0];
+  let money = document.getElementById('result').innerText;
 
-console.log(money);
+  console.log(money);
+  let myitem = { 
+    "hair": [],
+    "clothes": [],
+    "bottoms": [],
+    "accessories1": [],
+    "accessories2": [],
+    "accessories3": [],
+    "eyebrow": [],
+    "eye": [],
+    "mouth": []
+  }; 
 
-$.ajax({
-  url: "",
-  method: "POST",
-  dataType: "json",
-  data: {
-    "money":money,
-    // "doll_list" : doll,
-    "hair" : doll.hair,
-    "clothes": doll.clothes,
-    "bottoms": doll.bottoms,
-    "accessories1": doll.accessories1,
-    "accessories2": doll.accessories2,
-    "accessories3": doll.accessories3,
-    "eyebrow": doll.eyebrow,
-    "eye": doll.eye,
-    "mouth": doll.mouth
-  },
-  success: function(response) {
-    if (response.status === "success") {
-      alert("確定購買");
+  
+  $.ajax({
+    url: "php/getMemberPackage.php",
+    method: "POST",
+    dataType: "text",
+    data: {},
+    success: function(response) {
+      response = JSON.parse(response);
+      console.log(response);
+  
+      //將資料庫的資料放到myitem裡面
+      $.each(response, function(index, row) {
+        // console.log(row);
+        if (index === "hair" && Array.isArray(row)) {
+          myitem.hair = row;
+        } else if (index === "clothes" && Array.isArray(row)) {
+          myitem.clothes = row;
+        } else if (index === "bottoms" && Array.isArray(row)) {
+          myitem.bottoms = row;
+        } else if (index === "accessories1" && Array.isArray(row)) {
+          myitem.accessories1 = row;
+        } else if (index === "accessories2" && Array.isArray(row)) {
+          myitem.accessories2 = row;
+        } else if (index === "accessories3" && Array.isArray(row)) {
+          myitem.accessories3 = row;
+        } else if (index === "eyebrow" && Array.isArray(row)) {
+          myitem.eyebrow = row;
+        } else if (index === "eye" && Array.isArray(row)) {
+          myitem.eye = row;
+        } else if (index === "mouth" && Array.isArray(row)) {
+          myitem.mouth = row;
+        }
+      });
+  
+      console.log(myitem);
 
-    } else if (response.status === "error") {
-      alert("購買失敗");
+      //用myitem與這次購買doll的裝備做比較
+      $.each(myitem, function(index, row) {
 
-    } else {
-      alert("未知狀態");
+        if ( index === "hair" ) {
+          $.each(row, function(index, row2) {
+            if ( row2 == doll.hair ) {
+              doll.hair = -1;
+            }
+          })
+        } else if (index === "clothes" ) {
+          $.each(row, function(index, row2) {
+            if ( row == doll.clothes ) {
+              doll.clothes = -1;
+            }
+          })
+        } else if (index === "bottoms" ) {
+          $.each(row, function(index, row2) {
+            if ( row == doll.bottoms ) {
+              doll.bottoms = -1;
+            }
+          })
+        } else if (index === "accessories1" ) {
+          $.each(row, function(index, row2) {
+            if ( row == doll.accessories1 ) {
+              doll.accessories1 = -1;
+            }
+          })
+        } else if (index === "accessories2" ) {
+          $.each(row, function(index, row2) {
+            if ( row == doll.accessories2 ) {
+              doll.accessories2 = -1;
+            }
+          })
+        } else if (index === "accessories3") {
+          $.each(row, function(index, row2) {
+            if ( row == doll.accessories3 ) {
+              doll.accessories3 = -1;
+            }
+          })
+        } else if (index === "eyebrow" ) {
+          $.each(row, function(index, row2) {
+            if ( row == doll.eyebrow ) {
+              doll.eyebrow = -1;
+            }
+          })
+        } else if (index === "eye" ) {
+          $.each(row, function(index, row2) {
+            if ( row == doll.eye ) {
+              doll.eye = -1;
+            }
+          })
+        } else if (index === "mouth" ) {
+          $.each(row, function(index, row2) {
+            if ( row == doll.mouth ) {
+              doll.mouth = -1;
+            }
+          })
+        }
+      });
+      console.log(doll);
 
+      let checkOK = false ;
+      $.each(doll, function(index, row) {
+        console.log(row);
+        if ( row != -1 ) {
+          checkOK = true ;
+        }
+      })
+
+      if (checkOK) { // 至少有一項商品沒有買過
+        $.ajax({
+            url: "php/buy_dress.php",
+            method: "POST",
+            dataType: "text",
+            data: {
+              "money":money,
+              // "doll_list" : doll,
+              "hair" : doll.hair,
+              "clothes": doll.clothes,
+              "bottoms": doll.bottoms,
+              "accessories1": doll.accessories1,
+              "accessories2": doll.accessories2,
+              "accessories3": doll.accessories3,
+              "eyebrow": doll.eyebrow,
+              "eye": doll.eye,
+              "mouth": doll.mouth
+            },
+            success: function(response) {
+              response = JSON.parse(response);
+              console.log(response);
+              if (response == "success") {
+
+                alert("購買成功");
+                resetAll();
+                dresss_lightbox.classList.add("dresss_none");
+              } else if (response == "balance") {
+                alert("餘額不足");
+                location.href = "store_pay_record.html";
+              } else {
+                alert("未知狀態");
+                console.log(response);
+              }
+              // alert("確定購買");
+            },
+            error: function(exception) {
+              alert("數據載入失敗: " + exception.status);
+            
+            }
+          });
+      } else {
+        //全部都是購買過的東西，所以不存入資料庫
+        resetAll();
+      }
+
+
+    },
+    error: function(exception) {
+      alert("數據載入失敗: " + exception.status);
     }
-    // alert("確定購買");
-  },
-  error: function(exception) {
-    alert("數據載入失敗: " + exception.status);
-   
-  }
-});
+  });
+
+ 
 
 })
 
