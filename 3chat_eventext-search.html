@@ -77,245 +77,308 @@
         
 
         <div class="m-text-search">
+            <div id="mix-bar">
+                <span id="general-info" class="on">行程查詢</span><span id="event-info">會員查詢</span>
+            </div> 
+            <div id="eventdata-search" class="search-bar">
+                <h2>行程查詢</h2>
+                <table>
+                    <button id="eventcreate-btn" class="add-btn">
+                        新增<img src="img/chat/plus2.svg" alt="">
+                        </button>
+                    <tr>
+                        <td>活動編號</td>
+                        <td><input type="text" id="search_activityID"></td>
+                    </tr>
+                    <tr>
+                        <td>活動名稱</td>
+                        <td><input type="text" id="search_title"></td>
+                    </tr>
+                    <tr>
+                        <td>活動類型</td>
+                        <td>
+                            <select name="search_topic" id="search_topic">
+                                <option value="戶外" selected>戶外</option>
+                                <option value="休閒">休閒</option>
+                                <option value="室內">室內</option>
+                                <option value="益智">益智</option>
+                                <option value="手作">手作</option>
+                                <option value="夜生活">夜生活</option>
+                            </select>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>活動時間</td>
+                        <td>
+                            <input type="date" id="myDate" name="myDate" value="2023-01-01">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>活動地點</td>
+                        <td>
+                            <select name="search_loc" id="search_loc">
+                                <option value="北部" selected>北部</option>
+                                <option value="中部">中部</option>
+                                <option value="南部">南部</option>
+                                <option value="東部">東部</option>
+                                <option value="離島">離島</option>
+                            </select>
+                        </td>
+                    </tr>
+                </table>
+                <button id="eventdata-btn" class="search-btn">查詢</button>
+                
+            </div>
 
-
-                <div id="mix-bar">
-                    <span id="general-info" class="on">官方行程查詢</span><span id="event-info">會員查詢</span>
-                </div> 
-                <div id="eventdata-search" class="search-bar">
-                    <h2>官方行程查詢</h2>
+            <div id="eventdata" class=" hide-bar">
+                <h2>活動資料</h2>                      
+                    <img id="back-btn" src="IMG/chat/Vector.svg" alt="">                       
+                <!-- <div class="membertext-left"> -->
                     <table>
-                        <button id="eventcreate-btn" class="add-btn">
-                            新增<img src="img/chat/plus2.svg" alt="">
-                            </button>
-                        <tr>
+                        <!-- <tr>
                             <td>活動編號</td>
-                            <td><input type="text"></td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>活動標籤</td>
+                            <td>
+                                <select name="edit_topic" id="edit_topic" disabled>
+                                    <option value="戶外" checked>戶外</option>
+                                    <option value="休閒">休閒</option>
+                                    <option value="室內">室內</option>
+                                    <option value="益智">益智</option>
+                                    <option value="手作">手作</option>
+                                    <option value="夜生活">夜生活</option>
+                                </select>
+                            </td>
                         </tr>
                         <tr>
                             <td>活動名稱</td>
-                                <td><input type="text"></td>
-                       </tr>
+                            <td>
+                                <input type="text"  id="edit_title" disabled>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>活動人數</td>
+                            <td>
+                                <input type="text" id="edit_person" name="edit_person" disabled>
+                            </td>
+                        </tr>
                         <tr>
                             <td>活動時間</td>
                             <td>
-                                <input type="date" id="myDate" name="myDate" value="2023-01-01">
+                                <input type="date" name="depart" id="depart_time" style="margin-right: 5px;" disabled>到
+                                <input type="date" name="leave" id="leave_time" style="margin-left: 5px;" disabled>
                             </td>
+                        </tr>
+                        <tr>
+                            <td>活動地點</td>
+                            <td>
+                                <select name="edit_loc" id="edit_loc" disabled>
+                                    <option value="北部">北部</option>
+                                    <option value="中部">中部</option>
+                                    <option value="南部">南部</option>
+                                    <option value="東部">東部</option>
+                                    <option value="離島">離島</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>活動內容</td>
+                            <td>
+                                <textarea name="edit_content" id="edit_content" style=" resize:none; width: 50%;" disabled></textarea>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>活動條件</td>
+                            <td>
+                                <label for="boyonly">
+                                    <input type="checkbox" id="boyonly" name="boyonly" value="限男" disabled>
+                                    <span class="check-button">限男</span>
+                                </label>
+                                <label for="girlonly">
+                                    <input type="checkbox" id="girlonly" name="girlonly" value="限女" disabled>
+                                    <span class="check-button">限女</span>
+                                </label>
+                                <label for="motorLicense">
+                                    <input type="checkbox" id="motorLicense" name="motorLicense" value="機車駕照" disabled>
+                                    <span class="check-button">機車駕照</span>
+                                </label>
+                                <label for="age18">
+                                    <input type="checkbox" id="age18" name="age18" value="限18以上" disabled>
+                                    <span class="check-button">限18以上</span>
+                                </label>
+                            </td>
+                        </tr> -->
+                    </table>
+                <!-- </div> -->
+
+                <!-- <div class="membertext-right">
+                    <table>
+                        <tr>
+                            <td>活動限制</td>
+                            <td>11111111111</td>
+                        </tr>
+                        <tr>
+                            <td>活動圖片</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>會員星座</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>會員年齡</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>會員生日</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>會員興趣</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>個性簽名</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>遊戲幣</td>
+                            <td>1</td>
+                        </tr>
+                    </table>
+                    
+                </div> -->
+                <div class="btn_box">
+                    <button id="edit_activity_btn" class="search-btn">編輯</button>
+                    <button class="search-btn" id="confirmedit_btn" style="display: none;">變更</button>
+                    <button id="canceledit-btn" class="search-btn" style="display: none;">取消編輯</button>
+                    <button id="delete-btn" class="search-btn">刪除</button>
+                </div>
+            </div>
+
+            <div id="eventdata-create" class=" hide-bar">
+                <h2>新增活動資料</h2>                      
+                    <img id="back-btn2" src="IMG/chat/Vector.svg" alt="">                       
+                <div class="membertext-left">
+                    <table>
+                        <tr>
+                            <td>活動編號</td>
+                            <td>男/女</td>
+                        </tr>
+                        <td>活動名稱</td>
+                        <td>202CM</td>
+                        <tr>
+                            <td>活動時間</td>
+                            <td><input type="date" id="myDate" name="myDate" value="2023-01-01"></td>
                         </tr>
                         <tr>
                             <td>活動類型</td>
-                            <td><input type="text"></td>
+                            <td>背ABC</td>
                         </tr>
                         <tr>
                             <td>活動狀態</td>
-                            <td>
-                                <input type="radio" checked>開啟
-                                <input type="radio">關閉
-                            </td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>活動人數</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>活動標籤</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>活動地點</td>
+                            <td>1</td>
                         </tr>
                     </table>
-                    <button id="eventdata-btn" class="search-btn">查看</button>
-
                 </div>
 
-                <div id="eventdata" class=" hide-bar">
-                    <h2>官方活動編輯</h2>                      
-                        <img id="back-btn" src="IMG/chat/Vector.svg" alt="">                       
-                    <div class="membertext-left">
-                        <table>
-                            <tr>
-                                <td>活動編號</td>
-                                <td>男/女</td>
-                            </tr>
-                            <td>活動名稱</td>
-                            <td>202CM</td>
-                            <tr>
-                                <td>活動時間</td>
-                                <td><input type="date" id="myDate" name="myDate" value="2023-01-01"></td>
-                            </tr>
-                            <tr>
-                                <td>活動類型</td>
-                                <td>背ABC</td>
-                            </tr>
-                            <tr>
-                                <td>活動狀態</td>
-                                <td>1</td>
-                            </tr>
-                            <tr>
-                                <td>活動人數</td>
-                                <td>1</td>
-                            </tr>
-                            <tr>
-                                <td>活動標籤</td>
-                                <td>1</td>
-                            </tr>
-                            <tr>
-                                <td>活動地點</td>
-                                <td>1</td>
-                            </tr>
-                        </table>
-                    </div>
-
-                    <div class="membertext-right">
-                        <table>
-                            <tr>
-                                <td>活動限制</td>
-                                <td>11111111111</td>
-                            </tr>
-                            <tr>
-                                <td>活動圖片</td>
-                                <td>1</td>
-                            </tr>
-                            <tr>
-                                <td>會員星座</td>
-                                <td>1</td>
-                            </tr>
-                            <tr>
-                                <td>會員年齡</td>
-                                <td>1</td>
-                            </tr>
-                            <tr>
-                                <td>會員生日</td>
-                                <td>1</td>
-                            </tr>
-                            <tr>
-                                <td>會員興趣</td>
-                                <td>1</td>
-                            </tr>
-                            <tr>
-                                <td>個性簽名</td>
-                                <td>1</td>
-                            </tr>
-                            <tr>
-                                <td>遊戲幣</td>
-                                <td>1</td>
-                            </tr>
-                        </table>
-                        
-                    </div>
-                    <button class="search-btn">變更</button>
-                </div>
-
-                <div id="eventdata-create" class=" hide-bar">
-                    <h2>新增活動資料</h2>                      
-                        <img id="back-btn2" src="IMG/chat/Vector.svg" alt="">                       
-                    <div class="membertext-left">
-                        <table>
-                            <tr>
-                                <td>活動編號</td>
-                                <td>男/女</td>
-                            </tr>
-                            <td>活動名稱</td>
-                            <td>202CM</td>
-                            <tr>
-                                <td>活動時間</td>
-                                <td><input type="date" id="myDate" name="myDate" value="2023-01-01"></td>
-                            </tr>
-                            <tr>
-                                <td>活動類型</td>
-                                <td>背ABC</td>
-                            </tr>
-                            <tr>
-                                <td>活動狀態</td>
-                                <td>1</td>
-                            </tr>
-                            <tr>
-                                <td>活動人數</td>
-                                <td>1</td>
-                            </tr>
-                            <tr>
-                                <td>活動標籤</td>
-                                <td>1</td>
-                            </tr>
-                            <tr>
-                                <td>活動地點</td>
-                                <td>1</td>
-                            </tr>
-                        </table>
-                    </div>
-
-                    <div class="membertext-right">
-                        <table>
-                            <tr>
-                                <td>活動限制</td>
-                                <td>11111111111</td>
-                            </tr>
-                            <tr>
-                                <td>活動圖片</td>
-                                <td>1</td>
-                            </tr>
-                            <tr>
-                                <td>會員星座</td>
-                                <td>1</td>
-                            </tr>
-                            <tr>
-                                <td>會員年齡</td>
-                                <td>1</td>
-                            </tr>
-                            <tr>
-                                <td>會員生日</td>
-                                <td>1</td>
-                            </tr>
-                            <tr>
-                                <td>會員興趣</td>
-                                <td>1</td>
-                            </tr>
-                            <tr>
-                                <td>個性簽名</td>
-                                <td>1</td>
-                            </tr>
-                            <tr>
-                                <td>遊戲幣</td>
-                                <td>1</td>
-                            </tr>
-                        </table>
-                        
-                    </div>
-                    <button class="search-btn">變更</button>
-                </div>
-
-                <div id="memberdata-search" class="hide-bar">
-                    <h2>會員資料查詢</h2>
+                <div class="membertext-right">
                     <table>
                         <tr>
-                            <td>會員編號</td>
-                            <td><input type="text"></td>
+                            <td>活動限制</td>
+                            <td>11111111111</td>
                         </tr>
                         <tr>
-                            <td>會員名稱</td>
-                            <td><input type="text"></td>
+                            <td>活動圖片</td>
+                            <td>1</td>
                         </tr>
                         <tr>
-                            <td>Email</td>
-                            <td><input type="text"></td>
+                            <td>會員星座</td>
+                            <td>1</td>
                         </tr>
                         <tr>
-                            <td>會員身分</td>
-                            <td>
-                                <select>
-                                    <option selected>一般</option>
-                                    <option>管理員</option>
-                                </select>
-                            </td>
+                            <td>會員年齡</td>
+                            <td>1</td>
                         </tr>
                         <tr>
-                            <td>會員狀態</td>
-                            <td>
-                                <select>
-                                    <option selected>正常</option>
-                                    <option>警告</option>
-                                    <option>禁言</option>
-                                    <option>封鎖</option>
-                                </select>
-                            </td>
+                            <td>會員生日</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>會員興趣</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>個性簽名</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>遊戲幣</td>
+                            <td>1</td>
                         </tr>
                     </table>
-                    <button id="memberdata-btn" class="search-btn">查看</button>
+                    
                 </div>
-                <div id="memberdata" class=" hide-bar">
-                    <h2>會員活動明細</h2>                      
-                        <img id="back-btn3" src="IMG/chat/Vector.svg" alt="">      
-                    <div class="membertext">                         
+                <button class="search-btn">變更</button>
+            </div>
+
+            <div id="memberdata-search" class="hide-bar">
+                <h2>會員資料查詢</h2>
+                <table>
+                    <tr>
+                        <td>會員編號</td>
+                        <td><input type="text"></td>
+                    </tr>
+                    <tr>
+                        <td>會員名稱</td>
+                        <td><input type="text"></td>
+                    </tr>
+                    <tr>
+                        <td>Email</td>
+                        <td><input type="text"></td>
+                    </tr>
+                    <tr>
+                        <td>會員身分</td>
+                        <td>
+                            <select>
+                                <option selected>一般</option>
+                                <option>管理員</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>會員狀態</td>
+                        <td>
+                            <select>
+                                <option selected>正常</option>
+                                <option>警告</option>
+                                <option>禁言</option>
+                                <option>封鎖</option>
+                            </select>
+                        </td>
+                    </tr>
+                </table>
+                <button id="memberdata-btn" class="search-btn">查看</button>
+            </div>
+            <div id="memberdata" class=" hide-bar">
+                <h2>會員活動明細</h2>                      
+                    <img id="back-btn3" src="IMG/chat/Vector.svg" alt="">      
+                <div class="membertext">                         
                     <div class="membertext-left">
                         <table>
                             <tr>
@@ -388,87 +451,41 @@
                         </table>
                         
                     </div>
-                    </div>
-                    <button class="search-btn">變更</button>
                 </div>
-                <div class="list-bottom">
-                    <div class="list_title_box">
-                        <h3>會員列表</h3>
-                    </div>
-                    <div class="list_box">
+                <button class="search-btn">變更</button>
+            </div>
+            <div class="list-bottom">
+                <div class="list_title_box">
+                    <h3>活動列表</h3>
+                </div>
+                <div class="list_box">
                     <div class="list-bottom-first">
                         <div>
                             <span>活動編號</span>
                             <span>活動名稱</span>
-                            <span>活動時間</span>
                             <span>活動類型</span>
-                            <span>活動狀態</span>
-                            <span>查看</span>
+                            <span>活動時間</span>
+                            <span>活動地點</span>
+                            <span>查看<span>
                         </div>
     
                     </div>
                     <ul>
-                        <li>
+                        <!-- <li>
                             <span>活動編號</span>
                             <span>活動名稱</span>
                             <span>活動時間</span>
                             <span>活動類型</span>
                             <span>活動狀態</span>
-                          <a href="#">查看</a>
-                        </li>
-                        <li>
-                            <span>活動編號</span>
-                            <span>活動名稱</span>
-                            <span>活動時間</span>
-                            <span>活動類型</span>
-                            <span>活動狀態</span>
-                          <a href="#">查看</a>
-                        </li>
-                        <li>
-                            <span>活動編號</span>
-                            <span>活動名稱</span>
-                            <span>活動時間</span>
-                            <span>活動類型</span>
-                            <span>活動狀態</span>
-                          <a href="#">查看</a>
-                        </li>
-                        <li>
-                            <span>活動編號</span>
-                            <span>活動名稱</span>
-                            <span>活動時間</span>
-                            <span>活動類型</span>
-                            <span>活動狀態</span>
-                          <a href="#">查看</a>
-                        </li>
-                        <li>
-                            <span>活動編號</span>
-                            <span>活動名稱</span>
-                            <span>活動時間</span>
-                            <span>活動類型</span>
-                            <span>活動狀態</span>
-                          <a href="#">查看</a>
-                        </li>
-                        <li>
-                            <span>活動編號</span>
-                            <span>活動名稱</span>
-                            <span>活動時間</span>
-                            <span>活動類型</span>
-                            <span>活動狀態</span>
-                          <a href="#">查看</a>
-                        </li>
-                        <li>
-                            <span>活動編號</span>
-                            <span>活動名稱</span>
-                            <span>活動時間</span>
-                            <span>活動類型</span>
-                            <span>活動狀態</span>
-                          <a href="#">查看</a>
-                        </li>
-                      </ul>
-                    </div>
-                </div>   
-            </div>
+                            <a href="#">查看</a>
+                        </li> -->
+                    </ul>
+                </div>
+            </div>   
+        </div>
 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="JS/chat/event.js"></script>
     <script src="JS/backstage/backstage_header.js"></script>
+    <script src="JS/chat/3chat_event.js"></script>
 </html>

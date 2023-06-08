@@ -73,14 +73,15 @@
             </ul>
         </div>
     </header>
+
     <div id="wrapper">
-        
 
         <div class="m-text-search">
 
 
             <div id="mix-bar">
-                <span id="general-info" class="on">一般商品資料查詢</span><span id="event-info">活動商品資料查詢</span>
+                <span id="general-info" class="on">一般商品資料查詢</span>
+                <!-- <span id="event-info">活動商品資料查詢</span> -->
             </div>
             <div id="malldata-bar" class="search-bar">
                 <h2>商城資料查詢</h2>
@@ -90,31 +91,32 @@
                 <table>
                     <tr>
                         <td>商品編號</td>
-                        <td><input type="text"></td>
+                        <td><input id="search_id" type="text"></td>
                     </tr>
                     <tr>
                         <td>商品類別</td>
                         <td>
-                            <select>
-                                <option selected>客製化角色裝備</option>
+                            <select id="search_type">
+                                <option value="others" selected>客製化角色裝備</option>
+                                <option value="coin" >遊戲幣</option>
                             </select>
                         </td>
                     </tr>
                     <tr>
                         <td>商品名稱</td>
-                        <td><input type="text"></td>
+                        <td><input id="search_name" type="text"></td>
                     </tr>
                     <tr>
                         <td>商品狀態</td>
                         <td>
-                            <select>
-                                <option selected>上架中</option>
-                                <option>未上架</option>
+                            <select id="search_status">
+                                <option value="上架中" selected>上架中</option>
+                                <option value="下架">下架</option>
                             </select>
                         </td>
                     </tr>
                     <tr>
-                        <td>銷售時間</td>
+                        <td>銷售時間點</td>
                         <td>
                             <input type="date" id="myDate" name="myDate" value="2023-01-01">
                         </td>
@@ -128,34 +130,73 @@
                 <table>
                     <tr>
                         <td>商品名稱</td>
-                        <td><input type="text" id="name"></td>
+                        <td><input type="text" id="new_name"></td>
                     </tr>
                     <tr>
                         <td>商品狀態</td>
-                        <td><input type="text" id="status"></td>
+                        <td>
+                            <select id="new_status">
+                                <option value="上架中" selected>上架中</option>
+                                <option value="下架">下架</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>商品型別</td>
+                        <td><select id="new_type">
+                                <option value="coin" selected>遊戲幣</option>
+                                <option value="hair">髮型</option>
+                                <option value="clothes" >上衣</option>
+                                <option value="bottoms" >下裝</option>
+                                <option value="accessories1" >口罩</option>
+                                <option value="accessories2" >帽子</option>
+                                <option value="accessories3" >眼鏡</option>
+                                <option value="eyebrow" >眉毛</option>
+                                <option value="eye" >眼睛</option>
+                                <option value="mouth" >嘴巴</option>
+                            </select>
+                        </td>
                     </tr>
                     <tr>
                         <td>商品價格</td>
-                        <td><input type="text" id="price"></td>
+                        <td><input type="text" id="new_coinprice"></td>
+                    </tr>
+                    <tr >
+                        <td>商品現金售價</td>
+                        <td><input type="text" id="new_price"></td>
                     </tr>
                     <tr>
                         <td>上傳圖片</td>
-                        <td><input type="file" id="file-upload" accept="image/*">
-                            <label for="file-upload" id="custom-upload-button"></label>
-                            </td>
+                        <td>
+                            <form >
+                                <input type="file" name="files" id="file-upload" accept="image/png,image/jpeg" style=" opacity : 0 ;width: 0px">
+                            <label for="file-upload" id="custom-upload-button" 
+                            style=" display: inline-block;
+                            text-align: center ;
+                            width: 20px ;
+                            border: 1px solid black;
+                            border-radius: 2px;
+                            background-color: #fff;
+                            ">+</label>
+                            </form>
+                            
+                        </td>
                     </tr>
                     <tr>
-                        <td></td>
-                        <td><img id="preview-image" src="#" alt="預覽圖片"></td>
+                        <td>圖片預覽</td>
+                        <td>
+                            <div id="preview-image" style="width: 50%;">
+                            </div>
+                        </td> <!-- style=" width: 50% ; height: 50% ;"  -->
                     </tr>
                 </table>
-                <button class="search-btn" id="search-btn">變更</button>
+                <button class="search-btn" id="addProduct-btn">新增</button>
             </div>
             <div id="generalEdit-bar" class="hide-bar">
                 <img id="back-btn" src="IMG/chat/Vector.svg" alt="">      
                 <h2>商品資料編輯</h2>
                 <table>
-                    <tr>
+                    <!-- <tr>
                         <td>商品編號</td>
                         <td>111111111111111</td>
                     </tr>
@@ -186,14 +227,14 @@
                     <tr>
                         <td>活動消息說明</td>
                         <td>1</td>
-                    </tr>
+                    </tr> -->
                 </table>
-                <button class="search-btn">變更</button>
+                <button class="search-btn" id="read_More_delete">刪除</button>
             </div>
             <div id="mall-bar" class="hide-bar">
                 <h2>活動商品資料編輯</h2>
                 <table>
-                    <tr>
+                    <!-- <tr>
                         <td>商品編號</td>
                         <td>111111111111111</td>
                     </tr>
@@ -222,7 +263,7 @@
                     <tr>
                         <td>活動消息說明</td>
                         <td>1</td>
-                    </tr>
+                    </tr> -->
                 </table>
                 <button class="search-btn">變更</button>
             </div>
@@ -230,7 +271,7 @@
             
             <div class="list-bottom">
                 <div class="list_title_box">
-                    <h3>會員列表</h3>
+                    <h3>商品列表</h3>
                 </div>
                 <div class="list_box">
                     <div class="list-bottom-first">
@@ -242,65 +283,16 @@
                           <span>銷售時間</span>
                             <span>查看</span>
                         </div>
-    
                     </div>
                     <ul>
-                        <li>
+                        <!-- <li>
                           <span>商品編號</span>
                           <span>商品類別</span>
                           <span>商品名稱</span>
                           <span>商品狀態</span>
                           <span>銷售時間</span>
-                          <a href="#">查看</a>
-                        </li>
-                        <li>
-                            <span>商品編號</span>
-                            <span>商品類別</span>
-                            <span>商品名稱</span>
-                            <span>商品狀態</span>
-                            <span>銷售時間</span>
-                          <a href="#">查看</a>
-                        </li>
-                        <li>
-                            <span>商品編號</span>
-                            <span>商品類別</span>
-                            <span>商品名稱</span>
-                            <span>商品狀態</span>
-                            <span>銷售時間</span>
-                          <a href="#">查看</a>
-                        </li>
-                        <li>
-                            <span>商品編號</span>
-                            <span>商品類別</span>
-                            <span>商品名稱</span>
-                            <span>商品狀態</span>
-                            <span>銷售時間</span>
-                          <a href="#">查看</a>
-                        </li>
-                        <li>
-                            <span>商品編號</span>
-                            <span>商品類別</span>
-                            <span>商品名稱</span>
-                            <span>商品狀態</span>
-                            <span>銷售時間</span>
-                          <a href="#">查看</a>
-                        </li>
-                        <li>
-                            <span>商品編號</span>
-                            <span>商品類別</span>
-                            <span>商品名稱</span>
-                            <span>商品狀態</span>
-                            <span>銷售時間</span>
-                          <a href="#">查看</a>
-                        </li>
-                        <li>
-                            <span>商品編號</span>
-                            <span>商品類別</span>
-                            <span>商品名稱</span>
-                            <span>商品狀態</span>
-                            <span>銷售時間</span>
-                          <a href="#">查看</a>
-                        </li>
+                          <a class="read" href="#">查看</a>
+                        </li> -->
                       </ul>
                 </div>
                 
@@ -311,6 +303,7 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="JS/chat/malldata.js"></script>
 <script src="JS/backstage/backstage_header.js"></script>
+<script src="JS/chat/2chat_malltext.js"></script>
 <script>
     document.getElementById('file-upload').addEventListener('change', handleFileSelect);
 
@@ -327,38 +320,5 @@
   </script>
   
   <script>
-    $("#search-btn").click(() => {
-        if (!$("#name").val()) {
-          alert("請輸入商品名稱");
-          return;
-        }
-        if (!$("#status").val()) {
-          alert("請輸入商品狀態");
-          return;
-        }
-        //img存到"img/product/0530150330.jpg"
-        let src = "img/product/0530150330.jpg"
-        $.ajax({
-          url: "php/addProduct.php",
-          method: "post",
-          datatype: "json",
-          data: {
-           name: $("#name").val(),
-           status: $("#status").val(),
-           price:$("#price").val(),
-           img: src,
-          },
-          success: (response) => {
-            if (response == -1) {
-              alert("請先登入");
-            } else if (response == 1) {
-              alert("新增成功");
-            } else alert("新增失敗");
-          },
-          error: (xhr, status, error) => {
-            alert("error: " + error);
-          },
-        });
-      });
   </script>
 </html>

@@ -84,6 +84,7 @@ body {
 
 .search-bar tr,.hide-bar tr {
     height: 4rem;
+
 }
 
 
@@ -91,6 +92,7 @@ body {
 .search-bar td,.hide-bar td{
     padding-left: 14rem;
     font-size: 2rem;
+    width: 40%;
 } 
 
 .search-bar td ~ td,.hide-bar td ~ td{
@@ -106,7 +108,7 @@ body {
 }
 
 .hide-bar table{
-    margin: 0 auto;
+    /* margin: 0 auto; */
     width: 80%;
 
 }
@@ -236,6 +238,7 @@ tr:nth-child(3) td:nth-child(1) input[type="text"] {
 
 /* 按鈕btn */
 
+
 .search-btn {
     display: inline-block;
     background-color: #CB963D;
@@ -248,6 +251,31 @@ tr:nth-child(3) td:nth-child(1) input[type="text"] {
     margin-left: 46%;
     margin-bottom: 3rem;
     cursor: pointer;
+}
+
+.btn_box{
+    margin: 0 auto;
+    margin-bottom: 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 50%;
+}
+.btn_box #article_edit_btn,
+.btn_box #article_delete_btn,
+.btn_box #article_canceledit_btn,
+.btn_box #article_confirmedit_btn,
+.btn_box #edit_activity_btn,
+.btn_box #confirmedit_btn,
+.btn_box #canceledit-btn,
+.btn_box #delete-btn{
+    margin: 0 auto;
+}
+
+.btn_box #article_canceledit_btn,
+.btn_box #canceledit-btn{
+    background-color: #704214;
+    color: white;
 }
 
 #back-btn,#back-btn2,#back-btn3{
@@ -346,16 +374,81 @@ tr:nth-child(3) td:nth-child(1) input[type="text"] {
 /* 會員文章查詢 */
 
 #article-edit tr:not(:last-child) td:nth-child(2),#article-create tr:not(:last-child) td:nth-child(2),#member-article-edit tr:not(:last-child) td:nth-child(2){
-
+    width: 50%;
     border-bottom: 1px solid #000;
     display: inline-block;
-    padding-bottom: 1rem;
+    /* padding-bottom: 1rem; */
+    line-height: 4rem;
+    min-height: 4rem;
+    font-size: 2rem;
 }
 
+/* disabled狀態 */
+#article-edit tr:not(:last-child) td:nth-child(2) input:disabled,
+#article-create tr:not(:last-child) td:nth-child(2) input:disabled,
+#member-article-edit tr:not(:last-child) td:nth-child(2) input:disabled{
+    width: 100%;
+    display: inline-block;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-size: 2rem;
+    line-height: 4rem;
+    /* height: 4rem; */
+    color: black;
+}
 
+#article-edit tr td:nth-child(2) textarea:disabled{
+    background-color: transparent;
+    outline: none;
+    border: none;
+    font-size: 2rem;
+    resize: none;
+}
 
+/* 可編輯狀態 */
+#article-edit tr:not(:last-child) td:nth-child(2) input,
+#article-create tr:not(:last-child) td:nth-child(2) input,
+#member-article-edit tr:not(:last-child) td:nth-child(2) input{
+    width: 100%;
+    display: inline-block;
+    background-color: #fff;
+    border: none;
+    outline: none;
+    font-size: 2rem;
+    line-height: 4rem;
+    /* height: 4rem; */
+}
 
+#article-edit tr td:nth-child(2) textarea{
+    background-color: #fff;
+    outline: none;
+    border: none;
+    font-size: 2rem;
+    resize: none;
+}
 
+#article-create tr td:nth-child(2) textarea{
+    background-color: #fff;
+    outline: none;
+    border: none;
+    font-size: 2rem;
+    resize: none;
+}
+
+textarea::-webkit-scrollbar {
+    width: 8px;
+}
+
+textarea::-webkit-scrollbar-thumb {
+    background: #936a35;
+    border-radius: 10px;
+}
+
+textarea::-webkit-scrollbar-track {
+    background: #e4c8a3;
+    border-radius: 10px;
+}
 
 
 

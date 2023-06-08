@@ -14,10 +14,10 @@ const backBtn2 = document.getElementById('back-btn2');
 const backBtn3 = document.getElementById('back-btn3');
 
 // 点击memberdataBtn时显示eventData，隐藏eventDataSearch
-memberArticleBtn.addEventListener('click', function() {
-    articleEdit.style.display = 'block';
-    ArticleSearch.style.display = 'none';
-  });
+// memberArticleBtn.addEventListener('click', function() {
+//     articleEdit.style.display = 'block';
+//     ArticleSearch.style.display = 'none';
+//   });
 
   // 点击backBtn时显示eventDataSearch，隐藏
 backBtn.addEventListener('click', function() {

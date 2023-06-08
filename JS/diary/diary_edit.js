@@ -1,3 +1,10 @@
+import * as picture from "../../JS/member_picture.js";
+
+let user_img = document.getElementsByClassName("big_girl")[0] ;
+let user_img1 = document.getElementsByClassName("member_photo")[0] ;
+picture.getMemberPicture(user_img.querySelector("img"));
+picture.getMemberPicture(user_img1.querySelector("img"));
+
 $(()=>{
     $.ajax({
         url:"php/getUserData.php",
@@ -26,8 +33,8 @@ $(()=>{
                 $("#soubriquet").val(response["memberName"])
                 $("#myselfsign").val(response["personalSign"])
                 $("#email").val(response["email"])
-                $("#username").html(response["memberName"])
-                $("#idname").html(response["memberID"])
+                $("#username").html("暱稱:"+response["memberName"])
+                $("#idname").html("ID:"+response["memberID"])
                 $("#sign").html(response["personalSign"])
                 
                 
