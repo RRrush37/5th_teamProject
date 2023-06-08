@@ -1,5 +1,5 @@
 body {
-  background-image: url(/IMG/index/background/room_background.jpg);
+  background-image: url(../../IMG/index/background/room_background.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
@@ -78,7 +78,7 @@ body {
   top: 23%;
   width: 20%;
   height: 70%;
-  background-image: url(/IMG/index/photo_frame.png);
+  background-image: url(../../IMG/index/photo_frame.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -395,7 +395,7 @@ font-weight: bold;
 }
 
 .dresss_choose {
-  background-image: url(IMG/store/photo_frame_3.png);
+  background-image: url(../../IMG/store/photo_frame_3.png);
   background-size: 53% auto;
   background-repeat: no-repeat;
   width: 606px;
@@ -485,7 +485,7 @@ font-weight: bold;
 @media screen and (max-width: 414px){
   
   body{
-    background-image: url(/IMG/index/background/room_background.jpg);
+    background-image: url(../../IMG/index/background/room_background.jpg);
     min-width:100%;
     max-width:100%;
     width: auto;

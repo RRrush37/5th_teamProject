@@ -2,7 +2,7 @@
 
 body{
 width: 1280px;
-background-image: url(/IMG/index/background/home_page_background_1.jpg);
+background-image: url(../../IMG/index/background/home_page_background_1.jpg);
 background-repeat: no-repeat;
 background-size: contain;
 background-attachment: fixed;
