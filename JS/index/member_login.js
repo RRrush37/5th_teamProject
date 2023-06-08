@@ -46,3 +46,56 @@ $(() => {
     });
   });
 });
+
+
+
+
+
+
+//選取信箱元素，可以進行修改ok
+// var email = document.getElementById("email");
+// let email_login = email.value;
+
+// email.addEventListener("blur",function(){
+//   if(email_login ==''){
+//           alert('請輸入電子信箱');
+//           document.getElementById('email').focus();
+//           return false;
+//   }else{
+//       var emailRule = /^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z]+$/;
+//       var email_login = email.value ;
+//       if (email_login.search(emailRule)!= -1){
+//           // document.getElementById('email').focus();
+//           // document.getElementById('email').select();
+//           // return false;
+      
+//       } else {
+//           alert('電子信箱格式錯誤');
+//       }
+//   }
+// });
+
+
+var email = document.getElementById("email");
+email.addEventListener("blur", function() {
+  var email_login = email.value;
+  
+  if (email_login === '') {
+    alert('請輸入電子信箱');
+    email.focus();
+    return false;
+  } else {
+    var emailRule = /^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z]+$/;
+
+    if (email_login.search(emailRule) !== -1) {
+      // 電子信箱格式正確
+    } else {
+      alert('電子信箱格式錯誤');
+    }
+  }
+});
+
+
+
+
+

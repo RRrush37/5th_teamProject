@@ -32,7 +32,7 @@ body::before {
   display: none;
 }
 
- .nav{
+.nav{
   margin-right: 8%;
 } 
 
@@ -44,7 +44,7 @@ body::before {
 
 .box{
   background-color: rgba(255, 255, 255, 0.5);
- 
+
  /* background-color: white; */
     width: 800px;
     height: 500px;
@@ -68,7 +68,7 @@ align-items: center;
       width: auto;
       
   }
-   
+
       
     .box h2{
       padding-bottom: 2rem;;

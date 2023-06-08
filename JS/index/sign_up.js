@@ -48,3 +48,29 @@ $(() => {
     });
   });
 });
+
+
+
+//信箱符合格式//按下去的時候是否可以那個
+var email = document.getElementById('email');
+let email_sign_up= email.value;
+
+email.addEventListener("blur",function(){
+  if(email_sign_up ==''){
+          alert('請輸入電子信箱');
+          document.getElementById('email').focus();
+          return false;
+  }else{
+      var emailRule = /^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z]+$/;
+      var email_sign_up = email.value ;
+      if (email_sign_up.search(emailRule)!= -1){
+          
+          // document.getElementById('email').focus();
+          // document.getElementById('email').select();
+          // return false;
+      
+      } else {
+          alert('電子信箱格式錯誤');
+      }
+  }
+});

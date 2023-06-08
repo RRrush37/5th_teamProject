@@ -1,4 +1,12 @@
-$(()=>{
+import * as picture from "../../JS/member_picture.js";
+let member_photo = document.getElementsByClassName("member_photo")[0] ;
+picture.getMemberPicture(member_photo.querySelector("img"));
+
+let big_girl = document.getElementsByClassName("big_girl")[0] ;
+picture.getMemberPicture(big_girl.querySelector("img"));
+
+
+(()=>{
     $.ajax({
         url:"php/getUserData.php",
         datatype:"json",
