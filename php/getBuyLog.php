@@ -14,7 +14,7 @@ if (checkIfLogin()) {
   } else if ($_POST["type"] == 2) {
     $sql = "select itemID as date, buyAmount as coinChange, totalPrice as totalCoin from buyLog where memberID = ? and itemIsCoin = 0";
     $statement = $pdo->prepare($sql);
-    $statement->bindValue(1, $_SESSION("ID"));
+    $statement->bindValue(1, $_SESSION["ID"]);
     $statement->execute();
     $data = $statement->fetchAll();
     echo json_encode($data);
