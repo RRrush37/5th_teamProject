@@ -1,5 +1,5 @@
 body {
-  background-image: url(IMG/index/background/room_background.jpg);
+  background-image: url(/IMG/index/background/room_background.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
@@ -78,7 +78,7 @@ body {
   top: 23%;
   width: 20%;
   height: 70%;
-  background-image: url(IMG/index/photo_frame.png);
+  background-image: url(/IMG/index/photo_frame.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -485,7 +485,7 @@ font-weight: bold;
 @media screen and (max-width: 414px){
   
   body{
-    background-image: url(IMG/store/mall_room2.png);
+    background-image: url(/IMG/index/background/room_background.jpg);
     min-width:100%;
     max-width:100%;
     width: auto;
@@ -542,7 +542,7 @@ font-weight: bold;
   }
 
   .nav_left{
-    background-image: url(index_build_roles.html.css);
+    background-image: url();
     margin: 0px auto;
     max-width: 100%;
     width: 360px;
