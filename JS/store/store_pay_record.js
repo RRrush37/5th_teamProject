@@ -55,7 +55,7 @@ function buy(){
       success: function (response) {
           alert("購買成功");
           // window.location.href = '../../ECPayAIO_PHP-master/AioSDK/example/sample_Credit_CreateOrder.php';
-          window.location.href = 'https://payment-stage.ecpay.com.tw/Cashier/AioCheckOut/V5';
+          // window.location.href = 'https://payment-stage.ecpay.com.tw/Cashier/AioCheckOut/V5';
       },
       error: function(xhr, status, error) {
           alert("數據載入失敗: " + error);
@@ -115,9 +115,9 @@ $.ajax({
     type: "1",
   },
   success: (response) => {
-    alert(response);
+    // alert(response);
     response = JSON.parse(response);
-    console.log(response[0].totalCoin);
+    // console.log(response[0].totalCoin);
     console.log(response[0]);
     let str = "";
     

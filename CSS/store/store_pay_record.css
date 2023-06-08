@@ -48,7 +48,6 @@ body {
 }
   
 .choose_wrapper {
-    margin-top: 20px;
     display: flex;
 }
   
@@ -96,9 +95,9 @@ body {
     background-color: #252833;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     width: 800px;
-    height: 450px;
+    height: 400px;
     position: absolute;
-    top: 50%;
+    top: 55%;
     left: 50%;
     transform: translate(-50%, -50%);
     overflow: hidden;
@@ -122,7 +121,7 @@ body {
 } */
 
 .stored_container{
-    height: 400px;
+    height: 350px;
     display: flex;
     flex-wrap: wrap;
     overflow: auto;
@@ -219,6 +218,7 @@ input[type="checkbox"]:checked + span::before {
     width: 70px;
     padding: 10px;
     background-color: #252833;
+    box-shadow: 0 0 5px #727272;
     border-radius: 10px;
     border: none;
     position: absolute;
@@ -230,6 +230,7 @@ input[type="checkbox"]:checked + span::before {
 .buy:hover{
     color: #252833;
     background-color: #A0C0E1;
+    box-shadow: 0 0 5px #000000;
     filter: drop-shadow(0px 0px 3px rgba(0, 0, 0, 0.32));
 }
 
@@ -279,6 +280,14 @@ input[type="checkbox"]:checked + span::before {
     color: #fff;
     text-align: center;
     overflow: hidden;
+}
+
+.stored_close > .fa-xmark{
+    color: #405366;
+    font-size: 3rem;
+    margin-left: 90%;
+    margin-top: 3%;
+    cursor: pointer;
 }
 
 .stored_wrapper > .stored_title{
