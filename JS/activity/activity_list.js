@@ -1,44 +1,47 @@
 // 燈箱出現消失
 
 const get_lightbox = () => {
-    let lightbox_background = document.getElementsByClassName("lightbox_background")[0];
-    let activity_readmore = document.getElementsByClassName("activity_readmore")[0];
-    let activity_article_cards = document.getElementsByClassName("activity_article_cards");
+  let lightbox_background = document.getElementsByClassName(
+    "lightbox_background"
+  )[0];
+  let activity_readmore =
+    document.getElementsByClassName("activity_readmore")[0];
+  let activity_article_cards = document.getElementsByClassName(
+    "activity_article_cards"
+  );
 
-    const render_popup = (response) => {
-        let post_time_display = convertTimeToHumanReadable(response.activityTime);
-        let spanClass1 = '-none';
-        let ageGreaterThan18 = "";
-        if (response.con_ageGreaterThan18 === 1) {
-            ageGreaterThan18 = "須年滿18";
-            spanClass1 = '';
-        }
+  const render_popup = (response) => {
+    let post_time_display = convertTimeToHumanReadable(response.activityTime);
+    let spanClass1 = "-none";
+    let ageGreaterThan18 = "";
+    if (response.con_ageGreaterThan18 === 1) {
+      ageGreaterThan18 = "須年滿18";
+      spanClass1 = "";
+    }
 
-        let spanClass2 = '-none';
-        let motorLicense = "";
-        if (response.con_motorLicense === 1) {
-            motorLicense = "須有機車駕照";
-            spanClass2 = '';
-        }
-        let spanClass3 = '-none';
-        let onlyFemale = "";
-        if (response.con_onlyFemale === 1) {
-            onlyFemale = "限女";
-            spanClass3 = '';
-        }
-        let spanClass4 = '-none';
-        let onlyMale = "";
-        if (response.con_onlyMale === 1) {
-            onlyMale = "限男";
-            spanClass4 = '';
-
-        }
-        activity_readmore.innerHTML =
-            `                <div class="activity_readmore_wrap ">
+    let spanClass2 = "-none";
+    let motorLicense = "";
+    if (response.con_motorLicense === 1) {
+      motorLicense = "須有機車駕照";
+      spanClass2 = "";
+    }
+    let spanClass3 = "-none";
+    let onlyFemale = "";
+    if (response.con_onlyFemale === 1) {
+      onlyFemale = "限女";
+      spanClass3 = "";
+    }
+    let spanClass4 = "-none";
+    let onlyMale = "";
+    if (response.con_onlyMale === 1) {
+      onlyMale = "限男";
+      spanClass4 = "";
+    }
+    activity_readmore.innerHTML = `                <div class="activity_readmore_wrap ">
                     <i class="fa-solid fa-xmark"></i>
                     <div class="activity_inf">
                         <div class="article_top_left">
-                            <img class="user" src="./IMG/activity/lonely.png" alt="" width="60">
+                            <img class="user" src="IMG/activity/lonely.png" alt="" width="60">
                             <div class="user_identity">
                                 <p>暱稱</p>
                                 <p>ID</p>
@@ -78,7 +81,7 @@ const get_lightbox = () => {
                     </div>
                 </div>
                 <div class="activity_myaction">
-                    <img class="user" src="./IMG/activity/lonely.png" alt="" width="40">
+                    <img class="user" src="IMG/activity/lonely.png" alt="" width="40">
                     <div class="comment_keyin">
                         <textarea name="" id="comment" cols="30" rows="1" placeholder="留言..."></textarea>
                         <!-- <div class="paste">
@@ -95,193 +98,192 @@ const get_lightbox = () => {
                 </div>
                 `;
 
-        lightbox_background.classList.remove("-none");
-        let fa_xmark = document.getElementsByClassName("fa-xmark")[0];
-        fa_xmark.addEventListener("click", function () {
-            lightbox_background.classList.add("-none");
-        });
-        lightbox_background.addEventListener("click", function () {
-            this.classList.add("-none");
-        });
-
-        lightbox_background.querySelector(".activity_readmore").addEventListener("click", function (e) {
-            e.stopPropagation();
-        });
-
-    }
-
-    document.addEventListener("click", function (e) {
-
-        if (e.target.classList.contains("activity_article_cards")) {
-            const current_id = e.target.getAttribute('data-id');
-            $.ajax({
-                url: 'php/activityList.php',
-                method: 'post',
-                data: {},
-                success: (response) => {
-                    if (response) {
-
-                        const all_card = JSON.parse(response)
-
-                        for (let index = 0; index < all_card.length; index++) {
-                            const card = all_card[index];
-                            if (card.activityID === Number(current_id)) {
-                                render_popup(card);
-                            }
-                        }
-                        let comment = document.getElementById("comment");
-                        let comment_send = document.getElementById("comment_send");
-                        comment_send.addEventListener("click", function (e) {
-                            e.preventDefault();
-
-                            let comment_content = comment.value;
-                            // console.log(current_id)
-                            let dataA = {
-                                "commentContent": comment_content,
-                                "activityId": current_id,
-                            }
-                            let jsonData = JSON.parse(dataA);
-                            console.log(jsonData)
-                            // let post_time_display = convertTimeToHumanReadable(post_time);
-                            $.ajax({
-                                url: "php/activityComment.php",
-                                method: "post",
-                                dataType: "json",
-                                contentType: "application/json",
-                                data: jsonData,
-                                success: (res) => {
-                                    if (res == -1) {
-                                        alert("請先登入");
-                                    } else if (res == 1) {
-                                        alert("發布成功");
-                                    } else {
-                                        alert("發布失敗");
-                                    }
-                                },
-                                error: (xhr, status, error) => {
-                                    console.log("error:" + error)
-
-                                    alert("error:" + error)
-                                }
-                            });
-                            // ajax結尾
-                        })
-
-                    }
-                },
-                error: (xhr, status, error) => {
-                    alert("error:" + error)
-                }
-            });
-        }
+    lightbox_background.classList.remove("-none");
+    let fa_xmark = document.getElementsByClassName("fa-xmark")[0];
+    fa_xmark.addEventListener("click", function () {
+      lightbox_background.classList.add("-none");
+    });
+    lightbox_background.addEventListener("click", function () {
+      this.classList.add("-none");
     });
 
+    lightbox_background
+      .querySelector(".activity_readmore")
+      .addEventListener("click", function (e) {
+        e.stopPropagation();
+      });
+  };
 
+  document.addEventListener("click", function (e) {
+    if (e.target.classList.contains("activity_article_cards")) {
+      const current_id = e.target.getAttribute("data-id");
+      $.ajax({
+        url: "php/activityList.php",
+        method: "post",
+        data: {},
+        dataType: "json",
+        success: (response) => {
+          if (response) {
+            // const all_card = JSON.parse(response);
+            const all_card = response;
 
+            for (let index = 0; index < all_card.length; index++) {
+              const card = all_card[index];
+              if (card.activityID === Number(current_id)) {
+                render_popup(card);
+              }
+            }
+            let comment = document.getElementById("comment");
+            let comment_send = document.getElementById("comment_send");
+            comment_send.addEventListener("click", function (e) {
+              e.preventDefault();
 
-    //         // 從local抓彈窗留言
-    //         let card = cards[i]
-    //         get_comment_card(card);
+              let comment_content = comment.value;
+              // console.log(current_id)
+              let dataA = {
+                commentContent: comment_content,
+                activityId: current_id,
+              };
+              alert(comment_content);
+              alert(current_id);
 
-    //         // 發留言
-    //         let comment = document.getElementById("comment");
-    //         let comment_send = document.getElementById("comment_send");
+              //   let jsonData = JSON.parse(dataA);
+              //   console.log(jsonData);
+              // let post_time_display = convertTimeToHumanReadable(post_time);
+              $.ajax({
+                url: "php/activityComment.php",
+                method: "post",
+                dataType: "json",
+                data: {
+                  commentContent: comment_content,
+                  activityId: current_id,
+                },
+                success: (res) => {
+                  if (res == -1) {
+                    alert("請先登入");
+                  } else if (res == 1) {
+                    alert("發布成功");
+                  } else {
+                    alert("發布失敗");
+                  }
+                },
+                error: (xhr, status, error) => {
+                  console.log("error:" + error);
 
-    //         // console.log(comment_send);
-    //         comment_send.addEventListener("click", function (e) {
-    //             e.preventDefault();
-    //             let comment_id = Date.now();
-    //             let comment_content = comment.value;
-    //             let post_time = Date.now();
-    //             let post_time_display = convertTimeToHumanReadable(post_time);
-    //             // $.ajax({
-    //             //     url: "php/activityComment.php",
-    //             //     method: "post",
-    //             //     dataType: "json",
-    //             //     data: {
-    //             //         "comment_id": comment_id,
-    //             //         "comment_content": comment_content,
-    //             //         "post_time": post_time
-    //             //     },
-    //             //     success: (response) => {
-    //             //         if(response==-1){
-    //             //             alert("請先登入");
-    //             //         } else if(response == 1) {
-    //             //             alert("發布成功");
-    //             //         }else{
-    //             //             alert("發布失敗");
-    //             //         }
+                  alert("error:" + error);
+                },
+              });
+              // ajax結尾
+            });
+          }
+        },
+        error: (xhr, status, error) => {
+          alert("error:" + error);
+        },
+      });
+    }
+  });
 
-    //             //     },
-    //             //     error: (xhr, status, error) => {
-    //             //         alert("error:" + error)
-    //             //     },
-    //             // });
+  //         // 從local抓彈窗留言
+  //         let card = cards[i]
+  //         get_comment_card(card);
 
-    //             //         let comment_html = `
-    //             //                     <div class="comment_card">
-    //             //                         <!-- <span class="more_action">‧‧‧</span> -->
-    //             //                         <img class="user" src="./IMG/activity/lonely.png" alt="" width="60">
-    //             //                         <div class="comment_text">
-    //             //                             <h2>暱稱</h2>
-    //             //                             <p>${comment_content}</p>
-    //             //                             <h3>B1 ‧ ${post_time_display}</h3>
-    //             //                         </div>
-    //             //                     </div>
-    //             // `;
-    //             // let activity_commentbox = document.getElementsByClassName("activity_commentbox")[0];
-    //             // activity_commentbox.insertAdjacentHTML("afterbegin", comment_html);
+  //         // 發留言
+  //         let comment = document.getElementById("comment");
+  //         let comment_send = document.getElementById("comment_send");
 
-    //             let comment_card = {
-    //                 "item_id": cards[i].item_id,
-    //                 "comment_id": comment_id,
-    //                 "comment_content": comment_content,
-    //                 "post_time": post_time
-    //             };
+  //         // console.log(comment_send);
+  //         comment_send.addEventListener("click", function (e) {
+  //             e.preventDefault();
+  //             let comment_id = Date.now();
+  //             let comment_content = comment.value;
+  //             let post_time = Date.now();
+  //             let post_time_display = convertTimeToHumanReadable(post_time);
+  //             // $.ajax({
+  //             //     url: "php/activityComment.php",
+  //             //     method: "post",
+  //             //     dataType: "json",
+  //             //     data: {
+  //             //         "comment_id": comment_id,
+  //             //         "comment_content": comment_content,
+  //             //         "post_time": post_time
+  //             //     },
+  //             //     success: (response) => {
+  //             //         if(response==-1){
+  //             //             alert("請先登入");
+  //             //         } else if(response == 1) {
+  //             //             alert("發布成功");
+  //             //         }else{
+  //             //             alert("發布失敗");
+  //             //         }
 
-    //             let comment_cards = JSON.parse(localStorage.getItem("comment_cards"));
+  //             //     },
+  //             //     error: (xhr, status, error) => {
+  //             //         alert("error:" + error)
+  //             //     },
+  //             // });
 
-    //             if (comment_cards) { // 若存在
-    //                 comment_cards.push(comment_card); // [{}, {}]
-    //             } else { // 若不存在
-    //                 comment_cards = [comment_card]; // [{}]
-    //             }
-    //             localStorage.setItem("comment_cards", JSON.stringify(comment_cards));
+  //             //         let comment_html = `
+  //             //                     <div class="comment_card">
+  //             //                         <!-- <span class="more_action">‧‧‧</span> -->
+  //             //                         <img class="user" src="IMG/activity/lonely.png" alt="" width="60">
+  //             //                         <div class="comment_text">
+  //             //                             <h2>暱稱</h2>
+  //             //                             <p>${comment_content}</p>
+  //             //                             <h3>B1 ‧ ${post_time_display}</h3>
+  //             //                         </div>
+  //             //                     </div>
+  //             // `;
+  //             // let activity_commentbox = document.getElementsByClassName("activity_commentbox")[0];
+  //             // activity_commentbox.insertAdjacentHTML("afterbegin", comment_html);
 
-    //             // 從local抓彈窗留言
-    //             let card = cards[i];
-    //             get_comment_card(card);
-    //         });
-    //         let like_activity = document.getElementsByClassName("fa-heart");
-    //         like_activity1 = [...like_activity];
-    //         // like_activity1.forEach(item => {
-    //         //     item.addEventListener('click', function () {
-    //         //         like_activity1.forEach(item1 => {
-    //         //             if(){
+  //             let comment_card = {
+  //                 "item_id": cards[i].item_id,
+  //                 "comment_id": comment_id,
+  //                 "comment_content": comment_content,
+  //                 "post_time": post_time
+  //             };
 
-    //         //             }
-    //         //             item1.classList.toggle('fa-regular');
-    //         //             item1.classList.toggle('fa-solid');
-    //         //         })
+  //             let comment_cards = JSON.parse(localStorage.getItem("comment_cards"));
 
-    //         //     });
+  //             if (comment_cards) { // 若存在
+  //                 comment_cards.push(comment_card); // [{}, {}]
+  //             } else { // 若不存在
+  //                 comment_cards = [comment_card]; // [{}]
+  //             }
+  //             localStorage.setItem("comment_cards", JSON.stringify(comment_cards));
 
-    //         // });
+  //             // 從local抓彈窗留言
+  //             let card = cards[i];
+  //             get_comment_card(card);
+  //         });
+  //         let like_activity = document.getElementsByClassName("fa-heart");
+  //         like_activity1 = [...like_activity];
+  //         // like_activity1.forEach(item => {
+  //         //     item.addEventListener('click', function () {
+  //         //         like_activity1.forEach(item1 => {
+  //         //             if(){
 
-    //         // console.log(like_activity);
+  //         //             }
+  //         //             item1.classList.toggle('fa-regular');
+  //         //             item1.classList.toggle('fa-solid');
+  //         //         })
 
-    //     });
+  //         //     });
 
-    // }
+  //         // });
 
+  //         // console.log(like_activity);
 
+  //     });
 
-    // let join_btn = document.getElementsByClassName("join");
+  // }
 
-    // for (let j = 0; j < join_btn.length; j++) {
-    //     join_btn[j].addEventListener("click", function (e) {
-    //         e.stopPropagation();
-    //     });
-    // }
+  // let join_btn = document.getElementsByClassName("join");
 
-}
+  // for (let j = 0; j < join_btn.length; j++) {
+  //     join_btn[j].addEventListener("click", function (e) {
+  //         e.stopPropagation();
+  //     });
+  // }
+};

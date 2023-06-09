@@ -1,23 +1,22 @@
 <?php
 
-require("checkLogin.php");
-if (1) {
-
-// if (checkLogin()) {
-    require("connectSQL.php");
+require("checkIfLogin.php");
+session_start();
+if (checkIfLogin()) {
+  require("connectSQL.php");
   $sql = 'SELECT * FROM activity where activityOrganiserID= ?';
-    
-    $statement = $pdo->prepare($sql);
-    $statement->bindValue(1, 2);
 
-    $statement->execute();
+  $statement = $pdo->prepare($sql);
+  $statement->bindValue(1, 2);
 
-    $data = $statement->fetchAll();
+  $statement->execute();
 
-    if ($data) {
+  $data = $statement->fetchAll();
+
+  if ($data) {
     echo json_encode($data);
-    } else
+  } else
     echo 2;
 } else {
-    echo -1;
+  echo -1;
 }

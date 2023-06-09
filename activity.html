@@ -1,151 +1,252 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>揪活動</title>
-    <link rel="stylesheet" href="CSS/activity/activity.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="CSS/activity/activity.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
 
-</head>
-
-<body>
+  <body>
     <div class="page">
-        <div class="header"></div> <!-- 用來載入 common.html 裡頭的 header -->
-        <div class="activity">
-            <span>
-                <div class="activity_title">
-                    <svg width="40" height="40" viewBox="0 0 83 83" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <a href="">
-                            <g filter="url(#filter0_dd_668_6)">
-                                <path d="M9 37.5L34.2778 5V23.018L74 23.0556V51.9444H34.2778V70L9 37.5Z" fill="#606C99"
-                                    stroke="#606C99" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" />
-                            </g>
-                            <defs>
-                                <filter id="filter0_dd_668_6" x="0" y="0" width="83" height="83"
-                                    filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                                    <feFlood flood-opacity="0" result="BackgroundImageFix" />
-                                    <feColorMatrix in="SourceAlpha" type="matrix"
-                                        values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
-                                    <feOffset dy="4" />
-                                    <feGaussianBlur stdDeviation="2" />
-                                    <feComposite in2="hardAlpha" operator="out" />
-                                    <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" />
-                                    <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_668_6" />
-                                    <feColorMatrix in="SourceAlpha" type="matrix"
-                                        values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
-                                    <feOffset dy="4" />
-                                    <feGaussianBlur stdDeviation="2" />
-                                    <feComposite in2="hardAlpha" operator="out" />
-                                    <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" />
-                                    <feBlend mode="normal" in2="effect1_dropShadow_668_6"
-                                        result="effect2_dropShadow_668_6" />
-                                    <feBlend mode="normal" in="SourceGraphic" in2="effect2_dropShadow_668_6"
-                                        result="shape" />
-                                </filter>
-                            </defs>
-                        </a>
-                    </svg>
-                    <h1>揪活動</h1>
-                </div>
-                <div class="activity_main">
-                    <div class="left">
-                        <h2>活動主題篩選</h2>
-                        <label for="count">
-                            <p>人數：</p>
-                            <select name="count" id="count">
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                                <option value="6">6</option>
-                                <option value="7">7</option>
-                                <option value="8">8</option>
-                                <option value="9">9</option>
-                                <option value="10">10</option>
-                                <option value="11">11</option>
-                                <option value="12">12</option>
-                            </select>
-                        </label>
-                        <br>
-                        <div class="topic_wrap">
-                            <p>主題：</p>
-                            <br>
-                            <input type="checkbox" id="outdoor" name="" class="byebye"><label for="outdoor"
-                                class="color-button">戶外</label>
-                            <input type="checkbox" id="leisure" name="" class="byebye"><label for="leisure"
-                                class="color-button">休閒</label>
-                            <input type="checkbox" id="indoor" name="" class="byebye"><label for="indoor"
-                                class="color-button">室內</label>
-                            <input type="checkbox" id="puzzle" name="" class="byebye"><label for="puzzle"
-                                class="color-button">益智</label>
-                            <input type="checkbox" id="handcraft" name="" class="byebye"><label for="handcraft"
-                                class="color-button">手作</label>
-                            <input type="checkbox" id="chill" name="" class="byebye"><label for="chill"
-                                class="color-button">夜生活</label>
-                        </div>
-                        <label for="during">
-                            <p>時長：</p>
-                            <select name="during" id="during">
-                                <option value="1">一天內</option>
-                                <option value="2">二天</option>
-                                <option value="3">三天</option>
-                                <option value="4">四天</option>
-                                <option value="5">五天</option>
-                            </select>
-                        </label>
-                        <br>
-                        <p>出發日期：</p>
-                        <br>
-                        <label for="aweek"><input type="radio" id="aweek" name="depart"><span
-                                class="radio-button"></span>一周內</label>
-                        <br>
-                        <label for="amonth"><input type="radio" id="amonth" name="depart"><span
-                                class="radio-button"></span>一周～一個月</label>
-                        <br>
-                        <label for="months"><input type="radio" id="months" name="depart" class="saddd"><span
-                                class="radio-button"></span>一個月以上</label>
-                        <br>
-                        <label for="place">
-                            <p>地點：</p>
-                            <select name="place" id="place">
-                                <option value="">北部</option>
-                                <option value="">中部</option>
-                                <option value="">南部</option>
-                                <option value="">東部</option>
-                                <option value="">離島</option>
-                            </select>
-                            <br>
-                            <p>特殊條件：</p>
-                            <br>
-                            <!-- <label for="chr_restrict"><input type="checkbox" id="chr_restrict" name="" ><span
+      <div class="header"></div>
+      <!-- 用來載入 common.html 裡頭的 header -->
+      <div class="activity">
+        <span>
+          <div class="activity_title">
+            <svg
+              width="40"
+              height="40"
+              viewBox="0 0 83 83"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <a href="">
+                <g filter="url(#filter0_dd_668_6)">
+                  <path
+                    d="M9 37.5L34.2778 5V23.018L74 23.0556V51.9444H34.2778V70L9 37.5Z"
+                    fill="#606C99"
+                    stroke="#606C99"
+                    stroke-width="10"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </g>
+                <defs>
+                  <filter
+                    id="filter0_dd_668_6"
+                    x="0"
+                    y="0"
+                    width="83"
+                    height="83"
+                    filterUnits="userSpaceOnUse"
+                    color-interpolation-filters="sRGB"
+                  >
+                    <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                    <feColorMatrix
+                      in="SourceAlpha"
+                      type="matrix"
+                      values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                      result="hardAlpha"
+                    />
+                    <feOffset dy="4" />
+                    <feGaussianBlur stdDeviation="2" />
+                    <feComposite in2="hardAlpha" operator="out" />
+                    <feColorMatrix
+                      type="matrix"
+                      values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"
+                    />
+                    <feBlend
+                      mode="normal"
+                      in2="BackgroundImageFix"
+                      result="effect1_dropShadow_668_6"
+                    />
+                    <feColorMatrix
+                      in="SourceAlpha"
+                      type="matrix"
+                      values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                      result="hardAlpha"
+                    />
+                    <feOffset dy="4" />
+                    <feGaussianBlur stdDeviation="2" />
+                    <feComposite in2="hardAlpha" operator="out" />
+                    <feColorMatrix
+                      type="matrix"
+                      values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"
+                    />
+                    <feBlend
+                      mode="normal"
+                      in2="effect1_dropShadow_668_6"
+                      result="effect2_dropShadow_668_6"
+                    />
+                    <feBlend
+                      mode="normal"
+                      in="SourceGraphic"
+                      in2="effect2_dropShadow_668_6"
+                      result="shape"
+                    />
+                  </filter>
+                </defs>
+              </a>
+            </svg>
+            <h1>揪活動</h1>
+          </div>
+          <div class="activity_main">
+            <div class="left">
+              <h2>活動主題篩選</h2>
+              <label for="count">
+                <p>人數：</p>
+                <select name="count" id="count">
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+                  <option value="11">11</option>
+                  <option value="12">12</option>
+                </select>
+              </label>
+              <br />
+              <div class="topic_wrap">
+                <p>主題：</p>
+                <br />
+                <input
+                  type="checkbox"
+                  id="outdoor"
+                  name=""
+                  class="byebye"
+                /><label for="outdoor" class="color-button">戶外</label>
+                <input
+                  type="checkbox"
+                  id="leisure"
+                  name=""
+                  class="byebye"
+                /><label for="leisure" class="color-button">休閒</label>
+                <input
+                  type="checkbox"
+                  id="indoor"
+                  name=""
+                  class="byebye"
+                /><label for="indoor" class="color-button">室內</label>
+                <input
+                  type="checkbox"
+                  id="puzzle"
+                  name=""
+                  class="byebye"
+                /><label for="puzzle" class="color-button">益智</label>
+                <input
+                  type="checkbox"
+                  id="handcraft"
+                  name=""
+                  class="byebye"
+                /><label for="handcraft" class="color-button">手作</label>
+                <input
+                  type="checkbox"
+                  id="chill"
+                  name=""
+                  class="byebye"
+                /><label for="chill" class="color-button">夜生活</label>
+              </div>
+              <label for="during">
+                <p>時長：</p>
+                <select name="during" id="during">
+                  <option value="1">一天內</option>
+                  <option value="2">二天</option>
+                  <option value="3">三天</option>
+                  <option value="4">四天</option>
+                  <option value="5">五天</option>
+                </select>
+              </label>
+              <br />
+              <p>出發日期：</p>
+              <br />
+              <label for="aweek"
+                ><input type="radio" id="aweek" name="depart" /><span
+                  class="radio-button"
+                ></span
+                >一周內</label
+              >
+              <br />
+              <label for="amonth"
+                ><input type="radio" id="amonth" name="depart" /><span
+                  class="radio-button"
+                ></span
+                >一周～一個月</label
+              >
+              <br />
+              <label for="months"
+                ><input
+                  type="radio"
+                  id="months"
+                  name="depart"
+                  class="saddd"
+                /><span class="radio-button"></span>一個月以上</label
+              >
+              <br />
+              <label for="place">
+                <p>地點：</p>
+                <select name="place" id="place">
+                  <option value="">北部</option>
+                  <option value="">中部</option>
+                  <option value="">南部</option>
+                  <option value="">東部</option>
+                  <option value="">離島</option>
+                </select>
+              </label>
+              <br />
+              <p>特殊條件：</p>
+              <br />
+              <!-- <label for="chr_restrict"><input type="checkbox" id="chr_restrict" name="" ><span
                                     class="check-button"></span>魅力值不得低於70</label>
                             <br> -->
-                            <label for="boyonly"><input type="checkbox" id="boyonly" name=""><span
-                                    class="check-button"></span>限男</label>
-                            <br>
-                            <label for="girlonly"><input type="checkbox" id="girlonly" name=""><span
-                                    class="check-button"></span>限女</label>
-                            <br>
-                            <label for="licence"><input type="checkbox" id="licence" name=""><span
-                                    class="check-button"></span>須有機車駕照</label>
-                            <br>
-                            <label for="adult"><input type="checkbox" id="adult" name=""><span
-                                    class="check-button"></span>須年滿18</label>
-                            <br>
-                            <div class="btn_wrap">
-                                <button type="submit" class="selector_submit">確認</button>
-                                <button type="submit" class="selector_reset">重新整理</button>
-                            </div>
-
-                    </div>
-                    <div class="middle">
-                        <div class="activity_tab">
-                            <!-- <span>
+              <label for="boyonly"
+                ><input type="checkbox" id="boyonly" name="" /><span
+                  class="check-button"
+                ></span
+                >限男</label
+              >
+              <br />
+              <label for="girlonly"
+                ><input type="checkbox" id="girlonly" name="" /><span
+                  class="check-button"
+                ></span
+                >限女</label
+              >
+              <br />
+              <label for="licence"
+                ><input type="checkbox" id="licence" name="" /><span
+                  class="check-button"
+                ></span
+                >須有機車駕照</label
+              >
+              <br />
+              <label for="adult"
+                ><input type="checkbox" id="adult" name="" /><span
+                  class="check-button"
+                ></span
+                >須年滿18</label
+              >
+              <br />
+              <div class="btn_wrap">
+                <button type="submit" class="selector_submit">確認</button>
+                <button type="submit" class="selector_reset">重新整理</button>
+              </div>
+            </div>
+            <div class="middle">
+              <div class="activity_tab">
+                <!-- <span>
                                 <a href="">
                                     <h2 class="activity_tab_active">最新</h2>
                                 </a>
@@ -156,60 +257,82 @@
                                     <h2>好友</h2>
                                 </a>
                             </span> -->
-                            <!-- <a href="#">
+                <!-- <a href="#">
                                 <input type="checkbox" id="displayAScalendar">
                                 <label for="displayAScalendar" class="displayAScalendar color-button"><i
                                         class="fa-regular fa-calendar-check"></i><i
                                         class="fa-regular fa-calendar-xmark"></i>日曆顯示</label>
                             </a> -->
-                        </div>
-                        <div class="activity_article">
-                            <div class="article_my_title">
-                                <h2></h2>
-                                <a href="#" class="mine"><i class="fa-solid fa-pen-to-square  article_add"></i>發起新活動</a>
-                            </div>
-                            <div class="activity_article_cards">
-                                <div class="cards_top">
-                                    <div class="cards_top_left">
-                                        <span class="topic">夢想</span>
-                                        <section class="post_time">2小時前發布</section>
-                                    </div>
-                                    <span class="more_action">‧‧‧<ul class="list -none">
-                                            <li>
-                                                <span class="more_action_list">‧‧‧</span>
-                                                <h3>檢舉活動</h3>
-                                            </li>
-                                        </ul></span>
-                                </div>
-                                <div class="cards_content">
-                                    <div class="card_user"><img class="user" src="./IMG/activity/luffy.png" alt=""
-                                            width="60">
-                                    </div>
-                                    <div class="card_text">
-                                        <div class="text_title">
-                                            <h2>想成為海王</h2>
-                                        </div>
-                                        <div class="text_content">
-                                            其實我是想成為海王不是海賊王其實我是想成為海王不是海賊王其實我是想成為海王不是海賊王其實我是想成為海王不是海賊王其實我是想成為海王不是海賊王其實我是想成為海王不是海賊王
-                                        </div>
-                                    </div>
-                                    <div class="card_pics"><img src="./IMG/activity/devilfruit.png" alt="" width="100">
-                                    </div>
-                                </div>
-                                <div class="cards_actions">
-                                    <div class="interact">
-                                        <a href="#"><i class="fa-regular fa-heart"></i><span>66</span></a>
-                                        <a href="#"><i class="fa-regular fa-comment-dots"></i><span>7</span></a>
-                                        <a href="#"><i class="fa-regular fa-bookmark"></i></a>
-                                    </div>
-                                    <div class="join">
-                                        <h3>參加人數：2/5</h3>
-                                        <label for="iwantjoin" class="iwantjoin color-button"><input type="checkbox"
-                                                id="iwantjoin">我要參加</label>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- <div class="activity_article_cards">
+              </div>
+              <div class="activity_article">
+                <div class="article_my_title">
+                  <h2></h2>
+                  <a href="activity_my_post_edit.html" class="mine"
+                    ><i class="fa-solid fa-pen-to-square article_add"></i
+                    >發起新活動</a
+                  >
+                </div>
+                <div class="activity_article_cards">
+                  <div class="cards_top">
+                    <div class="cards_top_left">
+                      <span class="topic">夢想</span>
+                      <section class="post_time">2小時前發布</section>
+                    </div>
+                    <span class="more_action"
+                      >‧‧‧
+                      <ul class="list -none">
+                        <li>
+                          <span class="more_action_list">‧‧‧</span>
+                          <h3>檢舉活動</h3>
+                        </li>
+                      </ul></span
+                    >
+                  </div>
+                  <div class="cards_content">
+                    <div class="card_user">
+                      <img
+                        class="user"
+                        src="./IMG/activity/luffy.png"
+                        alt=""
+                        width="60"
+                      />
+                    </div>
+                    <div class="card_text">
+                      <div class="text_title">
+                        <h2>想成為海王</h2>
+                      </div>
+                      <div class="text_content">
+                        其實我是想成為海王不是海賊王其實我是想成為海王不是海賊王其實我是想成為海王不是海賊王其實我是想成為海王不是海賊王其實我是想成為海王不是海賊王其實我是想成為海王不是海賊王
+                      </div>
+                    </div>
+                    <div class="card_pics">
+                      <img
+                        src="./IMG/activity/devilfruit.png"
+                        alt=""
+                        width="100"
+                      />
+                    </div>
+                  </div>
+                  <div class="cards_actions">
+                    <div class="interact">
+                      <a href="#"
+                        ><i class="fa-regular fa-heart"></i><span>66</span></a
+                      >
+                      <a href="#"
+                        ><i class="fa-regular fa-comment-dots"></i
+                        ><span>7</span></a
+                      >
+                      <a href="#"><i class="fa-regular fa-bookmark"></i></a>
+                    </div>
+                    <div class="join">
+                      <h3>參加人數：2/5</h3>
+                      <label for="iwantjoin" class="iwantjoin color-button"
+                        ><input type="checkbox" id="iwantjoin" />我要參加</label
+                      >
+                    </div>
+                  </div>
+                </div>
+                <!-- <div class="activity_article_cards">
                                 <div class="cards_top">
                                     <div class="cards_top_left">
                                         <span class="topic">踩人</span>
@@ -244,36 +367,50 @@
                                     </div>
                                 </div>
                             </div> -->
-                        </div>
-                    </div>
-                    <div class="right">
-                        <div class="calendar">
-                            <div class="title">
-                                <h1 class="main_color" id="calendar-title" style="text-align: center;">Month</h1>
-                                <h2 class="main_color small" id="calendar-year" style="text-align: center;">Year</h2>
-                                <a href="" id="prev"><i class="fa-solid fa-angle-left"></i> Prev Month</a>
-                                <a href="" id="next" style="float: right;">Next Month <i
-                                        class="fa-solid fa-angle-right"></i></a>
-                            </div>
-                            <div class="body">
-                                <div class="dark body-list">
-                                    <ul class="weekdays">
-                                        <li>MON</li>
-                                        <li>TUE</li>
-                                        <li>WED</li>
-                                        <li>THU</li>
-                                        <li>FRI</li>
-                                        <li>SAT</li>
-                                        <li>SUN</li>
-                                    </ul>
-                                </div>
-                                <div class="dark body-list">
-                                    <ul id="days">
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- <div class="my_activity">
+              </div>
+            </div>
+            <div class="right">
+              <div class="calendar">
+                <div class="title">
+                  <h1
+                    class="main_color"
+                    id="calendar-title"
+                    style="text-align: center"
+                  >
+                    Month
+                  </h1>
+                  <h2
+                    class="main_color small"
+                    id="calendar-year"
+                    style="text-align: center"
+                  >
+                    Year
+                  </h2>
+                  <a href="" id="prev"
+                    ><i class="fa-solid fa-angle-left"></i> Prev Month</a
+                  >
+                  <a href="" id="next" style="float: right"
+                    >Next Month <i class="fa-solid fa-angle-right"></i
+                  ></a>
+                </div>
+                <div class="body">
+                  <div class="dark body-list">
+                    <ul class="weekdays">
+                      <li>MON</li>
+                      <li>TUE</li>
+                      <li>WED</li>
+                      <li>THU</li>
+                      <li>FRI</li>
+                      <li>SAT</li>
+                      <li>SUN</li>
+                    </ul>
+                  </div>
+                  <div class="dark body-list">
+                    <ul id="days"></ul>
+                  </div>
+                </div>
+              </div>
+              <!-- <div class="my_activity">
                             <h2>活動</h2>
                             <p>6月1日<br>
                                 活動標題</p>
@@ -282,19 +419,19 @@
                             </section>
                             <a href="activity_my_post.html">管理我的活動</a>
                         </div> -->
-                        <div class="my_activity">
-                            <h3>廣告</h3>
-                            <a href=""><img src="./IMG/activity/ad1.jpg" alt=""></a>
-                            <a href=""><img src="./IMG/activity/ad2.jpg" alt=""></a>
-                        </div>
-                    </div>
-                </div>
-            </span>
-        </div>
+              <div class="my_activity">
+                <h3>廣告</h3>
+                <a href=""><img src="./IMG/activity/ad1.jpg" alt="" /></a>
+                <a href=""><img src="./IMG/activity/ad2.jpg" alt="" /></a>
+              </div>
+            </div>
+          </div>
+        </span>
+      </div>
 
-        <div class="lightbox_background -none">
-            <div class="activity_readmore">
-                <!-- <div class="activity_readmore_wrap">
+      <div class="lightbox_background -none">
+        <div class="activity_readmore">
+          <!-- <div class="activity_readmore_wrap">
                     <i class="fa-solid fa-xmark"></i>
                     <div class="activity_inf">
                         <div class="article_top_left">
@@ -373,25 +510,24 @@
                         </div>
                     </form>
                 </div> -->
-            </div>
         </div>
+      </div>
 
-        <div class="footer"></div> <!-- 用來載入 common.html 裡頭的 footer -->
+      <div class="footer"></div>
+      <!-- 用來載入 common.html 裡頭的 footer -->
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="JS/activity/activity_function.js"></script>
 
     <script>
-        // 載入header footer
-        $(function () {
-            $(".header").load("common.html .header>div");
-            $(".footer").load("common.html .footer>div");
-        });
-        get_card();
-
+      // 載入header footer
+      $(function () {
+        $(".header").load("common.html .header>div");
+        $(".footer").load("common.html .footer>div");
+      });
+      get_card();
     </script>
     <script src="JS/activity/activity_list.js"></script>
-</body>
-
+  </body>
 </html>
