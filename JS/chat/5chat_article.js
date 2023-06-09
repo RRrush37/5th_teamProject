@@ -50,6 +50,13 @@ $.ajax({
 
 function read_more( articleID ){
     let article_edit = document.getElementById("article-edit");
+    let article_edit_btn = document.getElementById("article_edit_btn");
+    let article_canceledit_btn = document.getElementById("article_canceledit_btn");
+    let article_confirmedit_btn = document.getElementById("article_confirmedit_btn");
+    article_edit_btn.style.display = "block" ;
+    article_canceledit_btn.style.display = "none" ;
+    article_confirmedit_btn.style.display = "none" ;
+
     article_edit.querySelector("table").innerHTML = "" ;
     $.ajax({
         url:"php/back_showOneArticle.php",
@@ -65,7 +72,7 @@ function read_more( articleID ){
                 if (article_id != row.articleID) {
                     // 與上一篇文章為不同篇，加上內容
                     article_id = row.articleID ;
-                    console.log(row.articleID);
+                    // console.log(row.articleID);
                     article_edit.querySelector("table").innerHTML = `
                     <tr>
                         <td>文章編號</td>
@@ -151,6 +158,7 @@ function delete_article( articleID ){
             alert("error:"+error)
         }
     })
+
 }
 
 // 編輯文章
@@ -172,39 +180,52 @@ article_edit_btn.addEventListener("click", function(e){
     article_confirmedit_btn.style.display = "block" ;
     article_edit_btn.style.display = "none" ;
 
-    //取消編輯
-    article_canceledit_btn.addEventListener("click", function(){
+    function cancel_func(e){
+        e.stopPropagation();
         article_Title.value = article_Title_value;
         article_Content.value = article_Content_value;
 
         article_Title.disabled = true;
         article_Content.disabled = true;
         article_canceledit_btn.style.display = "none" ;
-    })
+        article_confirmedit_btn.style.display = "none" ;
+        article_edit_btn.style.display = "block" ;
+
+        article_canceledit_btn.removeEventListener("click", cancel_func);
+        // 移除確認編輯事件監聽器
+        article_confirmedit_btn.removeEventListener("click", confirm_func);
+    }
+    //取消編輯
+    article_canceledit_btn.addEventListener("click", cancel_func)
+
+
+    function confirm_func(e){
+        e.stopPropagation();
+        let articleID = e.target.closest("#article-edit").querySelectorAll("td")[1].innerHTML;
+
+        let article_Title = e.target.closest("#article-edit").querySelector("#edit_article_title");
+        let article_Content = e.target.closest("#article-edit").querySelector("#read_more_content");
+
+        article_Title.disabled = true;
+        article_Content.disabled = true;
+        article_canceledit_btn.style.display = "none" ;
+        article_confirmedit_btn.style.display = "none" ;
+        article_edit_btn.style.display = "block" ;
+
+        edit_article( articleID, article_Title.value, article_Content.value );
+
+        article_canceledit_btn.removeEventListener("click", cancel_func);
+        // 移除確認編輯事件監聽器
+        article_confirmedit_btn.removeEventListener("click", confirm_func);
+    }
+    article_confirmedit_btn.addEventListener("click", confirm_func )
 
 })
 
-article_confirmedit_btn.addEventListener("click", function(e){
-    let articleID = e.target.closest("#article-edit").querySelectorAll("td")[1].innerHTML;
 
-    let article_Title = e.target.closest("#article-edit").querySelector("#edit_article_title");
-    let article_Content = e.target.closest("#article-edit").querySelector("#read_more_content");
-
-    article_Title.disabled = true;
-    article_Content.disabled = true;
-    article_canceledit_btn.style.display = "none" ;
-    article_confirmedit_btn.style.display = "none" ;
-
-    article_Title.disabled = true;
-    article_Content.disabled = true;
-    article_edit_btn.style.display = "block" ;
-
-    
-    edit_article( articleID, article_Title.value, article_Content.value );
-})
 
 function edit_article( articleID, articleTitle, articleContent){
-    let article_edit = document.getElementById("article-edit");
+
     $.ajax({
         url:"php/back_updateArticle.php",
         datatype: "text",
@@ -318,20 +339,14 @@ const member_articleSearch = document.getElementById('member-article-btn');
 
 member_articleSearch.addEventListener( "click", function(){
     ul_el.innerHTML = "" ;
-    // console.log("$('#search_articleID').val())"+$("#search_articleID").val());
-    // console.log("$('#search_type').val()"+$("#search_type").val());
-    // console.log("$('#search_name').val()"+$("#search_name").val());
-    // console.log("$('#search_status').val()"+$("#search_status").val());
-    // console.log("$('#myDate').val()"+$("#myDate").val());
-    
     $.ajax({
         url: "php/back_searchArticle.php",
         method: "post",
         data: {
             "articleID" : $("#search_articleID").val(),
-            "memberID" : $("#search_memberID").val(),
             "memberName" : $("#search_name").val(),
-            "email" : $("#search_email").val()
+            "articleTitle" : $("#search_title").val(),
+            "articleTime" : $("#search_myDate").val()
         },
         dataType: "json",
         success: function(response) {

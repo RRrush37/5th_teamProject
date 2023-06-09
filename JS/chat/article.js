@@ -7,7 +7,7 @@ const memberArticleBtn = document.getElementById('member-article-btn');
 const memberArticleEdit = document.getElementById('member-article-edit');
 const ArticleCreateBtn = document.getElementById('article-create-btn');
 const generalInfo = document.getElementById('general-info');
-const eventInfo = document.getElementById('event-info');
+// const eventInfo = document.getElementById('event-info');
 const elementsToHide = document.querySelectorAll('.hide-bar');
 const backBtn = document.getElementById('back-btn');
 const backBtn2 = document.getElementById('back-btn2');
@@ -50,14 +50,14 @@ backBtn2.addEventListener('click', function() {
   });
 
   // 点击eventInfo时显示search-bar，隐藏mallBar
-  eventInfo.addEventListener('click', function() {
+  // eventInfo.addEventListener('click', function() {
     
-    for (var i = 0; i < elementsToHide.length; i++) {
-      elementsToHide[i].style.display = 'none';
-    }
-    ArticleSearch.style.display = 'none';
-    memberArticleSearch.style.display = 'block';
-  });
+  //   for (var i = 0; i < elementsToHide.length; i++) {
+  //     elementsToHide[i].style.display = 'none';
+  //   }
+  //   ArticleSearch.style.display = 'none';
+  //   memberArticleSearch.style.display = 'block';
+  // });
 
 //   点击memberdataBtn时显示eventData，隐藏eventDataSearch
 memberArticleSearchBtn.addEventListener('click', function() {
@@ -72,11 +72,11 @@ backBtn3.addEventListener('click', function() {
   });
 
   generalInfo.addEventListener('click', function(){
-    eventInfo.classList.remove("on");
+    // eventInfo.classList.remove("on");
     generalInfo.classList.add("on");
   });
 
-  eventInfo.addEventListener('click', function(){
-    eventInfo.classList.add("on");
-    generalInfo.classList.remove("on");
-  })
+  // eventInfo.addEventListener('click', function(){
+  //   eventInfo.classList.add("on");
+  //   generalInfo.classList.remove("on");
+  // })

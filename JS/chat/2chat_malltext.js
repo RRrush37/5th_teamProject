@@ -50,9 +50,9 @@ $.ajax({
 
 function read_more( productID ){
     let generalEdit_bar = document.getElementById("generalEdit-bar");
-    console.log(productID);
+    // console.log(productID);
     // let mall_bar.querySelector("table");
-    console.log(generalEdit_bar.querySelector("table"));
+    // console.log(generalEdit_bar.querySelector("table"));
     $.ajax({
         url:"php/back_showOneProduct.php",
         datatype: "json",
@@ -77,7 +77,7 @@ function read_more( productID ){
                     <tr>
                         <td>商品圖片</td>
                         <td>
-                            <div id="read_more_image" style="width: 50%;">
+                            <div id="read_more_image" style="width: 50%; margin: 0 auto ;">
                                 
                             </div>
                         </td>
@@ -95,7 +95,7 @@ function read_more( productID ){
                         <td>${row.sellNum}</td>
                     </tr>
                     `;
-                    console.log(row.itemImage);
+                    // console.log(row.itemImage);
 
                     let read_more_image = document.getElementById("read_more_image");
 
@@ -264,11 +264,11 @@ $(function(){
 
 generalSearch.addEventListener( "click", function(){
     ul_el.innerHTML = "" ;
-    console.log("$('#search_id').val())"+$("#search_id").val());
-    console.log("$('#search_type').val()"+$("#search_type").val());
-    console.log("$('#search_name').val()"+$("#search_name").val());
-    console.log("$('#search_status').val()"+$("#search_status").val());
-    console.log("$('#myDate').val()"+$("#myDate").val());
+    // console.log("$('#search_id').val())"+$("#search_id").val());
+    // console.log("$('#search_type').val()"+$("#search_type").val());
+    // console.log("$('#search_name').val()"+$("#search_name").val());
+    // console.log("$('#search_status').val()"+$("#search_status").val());
+    // console.log("$('#myDate').val()"+$("#myDate").val());
     
     $.ajax({
         url: "php/back_searchProduct.php",
@@ -283,7 +283,7 @@ generalSearch.addEventListener( "click", function(){
         dataType: "json",
         success: function(response) {
             // response = JSON.parse(response);
-            console.log(response);
+            // console.log(response);
             $.each(response, function(index, row) {
                 ul_el.innerHTML += `
                 <li>

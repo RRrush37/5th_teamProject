@@ -51,6 +51,13 @@ $.ajax({
 
 function read_more( activityID ){
     let eventdata = document.getElementById("eventdata");
+    let edit_activity_btn = document.getElementById("edit_activity_btn");
+    let canceledit_btn = document.getElementById("canceledit-btn");
+    let confirmedit_btn = document.getElementById("confirmedit_btn");
+    edit_activity_btn.style.display = "block" ;
+    canceledit_btn.style.display = "none" ;
+    confirmedit_btn.style.display = "none" ;
+
     eventdata.querySelector("table").innerHTML = "" ;
     $.ajax({
         url:"php/back_showOneActivity.php",
@@ -68,7 +75,7 @@ function read_more( activityID ){
                         <td>${row.activityID}</td>
                     </tr>
                     <tr>
-                        <td>活動標籤</td>
+                        <td>活動類型</td>
                         <td>
                             <select name="edit_topic" id="edit_topic" disabled>
                                 <option value="戶外" checked>戶外</option>
@@ -215,6 +222,7 @@ function read_more( activityID ){
 let delete_btn = document.getElementById("delete-btn");
 
 delete_btn.addEventListener("click", function(e){
+    e.stopPropagation();
     let activityID = e.target.closest("#eventdata").querySelectorAll("td")[1].innerHTML;
     delete_activity( activityID );
 })
@@ -230,7 +238,7 @@ function delete_activity( activityID ){
         },
         success:(response)=>{
             alert(response);
-            // window.location.reload();
+            window.location.reload();
         },
         error: (xhr, status, error)=>{
             alert("error:"+error)
@@ -244,7 +252,7 @@ let canceledit_btn = document.getElementById("canceledit-btn");
 let confirmedit_btn = document.getElementById("confirmedit_btn");
 
 edit_activity_btn.addEventListener("click", function(e){
-
+    e.stopPropagation();
     let edit_title = e.target.closest("#eventdata").querySelector("#edit_title");
     let edit_content = e.target.closest("#eventdata").querySelector("#edit_content");
     let edit_person = e.target.closest("#eventdata").querySelector("#edit_person");
@@ -283,15 +291,26 @@ edit_activity_btn.addEventListener("click", function(e){
     motorLicense.disabled = false;
     age18.disabled = false;
 
+    let date = new Date();
+    let year = date.getFullYear();
+    let month = ('0' + (date.getMonth() + 1)).slice(-2); // 從後面取兩位數
+    let day = ('0' + (date.getDate())).slice(-2); // 從後面取兩位數
+    let time = year + '-' + month + '-' + day;
 
+    depart_time.setAttribute('min', time); // 限制只能選擇今天日期之後的時間
+    leave_time.setAttribute('min', time); // 限制只能選擇今天日期之後的時間
+    depart_time.addEventListener("change", function(){
+        leave_time.value = "" ;
+        leave_time.setAttribute('min', depart_time.value); // 限制結束日期只能選擇起始日期之後的時間
+    })
 
 
     canceledit_btn.style.display = "block" ;
     confirmedit_btn.style.display = "block" ;
     edit_activity_btn.style.display = "none" ;
 
-    //取消編輯
-    canceledit_btn.addEventListener("click", function(){
+    function cancel_func( e ){
+        e.stopPropagation();
         edit_title.value = edit_title_value ;
         edit_content.value = edit_content_value ;
         edit_person.value = edit_person_value  ;
@@ -320,7 +339,13 @@ edit_activity_btn.addEventListener("click", function(e){
         canceledit_btn.style.display = "none" ;
         confirmedit_btn.style.display = "none" ;
         edit_activity_btn.style.display = "block" ;
-    })
+
+        canceledit_btn.removeEventListener("click", cancel_func);
+        // 移除確認編輯事件監聽器
+        confirmedit_btn.removeEventListener("click", confirm_func);
+    }
+    //取消編輯
+    canceledit_btn.addEventListener("click", cancel_func )
 
     edit_content.addEventListener("keydown", function (e) {
         if (edit_content.value.length >= 147 && e.key != "Backspace") {
@@ -343,28 +368,10 @@ edit_activity_btn.addEventListener("click", function(e){
             return ;
         }
 
-        // if ( e.key < 0 || e.key > 9 ) {
-        //     alert("人數請輸入數字");
-        //     e.preventDefault(); // 停止預設行為(在欄位上出現所打的文字)
-        //     return ;
-        // }
     })
 
-    confirmedit_btn.addEventListener("click", function(e){
-        
-        // edit_title.value = edit_title_value ;
-        // edit_content.value = edit_content_value ;
-        // edit_person.value = edit_person_value  ;
-        // depart_time.value = depart_time_value ;
-        // leave_time.value = leave_time_value ;
-
-        // edit_loc.selectedIndex = edit_loc_selectedIndex ;
-        // edit_topic.selectedIndex = edit_topic_selectedIndex ;
-        // boyonly.checked = boyonly_checked  ;
-        // girlonly.checked = girlonly_checked ;
-        // motorLicense.checked = motorLicense_checked ;
-        // age18.checked = age18_checked ;
-
+    function confirm_func(e){
+        e.stopPropagation();
         if ( edit_title.value == "" ) {
             alert("請輸入活動標題");
             edit_title.value = edit_title_value ;
@@ -409,176 +416,258 @@ edit_activity_btn.addEventListener("click", function(e){
             confirmedit_btn.style.display = "none" ;
             edit_activity_btn.style.display = "block" ;
         
-            // edit_article( articleID, article_Title.value, article_Content.value );
-        }
+            let activityID = e.target.closest("#eventdata").querySelectorAll("td")[1].innerHTML;
+            edit_activity( activityID,
+                        edit_title.value,
+                        edit_content.value,
+                        edit_person.value,
+                        depart_time.value,
+                        leave_time.value,
+                        edit_loc.value,
+                        edit_topic.value,
+                        boyonly.checked,
+                        girlonly.checked,
+                        motorLicense.checked,
+                        age18.checked );
 
+        }
+    }
+    confirmedit_btn.addEventListener("click", confirm_func );
+
+})
+
+// ========================= 修改活動 =========================
+
+function edit_activity(activityID, edit_title, edit_content, edit_person,
+                        depart_time, leave_time, edit_loc, edit_topic, boyonly,
+                        girlonly, motorLicense, age18 ){
+
+    console.log(activityID)
+    $.ajax({
+        url:"php/back_updateActivity.php",
+        datatype: "json",
+        method:"post",
+        data:{
+            "activityID" : activityID,
+            "activityName" : edit_title,
+            "activityNote" : edit_content,
+            "activityLimit" : edit_person,
+            "activityStartDate" : depart_time,
+            "activityEndDate" : leave_time,
+            "activityPlace" : edit_loc,
+            "activityTopic" : edit_topic,
+            "con_onlyMale" : boyonly,
+            "con_onlyFemale" : girlonly,
+            "con_motorLicense" : motorLicense,
+            "con_ageGreaterThan18" : age18
+        },
+        success:(response)=>{
+            // console.log(response);
+            alert("修改成功");
+            // canceledit_btn.removeEventListener("click", function(){});
+            // confirmedit_btn.addEventListener("click", function(e){});
+            window.location.reload();
+        },
+        error: (xhr, status, error)=>{
+            alert("error:"+error)
+        }
     })
+}
+
+// ========================= 查看單一活動 =========================
+
+// =================================== 新增活動 ===========================
+
+let send = document.getElementById("create_btn");
+let create_title = document.getElementById("create_title");
+let create_person = document.getElementById("create_person");
+let create_depart_time = document.getElementById("create_depart_time");
+let create_leave_time = document.getElementById("create_leave_time");
+let create_topic = document.getElementById("create_topic");
+let create_loc = document.getElementById("create_loc");
+let create_content = document.getElementById("create_content");
+let create_boyonly = document.getElementById("create_boyonly");
+let create_girlonly = document.getElementById("create_girlonly");
+let create_motorLicense = document.getElementById("create_motorLicense");
+let create_age18 = document.getElementById("create_age18");
+let date = new Date();
+let year = date.getFullYear();
+let month = ('0' + (date.getMonth() + 1)).slice(-2); // 從後面取兩位數
+let day = ('0' + (date.getDate())).slice(-2); // 從後面取兩位數
+let time = year + '-' + month + '-' + day;
+
+create_depart_time.setAttribute('min', time); // 限制只能選擇今天日期之後的時間
+create_leave_time.setAttribute('min', time); // 限制只能選擇今天日期之後的時間
+create_depart_time.addEventListener("change", function(){
+    create_leave_time.value = "" ;
+    create_leave_time.setAttribute('min', create_depart_time.value); // 限制結束日期只能選擇起始日期之後的時間
+})
+
+create_person.addEventListener("keydown", function (e) {
+    console.log(e.key);
+    if ( e.key != "Backspace" && isNaN(Number(e.key))) {
+        // alert("人數請輸入數字");
+        e.preventDefault(); // 停止預設行為(在欄位上出現所打的文字)
+        return ;
+    }
+
+    if ( create_person.value.length >= 2 && e.key != "Backspace") {
+        // alert("人數請輸入數字");
+        e.preventDefault(); // 停止預設行為(在欄位上出現所打的文字)
+        return ;
+    }
+
+})
+
+create_content.addEventListener("keydown", function(e){
+    if (create_content.value.length >= 147 && e.key != "Backspace" ){
+        alert("內容長度不可超過150個字");
+        e.preventDefault(); // 停止預設行為(在欄位上出現所打的文字)
+    }
 })
 
 
+let create_list_el = document.getElementsByClassName("create_list")[0];
+let rifht_my_activity = document.getElementsByClassName("my_activity")[0];
+send.addEventListener("click", function (e) {
 
-// function edit_article( articleID, articleTitle, articleContent){
-//     let article_edit = document.getElementById("article-edit");
-//     $.ajax({
-//         url:"php/back_updateArticle.php",
-//         datatype: "text",
-//         method:"post",
-//         data:{
-//             "articleID" : articleID,
-//             "articleTitle" : articleTitle,
-//             "articleContent" : articleContent
-//         },
-//         success:(response)=>{
-//             alert("修改成功");
-//             window.location.reload();
-//         },
-//         error: (xhr, status, error)=>{
-//             alert("error:"+error)
-//         }
-//     })
-// }
+    e.stopPropagation();
 
-// // ========================= 查看單一文章 =========================
+    if ( create_topic.value == "" ) {
+        alert("請選擇活動類型");
+        return;
+    }
 
-// // =================================== 新增文章 ===========================
+    if ( create_title.value == "" ) {
+        alert("請輸入活動名稱");
+        return;
+    }
 
-// let send = document.getElementById("create_article_btn");
-// let title = document.getElementById("create_article_title");
-// let content = document.getElementById("create_article_content");
+    if ( create_person.value == "" ) {
+        alert("請輸入活動人數");
+        return;
+    }
 
-// content.addEventListener("keydown", function(e){
-//     if (content.value.length >= 147 && e.key != "Backspace" ){
-//         alert("內容長度不可超過150個字");
-//         e.preventDefault(); // 停止預設行為(在欄位上出現所打的文字)
-//     }
-// })
+    if (create_depart_time.value == "" || create_leave_time.value == "" ) {
+        alert("請選擇活動時間");
+    } else if ( create_depart_time.value > create_leave_time.value ) {
+        alert("起始時間不得超過結束時間");
+        create_depart_time.value = "" ;
+        create_leave_time.value = "" ;
+        return;
+    }
 
-// let upload_input = document.getElementById("file-upload");
-// let preview = document.getElementById("preview-image");
-// let files = upload_input.files ;
-// upload_input.style.opacity = 0;
+    if ( create_loc.value == "" ) {
+        alert("請輸入活動地點");
+        return;
+    }
 
-// // 預覽圖片
-// upload_input.addEventListener('change', function(e) {
-//     preview.src = "";
+    if ( create_content.value == "" ) {
+        alert("請輸入活動內容");
+        return;
+    }
 
-//     let curFiles = e.target.files;
-//     if (curFiles.length !== 0) {
-//         for (let i = 0; i < curFiles.length; i++) {
-//             let src_str = URL.createObjectURL(curFiles[i]);
-//             let list = `<img src="${src_str}" style="
-//             width: 50% ;
-//             height: 50% ;
-//             display: inline-block;
-//             " >`;
-//             preview.innerHTML += list;
-//         }
-//         files = curFiles;
-//         // console.log(files);
-//     }
-// });
-
-// let create_list_el = document.getElementsByClassName("create_list")[0];
-// let rifht_my_activity = document.getElementsByClassName("my_activity")[0];
-// send.addEventListener("click", function () {
-//     if (title.value == "") {
-//         alert("請填寫標題");
-//         return;
-//     }
-
-//     if (content.value == "") {
-//         alert("請填寫內容");
-//         return;
-//     }
-
-//     if (title.value != "" && content.value != "") {
-//         // 都有填寫，可將資料輸入資料庫
-
-//         let form = new FormData();
-//         form.append("title", title.value);
-//         form.append("content", content.value);
-//         for (let i = 0; i < files.length; i++) {
-//             form.append("edit_files[file][]", files[i]);
-//             // console.log(files[i]);
-//         }
-//         // console.log(form);
-
-//         $.ajax({
-//             url: "php/back_addArticle.php",
-//             method: "post",
-//             data: form,
-//             dataType: "text",
-//             processData: false,
-//             contentType: false,
-//             success: function (response) {
-//                 alert("新增成功");
-//                 title.value = "";
-//                 content.value = "";
-//                 upload_input.value = "";
-//                 preview.innerHTML = "";
-//                 window.location.reload();
-//             },
-//             error: function (xhr, status, error) {
-//                 alert("error:" + error);
-//             }
-//         });
-//     }
-// })
-
-// // =================================== 新增文章 ===========================
-
-// // =================================== 搜尋文章 ===========================
-// const member_articleSearch = document.getElementById('member-article-btn');
-
-// member_articleSearch.addEventListener( "click", function(){
-//     ul_el.innerHTML = "" ;
-//     // console.log("$('#search_articleID').val())"+$("#search_articleID").val());
-//     // console.log("$('#search_type').val()"+$("#search_type").val());
-//     // console.log("$('#search_name').val()"+$("#search_name").val());
-//     // console.log("$('#search_status').val()"+$("#search_status").val());
-//     // console.log("$('#myDate').val()"+$("#myDate").val());
     
-//     $.ajax({
-//         url: "php/back_searchArticle.php",
-//         method: "post",
-//         data: {
-//             "articleID" : $("#search_articleID").val(),
-//             "memberID" : $("#search_memberID").val(),
-//             "memberName" : $("#search_name").val(),
-//             "email" : $("#search_email").val()
-//         },
-//         dataType: "json",
-//         success: function(response) {
-//             // response = JSON.parse(response);
-//             console.log(response);
-//             $.each(response, function(index, row) {
-//                 ul_el.innerHTML += `
-//                 <li>
-//                     <span>${row.articleID}</span>
-//                     <span>${row.memberName}</span>
-//                     <span>${row.articleTitle}</span>
-//                     <span>${row.articleTime}</span>
-//                     <a class="read" href="">查看</a>
-//                 </li>`;
-//             });
+
+    if ( create_topic.value != "" && create_loc.value != "" && create_title.value != "" && create_person.value != "" && create_content.value != "" && create_depart_time.value != "" && create_leave_time.value != ""  ) {
+        // 都有填寫，可將資料輸入資料庫
+
+        $.ajax({
+            url: "php/back_addActivity.php",
+            method: "post",
+            data:{
+                "activityName" : create_title.value,
+                "activityNote" : create_content.value,
+                "activityLimit" : create_person.value,
+                "activityStartDate" : create_depart_time.value,
+                "activityEndDate" : create_leave_time.value,
+                "activityPlace" : create_loc.value,
+                "activityTopic" : create_topic.value,
+                "con_onlyMale" : create_boyonly.checked,
+                "con_onlyFemale" : create_girlonly.checked,
+                "con_motorLicense" : create_motorLicense.checked,
+                "con_ageGreaterThan18" : create_age18.checked
+            },
+            dataType: "text",
+            success: function (response) {
+                alert("新增成功");
+                create_title.value = "" ;
+                create_content.value = "" ;
+                create_person.value = "" ;
+                create_depart_time.value = "" ;
+                create_leave_time.value = "" ;
+                create_loc.value = "" ;
+                create_topic.value = "" ;
+                create_boyonly.checked = false ;
+                create_girlonly.checked = false ;
+                create_motorLicense.checked = false ;
+                create_age18.checked = false ;
+                window.location.reload();
+            },
+            error: function (xhr, status, error) {
+                alert("error:" + error);
+            }
+        });
+    }
+})
+
+// =================================== 新增活動 ===========================
+
+// =================================== 搜尋活動 ===========================
+const activity_Search = document.getElementById('eventdata-btn');
+
+activity_Search.addEventListener( "click", function(){
+    ul_el.innerHTML = "" ;
+    // console.log("$('#search_articleID').val())"+$("#search_articleID").val());
+    // console.log("$('#search_type').val()"+$("#search_type").val());
+    // console.log("$('#search_name').val()"+$("#search_name").val());
+    // console.log("$('#search_status').val()"+$("#search_status").val());
+    // console.log("$('#myDate').val()"+$("#myDate").val());
+    
+    $.ajax({
+        url: "php/back_searchActivity.php",
+        method: "post",
+        data: {
+            "activityID" : $("#search_activityID").val(),
+            "activityName" : $("#search_title").val(),
+            "activityTopic" : $("#search_topic").val(),
+            "activityStartDate" : $("#myDate").val(),
+            "activityPlace" : $("#search_loc").val()
+        },
+        dataType: "json",
+        success: function(response) {
+            // response = JSON.parse(response);
+            console.log(response);
+            $.each(response, function(index, row) {
+                ul_el.innerHTML += `
+                <li>
+                    <span>${row.activityID}</span>
+                    <span>${row.activityName}</span>
+                    <span>${row.activityTopic}</span>
+                    <span>${row.activityStartDate}</span>
+                    <span>${row.activityPlace}</span>
+                    <a class="read" href="">查看</a>
+                </li>`;
+            });
+            // console.log(comment_list);
             
-//             let read_btn = document.getElementsByClassName("read");
-//             const article_edit = document.getElementById('article-edit');
-//             const article_search = document.getElementById('article-search');
-//             const article_reate = document.getElementById('article-create');
-//             for( let i = 0 ; i < read_btn.length ; i++ ){
-//                 read_btn[i].addEventListener("click", function(e){
-//                     e.preventDefault();
-//                     article_edit.style.display = 'block';
-//                     article_search.style.display = 'none';
-//                     article_reate.style.display = 'none';
-//                     read_more(e.target.closest("li").querySelector("span").innerHTML);
-//                 })
-//             }
-//         },
-//         error: function(xhr, status, error) {
-//             alert("error:" + error);
-//         }
-//     });
-// })
-// // // =================================== 搜尋文章 ===========================
+            let read_btn = document.getElementsByClassName("read");
+            const eventdata = document.getElementById('eventdata');
+            const eventdata_search = document.getElementById('eventdata-search');
+            const eventdata_create = document.getElementById('eventdata-create');
+            for( let i = 0 ; i < read_btn.length ; i++ ){
+                read_btn[i].addEventListener("click", function(e){
+                    e.preventDefault();
+                    eventdata.style.display = 'block';
+                    eventdata_search.style.display = 'none';
+                    eventdata_create.style.display = 'none';
+                    read_more(e.target.closest("li").querySelector("span").innerHTML);
+                })
+            }
+        },
+        error: function(xhr, status, error) {
+            alert("error:" + error);
+        }
+    });
+})
+// =================================== 搜尋活動 ===========================
