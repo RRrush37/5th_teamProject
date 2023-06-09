@@ -97,7 +97,7 @@ align-items: center;
         text-align: left;
         width: 25rem;
 
-     
+
       }
       .push {
         background-color: black; /* 設定背景色為黑色 */
@@ -109,8 +109,8 @@ align-items: center;
         width: 80px; /* 設定寬度為 80px */
         text-align: center; /* 設定文字居中 */
         box-shadow: 2px 2px 4px rgba(0,0,0,0.5); 
-     margin-bottom: 1rem;
-     margin-top: 20rem;
+      margin-bottom: 1rem;
+      margin-top: 20rem;
       }
 
 
