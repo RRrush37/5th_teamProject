@@ -127,36 +127,42 @@
                   id="outdoor"
                   name=""
                   class="byebye"
+                  value="戶外"
                 /><label for="outdoor" class="color-button">戶外</label>
                 <input
                   type="checkbox"
                   id="leisure"
                   name=""
                   class="byebye"
+                  value="休閒"
                 /><label for="leisure" class="color-button">休閒</label>
                 <input
                   type="checkbox"
                   id="indoor"
                   name=""
                   class="byebye"
+                  value="室內"
                 /><label for="indoor" class="color-button">室內</label>
                 <input
                   type="checkbox"
                   id="puzzle"
                   name=""
                   class="byebye"
+                  value="益智"
                 /><label for="puzzle" class="color-button">益智</label>
                 <input
                   type="checkbox"
                   id="handcraft"
                   name=""
                   class="byebye"
+                  value="手作"
                 /><label for="handcraft" class="color-button">手作</label>
                 <input
                   type="checkbox"
                   id="chill"
                   name=""
                   class="byebye"
+                  value="夜生活"
                 /><label for="chill" class="color-button">夜生活</label>
               </div>
               <label for="during">
@@ -173,17 +179,21 @@
               <p>出發日期：</p>
               <br />
               <label for="aweek"
-                ><input type="radio" id="aweek" name="depart" /><span
-                  class="radio-button"
-                ></span
-                >一周內</label
+                ><input
+                  type="radio"
+                  id="aweek"
+                  name="depart"
+                  value="aweek"
+                /><span class="radio-button"></span>一周內</label
               >
               <br />
               <label for="amonth"
-                ><input type="radio" id="amonth" name="depart" /><span
-                  class="radio-button"
-                ></span
-                >一周～一個月</label
+                ><input
+                  type="radio"
+                  id="amonth"
+                  name="depart"
+                  value="amonth"
+                /><span class="radio-button"></span>一周～一個月</label
               >
               <br />
               <label for="months"
@@ -192,56 +202,31 @@
                   id="months"
                   name="depart"
                   class="saddd"
+                  value="months"
                 /><span class="radio-button"></span>一個月以上</label
               >
               <br />
               <label for="place">
                 <p>地點：</p>
                 <select name="place" id="place">
-                  <option value="">北部</option>
-                  <option value="">中部</option>
-                  <option value="">南部</option>
-                  <option value="">東部</option>
-                  <option value="">離島</option>
+                  <option value="北部">北部</option>
+                  <option value="中部">中部</option>
+                  <option value="南部">南部</option>
+                  <option value="東部">東部</option>
+                  <option value="離島">離島</option>
                 </select>
               </label>
               <br />
-              <p>特殊條件：</p>
-              <br />
               <!-- <label for="chr_restrict"><input type="checkbox" id="chr_restrict" name="" ><span
-                                    class="check-button"></span>魅力值不得低於70</label>
-                            <br> -->
-              <label for="boyonly"
-                ><input type="checkbox" id="boyonly" name="" /><span
-                  class="check-button"
-                ></span
-                >限男</label
-              >
-              <br />
-              <label for="girlonly"
-                ><input type="checkbox" id="girlonly" name="" /><span
-                  class="check-button"
-                ></span
-                >限女</label
-              >
-              <br />
-              <label for="licence"
-                ><input type="checkbox" id="licence" name="" /><span
-                  class="check-button"
-                ></span
-                >須有機車駕照</label
-              >
-              <br />
-              <label for="adult"
-                ><input type="checkbox" id="adult" name="" /><span
-                  class="check-button"
-                ></span
-                >須年滿18</label
-              >
-              <br />
+                                      class="check-button"></span>魅力值不得低於70</label>
+                              <br> -->
               <div class="btn_wrap">
-                <button type="submit" class="selector_submit">確認</button>
-                <button type="submit" class="selector_reset">重新整理</button>
+                <button type="submit" class="selector_submit" id="filter_btn">
+                  確認
+                </button>
+                <button type="submit" class="selector_reset" id="filter_reset">
+                  重新整理
+                </button>
               </div>
             </div>
             <div class="middle">

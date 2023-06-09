@@ -12,7 +12,6 @@ function get_card() {
     success: (response) => {
       if (response) {
         // console.log(response);
-        alert(response.length);
         let card_html = "";
         response.reverse().forEach(function (item, i) {
           // [{}, {}]
@@ -41,8 +40,8 @@ function get_card() {
                                 </div>
                                 <div class="cards_actions">
                                     <div class="interact">
-                                        <a href="#"><i class="fa-regular fa-heart ${item.item_id}"></i><span>66</span></a>
-                                        <a href="#"><i class="fa-regular fa-comment-dots"></i><span>7</span></a>
+                                        <a href="#"><i class="fa-regular fa-heart ${item.item_id}"></i><span>${item.thumbUpNum}</span></a>
+                                        <a href="#"><i class="fa-regular fa-comment-dots"></i><span>${item.commentNum}</span></a>
                                     </div>
                                     <div class="join">
                                         <h3>參加人數：2/${item.activityLimit}</h3>
@@ -102,13 +101,13 @@ function get_comment_card(card) {
         "activity_commentbox"
       )[0];
       activity_commentbox.innerHTML = str;
-      activity_commentbox.scrollTop = activity_commentbox.scrollHeight;
+      let activity_comment = document.querySelector(".activity_comment");
+      activity_comment.scrollTop = activity_comment.scrollHeight;
     },
     error(xhr, status, error) {
       alert("error: " + error);
     },
   });
-
   // let comment_cards1 = [];
   // for (let j = 0; j < comment_cards.length; j++) {
   //     if (card.item_id === comment_cards[j].item_id) {
