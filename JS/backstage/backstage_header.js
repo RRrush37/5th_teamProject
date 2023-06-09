@@ -32,15 +32,34 @@ if ( !window.location.pathname.includes("backstage_login.html") ) {
         dataType: "text",
         data: {},
         success: function (response) {
-          // 在此處處理成功的情況
-          if (response === true ) {
+
+          if (response == true ) {
+            let member_logout = document.getElementsByClassName("member_logout")[0] ;
+            member_logout.querySelector("a").innerHTML = "登出" ;
           } else {
             alert("請先登入");
             location.href = "backstage_login.html";
           }
+
+          member_logout.querySelector("a").addEventListener("click", function(e){
+            e.preventDefault();
+            e.stopPropagation();
+            $.ajax({
+              url: "php/back_logout.php",
+              type: "POST",
+              dataType: "text",
+              data: {},
+              success: function (response) {
+                location.href = "backstage_login.html";
+              },
+              error: function (xhr, status, error) {
+                console.log("Error: " + error);
+              },
+            });
+          });
+
         },
         error: function (xhr, status, error) {
-          // 在此處處理錯誤情況
           console.log("Error: " + error);
         },
     });
