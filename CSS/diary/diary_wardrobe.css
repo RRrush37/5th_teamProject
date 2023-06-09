@@ -1,5 +1,5 @@
 body {
-  background-image: url(/IMG/diary/forest.png);
+  background-image: url(../../IMG/diary/forest.png);
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
@@ -60,12 +60,6 @@ body {
   text-shadow: #634921.1rem 0.1rem 0.4rem;
 }
 
-
-
-
-
-
-
 .wrapper {
   display: flex;
   width: 100%;
@@ -78,7 +72,7 @@ body {
   top: 23%;
   width: 20%;
   height: 70%;
-  background-image: url(/IMG/diary/photo_frame.png);
+  background-image: url(../../IMG/diary/photo_frame.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -120,7 +114,6 @@ overflow: hidden;
 font-weight: bold;
 
 }
-
 
 .nav_left h2 {
   position: relative;
@@ -182,7 +175,6 @@ font-weight: bold;
   border-radius: 20px;
   background: #0000008f;
 }
-
 
 .doll {
   /* background-image: url(../../IMG/people/hair4.png),url(../../IMG/people/glasses.png),url(../../IMG/people/mask.png),url(../../IMG/people/m2.png),url(../../IMG/people/e2.png),url(../../IMG/people/eb3.png),url(../../IMG/people/top4.png),url(../../IMG/people/bottom4.png), url(../../IMG/people/body.png); */
@@ -252,11 +244,11 @@ font-weight: bold;
   overflow-y: hidden;
 }
 
-/* .number {
+.number {
   cursor: pointer;
   display: flex;
   margin: 10px 20px;
-} */
+}
 
 .money {
   display: flex;
@@ -283,7 +275,6 @@ font-weight: bold;
   background: #00000000;
   border-radius: 10px;
 }
-
 
 .doll ,.hair ,.clothes ,.bottoms ,.accessories1 
 ,.accessories2 ,.accessories3 ,.eyebrow ,.eye ,.mouth{
@@ -313,30 +304,40 @@ font-weight: bold;
 
 /* 針對嘴巴另外設置大小 */
 #nav_down_wrapper .mouth img{
-  transform: scale( 500% ) translateY(5%);
+  transform: scale( 300% ) translateY(0%);
 }
 /* 針對眼睛另外設置大小 */
 #nav_down_wrapper .eye  img{
-  transform: scale( 200% ) translateY(10%);
+  transform: scale( 150% ) translateY(0%);
 }
 /* 針對眉毛另外設置大小 */
-#nav_down_wrapper .eyebrow  img{
-  transform: scale( 200% ) translateY(10%);
+#nav_down_wrapper .eyebrow img{
+  transform: scale( 150% ) translateY(5%);
 }
 /* 針對褲子另外設置大小 */
 #nav_down_wrapper .bottoms img{
-  transform: scale( 100% ) translateY(-40%);
+  transform: scale( 120% ) translateY(-40%);
 }
+
 /* 針對上衣和另外設置大小 */
 #nav_down_wrapper .clothes img {
-  transform: scale( 100% ) translateY(-20%);
+  transform: scale( 150% ) translateY(-15%);
 }
 
 /* 針對頭髮和另外設置大小 */
 #nav_down_wrapper .hair img {
-  transform: scale( 90% ) translateY(-5%);
+  transform: scale( 90% ) translateY(-10%);
 }
 
+/* 針對口罩和另外設置大小 */
+#nav_down_wrapper .accessories1 img{
+  transform: scale( 150% ) translateY(-5%);
+}
+
+/* 針對眼鏡和另外設置大小 */
+#nav_down_wrapper .accessories3 img{
+  transform: scale( 150% ) translateY(5%);
+}
 
 /*--------------------------- lightbox ---------------------------*/
 
@@ -458,7 +459,7 @@ font-weight: bold;
   box-shadow: 0 0 5px #727272;
 }
 
-.send_check {
+/* .send_check {
   background-color: #000;
   color: rgb(255, 255, 255);
   font-size: 2rem;
@@ -471,7 +472,7 @@ font-weight: bold;
 
 .send_check:hover {
   box-shadow: 0 0 5px #000000;
-}
+} */
 
 .none{
   display: none;

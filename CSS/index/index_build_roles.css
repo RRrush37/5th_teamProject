@@ -1,5 +1,5 @@
 body {
-  background-image: url(/IMG/index/background/room_background.jpg);
+  background-image: url(../../IMG/index/background/room_background.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
@@ -60,12 +60,6 @@ body {
   text-shadow: #634921.1rem 0.1rem 0.4rem;
 }
 
-
-
-
-
-
-
 .wrapper {
   display: flex;
   width: 100%;
@@ -78,7 +72,7 @@ body {
   top: 23%;
   width: 20%;
   height: 70%;
-  background-image: url(/IMG/index/photo_frame.png);
+  background-image: url(../../IMG/index/photo_frame.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -121,7 +115,6 @@ font-weight: bold;
 
 }
 
-
 .nav_left h2 {
   position: relative;
   display: inline-block;
@@ -157,7 +150,6 @@ font-weight: bold;
   /* background-color: rgba(255, 255, 255, 0.64); */
 }
 
-
 /* 人偶 */
 .coutainer {
   /* background-image: url(../../IMG/index/photo_frame_2.png); */
@@ -182,7 +174,6 @@ font-weight: bold;
   border-radius: 20px;
   background: #0000008f;
 }
-
 
 .doll {
   /* background-image: url(../../IMG/people/hair4.png),url(../../IMG/people/glasses.png),url(../../IMG/people/mask.png),url(../../IMG/people/m2.png),url(../../IMG/people/e2.png),url(../../IMG/people/eb3.png),url(../../IMG/people/top4.png),url(../../IMG/people/bottom4.png), url(../../IMG/people/body.png); */
@@ -210,6 +201,29 @@ font-weight: bold;
   
 }
 
+.reset{
+  background-color: #fff;
+  box-shadow: 0 0 5px #000;
+  color: #000;
+  font-size: 1.5rem;
+  border-radius: 20px;
+  border: none;
+  padding: 10px 20px;
+  position: absolute;
+  top: 75%;
+  left: 75%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.reset:hover {
+  box-shadow: 0 0 5px #ffffff;
+  background-color: #000;
+  color: #fff;
+  font-weight: bold;
+}
+
 .check {
   background-color: #000;
   box-shadow: 0 0 5px #ffffff;
@@ -219,18 +233,17 @@ font-weight: bold;
   border: none;
   padding: 10px 20px;
   position: absolute;
-  top: 80%;
+  top: 85%;
   left: 75%;
   transform: translate(-50%, -50%);
   cursor: pointer;
   font-weight: bold;
 }
 
-
 .check:hover {
-  box-shadow: 0 0 5px #ffffff;
-  background-color: #634921;
-  color: white;
+  box-shadow: 0 0 5px #000000;
+  background-color: #ffffff;
+  color: #000000;
   font-weight: bold;
 }
 
@@ -255,11 +268,11 @@ font-weight: bold;
   overflow-y: hidden;
 }
 
-/* .number {
+.number {
   cursor: pointer;
   display: flex;
   margin: 10px 20px;
-} */
+}
 
 .money {
   display: flex;
@@ -286,7 +299,6 @@ font-weight: bold;
   background: #00000000;
   border-radius: 10px;
 }
-
 
 .doll ,.hair ,.clothes ,.bottoms ,.accessories1 
 ,.accessories2 ,.accessories3 ,.eyebrow ,.eye ,.mouth{
@@ -316,30 +328,40 @@ font-weight: bold;
 
 /* 針對嘴巴另外設置大小 */
 #nav_down_wrapper .mouth img{
-  transform: scale( 500% ) translateY(5%);
+  transform: scale( 300% ) translateY(0%);
 }
 /* 針對眼睛另外設置大小 */
 #nav_down_wrapper .eye  img{
-  transform: scale( 200% ) translateY(10%);
+  transform: scale( 150% ) translateY(0%);
 }
 /* 針對眉毛另外設置大小 */
-#nav_down_wrapper .eyebrow  img{
-  transform: scale( 200% ) translateY(10%);
+#nav_down_wrapper .eyebrow img{
+  transform: scale( 150% ) translateY(5%);
 }
 /* 針對褲子另外設置大小 */
 #nav_down_wrapper .bottoms img{
-  transform: scale( 100% ) translateY(-40%);
+  transform: scale( 120% ) translateY(-40%);
 }
+
 /* 針對上衣和另外設置大小 */
 #nav_down_wrapper .clothes img {
-  transform: scale( 100% ) translateY(-20%);
+  transform: scale( 150% ) translateY(-15%);
 }
 
 /* 針對頭髮和另外設置大小 */
 #nav_down_wrapper .hair img {
-  transform: scale( 90% ) translateY(-5%);
+  transform: scale( 90% ) translateY(-10%);
 }
 
+/* 針對口罩和另外設置大小 */
+#nav_down_wrapper .accessories1 img{
+  transform: scale( 150% ) translateY(-5%);
+}
+
+/* 針對眼鏡和另外設置大小 */
+#nav_down_wrapper .accessories3 img{
+  transform: scale( 150% ) translateY(5%);
+}
 
 /*--------------------------- lightbox ---------------------------*/
 
@@ -395,7 +417,7 @@ font-weight: bold;
 }
 
 .dresss_choose {
-  background-image: url(IMG/store/photo_frame_3.png);
+  background-image: url(../../IMG/store/photo_frame_3.png);
   background-size: 53% auto;
   background-repeat: no-repeat;
   width: 606px;
@@ -434,18 +456,6 @@ font-weight: bold;
   left: 0;
 }
 
-
-.money1 {
-  display: flex;
-  align-items: center;
-}
-
-.money1 #result {
-  font-size: 3rem;
-  color: #000;
-  margin-left: 10px;
-}
-
 .send {
   background-color: #ffff;
   color: #000;
@@ -454,14 +464,15 @@ font-weight: bold;
   border: none;
   padding: 8px 15px;
   cursor: pointer;
-  
 }
 
 .send:hover {
   box-shadow: 0 0 5px #727272;
+  background-color: #000;
+  color: #fff;
 }
 
-.send_check {
+/* .send_check {
   background-color: #000;
   color: rgb(255, 255, 255);
   font-size: 2rem;
@@ -474,7 +485,7 @@ font-weight: bold;
 
 .send_check:hover {
   box-shadow: 0 0 5px #000000;
-}
+} */
 
 .none{
   display: none;
@@ -485,7 +496,7 @@ font-weight: bold;
 @media screen and (max-width: 414px){
   
   body{
-    background-image: url(/IMG/index/background/room_background.jpg);
+    background-image: url(../../IMG/index/background/room_background.jpg);
     min-width:100%;
     max-width:100%;
     width: auto;
@@ -669,9 +680,9 @@ font-weight: bold;
     font-size: 2.5rem;
   }
 
-  .send_check{
+  /* .send_check{
     font-size: 2.5rem;
-  }
+  } */
 
   .coutainer .doll, .coutainer .eyebrow, .coutainer .eye, .coutainer .mouth, .coutainer .clothes, .coutainer .bottoms, .coutainer .accessories1, .coutainer .hair, .coutainer .accessories2, .coutainer .accessories3 {
     width: 162.5px;
