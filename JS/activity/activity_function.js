@@ -15,11 +15,11 @@ function get_card() {
             if (response) {
                 // console.log(response);
                 let card_html = "";
-                response.forEach(function (item, i) { // [{}, {}]
-                    // console.log(item);
+                response.reverse().forEach(function (item, i) { // [{}, {}]
+                    // console.log(item);。
                     let post_time_display = convertTimeToHumanReadable(item.activityTime);
                     card_html += `
-                            <div class="activity_article_cards " data-id="${item.item_id}">
+                            <div class="activity_article_cards " data-id="${item.activityID}">
                                 <div class="cards_top">
                                     <div class="cards_top_left">
                                         <span class="topic">${item.activityTopic}</span>
@@ -56,6 +56,8 @@ function get_card() {
 
                 let activity_article = document.getElementsByClassName("activity_article")[0];
                 activity_article.innerHTML = card_html;
+
+                get_lightbox();
             }
 
         },
