@@ -11,6 +11,7 @@ const get_lightbox = () => {
   );
 
   const render_popup = (response) => {
+    console.log(response);
     let post_time_display = convertTimeToHumanReadable(response.activityTime);
     let spanClass1 = "-none";
     let ageGreaterThan18 = "";
@@ -37,14 +38,14 @@ const get_lightbox = () => {
       onlyMale = "限男";
       spanClass4 = "";
     }
-    activity_readmore.innerHTML = `                <div class="activity_readmore_wrap ">
+    activity_readmore.innerHTML = `<div class="activity_readmore_wrap ">
                     <i class="fa-solid fa-xmark"></i>
                     <div class="activity_inf">
                         <div class="article_top_left">
                             <img class="user" src="IMG/activity/lonely.png" alt="" width="60">
                             <div class="user_identity">
-                                <p>暱稱</p>
-                                <p>ID</p>
+                                <p>${response.organiserName}</p>
+                                <p>${response.activityOrganiserID}</p>
                             </div>
                         </div>
                         <span class="topic">${response.activityTopic}</span>
@@ -64,8 +65,8 @@ const get_lightbox = () => {
                     </div>
                     <div class="article_actions">
                         <div class="interact_lightbox">
-                            <i class="fa-regular fa-heart"></i><span>66</span>
-                            <i class="fa-regular fa-comment-dots"></i><span class="howmany">7</span>
+                            <i class="fa-regular fa-heart"></i><span>${response.thumbUpNum}</span>
+                            <i class="fa-regular fa-comment-dots"></i><span class="howmany">${response.commentNum}</span>
                             <!-- <a href="#"><i class="fa-regular fa-bookmark"></i></a> -->
                         </div>
                         <div class="join">
@@ -75,7 +76,7 @@ const get_lightbox = () => {
                         </div>
                     </div>
                     <div class="activity_comment">
-                        <h3>共<span class="howmany">7</span>則留言</h3>
+                        <h3>共<span class="howmany">${response.commentNum}</span>則留言</h3>
                         <div class="activity_commentbox">
                         </div>
                     </div>
@@ -283,3 +284,50 @@ const get_lightbox = () => {
   //     });
   // }
 };
+
+let countFilter = document.getElementById("count").value;
+let topicFilter1 = document.getElementsByClassName("byebye");
+let topicFilter2 = [...topicFilter1];
+let topicFilter = [];
+
+$(".byebye").click(() => {
+  topicFilter = [];
+  topicFilter2.forEach((e) => {
+    if (e.checked) {
+      topicFilter.push(e.value);
+    }
+  });
+  activity_article_cards = document.getElementsByClassName(
+    "activity_article_cards"
+  );
+  if (!topicFilter.length) {
+    for (let i = 0; i < activity_article_cards.length; i++) {
+      activity_article_cards[i].style.display = "block";
+    }
+    return;
+  }
+  for (let i = 0; i < activity_article_cards.length; i++) {
+    if (
+      topicFilter.indexOf(
+        activity_article_cards[i].querySelector(".topic").innerHTML
+      ) === -1
+    ) {
+      activity_article_cards[i].style.display = "none";
+    } else {
+      activity_article_cards[i].style.display = "block";
+    }
+  }
+});
+
+let duration = document.getElementById("during").value;
+let fromnowon = document.getElementsByName("depart");
+
+var selectedValue;
+for (var i = 0; i < fromnowon.length; i++) {
+  if (fromnowon[i].checked) {
+    selectedValue = fromnowon[i].value;
+    break;
+  }
+}
+
+let loc = document.getElementById("place").value;
