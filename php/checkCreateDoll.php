@@ -3,7 +3,7 @@ require("checkIfLogin.php");
 session_start();
 if (checkIfLogin()) {
   require("connectSQL.php");
-  $sql = "select count(*) from memberData where memberID = ? and memberPicture is not null";
+  $sql = "SELECT count(*) FROM memberData WHERE memberID = ? AND memberPicture IS NOT NULL";
   $statement = $pdo->prepare($sql);
   $statement->bindValue(1, $_SESSION["ID"]);
   $statement->execute();

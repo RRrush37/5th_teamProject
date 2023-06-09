@@ -5,11 +5,11 @@
             FROM article AS a
             JOIN articleCollect AS c ON a.articleID = c.articleID
             LEFT JOIN articleImage AS img ON a.articleID = img.articleID
-            WHERE a.memberID = ? AND c.collectMemberID = ? order by a.articleTime desc ";
+            WHERE c.collectMemberID = ? order by a.articleTime desc ";
 
   $statement = $pdo->prepare($sql);
   $statement->bindValue(1, $_SESSION["ID"]);
-  $statement->bindValue(2, $_SESSION["ID"]);
+  // $statement->bindValue(2, $_SESSION["ID"]);
   $statement->execute();
   $data = $statement->fetchAll();
   foreach ($data as $key => $value) {

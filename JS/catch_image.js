@@ -3,7 +3,8 @@ $(function(){
     // const fs = require('fs');
     // const download = require('download');
 
-    $('.check').click(function(){
+    $('.send').click(function(e){
+        e.preventDefault();
         // 獲取所有照片
         var photos = $(".coutainer").find("div");
         // 建立一個Canvas元素
@@ -39,7 +40,9 @@ $(function(){
             processData: false,
             contentType: false,
             success: function(response) {
+
               console.log("圖片上傳成功");
+
             },
             error: function(xhr, status, error) {
               console.error("圖片上傳失敗:", error);

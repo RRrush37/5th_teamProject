@@ -1,11 +1,11 @@
 <?php
   session_start();
   include('connectSQL.php');
-  $sql = "SELECT *, a.articleID FROM article as a LEFT JOIN articleImage as img on a.articleID = img.articleID where a.memberID = ? order by a.articleTime desc ";
+  $sql = "SELECT *, a.articleID FROM article as a LEFT JOIN articleImage as img on a.articleID = img.articleID order by a.articleTime desc ";
   // SELECT  *, a.articleID FROM article as a LEFT JOIN articleImage as img on a.articleID = img.articleID where a.memberID = 4 order by a.articleTime desc 
 
   $statement = $pdo->prepare($sql);
-  $statement->bindValue(1, $_SESSION["ID"]);
+  // $statement->bindValue(1, $_SESSION["ID"]);
   $statement->execute();
   $data = $statement->fetchAll();
   foreach ($data as $key => $value) {

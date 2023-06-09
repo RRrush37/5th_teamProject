@@ -143,7 +143,8 @@
                     </tr>
                     <tr>
                         <td>商品型別</td>
-                        <td><select id="new_type">
+                        <td>
+                            <select id="new_type">
                                 <option value="coin" selected>遊戲幣</option>
                                 <option value="hair">髮型</option>
                                 <option value="clothes" >上衣</option>
@@ -169,7 +170,7 @@
                         <td>上傳圖片</td>
                         <td>
                             <form >
-                                <input type="file" name="files" id="file-upload" accept="image/png,image/jpeg" style=" opacity : 0 ;width: 0px">
+                                <input type="file" name="files" id="file-upload" accept="image/png,image/jpg,image/jpeg" style=" opacity : 0 ;width: 0px">
                             <label for="file-upload" id="custom-upload-button" 
                             style=" display: inline-block;
                             text-align: center ;
@@ -187,7 +188,13 @@
                         <td>
                             <div id="preview-image" style="width: 50%;">
                             </div>
-                        </td> <!-- style=" width: 50% ; height: 50% ;"  -->
+                        </td>
+                    </tr>
+                    <tr class="initial">
+                        <td>是否為初始物件?</td>
+                        <td>
+                            <input type="checkbox" id="new_initial" disabled><label for="new_initial">初始物件</label>
+                        </td>
                     </tr>
                 </table>
                 <button class="search-btn" id="addProduct-btn">新增</button>

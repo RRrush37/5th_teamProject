@@ -131,7 +131,7 @@ p {
     border: #E3CEA1 solid 2px;
     z-index: 1;
     position: relative; */
-  transform: scale(2) translateY(13%);
+  transform: scale(2.5) translateY(25%);
 }
 
 /* .user_header {

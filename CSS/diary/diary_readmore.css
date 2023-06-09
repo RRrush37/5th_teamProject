@@ -49,7 +49,7 @@ h2{
     display: block;
     object-fit: cover;
     border-radius: 50%;
-    transform: scale(2.5) translateY(15%);
+    transform: scale(2.5) translateY(25%);
     /* padding: 30px;同 */
     /* box-sizing: border-box; 同*/
 }

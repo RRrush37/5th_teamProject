@@ -1,4 +1,31 @@
+$.ajax({
+    url:"php/showArticle.php",
+    datatype: "json",
+    method:"post",
+    data:{},
+    success:(response)=>{
+        response = JSON.parse(response);
+        let article_id = -1 ;
+        
+        $.each(response, function(index, row) {
+        // console.log(response);
+            if( index == 0 ){
+                rifht_my_activity.innerHTML +=
+                `
+                <p>發佈:<br>${row.articleTime}</p>
+                <p>文章標題:<br>${row.articleTitle}</p>
+                <section>
+                    <p>文章內容:<br>${row.articleContent}</p>
+                </section>
+                `;
 
+            }
+        });
+    },
+    error:(xhr, status, error)=>{
+        alert("error: "+error)
+    }
+})
 
 $.ajax({
     url: "php/getBuyLog.php",

@@ -11,7 +11,7 @@
             //Web根目錄真實路徑
             $ServerRoot = $_SERVER["DOCUMENT_ROOT"];
     
-            date_default_timezone_set("Asia/Taipei"); //台北時間
+            // date_default_timezone_set("Asia/Taipei"); //台北時間
             $filename = $_SESSION["ID"].".png" ; //年月日時分秒
             //檔案最終存放位置
             $filePath = $ServerRoot."/team_5/IMG/people/member1/".$filename;
@@ -22,7 +22,7 @@
             $sql = "UPDATE memberData SET memberPicture = ? WHERE memberID = ?";
             $statement = $pdo->prepare($sql);
             $statement->bindValue(1, $filename);
-            $statement->bindValue(1, $_SESSION["ID"]);
+            $statement->bindValue(2, $_SESSION["ID"]);
             $statement->execute();
             $data = $statement->fetchAll();
 

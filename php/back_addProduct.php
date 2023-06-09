@@ -23,13 +23,20 @@
                         $_POST["sellNum"] = 0 ;
                         // 檔案最終存放位置
                     }
+
+                    if ($_POST["initialItem"] == "true" ) { // 是否為遊戲幣
+                        $initialItem = 1;
+                        // 檔案最終存放位置
+                    } else {
+                        $initialItem = 0;
+                    }
                     // 在這裡處理上傳的圖片資料，例如保存到特定目錄或進行其他操作
                     move_uploaded_file($tmpFilePath_arr, $filePath);
 
                     $currentTime = date("Y-m-d H:i:s"); // 用現在的時間來取得articleID
                     //建立SQL
-                    $sql = "INSERT into store(itemName, itemImage, itemPrice, startDate, itemType, sellNum, itemDetail, isCoin)
-                            values(?, ?, ?, ?, ?, ?, ?,? )";
+                    $sql = "INSERT into store(itemName, itemImage, itemPrice, startDate, itemType, sellNum, itemDetail, isCoin, initialItem)
+                            values( ?, ?, ?, ?, ?, ?, ?, ?, ? )";
 
                     $statement = $pdo->prepare($sql);
                     $statement->bindValue(1, $_POST["itemName"]);
@@ -40,6 +47,7 @@
                     $statement->bindValue(6, $_POST["sellNum"]);
                     $statement->bindValue(7, $_POST["new_status"]);
                     $statement->bindValue(8, $coinValue);
+                    $statement->bindValue(9, $initialItem);
                     $success = $statement->execute();
 
                     // 回應成功訊息
@@ -49,10 +57,6 @@
                     // 沒有找到名為"files"的檔案上傳欄位
                     echo "找不到檔案欄位";
                 }
-     
-
-
-                
 
                 echo "新增成功" ;
             } else {

@@ -7,6 +7,35 @@ picture.getMemberPicture(user_img1.querySelector("img"));
 
 $(()=>{
     $.ajax({
+        url:"php/showArticle.php",
+        datatype: "json",
+        method:"post",
+        data:{},
+        success:(response)=>{
+            response = JSON.parse(response);
+            let article_id = -1 ;
+            
+            $.each(response, function(index, row) {
+            // console.log(response);
+                if( index == 0 ){
+                    rifht_my_activity.innerHTML +=
+                    `
+                    <p>發佈:<br>${row.articleTime}</p>
+                    <p>文章標題:<br>${row.articleTitle}</p>
+                    <section>
+                        <p>文章內容:<br>${row.articleContent}</p>
+                    </section>
+                    `;
+    
+                }
+            });
+        },
+        error:(xhr, status, error)=>{
+            alert("error: "+error)
+        }
+    })
+
+    $.ajax({
         url:"php/getUserData.php",
         datatype:"json",
         method:"post",
@@ -84,7 +113,7 @@ $(()=>{
 
         //年齡
         var age = document.getElementById('age');
-        let eeeee = age.value;
+        let eeee = age.value;
 
         //星座
         var constellation = document.getElementById('constellation');

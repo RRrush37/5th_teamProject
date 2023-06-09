@@ -60,7 +60,6 @@ $.ajax({
             if( index == 0 ){
                 rifht_my_activity.innerHTML +=
                 `
-                <h3>最新文章列表</h3>
                 <p>發佈:<br>${row.articleTime}</p>
                 <p>文章標題:<br>${row.articleTitle}</p>
                 <section>
@@ -339,7 +338,8 @@ $.ajax({
                                         article_like_num = article_like.nextElementSibling;
                                     }
                                 }
-
+                                console.log("j"+j);
+                                console.log("article_like_numj"+article_like_num.innerHTML);
                                 addLike(article_id)
                                 .then((response) => {
                                     if ( response[1] == true) {
@@ -353,10 +353,13 @@ $.ajax({
                                     }
                                     // 在此處理成功回傳的 response
                                     response = JSON.parse(response);
-                                    numOfLike.innerHTML = response[0] ;
                                     collect_like_num.innerHTML = response[0] ;
                                     article_like_num.innerHTML = response[0] ;
-                                    console.log("read like")
+                                    numOfLike.innerHTML = response[0] ;
+                                    // collect_like_num.innerHTML = response[0] ;
+                                    // article_like_num.innerHTML = response[0] ;
+                                    console.log("read like");
+                                    console.log("article_like_numj"+article_like_num.innerHTML);
                                 })
                                 .catch((error) => {
                                     // 在此處理錯誤情況
@@ -489,7 +492,7 @@ $.ajax({
                         collect_like_num = collect_like.nextElementSibling;
                     }
                 }
-
+                console.log("i"+i);
                 addLike(article_id)
                 .then((response) => {
                     if ( response[1] == true) {
@@ -500,7 +503,9 @@ $.ajax({
                         collect_like.classList.remove("on");
                     }
                     // 在此處理成功回傳的 response
+                    console.log(response);
                     response = JSON.parse(response);
+                    console.log(response[0]);
                     numOfLike.innerHTML = response[0] ;
                     collect_like_num.innerHTML = response[0] ;
                     console.log("work")
