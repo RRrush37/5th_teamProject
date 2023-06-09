@@ -12,6 +12,7 @@ function get_card() {
     success: (response) => {
       if (response) {
         // console.log(response);
+        alert(response.length);
         let card_html = "";
         response.reverse().forEach(function (item, i) {
           // [{}, {}]
@@ -41,7 +42,7 @@ function get_card() {
                                 <div class="cards_actions">
                                     <div class="interact">
                                         <a href="#"><i class="fa-regular fa-heart ${item.item_id}"></i><span>66</span></a>
-                                        <a href="#"><i class="fa-regular fa-comment-dots"></i><span>${}</span></a>
+                                        <a href="#"><i class="fa-regular fa-comment-dots"></i><span>7</span></a>
                                     </div>
                                     <div class="join">
                                         <h3>參加人數：2/${item.activityLimit}</h3>
