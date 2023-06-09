@@ -342,7 +342,6 @@ body {
 .accessories1 img,
 .accessories2 img,
 .accessories3 img,
-/* .glasses img, */
 .eyebrow img,
 .eye img,
 .mouth img{
@@ -351,20 +350,21 @@ body {
 
 /* 針對嘴巴另外設置大小 */
 #nav_down_wrapper .mouth img{
-  transform: scale( 300% ) translateY(5%);
+  transform: scale( 300% ) translateY(0%);
 }
 /* 針對眼睛另外設置大小 */
 #nav_down_wrapper .eye  img{
   transform: scale( 150% ) translateY(0%);
 }
 /* 針對眉毛另外設置大小 */
-#nav_down_wrapper .eyebrow  img{
-  transform: scale( 150% ) translateY(-10%);
+#nav_down_wrapper .eyebrow img{
+  transform: scale( 150% ) translateY(5%);
 }
 /* 針對褲子另外設置大小 */
 #nav_down_wrapper .bottoms img{
   transform: scale( 120% ) translateY(-40%);
 }
+
 /* 針對上衣和另外設置大小 */
 #nav_down_wrapper .clothes img {
   transform: scale( 150% ) translateY(-15%);
@@ -375,12 +375,14 @@ body {
   transform: scale( 90% ) translateY(-10%);
 }
 
-#nav_down_wrapper .eyebrow img{
-  transform: scale( 200% ) translateY(10%);
-}
-
+/* 針對口罩和另外設置大小 */
 #nav_down_wrapper .accessories1 img{
   transform: scale( 150% ) translateY(-5%);
+}
+
+/* 針對眼鏡和另外設置大小 */
+#nav_down_wrapper .accessories3 img{
+  transform: scale( 150% ) translateY(5%);
 }
 
 /*--------------------------- lightbox ---------------------------*/
@@ -668,8 +670,8 @@ body {
   #nav_down_wrapper::-webkit-scrollbar{
     height: 20px;
   }
-
-  .nav_left{
+.nav_left
+  {
     background-image: url(index_build_roles.html.css);
     margin: 0px auto;
     max-width: 100%;
@@ -726,8 +728,6 @@ body {
     color: #fff;
   }
 
-  
-
   .money{
     margin-top: 100px;
   }
@@ -738,13 +738,16 @@ body {
 
   .check{
     font-size: 1.5rem;
-    top: 57%;
+    top: 58%;
     left: 80%;
     box-shadow: rgb(255, 255, 255) 0px 0px 5px;
     border-radius: 20px;
   }
 
-  
+  .reset{
+    top: 50%;
+    left: 80%;
+  }
 
   .dresss_lightbox{
     height: 100%;
