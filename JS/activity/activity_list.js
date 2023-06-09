@@ -131,6 +131,7 @@ const get_lightbox = () => {
               const card = all_card[index];
               if (card.activityID === Number(current_id)) {
                 render_popup(card);
+                get_comment_card(card);
               }
             }
             let comment = document.getElementById("comment");
@@ -139,17 +140,8 @@ const get_lightbox = () => {
               e.preventDefault();
 
               let comment_content = comment.value;
-              // console.log(current_id)
-              let dataA = {
-                commentContent: comment_content,
-                activityId: current_id,
-              };
-              alert(comment_content);
-              alert(current_id);
+              comment.value = "";
 
-              //   let jsonData = JSON.parse(dataA);
-              //   console.log(jsonData);
-              // let post_time_display = convertTimeToHumanReadable(post_time);
               $.ajax({
                 url: "php/activityComment.php",
                 method: "post",
@@ -162,14 +154,18 @@ const get_lightbox = () => {
                   if (res == -1) {
                     alert("請先登入");
                   } else if (res == 1) {
-                    alert("發布成功");
+                    for (let index = 0; index < all_card.length; index++) {
+                      let card = all_card[index];
+                      if (card.activityID === Number(current_id)) {
+                        get_comment_card(card);
+                      }
+                    }
                   } else {
                     alert("發布失敗");
                   }
                 },
                 error: (xhr, status, error) => {
                   console.log("error:" + error);
-
                   alert("error:" + error);
                 },
               });

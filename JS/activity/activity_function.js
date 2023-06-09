@@ -41,7 +41,7 @@ function get_card() {
                                 <div class="cards_actions">
                                     <div class="interact">
                                         <a href="#"><i class="fa-regular fa-heart ${item.item_id}"></i><span>66</span></a>
-                                        <a href="#"><i class="fa-regular fa-comment-dots"></i><span>7</span></a>
+                                        <a href="#"><i class="fa-regular fa-comment-dots"></i><span>${}</span></a>
                                     </div>
                                     <div class="join">
                                         <h3>參加人數：2/${item.activityLimit}</h3>
@@ -70,49 +70,78 @@ function get_card() {
 ////////////////////////////////////////
 
 function get_comment_card(card) {
-  let comment_cards = JSON.parse(localStorage.getItem("comment_cards"));
-  if (comment_cards) {
-    let comment_cards1 = comment_cards.filter((item) => {
-      if (card.item_id === item.item_id) {
-        return item;
+  //   let comment_cards = JSON.parse(localStorage.getItem("comment_cards"));
+  //   if (comment_cards) {
+  //     let comment_cards1 = comment_cards.filter((item) => {
+  //       if (card.item_id === item.item_id) {
+  //         return item;
+  //       }
+  //   console.log(card);
+  //   //     });
+  //   alert(card.activityID);
+  $.ajax({
+    url: "php/loadActivityComment.php",
+    method: "post",
+    dataType: "json",
+    data: { articleID: card.activityID },
+    success: (response) => {
+      let str = "";
+      for (let i = 0; i < response.length; i++) {
+        str += `<div class="comment_card">
+            <!-- <span class="more_action">‧‧‧</span> -->
+            <img class="user" src="./IMG/activity/lonely.png" alt="" width="60">
+            <div class="comment_text">
+                <h2>${response[i].name}</h2>
+                <p>${response[i].content}</p>
+                <h3>B${i + 1} ‧ ${response[i].time}</h3>
+            </div>
+        </div>`;
       }
-    });
+      let activity_commentbox = document.getElementsByClassName(
+        "activity_commentbox"
+      )[0];
+      activity_commentbox.innerHTML = str;
+      activity_commentbox.scrollTop = activity_commentbox.scrollHeight;
+    },
+    error(xhr, status, error) {
+      alert("error: " + error);
+    },
+  });
 
-    // let comment_cards1 = [];
-    // for (let j = 0; j < comment_cards.length; j++) {
-    //     if (card.item_id === comment_cards[j].item_id) {
-    //         comment_cards1.push(comment_cards[j]);
-    //     }
-    // }
+  // let comment_cards1 = [];
+  // for (let j = 0; j < comment_cards.length; j++) {
+  //     if (card.item_id === comment_cards[j].item_id) {
+  //         comment_cards1.push(comment_cards[j]);
+  //     }
+  // }
 
-    let comment_card_html = "";
-    let howmany1 = document.getElementsByClassName("howmany")[0];
-    let howmany2 = document.getElementsByClassName("howmany")[1];
-    howmany1.innerHTML = comment_cards1.length;
-    howmany2.innerHTML = comment_cards1.length;
+  //   let comment_card_html = "";
+  //   let howmany1 = document.getElementsByClassName("howmany")[0];
+  //   let howmany2 = document.getElementsByClassName("howmany")[1];
+  //   howmany1.innerHTML = comment_cards1.length;
+  //   howmany2.innerHTML = comment_cards1.length;
 
-    comment_cards1.forEach(function (item, i) {
-      // [{}, {}]
-      let post_time_display = convertTimeToHumanReadable(item.post_time);
-      comment_card_html += `
-                        <div class="comment_card">
-                            <!-- <span class="more_action">‧‧‧</span> -->
-                            <img class="user" src="./IMG/activity/lonely.png" alt="" width="60">
-                            <div class="comment_text">
-                                <h2>暱稱</h2>
-                                <p>${item.comment_content}</p>
-                                <h3>B${i + 1} ‧ ${post_time_display}</h3>
-                            </div>
-                        </div>
-    `;
-    });
+  //   comment_cards1.forEach(function (item, i) {
+  //     // [{}, {}]
+  //     let post_time_display = convertTimeToHumanReadable(item.post_time);
+  //     comment_card_html += `
+  //                         <div class="comment_card">
+  //                             <!-- <span class="more_action">‧‧‧</span> -->
+  //                             <img class="user" src="./IMG/activity/lonely.png" alt="" width="60">
+  //                             <div class="comment_text">
+  //                                 <h2>暱稱</h2>
+  //                                 <p>${item.comment_content}</p>
+  //                                 <h3>B${i + 1} ‧ ${post_time_display}</h3>
+  //                             </div>
+  //                         </div>
+  //     `;
+  //   });
 
-    let activity_commentbox = document.getElementsByClassName(
-      "activity_commentbox"
-    )[0];
+  // let activity_commentbox = document.getElementsByClassName(
+  //   "activity_commentbox"
+  // )[0];
 
-    activity_commentbox.innerHTML = comment_card_html;
-  }
+  //   activity_commentbox.innerHTML = comment_card_html;
 }
 
 ////////////////////////////////////////
