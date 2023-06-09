@@ -11,20 +11,7 @@
     />
     <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
     <script src="js/drawAndGuess.js"></script>
-    <title>第五組團專</title>
-    <style type="text/css">
-      #txtShow {
-        width: 80vw;
-        height: 70vh;
-      }
-
-      #txtShow,
-      #txtInput,
-      #btnSend {
-        display: block;
-        margin: 20px auto;
-      }
-    </style>
+    <title>你畫我猜</title>
   </head>
   <body>
     <div class="fullScreen" id="fullScreen">
@@ -35,78 +22,95 @@
         <div class="setNickname" id="setNickname">設定暱稱</div>
       </div>
     </div>
-    <div class="myNickName">
-      <p id="myNickName"></p>
-    </div>
-    <p>目前房間：<span id="roomName">大廳</span></p>
-    <div class="enterRoom">
-      進入房間：<input type="text" id="newRoomName" />
-      <input type="button" value="進入" id="enterRoom" />
-    </div>
-    <div class="roomState">
-      <span id="roomLeader"></span>
-      <span>房間狀態：</span>
-      <span id="roomState">等待開局中</span>
-    </div>
-    <div class="gameState">
-      <p id="nowState"></p>
-    </div>
-    <div class="answerArea">
-      <p id="showAnswer"></p>
-    </div>
-    <div class="outerTimer">
-      <div class="innerTimer"></div>
-    </div>
-    <div class="reset">重置計時器</div>
+
+    <!-- <div class="reset">重置計時器</div> -->
 
     <div class="flexDiv">
-      <div class="memberList" id="memberList"></div>
-      <div id="canvas-container">
-        <div id="magnifier"></div>
-        <canvas id="canvas"> </canvas>
-      </div>
-    </div>
-    <div class="tool-container">
-      <div class="slidecontainer">
-        <input
-          type="range"
-          min="1"
-          max="100"
-          value="1"
-          class="slider"
-          id="myRange"
-        />
-      </div>
-      <div class="slidecontainer"></div>
-      <button class="tool-button" id="clear-button">
-        <i class="fa-regular fa-trash-can"></i> 清除
-      </button>
-      <div class="color-button eraser"></div>
-      <div class="color-container">
-        <div class="color-button black active"></div>
-        <div class="color-button red"></div>
-        <div class="color-button blue"></div>
-        <div class="color-button green"></div>
-        <div class="color-button yellow"></div>
-        <div class="color-button orange"></div>
-        <div class="color-button purple"></div>
-        <div class="color-button gray"></div>
-      </div>
-      <div class="color-container">
-        <div class="size-button size-1 active" data-size="1"></div>
-        <div class="size-button size-2" data-size="2"></div>
-        <div class="size-button size-3" data-size="4"></div>
-        <div class="size-button size-4" data-size="6"></div>
-        <div class="size-button size-5" data-size="10"></div>
-      </div>
-    </div>
 
-    <textarea id="txtShow" disabled></textarea>
-    <span style="margin: 0 auto" id="myName"></span>
-    <div id="chatArea">
-      <input id="txtInput" type="text" />
-      <button id="btnSend">送出</button>
+      <div class="leftDiv">
+        <div class="textArea">
+          <div class="myNickName">
+            <p id="myNickName"></p>
+          </div>
+          <p>目前房間：<span id="roomName">大廳</span></p>
+          <div class="roomState">
+            <span id="roomLeader"></span>
+            <span>房間狀態：</span>
+            <span id="roomState">等待開局中</span>
+          </div>
+          <div class="enterRoom">
+            進入房間：<input type="text" id="newRoomName" />
+            <input type="button" value="進入" id="enterRoom" />
+          </div>
+
+          <div class="gameState">
+            <p id="nowState"></p>
+          </div>
+          <div class="answerArea">
+            <p id="showAnswer"></p>
+          </div>
+        </div>
+        <div class="memberList" id="memberList"></div>
+      </div>
+
+      <div class="tool-container">
+        <div class="slidecontainer">
+          線條粗細：<input
+            type="range"
+            min="1"
+            max="100"
+            value="1"
+            class="slider"
+            id="myRange"
+          />
+        </div>
+        <div class="slidecontainer"></div>
+        <button class="tool-button" id="clear-button">
+          <i class="fa-regular fa-trash-can"></i> 清除畫布
+        </button>
+        <div class="color-button eraser"></div>
+        <div class="color-container">
+          <div class="color-button black active"></div>
+          <div class="color-button red"></div>
+          <div class="color-button blue"></div>
+          <div class="color-button green"></div>
+          <div class="color-button yellow"></div>
+          <div class="color-button orange"></div>
+          <div class="color-button purple"></div>
+          <div class="color-button gray"></div>
+        </div>
+        <div class="color-container">
+          <div class="size-button size-1 active" data-size="1"></div>
+          <div class="size-button size-2" data-size="2"></div>
+          <div class="size-button size-3" data-size="4"></div>
+          <div class="size-button size-4" data-size="6"></div>
+          <div class="size-button size-5" data-size="10"></div>
+        </div>
+      </div>
+
+      <div class="wrapper">
+        
+        <div id="canvas-container">
+          <div id="magnifier"></div>
+          <canvas id="canvas"></canvas>
+          <div class="outerTimer">
+            <div class="innerTimer"></div>
+          </div>
+        </div>
+      
+        <div class="showChatArea_wrapper">
+          <div class="showChatArea">
+            <textarea id="txtShow" disabled></textarea>
+            <!-- <span style="margin: 0 auto" id="myName"></span> -->
+            <div class="sendChatArea" id="chatArea">
+              <input id="txtInput" type="text" />
+              <button id="btnSend">送出</button>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+      
     </div>
-    <div class="resetQuestion" id="resetQuestion">重置題目</div>
   </body>
 </html>
