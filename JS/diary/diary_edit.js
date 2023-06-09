@@ -1,12 +1,11 @@
 import * as picture from "../../JS/member_picture.js";
-let member_photo = document.getElementsByClassName("member_photo")[0] ;
-picture.getMemberPicture(member_photo.querySelector("img"));
 
-let big_girl = document.getElementsByClassName("big_girl")[0] ;
-picture.getMemberPicture(big_girl.querySelector("img"));
+let user_img = document.getElementsByClassName("big_girl")[0] ;
+let user_img1 = document.getElementsByClassName("member_photo")[0] ;
+picture.getMemberPicture(user_img.querySelector("img"));
+picture.getMemberPicture(user_img1.querySelector("img"));
 
-
-(()=>{
+$(()=>{
     $.ajax({
         url:"php/getUserData.php",
         datatype:"json",
@@ -34,8 +33,8 @@ picture.getMemberPicture(big_girl.querySelector("img"));
                 $("#soubriquet").val(response["memberName"])
                 $("#myselfsign").val(response["personalSign"])
                 $("#email").val(response["email"])
-                $("#username").html(response["memberName"])
-                $("#idname").html(response["memberID"])
+                $("#username").html("暱稱:"+response["memberName"])
+                $("#idname").html("ID:"+response["memberID"])
                 $("#sign").html(response["personalSign"])
                 
                 

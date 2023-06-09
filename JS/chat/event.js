@@ -7,17 +7,17 @@ const backBtn3 = document.getElementById('back-btn3');
 const eventCreateBtn = document.getElementById('eventcreate-btn');
 const eventDataCreate = document.getElementById('eventdata-create');
 const generalInfo = document.getElementById('general-info');
-const eventInfo = document.getElementById('event-info');
+// const eventInfo = document.getElementById('event-info');
 const elementsToHide = document.querySelectorAll('.hide-bar');
 const memberDataSearch = document.getElementById('memberdata-search');
 const memberData = document.getElementById('memberdata');
 const memberDataBtn = document.getElementById('memberdata-btn');
 
 // 点击memberdataBtn时显示eventData，隐藏eventDataSearch
-eventDataBtn.addEventListener('click', function() {
-    eventData.style.display = 'block';
-    eventDataSearch.style.display = 'none';
-  });
+// eventDataBtn.addEventListener('click', function() {
+//     eventData.style.display = 'block';
+//     eventDataSearch.style.display = 'none';
+//   });
 
 // 点击backBtn时显示eventDataSearch，隐藏
 backBtn.addEventListener('click', function() {
@@ -51,14 +51,14 @@ backBtn2.addEventListener('click', function() {
   });
 
   // 点击eventInfo时显示search-bar，隐藏mallBar
-  eventInfo.addEventListener('click', function() {
+  // eventInfo.addEventListener('click', function() {
     
-    for (var i = 0; i < elementsToHide.length; i++) {
-      elementsToHide[i].style.display = 'none';
-    }
-    eventDataSearch.style.display = 'none';
-    memberDataSearch.style.display = 'block';
-  });
+  //   for (var i = 0; i < elementsToHide.length; i++) {
+  //     elementsToHide[i].style.display = 'none';
+  //   }
+  //   eventDataSearch.style.display = 'none';
+  //   memberDataSearch.style.display = 'block';
+  // });
 
   // 点击memberdataBtn时显示memberData，隐藏memberData
 memberDataBtn.addEventListener('click', function() {
@@ -75,12 +75,12 @@ backBtn3.addEventListener('click', function() {
   });
 
   generalInfo.addEventListener('click', function(){
-    eventInfo.classList.remove("on");
+    // eventInfo.classList.remove("on");
     generalInfo.classList.add("on");
   });
   
-  eventInfo.addEventListener('click', function(){
-    eventInfo.classList.add("on");
-    generalInfo.classList.remove("on");
-  })
+  // eventInfo.addEventListener('click', function(){
+  //   eventInfo.classList.add("on");
+  //   generalInfo.classList.remove("on");
+  // })
   

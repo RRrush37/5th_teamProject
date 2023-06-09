@@ -24,29 +24,29 @@ $(function(){
         });
 
         canvas.toBlob(function(blob) {
-            // 使用 Blob 物件建立 File 物件
-            var file = new File([blob], "image.png", { type: "image/png" });
-          
-            // 建立 FormData 物件並將 File 物件添加到其中
-            var formData = new FormData();
-            formData.append("imageFile", file);
-          
-            // 使用 AJAX 傳送 FormData 至後端
-            $.ajax({
-              url: "php/catch_image.php",  // 請更改為後端接收請求的 URL
-              type: "POST",
-              data: formData,
-              processData: false,
-              contentType: false,
-              success: function(response) {
-                console.log("圖片上傳成功");
-              },
-              error: function(xhr, status, error) {
-                console.error("圖片上傳失敗:", error);
-              }
-            });
-          
-          }, "image/png");
+          // 使用 Blob 物件建立 File 物件
+          var file = new File([blob], "image.png", { type: "image/png" });
+        
+          // 建立 FormData 物件並將 File 物件添加到其中
+          var formData = new FormData();
+          formData.append("imageFile", file);
+        
+          // 使用 AJAX 傳送 FormData 至後端
+          $.ajax({
+            url: "php/catch_image.php",  // 請更改為後端接收請求的 URL
+            type: "POST",
+            data: formData,
+            processData: false,
+            contentType: false,
+            success: function(response) {
+              console.log("圖片上傳成功");
+            },
+            error: function(xhr, status, error) {
+              console.error("圖片上傳失敗:", error);
+            }
+          });
+        
+        }, "image/png");
 
     })
 })

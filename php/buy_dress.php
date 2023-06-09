@@ -1,4 +1,3 @@
-
 <?php
 require("checkIfLogin.php");
 session_start();
@@ -115,6 +114,5 @@ if (checkIfLogin()) {
         echo "balance";
     }
 
-    
 } else
     echo -1;

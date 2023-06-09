@@ -273,6 +273,10 @@
             });
             $(".footer").load("common.html .footer>div");
         });
+
+        let user_img2 = document.getElementsByClassName("member_photo")[0] ;
+        picture.getMemberPicture(user_img2.querySelector("img"));
+
     </script>
     <script>
 
@@ -342,14 +346,6 @@
             refreshDate();
         }
     </script>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script>
-    $(function () {
-        $(".header").load("common.html .header>div");
-        $(".footer").load("common.html .footer>div");
-    });
-</script>
 </body>
 </html>
 

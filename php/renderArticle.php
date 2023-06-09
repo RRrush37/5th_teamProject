@@ -55,7 +55,7 @@
                      }
                      
 
-                     echo $data[0]["articleID"] ;
+                     echo $data[0]["articleID"];
               } else {
                      echo "新增失敗!";
               }

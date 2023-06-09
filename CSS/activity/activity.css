@@ -315,6 +315,10 @@ input[type=checkbox] {
     cursor: pointer;
 }
 
+.activity_article_cards * {
+    pointer-events: none;
+}
+
 .topic {
     display: inline-block;
     width: fit-content;
@@ -323,6 +327,8 @@ input[type=checkbox] {
     font-size: 2rem;
     text-align: center;
 }
+
+
 
 .cards_top {
     display: flex;
@@ -657,7 +663,8 @@ ul.weekdays li {
     color: #4B4B4B;
 }
 
-.interact_lightbox i,.interact_lightbox span {
+.interact_lightbox i,
+.interact_lightbox span {
     color: #3D2E96;
     margin-right: 3px;
     cursor: pointer;
