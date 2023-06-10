@@ -1,3 +1,5 @@
+let rifht_my_activity = document.getElementsByClassName("my_activity")[0];
+
 $.ajax({
     url:"php/showArticle.php",
     datatype: "json",
