@@ -63,8 +63,8 @@ body{
 .wrapper{
     /* max-width: 1200px; */
     width: 100%;
-    padding: 20px 20px 60px;
-    height: 77vh;
+    padding: 50px 20px 80px;
+    height: 100vh;
     margin: 0 auto;
 }
 
@@ -740,16 +740,21 @@ section{
     background-repeat: no-repeat;
     color: white;
     display: inline-block;
-    width: 50px;
+    width: 100%;
 
     position: relative;
 
 }
 
 .ani{
-    animation-name: width;
+    background-image: linear-gradient(to right, transparent 0%,transparent 50%, #000 50%, #000 100%);
+    background-size: 200% auto;
+    background-position: 0% 0%;
+    background-repeat: no-repeat;
+
+    /* animation-name: width;
     animation-iteration-count: 1;
-    animation-timing-function: linear ;
+    animation-timing-function: linear ; */
 }
 
 @keyframes width {
