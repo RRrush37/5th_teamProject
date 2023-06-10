@@ -142,8 +142,39 @@ $.ajax({
   },
 });
 
+let stored_container = document.getElementsByClassName("stored_container")[0];
 
+$.ajax({
+  url: "php/getStoreDetail.php",
+  method: "post",
+  data: {},
+  dataType: "json",
+  success: function(response) {
+      // response = JSON.parse(response);
+      // console.log(response);
+      for ( let i = 0 ; i < response.length ; i++ ) {
+        if ( response[i].isCoin == 1 ) { // 必須是金幣
+          stored_container.innerHTML += `
+            <li class="checkbox_money" data-index="${response[i].storeID}" data-money="${response[i].itemPrice}">
+                <label for="checkbox${i}">
+                    <img class="money_${response[i].itemPrice}" src="IMG/store/${response[i].itemImage}" alt="">
+                    <div class="in">    
+                        <input type="checkbox" id="checkbox${i}" onclick="toggleCheckboxes('checkbox${i}')"/>
+                        <span class="checkbox"></span>
+                        <span>$${response[i].sellNum}</span>
+                    </div>
+                </label>
+            </li>`;
+        }
+      }
 
+      // console.log(comment_list);
+
+  },
+  error: function(xhr, status, error) {
+      alert("error:" + error);
+  }
+});
 
 
 

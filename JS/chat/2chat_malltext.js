@@ -160,8 +160,11 @@ let select_new_type = document.getElementById("new_type");
 select_new_type.addEventListener("change", function(){
     if (select_new_type.value == "coin" ) {
         document.getElementById("new_price").disabled = false ;
+        document.getElementById("new_initial").disabled = true ;
+        $("#new_initial").prop("checked", false);
     } else {
         document.getElementById("new_price").disabled = true ;
+        document.getElementById("new_initial").disabled = false ;
         $("#new_price").val("");
     }
     console.log(select_new_type.value);
@@ -224,6 +227,7 @@ $(function(){
             form.append("itemPrice", $("#new_coinprice").val());
             form.append("sellNum", $("#new_price").val());
             form.append("itemType", $("#new_type").val());
+            form.append("initialItem", $("#new_initial").prop("checked"));
             form.append("isCoin", select_new_type.value == "coin" );
             for (let i = 0; i < files.length; i++) {
                 form.append("files", files[i]);

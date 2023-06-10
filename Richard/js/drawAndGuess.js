@@ -6,6 +6,8 @@ $(function () {
     if (!nickname?.length) {
       alert("請輸入暱稱");
       return;
+    } else if (nickname.length > 10) {
+      alert("暱稱上限10個字");
     } else {
       ws.send(JSON.stringify([nickname, "nickname", id]));
     }
@@ -59,31 +61,25 @@ $(function () {
     ws.send(JSON.stringify([txt, "text", id, nowRoom]));
   };
   //傳送聊天訊息
-  $("#btnSend").on("click", sendMsg);
-  document
-    .getElementsByClassName("resetQuestion")[0]
-    .addEventListener("click", () => {
-      ws.send(JSON.stringify(["", "resetQuestion"]));
-    });
-  document.getElementsByClassName("reset")[0].addEventListener("click", () => {
-    ws.send(JSON.stringify([nowRoom, "resetTime"]));
-  });
+  if (!$("#btnSend").data("clickEventHandlerSet"))
+    $("#btnSend").on("click", sendMsg).data("clickEventHandlerSet", true);
+
+  // document.getElementsByClassName("reset")[0].addEventListener("click", () => {
+  //   ws.send(JSON.stringify([nowRoom, "resetTime"]));
+  // });
   document.addEventListener("keydown", (e) => {
     if (
       e.keyCode === 13 &&
       document.getElementById("txtInput") === document.activeElement
     )
       document.querySelector("#btnSend").click();
-  });
-
-  $("#resetQuestion").click(() => {
-    ws.send(JSON.stringify(["", "nextQuestion"]));
+      
   });
 
   // 建立 WebSocket (本例 server 端於本地運行)
-  let url = "ws://192.168.50.168:3000";
-  // let url = "ws://192.168.0.3:3000";
-  // let url = "ws://192.168.1.103:3000";
+  // let url = "ws://192.168.50.168:3000";
+  // let url = "ws://192.168.0.48:3000";
+  let url = "ws://192.168.0.44:3000";
   var ws = new WebSocket(url);
   // 監聽連線狀態
   ws.onopen = () => {
@@ -119,6 +115,7 @@ $(function () {
         if (!showDom.value) showDom.value = txt;
         else showDom.value = showDom.value + "\n" + txt;
         keyinDom.value = "";
+        showDom.scrollTop = showDom.scrollHeight;
         // if (arr[2] === id) {
         //   showDom.disable = true;
         // }
@@ -156,7 +153,7 @@ $(function () {
         arr[0].sort((a, b) => b[2] - a[2]);
         for (let i = 0; i < arr[0].length; i++) {
           if (arr[0][i][0] == id) {
-            memberStr += `<div class="member" style="background-color:yellow">
+            memberStr += `<div class="member" style="background-color:#bf6459e0">
             <img src="img/logo_1.png" alt="" class="sticker" />
             <span>${arr[0][i][1]}</span>
             <span>${arr[0][i][2]}</span>
@@ -190,6 +187,7 @@ $(function () {
         alert("遊戲開始囉！！");
         $(".enterRoom").html("");
         $("#roomLeader").html("");
+        $("#btnSend").off("click", sendMsg).data("clickEventHandlerSet", false);
         break;
       case "gameState":
         $("#nowState").html(arr[0]);
@@ -198,20 +196,44 @@ $(function () {
         $("#showAnswer").html("答案是：" + arr[0]);
         $("#txtInput").prop("disabled", true);
         $("#btnSend").prop("disabled", true);
-        $("#btnSend").off("click", sendMsg);
+        $("#btnSend").off("click", sendMsg).data("clickEventHandlerSet", false);
         break;
       case "correct":
         $("#txtInput").prop("disabled", true);
         $("#btnSend").prop("disabled", true);
-        $("#btnSend").off("click", sendMsg);
+        $("#btnSend").off("click", sendMsg).data("clickEventHandlerSet", false);
         break;
       case "newQuestion":
         $("#txtInput").prop("disabled", false);
         $("#btnSend").prop("disabled", false);
-        $("#btnSend").on("click", sendMsg);
+        if (!$("#btnSend").data("clickEventHandlerSet"))
+          $("#btnSend").on("click", sendMsg).data("clickEventHandlerSet", true);
         break;
       case "cleanAnswer":
         $("#showAnswer").html("");
+        break;
+      case "cleanCanvas":
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        break;
+      case "cannotDraw":
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        break;
+      case "endGame":
+        $("#txtInput").prop("disabled", false);
+        $("#btnSend").prop("disabled", false);
+        if (!$("#btnSend").data("clickEventHandlerSet"))
+          $("#btnSend").on("click", sendMsg).data("clickEventHandlerSet", true);
+        alert("人數不足，遊戲結束");
+        break;
+      case "countPoint":
+        alert(`遊戲結束！
+        第一名：${arr[0][1]}
+        第二名：${arr[2][1]}
+        第三名：${arr[3][1]}`);
+        $("#txtInput").prop("disabled", false);
+        $("#btnSend").prop("disabled", false);
+        if (!$("#btnSend").data("clickEventHandlerSet"))
+          $("#btnSend").on("click", sendMsg).data("clickEventHandlerSet", true);
         break;
     }
   };
@@ -245,6 +267,7 @@ $(function () {
         [startX, startY, startX + 0.1, startY + 0.1, color, width],
         "drawLine",
         nowRoom,
+        id,
       ])
     );
     // drawLine(startX, startY, startX + 0.1, startY + 0.1);
@@ -257,7 +280,7 @@ $(function () {
   //   });
   // 清除事件
   $("#clear-button").click(function () {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ws.send(JSON.stringify([nowRoom, "cleanCanvas", id]));
   });
 
   $("#canvas").mouseup(function () {
@@ -293,14 +316,18 @@ $(function () {
     startY = e.pageY - $(this).offset().top;
   });
   $("#canvas").mousemove(function (e) {
+    console.log(isDrawing);
     if (isDrawing) {
       // 當滑鼠按下時，開始繪製線條
+      console.log($(this).offset().left);
       lastX = e.pageX - $(this).offset().left;
       lastY = e.pageY - $(this).offset().top;
       ws.send(
         JSON.stringify([
           [startX, startY, lastX, lastY, color, width],
           "drawLine",
+          nowRoom,
+          id,
         ])
       );
       // drawLine(startX, startY, lastX, lastY);
@@ -364,7 +391,6 @@ $(function () {
     // 計算滑鼠在圖片容器中的位置
     var containerOffset = canvasContainer.offset();
     var mouseX = e.pageX - containerOffset.left;
-    // console.log(mouseX);
     var mouseY = e.pageY - containerOffset.top;
 
     // 計算橡皮擦的位置
@@ -379,8 +405,7 @@ $(function () {
     // 調整橡皮擦背景圖的大小
     // var bgWidth = canvasContainer.width() * 2;
     // var bgHeight = canvasContainer.height() * 2;
-    // console.log("bg-w", bgWidth);
-    // console.log("bg-h", bgHeight);
+
     // 移動橡皮擦
     $("#magnifier").css({
       left: magnifierX + "px",

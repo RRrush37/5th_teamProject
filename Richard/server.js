@@ -12,15 +12,45 @@ const server = express().listen(PORT, () => {
 const wss = new SocketServer({ server });
 let deleteInterval, time, allTime;
 let answer = [
-  "前端",
+  "狗",
   "丸子",
-  "青草茶",
+  "貓",
   "排球",
-  "資料庫",
-  "後端",
-  "里長",
+  "馬",
+  "牛",
+  "炸蝦",
   "籃球",
   "酒",
+  "電腦",
+  "冰塊",
+  "滑鼠",
+  "外套",
+  "水壺",
+  "薯條",
+  "小熊維尼",
+  "颱風",
+  "便當",
+  "巧克力",
+  "保齡球",
+  "撞球",
+  "釣竿",
+  "漁網",
+  "鬧鐘",
+  "帳篷",
+  "鍋鏟",
+  "老鼠",
+  "龍",
+  "羊",
+  "猴子",
+  "呼拉圈",
+  "百香果",
+  "奶嘴",
+  "洗髮精",
+  "地圖",
+  "蚊子",
+  "鞋櫃",
+  "火鍋",
+  "消防栓",
 ];
 let id = 1;
 let wsArr = [];
@@ -29,8 +59,10 @@ let idToNickname = [];
 let roomState = [];
 roomState["member"] = []; //[房名][userID、暱稱、分數、是否畫過]
 roomState["startState"] = []; //房間是否開始遊戲
+roomState["endGame"] = [];
 roomState["whoseTurn"] = []; //輪到誰了
 roomState["answer"] = []; //房間答案
+roomState["allAnswer"] = [];
 roomState["score"] = []; //答對時可獲得的分數
 roomState["scored"] = []; //是否已經計分
 roomState["time"] = []; //[時間上限, 剩餘時間, 時間函式]
@@ -43,8 +75,10 @@ let sendMsg = (roomName, msg) => {
 };
 let startGame = (roomName) => {
   roomState["startState"][roomName] = "watching";
-  roomState["answer"][roomName] =
-    answer[Math.floor(Math.random() * answer.length)];
+  roomState["allAnswer"][roomName] = answer.slice();
+  roomState["allAnswer"][roomName].sort(() => Math.random() - 0.5);
+  roomState["answer"][roomName] = roomState["allAnswer"][roomName].pop();
+  roomState["member"][roomName].sort(() => Math.random() - 0.5);
   roomState["score"][roomName] = roomState["member"][roomName].length;
   roomState["time"][roomName] = [];
 };
@@ -63,7 +97,7 @@ let nextStage = (roomName) => {
         ])
       );
       // allTime = 6000;
-      roomState["time"][roomName][0] = 6000;
+      roomState["time"][roomName][0] = 45000;
       resetTimer(roomName);
       break;
     case "drawing":
@@ -76,12 +110,27 @@ let nextStage = (roomName) => {
           "gameState",
         ])
       );
-      allTime = 5000;
+      roomState["answer"][roomName] = "";
+      roomState["time"][roomName][0] = 5000;
       resetTimer(roomName);
       break;
     case "showAnswer":
-      roomState["startState"][roomName] = "watching";
-      watchAnswer(roomName);
+      if (roomState["endGame"][roomName]) {
+        roomState["endGame"][roomName] = false;
+        sendMsg(
+          roomName,
+          JSON.stringify([
+            roomState["member"][roomName][0],
+            "countPoint",
+            roomState["member"][roomName][1],
+            roomState["member"][roomName][2],
+          ])
+        );
+        roomState["startState"][roomName] = false;
+      } else {
+        roomState["startState"][roomName] = "watching";
+        watchAnswer(roomName);
+      }
       // allTime = 3000;
       // resetTimer(roomName);
       break;
@@ -111,7 +160,7 @@ let resetTimer = (roomName) => {
         (roomState["time"][roomName][1] * 100) / roomState["time"][roomName][0],
       ])
     );
-    if (roomState["time"][roomName][1] == 0) {
+    if (roomState["time"][roomName][1] <= 0) {
       nextStage(roomName);
       return;
     }
@@ -145,8 +194,15 @@ let watchAnswer = (roomName) => {
       "gameState",
     ])
   );
-  roomState["answer"][roomName] =
-    answer[Math.floor(Math.random() * answer.length)];
+  if (!roomState["allAnswer"][roomName].length) {
+    roomState["allAnswer"][roomName] = answer.slice();
+    roomState["allAnswer"][roomName].sort(() => Math.random() - 0.5);
+  }
+  roomState["answer"][roomName] = roomState["allAnswer"][roomName].pop();
+
+  answer[Math.floor(Math.random() * answer.length)];
+  sendMsg(roomName, JSON.stringify(["", "newQuestion"]));
+  sendMsg(roomName, JSON.stringify(["", "cleanCanvas"]));
   for (let i = 0; i < roomState["member"][roomName].length; i++) {
     if (
       roomState["member"][roomName][i][0] === roomState["whoseTurn"][roomName]
@@ -187,10 +243,17 @@ wss.on("connection", (ws) => {
           roomState["startState"][newData[3]] &&
           newData[0] === roomState["answer"][newData[3]]
         ) {
+          roomState["time"][newData[3]][1] -=
+            roomState["time"][newData[3]][0] /
+            roomState["member"][newData[3]].length;
           for (let i = 0; i < roomState["member"][newData[3]].length; i++) {
             if (roomState["member"][newData[3]][i][0] === newData[2]) {
               roomState["member"][newData[3]][i][2] +=
                 roomState["score"][newData[3]];
+              if (roomState["member"][newData[3]][i][2] > 7) {
+                roomState["endGame"][newData[3]] = true;
+              }
+
               roomState["score"][newData[3]]--;
             }
             if (
@@ -234,13 +297,17 @@ wss.on("connection", (ws) => {
           );
         }
         break;
-      case "resetTime": //newData[房間名稱, "resetTime"]
-        // allTime = 10000;
-        roomState["time"][newData[0]][0] = 10000;
-        resetTimer(newData[0]);
-        break;
-      case "drawLine": //newData[[畫線資料], "drawLine", roomName]
-        sendMsg(newData[2], JSON.stringify([newData[0], "drawLine"]));
+      // case "resetTime": //newData[房間名稱, "resetTime"]
+      //   // allTime = 10000;
+      //   roomState["time"][newData[0]][0] = 10000;
+      //   resetTimer(newData[0]);
+      //   break;
+      case "drawLine": //newData[[畫線資料], "drawLine", roomName, ID]
+        if (
+          !roomState["startState"][newData[2]] ||
+          roomState["whoseTurn"][newData[2]] === newData[3]
+        )
+          sendMsg(newData[2], JSON.stringify([newData[0], "drawLine"]));
         break;
       case "nickname": //newData[暱稱, "nickname", 玩家id]
         if (nickname[newData[0]]) {
@@ -280,9 +347,10 @@ wss.on("connection", (ws) => {
           ])
         );
         if (!roomState["startState"][newData[0]]) {
-          wsArr[roomState["member"][newData[0]][0][0]].send(
-            JSON.stringify(["", "roomLeader"])
-          );
+          if (newData[0] != "大廳")
+            wsArr[roomState["member"][newData[0]][0][0]].send(
+              JSON.stringify(["", "roomLeader"])
+            );
         } else {
           ws.send(JSON.stringify(["", "gameStart"]));
         }
@@ -307,7 +375,7 @@ wss.on("connection", (ws) => {
           endGame(newData[0], "playerNotEnough");
           roomState["startState"][newData[0]] = "";
         }
-        if (!roomState["startState"][newData[0]]) {
+        if (!roomState["startState"][newData[0]] && newData[0] != "大廳") {
           if (roomState["member"][newData[0]][0]) {
             wsArr[roomState["member"][newData[0]][0][0]].send(
               JSON.stringify(["", "roomLeader"])
@@ -324,6 +392,14 @@ wss.on("connection", (ws) => {
           startGame(newData[0]);
           watchAnswer(newData[0]);
         }
+        break;
+      case "cleanCanvas": // newData[房間名稱, cleanCanvas, id]
+        if (
+          !roomState["startState"][newData[0]] ||
+          roomState["whoseTurn"][newData[0]] === newData[2]
+        )
+          sendMsg(newData[0], JSON.stringify(["", "cleanCanvas"]));
+        break;
     }
   });
 

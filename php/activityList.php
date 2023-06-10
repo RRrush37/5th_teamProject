@@ -1,23 +1,45 @@
 <?php
 
-require("checkLogin.php");
-if (1) {
+require("checkIfLogin.php");
+session_start();
+if (checkIfLogin()) {
+  require("connectSQL.php");
+  $sql = 'SELECT * FROM activity where 1';
 
-// if (checkLogin()) {
-    require("connectSQL.php");
-  $sql = 'SELECT * FROM activity where activityOrganiserID= ?';
-    
+  $statement = $pdo->prepare($sql);
+  // $statement->bindValue(1, $_SESSION["ID"]);
+
+  $statement->execute();
+
+  $data = $statement->fetchAll();
+  for ($i = 0; $i < count($data); $i++) {
+    $sql = 'SELECT count(*) FROM activityComment where activityID = ?';
     $statement = $pdo->prepare($sql);
-    $statement->bindValue(1, 2);
-
+    $statement->bindValue(1, $data[$i]["activityID"]);
     $statement->execute();
+    $count = $statement->fetchAll();
+    $data[$i]["commentNum"] = $count[0][0];
 
-    $data = $statement->fetchAll();
+    $sql = 'SELECT count(*) FROM activityThumbUp where activityID = ?';
+    $statement = $pdo->prepare($sql);
+    $statement->bindValue(1, $data[$i]["activityID"]);
+    $statement->execute();
+    $count = $statement->fetchAll();
+    $data[$i]["thumbUpNum"] = $count[0][0];
 
-    if ($data) {
+    $sql = 'SELECT memberName FROM memberData where memberID = ?';
+    $statement = $pdo->prepare($sql);
+    $statement->bindValue(1, $data[$i]["activityOrganiserID"]);
+    $statement->execute();
+    $name = $statement->fetchAll();
+    $data[$i]["organiserName"] = $name[0][0];
+  }
+
+
+  if ($data) {
     echo json_encode($data);
-    } else
+  } else
     echo 2;
 } else {
-    echo -1;
+  echo -1;
 }

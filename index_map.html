@@ -59,24 +59,24 @@
     <div class="map">
 
 
-        <img class="map_1" src="img/index/map/map_1.png" alt="">
+        <img class="map_1" src="IMG/index/map/map_1.png" alt="">
 
 
 
-       <a href=""><img class="house_1" src="img/index/map/house_1.png" alt=""></a> 
+       <a href=""><img class="house_1" src="IMG/index/map/house_1.png" alt=""></a> 
 
        <a href="store.html"><img class="house_2" src="IMG/index/map/house_2.png" alt=""></a>
        <a href="gameChoose.html"><img class="house_3" src="IMG/index/map/house_3.png" alt=""></a>
-       <a href="diary.html"><img class="house_4" src="IMG/index/map/house_4.png" alt=""></a>
+       <a href="diary_new.html"><img class="house_4" src="IMG/index/map/house_4.png" alt=""></a>
        <a href="activity.html"><img class="house_5" src="IMG/index/map/house_5.png" alt=""></a> 
-        <a href=""><img class="house_6" src="img/index/map/house_6.png" alt=""></a> 
+        <a href=""><img class="house_6" src="IMG/index/map/house_6.png" alt=""></a> 
 
 
 
-      <a href="./store.html"><img class="bulletin_board_2" src="IMG/index/map/bulletin_board_2.png" alt=""></a>  
-      <a href="./gameChoose.html"><img class="bulletin_board_3" src="IMG/index/map/bulletin_board_3.png" alt=""></a>   
-      <a href="./diary.html"><img class="bulletin_board_4" src="IMG/index/map/bulletin_board_4.png" alt=""></a>  
-       <a href="./activity.html"><img class="bulletin_board_5" src="IMG/index/map/bulletin_board_5.png" alt=""></a>  
+      <a href="store.html"><img class="bulletin_board_2" src="IMG/index/map/bulletin_board_2.png" alt=""></a>  
+      <a href="gameChoose.html"><img class="bulletin_board_3" src="IMG/index/map/bulletin_board_3.png" alt=""></a>   
+      <a href="diary_new.html"><img class="bulletin_board_4" src="IMG/index/map/bulletin_board_4.png" alt=""></a>  
+       <a href="activity.html"><img class="bulletin_board_5" src="IMG/index/map/bulletin_board_5.png" alt=""></a>  
        <a href=""><img class="bulletin_board_6" src="IMG/index/map/bulletin_board_6.png" alt=""></a>  
 
 
@@ -111,13 +111,15 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://kit.fontawesome.com/75e9abcec6.js" crossorigin="anonymous"></script>
-    <script>
+    <script type="module">
+        import * as picture from "./JS/member_picture.js";
         $(function () {
-            $(".header").load("common.html .header>div");
+            $(".header").load("common.html .header>div", function(){
+                let user_img = document.getElementsByClassName("user")[0] ;
+                picture.getMemberPicture(user_img);
+            });
             $(".footer").load("common.html .footer>div");
         });
-
-
 
 
         // 下面是地圖

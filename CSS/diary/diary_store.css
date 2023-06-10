@@ -199,10 +199,11 @@ body {
 }
 
 .member_photo img{
-    width: 50%;
-    height: 50%;
+    width: 65%;
+    /* height: 50%; */
     display: block;
     margin: auto;
+    transform: translateY(10%);
 }
 
 

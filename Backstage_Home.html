@@ -30,20 +30,20 @@
           </li>
           <li class="nav-item active">
             <a class="nav-link" href="3chat_eventext-search.html">
-              <span>行程管理</span>
+              <span>活動管理</span>
             </a>
           </li>
-          <li class="nav-item active">
+          <!-- <li class="nav-item active">
             <a class="nav-link" href="4chat_chatroomdata-search.html">
               <span>聊天室管理</span>
             </a>
-          </li>
+          </li> -->
           <li class="nav-item active">
             <a class="nav-link" href="5chat_member-article-search.html">
               <span>會員文章管理</span>
             </a>
           </li>
-          <li class="nav-item active">
+          <!-- <li class="nav-item active">
             <a class="nav-link" href="6chat_gamedata-search.html">
               <span>遊戲管理</span>
             </a>
@@ -52,7 +52,7 @@
             <a class="nav-link" href="7chat_reportsystem-search.html">
               <span>檢舉管理</span>
             </a>
-          </li>
+          </li> -->
         </ul>
 
         <div class="logo">
@@ -76,55 +76,67 @@
         <div class="store_sales">
           <h1 class="title">銷售業績</h1>
           <div class="body">
-            <div class="left">
-              <canvas id="myChart" width="150" height="150"></canvas>
+            <div class="top">
+              <div class="left">
+                <canvas id="myChart" width="150" height="150"></canvas>
+              </div>
+              <div class="right">
+                <div class="hair">
+                  <div class="name">頭髮:</div>
+                  <div class="sales" data-percent="20%"></div>
+                  <div class="num">20%</div>
+                </div>
+  
+                <div class="clothes">
+                  <div class="name">上衣:</div>
+                  <div class="sales" data-percent="25%"></div>
+                  <div class="num">25%</div>
+                </div>
+  
+                <div class="bottoms">
+                  <div class="name">下裝:</div>
+                  <div class="sales" data-percent="25%"></div>
+                  <div class="num">25%</div>
+                </div>
+  
+                <div class="face">
+                  <div class="name">臉部:</div>
+                  <div class="sales" data-percent="15%"></div>
+                  <div class="num">15%</div>
+                </div>
+  
+                <div class="accessories">
+                  <div class="name">配件:</div>
+                  <div class="sales" data-percent="15%"></div>
+                  <div class="num">15%</div>
+                </div>
+
+              </div>
             </div>
-            <div class="right">
-              <div class="type1">
-                <div class="name">角色配件:</div>
-                <div class="sales" data-percent="55%"></div>
-                <div class="num">55%</div>
-              </div>
 
-              <div class="type2">
-                <div class="name">能力屬性:</div>
-                <div class="sales" data-percent="15%"></div>
-                <div class="num">15%</div>
+            <div class="bottom">
+              <div class="left">
+                <canvas id="myChart2" width="150" height="150"></canvas>
               </div>
-
-              <div class="type3">
-                <div class="name">貼圖:</div>
-                <div class="sales" data-percent="30%"></div>
-                <div class="num">30%</div>
+              <div class="right">
+                <div class="totle_box">
+                  <h2>總銷售額</h2>
+                  <h2 id="totle_price">25,400</h2>
+                </div>
               </div>
-
-              <div class="totle_box">
-                <h2>總銷售額</h2>
-                <h2 id="totle_price">$123,456</h2>
-              </div>
+              
             </div>
           </div>
         </div>
 
         <div class="active_box">
-          <h1 class="title">近期官方活動行程</h1>
+          <h1 class="title">近期活動</h1>
           <div class="body">
-            <div class="sub_title">
-              <h2 class="left">主題:</h2>
-              <p class="right">狼人殺交友day</p>
-            </div>
-            <div class="time">
-              <h2 class="left">舉辦時間:</h2>
-              <p class="right">2023/6/1 ~ 2023/6/3</p>
-            </div>
-            <div class="description">
-              <h2 class="left">活動內容:</h2>
-              <p class="right">三天兩夜中一起玩狼人殺， 紓壓生活中的不快吧!</p>
-            </div>
+
           </div>
         </div>
 
-        <div class="report_box">
+        <!-- <div class="report_box">
           <h1 class="title">檢舉紀錄</h1>
           <div class="body">
             <table>
@@ -155,28 +167,103 @@
               </tr>
             </table>
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
   </body>
-  <script src="js/chat/memberdata.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+  <!-- <script src="js/chat/memberdata.js"></script> -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="JS/backstage/backstage_header.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+  <script src="JS/backstage/back_home.js"></script>
   <script>
+
+    // let store_sales = document.getElementsByClassName("store_sales")[0];
+    // let store_sales_body = store_sales.querySelector(".body");
+    // $.ajax({
+    //     url: "php/back_showNewActivity.php",
+    //     type: "POST",
+    //     dataType: "json",
+    //     data: {},
+    //     success: function (response) {
+    //         // response = JSON.parse(response);
+    //         $.each(response, function(index, row) {
+    //           store_sales_body.innerHTML = `
+    //             <div class="top">
+    //               <div class="left">
+    //                 <canvas id="myChart" width="150" height="150"></canvas>
+    //               </div>
+    //               <div class="right">
+    //                 <div class="hair">
+    //                   <div class="name">頭髮:</div>
+    //                   <div class="sales" data-percent="55%"></div>
+    //                   <div class="num">55%</div>
+    //                 </div>
+      
+    //                 <div class="clothes">
+    //                   <div class="name">上衣:</div>
+    //                   <div class="sales" data-percent="15%"></div>
+    //                   <div class="num">15%</div>
+    //                 </div>
+      
+    //                 <div class="bottoms">
+    //                   <div class="name">下裝:</div>
+    //                   <div class="sales" data-percent="30%"></div>
+    //                   <div class="num">30%</div>
+    //                 </div>
+      
+    //                 <div class="face">
+    //                   <div class="name">臉部:</div>
+    //                   <div class="sales" data-percent="55%"></div>
+    //                   <div class="num">55%</div>
+    //                 </div>
+      
+    //                 <div class="accessories">
+    //                   <div class="name">配件:</div>
+    //                   <div class="sales" data-percent="55%"></div>
+    //                   <div class="num">55%</div>
+    //                 </div>
+
+    //               </div>
+    //             </div>
+
+    //             <div class="bottom">
+    //               <div class="left">
+    //                 <canvas id="myChart2" width="150" height="150"></canvas>
+    //               </div>
+    //               <div class="right">
+    //                 <div class="totle_box">
+    //                   <h2>總銷售額</h2>
+    //                   <h2 id="totle_price">123,456</h2>
+    //                 </div>
+    //               </div>
+                  
+    //             </div>
+    //             `;
+    //         });
+    //     },
+    //     error: function (xhr, status, error) {
+    //       // 在此處處理錯誤情況
+    //       console.log("Error: " + error);
+    //     },
+    // });
+
     let myCanvas = document.getElementById("myChart");
     let ctx = myCanvas.getContext("2d");
     let myChart = new Chart(ctx, {
       type: "pie",
       data: {
-        labels: ["角色配件", "能力屬性", "貼圖"],
+        labels: ["頭髮", "上衣", "下裝", "臉部", "配件"],
         datasets: [
           {
             // label: 'My First Dataset',
-            data: [55, 15, 30],
+            data: [20, 25, 25, 15, 15],
             backgroundColor: [
               "rgb(62, 83, 81)",
               "rgb(119, 145, 141)",
               "rgb(195, 212, 210)",
+              "rgb(141, 203, 195)",
+              "rgb(57, 187, 170)",
             ],
             // hoverBackgroundColor: "rgba(154,178,96,1)",
             hoverOffset: 4,
@@ -187,6 +274,37 @@
         responsive: false,
         legend: {
           display: false,
+        },
+      },
+    });
+
+    let myCanvas2 = document.getElementById("myChart2");
+    let ctx2 = myCanvas2.getContext("2d");
+    let myChart2 = new Chart(ctx2, {
+      type: "bar", // 圖表類型
+      data: {
+        labels: [ "4月", "5月", "6月" ], // 標題
+        datasets: [{
+          label: "# of Votes", // 標籤
+          data: [ 13, 19, 15 ], // 資料
+          backgroundColor: [ // 背景色
+            "#C3D4D2",
+            "#A5CAC6",
+            "#324D4A",
+          ],
+          borderWidth: 1 // 外框寬度
+        }]
+      },
+      options: {
+        responsive: false,
+        legend: {
+          display: false,
+        },
+        scales: {
+          y: {
+            min: 10,
+            max: 20,
+          }
         },
       },
     });

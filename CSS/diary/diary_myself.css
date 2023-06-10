@@ -172,10 +172,11 @@ body {
 }
 
 .member_photo img{
-    width: 50%;
-    height: 50%;
+    width: 65%;
+    /* height: 50%; */
     display: block;
     margin: auto;
+    transform: translateY(10%);
 }
 
 
@@ -263,7 +264,7 @@ body {
 .big_girl img {
 width: 100%;
 height: auto;
-transform: scale(2.5) translateY(14%);
+transform: scale(2.5) translateY(25%);
 }
 
 /* .big_girl > img{
