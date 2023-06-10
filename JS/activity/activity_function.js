@@ -44,7 +44,7 @@ function get_card() {
                                         <a href="#"><i class="fa-regular fa-comment-dots"></i><span>${item.commentNum}</span></a>
                                     </div>
                                     <div class="join">
-                                        <h3>參加人數：2/${item.activityLimit}</h3>
+                                        <h3>參加人數：2/<pan id="activityLimit">${item.activityLimit}</pan></h3>
                                         <button type="submit" class="iwantjoin color-button">我要參加</button>
                                     </div>
                                 </div>
