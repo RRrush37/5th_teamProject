@@ -173,8 +173,13 @@ align-items: center;
         display: inline; /* 設置為內聯元素 */
         margin-left: 10px; /* 加上適當的左邊距 */
         
-     }
-     
+      }
+
+
+     ::placeholder {
+      color: red;
+    }
+
      /* ----------------414------------------------------ */
      
      @media screen and (max-width: 414px){
