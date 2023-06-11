@@ -14,7 +14,7 @@
             // date_default_timezone_set("Asia/Taipei"); //台北時間
             $filename = $_SESSION["ID"].".png" ; //年月日時分秒
             //檔案最終存放位置
-            $filePath = $ServerRoot."/team_5/IMG/people/member1/".$filename;
+            $filePath = "../IMG/people/member1/".$filename;
     
             move_uploaded_file($tmpFilePath, $filePath);
             require("connectSQL.php");

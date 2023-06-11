@@ -47,7 +47,7 @@ var email_login = email.value;
             return false;
         }
         
-        if (!$("#pwd").val()?.length < 6) {
+        if ($("#pwd").val()?.length < 6) {
         alert('密碼至少為6位數字');
         passwordInput.focus();
             return false;

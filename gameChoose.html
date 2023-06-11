@@ -11,7 +11,7 @@
   <body>
     <div class="header"></div>
     <!-- 用來載入 common.html 裡頭的 header -->
-    
+
     <div class="wrapper">
       <div class="activity_title">
         <svg
@@ -89,14 +89,17 @@
             </defs>
           </a>
         </svg>
-  
+
         <h1>遊戲大廳</h1>
       </div>
       <section class="container">
         <a href="wolf.html">
           <img id="wolf" src="IMG/gameChoose/wolf.svg" alt="" />
         </a>
-        <a href="#">
+        <a
+          href="https://drive.google.com/drive/folders/1OlZ60MLeBGD6CB6IqwJhKxHAGDvJyPdp?usp=drive_link"
+          target="_blank"
+        >
           <img id="paint" src="IMG/gameChoose/paint.svg" alt="" />
         </a>
       </section>
@@ -118,11 +121,11 @@
     <script type="module">
       import * as picture from "./JS/member_picture.js";
       $(function () {
-          $(".header").load("common.html .header>div", function(){
-              let user_img = document.getElementsByClassName("user")[0] ;
-              picture.getMemberPicture(user_img);
-          });
-          $(".footer").load("common.html .footer>div");
+        $(".header").load("common.html .header>div", function () {
+          let user_img = document.getElementsByClassName("user")[0];
+          picture.getMemberPicture(user_img);
+        });
+        $(".footer").load("common.html .footer>div");
       });
     </script>
     <script src="JS/checkLogin.js"></script>
