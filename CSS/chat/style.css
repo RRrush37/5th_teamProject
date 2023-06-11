@@ -3,6 +3,10 @@ body {
   background-size: cover;
 }
 
+.activity_title {
+  margin-left: 20px;
+}
+
 .search-create {
   margin: 3rem auto;
   width: 60%;

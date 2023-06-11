@@ -152,7 +152,7 @@ $.ajax({
                 },
                 dataType: "json",
                 success: function (response) {
-                    alert("腳色創建成功");
+                    alert("角色創建成功");
                     location.href = "index_map.html" ;
                 },error: function(exception) {
                     alert("數據載入失敗: " + exception.status);
