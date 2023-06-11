@@ -31,6 +31,13 @@ if (checkIfLogin()) {
     $statement->execute();
     $name = $statement->fetchAll();
     $data[$i]["organiserName"] = $name[0][0];
+
+    $sql = 'SELECT count(*) FROM activityParticipant where activityID = ?';
+    $statement = $pdo->prepare($sql);
+    $statement->bindValue(1, $data[$i]["activityID"]);
+    $statement->execute();
+    $name = $statement->fetchAll();
+    $data[$i]["joinNum"] = $name[0][0];
   }
 
 

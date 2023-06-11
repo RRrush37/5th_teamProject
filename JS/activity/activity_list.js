@@ -70,9 +70,9 @@ const get_lightbox = () => {
                             <!-- <a href="#"><i class="fa-regular fa-bookmark"></i></a> -->
                         </div>
                         <div class="join">
-                            <h3>參加人數：2/${response.activityLimit}</h3>
-                            <input type="checkbox" id="iwantjoin_lightbox">
-                            <label for="iwantjoin_lightbox" class="iwantjoin color-button">我要參加</label>
+                            <h3>參加人數：<pan id="joinNum">2</pan>/${response.activityLimit}</h3>
+                            <!--input type="checkbox" id="iwantjoin_lightbox"-->
+                            <div for="iwantjoin_lightbox" class="iwantjoin color-button" id="join">我要參加</div>
                         </div>
                     </div>
                     <div class="activity_comment">
@@ -98,7 +98,41 @@ const get_lightbox = () => {
                     </div>
                 </div>
                 `;
-
+    document.getElementById("join").addEventListener("click", () => {
+      $.ajax({
+        url: "php/iWantJoin.php",
+        method: "post",
+        dataType: "json",
+        data: { activityID: response.activityID },
+        success: (innerResponse) => {
+          alert(innerResponse);
+          if (innerResponse) {
+            document.getElementById("join").innerHTML = "取消參加";
+          } else {
+            document.getElementById("join").innerHTML = "我要參加";
+          }
+          $.ajax({
+            url: "php/getActivityJoinNum.php",
+            method: "post",
+            dataType: "json",
+            data: { activityID: response.activityID },
+            success: (response) => {
+              if (response == -1) {
+                alert("請先登入");
+              } else {
+                document.getElementById("joinNum").innerHTML = response;
+              }
+            },
+            error: (xhr, status, error) => {
+              alert("error: " + error);
+            },
+          });
+        },
+        error: (xhr, status, error) => {
+          alert("error: " + error);
+        },
+      });
+    });
     lightbox_background.classList.remove("-none");
     let fa_xmark = document.getElementsByClassName("fa-xmark")[0];
     fa_xmark.addEventListener("click", function () {
@@ -159,11 +193,16 @@ const get_lightbox = () => {
                         let card = all_card[index];
                         if (card.activityID === Number(current_id)) {
                           get_comment_card(card);
-                          let activity_readmore_wrap = document.getElementsByClassName("activity_readmore_wrap")[0];
+                          let activity_readmore_wrap =
+                            document.getElementsByClassName(
+                              "activity_readmore_wrap"
+                            )[0];
                           setTimeout(() => {
-                            activity_readmore_wrap.scrollTop = activity_readmore_wrap.scrollHeight;
+                            activity_readmore_wrap.scrollTop =
+                              activity_readmore_wrap.scrollHeight;
                           }, 100);
-                          let commentCount = document.getElementsByClassName("howmany");
+                          let commentCount =
+                            document.getElementsByClassName("howmany");
                           for (let i = 0; i < commentCount.length; i++) {
                             let howmany = parseInt(commentCount[i].innerHTML);
                             howmany++;
@@ -184,8 +223,8 @@ const get_lightbox = () => {
                 alert("請輸入留言");
               }
             });
-            document.addEventListener("keyup",function(e){
-              if(e.key=="Enter"){
+            document.addEventListener("keyup", function (e) {
+              if (e.key == "Enter") {
                 comment_send.click();
               }
             });
@@ -197,7 +236,6 @@ const get_lightbox = () => {
       });
     }
   });
-
 };
 
 //篩選器
@@ -207,24 +245,19 @@ let durFilter = "0";
 let topicFilter1 = document.getElementsByClassName("byebye");
 let topicFilter2 = [...topicFilter1];
 
-
 let fromnowon = document.getElementsByName("depart");
 let fromnowonValue = "";
 
 window.document.addEventListener("click", function (e) {
-
   if (e.target.classList.contains("left"))
     for (let i = 0; i < fromnowon.length; i++) {
       fromnowon[i].checked = false;
       if (!fromnowon[i].checked) {
-
       }
     }
   fromnowonValue = "";
   applyFilters();
-
 });
-
 
 $(fromnowon).click((e) => {
   e.stopPropagation();
@@ -236,9 +269,6 @@ $(fromnowon).click((e) => {
   }
   applyFilters();
 });
-
-
-
 
 $("#count").change(() => {
   countFilter = document.getElementById("count").value;
@@ -266,9 +296,17 @@ $("#place").change(() => {
 });
 
 function applyFilters() {
-  let activity_article_cards = document.getElementsByClassName("activity_article_cards");
+  let activity_article_cards = document.getElementsByClassName(
+    "activity_article_cards"
+  );
 
-  if (countFilter === "0" && !hasCheckedTopics() && locFilter === "0" && durFilter === "0" && fromnowonValue === "") {
+  if (
+    countFilter === "0" &&
+    !hasCheckedTopics() &&
+    locFilter === "0" &&
+    durFilter === "0" &&
+    fromnowonValue === ""
+  ) {
     showAllCards(activity_article_cards);
     return;
   }
@@ -278,9 +316,9 @@ function applyFilters() {
     let activityCount = activityCard.querySelector(".activityLimit").innerHTML;
     let topic = activityCard.querySelector(".topic").innerHTML;
     let location = activityCard.querySelector(".location").innerHTML;
-    let startDate = activityCard.querySelector('.thetime1').innerHTML;
+    let startDate = activityCard.querySelector(".thetime1").innerHTML;
     startDate = new Date(startDate);
-    let endDate = activityCard.querySelector('.thetime2').innerHTML;
+    let endDate = activityCard.querySelector(".thetime2").innerHTML;
     endDate = new Date(endDate);
 
     // 計算兩個日期之間的毫秒差異
@@ -299,16 +337,22 @@ function applyFilters() {
       afterDays = "months";
     }
 
-
     let countMatch = countFilter === "0" || countFilter === activityCount;
     let topicMatch = topicFilterContains(topic);
     let locMatch = locFilter === "0" || locFilter === location;
-    let durMatch = durFilter === "0" || parseInt(durFilter) === parseInt(diffDays);
+    let durMatch =
+      durFilter === "0" || parseInt(durFilter) === parseInt(diffDays);
     let startMatch = fromnowonValue === "" || fromnowonValue === afterDays;
 
     if (countMatch && topicMatch && locMatch && durMatch && startMatch) {
       activityCard.style.display = "flex";
-    } else if (countMatch && !hasCheckedTopics() && locMatch && durMatch && startMatch) {
+    } else if (
+      countMatch &&
+      !hasCheckedTopics() &&
+      locMatch &&
+      durMatch &&
+      startMatch
+    ) {
       activityCard.style.display = "flex";
     } else {
       activityCard.style.display = "none";

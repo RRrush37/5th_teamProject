@@ -1,3 +1,23 @@
+var boyOnlyCheckbox = document.getElementById("boyonly");
+var girlOnlyCheckbox = document.getElementById("girlonly");
+
+boyOnlyCheckbox.addEventListener("change", function () {
+    if (this.checked) {
+        girlOnlyCheckbox.disabled = true;
+    } else {
+        girlOnlyCheckbox.disabled = false;
+    }
+});
+
+girlOnlyCheckbox.addEventListener("change", function () {
+    if (this.checked) {
+        boyOnlyCheckbox.disabled = true;
+    } else {
+        boyOnlyCheckbox.disabled = false;
+    }
+});
+
+
 
 // 取得當前日期
 var currentDate = new Date();
@@ -110,6 +130,14 @@ post_btn.addEventListener("click", function (e) {
         //     alert("請輸入完整資料");
     }
 });
+
+let cancel_btn = document.getElementById("cancel_btn");
+
+cancel_btn.addEventListener("click", function (e) {
+    e.preventDefault();
+    window.location.href = "activity_my_post.html";
+});
+
 
 
 
