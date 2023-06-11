@@ -33,7 +33,7 @@ $(() => {
       return false;
   }
   
-  if (!$("#password").val()?.length < 6) {
+  if ($("#password").val()?.length < 6) {
   alert('密碼至少為6位數字');
   passwordInput.focus();
       return false;
