@@ -19,6 +19,10 @@ body::before {
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)); /* 線性漸變遮罩 */
 }
 
+#logout-button{
+  display: none;
+}
+
 .nav{
   padding-top: 95px;
 }
@@ -70,7 +74,6 @@ body::before {
   color: rgb(255, 255, 255);
 
 }
-
 
 .box span, input {
   display: block;
