@@ -1691,10 +1691,32 @@
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script>
+    <script type="module">
+      import * as picture from "./JS/member_picture.js";
       $(function () {
-        $(".header").load("common.html .header>div");
-        $(".footer").load("common.html .footer>div");
+          $(".header").load("common.html .header>div", function(){
+              let user_img = document.getElementsByClassName("user")[0] ;
+              picture.getMemberPicture(user_img);
+
+              var logoutButton = document.getElementById('logout-button');
+              logoutButton.addEventListener('click', logout);
+              function logout() {
+                $.ajax({
+                    method: "POST",
+                    url: "php/back_logout.php",
+                    data: {},
+                    dataType: "json",
+                    success: function (response) {
+                      alert("成功登出");
+                      location.href = 'index2.html';
+                    },
+                    error: function (exception) {
+                      alert("數據載入失敗: " + exception.status);
+                    },
+                  });
+              }
+          });
+          $(".footer").load("common.html .footer>div");
       });
     </script>
     <script src="JS/store/store_value3.js"></script>
