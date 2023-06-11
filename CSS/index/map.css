@@ -28,9 +28,9 @@ body::before {
   z-index: -1;
 }
 
-.activity_title {
+/* .activity_title {
   margin-left: 20px;
-}
+} */
 
 .return>img:hover {
   animation: left 5s forwards;

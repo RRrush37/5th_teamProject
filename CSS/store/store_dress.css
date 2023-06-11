@@ -479,7 +479,6 @@ body {
   left: 0;
 }
 
-
 .money1 {
   display: flex;
   align-items: center;
@@ -655,22 +654,23 @@ body {
   }
 
   /* 下方選單 */
-.nav_down {
-  background: rgba(255, 255, 255, 0.667);
-  position: absolute;
-  width: 361px;
-  left: 55%;
-  top: 85%;
-  border-radius: 10px;
-  transform: translate(-56%, -40%);
-  overflow: hidden;
-  cursor: pointer;
-}
+  .nav_down {
+    background: rgba(255, 255, 255, 0.667);
+    position: absolute;
+    width: 361px;
+    left: 55%;
+    top: 85%;
+    border-radius: 10px;
+    transform: translate(-56%, -40%);
+    overflow: hidden;
+    cursor: pointer;
+  }
 
   #nav_down_wrapper::-webkit-scrollbar{
     height: 20px;
   }
-.nav_left
+
+  .nav_left
   {
     background-image: url(index_build_roles.html.css);
     margin: 0px auto;
@@ -718,7 +718,6 @@ body {
     flex-direction: row;
   }
     
-
   .nav_left ul li{
     border-bottom: none;
     left: 20%;
@@ -815,7 +814,6 @@ body {
     background-position: center center;
 }
 
-
 .record #pay_record {
   width: 50px;
   position: absolute;
@@ -824,4 +822,9 @@ body {
   cursor: pointer;
   filter: drop-shadow(rgba(0, 0, 0, 0.408) 3px 3px 3px);
 }
+
+.pay_wrapper{
+  width: 350px;
+}
+
 }
