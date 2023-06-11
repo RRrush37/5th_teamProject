@@ -126,9 +126,8 @@ body {
   align-items: center;
   text-decoration-color: #634921;
   text-underline-offset: 6px;
-  font-size: 2rem;
+  font-size:2rem;
   transition: all 0.3s ease-in-out;
-  margin-top: 2rem;
   font-weight: bold;
 }
 
@@ -137,9 +136,8 @@ body {
   /* width: 100%; */
   display: block;
   /* justify-content: center;
-    align-items: center; */
-  font-size: 3rem;
-  line-height: 1.6;
+  align-items: center; */
+  font-size: 2.5rem;
   position: relative;
   cursor: pointer;
   /* margin: 1rem auto; */
@@ -150,7 +148,6 @@ body {
 }
 
 .text_nav div ~ div {
-  margin-top: 1.5rem;
 }
 
 .text_nav div a:hover {
@@ -186,20 +183,22 @@ body {
 
 /* -------------導覽列裡面的大頭貼------- */
 
-.member_photo {
+.member_photo{
   background-image: url(../../IMG/diary/grass.png);
   background-size: cover;
-  background-size: 70%;
+  background-size: 100%;
   background-position: center;
   background-repeat: no-repeat;
+  transform: translateY(0%);
 }
 
-.member_photo img {
-  width: 65%;
+.member_photo img{
+  width: 120%;
   /* height: 50%; */
   display: block;
   margin: auto;
-  transform: translateY(10%);
+  transform: translateY(15%);
+  transform: translateX(-10%);
 }
 
 /* --------------活動內容-------------- */

@@ -93,10 +93,10 @@ body {
     color: #634921;
     line-height: 1.6;
     padding: 20px;
-    height: 70vh;
+    height: 75vh;
     /* overflow-y: scroll; */
     scrollbar-gutter: stable both-edges;
-    margin-top: 30px;
+    margin-top: 20px;
 }
 
 
@@ -114,9 +114,8 @@ body {
     text-underline-offset: 6px;
     font-size:2rem;
     transition: all 0.3s ease-in-out;
-    margin-top: 30px;
     font-weight: bold;
-}
+  }
 
 
 
@@ -127,8 +126,7 @@ body {
     display: block;
     /* justify-content: center;
     align-items: center; */
-    font-size: 3rem;
-    line-height: 1.2;
+    /* font-size: 2.5rem; */
     position: relative;
     cursor: pointer;
     /* margin: 1rem auto; */
@@ -142,7 +140,6 @@ body {
 
 
 .text_nav div ~ div {
-    margin-top: 1.5rem;
 }
 
 .text_nav div a:hover {
@@ -180,6 +177,7 @@ body {
 
 #the_block{
     width: 50%;
+    margin-top: -10px;
 }
 
 
@@ -192,19 +190,20 @@ body {
 .member_photo{
     background-image: url(../../IMG/diary/grass.png);
     background-size: cover;
-    background-size: 70%;
-        background-position: center;
-        background-repeat: no-repeat;
-        
-}
-
-.member_photo img{
-    width: 65%;
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    transform: translateY(0%);
+  }
+  
+  .member_photo img{
+    width: 120%;
     /* height: 50%; */
     display: block;
     margin: auto;
-    transform: translateY(10%);
-}
+    transform: translateY(15%);
+    transform: translateX(-10%);
+  }
 
 
 /* --------------活動內容-------------- */
@@ -584,10 +583,10 @@ body {
 .activity_main .right {
     width: 20.8%;
     color: #000;
-    height: 70vh;
+    height: 75vh;
     overflow-y: scroll;
 
-    margin-top: 30px;
+    margin-top: 20px;
 }
 
 
