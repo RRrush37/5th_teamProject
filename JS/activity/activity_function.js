@@ -34,6 +34,8 @@ function get_card() {
                                             <h2>${item.activityName}</h2>
                                         </div>
                                         <div class="text_content">
+                                            <pan class="thetime1" style="display:none">${item.activityStartDate}</pan><pan class="thetime2" style="display:none">${item.activityEndDate}</pan>
+                                            <pan class="location" style="display:none">${item.activityPlace}</pan>
                                             ${item.activityNote}
                                         </div>
                                     </div>
@@ -41,10 +43,10 @@ function get_card() {
                                 <div class="cards_actions">
                                     <div class="interact">
                                         <a href="#"><i class="fa-regular fa-heart ${item.item_id}"></i><span>${item.thumbUpNum}</span></a>
-                                        <a href="#"><i class="fa-regular fa-comment-dots"></i><span>${item.commentNum}</span></a>
+                                        <a href="#"><i class="fa-regular fa-comment-dots"></i><span class="howmany">${item.commentNum}</span></a>
                                     </div>
                                     <div class="join">
-                                        <h3>參加人數：2/<pan id="activityLimit">${item.activityLimit}</pan></h3>
+                                        <h3>參加人數：2/<pan class="activityLimit">${item.activityLimit}</pan></h3>
                                         <button type="submit" class="iwantjoin color-button">我要參加</button>
                                     </div>
                                 </div>
@@ -70,15 +72,6 @@ function get_card() {
 ////////////////////////////////////////
 
 function get_comment_card(card) {
-  //   let comment_cards = JSON.parse(localStorage.getItem("comment_cards"));
-  //   if (comment_cards) {
-  //     let comment_cards1 = comment_cards.filter((item) => {
-  //       if (card.item_id === item.item_id) {
-  //         return item;
-  //       }
-  //   console.log(card);
-  //   //     });
-  //   alert(card.activityID);
   $.ajax({
     url: "php/loadActivityComment.php",
     method: "post",
@@ -101,47 +94,11 @@ function get_comment_card(card) {
         "activity_commentbox"
       )[0];
       activity_commentbox.innerHTML = str;
-      let activity_comment = document.querySelector(".activity_comment");
-      activity_comment.scrollTop = activity_comment.scrollHeight;
     },
     error(xhr, status, error) {
       alert("error: " + error);
     },
   });
-  // let comment_cards1 = [];
-  // for (let j = 0; j < comment_cards.length; j++) {
-  //     if (card.item_id === comment_cards[j].item_id) {
-  //         comment_cards1.push(comment_cards[j]);
-  //     }
-  // }
-
-  //   let comment_card_html = "";
-  //   let howmany1 = document.getElementsByClassName("howmany")[0];
-  //   let howmany2 = document.getElementsByClassName("howmany")[1];
-  //   howmany1.innerHTML = comment_cards1.length;
-  //   howmany2.innerHTML = comment_cards1.length;
-
-  //   comment_cards1.forEach(function (item, i) {
-  //     // [{}, {}]
-  //     let post_time_display = convertTimeToHumanReadable(item.post_time);
-  //     comment_card_html += `
-  //                         <div class="comment_card">
-  //                             <!-- <span class="more_action">‧‧‧</span> -->
-  //                             <img class="user" src="./IMG/activity/lonely.png" alt="" width="60">
-  //                             <div class="comment_text">
-  //                                 <h2>暱稱</h2>
-  //                                 <p>${item.comment_content}</p>
-  //                                 <h3>B${i + 1} ‧ ${post_time_display}</h3>
-  //                             </div>
-  //                         </div>
-  //     `;
-  //   });
-
-  // let activity_commentbox = document.getElementsByClassName(
-  //   "activity_commentbox"
-  // )[0];
-
-  //   activity_commentbox.innerHTML = comment_card_html;
 }
 
 ////////////////////////////////////////

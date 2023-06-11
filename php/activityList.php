@@ -4,11 +4,9 @@ require("checkIfLogin.php");
 session_start();
 if (checkIfLogin()) {
   require("connectSQL.php");
-  $sql = 'SELECT * FROM activity where 1';
 
+  $sql = 'SELECT * FROM activity WHERE activityStartDate > CURRENT_DATE()';
   $statement = $pdo->prepare($sql);
-  // $statement->bindValue(1, $_SESSION["ID"]);
-
   $statement->execute();
 
   $data = $statement->fetchAll();
@@ -39,7 +37,7 @@ if (checkIfLogin()) {
   if ($data) {
     echo json_encode($data);
   } else
-    echo 2;
+    echo json_encode(2);
 } else {
   echo -1;
 }

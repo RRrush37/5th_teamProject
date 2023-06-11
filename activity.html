@@ -101,10 +101,11 @@
           </div>
           <div class="activity_main">
             <div class="left">
-              <h2>活動主題篩選</h2>
+              <h2>活動篩選</h2>
               <label for="count">
                 <p>人數：</p>
                 <select name="count" id="count">
+                  <option value="0">不指定</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
                   <option value="4">4</option>
@@ -168,6 +169,7 @@
               <label for="during">
                 <p>時長：</p>
                 <select name="during" id="during">
+                  <option value="0">不指定</option>
                   <option value="1">一天內</option>
                   <option value="2">二天</option>
                   <option value="3">三天</option>
@@ -209,6 +211,7 @@
               <label for="place">
                 <p>地點：</p>
                 <select name="place" id="place">
+                  <option value="0">不指定</option>
                   <option value="北部">北部</option>
                   <option value="中部">中部</option>
                   <option value="南部">南部</option>
@@ -220,14 +223,14 @@
               <!-- <label for="chr_restrict"><input type="checkbox" id="chr_restrict" name="" ><span
                                       class="check-button"></span>魅力值不得低於70</label>
                               <br> -->
-              <div class="btn_wrap">
-                <button type="submit" class="selector_submit" id="filter_btn">
-                  確認
-                </button>
-                <button type="submit" class="selector_reset" id="filter_reset">
-                  重新整理
-                </button>
-              </div>
+              <!-- <div class="btn_wrap">
+              <button type="submit" class="selector_submit" id="filter_btn">
+                確認
+              </button>
+              <button type="submit" class="selector_reset" id="filter_reset">
+                重新整理
+              </button>
+            </div> -->
             </div>
             <div class="middle">
               <div class="activity_tab">
@@ -250,17 +253,10 @@
                             </a> -->
               </div>
               <div class="activity_article">
-                <div class="article_my_title">
-                  <h2></h2>
-                  <a href="activity_my_post_edit.html" class="mine"
-                    ><i class="fa-solid fa-pen-to-square article_add"></i
-                    >發起新活動</a
-                  >
-                </div>
                 <div class="activity_article_cards">
                   <div class="cards_top">
                     <div class="cards_top_left">
-                      <span class="topic">夢想</span>
+                      <span class="topic">手作</span>
                       <section class="post_time">2小時前發布</section>
                     </div>
                     <span class="more_action"
@@ -270,8 +266,8 @@
                           <span class="more_action_list">‧‧‧</span>
                           <h3>檢舉活動</h3>
                         </li>
-                      </ul></span
-                    >
+                      </ul>
+                    </span>
                   </div>
                   <div class="cards_content">
                     <div class="card_user">
@@ -310,7 +306,847 @@
                       <a href="#"><i class="fa-regular fa-bookmark"></i></a>
                     </div>
                     <div class="join">
-                      <h3>參加人數：2/5</h3>
+                      <h3>參加人數：2/<pan class="activityLimit">5</pan></h3>
+                      <label for="iwantjoin" class="iwantjoin color-button"
+                        ><input type="checkbox" id="iwantjoin" />我要參加</label
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="activity_article_cards">
+                  <div class="cards_top">
+                    <div class="cards_top_left">
+                      <span class="topic">室內</span>
+                      <section class="post_time">2小時前發布</section>
+                    </div>
+                    <span class="more_action"
+                      >‧‧‧
+                      <ul class="list -none">
+                        <li>
+                          <span class="more_action_list">‧‧‧</span>
+                          <h3>檢舉活動</h3>
+                        </li>
+                      </ul>
+                    </span>
+                  </div>
+                  <div class="cards_content">
+                    <div class="card_user">
+                      <img
+                        class="user"
+                        src="./IMG/activity/luffy.png"
+                        alt=""
+                        width="60"
+                      />
+                    </div>
+                    <div class="card_text">
+                      <div class="text_title">
+                        <h2>想成為海王</h2>
+                      </div>
+                      <div class="text_content">
+                        其實我是想成為海王不是海賊王其實我是想成為海王不是海賊王其實我是想成為海王不是海賊王其實我是想成為海王不是海賊王其實我是想成為海王不是海賊王其實我是想成為海王不是海賊王
+                      </div>
+                    </div>
+                    <div class="card_pics">
+                      <img
+                        src="./IMG/activity/devilfruit.png"
+                        alt=""
+                        width="100"
+                      />
+                    </div>
+                  </div>
+                  <div class="cards_actions">
+                    <div class="interact">
+                      <a href="#"
+                        ><i class="fa-regular fa-heart"></i><span>66</span></a
+                      >
+                      <a href="#"
+                        ><i class="fa-regular fa-comment-dots"></i
+                        ><span>7</span></a
+                      >
+                      <a href="#"><i class="fa-regular fa-bookmark"></i></a>
+                    </div>
+                    <div class="join">
+                      <h3>參加人數：2/<pan class="activityLimit">2</pan></h3>
+                      <label for="iwantjoin" class="iwantjoin color-button"
+                        ><input type="checkbox" id="iwantjoin" />我要參加</label
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="activity_article_cards">
+                  <div class="cards_top">
+                    <div class="cards_top_left">
+                      <span class="topic">戶外</span>
+                      <section class="post_time">2小時前發布</section>
+                    </div>
+                    <span class="more_action"
+                      >‧‧‧
+                      <ul class="list -none">
+                        <li>
+                          <span class="more_action_list">‧‧‧</span>
+                          <h3>檢舉活動</h3>
+                        </li>
+                      </ul>
+                    </span>
+                  </div>
+                  <div class="cards_content">
+                    <div class="card_user">
+                      <img
+                        class="user"
+                        src="./IMG/activity/luffy.png"
+                        alt=""
+                        width="60"
+                      />
+                    </div>
+                    <div class="card_text">
+                      <div class="text_title">
+                        <h2>想成為海王</h2>
+                      </div>
+                      <div class="text_content">
+                        其實我是想成為海王不是海賊王其實我是想成為海王不是海賊王其實我是想成為海王不是海賊王其實我是想成為海王不是海賊王其實我是想成為海王不是海賊王其實我是想成為海王不是海賊王
+                      </div>
+                    </div>
+                    <div class="card_pics">
+                      <img
+                        src="./IMG/activity/devilfruit.png"
+                        alt=""
+                        width="100"
+                      />
+                    </div>
+                  </div>
+                  <div class="cards_actions">
+                    <div class="interact">
+                      <a href="#"
+                        ><i class="fa-regular fa-heart"></i><span>66</span></a
+                      >
+                      <a href="#"
+                        ><i class="fa-regular fa-comment-dots"></i
+                        ><span>7</span></a
+                      >
+                      <a href="#"><i class="fa-regular fa-bookmark"></i></a>
+                    </div>
+                    <div class="join">
+                      <h3>參加人數：2/<span class="activityLimit">8</span></h3>
+                      <label for="iwantjoin" class="iwantjoin color-button"
+                        ><input type="checkbox" id="iwantjoin" />我要參加</label
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="activity_article_cards">
+                  <div class="cards_top">
+                    <div class="cards_top_left">
+                      <span class="topic">戶外</span>
+                      <section class="post_time">2小時前發布</section>
+                    </div>
+                    <span class="more_action"
+                      >‧‧‧
+                      <ul class="list -none">
+                        <li>
+                          <span class="more_action_list">‧‧‧</span>
+                          <h3>檢舉活動</h3>
+                        </li>
+                      </ul>
+                    </span>
+                  </div>
+                  <div class="cards_content">
+                    <div class="card_user">
+                      <img
+                        class="user"
+                        src="./IMG/activity/luffy.png"
+                        alt=""
+                        width="60"
+                      />
+                    </div>
+                    <div class="card_text">
+                      <div class="text_title">
+                        <h2>想成為海王</h2>
+                      </div>
+                      <div class="text_content">
+                        其實我是想成為海王不是海賊王其實我是想成為海王不是海賊王其實我是想成為海王不是海賊王其實我是想成為海王不是海賊王其實我是想成為海王不是海賊王其實我是想成為海王不是海賊王
+                      </div>
+                    </div>
+                    <div class="card_pics">
+                      <img
+                        src="./IMG/activity/devilfruit.png"
+                        alt=""
+                        width="100"
+                      />
+                    </div>
+                  </div>
+                  <div class="cards_actions">
+                    <div class="interact">
+                      <a href="#"
+                        ><i class="fa-regular fa-heart"></i><span>66</span></a
+                      >
+                      <a href="#"
+                        ><i class="fa-regular fa-comment-dots"></i
+                        ><span>7</span></a
+                      >
+                      <a href="#"><i class="fa-regular fa-bookmark"></i></a>
+                    </div>
+                    <div class="join">
+                      <h3>參加人數：2/<pan class="activityLimit">5</pan></h3>
+                      <label for="iwantjoin" class="iwantjoin color-button"
+                        ><input type="checkbox" id="iwantjoin" />我要參加</label
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="activity_article_cards">
+                  <div class="cards_top">
+                    <div class="cards_top_left">
+                      <span class="topic">益智</span>
+                      <section class="post_time">2小時前發布</section>
+                    </div>
+                    <span class="more_action"
+                      >‧‧‧
+                      <ul class="list -none">
+                        <li>
+                          <span class="more_action_list">‧‧‧</span>
+                          <h3>檢舉活動</h3>
+                        </li>
+                      </ul>
+                    </span>
+                  </div>
+                  <div class="cards_content">
+                    <div class="card_user">
+                      <img
+                        class="user"
+                        src="./IMG/activity/luffy.png"
+                        alt=""
+                        width="60"
+                      />
+                    </div>
+                    <div class="card_text">
+                      <div class="text_title">
+                        <h2>想成為海王</h2>
+                      </div>
+                      <div class="text_content">
+                        其實我是想成為海王不是海賊王其實我是想成為海王不是海賊王其實我是想成為海王不是海賊王其實我是想成為海王不是海賊王其實我是想成為海王不是海賊王其實我是想成為海王不是海賊王
+                      </div>
+                    </div>
+                    <div class="card_pics">
+                      <img
+                        src="./IMG/activity/devilfruit.png"
+                        alt=""
+                        width="100"
+                      />
+                    </div>
+                  </div>
+                  <div class="cards_actions">
+                    <div class="interact">
+                      <a href="#"
+                        ><i class="fa-regular fa-heart"></i><span>66</span></a
+                      >
+                      <a href="#"
+                        ><i class="fa-regular fa-comment-dots"></i
+                        ><span>7</span></a
+                      >
+                      <a href="#"><i class="fa-regular fa-bookmark"></i></a>
+                    </div>
+                    <div class="join">
+                      <h3>參加人數：2/<pan class="activityLimit">9</pan></h3>
+                      <label for="iwantjoin" class="iwantjoin color-button"
+                        ><input type="checkbox" id="iwantjoin" />我要參加</label
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="activity_article_cards">
+                  <div class="cards_top">
+                    <div class="cards_top_left">
+                      <span class="topic">益智</span>
+                      <section class="post_time">2小時前發布</section>
+                    </div>
+                    <span class="more_action"
+                      >‧‧‧
+                      <ul class="list -none">
+                        <li>
+                          <span class="more_action_list">‧‧‧</span>
+                          <h3>檢舉活動</h3>
+                        </li>
+                      </ul>
+                    </span>
+                  </div>
+                  <div class="cards_content">
+                    <div class="card_user">
+                      <img
+                        class="user"
+                        src="./IMG/activity/luffy.png"
+                        alt=""
+                        width="60"
+                      />
+                    </div>
+                    <div class="card_text">
+                      <div class="text_title">
+                        <h2>想成為海王</h2>
+                      </div>
+                      <div class="text_content">
+                        其實我是想成為海王不是海賊王其實我是想成為海王不是海賊王其實我是想成為海王不是海賊王其實我是想成為海王不是海賊王其實我是想成為海王不是海賊王其實我是想成為海王不是海賊王
+                      </div>
+                    </div>
+                    <div class="card_pics">
+                      <img
+                        src="./IMG/activity/devilfruit.png"
+                        alt=""
+                        width="100"
+                      />
+                    </div>
+                  </div>
+                  <div class="cards_actions">
+                    <div class="interact">
+                      <a href="#"
+                        ><i class="fa-regular fa-heart"></i><span>66</span></a
+                      >
+                      <a href="#"
+                        ><i class="fa-regular fa-comment-dots"></i
+                        ><span>7</span></a
+                      >
+                      <a href="#"><i class="fa-regular fa-bookmark"></i></a>
+                    </div>
+                    <div class="join">
+                      <h3>參加人數：2/<pan class="activityLimit">3</pan></h3>
+                      <label for="iwantjoin" class="iwantjoin color-button"
+                        ><input type="checkbox" id="iwantjoin" />我要參加</label
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="activity_article_cards">
+                  <div class="cards_top">
+                    <div class="cards_top_left">
+                      <span class="topic">益智</span>
+                      <section class="post_time">2小時前發布</section>
+                    </div>
+                    <span class="more_action"
+                      >‧‧‧
+                      <ul class="list -none">
+                        <li>
+                          <span class="more_action_list">‧‧‧</span>
+                          <h3>檢舉活動</h3>
+                        </li>
+                      </ul>
+                    </span>
+                  </div>
+                  <div class="cards_content">
+                    <div class="card_user">
+                      <img
+                        class="user"
+                        src="./IMG/activity/luffy.png"
+                        alt=""
+                        width="60"
+                      />
+                    </div>
+                    <div class="card_text">
+                      <div class="text_title">
+                        <h2>想成為海王</h2>
+                      </div>
+                      <div class="text_content">
+                        其實我是想成為海王不是海賊王其實我是想成為海王不是海賊王其實我是想成為海王不是海賊王其實我是想成為海王不是海賊王其實我是想成為海王不是海賊王其實我是想成為海王不是海賊王
+                      </div>
+                    </div>
+                    <div class="card_pics">
+                      <img
+                        src="./IMG/activity/devilfruit.png"
+                        alt=""
+                        width="100"
+                      />
+                    </div>
+                  </div>
+                  <div class="cards_actions">
+                    <div class="interact">
+                      <a href="#"
+                        ><i class="fa-regular fa-heart"></i><span>66</span></a
+                      >
+                      <a href="#"
+                        ><i class="fa-regular fa-comment-dots"></i
+                        ><span>7</span></a
+                      >
+                      <a href="#"><i class="fa-regular fa-bookmark"></i></a>
+                    </div>
+                    <div class="join">
+                      <h3>參加人數：2/<span class="activityLimit">6</span></h3>
+                      <label for="iwantjoin" class="iwantjoin color-button"
+                        ><input type="checkbox" id="iwantjoin" />我要參加</label
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="activity_article_cards">
+                  <div class="cards_top">
+                    <div class="cards_top_left">
+                      <span class="topic">休閒</span>
+                      <section class="post_time">2小時前發布</section>
+                    </div>
+                    <span class="more_action"
+                      >‧‧‧
+                      <ul class="list -none">
+                        <li>
+                          <span class="more_action_list">‧‧‧</span>
+                          <h3>檢舉活動</h3>
+                        </li>
+                      </ul>
+                    </span>
+                  </div>
+                  <div class="cards_content">
+                    <div class="card_user">
+                      <img
+                        class="user"
+                        src="./IMG/activity/luffy.png"
+                        alt=""
+                        width="60"
+                      />
+                    </div>
+                    <div class="card_text">
+                      <div class="text_title">
+                        <h2>想成為海王</h2>
+                      </div>
+                      <div class="text_content">
+                        其實我是想成為海王不是海賊王其實我是想成為海王不是海賊王其實我是想成為海王不是海賊王其實我是想成為海王不是海賊王其實我是想成為海王不是海賊王其實我是想成為海王不是海賊王
+                      </div>
+                    </div>
+                    <div class="card_pics">
+                      <img
+                        src="./IMG/activity/devilfruit.png"
+                        alt=""
+                        width="100"
+                      />
+                    </div>
+                  </div>
+                  <div class="cards_actions">
+                    <div class="interact">
+                      <a href="#"
+                        ><i class="fa-regular fa-heart"></i><span>66</span></a
+                      >
+                      <a href="#"
+                        ><i class="fa-regular fa-comment-dots"></i
+                        ><span>7</span></a
+                      >
+                      <a href="#"><i class="fa-regular fa-bookmark"></i></a>
+                    </div>
+                    <div class="join">
+                      <h3>參加人數：2/<pan class="activityLimit">7</pan></h3>
+                      <label for="iwantjoin" class="iwantjoin color-button"
+                        ><input type="checkbox" id="iwantjoin" />我要參加</label
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="activity_article_cards">
+                  <div class="cards_top">
+                    <div class="cards_top_left">
+                      <span class="topic">休閒</span>
+                      <section class="post_time">2小時前發布</section>
+                    </div>
+                    <span class="more_action"
+                      >‧‧‧
+                      <ul class="list -none">
+                        <li>
+                          <span class="more_action_list">‧‧‧</span>
+                          <h3>檢舉活動</h3>
+                        </li>
+                      </ul>
+                    </span>
+                  </div>
+                  <div class="cards_content">
+                    <div class="card_user">
+                      <img
+                        class="user"
+                        src="./IMG/activity/luffy.png"
+                        alt=""
+                        width="60"
+                      />
+                    </div>
+                    <div class="card_text">
+                      <div class="text_title">
+                        <h2>想成為海王</h2>
+                      </div>
+                      <div class="text_content">
+                        其實我是想成為海王不是海賊王其實我是想成為海王不是海賊王其實我是想成為海王不是海賊王其實我是想成為海王不是海賊王其實我是想成為海王不是海賊王其實我是想成為海王不是海賊王
+                      </div>
+                    </div>
+                    <div class="card_pics">
+                      <img
+                        src="./IMG/activity/devilfruit.png"
+                        alt=""
+                        width="100"
+                      />
+                    </div>
+                  </div>
+                  <div class="cards_actions">
+                    <div class="interact">
+                      <a href="#"
+                        ><i class="fa-regular fa-heart"></i><span>66</span></a
+                      >
+                      <a href="#"
+                        ><i class="fa-regular fa-comment-dots"></i
+                        ><span>7</span></a
+                      >
+                      <a href="#"><i class="fa-regular fa-bookmark"></i></a>
+                    </div>
+                    <div class="join">
+                      <h3>參加人數：2/<pan class="activityLimit">4</pan></h3>
+                      <label for="iwantjoin" class="iwantjoin color-button"
+                        ><input type="checkbox" id="iwantjoin" />我要參加</label
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="activity_article_cards">
+                  <div class="cards_top">
+                    <div class="cards_top_left">
+                      <span class="topic">休閒</span>
+                      <section class="post_time">2小時前發布</section>
+                    </div>
+                    <span class="more_action"
+                      >‧‧‧
+                      <ul class="list -none">
+                        <li>
+                          <span class="more_action_list">‧‧‧</span>
+                          <h3>檢舉活動</h3>
+                        </li>
+                      </ul>
+                    </span>
+                  </div>
+                  <div class="cards_content">
+                    <div class="card_user">
+                      <img
+                        class="user"
+                        src="./IMG/activity/luffy.png"
+                        alt=""
+                        width="60"
+                      />
+                    </div>
+                    <div class="card_text">
+                      <div class="text_title">
+                        <h2>想成為海王</h2>
+                      </div>
+                      <div class="text_content">
+                        其實我是想成為海王不是海賊王其實我是想成為海王不是海賊王其實我是想成為海王不是海賊王其實我是想成為海王不是海賊王其實我是想成為海王不是海賊王其實我是想成為海王不是海賊王
+                      </div>
+                    </div>
+                    <div class="card_pics">
+                      <img
+                        src="./IMG/activity/devilfruit.png"
+                        alt=""
+                        width="100"
+                      />
+                    </div>
+                  </div>
+                  <div class="cards_actions">
+                    <div class="interact">
+                      <a href="#"
+                        ><i class="fa-regular fa-heart"></i><span>66</span></a
+                      >
+                      <a href="#"
+                        ><i class="fa-regular fa-comment-dots"></i
+                        ><span>7</span></a
+                      >
+                      <a href="#"><i class="fa-regular fa-bookmark"></i></a>
+                    </div>
+                    <div class="join">
+                      <h3>參加人數：2/<pan class="activityLimit">4</pan></h3>
+                      <label for="iwantjoin" class="iwantjoin color-button"
+                        ><input type="checkbox" id="iwantjoin" />我要參加</label
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="activity_article_cards">
+                  <div class="cards_top">
+                    <div class="cards_top_left">
+                      <span class="topic">休閒</span>
+                      <section class="post_time">2小時前發布</section>
+                    </div>
+                    <span class="more_action"
+                      >‧‧‧
+                      <ul class="list -none">
+                        <li>
+                          <span class="more_action_list">‧‧‧</span>
+                          <h3>檢舉活動</h3>
+                        </li>
+                      </ul>
+                    </span>
+                  </div>
+                  <div class="cards_content">
+                    <div class="card_user">
+                      <img
+                        class="user"
+                        src="./IMG/activity/luffy.png"
+                        alt=""
+                        width="60"
+                      />
+                    </div>
+                    <div class="card_text">
+                      <div class="text_title">
+                        <h2>想成為海王</h2>
+                      </div>
+                      <div class="text_content">
+                        其實我是想成為海王不是海賊王其實我是想成為海王不是海賊王其實我是想成為海王不是海賊王其實我是想成為海王不是海賊王其實我是想成為海王不是海賊王其實我是想成為海王不是海賊王
+                      </div>
+                    </div>
+                    <div class="card_pics">
+                      <img
+                        src="./IMG/activity/devilfruit.png"
+                        alt=""
+                        width="100"
+                      />
+                    </div>
+                  </div>
+                  <div class="cards_actions">
+                    <div class="interact">
+                      <a href="#"
+                        ><i class="fa-regular fa-heart"></i><span>66</span></a
+                      >
+                      <a href="#"
+                        ><i class="fa-regular fa-comment-dots"></i
+                        ><span>7</span></a
+                      >
+                      <a href="#"><i class="fa-regular fa-bookmark"></i></a>
+                    </div>
+                    <div class="join">
+                      <h3>參加人數：2/<pan class="activityLimit">3</pan></h3>
+                      <label for="iwantjoin" class="iwantjoin color-button"
+                        ><input type="checkbox" id="iwantjoin" />我要參加</label
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="activity_article_cards">
+                  <div class="cards_top">
+                    <div class="cards_top_left">
+                      <span class="topic">休閒</span>
+                      <section class="post_time">2小時前發布</section>
+                    </div>
+                    <span class="more_action"
+                      >‧‧‧
+                      <ul class="list -none">
+                        <li>
+                          <span class="more_action_list">‧‧‧</span>
+                          <h3>檢舉活動</h3>
+                        </li>
+                      </ul>
+                    </span>
+                  </div>
+                  <div class="cards_content">
+                    <div class="card_user">
+                      <img
+                        class="user"
+                        src="./IMG/activity/luffy.png"
+                        alt=""
+                        width="60"
+                      />
+                    </div>
+                    <div class="card_text">
+                      <div class="text_title">
+                        <h2>想成為海王</h2>
+                      </div>
+                      <div class="text_content">
+                        其實我是想成為海王不是海賊王其實我是想成為海王不是海賊王其實我是想成為海王不是海賊王其實我是想成為海王不是海賊王其實我是想成為海王不是海賊王其實我是想成為海王不是海賊王
+                      </div>
+                    </div>
+                    <div class="card_pics">
+                      <img
+                        src="./IMG/activity/devilfruit.png"
+                        alt=""
+                        width="100"
+                      />
+                    </div>
+                  </div>
+                  <div class="cards_actions">
+                    <div class="interact">
+                      <a href="#"
+                        ><i class="fa-regular fa-heart"></i><span>66</span></a
+                      >
+                      <a href="#"
+                        ><i class="fa-regular fa-comment-dots"></i
+                        ><span>7</span></a
+                      >
+                      <a href="#"><i class="fa-regular fa-bookmark"></i></a>
+                    </div>
+                    <div class="join">
+                      <h3>參加人數：2/<pan class="activityLimit">5</pan></h3>
+                      <label for="iwantjoin" class="iwantjoin color-button"
+                        ><input type="checkbox" id="iwantjoin" />我要參加</label
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="activity_article_cards">
+                  <div class="cards_top">
+                    <div class="cards_top_left">
+                      <span class="topic">手作</span>
+                      <section class="post_time">2小時前發布</section>
+                    </div>
+                    <span class="more_action"
+                      >‧‧‧
+                      <ul class="list -none">
+                        <li>
+                          <span class="more_action_list">‧‧‧</span>
+                          <h3>檢舉活動</h3>
+                        </li>
+                      </ul>
+                    </span>
+                  </div>
+                  <div class="cards_content">
+                    <div class="card_user">
+                      <img
+                        class="user"
+                        src="./IMG/activity/luffy.png"
+                        alt=""
+                        width="60"
+                      />
+                    </div>
+                    <div class="card_text">
+                      <div class="text_title">
+                        <h2>想成為海王</h2>
+                      </div>
+                      <div class="text_content">
+                        其實我是想成為海王不是海賊王其實我是想成為海王不是海賊王其實我是想成為海王不是海賊王其實我是想成為海王不是海賊王其實我是想成為海王不是海賊王其實我是想成為海王不是海賊王
+                      </div>
+                    </div>
+                    <div class="card_pics">
+                      <img
+                        src="./IMG/activity/devilfruit.png"
+                        alt=""
+                        width="100"
+                      />
+                    </div>
+                  </div>
+                  <div class="cards_actions">
+                    <div class="interact">
+                      <a href="#"
+                        ><i class="fa-regular fa-heart"></i><span>66</span></a
+                      >
+                      <a href="#"
+                        ><i class="fa-regular fa-comment-dots"></i
+                        ><span>7</span></a
+                      >
+                      <a href="#"><i class="fa-regular fa-bookmark"></i></a>
+                    </div>
+                    <div class="join">
+                      <h3>參加人數：2/<pan class="activityLimit">5</pan></h3>
+                      <label for="iwantjoin" class="iwantjoin color-button"
+                        ><input type="checkbox" id="iwantjoin" />我要參加</label
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="activity_article_cards">
+                  <div class="cards_top">
+                    <div class="cards_top_left">
+                      <span class="topic">手作</span>
+                      <section class="post_time">2小時前發布</section>
+                    </div>
+                    <span class="more_action"
+                      >‧‧‧
+                      <ul class="list -none">
+                        <li>
+                          <span class="more_action_list">‧‧‧</span>
+                          <h3>檢舉活動</h3>
+                        </li>
+                      </ul>
+                    </span>
+                  </div>
+                  <div class="cards_content">
+                    <div class="card_user">
+                      <img
+                        class="user"
+                        src="./IMG/activity/luffy.png"
+                        alt=""
+                        width="60"
+                      />
+                    </div>
+                    <div class="card_text">
+                      <div class="text_title">
+                        <h2>想成為海王</h2>
+                      </div>
+                      <div class="text_content">
+                        其實我是想成為海王不是海賊王其實我是想成為海王不是海賊王其實我是想成為海王不是海賊王其實我是想成為海王不是海賊王其實我是想成為海王不是海賊王其實我是想成為海王不是海賊王
+                      </div>
+                    </div>
+                    <div class="card_pics">
+                      <img
+                        src="./IMG/activity/devilfruit.png"
+                        alt=""
+                        width="100"
+                      />
+                    </div>
+                  </div>
+                  <div class="cards_actions">
+                    <div class="interact">
+                      <a href="#"
+                        ><i class="fa-regular fa-heart"></i><span>66</span></a
+                      >
+                      <a href="#"
+                        ><i class="fa-regular fa-comment-dots"></i
+                        ><span>7</span></a
+                      >
+                      <a href="#"><i class="fa-regular fa-bookmark"></i></a>
+                    </div>
+                    <div class="join">
+                      <h3>參加人數：2/<pan class="activityLimit">5</pan></h3>
+                      <label for="iwantjoin" class="iwantjoin color-button"
+                        ><input type="checkbox" id="iwantjoin" />我要參加</label
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="activity_article_cards">
+                  <div class="cards_top">
+                    <div class="cards_top_left">
+                      <span class="topic">手作</span>
+                      <section class="post_time">2小時前發布</section>
+                    </div>
+                    <span class="more_action"
+                      >‧‧‧
+                      <ul class="list -none">
+                        <li>
+                          <span class="more_action_list">‧‧‧</span>
+                          <h3>檢舉活動</h3>
+                        </li>
+                      </ul>
+                    </span>
+                  </div>
+                  <div class="cards_content">
+                    <div class="card_user">
+                      <img
+                        class="user"
+                        src="./IMG/activity/luffy.png"
+                        alt=""
+                        width="60"
+                      />
+                    </div>
+                    <div class="card_text">
+                      <div class="text_title">
+                        <h2>想成為海王</h2>
+                      </div>
+                      <div class="text_content">
+                        其實我是想成為海王不是海賊王其實我是想成為海王不是海賊王其實我是想成為海王不是海賊王其實我是想成為海王不是海賊王其實我是想成為海王不是海賊王其實我是想成為海王不是海賊王
+                      </div>
+                    </div>
+                    <div class="card_pics">
+                      <img
+                        src="./IMG/activity/devilfruit.png"
+                        alt=""
+                        width="100"
+                      />
+                    </div>
+                  </div>
+                  <div class="cards_actions">
+                    <div class="interact">
+                      <a href="#"
+                        ><i class="fa-regular fa-heart"></i><span>66</span></a
+                      >
+                      <a href="#"
+                        ><i class="fa-regular fa-comment-dots"></i
+                        ><span>7</span></a
+                      >
+                      <a href="#"><i class="fa-regular fa-bookmark"></i></a>
+                    </div>
+                    <div class="join">
+                      <h3>參加人數：2/<pan class="activityLimit">5</pan></h3>
                       <label for="iwantjoin" class="iwantjoin color-button"
                         ><input type="checkbox" id="iwantjoin" />我要參加</label
                       >
@@ -395,15 +1231,15 @@
                   </div>
                 </div>
               </div>
-              <!-- <div class="my_activity">
-                            <h2>活動</h2>
+              <div class="my_activity">
+                <!-- <h2>活動</h2>
                             <p>6月1日<br>
                                 活動標題</p>
                             <section>
                                 沒人約我沒人約我沒人約我沒人約我沒人約我沒人約我沒人約我沒人約我沒人約我沒人約我沒人約我沒人約我沒人約我沒人約我沒人約我沒人約我沒人約我沒人約我沒人約我
-                            </section>
-                            <a href="activity_my_post.html">管理我的活動</a>
-                        </div> -->
+                            </section> -->
+                <a href="activity_my_post.html">管理我的活動</a>
+              </div>
               <div class="my_activity">
                 <h3>廣告</h3>
                 <a href=""><img src="./IMG/activity/ad1.jpg" alt="" /></a>

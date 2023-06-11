@@ -10,13 +10,13 @@ session_start();
 if (checkIfLogin()) {
     require("connectSQL.php");
     $sql = 'INSERT into activityComment(commentID, activityID, content, `time`)
-values(?, ?,?,now())';
+values(?,?,?,now())';
     $statement = $pdo->prepare($sql);
     $statement->bindValue(1, $_SESSION["ID"]);
     $statement->bindValue(2, (int)$_POST["activityId"]);
     $statement->bindValue(3, $_POST["commentContent"]);
 
-    // $statement->bindValue(1, $_SESSION["ID"]);
+    // $statement->bindValue(1, 2);
     // $statement->bindValue(2, "20000");
     // $statement->bindValue(3, "23122");
     $go = $statement->execute();
