@@ -90,7 +90,7 @@
                                 </div>
                             </div>
                         </div>
-            </div>
+                </div>
             </div>
             
             <!-------------------右側欄位--->
@@ -142,66 +142,7 @@
     </div>
     <script src="https://unpkg.com/vue@next"></script>
 
-    <script>
 
-        var app = Vue.createApp({
-            data(){
-                return {
-                    currentTab: "tab1",
-                    items: [
-                        {
-                            id: "tab1",
-                            name: "消費紀錄"
-                        },
-                        {
-                            id: "tab2",
-                            name: "儲值紀錄"
-                        },
-                    ]
-                };
-            },
-            
-            computed: {
-
-                current_tab_component(){
-                    return (this.currentTab + "_content").toLowerCase(); 
-
-                }
-            }
-        });
-// 消費紀錄
-        app.component("tab1_content", {
-            template: `
-            <table>
-                                                <tr>
-                                                    <th>日期</th>
-                                                    <th>金額</th>
-                                                    <th>餘額</th>
-                                                </tr>
-
-                                            </table>
-            `
-        });
-
-// 儲值紀錄
-        app.component("tab2_content", {
-            template: `
-            <table>
-                                                <tr>
-                                                    <th>日期</th>
-                                                    <th>金額</th>
-                                                    <th>餘額</th>
-                                                </tr>
-
-                        
-                                            </table>
-            `
-        });
-
-    
-
-        app.mount("#the_block");
-    </script>
     <!--js跟jQ-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -222,6 +163,163 @@
         picture.getMemberPicture(user_img2.querySelector("img"));
 
     </script>
+        <script>
+
+            var app = Vue.createApp({
+                data(){
+                    return {
+                        currentTab: "tab1",
+                        items: [
+                            {
+                                id: "tab1",
+                                name: "消費紀錄"
+                            },
+                            {
+                                id: "tab2",
+                                name: "儲值紀錄"
+                            },
+                        ]
+                    };
+                },
+                computed: {
+    
+                    current_tab_component(){
+                        return (this.currentTab + "_content").toLowerCase(); 
+    
+                    }
+                },
+                mounted () {
+                    
+                }
+            });
+            // 消費紀錄
+            app.component("tab1_content", {
+                template: `
+                <table>
+                    <tr>
+                        <th>日期</th>
+                        <th>金額</th>
+                        <th>餘額</th>
+                    </tr>
+    
+                </table>
+                `,
+                mounted (){
+                    $.ajax({
+                        url: "php/getBuyLog.php",
+                        method: "post",
+                        datatype: "json",
+                        data: {
+                        type: "2",
+                        //對應到php的
+                        },
+                        success: (response) => {
+                        // alert(response);
+                        //測試
+                        response = JSON.parse(response);
+    
+    
+                        // console.log(response[0].totalCoin);
+                        // console.log(response[0]);
+                        
+                        let str = "";
+                        
+                        for (let i = 0; i < response.length; i++) {
+                            let month = Math.floor(response[i].date/100);
+                            //取整數Math.floor
+                            //reponse 是從php呼叫的值
+                            //Math.floor() 函式會回傳小於等於所給數字的最大整數。
+                            let day = response[i].date%100;
+                            //取餘數
+                            let str1 =
+                            `
+                            <tr>
+                                <th>${month}/${day}</th>
+                                <th>${response[i].coinChange}</th>
+                                <th>${response[i].totalCoin}</th>
+                            </tr>
+                            `
+                            str += str1;
+                            //為了讓他有前面跟最後一筆(全部)的消費紀錄
+                        }
+                        document.querySelector(".tab_content").innerHTML += str;
+                        // $(".stored").html(str);
+                        },
+                        error: (xhr, status, error) => {
+                        alert("error: " + error);
+                        //"error:" 裡面的資訊可以進行修改
+                        },
+                    })
+
+                }
+            });
+    
+            // 儲值紀錄
+            app.component("tab2_content", {
+                template: `
+                <table>
+                    <tr>
+                        <th>日期</th>
+                        <th>金額</th>
+                        <th>餘額</th>
+                    </tr>
+    
+    
+                </table>
+                `,
+                mounted(){
+                    $.ajax({
+                        url: "php/getBuyLog.php",
+                        method: "post",
+                        datatype: "json",
+                        data: {
+                        type: "1",
+                        //對應到php的
+                        },
+                        success: (response) => {
+                        // alert(response);
+                        //測試
+                        response = JSON.parse(response);
+    
+    
+                        // console.log(response[0].totalCoin);
+                        // console.log(response[0]);
+                        
+                        let str = "";
+                        
+                        for (let i = 0; i < response.length; i++) {
+                            let month = Math.floor(response[i].date/100);
+                            //取整數Math.floor
+                            //reponse 是從php呼叫的值
+                            //Math.floor() 函式會回傳小於等於所給數字的最大整數。
+                            let day = response[i].date%100;
+                            //取餘數
+                            let str1 =
+                            `
+                            <tr>
+                                <th>${month}/${day}</th>
+                                <th>${response[i].coinChange}</th>
+                                <th>${response[i].totalCoin}</th>
+                            </tr>
+                            `
+                            str += str1;
+                            //為了讓他有前面跟最後一筆(全部)的消費紀錄
+                        }
+                        document.querySelector(".tab_content").innerHTML += str;
+                        // $(".stored").html(str);
+                        },
+                        error: (xhr, status, error) => {
+                            alert("error: " + error);
+                        //"error:" 裡面的資訊可以進行修改
+                        },
+                    });
+                }
+            });
+    
+        
+    
+            app.mount("#the_block");
+        </script>
     <script>
 
         var month_olympic = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
