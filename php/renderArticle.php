@@ -39,7 +39,7 @@
                             $ServerRoot = $_SERVER["DOCUMENT_ROOT"];
                             for ($i=0; $i < count($fileName_arr); $i++) { 
                                    // Server上的暫存檔路徑含檔名
-                                   $filePath = $ServerRoot."/team_5/IMG/diary/member/".$fileName_arr[$i];
+                                   $filePath = "../IMG/diary/member/".$fileName_arr[$i];
                                    // 檔案最終存放位置
                                    move_uploaded_file($tmpFilePath_arr[$i], $filePath);
                                    // echo $filePath;

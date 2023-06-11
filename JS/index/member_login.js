@@ -62,10 +62,10 @@ $(() => {
             dataType: "json",
             data: {},
             success: (response) => {
-              response = JSON.parse(response);
+              // response = JSON.parse(response);
               if (response == -1) {
                 alert("請先登入");
-              } else if (!response) {
+              } else if (response == 0) {
                 location.href = "index_build_roles.html";
               } else {
                 location.href = "index_map.html";

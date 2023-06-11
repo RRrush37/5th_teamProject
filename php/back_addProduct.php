@@ -18,7 +18,7 @@
                         $coinValue = 1;
                         // 檔案最終存放位置
                     } else { //非遊戲幣
-                        $filePath = $ServerRoot."/team_5/IMG/people/".$fileName_arr;
+                        $filePath = "../IMG/people/".$fileName_arr;
                         $coinValue = 0;
                         $_POST["sellNum"] = 0 ;
                         // 檔案最終存放位置

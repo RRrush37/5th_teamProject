@@ -814,4 +814,14 @@ body {
     background-repeat: no-repeat;
     background-position: center center;
 }
+
+
+.record #pay_record {
+  width: 50px;
+  position: absolute;
+  top: 53%;
+  left: 10%;
+  cursor: pointer;
+  filter: drop-shadow(rgba(0, 0, 0, 0.408) 3px 3px 3px);
+}
 }

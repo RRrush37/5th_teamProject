@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./CSS/global.css">
-    <link rel="stylesheet" href="./CSS/wolf/wolf_room.css">
+    <link rel="stylesheet" href="CSS/global.css">
+    <link rel="stylesheet" href="CSS/wolf/wolf_room_online.css">
     <title>Wolf Room</title>
 
 </head>
@@ -306,7 +306,7 @@
             </div>
         </section>
 
-        <div class="bottom_nav">
+        <!-- <div class="bottom_nav">
             <p>
                 <span>
                     關於我們
@@ -318,13 +318,13 @@
                     常見問題
                 </span>
             </p>
-        </div>
+        </div> -->
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script
       src="https://kit.fontawesome.com/75e9abcec6.js"
       crossorigin="anonymous"></script>
-    <script type="module">
+    <!-- <script type="module">
         import * as picture from "./JS/member_picture.js";
         $(function () {
             $(".header").load("common.html .header>div", function(){
@@ -333,11 +333,11 @@
             });
             $(".footer").load("common.html .footer>div");
         });
-    </script>
+    </script> -->
 
     <script type="module">
-        import * as picture from "./JS/member_picture.js";
-        import * as getID from "./JS/get_memberID.js";
+        // import * as picture from "./JS/member_picture.js";
+        // import * as getID from "./JS/get_memberID.js";
         //結算面板
         let settle_game_el = document.getElementsByClassName("gameover")[0];
         let winner_box = document.getElementById("winner_box");
@@ -355,9 +355,10 @@
         let witchArr = {"saved": -1, "poisoned": -1 };
         // 女巫陣列:saved(playerid):用來存放救過誰，poisoned(playerid):用來存放毒過誰
         let killed = [] ; //狼人陣列:存放狼人階段殺誰
-        //let player_role ;//用於儲存玩家身份
+        let player_role ;//用於儲存玩家身份
         // let player_role = [ "狼人","女巫","預言家","狼人","平民","平民","平民"] ;
 
+        let second = 0 ;
         let round = [1, "開局前階段"]; //用於儲存目前回合狀態，{開局階段、狼人回合、女巫回合、預言家回合、夜晚出局回合、發言回合、投票回合、白天出局回合、遊戲結束、結算回合}
         let gameover = [false,"好人獲勝"]; //用於查看遊戲是否結束
         let speakerPlayer = Math.ceil(Math.random() * 7); //用於儲存目前發言玩家，隨機抽出第一位玩家
@@ -474,7 +475,7 @@
         let room_password = document.getElementsByClassName("room_password")[0] ; //房間密碼
 
         let room_imformation = { // 用來儲存遊戲開始前的資訊
-            "num": "", // 用於讓伺服器知道房間號碼
+            "num": room_num.getAttribute("data-num"), // 用於讓伺服器知道房間號碼
             "player": 0, // 用於讓伺服器知道房間人數
             "ready": [0,0,0,0,0,0,0],// 用於讓伺服器知道玩家準備狀態
             "id": ["","","","","","",""]// 用於讓伺服器知道玩家準備狀態
@@ -650,7 +651,7 @@
             ws.onmessage = event => {
 
                 text = JSON.parse(event.data) ;
-                
+                console.log(text[0]);
                 if ( text[0] == "connect" ) {
 
                     if ( player_index == -1 ) { //更新本次連線自己的資料
@@ -784,10 +785,12 @@
                     time_el.classList.add("ani");
                     time_el.style.animationDuration = second+1+"s";
                     let t = setInterval(function() {
-
+                        time_el.style.backgroundPosition = ((4-second)/3 * 100) + "% center";
                         second--;
                         time_el.innerText = second ;
                         if (second < 0) {
+                            time_el.style.backgroundPosition = "0% 0%";
+                            time_el.innerText = "請等待其他玩家" ;
                             clearInterval(t);
                             time_el.classList.remove("ani");
                             void time_el.offsetWidth;
@@ -813,10 +816,13 @@
                     time_el.classList.add("ani");
                     time_el.style.animationDuration = second+1+"s";
                     let t = setInterval(function() {
+                        time_el.style.backgroundPosition = ((6-second)/5 * 100) + "% center";
                         second--;
 
                         time_el.innerText = second ;
                         if (second < 0) {
+                            time_el.style.backgroundPosition = "0% 0%";
+                            time_el.innerText = "請等待其他玩家" ;
                             clearInterval(t);
                             time_el.classList.remove("ani");
                             void time_el.offsetWidth;
@@ -907,7 +913,7 @@
                 function werewolveRound(){ // 狼人回合，狼人開始投票round[1] == "狼人回合" 
 
                     console.log("werewolveRound"+round[0]);
-                    kill_btn.classList.remove("none");
+                    
                     time_box_el.classList.remove("none");
                     time_box_el.querySelector("h2").innerHTML = `天黑倒數計時:`
                     second = text[1].second[player_index] ; // 10s
@@ -916,10 +922,13 @@
                     time_el.style.animationDuration = second+1+"s";
                     
                     let t = setInterval(function() {
+                        time_el.style.backgroundPosition = ((6-second)/5 * 100) + "% center";
                         console.log("werewolve"+second);
                         second--;
                         time_el.innerText = second ;
                         if (second < 0) {
+                            time_el.style.backgroundPosition = "0% 0%";
+                            time_el.innerText = "請等待其他玩家" ;
                             clearInterval(t);
                             time_el.classList.remove("ani");
                             void time_el.offsetWidth;
@@ -967,6 +976,9 @@
                     let have_been_vote = false, have_been_confirm = false ;
                     let kill_player_index;
                     if ( player_state[player_index].role == "狼人" && player_state[player_index].alive == true ) {
+                        
+                        kill_btn.classList.remove("none");
+
                         for( let i = 0 ; i < player_state.length ; i++) {
 
                             if ( player_state[i].alive == true) {
@@ -1023,10 +1035,13 @@
                     time_el.style.animationDuration = second+1+"s";
                     
                     let t = setInterval(function() {
+                        time_el.style.backgroundPosition = ((6-second)/5 * 100) + "% center";
                         console.log("werewolveSettle"+second);
                         second--;
                         time_el.innerText = second ;
                         if (second < 0) {
+                            time_el.style.backgroundPosition = "0% 0%";
+                            time_el.innerText = "請等待其他玩家" ;
                             clearInterval(t);
                             time_el.classList.remove("ani");
                             void time_el.offsetWidth;
@@ -1130,11 +1145,14 @@
                     }
 
                     let t = setInterval(function() {
+                        time_el.style.backgroundPosition = ((6-second)/5 * 100) + "% center";
                         console.log("witch"+second);
                         second--;
                         time_el.innerText = second ;
 
                         if (second < 0) {
+                            time_el.style.backgroundPosition = "0% 0%";
+                            time_el.innerText = "請等待其他玩家" ;
                             clearInterval(t);
                             time_el.classList.remove("ani");
                             void time_el.offsetWidth;
@@ -1298,11 +1316,14 @@
                     }
 
                     let t = setInterval(function() {
+                        time_el.style.backgroundPosition = ((6-second)/5 * 100) + "% center";
                         console.log("seer"+second);
                         second--;
                         time_el.innerText = second ;
 
                         if (second < 0) {
+                            time_el.style.backgroundPosition = "0% 0%";
+                            time_el.innerText = "請等待其他玩家" ;
                             clearInterval(t);
                             time_el.classList.remove("ani");
                             void time_el.offsetWidth;
@@ -1319,8 +1340,9 @@
                                 vote_btn[j].innerHTML = "" ;
                             }
                             seer_btn.classList.remove("select");
-                            seer_text_el.innerText = seer_text_el.getAttribute("data-see") ;
+                            seer_text_el.innerText = "天黑請閉眼" ;
                             seer_box_el.classList.add("none");
+                            seer_btn.classList.add("none");
                             //重製-------------------------------------------------------
 
                             //天黑，進入預言家回合
@@ -1334,7 +1356,8 @@
 
                     if ( player_state[player_index].alive == true && player_state[player_index].role == "預言家") {
                         //預言家尚存活，晚上出局仍可查看
-
+                        seer_btn.classList.remove("none");
+                        seer_text_el.innerText = seer_text_el.getAttribute("data-see") ;
                         let have_been_look = false, have_been_confirm = false, look_player_index = -1 ;
                         for( let i = 0 ; i < player_state.length ; i++) {
                             //player_state[player_index].role == "預言家" &&
@@ -1428,10 +1451,13 @@
                                 time_el.style.animationDuration = second+1+"s";
                                 // speaking~~~~~
                                 let t = setInterval(() => {
+                                    time_el.style.backgroundPosition = ((6-second)/5 * 100) + "% center";
                                     console.log("out"+second);
                                     second--;
                                     time_el.innerText = second ;
                                     if ( second < 0 ) {
+                                        time_el.style.backgroundPosition = "0% 0%";
+                                        time_el.innerText = "請等待其他玩家" ;
                                         clearInterval(t) ;
                                         time_el.classList.remove("ani");
                                         void time_el.offsetWidth;
@@ -1465,11 +1491,15 @@
                         time_el.style.animationDuration = second+1+"s";
 
                         let t = setInterval(() => {
+                            time_el.style.backgroundPosition = ((6-second)/5 * 100) + "% center";
                             console.log("speak"+second);
                             second--;
                             time_el.innerText = second ;
                             if ( second < 0 && text[1].num_of_speaker == text[1].speaker.length-1) {
+                                
                                 //已全部發言完畢
+                                time_el.style.backgroundPosition = "0% 0%";
+                                time_el.innerText = "請等待其他玩家" ;
                                 clearInterval(t);
                                 time_el.classList.remove("ani");
                                 void time_el.offsetWidth;
@@ -1481,6 +1511,8 @@
                                 ws.send(data);
                             } else if ( second < 0 && text[1].num_of_speaker != text[1].speaker.length-1) {
                                 //尚未發言完畢
+                                time_el.style.backgroundPosition = "0% 0%";
+                                time_el.innerText = "請等待其他玩家" ;
                                 clearInterval(t);
                                 time_el.classList.remove("ani");
                                 void time_el.offsetWidth;
@@ -1548,6 +1580,7 @@
                     let have_been_vote = false ;
 
                     let t = setInterval(() => {
+                        time_el.style.backgroundPosition = ((6-second)/5 * 100) + "% center";
                         console.log("vote"+second);
                         second--;
                         time_el.innerText = second ;
@@ -1574,6 +1607,8 @@
                         }
                         //時間到，停止投票
                         if ( second < 0 ) {
+                            time_el.style.backgroundPosition = "0% 0%";
+                            time_el.innerText = "請等待其他玩家" ;
                             clearInterval(t) ;
                             time_el.classList.remove("ani");
                             void time_el.offsetWidth;
@@ -1613,10 +1648,13 @@
                     time_el.style.animationDuration = second+1+"s";
                     
                     let t = setInterval(function() {
+                        time_el.style.backgroundPosition = ((6-second)/5 * 100) + "% center";
                         console.log("daySettle"+second);
                         second--;
                         time_el.innerText = second ;
                         if (second < 0) {
+                            time_el.style.backgroundPosition = "0% 0%";
+                            time_el.innerText = "請等待其他玩家" ;
                             clearInterval(t);
                             time_el.classList.remove("ani");
                             void time_el.offsetWidth;

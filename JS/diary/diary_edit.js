@@ -4,6 +4,7 @@ let user_img = document.getElementsByClassName("big_girl")[0] ;
 let user_img1 = document.getElementsByClassName("member_photo")[0] ;
 picture.getMemberPicture(user_img.querySelector("img"));
 picture.getMemberPicture(user_img1.querySelector("img"));
+let rifht_my_activity = document.getElementsByClassName("my_activity")[0];
 
 $(()=>{
     $.ajax({
