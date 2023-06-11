@@ -342,8 +342,22 @@ body {
 
 /*--------個人資料介紹-------------*/
 
+.introduce::-webkit-scrollbar {
+    width: 10px;
+}
+
+.introduce::-webkit-scrollbar-thumb {
+    background: #533F2C;
+    border-radius: 10px;
+}
+
+.introduce::-webkit-scrollbar-track {
+    background: #776558;
+    border-radius: 10px;
+}
+
 .introduce{
-    display: flex;
+    /* display: flex; */
     justify-content: space-evenly;
     align-items: center;
     width: 100%;
@@ -351,6 +365,11 @@ body {
 
     line-height: 1.6;
     text-align: center;
+
+
+    height: 59vh;
+    overflow-y: scroll;
+    scrollbar-gutter: stable both-edges;
 }
 
 
