@@ -17,10 +17,6 @@ body::before {
   /* 将遮罩层的层级设为比body低，使body内容可以在其上方 */
 }
 
-
-
-
-
 .overlay::before {
   content: "";
   position: fixed;
@@ -32,8 +28,9 @@ body::before {
   z-index: -1;
 }
 
-
-
+.activity_title {
+  margin-left: 20px;
+}
 
 .return>img:hover {
   animation: left 5s forwards;
