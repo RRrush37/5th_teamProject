@@ -60,8 +60,8 @@ function PasswordChecked( password ){
         return false;
     }
 
-    if (password.length !== 6) {
-        alert('密碼必須為6位數字');
+    if (password.length < 6) {
+        alert('密碼至少為6位數字');
         // passwordInput.focus();
         return false;
     }
