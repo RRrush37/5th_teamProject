@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>會員中心</title>
+    <title>Document</title>
     <link rel="stylesheet" href="CSS/global.css" />
     <link rel="stylesheet" href="CSS/chat/backstage_header.css" />
     <link rel="stylesheet" href="CSS/chat/style3.css" />
@@ -32,24 +32,17 @@
             </li>
             <li class="nav-item active">
               <a class="nav-link" href="3chat_eventext-search.html">
-                <span>活動管理</span>
+                <span>行程管理</span>
               </a>
             </li>
-            <!-- <li class="nav-item active">
-              <a class="nav-link" href="4chat_chatroomdata-search.html">
-                <span>聊天室管理</span>
-              </a>
-            </li> -->
+            
             <li class="nav-item active">
               <a class="nav-link" href="5chat_member-article-search.html">
                 <span>會員文章管理</span>
               </a>
             </li>
-            <!-- <li class="nav-item active">
-              <a class="nav-link" href="6chat_gamedata-search.html">
-                <span>遊戲管理</span>
-              </a>
-            </li> -->
+     
+        
             <!-- <li class="nav-item active">
               <a class="nav-link" href="7chat_reportsystem-search.html">
                 <span>檢舉管理</span>
@@ -79,22 +72,22 @@
           <table>
             <tr>
               <td>會員編號</td>
-              <td><input type="text" /></td>
+              <td><input id="search_memberID" type="text" /></td>
             </tr>
             <tr>
               <td>會員名稱</td>
-              <td><input type="text" /></td>
+              <td><input id="search_memberName" type="text" /></td>
             </tr>
             <tr>
               <td>Email</td>
-              <td><input type="text" /></td>
+              <td><input id="search_email"　type="text" /></td>
             </tr>
             <tr>
               <td>會員身分</td>
               <td>
-                <select>
-                  <option selected>一般</option>
-                  <option>管理員</option>
+                <select id="search_permissions">
+                  <option selected value="normal">一般</option>
+                  <option value="admin">管理員</option>
                 </select>
               </td>
             </tr>
@@ -105,7 +98,7 @@
           <h2>會員資料</h2>
           <div class="membertext">
              <img id="back-btn" src="IMG/chat/Vector.svg" alt="" />
-            <div class="membertext-left">
+            <!-- <div class="membertext-left">
               <table>
                 <tr>
                   <td>會員編號</td>
@@ -121,9 +114,6 @@
                   <td>會員身分</td>
                   <td>背ABC</td>
                 </tr>
-                <!-- <tr>
-                  <td></td>
-                </tr> -->
                 <tr>
                   <td>個性簽名</td>
                   <td>1</td>
@@ -163,9 +153,9 @@
                 </tr>
 
               </table>
-            </div>
+            </div>  -->
           </div>
-          <button class="search-btn">變更</button>
+          <button class="search-btn" id="save_btn">儲存</button>
         </div>
         <div class="list-bottom">
           <div class="list_title_box">
