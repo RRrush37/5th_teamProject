@@ -47,7 +47,7 @@ function get_card() {
                                     </div>
                                     <div class="join">
                                         <h3>參加人數：2/<pan class="activityLimit">${item.activityLimit}</pan></h3>
-                                        <button type="submit" class="iwantjoin color-button">我要參加</button>
+                                        <button type="submit" class="iwantjoin color-button" >我要參加</button>
                                     </div>
                                 </div>
                             </div>

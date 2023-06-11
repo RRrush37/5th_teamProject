@@ -15,7 +15,7 @@
   background-color: #d6d1f0;
 }
 
-.bar>.ability {
+.bar > .ability {
   text-shadow: #3d2e96 0.1rem 0.1rem 0.4rem;
 }
 
@@ -63,7 +63,7 @@ body {
   padding: 3px;
 }
 
-.activity>span {
+.activity > span {
   display: block;
   /* margin-left: 20px;
     margin-right: 20px; */
@@ -146,7 +146,7 @@ body {
   word-break: keep-all;
 }
 
-.byebye:checked+label.color-button {
+.byebye:checked + label.color-button {
   background-color: rgba(61, 46, 150, 0.8);
   color: #fff;
 }
@@ -162,13 +162,13 @@ label {
   font-size: 1.5rem;
 }
 
-input[type="radio"]:checked~span {
+input[type="radio"]:checked ~ span {
   /* 選中radio時 才顯示中間點點 */
   border: 2px solid #d6d1f0;
   background-color: rgba(61, 46, 150, 0.8);
 }
 
-input[type="checkbox"]:checked~span::before {
+input[type="checkbox"]:checked ~ span::before {
   content: "\2714";
   display: inline-block;
   color: rgba(61, 46, 150, 0.8);
@@ -179,7 +179,7 @@ input[type="checkbox"]:checked~span::before {
   top: -10px;
 }
 
-input[type="checkbox"]:checked+span::before {
+input[type="checkbox"]:checked + span::before {
   opacity: 1;
 }
 
@@ -243,30 +243,30 @@ input[type="checkbox"] {
   text-decoration: underline #5e51a7;
 }
 
-.activity_tab>a>label>.fa-calendar-xmark {
+.activity_tab > a > label > .fa-calendar-xmark {
   display: none;
 }
 
-#displayAScalendar:checked+label>.fa-calendar-xmark {
+#displayAScalendar:checked + label > .fa-calendar-xmark {
   display: inline-block;
 }
 
-#displayAScalendar:checked+label>.fa-calendar-check {
+#displayAScalendar:checked + label > .fa-calendar-check {
   display: none;
 }
 
-#displayAScalendar:checked+label {
+#displayAScalendar:checked + label {
   box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.514);
 }
 
-.activity_tab>a>label {
+.activity_tab > a > label {
   font-size: 1.5rem;
   color: rgb(62, 46, 150);
   background-color: #fff;
   box-shadow: inset -2px -2px 3px rgba(0, 0, 0, 0.514);
 }
 
-.activity_tab>span {
+.activity_tab > span {
   display: flex;
 }
 
@@ -451,10 +451,14 @@ input[type="checkbox"] {
   display: none;
 }
 
-#iwantjoin:checked+label {
+#iwantjoin:checked + label {
   color: #000;
   background-color: #d6d1f0;
   box-shadow: inset #fff 0px 0px 0px 1px;
+}
+
+#join:hover {
+  cursor: pointer;
 }
 
 /* .join .canceljoin {
@@ -542,7 +546,7 @@ ul.weekdays li {
   font-size: 2rem;
 }
 
-.right .my_activity a{
+.right .my_activity a {
   color: #424242;
   text-decoration: underline;
 }
@@ -660,7 +664,7 @@ ul.weekdays li {
   display: flex;
 }
 
-.activity_content ul>li {
+.activity_content ul > li {
   margin: 20px 10px 10px 0;
 }
 
@@ -683,7 +687,7 @@ ul.weekdays li {
   cursor: pointer;
 }
 
-.interact_lightboxt>a>span {
+.interact_lightboxt > a > span {
   color: #4b4b4b;
 }
 
@@ -751,7 +755,7 @@ ul.weekdays li {
   display: none;
 }
 
-#iwantjoin_lightbox:checked+label {
+#iwantjoin_lightbox:checked + label {
   color: #000;
   background-color: #d6d1f0;
   box-shadow: inset #fff 0px 0px 0px 1px;
