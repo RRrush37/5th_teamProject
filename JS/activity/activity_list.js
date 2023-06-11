@@ -53,8 +53,12 @@ const get_lightbox = () => {
                     <div class="activity_content">
                         <h2>${response.activityName}</h2>
                         <h3>${post_time_display}發布</h3>
-                        <p class="inf">活動時間:${response.activityStartDate}到${response.activityEndDate}</p>
-                        <p class="inf">活動地點:<pan class="location">${response.activityPlace}</pan></p>
+                        <p class="inf">活動時間:${
+                          response.activityStartDate
+                        }到${response.activityEndDate}</p>
+                        <p class="inf">活動地點:<pan class="location">${
+                          response.activityPlace
+                        }</pan></p>
                         <p>${response.activityNote}</p>
                         <ul>
                             <li class="${spanClass1}"><span class="topic " >${ageGreaterThan18}</span></li>
@@ -65,18 +69,30 @@ const get_lightbox = () => {
                     </div>
                     <div class="article_actions">
                         <div class="interact_lightbox">
-                            <i class="fa-regular fa-heart"></i><span>${response.thumbUpNum}</span>
-                            <i class="fa-regular fa-comment-dots"></i><span class="howmany">${response.commentNum}</span>
+                            <i id="like" style="color:${
+                              response.isThumbUp ? "red" : ""
+                            }" class="fa-regular fa-heart"></i><span id="likeNum">${
+      response.thumbUpNum
+    }</span>
+                            <i class="fa-regular fa-comment-dots"></i><span class="howmany">${
+                              response.commentNum
+                            }</span>
                             <!-- <a href="#"><i class="fa-regular fa-bookmark"></i></a> -->
                         </div>
                         <div class="join">
-                            <h3>參加人數：<pan id="joinNum">2</pan>/${response.activityLimit}</h3>
+                            <h3>參加人數：<pan id="joinNum">${
+                              response.joinNum
+                            }</pan>/${response.activityLimit}</h3>
                             <!--input type="checkbox" id="iwantjoin_lightbox"-->
-                            <div for="iwantjoin_lightbox" class="iwantjoin color-button" id="join">我要參加</div>
+                            <div for="iwantjoin_lightbox" class="iwantjoin color-button" id="join">${
+                              response.hasJoined ? "取消參加" : "我要參加"
+                            }</div>
                         </div>
                     </div>
                     <div class="activity_comment">
-                        <h3>共<span class="howmany">${response.commentNum}</span>則留言</h3>
+                        <h3>共<span class="howmany">${
+                          response.commentNum
+                        }</span>則留言</h3>
                         <div class="activity_commentbox">
                         </div>
                     </div>
@@ -105,7 +121,7 @@ const get_lightbox = () => {
         dataType: "json",
         data: { activityID: response.activityID },
         success: (innerResponse) => {
-          alert(innerResponse);
+          // alert(innerResponse);
           if (innerResponse) {
             document.getElementById("join").innerHTML = "取消參加";
           } else {
@@ -121,7 +137,40 @@ const get_lightbox = () => {
                 alert("請先登入");
               } else {
                 document.getElementById("joinNum").innerHTML = response;
+                get_card();
               }
+            },
+            error: (xhr, status, error) => {
+              alert("error: " + error);
+            },
+          });
+        },
+        error: (xhr, status, error) => {
+          alert("error: " + error);
+        },
+      });
+    });
+    document.getElementById("like").addEventListener("click", () => {
+      // alert(1)
+      $.ajax({
+        url: "php/likeActivity.php",
+        method: "post",
+        dataType: "json",
+        data: { activityID: response.activityID },
+        success: (innerResponse) => {
+          if (innerResponse) {
+            document.getElementById("like").style.color = "red";
+          } else {
+            document.getElementById("like").style.color = "";
+          }
+          $.ajax({
+            url: "php/countActivityLike.php",
+            method: "post",
+            dataType: "json",
+            data: { activityID: response.activityID },
+            success: (innerResponse) => {
+              document.getElementById("likeNum").innerHTML = innerResponse;
+              get_card();
             },
             error: (xhr, status, error) => {
               alert("error: " + error);

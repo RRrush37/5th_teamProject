@@ -25,6 +25,14 @@ if (checkIfLogin()) {
     $count = $statement->fetchAll();
     $data[$i]["thumbUpNum"] = $count[0][0];
 
+    $sql = 'SELECT count(*) FROM activityThumbUp where activityID = ? and thumbUpMemberID = ?';
+    $statement = $pdo->prepare($sql);
+    $statement->bindValue(1, $data[$i]["activityID"]);
+    $statement->bindValue(2, $_SESSION["ID"]);
+    $statement->execute();
+    $count = $statement->fetchAll();
+    $data[$i]["isThumbUp"] = $count[0][0] > 0;
+
     $sql = 'SELECT memberName FROM memberData where memberID = ?';
     $statement = $pdo->prepare($sql);
     $statement->bindValue(1, $data[$i]["activityOrganiserID"]);
@@ -38,6 +46,14 @@ if (checkIfLogin()) {
     $statement->execute();
     $name = $statement->fetchAll();
     $data[$i]["joinNum"] = $name[0][0];
+
+    $sql = 'SELECT count(*) FROM activityParticipant where activityID = ? and participantMemberID = ?';
+    $statement = $pdo->prepare($sql);
+    $statement->bindValue(1, $data[$i]["activityID"]);
+    $statement->bindValue(2, $_SESSION["ID"]);
+    $statement->execute();
+    $name = $statement->fetchAll();
+    $data[$i]["hasJoined"] = $name[0][0] > 0;
   }
 
 
