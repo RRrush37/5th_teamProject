@@ -18,10 +18,14 @@ function get_card() {
           // console.log(item);。
           let post_time_display = convertTimeToHumanReadable(item.activityTime);
           card_html += `
-                            <div class="activity_article_cards " data-id="${item.activityID}">
+                            <div class="activity_article_cards " data-id="${
+                              item.activityID
+                            }">
                                 <div class="cards_top">
                                     <div class="cards_top_left">
-                                        <span class="topic">${item.activityTopic}</span>
+                                        <span class="topic">${
+                                          item.activityTopic
+                                        }</span>
                                         <section class="post_time">${post_time_display}發布</section>
                                     </div>
                                 </div>
@@ -34,20 +38,36 @@ function get_card() {
                                             <h2>${item.activityName}</h2>
                                         </div>
                                         <div class="text_content">
-                                            <pan class="thetime1" style="display:none">${item.activityStartDate}</pan><pan class="thetime2" style="display:none">${item.activityEndDate}</pan>
-                                            <pan class="location" style="display:none">${item.activityPlace}</pan>
+                                            <pan class="thetime1" style="display:none">${
+                                              item.activityStartDate
+                                            }</pan><pan class="thetime2" style="display:none">${
+            item.activityEndDate
+          }</pan>
+                                            <pan class="location" style="display:none">${
+                                              item.activityPlace
+                                            }</pan>
                                             ${item.activityNote}
                                         </div>
                                     </div>
                                 </div>
                                 <div class="cards_actions">
                                     <div class="interact">
-                                        <a href="#"><i class="fa-regular fa-heart ${item.item_id}"></i><span>${item.thumbUpNum}</span></a>
-                                        <a href="#"><i class="fa-regular fa-comment-dots"></i><span class="howmany">${item.commentNum}</span></a>
+                                        <a href="#"><i style="color:${
+                                          item.isThumbUp ? "red" : ""
+                                        }" class="fa-regular fa-heart ${
+            item.item_id
+          }"></i><span>${item.thumbUpNum}</span></a>
+                                        <a href="#"><i class="fa-regular fa-comment-dots"></i><span class="howmany">${
+                                          item.commentNum
+                                        }</span></a>
                                     </div>
                                     <div class="join">
-                                        <h3>參加人數：2/<pan class="activityLimit">${item.activityLimit}</pan></h3>
-                                        <button type="submit" class="iwantjoin color-button" >我要參加</button>
+                                        <h3>參加人數：${
+                                          item.joinNum
+                                        }/<pan class="activityLimit">${
+            item.activityLimit
+          }</pan></h3>
+                                        <button type="submit" class="iwantjoin color-button" >了解更多</button>
                                     </div>
                                 </div>
                             </div>
