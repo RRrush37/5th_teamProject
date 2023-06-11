@@ -98,7 +98,8 @@
       <span>信箱:</span>
       <input type="text" id="email" />
       <span>密碼:</span>
-      <input type="password" id="password" />
+      <input type="password" id="password" placeholder="密碼至少為6位數字跟大小寫字母" />
+      <img id="eyes" src="IMG/password_on.svg" alt="" />
       <div class="push" id="send">送出</div>
 
       <!-- <div class="gf">
@@ -125,5 +126,24 @@
         $(".footer").load("common.html .footer>div");
       });
     </script>
+
+    <script>
+      const passwordInput = document.getElementById('password');
+      const passwordEye = document.getElementById('eyes');
+
+      passwordEye.addEventListener('click', function() {
+        if (passwordInput.type === 'password') {
+          passwordInput.type = 'text';
+          passwordEye.src = 'IMG/password_off.svg';
+        } else {
+          passwordInput.type = 'password';
+          passwordEye.src = 'IMG/password_on.svg';
+        }
+      });
+
+
+
+    </script>
+    <script src="JS/checkLogin.js"></script>
   </body>
 </html>

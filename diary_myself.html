@@ -130,7 +130,7 @@
                                         <div class="constellation">
                                             <!-- <label for="constellation"></label> -->
                                             <label for="constellation">星座</label>
-                                            <select id="constellation">
+                                            <select id="constellation" disabled>
                                                 <option value="牡羊座" selected>牡羊座</option>
                                                 <option value="金牛座">金牛座</option>
                                                 <option value="雙子座">雙子座</option>
@@ -141,8 +141,8 @@
                                                 <option value="天蠍座">天蠍座</option>
                                                 <option value="射手座">射手座</option>
                                                 <option value="魔羯座">魔羯座</option>
-                                                <option value="水瓶座">魔羯座</option>
-                                                <option value="雙魚座">魔羯座</option>
+                                                <option value="水瓶座">水瓶座</option>
+                                                <option value="雙魚座">雙魚座</option>
                                                 <!-- 其他選項... -->
                                             </select>
                                         </div>
@@ -152,7 +152,7 @@
                                             <input type="date" id="birthday" disabled value="11/05">
                                         </div>
                                         <div class="myselfsign">
-                                            <label for="myselfsign">個性簽名</label>
+                                            <label for="myselfsign">個簽</label>
                                             <input type="text" id="myselfsign" disabled value="有趣~">
                                         </div>
                                     </div>
@@ -240,7 +240,7 @@
             $(".footer").load("common.html .footer>div");
         });
     </script>
-
+    <script src="JS/checkLogin.js"></script>
     <script>
 
         var month_olympic = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];

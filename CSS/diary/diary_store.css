@@ -229,6 +229,7 @@ body {
 }
 .active{
     background-color: #78665A;
+    color: white;
     /* background-color: red; */
 
 }

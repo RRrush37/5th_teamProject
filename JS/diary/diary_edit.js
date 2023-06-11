@@ -215,7 +215,7 @@ $(()=>{
         
         //編輯按鈕
         editBtn.addEventListener('click', function() {
-            var fields = document.querySelectorAll('.introduce_right input, .introduce_left input');  // 選取欄位
+            var fields = document.querySelectorAll('.introduce_right input, .introduce_left input .introduce_right select');  // 選取欄位
             
             aaaa = hight.value;
             bbbb = interest.value;
@@ -245,7 +245,7 @@ $(()=>{
 
             editBtn.addEventListener('click', function() {
                 editBtn.style.display = 'none';
-            var fields = document.querySelectorAll('.introduce_right input, .introduce_left input');  // 選取欄位
+            var fields = document.querySelectorAll('.introduce_right input, .introduce_left input, .introduce_right select');  // 選取欄位
             
                 // 將欄位的 disabled 屬性設定為 false
                 fields.forEach(function(field) {
@@ -262,7 +262,7 @@ $(()=>{
 
             cancelBtn.addEventListener('click', function() {
                 editBtn.style.display = 'inline-block';
-                var fields = document.querySelectorAll('.introduce_right input, .introduce_left input');  // 選取欄位
+                var fields = document.querySelectorAll('.introduce_right input, .introduce_left input, .introduce_right select');  // 選取欄位
                 
 
                 hight.value= aaaa;
@@ -364,7 +364,7 @@ $(()=>{
 
 
 
-                var fields = document.querySelectorAll('.introduce_right input, .introduce_left input'); 
+                var fields = document.querySelectorAll('.introduce_right input, .introduce_left input, .introduce_right select'); 
                     fields.forEach(function(field){
                     field.disabled = true;
                         

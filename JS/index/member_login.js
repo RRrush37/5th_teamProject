@@ -1,13 +1,48 @@
-
 $(() => {
   $("#send").click(function (e) {
+
     if (!$("#email").val()?.length) {
       alert("請輸入信箱");
-      return;
+      email.focus();
+      return false;
+    }else{
+      var emailRule = /^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z]+$/;
+      if ($("#email").val().search(emailRule) !== -1) {
+              // 電子信箱格式正確
+      } else {
+              alert('電子信箱格式錯誤');
+              return false;
+      }
     }
+
+
     if (!$("#password").val()?.length) {
       alert("請輸入密碼");
     }
+
+    
+    if (!/[a-z]/.test($("#password").val())) {
+      alert('密碼必須包含至少一個小寫英文字母');
+      return false;
+  }
+
+  
+  if (!/[A-Z]/.test($("#password").val())) {
+      alert('密碼必須包含至少一個大寫英文字母');
+      return false;
+  }
+  
+  if (!$("#password").val()?.length < 6) {
+  alert('密碼至少為6位數字');
+  passwordInput.focus();
+      return false;
+  }
+
+    
+
+
+
+
     $.ajax({
       url: "php/loginAjax.php",
       type: "POST",
