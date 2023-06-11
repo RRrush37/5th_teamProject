@@ -113,9 +113,10 @@ body {
   color: #634921;
   line-height: 1.6;
   padding: 20px;
-  height: 75vh;
+  height: 74vh;
   /* overflow-y: scroll; */
   scrollbar-gutter: stable both-edges;
+  margin-top: 20px;
 }
 
 .text_nav {
@@ -253,10 +254,10 @@ body {
 .activity_article {
   position: relative;
   background-color: #847062cf;
-  padding: 25px;
-  border: 1ps solid red;
+  padding: 15px;
+  /* border: 1px solid red; */
 
-  height: 69vh;
+  height: 73vh;
   overflow-y: scroll;
   scrollbar-gutter: stable both-edges;
 }
@@ -561,8 +562,9 @@ body {
 .activity_main .right {
   width: 20.8%;
   color: #000;
-  height: 75vh;
+  height: 74vh;
   overflow-y: scroll;
+  margin-top: 20px;
 }
 
 /* --------------活動右側欄-日曆-------------- */
