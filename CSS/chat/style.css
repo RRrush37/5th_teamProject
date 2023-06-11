@@ -1,461 +1,464 @@
-body{
-    background-image: url(../../IMG/chat/highbackground.jpg);
-    background-size: cover;
-    
+body {
+  background-image: url(../../IMG/chat/highbackground.jpg);
+  background-size: cover;
 }
 
-.search-create{
-    margin: 3rem auto;
-    width: 60%;
-    display: flex;
-    justify-content: space-between;
-    
+.search-create {
+  margin: 3rem auto;
+  width: 60%;
+  display: flex;
+  justify-content: space-between;
 }
 
-.search-create input{
-    border-radius: .5rem;
-    background-color: #EFE0CC;
-    padding: 0 .5rem;
+.search-create input {
+  border-radius: 0.5rem;
+  background-color: #efe0cc;
+  padding: 0 0.5rem;
 }
 
-.search-create >button{
-    background-color: #56493f;
-    text-decoration: none;
-    color: white;
-    padding: .5rem .7rem;
-    border-radius: 1.2rem;
-    cursor: pointer;
+.search-create > button {
+  background-color: #56493f;
+  text-decoration: none;
+  color: white;
+  padding: 0.5rem 0.7rem;
+  border-radius: 1.2rem;
+  cursor: pointer;
 }
 
-.on{
-    display: block;
+.on {
+  display: block;
 }
 
-.custom-room{
-    width: 65%;
-    max-width: 1200px;
-    background-color: #56493f;
-    margin: 0 auto;
-    padding-top: 2rem;
+.custom-room {
+  width: 65%;
+  max-width: 1200px;
+  background-color: #56493f;
+  margin: 0 auto;
+  padding-top: 2rem;
 }
 
-.custom-room ul{
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0 auto;
-    justify-content: center;
-    overflow-y: scroll;
-    /* overflow-x: hidden; */
-    scrollbar-gutter: stable both-edges;
-    height: 65vh;
-    
+.custom-room ul {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  justify-content: center;
+  overflow-y: scroll;
+  /* overflow-x: hidden; */
+  scrollbar-gutter: stable both-edges;
+  height: 65vh;
 }
 
 .custom-room ul::-webkit-scrollbar {
-    width: 10px; /* 设置滚动条宽度 */
-    height: 20px;
-    background-color: transparent;
-    border-radius: 0;
-  }
-  
-  .custom-room ul::-webkit-scrollbar-thumb {
-    background-color: rgba(142, 89, 57, 1); /* 设置滚动条滑块的颜色 */
-  }
-  
-  .custom-room ul::-webkit-scrollbar-thumb:hover {
-    background-color: #555; /* 设置滚动条滑块在悬停时的颜色 */
-  }
-  
-  .custom-room ul::-webkit-scrollbar-track {
-    background-color: transparent;
-  }
-
-.custom-room  li{
-    width: 28%;
-    padding-top: 1rem;
-    padding-bottom: 2rem;
-    text-align: center;
-    background-color: #FEF5BE;
-    margin: 1.5rem;
-    box-sizing: border-box;
+  width: 10px; /* 设置滚动条宽度 */
+  height: 20px;
+  background-color: transparent;
+  border-radius: 0;
 }
 
-.custom-room h3{
-    
-    width: auto;
-    font-weight: 600;
-    font-size: 3rem;
-    margin-bottom: 1rem;
-    margin-top: .5rem;
+.custom-room ul::-webkit-scrollbar-thumb {
+  background-color: rgba(142, 89, 57, 1); /* 设置滚动条滑块的颜色 */
 }
 
-.custom-room p{
-   
-    padding-bottom: 1rem;
-   
+.custom-room ul::-webkit-scrollbar-thumb:hover {
+  background-color: #555; /* 设置滚动条滑块在悬停时的颜色 */
 }
 
-.custom-room a{
-    display: inline-block;
-    font-size: 2rem;
-    color: white;
-    text-decoration: none;
-    background-color: rgba(142,89,57,1);
-    border-radius: 1.5rem;
-    padding: .7rem 1rem;
-    margin-top: .5rem;
+.custom-room ul::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.custom-room li {
+  width: 28%;
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+  text-align: center;
+  background-color: #fef5be;
+  margin: 1.5rem;
+  box-sizing: border-box;
+}
+
+.custom-room h3 {
+  width: auto;
+  font-weight: 600;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  margin-top: 0.5rem;
+}
+
+.custom-room p {
+  padding-bottom: 1rem;
+}
+
+.custom-room a {
+  display: inline-block;
+  font-size: 2rem;
+  color: white;
+  text-decoration: none;
+  background-color: rgba(142, 89, 57, 1);
+  border-radius: 1.5rem;
+  padding: 0.7rem 1rem;
+  margin-top: 0.5rem;
 }
 
 /* 建立聊天房間*/
 
-.create-newroom{
-    background-image: url("../../img/box.jpg");
-    background-size: cover;
-    width: 30%; 
-    height: 50%;   
-    position: absolute;
-    left: 40%;
-    top:20%;
-    z-index: 2;
-    padding: 1rem;
-    display: none;
+.create-newroom {
+  background-image: url("../../img/box.jpg");
+  background-size: cover;
+  width: 30%;
+  height: 50%;
+  position: absolute;
+  left: 40%;
+  top: 20%;
+  z-index: 2;
+  padding: 1rem;
+  display: none;
 }
 
-.create-newroom input:first-of-type{
-    border: none;
-    background-color:transparent ;   
+.create-newroom input:first-of-type {
+  border: none;
+  background-color: transparent;
 }
 
-.create-newroom label{
-    color: white;
-    padding: .5rem;
+.create-newroom label {
+  color: white;
+  padding: 0.5rem;
 }
 
-.create-newroom input{
-    margin: .5rem;
+.create-newroom input {
+  margin: 0.5rem;
 }
 
-.create-newroom input::placeholder{
-    color: white;
+.create-newroom input::placeholder {
+  color: white;
 }
 
-.create-newroom a{
-    background-color: transparent;
-    text-decoration: none;
-    color: white;
+.create-newroom a {
+  background-color: transparent;
+  text-decoration: none;
+  color: white;
 }
 
-.create-newroom button{
-    position: absolute;
-    right: 0;
-    margin: 1rem;
+.create-newroom button {
+  position: absolute;
+  right: 0;
+  margin: 1rem;
 }
 
 /* 聊天室大廳 尋找用戶*/
-#search-user_box{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(0,0,0,.8);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+#search-user_box {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-#search-user_box.none{
-    display: none;
+#search-user_box.none {
+  display: none;
 }
 
-.search-user{
-    width: 50%;
-    max-width: 1200px;
-    background-color: rgba(255, 251, 251, 0.34);
-    margin: 2rem auto;
-    border-radius: 1rem;
-    /* display: none; */
+.search-user {
+  width: 50%;
+  max-width: 1200px;
+  background-color: rgba(255, 251, 251, 0.34);
+  margin: 2rem auto;
+  border-radius: 1rem;
+  /* display: none; */
 }
 
-.search-user h3{
-    width: 50%;
-    font-size: 1.5rem;
-    color: white;
-    text-shadow: .5px .5px .5px black;
-    text-align: center;
-    margin: 2rem auto;
-    padding-top: 3rem;
-    
+.search-user h3 {
+  width: 50%;
+  font-size: 1.5rem;
+  color: white;
+  text-shadow: 0.5px 0.5px 0.5px black;
+  text-align: center;
+  margin: 2rem auto;
+  padding-top: 3rem;
 }
 
-.search-user ul{
-    width: 50%;
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0 auto;
+.search-user ul {
+  width: 50%;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
 }
 
-.search-user li{
-    margin: 1rem;
-    padding: 1rem;
-    width: 100%;
-    background-color: #EFE0CC;
-    border-radius: 1.2rem;
-    margin-bottom: 3rem;
+.search-user li {
+  margin: 1rem;
+  padding: 1rem;
+  width: 100%;
+  background-color: #efe0cc;
+  border-radius: 1.2rem;
+  margin-bottom: 3rem;
 }
 
-.search-user input{
-    background-color: #EFE0CC;
-    
-    color: black;
-    border: 0;
+.search-user input {
+  background-color: #efe0cc;
+
+  color: black;
+  border: 0;
 }
 
-#clear-button1{
-    background-color: #704214;
-    color: white;
-    padding: .3rem .7rem;
-    border-radius: 1.2rem;
-    cursor: pointer;
-   
+#clear-button1 {
+  background-color: #704214;
+  color: white;
+  padding: 0.3rem 0.7rem;
+  border-radius: 1.2rem;
+  cursor: pointer;
 }
-
 
 /*  好友清單 friendtext */
 
-.usertext-all{
-    width: 60%;
-    background-color: #56493f;
-    margin: 1rem auto;
-    padding-bottom: 3rem;
+.usertext-all {
+  width: 60%;
+  background-color: #56493f;
+  margin: 1rem auto;
+  padding-bottom: 3rem;
 
-    
-    display: none;
+  display: none;
 }
 
-.usertext-top{
-    margin: 1rem;
+.usertext-top {
+  margin: 1rem;
 }
 
-.usertext-top img{
-    width: 10%;
-    float: left;
-    margin: 1rem 2rem;
+.usertext-top img {
+  width: 10%;
+  float: left;
+  margin: 1rem 2rem;
 }
 
-.usertext-top h4, .usertext-top p{
-    padding-top: 1rem;
-    color: white;
+.usertext-top h4,
+.usertext-top p {
+  padding-top: 1rem;
+  color: white;
 }
 
-.usertext{
-    width: 80%;
-    background-color:#FEF5BE;
-    display: flex;
-    margin: 0 auto;
-    padding: 2rem;
-    position: relative;
-    
+.usertext {
+  width: 80%;
+  background-color: #fef5be;
+  display: flex;
+  margin: 0 auto;
+  padding: 2rem;
+  position: relative;
 }
 
-.usertext-left{
-    width: 50%;
+.usertext-left {
+  width: 50%;
 }
 
-.usertext-left td,.usertext-right td{
-    padding: 1rem;
-    font-size: 2rem;
+.usertext-left td,
+.usertext-right td {
+  padding: 1rem;
+  font-size: 2rem;
 }
 
-.usertext-left tr td:nth-child(2),.usertext-right tr td:nth-child(2) {
-    border-bottom: 1px solid #000;
-    padding-bottom:0 ;
+.usertext-left tr td:nth-child(2),
+.usertext-right tr td:nth-child(2) {
+  border-bottom: 1px solid #000;
+  padding-bottom: 0;
 }
 
-
-.usertext-left input{
-    background-color: #56493f;
-    color: white;
-    padding: .2rem .5rem;
-    border-radius: .5rem;
-    margin: 1rem;
-    margin-top: 7rem;
-
+.usertext-left input {
+  background-color: #56493f;
+  color: white;
+  padding: 0.2rem 0.5rem;
+  border-radius: 0.5rem;
+  margin: 1rem;
+  margin-top: 7rem;
 }
-
 
 /* 聊天室內部 chatroom-inside */
 
-.chatroom-inside{
-    width: 60%;
-    background-color: #56493f;
-    margin: 1rem auto;
-    padding-bottom: 2rem;
-   
+.chatroom-inside {
+  width: 60%;
+  background-color: #56493f;
+  margin: 1rem auto;
+  padding-bottom: 6rem;
+  border-radius: 1rem;
+  position: relative;
 }
 
-.chatroom-inside h3{
-    color: white;
-    text-align: center;
-    padding: .5rem;
-    text-shadow: .1rem .1rem black ;
+.chatroom-inside h3 {
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  text-shadow: 0.1rem 0.1rem black;
 }
 
-.chatroom-inside ul{
-    display: flex;   
-    justify-content: center;
+.chatroom-inside ul {
+  display: flex;
+  justify-content: center;
 }
 
-.chatroom-inside-left{
-    width: 20%;
-    background-color: white;
+.chatroom-inside-left {
+  width: 20%;
+  background-color: white;
 }
 
-.chatroom-inside-left img{
-    width: 30px;
+.chatroom-inside-left img {
+  width: 30px;
 }
 
-.chatroom-inside-middle{
-    width: 50%;
-    margin: 0 1rem;
-    background-color: white;
-    position: relative;
+.chatroom-inside-middle {
+  width: 90%;
+  margin: 0 1rem;
+  height: 400px;
+  background-color: white;
+  /* position: relative; */
+  overflow-y: auto;
 }
 
-.chatroom-inside-right{
-    width: 20%; 
+.chat-bottom {
+  position: absolute;
+  bottom: 1rem;
+  left: rem;
+  right: 0;
+
+  width: 90%;
+
+  /* margin: 0 auto; */
 }
 
-.chatroom-inside-right img{
-    width: 30px;
+.chat-bottom input {
+  width: 93%;
+  margin-left: -3.5rem;
+  border-radius: 1rem;
+  padding: 0.5rem;
+  background-color: #efe0cc;
+  margin-right: 1rem;
 }
 
-.chatroom-inside-right a img{
-    width: 20px;
+.chat-bottom img {
+  width: 3.5rem;
+  cursor: pointer;
 }
 
-.chatroom-inside-left  ul,
-.chatroom-inside-right  ul {
+.chatroom-inside-right {
+  width: 20%;
+}
+
+.chatroom-inside-right img {
+  width: 30px;
+}
+
+.chatroom-inside-right a img {
+  width: 20px;
+}
+
+.chatroom-inside-left ul,
+.chatroom-inside-right ul {
   display: flex;
   flex-wrap: wrap;
   background-color: white;
 }
 
-.chatroom-inside-left  ul li,
-.chatroom-inside-right  ul li{
-    font-size: 2rem;
-    padding: 1rem;
-    margin: 0 auto;
+.chatroom-inside-left ul li,
+.chatroom-inside-right ul li {
+  font-size: 2rem;
+  padding: 1rem;
+  margin: 0 auto;
 }
 
-.chatroom-inside-left  h4,
-.chatroom-inside-right  h4{
-    font-weight: bold;
-    font-size: 3rem;
-    padding: 2rem 1rem;
-    margin: 0 auto;
+.chatroom-inside-left h4,
+.chatroom-inside-right h4 {
+  font-weight: bold;
+  font-size: 3rem;
+  padding: 2rem 1rem;
+  margin: 0 auto;
 }
 
-.chatroom-inside-middle img{
-    width: 20%;
-    display: inline-block;
+.chatroom-inside-middle img {
+  width: 20%;
+  display: inline-block;
 }
 
-.chatroom-inside-middle p{
-    display: inline-block;
-    
+.chatroom-inside-middle p {
+  display: inline-block;
 }
 
-.chatroom-inside-middle a{
-    font-size: 2rem;
-    position: absolute;
-    right: 0;
-    text-decoration: none;
-    cursor: pointer;
-    margin: .5rem;
-    color: black;
+.chatroom-inside-middle a {
+  font-size: 2rem;
+  position: absolute;
+  right: 0;
+  text-decoration: none;
+  cursor: pointer;
+  margin: 0.5rem;
+  color: black;
 }
 
-.chatroom-inside-right div{
-    font-size: 2rem;
-    display: block;
-    margin-top: 1rem;
-    color: black;
-    background-color: white;
-    padding: 1rem;
-    text-align: center;
-    text-decoration: none;
-} 
-
-.chatroom-inside-middle input{
-    position: absolute;
-    width: 80%;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: .5rem auto;
-    border-radius: 1rem;
-    padding: .5rem;
-    background-color: #EFE0CC;
+.chatroom-inside-right div {
+  font-size: 2rem;
+  display: block;
+  margin-top: 1rem;
+  color: black;
+  background-color: white;
+  padding: 1rem;
+  text-align: center;
+  text-decoration: none;
 }
 
-.chatroom-inside-left  input,
-.chatroom-inside-right  input{
-    font-size: 2rem;
-    border-radius: .8rem;
-    background-color:#EFE0CC;
-    width: 90%;
-    padding: .5rem;
-    margin: 0 auto;
+.chatroom-inside-left input,
+.chatroom-inside-right input {
+  font-size: 2rem;
+  border-radius: 0.8rem;
+  background-color: #efe0cc;
+  width: 90%;
+  padding: 0.5rem;
+  margin: 0 auto;
 }
 
-#chatroom-inside-placeholder::placeholder{
-    color: white; 
-    text-align: center;   
+#chatroom-inside-placeholder::placeholder {
+  color: white;
+  text-align: center;
 }
 
 /* 給common用的 */
 
 .bar .ability span:last-child {
-    /* border: 1px solid #FFF; */
-    background-color: rgba(254,245,190,1)
+  /* border: 1px solid #FFF; */
+  background-color: rgba(254, 245, 190, 1);
 }
 
 .bar .ability span div {
-    background-color: #D6D1F0;
+  background-color: #d6d1f0;
 }
 
-.bar>.ability {
-    text-shadow: #3D2E96 .1rem .1rem .4rem;
+.bar > .ability {
+  text-shadow: #3d2e96 0.1rem 0.1rem 0.4rem;
 }
 
 .user {
-    border: #D6D1F0 solid 2px;
+  border: #d6d1f0 solid 2px;
 }
 
-.widget{
-    color: rgba(112, 66, 20, 1);
+.widget {
+  color: rgba(112, 66, 20, 1);
 }
 
 .widget a {
-    color: rgba(112, 66, 20, 1);
+  color: rgba(112, 66, 20, 1);
 }
 
 .bar .ability span div {
-        color: #000;
+  color: #000;
 }
 
 .room_box::-webkit-scrollbar {
-    width: 10px;
+  width: 10px;
 }
 
 .room_box::-webkit-scrollbar-thumb {
-    background: #4b6264;
-    border-radius: 10px;
+  background: #4b6264;
+  border-radius: 10px;
 }
 
 .room_box::-webkit-scrollbar-track {
-    background: #79A0A5;
-    border-radius: 10px;
+  background: #79a0a5;
+  border-radius: 10px;
 }
-

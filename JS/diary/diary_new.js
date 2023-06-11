@@ -179,13 +179,16 @@ $.ajax({
 
             })
             // ================================ keep on ================================
+            // ================================ member img ==============================
+            let user_img = cards_content_list[j].querySelector(".card_article").querySelector("img");
+            picture.getArticleMemberPicture(articleID, user_img) ;
         }
 
         
-        let card_article = document.getElementsByClassName("card_article");
-        for ( let i = 0 ; i < card_article.length ; i++ ) {
-            getImg(card_article[i].querySelector("img"))
-        }
+        // let card_article = document.getElementsByClassName("card_article");
+        // for ( let i = 0 ; i < card_article.length ; i++ ) {
+        //     getImg(card_article[i].querySelector("img"))
+        // }
 
         // ====================================== readmore ========================================
         // 頁面上的按鈕//因為不只一個所以不用[0]
@@ -342,22 +345,30 @@ $.ajax({
                                 console.log("article_like_numj"+article_like_num.innerHTML);
                                 addLike(article_id)
                                 .then((response) => {
+                                    response = JSON.parse(response);
+                                    console.log(read_like);
                                     if ( response[1] == true) {
+                                        numOfLike.innerHTML = response[0] ;
+                                        article_like_num.innerHTML = response[0] ;
                                         read_like.classList.add("on");
-                                        collect_like.classList.add("on");
                                         article_like.classList.add("on");
+                                        if ( collect_like_num != -1 ) {
+                                            collect_like.classList.add("on");
+                                            collect_like_num.innerHTML = response[0] ;
+                                        }
                                     } else {
+                                        numOfLike.innerHTML = response[0] ;
+                                        article_like_num.innerHTML = response[0] ;
                                         read_like.classList.remove("on");
-                                        collect_like.classList.remove("on");
                                         article_like.classList.remove("on");
+                                        if ( collect_like_num != -1 ) {
+                                            collect_like.classList.remove("on");
+                                            collect_like_num.innerHTML = response[0] ;
+                                        }
                                     }
                                     // 在此處理成功回傳的 response
-                                    response = JSON.parse(response);
-                                    collect_like_num.innerHTML = response[0] ;
-                                    article_like_num.innerHTML = response[0] ;
-                                    numOfLike.innerHTML = response[0] ;
-                                    // collect_like_num.innerHTML = response[0] ;
-                                    // article_like_num.innerHTML = response[0] ;
+
+                                    
                                     console.log("read like");
                                     console.log("article_like_numj"+article_like_num.innerHTML);
                                 })
@@ -485,6 +496,7 @@ $.ajax({
                 let collect_article_id_list = document.getElementsByClassName("collect_articleID");
                 let collect_like = 0 ;
                 let collect_like_num = -1 ;
+                console.log("numOfLike"+numOfLike.innerHTML);
                 // console.log(collect_article_id_list); //神奇的抓到collect的物件
                 for ( let j = 0 ; j < collect_article_id_list.length ; j++) {
                     if ( article_id == collect_article_id_list[j].getAttribute("data-id")) {
@@ -493,22 +505,31 @@ $.ajax({
                     }
                 }
                 console.log("i"+i);
+
                 addLike(article_id)
                 .then((response) => {
-                    if ( response[1] == true) {
-                        like[i].classList.add("on");
-                        collect_like.classList.add("on");
-                    } else {
-                        like[i].classList.remove("on");
-                        collect_like.classList.remove("on");
-                    }
-                    // 在此處理成功回傳的 response
-                    console.log(response);
+
                     response = JSON.parse(response);
-                    console.log(response[0]);
-                    numOfLike.innerHTML = response[0] ;
-                    collect_like_num.innerHTML = response[0] ;
-                    console.log("work")
+                    // resolve(response); // 回傳留言數
+                    if ( response[1] == true) {
+
+                        numOfLike.innerHTML = response[0] ;
+                        like[i].classList.add("on");
+                        if (collect_like_num != -1 ) {
+                            collect_like_num.innerHTML = response[0] ;
+                            collect_like.classList.add("on");
+                        }
+
+                    } else {
+
+                        numOfLike.innerHTML = response[0] ;
+                        like[i].classList.remove("on");
+                        console.log(collect_like_num);
+                        if (collect_like_num != -1 ) {
+                            collect_like_num.innerHTML = response[0] ;
+                            collect_like.classList.remove("on");
+                        }
+                    }
                 })
                 .catch((error) => {
                     // 在此處理錯誤情況
@@ -529,6 +550,7 @@ $.ajax({
                         collect_keep = collect_article_id_list[j].closest(".collect_cards_content").querySelector(".collect_bookmark");
                     }
                 }
+                
                 // keep[i].classList.toggle("on");
                 addKeep(article_id)
                 .then((response) => {

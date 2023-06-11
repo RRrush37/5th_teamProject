@@ -126,13 +126,16 @@ export function collect_list(){
 
                 })
                 // ================================ keep on ================================
+                // ================================ member img ==============================
+                let user_img = cards_content_list[j].querySelector(".collect_card_article").querySelector("img");
+                picture.getArticleMemberPicture(articleID, user_img) ;
             }
 
             
-            let collect_card_article = document.getElementsByClassName("collect_card_article");
-            for ( let i = 0 ; i < collect_card_article.length ; i++ ) {
-                getImg(collect_card_article[i].querySelector("img"))
-            }
+            // let collect_card_article = document.getElementsByClassName("collect_card_article");
+            // for ( let i = 0 ; i < collect_card_article.length ; i++ ) {
+            //     getImg(collect_card_article[i].querySelector("img"))
+            // }
 
             // ====================================== readmore ========================================
             // 頁面上的按鈕//因為不只一個所以不用[0]

@@ -490,6 +490,10 @@ body {
 
 }
 
+.fa-heart, .fa-bookmark{
+  cursor: pointer;
+}
+
 .interact .icon i {
   color: #000;
 }
