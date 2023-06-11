@@ -153,27 +153,27 @@ body::before {
 .map .house_6 {
   position: absolute;
   font-weight: bold;
-  top: 58px;
-  left: 187px;
+  top: 44px;
+  left: 283px;
   display: block;
-  width: 100px;
+  width: 103px;
   filter: drop-shadow(3px 3px 3px rgb(0, 0, 0));
   text-align: center;
   transform: rotateY(180deg);
   position: absolute;
   z-index: 10;
-
 }
+
 
 .bulletin_board_6 {
   position: absolute;
   font-weight: bold;
-  top: 42px;
+  top: 37px;
   display: block;
   width: 87px;
   filter: drop-shadow(3px 3px 3px rgb(0, 0, 0));
   text-align: center;
-  left: 131px;
+  left: 224px;
 }
 
 .map .house_6,
@@ -193,7 +193,7 @@ body::before {
 .map .house_3 {
     font-weight: bold;
     bottom: 24px;
-    left: 360px;
+    left: 338px;
     display: block;
     width: 98px;
     filter: drop-shadow(3px 3px 3px rgb(0, 0, 0));
@@ -207,7 +207,7 @@ body::before {
      position: absolute;
     font-weight: bold;
     bottom: 20px;
-    left: 300px;
+    left: 281px;
     display: block;
     width: 90px;
     filter: drop-shadow(3px 3px 3px rgb(0, 0, 0));
@@ -231,8 +231,8 @@ body::before {
 .map .house_5 {
   position: absolute;
   font-weight: bold;
-  top: 50px;
-  right: 390px;
+  top: 172px;
+  right: 226px;
   display: block;
   width: 100px;
   filter: drop-shadow(3px 3px 3px rgb(0, 0, 0));
@@ -245,8 +245,8 @@ body::before {
 .bulletin_board_5 {
   position: absolute;
   font-weight: bold;
-  top: 51px;
-  right: 450px;
+  top: 188px;
+  right: 177px;
   display: block;
   width: 80px;
   filter: drop-shadow(3px 3px 3px rgb(0, 0, 0));
@@ -325,7 +325,7 @@ body::before {
   position: absolute;
   display: none;
   width: 100px;
-  left: 85px;
+  left: 180px;
   top: 0;
   opacity: 0;
   transition: opacity 0.5s ease-in-out;
@@ -335,9 +335,9 @@ body::before {
 
 .think_5 {
   position: absolute;
-  width: 100px;
-  left: 200px;
-  top: 0px;
+  width: 90px;
+  right: 120px;
+  top: 150px;
   opacity: 0;
   transition: opacity 0.5s ease-in-out;
   filter: drop-shadow(3px 3px 3px rgb(0, 0, 0));

@@ -823,5 +823,24 @@ body {
   left: 10%;
   cursor: pointer;
   filter: drop-shadow(rgba(0, 0, 0, 0.408) 3px 3px 3px);
+  
 }
+
+
+.pay_wrapper {
+  background-color: rgb(37, 40, 51);
+  box-shadow: rgba(255, 255, 255, 0.5) 0px 0px 20px;
+  border-radius: 30px;
+  width: 360px;
+  height: 450px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.choose_wrapper h1 {
+  margin: 13px 98px;
+}
+
 }
