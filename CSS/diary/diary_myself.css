@@ -70,6 +70,7 @@ body {
 /*---主要版面----------*/
 .activity_main {
     display: flex;
+    margin-top: 30px;
 }
 
 
@@ -81,7 +82,7 @@ body {
     color: #634921;
     line-height: 1.6;
     padding: 10px;
-    height: 75vh;
+    height: 74vh;
     /* overflow-y: scroll; */
     scrollbar-gutter: stable both-edges;
 }
@@ -495,6 +496,7 @@ transform: scale(2.5) translateY(25%);
     color: #000;
     height: 75vh;
     overflow-y: scroll;
+
 }
 
 /* --------------活動右側欄-日曆-------------- */
