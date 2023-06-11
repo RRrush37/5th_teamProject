@@ -30,7 +30,7 @@ $.ajax({
       }
       let chatroom_middle = document.getElementById("chatroom-inside-middle");
       chatroom_middle.innerHTML = str;
-      chatroom_middle.scrollTop = chatroom_middle.clientHeight;
+      chatroom_middle.scrollTop = chatroom_middle.clientHeight + 100;
     } else {
     }
   },
@@ -54,7 +54,7 @@ setInterval(() => {
         }
         let chatroom_middle = document.getElementById("chatroom-inside-middle");
         chatroom_middle.innerHTML = str;
-        chatroom_middle.scrollTop = chatroom_middle.clientHeight;
+        chatroom_middle.scrollTop = chatroom_middle.clientHeight + 100;
       } else {
       }
     },
@@ -137,7 +137,7 @@ sendBtn.addEventListener("click", function () {
                   "chatroom-inside-middle"
                 );
                 chatroom_middle.innerHTML = str;
-                chatroom_middle.scrollTop = chatroom_middle.clientHeight;
+                chatroom_middle.scrollTop = chatroom_middle.clientHeight + 100;
                 enterText.value = "";
               } else alert("留言失敗");
             },
