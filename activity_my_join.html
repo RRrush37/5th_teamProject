@@ -466,10 +466,32 @@
 
         // 載入header footer
 
-        $(function () {
-            $(".header").load("common.html .header>div");
-            $(".footer").load("common.html .footer>div");
-        });
+        import * as picture from "./JS/member_picture.js";
+      $(function () {
+          $(".header").load("common.html .header>div", function(){
+              let user_img = document.getElementsByClassName("user")[0] ;
+              picture.getMemberPicture(user_img);
+  
+              var logoutButton = document.getElementById('logout-button');
+              logoutButton.addEventListener('click', logout);
+              function logout() {
+                $.ajax({
+                    method: "POST",
+                    url: "php/back_logout.php",
+                    data: {},
+                    dataType: "json",
+                    success: function (response) {
+                      alert("成功登出");
+                      location.href = 'index2.html';
+                    },
+                    error: function (exception) {
+                      alert("數據載入失敗: " + exception.status);
+                    },
+                  });
+              }
+          });
+          $(".footer").load("common.html .footer>div");
+      });
 
         // 月曆
         var month_olympic = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];

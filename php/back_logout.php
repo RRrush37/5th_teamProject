@@ -4,5 +4,6 @@
   session_unset();
   session_destroy();
   // header("Location: backstage_login.html");
+  echo true;
 
 ?>
