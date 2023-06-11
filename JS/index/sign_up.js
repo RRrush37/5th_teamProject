@@ -36,20 +36,23 @@ var email_login = email.value;
         return;
         }
 
-
         if (!/[a-z]/.test($("#pwd").val())) {
             alert('密碼必須包含至少一個小寫英文字母');
             return false;
         }
-    
+
         
         if (!/[A-Z]/.test($("#pwd").val())) {
             alert('密碼必須包含至少一個大寫英文字母');
             return false;
         }
         
-
-
+        if ($("#pwd").val()?.length < 6) {
+        alert('密碼至少為6位數字');
+        passwordInput.focus();
+            return false;
+        }
+        
 
         if (!$("#pwdConfirm").val()?.length) {
         alert("請輸入確認密碼");
