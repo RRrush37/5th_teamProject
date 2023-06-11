@@ -5,21 +5,30 @@
 //   window.location.href = selectedValue;
 // }
 
-
 // 配件動態生成
 $.ajax({
   method: "POST",
   url: "php/getStoreDetail.php",
-  data:{},
+  data: {},
   dataType: "json",
   success: function (response) {
     console.log(response);
     let str = "";
-    const itemType = ["hair", "clothes", "bottoms", "accessories1", "accessories2", "accessories3", "eyebrow", "eye", "mouth"]
-    for(let i = 0; i < response.length; i++){
-      if ( response[i].isCoin == 0 ) { // 必須不是金幣
-        str += 
-        `<li class="number">
+    const itemType = [
+      "hair",
+      "clothes",
+      "bottoms",
+      "accessories1",
+      "accessories2",
+      "accessories3",
+      "eyebrow",
+      "eye",
+      "mouth",
+    ];
+    for (let i = 0; i < response.length; i++) {
+      if (response[i].isCoin == 0) {
+        // 必須不是金幣
+        str += `<li class="number">
         <div class="${response[i].itemType}" data-index="${response[i].storeID}" data-money="${response[i].itemPrice}" id="index${response[i].storeID}">
           <img src="IMG/people/${response[i].itemImage}" alt="">
         </div>
@@ -59,21 +68,26 @@ $.ajax({
     $.ajax({
       method: "POST",
       url: "php/getHaveItem.php",
-      data:{},
+      data: {},
       dataType: "json",
       success: function (response) {
         console.log(response);
-        for(let i = 0; i < response.length; i++){
+        for (let i = 0; i < response.length; i++) {
           // alert("price"+response[i].itemID)
-          document.getElementById("price"+response[i].itemID).innerHTML = 0;
-          document.getElementById("index"+response[i].itemID).setAttribute("data-money", 0)
+          // alert(document.getElementById("price" + response[i].itemID));
+          if (document.getElementById("price" + response[i].itemID))
+            document.getElementById("price" + response[i].itemID).innerHTML = 0;
+          if (document.getElementById("index" + response[i].itemID))
+            document
+              .getElementById("index" + response[i].itemID)
+              .setAttribute("data-money", 0);
         }
-      },error: function(exception) {
+      },
+      error: function (exception) {
         alert("數據載入失敗: " + exception.status);
-      }
+      },
+    });
 
-    })
-    
     // lightbox
     // 確認配件
     let dresss_lightbox = document.getElementsByClassName("dresss_lightbox")[0];
@@ -82,96 +96,98 @@ $.ajax({
     console.log(reset);
     let selectedObject = document.getElementById("selectedObject");
     let dresss = document.getElementsByClassName("dresss");
-    let doll = { //用來儲存data-index記錄小人身上穿戴的物件
-      "hair": -1,
-      "clothes": -1,
-      "bottoms": -1,
-      "accessories1": -1,
-      "accessories2": -1,
-      "accessories3": -1,
-      "eyebrow": -1,
-      "eye": -1,
-      "mouth": -1
+    let doll = {
+      //用來儲存data-index記錄小人身上穿戴的物件
+      hair: -1,
+      clothes: -1,
+      bottoms: -1,
+      accessories1: -1,
+      accessories2: -1,
+      accessories3: -1,
+      eyebrow: -1,
+      eye: -1,
+      mouth: -1,
     };
 
     // 確認
-    check.addEventListener("click", function(){
-      let nochoose = true ;
+    check.addEventListener("click", function () {
+      let nochoose = true;
       console.log(nochoose);
 
-      Object.values(doll).forEach(element => {
-        if ( element != -1 ) {
-          nochoose = false ;
+      Object.values(doll).forEach((element) => {
+        if (element != -1) {
+          nochoose = false;
         }
       });
 
-      if ( nochoose == false ) {
+      if (nochoose == false) {
         dresss_lightbox.classList.remove("dresss_none");
-      }else{
+      } else {
         alert("請選擇物件");
-      } 
+      }
     });
-
 
     // lightbox
     // 確認配件
     let send = document.getElementsByClassName("send")[0];
-    send.addEventListener("click", function(){
-        dresss_lightbox.classList.add("dresss_none");
+    send.addEventListener("click", function () {
+      dresss_lightbox.classList.add("dresss_none");
     });
 
     let fa_xmark = document.getElementsByClassName("fa-xmark")[0];
-    fa_xmark.addEventListener("click", function(){
-        dresss_lightbox.classList.add("dresss_none");
+    fa_xmark.addEventListener("click", function () {
+      dresss_lightbox.classList.add("dresss_none");
     });
 
-    dresss_lightbox.addEventListener("click", function(){
+    dresss_lightbox.addEventListener("click", function () {
       this.classList.add("dresss_none");
     });
 
-    dresss_lightbox.querySelector(".dresss").addEventListener("click", function(e){
-      e.stopPropagation();
-    });
-
+    dresss_lightbox
+      .querySelector(".dresss")
+      .addEventListener("click", function (e) {
+        e.stopPropagation();
+      });
 
     // 消費紀錄style更換
     let pay_record = document.getElementById("pay_record");
-    pay_record.addEventListener("mouseenter", function() {
+    pay_record.addEventListener("mouseenter", function () {
       if (pay_record.src.includes("pay_record3.png")) {
         pay_record.src = "IMG/store/pay_record1.png";
-        pay_record.style.filter = 'drop-shadow(3px 3px 3px rgb(0, 0, 0))';
+        pay_record.style.filter = "drop-shadow(3px 3px 3px rgb(0, 0, 0))";
       }
     });
-    pay_record.addEventListener("mouseleave", function() {
+    pay_record.addEventListener("mouseleave", function () {
       if (pay_record.src.includes("pay_record1.png")) {
         pay_record.src = "IMG/store/pay_record3.png";
-        pay_record.style.filter = 'drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.406))';
+        pay_record.style.filter =
+          "drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.406))";
       }
     });
-
 
     // lightbox
     // 消費紀錄燈箱
     let pay_lightbox = document.getElementsByClassName("pay_lightbox")[0];
     let pay_wrapper = document.getElementsByClassName("pay_wrapper");
 
-    pay_record.addEventListener("click", function(){
+    pay_record.addEventListener("click", function () {
       pay_lightbox.classList.remove("pay_none");
     });
 
     let pay_close = document.getElementsByClassName("pay_close")[0];
-    pay_close.addEventListener("click", function(){
+    pay_close.addEventListener("click", function () {
       pay_lightbox.classList.add("pay_none");
     });
 
-    pay_lightbox.addEventListener("click", function(){
+    pay_lightbox.addEventListener("click", function () {
       this.classList.add("pay_none");
     });
 
-    pay_lightbox.querySelector(".pay_wrapper").addEventListener("click", function(e){
-      e.stopPropagation();
-    });
-
+    pay_lightbox
+      .querySelector(".pay_wrapper")
+      .addEventListener("click", function (e) {
+        e.stopPropagation();
+      });
 
     // 消費
     $.ajax({
@@ -187,27 +203,25 @@ $.ajax({
         // console.log(response[0].totalCoin);
         console.log(response[0]);
         let str = "";
-        
+
         for (let i = 0; i < response.length; i++) {
-          let month = Math.floor(response[i].date/100);
-          let day = response[i].date%100;
-          let str1 =
-          `
+          let month = Math.floor(response[i].date / 100);
+          let day = response[i].date % 100;
+          let str1 = `
             <li>
                 <p>${month}/${day}</p>
                 <p>${response[i].coinChange}</p>
                 <p>${response[i].totalCoin}</p>
             </li>
-          `
+          `;
           str += str1;
         }
-        document.querySelector(".pay").innerHTML = str
+        document.querySelector(".pay").innerHTML = str;
       },
       error: (xhr, status, error) => {
         alert("error: " + error);
       },
     });
-
 
     // 下面的js是給配件有滑動的
     let isDown = false;
@@ -216,7 +230,7 @@ $.ajax({
 
     const nav_down_wrapper = document.querySelector("#nav_down_wrapper");
     const boxWrapper = document.querySelector(".box-wrapper");
-    const scrollbar = document.querySelector(".scrollbar"); 
+    const scrollbar = document.querySelector(".scrollbar");
 
     nav_down_wrapper.addEventListener("mousedown", (e) => {
       isDown = true;
@@ -248,552 +262,709 @@ $.ajax({
     const updateScrollbar = () => {
       const scrollbarHeight = nav_down_wrapper.offsetHeight;
       const sliderHeight = nav_down_wrapper.scrollHeight;
-    }
-
+    };
 
     // 角色配件金額
     let total = 0;
     let result_el = document.getElementById("result");
     let lastClickedNumber = null;
 
-
     //下排物件
-    let items = document.getElementsByClassName("number") ;
+    let items = document.getElementsByClassName("number");
 
     //中間小人及物件
     let doll_box = document.getElementsByClassName("coutainer")[0];
     let doll_box_hair = doll_box.querySelector(".hair").querySelector("img");
-    let doll_box_clothes = doll_box.querySelector(".clothes").querySelector("img");
-    let doll_box_bottoms = doll_box.querySelector(".bottoms").querySelector("img");
-    let doll_box_accessories1 = doll_box.querySelector(".accessories1").querySelector("img");
-    let doll_box_accessories2 = doll_box.querySelector(".accessories2").querySelector("img");
-    let doll_box_accessories3 = doll_box.querySelector(".accessories3").querySelector("img");
-    let doll_box_eyebrow = doll_box.querySelector(".eyebrow").querySelector("img");
+    let doll_box_clothes = doll_box
+      .querySelector(".clothes")
+      .querySelector("img");
+    let doll_box_bottoms = doll_box
+      .querySelector(".bottoms")
+      .querySelector("img");
+    let doll_box_accessories1 = doll_box
+      .querySelector(".accessories1")
+      .querySelector("img");
+    let doll_box_accessories2 = doll_box
+      .querySelector(".accessories2")
+      .querySelector("img");
+    let doll_box_accessories3 = doll_box
+      .querySelector(".accessories3")
+      .querySelector("img");
+    let doll_box_eyebrow = doll_box
+      .querySelector(".eyebrow")
+      .querySelector("img");
     let doll_box_eye = doll_box.querySelector(".eye").querySelector("img");
     let doll_box_mouth = doll_box.querySelector(".mouth").querySelector("img");
 
     // 購物車小人及物件
     let doll_lightbox = document.getElementsByClassName("doll_lightbox")[0];
-    let doll_lightbox_hair = doll_lightbox.querySelector(".hair").querySelector("img");
-    let doll_lightbox_clothes = doll_lightbox.querySelector(".clothes").querySelector("img");
-    let doll_lightbox_bottoms = doll_lightbox.querySelector(".bottoms").querySelector("img");
-    let doll_lightbox_accessories1 = doll_lightbox.querySelector(".accessories1").querySelector("img");
-    let doll_lightbox_accessories2 = doll_lightbox.querySelector(".accessories2").querySelector("img");
-    let doll_lightbox_accessories3 = doll_lightbox.querySelector(".accessories3").querySelector("img");
-    let doll_lightbox_eyebrow = doll_lightbox.querySelector(".eyebrow").querySelector("img");
-    let doll_lightbox_eye = doll_lightbox.querySelector(".eye").querySelector("img");
-    let doll_lightbox_mouth = doll_lightbox.querySelector(".mouth").querySelector("img");
+    let doll_lightbox_hair = doll_lightbox
+      .querySelector(".hair")
+      .querySelector("img");
+    let doll_lightbox_clothes = doll_lightbox
+      .querySelector(".clothes")
+      .querySelector("img");
+    let doll_lightbox_bottoms = doll_lightbox
+      .querySelector(".bottoms")
+      .querySelector("img");
+    let doll_lightbox_accessories1 = doll_lightbox
+      .querySelector(".accessories1")
+      .querySelector("img");
+    let doll_lightbox_accessories2 = doll_lightbox
+      .querySelector(".accessories2")
+      .querySelector("img");
+    let doll_lightbox_accessories3 = doll_lightbox
+      .querySelector(".accessories3")
+      .querySelector("img");
+    let doll_lightbox_eyebrow = doll_lightbox
+      .querySelector(".eyebrow")
+      .querySelector("img");
+    let doll_lightbox_eye = doll_lightbox
+      .querySelector(".eye")
+      .querySelector("img");
+    let doll_lightbox_mouth = doll_lightbox
+      .querySelector(".mouth")
+      .querySelector("img");
 
+    for (let i = 0; i < items.length; i++) {
+      items[i].addEventListener("click", function () {
+        // 判斷目前是哪一個被點選到
 
-    for ( let i = 0 ; i < items.length ; i++) {
-        items[i].addEventListener("click", function(){
-          // 判斷目前是哪一個被點選到
+        if (this.querySelector("div").classList.contains("hair")) {
+          //判斷被點選的是否為頭髮類別
 
-          if ( this.querySelector("div").classList.contains("hair") ) {
-            //判斷被點選的是否為頭髮類別
+          if (
+            this.querySelector("div").getAttribute("data-index") == doll.hair
+          ) {
+            //經由data-index來記錄點選到的是哪一個物件
+            // 當點擊了已試穿的物件，則要移除試穿物件並將金錢減去
+            doll.hair = -1;
+            addToTotal(
+              this.querySelector("div").getAttribute("data-money"),
+              false
+            );
+            console.log("--");
 
-            if ( this.querySelector("div").getAttribute("data-index") == doll.hair ) {
-              //經由data-index來記錄點選到的是哪一個物件
-              // 當點擊了已試穿的物件，則要移除試穿物件並將金錢減去
-              doll.hair = -1 ;
-              addToTotal( this.querySelector("div").getAttribute("data-money"), false);
-              console.log("--");
-
-              doll_box_hair.src = ""; // 圖片路徑移除
-              doll_lightbox_hair.src = ""; // 購物車內圖片路徑移除
-              
-            } else if ( doll.hair == -1 ) { //目前無試穿該類別物件
-              doll.hair = this.querySelector("div").getAttribute("data-index");
-              addToTotal( this.querySelector("div").getAttribute("data-money"), true);
-              console.log("++");
+            doll_box_hair.src = ""; // 圖片路徑移除
+            doll_lightbox_hair.src = ""; // 購物車內圖片路徑移除
+          } else if (doll.hair == -1) {
+            //目前無試穿該類別物件
+            doll.hair = this.querySelector("div").getAttribute("data-index");
+            addToTotal(
+              this.querySelector("div").getAttribute("data-money"),
+              true
+            );
+            console.log("++");
 
             doll_box_hair.src = this.querySelector("img").src; // 圖片路徑更換
             doll_lightbox_hair.src = this.querySelector("img").src; // 購物車內圖片路徑更換
-
-          } else if ( doll.hair != -1 ) { //已有試穿該類別其他物件，要替換物件
-            doll.hair = this.querySelector("div").getAttribute("data-index") ;
+          } else if (doll.hair != -1) {
+            //已有試穿該類別其他物件，要替換物件
+            doll.hair = this.querySelector("div").getAttribute("data-index");
             console.log("更換");
 
             doll_box_hair.src = this.querySelector("img").src; // 圖片路徑更換
             doll_lightbox_hair.src = this.querySelector("img").src; // 購物車內圖片路徑更換
           }
-
-        } else if ( this.querySelector("div").classList.contains("clothes") ) {
-
-          if ( this.querySelector("div").getAttribute("data-index") == doll.clothes ) {
+        } else if (this.querySelector("div").classList.contains("clothes")) {
+          if (
+            this.querySelector("div").getAttribute("data-index") == doll.clothes
+          ) {
             // 當點擊了以試穿的物件，則要移除試穿物件並將金錢減去
-            doll.clothes = -1 ;
-            addToTotal( this.querySelector("div").getAttribute("data-money"), false);
+            doll.clothes = -1;
+            addToTotal(
+              this.querySelector("div").getAttribute("data-money"),
+              false
+            );
             console.log("--");
 
             doll_box_clothes.src = ""; // 圖片路徑移除
             doll_lightbox_clothes.src = ""; // 購物車內圖片路徑移除
-
-          } else if ( doll.clothes == -1 ) { //目前無試穿該類別物件
+          } else if (doll.clothes == -1) {
+            //目前無試穿該類別物件
             doll.clothes = this.querySelector("div").getAttribute("data-index");
-            addToTotal( this.querySelector("div").getAttribute("data-money"), true);
+            addToTotal(
+              this.querySelector("div").getAttribute("data-money"),
+              true
+            );
             console.log("++");
 
             doll_box_clothes.src = this.querySelector("img").src; // 圖片路徑更換
             doll_lightbox_clothes.src = this.querySelector("img").src; // 購物車內圖片路徑更換
-
-          } else if ( doll.clothes != -1 ) { //已有試穿該類別其他物件，要替換物件
-            doll.clothes = this.querySelector("div").getAttribute("data-index") ;
+          } else if (doll.clothes != -1) {
+            //已有試穿該類別其他物件，要替換物件
+            doll.clothes = this.querySelector("div").getAttribute("data-index");
             console.log("更換");
-            console.log("doll.clothes"+doll.clothes);
+            console.log("doll.clothes" + doll.clothes);
 
             doll_box_clothes.src = this.querySelector("img").src; // 圖片路徑更換
             doll_lightbox_clothes.src = this.querySelector("img").src; // 購物車內圖片路徑更換
           }
-
-        } else if ( this.querySelector("div").classList.contains("bottoms") ) {
-
-          if ( this.querySelector("div").getAttribute("data-index") == doll.bottoms ) {
+        } else if (this.querySelector("div").classList.contains("bottoms")) {
+          if (
+            this.querySelector("div").getAttribute("data-index") == doll.bottoms
+          ) {
             // 當點擊了以試穿的物件，則要移除試穿物件並將金錢減去
-            doll.bottoms = -1 ;
-            addToTotal( this.querySelector("div").getAttribute("data-money"), false);
+            doll.bottoms = -1;
+            addToTotal(
+              this.querySelector("div").getAttribute("data-money"),
+              false
+            );
             console.log("--");
 
             doll_box_bottoms.src = ""; // 圖片路徑移除
             doll_lightbox_bottoms.src = ""; // 購物車內圖片路徑移除
-
-          } else if ( doll.bottoms == -1 ) { //目前無試穿該類別物件
+          } else if (doll.bottoms == -1) {
+            //目前無試穿該類別物件
             doll.bottoms = this.querySelector("div").getAttribute("data-index");
-            addToTotal( this.querySelector("div").getAttribute("data-money"), true);
+            addToTotal(
+              this.querySelector("div").getAttribute("data-money"),
+              true
+            );
             console.log("++");
 
             doll_box_bottoms.src = this.querySelector("img").src; // 圖片路徑更換
             doll_lightbox_bottoms.src = this.querySelector("img").src; // 購物車內圖片路徑更換
-
-          } else if ( doll.bottoms != -1 ) { //已有試穿該類別其他物件，要替換物件
-            doll.bottoms = this.querySelector("div").getAttribute("data-index") ;
+          } else if (doll.bottoms != -1) {
+            //已有試穿該類別其他物件，要替換物件
+            doll.bottoms = this.querySelector("div").getAttribute("data-index");
             console.log("更換");
-            console.log("doll.bottoms"+doll.bottoms);
+            console.log("doll.bottoms" + doll.bottoms);
 
             doll_box_bottoms.src = this.querySelector("img").src; // 圖片路徑更換
             doll_lightbox_bottoms.src = this.querySelector("img").src; // 購物車內圖片路徑更換
           }
-
-        } else if ( this.querySelector("div").classList.contains("accessories1") ) {
-
-          if ( this.querySelector("div").getAttribute("data-index") == doll.accessories1 ) {
+        } else if (
+          this.querySelector("div").classList.contains("accessories1")
+        ) {
+          if (
+            this.querySelector("div").getAttribute("data-index") ==
+            doll.accessories1
+          ) {
             // 當點擊了以試穿的物件，則要移除試穿物件並將金錢減去
-            doll.accessories1 = -1 ;
-            addToTotal( this.querySelector("div").getAttribute("data-money"), false);
+            doll.accessories1 = -1;
+            addToTotal(
+              this.querySelector("div").getAttribute("data-money"),
+              false
+            );
             console.log("--");
 
             doll_box_accessories1.src = ""; // 圖片路徑移除
             doll_lightbox_accessories1.src = ""; // 購物車內圖片路徑移除
-
-          } else if ( doll.accessories1 == -1 ) { //目前無試穿該類別物件
-            doll.accessories1 = this.querySelector("div").getAttribute("data-index");
-            addToTotal( this.querySelector("div").getAttribute("data-money"), true);
+          } else if (doll.accessories1 == -1) {
+            //目前無試穿該類別物件
+            doll.accessories1 =
+              this.querySelector("div").getAttribute("data-index");
+            addToTotal(
+              this.querySelector("div").getAttribute("data-money"),
+              true
+            );
             console.log("++");
 
             doll_box_accessories1.src = this.querySelector("img").src; // 圖片路徑更換
             doll_lightbox_accessories1.src = this.querySelector("img").src; // 購物車內圖片路徑更換
-
-          } else if ( doll.accessories1 != -1 ) { //已有試穿該類別其他物件，要替換物件
-            doll.accessories1 = this.querySelector("div").getAttribute("data-index") ;
+          } else if (doll.accessories1 != -1) {
+            //已有試穿該類別其他物件，要替換物件
+            doll.accessories1 =
+              this.querySelector("div").getAttribute("data-index");
             console.log("更換");
-            console.log("doll.accessories1"+doll.accessories1);
+            console.log("doll.accessories1" + doll.accessories1);
 
             doll_box_accessories1.src = this.querySelector("img").src; // 圖片路徑更換
             doll_lightbox_accessories1.src = this.querySelector("img").src; // 購物車內圖片路徑更換
           }
-
-        } else if ( this.querySelector("div").classList.contains("accessories2") ) {
-
-          if ( this.querySelector("div").getAttribute("data-index") == doll.accessories2 ) {
+        } else if (
+          this.querySelector("div").classList.contains("accessories2")
+        ) {
+          if (
+            this.querySelector("div").getAttribute("data-index") ==
+            doll.accessories2
+          ) {
             // 當點擊了以試穿的物件，則要移除試穿物件並將金錢減去
-            doll.accessories2 = -1 ;
-            addToTotal( this.querySelector("div").getAttribute("data-money"), false);
+            doll.accessories2 = -1;
+            addToTotal(
+              this.querySelector("div").getAttribute("data-money"),
+              false
+            );
             console.log("--");
 
             doll_box_accessories2.src = ""; // 圖片路徑移除
             doll_lightbox_accessories2.src = ""; // 購物車內圖片路徑移除
-
-          } else if ( doll.accessories2 == -1 ) { //目前無試穿該類別物件
-            doll.accessories2 = this.querySelector("div").getAttribute("data-index");
-            addToTotal( this.querySelector("div").getAttribute("data-money"), true);
+          } else if (doll.accessories2 == -1) {
+            //目前無試穿該類別物件
+            doll.accessories2 =
+              this.querySelector("div").getAttribute("data-index");
+            addToTotal(
+              this.querySelector("div").getAttribute("data-money"),
+              true
+            );
             console.log("++");
 
             doll_box_accessories2.src = this.querySelector("img").src; // 圖片路徑更換
             doll_lightbox_accessories2.src = this.querySelector("img").src; // 購物車內圖片路徑更換
-
-          } else if ( doll.accessories2 != -1 ) { //已有試穿該類別其他物件，要替換物件
-            doll.accessories2 = this.querySelector("div").getAttribute("data-index") ;
+          } else if (doll.accessories2 != -1) {
+            //已有試穿該類別其他物件，要替換物件
+            doll.accessories2 =
+              this.querySelector("div").getAttribute("data-index");
             console.log("更換");
-            console.log("doll.accessories2"+doll.accessories2);
+            console.log("doll.accessories2" + doll.accessories2);
 
             doll_box_accessories2.src = this.querySelector("img").src; // 圖片路徑更換
             doll_lightbox_accessories2.src = this.querySelector("img").src; // 購物車內圖片路徑更換
           }
-
-        } else if ( this.querySelector("div").classList.contains("accessories3") ) {
-
-          if ( this.querySelector("div").getAttribute("data-index") == doll.accessories3 ) {
+        } else if (
+          this.querySelector("div").classList.contains("accessories3")
+        ) {
+          if (
+            this.querySelector("div").getAttribute("data-index") ==
+            doll.accessories3
+          ) {
             // 當點擊了以試穿的物件，則要移除試穿物件並將金錢減去
-            doll.accessories3 = -1 ;
-            addToTotal( this.querySelector("div").getAttribute("data-money"), false);
+            doll.accessories3 = -1;
+            addToTotal(
+              this.querySelector("div").getAttribute("data-money"),
+              false
+            );
             console.log("--");
 
             doll_box_accessories3.src = ""; // 圖片路徑移除
             doll_lightbox_accessories3.src = ""; // 購物車內圖片路徑移除
-
-          } else if ( doll.accessories3 == -1 ) { //目前無試穿該類別物件
-            doll.accessories3 = this.querySelector("div").getAttribute("data-index");
-            addToTotal( this.querySelector("div").getAttribute("data-money"), true);
+          } else if (doll.accessories3 == -1) {
+            //目前無試穿該類別物件
+            doll.accessories3 =
+              this.querySelector("div").getAttribute("data-index");
+            addToTotal(
+              this.querySelector("div").getAttribute("data-money"),
+              true
+            );
             console.log("++");
 
             doll_box_accessories3.src = this.querySelector("img").src; // 圖片路徑更換
             doll_lightbox_accessories3.src = this.querySelector("img").src; // 購物車內圖片路徑更換
-
-          } else if ( doll.accessories3 != -1 ) { //已有試穿該類別其他物件，要替換物件
-            doll.accessories3 = this.querySelector("div").getAttribute("data-index") ;
+          } else if (doll.accessories3 != -1) {
+            //已有試穿該類別其他物件，要替換物件
+            doll.accessories3 =
+              this.querySelector("div").getAttribute("data-index");
             console.log("更換");
 
             doll_box_accessories3.src = this.querySelector("img").src; // 圖片路徑更換
             doll_lightbox_accessories3.src = this.querySelector("img").src; // 購物車內圖片路徑更換
           }
-
-        } else if ( this.querySelector("div").classList.contains("eyebrow") ) {
-
-          if ( this.querySelector("div").getAttribute("data-index") == doll.eyebrow ) {
+        } else if (this.querySelector("div").classList.contains("eyebrow")) {
+          if (
+            this.querySelector("div").getAttribute("data-index") == doll.eyebrow
+          ) {
             // 當點擊了以試穿的物件，則要移除試穿物件並將金錢減去
-            doll.eyebrow = -1 ;
-            addToTotal( this.querySelector("div").getAttribute("data-money"), false);
+            doll.eyebrow = -1;
+            addToTotal(
+              this.querySelector("div").getAttribute("data-money"),
+              false
+            );
             console.log("--");
 
             doll_box_eyebrow.src = ""; // 圖片路徑移除
             doll_lightbox_eyebrow.src = ""; // 購物車內圖片路徑移除
-
-          } else if ( doll.eyebrow == -1 ) { //目前無試穿該類別物件
+          } else if (doll.eyebrow == -1) {
+            //目前無試穿該類別物件
             doll.eyebrow = this.querySelector("div").getAttribute("data-index");
-            addToTotal( this.querySelector("div").getAttribute("data-money"), true);
+            addToTotal(
+              this.querySelector("div").getAttribute("data-money"),
+              true
+            );
             console.log("++");
 
             doll_box_eyebrow.src = this.querySelector("img").src; // 圖片路徑更換
             doll_lightbox_eyebrow.src = this.querySelector("img").src; // 購物車內圖片路徑更換
-
-          } else if ( doll.eyebrow != -1 ) { //已有試穿該類別其他物件，要替換物件
-            doll.eyebrow = this.querySelector("div").getAttribute("data-index") ;
+          } else if (doll.eyebrow != -1) {
+            //已有試穿該類別其他物件，要替換物件
+            doll.eyebrow = this.querySelector("div").getAttribute("data-index");
             console.log("更換");
-            console.log("doll.eyebrow"+doll.eyebrow);
+            console.log("doll.eyebrow" + doll.eyebrow);
 
             doll_box_eyebrow.src = this.querySelector("img").src; // 圖片路徑更換
             doll_lightbox_eyebrow.src = this.querySelector("img").src; // 購物車內圖片路徑更換
           }
-
-        } else if ( this.querySelector("div").classList.contains("eye") ) {
-
-          if ( this.querySelector("div").getAttribute("data-index") == doll.eye ) {
+        } else if (this.querySelector("div").classList.contains("eye")) {
+          if (
+            this.querySelector("div").getAttribute("data-index") == doll.eye
+          ) {
             // 當點擊了以試穿的物件，則要移除試穿物件並將金錢減去
-            doll.eye = -1 ;
-            addToTotal( this.querySelector("div").getAttribute("data-money"), false);
+            doll.eye = -1;
+            addToTotal(
+              this.querySelector("div").getAttribute("data-money"),
+              false
+            );
             console.log("--");
 
             doll_box_eye.src = ""; // 圖片路徑移除
             doll_lightbox_eye.src = ""; // 購物車內圖片路徑移除
-
-          } else if ( doll.eye == -1 ) { //目前無試穿該類別物件
+          } else if (doll.eye == -1) {
+            //目前無試穿該類別物件
             doll.eye = this.querySelector("div").getAttribute("data-index");
-            addToTotal( this.querySelector("div").getAttribute("data-money"), true);
+            addToTotal(
+              this.querySelector("div").getAttribute("data-money"),
+              true
+            );
             console.log("++");
 
             doll_box_eye.src = this.querySelector("img").src; // 圖片路徑更換
             doll_lightbox_eye.src = this.querySelector("img").src; // 購物車內圖片路徑更換
-
-          } else if ( doll.eye != -1 ) { //已有試穿該類別其他物件，要替換物件
-            doll.eye = this.querySelector("div").getAttribute("data-index") ;
+          } else if (doll.eye != -1) {
+            //已有試穿該類別其他物件，要替換物件
+            doll.eye = this.querySelector("div").getAttribute("data-index");
             console.log("更換");
-            console.log("doll.eye"+doll.eye);
+            console.log("doll.eye" + doll.eye);
 
             doll_box_eye.src = this.querySelector("img").src; // 圖片路徑更換
             doll_lightbox_eye.src = this.querySelector("img").src; // 購物車內圖片路徑更換
           }
-
-        } else if ( this.querySelector("div").classList.contains("mouth") ) {
-
-          if ( this.querySelector("div").getAttribute("data-index") == doll.mouth ) {
+        } else if (this.querySelector("div").classList.contains("mouth")) {
+          if (
+            this.querySelector("div").getAttribute("data-index") == doll.mouth
+          ) {
             // 當點擊了以試穿的物件，則要移除試穿物件並將金錢減去
-            doll.mouth = -1 ;
-            addToTotal( this.querySelector("div").getAttribute("data-money"), false);
+            doll.mouth = -1;
+            addToTotal(
+              this.querySelector("div").getAttribute("data-money"),
+              false
+            );
             console.log("--");
 
             doll_box_mouth.src = ""; // 圖片路徑移除
             doll_lightbox_mouth.src = ""; // 購物車內圖片路徑移除
-
-          } else if ( doll.mouth == -1 ) { //目前無試穿該類別物件
+          } else if (doll.mouth == -1) {
+            //目前無試穿該類別物件
             doll.mouth = this.querySelector("div").getAttribute("data-index");
-            addToTotal( this.querySelector("div").getAttribute("data-money"), true);
+            addToTotal(
+              this.querySelector("div").getAttribute("data-money"),
+              true
+            );
             console.log("++");
 
             doll_box_mouth.src = this.querySelector("img").src; // 圖片路徑更換
             doll_lightbox_mouth.src = this.querySelector("img").src; // 購物車內圖片路徑更換
-
-          } else if ( doll.mouth != -1 ) { //已有試穿該類別其他物件，要替換物件
-            doll.mouth = this.querySelector("div").getAttribute("data-index") ;
+          } else if (doll.mouth != -1) {
+            //已有試穿該類別其他物件，要替換物件
+            doll.mouth = this.querySelector("div").getAttribute("data-index");
             console.log("更換");
-            console.log("doll.mouth"+doll.mouth);
+            console.log("doll.mouth" + doll.mouth);
 
             doll_box_mouth.src = this.querySelector("img").src; // 圖片路徑更換
             doll_lightbox_mouth.src = this.querySelector("img").src; // 購物車內圖片路徑更換
           }
-
-          } else if ( this.querySelector("div").classList.contains("clothes") ) {
-
-          if ( this.querySelector("div").getAttribute("data-index") == doll.clothes ) {
+        } else if (this.querySelector("div").classList.contains("clothes")) {
+          if (
+            this.querySelector("div").getAttribute("data-index") == doll.clothes
+          ) {
             // 當點擊了以試穿的物件，則要移除試穿物件並將金錢減去
-            doll.clothes = -1 ;
-            addToTotal( this.querySelector("div").getAttribute("data-money"), false);
+            doll.clothes = -1;
+            addToTotal(
+              this.querySelector("div").getAttribute("data-money"),
+              false
+            );
             console.log("--");
 
             doll_box_clothes.src = ""; // 圖片路徑移除
             doll_lightbox_clothes.src = ""; // 購物車內圖片路徑移除
-
-          } else if ( doll.clothes == -1 ) { //目前無試穿該類別物件
+          } else if (doll.clothes == -1) {
+            //目前無試穿該類別物件
             doll.clothes = this.querySelector("div").getAttribute("data-index");
-            addToTotal( this.querySelector("div").getAttribute("data-money"), true);
+            addToTotal(
+              this.querySelector("div").getAttribute("data-money"),
+              true
+            );
             console.log("++");
 
             doll_box_clothes.src = this.querySelector("img").src; // 圖片路徑更換
             doll_lightbox_clothes.src = this.querySelector("img").src; // 購物車內圖片路徑更換
-
-          } else if ( doll.clothes != -1 ) { //已有試穿該類別其他物件，要替換物件
-            doll.clothes = this.querySelector("div").getAttribute("data-index") ;
+          } else if (doll.clothes != -1) {
+            //已有試穿該類別其他物件，要替換物件
+            doll.clothes = this.querySelector("div").getAttribute("data-index");
             console.log("更換");
-            console.log("doll.clothes"+doll.clothes);
+            console.log("doll.clothes" + doll.clothes);
 
             doll_box_clothes.src = this.querySelector("img").src; // 圖片路徑更換
             doll_lightbox_clothes.src = this.querySelector("img").src; // 購物車內圖片路徑更換
           }
-
-        } else if ( this.querySelector("div").classList.contains("bottoms") ) {
-
-          if ( this.querySelector("div").getAttribute("data-index") == doll.bottoms ) {
+        } else if (this.querySelector("div").classList.contains("bottoms")) {
+          if (
+            this.querySelector("div").getAttribute("data-index") == doll.bottoms
+          ) {
             // 當點擊了以試穿的物件，則要移除試穿物件並將金錢減去
-            doll.bottoms = -1 ;
-            addToTotal( this.querySelector("div").getAttribute("data-money"), false);
+            doll.bottoms = -1;
+            addToTotal(
+              this.querySelector("div").getAttribute("data-money"),
+              false
+            );
             console.log("--");
 
             doll_box_bottoms.src = ""; // 圖片路徑移除
             doll_lightbox_bottoms.src = ""; // 購物車內圖片路徑移除
-
-          } else if ( doll.bottoms == -1 ) { //目前無試穿該類別物件
+          } else if (doll.bottoms == -1) {
+            //目前無試穿該類別物件
             doll.bottoms = this.querySelector("div").getAttribute("data-index");
-            addToTotal( this.querySelector("div").getAttribute("data-money"), true);
+            addToTotal(
+              this.querySelector("div").getAttribute("data-money"),
+              true
+            );
             console.log("++");
 
             doll_box_bottoms.src = this.querySelector("img").src; // 圖片路徑更換
             doll_lightbox_bottoms.src = this.querySelector("img").src; // 購物車內圖片路徑更換
-
-          } else if ( doll.bottoms != -1 ) { //已有試穿該類別其他物件，要替換物件
-            doll.bottoms = this.querySelector("div").getAttribute("data-index") ;
+          } else if (doll.bottoms != -1) {
+            //已有試穿該類別其他物件，要替換物件
+            doll.bottoms = this.querySelector("div").getAttribute("data-index");
             console.log("更換");
-            console.log("doll.bottoms"+doll.bottoms);
+            console.log("doll.bottoms" + doll.bottoms);
 
             doll_box_bottoms.src = this.querySelector("img").src; // 圖片路徑更換
             doll_lightbox_bottoms.src = this.querySelector("img").src; // 購物車內圖片路徑更換
           }
-
-        } else if ( this.querySelector("div").classList.contains("accessories1") ) {
-
-          if ( this.querySelector("div").getAttribute("data-index") == doll.accessories1 ) {
+        } else if (
+          this.querySelector("div").classList.contains("accessories1")
+        ) {
+          if (
+            this.querySelector("div").getAttribute("data-index") ==
+            doll.accessories1
+          ) {
             // 當點擊了以試穿的物件，則要移除試穿物件並將金錢減去
-            doll.accessories1 = -1 ;
-            addToTotal( this.querySelector("div").getAttribute("data-money"), false);
+            doll.accessories1 = -1;
+            addToTotal(
+              this.querySelector("div").getAttribute("data-money"),
+              false
+            );
             console.log("--");
 
             doll_box_accessories1.src = ""; // 圖片路徑移除
             doll_lightbox_accessories1.src = ""; // 購物車內圖片路徑移除
-
-          } else if ( doll.accessories1 == -1 ) { //目前無試穿該類別物件
-            doll.accessories1 = this.querySelector("div").getAttribute("data-index");
-            addToTotal( this.querySelector("div").getAttribute("data-money"), true);
+          } else if (doll.accessories1 == -1) {
+            //目前無試穿該類別物件
+            doll.accessories1 =
+              this.querySelector("div").getAttribute("data-index");
+            addToTotal(
+              this.querySelector("div").getAttribute("data-money"),
+              true
+            );
             console.log("++");
 
             doll_box_accessories1.src = this.querySelector("img").src; // 圖片路徑更換
             doll_lightbox_accessories1.src = this.querySelector("img").src; // 購物車內圖片路徑更換
-
-          } else if ( doll.accessories1 != -1 ) { //已有試穿該類別其他物件，要替換物件
-            doll.accessories1 = this.querySelector("div").getAttribute("data-index") ;
+          } else if (doll.accessories1 != -1) {
+            //已有試穿該類別其他物件，要替換物件
+            doll.accessories1 =
+              this.querySelector("div").getAttribute("data-index");
             console.log("更換");
-            console.log("doll.accessories1"+doll.accessories1);
+            console.log("doll.accessories1" + doll.accessories1);
 
             doll_box_accessories1.src = this.querySelector("img").src; // 圖片路徑更換
             doll_lightbox_accessories1.src = this.querySelector("img").src; // 購物車內圖片路徑更換
           }
-
-        } else if ( this.querySelector("div").classList.contains("accessories2") ) {
-
-          if ( this.querySelector("div").getAttribute("data-index") == doll.accessories2 ) {
+        } else if (
+          this.querySelector("div").classList.contains("accessories2")
+        ) {
+          if (
+            this.querySelector("div").getAttribute("data-index") ==
+            doll.accessories2
+          ) {
             // 當點擊了以試穿的物件，則要移除試穿物件並將金錢減去
-            doll.accessories2 = -1 ;
-            addToTotal( this.querySelector("div").getAttribute("data-money"), false);
+            doll.accessories2 = -1;
+            addToTotal(
+              this.querySelector("div").getAttribute("data-money"),
+              false
+            );
             console.log("--");
 
             doll_box_accessories2.src = ""; // 圖片路徑移除
             doll_lightbox_accessories2.src = ""; // 購物車內圖片路徑移除
-
-          } else if ( doll.accessories2 == -1 ) { //目前無試穿該類別物件
-            doll.accessories2 = this.querySelector("div").getAttribute("data-index");
-            addToTotal( this.querySelector("div").getAttribute("data-money"), true);
+          } else if (doll.accessories2 == -1) {
+            //目前無試穿該類別物件
+            doll.accessories2 =
+              this.querySelector("div").getAttribute("data-index");
+            addToTotal(
+              this.querySelector("div").getAttribute("data-money"),
+              true
+            );
             console.log("++");
 
             doll_box_accessories2.src = this.querySelector("img").src; // 圖片路徑更換
             doll_lightbox_accessories2.src = this.querySelector("img").src; // 購物車內圖片路徑更換
-
-          } else if ( doll.accessories2 != -1 ) { //已有試穿該類別其他物件，要替換物件
-            doll.accessories2 = this.querySelector("div").getAttribute("data-index") ;
+          } else if (doll.accessories2 != -1) {
+            //已有試穿該類別其他物件，要替換物件
+            doll.accessories2 =
+              this.querySelector("div").getAttribute("data-index");
             console.log("更換");
-            console.log("doll.accessories2"+doll.accessories2);
+            console.log("doll.accessories2" + doll.accessories2);
 
             doll_box_accessories2.src = this.querySelector("img").src; // 圖片路徑更換
             doll_lightbox_accessories2.src = this.querySelector("img").src; // 購物車內圖片路徑更換
           }
-
-        } else if ( this.querySelector("div").classList.contains("accessories3") ) {
-
-          if ( this.querySelector("div").getAttribute("data-index") == doll.accessories3 ) {
+        } else if (
+          this.querySelector("div").classList.contains("accessories3")
+        ) {
+          if (
+            this.querySelector("div").getAttribute("data-index") ==
+            doll.accessories3
+          ) {
             // 當點擊了以試穿的物件，則要移除試穿物件並將金錢減去
-            doll.accessories3 = -1 ;
-            addToTotal( this.querySelector("div").getAttribute("data-money"), false);
+            doll.accessories3 = -1;
+            addToTotal(
+              this.querySelector("div").getAttribute("data-money"),
+              false
+            );
             console.log("--");
 
             doll_box_accessories3.src = ""; // 圖片路徑移除
             doll_lightbox_accessories3.src = ""; // 購物車內圖片路徑移除
-
-          } else if ( doll.accessories3 == -1 ) { //目前無試穿該類別物件
-            doll.accessories3 = this.querySelector("div").getAttribute("data-index");
-            addToTotal( this.querySelector("div").getAttribute("data-money"), true);
+          } else if (doll.accessories3 == -1) {
+            //目前無試穿該類別物件
+            doll.accessories3 =
+              this.querySelector("div").getAttribute("data-index");
+            addToTotal(
+              this.querySelector("div").getAttribute("data-money"),
+              true
+            );
             console.log("++");
 
             doll_box_accessories3.src = this.querySelector("img").src; // 圖片路徑更換
             doll_lightbox_accessories3.src = this.querySelector("img").src; // 購物車內圖片路徑更換
-
-          } else if ( doll.accessories3 != -1 ) { //已有試穿該類別其他物件，要替換物件
-            doll.accessories3 = this.querySelector("div").getAttribute("data-index") ;
+          } else if (doll.accessories3 != -1) {
+            //已有試穿該類別其他物件，要替換物件
+            doll.accessories3 =
+              this.querySelector("div").getAttribute("data-index");
             console.log("更換");
 
             doll_box_accessories3.src = this.querySelector("img").src; // 圖片路徑更換
             doll_lightbox_accessories3.src = this.querySelector("img").src; // 購物車內圖片路徑更換
           }
-
-        } else if ( this.querySelector("div").classList.contains("eyebrow") ) {
-
-          if ( this.querySelector("div").getAttribute("data-index") == doll.eyebrow ) {
+        } else if (this.querySelector("div").classList.contains("eyebrow")) {
+          if (
+            this.querySelector("div").getAttribute("data-index") == doll.eyebrow
+          ) {
             // 當點擊了以試穿的物件，則要移除試穿物件並將金錢減去
-            doll.eyebrow = -1 ;
-            addToTotal( this.querySelector("div").getAttribute("data-money"), false);
+            doll.eyebrow = -1;
+            addToTotal(
+              this.querySelector("div").getAttribute("data-money"),
+              false
+            );
             console.log("--");
 
             doll_box_eyebrow.src = ""; // 圖片路徑移除
             doll_lightbox_eyebrow.src = ""; // 購物車內圖片路徑移除
-
-          } else if ( doll.eyebrow == -1 ) { //目前無試穿該類別物件
+          } else if (doll.eyebrow == -1) {
+            //目前無試穿該類別物件
             doll.eyebrow = this.querySelector("div").getAttribute("data-index");
-            addToTotal( this.querySelector("div").getAttribute("data-money"), true);
+            addToTotal(
+              this.querySelector("div").getAttribute("data-money"),
+              true
+            );
             console.log("++");
 
             doll_box_eyebrow.src = this.querySelector("img").src; // 圖片路徑更換
             doll_lightbox_eyebrow.src = this.querySelector("img").src; // 購物車內圖片路徑更換
-
-          } else if ( doll.eyebrow != -1 ) { //已有試穿該類別其他物件，要替換物件
-            doll.eyebrow = this.querySelector("div").getAttribute("data-index") ;
+          } else if (doll.eyebrow != -1) {
+            //已有試穿該類別其他物件，要替換物件
+            doll.eyebrow = this.querySelector("div").getAttribute("data-index");
             console.log("更換");
-            console.log("doll.eyebrow"+doll.eyebrow);
+            console.log("doll.eyebrow" + doll.eyebrow);
 
             doll_box_eyebrow.src = this.querySelector("img").src; // 圖片路徑更換
             doll_lightbox_eyebrow.src = this.querySelector("img").src; // 購物車內圖片路徑更換
           }
-
-        } else if ( this.querySelector("div").classList.contains("eye") ) {
-
-          if ( this.querySelector("div").getAttribute("data-index") == doll.eye ) {
+        } else if (this.querySelector("div").classList.contains("eye")) {
+          if (
+            this.querySelector("div").getAttribute("data-index") == doll.eye
+          ) {
             // 當點擊了以試穿的物件，則要移除試穿物件並將金錢減去
-            doll.eye = -1 ;
-            addToTotal( this.querySelector("div").getAttribute("data-money"), false);
+            doll.eye = -1;
+            addToTotal(
+              this.querySelector("div").getAttribute("data-money"),
+              false
+            );
             console.log("--");
 
             doll_box_eye.src = ""; // 圖片路徑移除
             doll_lightbox_eye.src = ""; // 購物車內圖片路徑移除
-
-          } else if ( doll.eye == -1 ) { //目前無試穿該類別物件
+          } else if (doll.eye == -1) {
+            //目前無試穿該類別物件
             doll.eye = this.querySelector("div").getAttribute("data-index");
-            addToTotal( this.querySelector("div").getAttribute("data-money"), true);
+            addToTotal(
+              this.querySelector("div").getAttribute("data-money"),
+              true
+            );
             console.log("++");
 
             doll_box_eye.src = this.querySelector("img").src; // 圖片路徑更換
             doll_lightbox_eye.src = this.querySelector("img").src; // 購物車內圖片路徑更換
-
-          } else if ( doll.eye != -1 ) { //已有試穿該類別其他物件，要替換物件
-            doll.eye = this.querySelector("div").getAttribute("data-index") ;
+          } else if (doll.eye != -1) {
+            //已有試穿該類別其他物件，要替換物件
+            doll.eye = this.querySelector("div").getAttribute("data-index");
             console.log("更換");
-            console.log("doll.eye"+doll.eye);
+            console.log("doll.eye" + doll.eye);
 
             doll_box_eye.src = this.querySelector("img").src; // 圖片路徑更換
             doll_lightbox_eye.src = this.querySelector("img").src; // 購物車內圖片路徑更換
           }
-
-        } else if ( this.querySelector("div").classList.contains("mouth") ) {
-
-          if ( this.querySelector("div").getAttribute("data-index") == doll.mouth ) {
+        } else if (this.querySelector("div").classList.contains("mouth")) {
+          if (
+            this.querySelector("div").getAttribute("data-index") == doll.mouth
+          ) {
             // 當點擊了以試穿的物件，則要移除試穿物件並將金錢減去
-            doll.mouth = -1 ;
-            addToTotal( this.querySelector("div").getAttribute("data-money"), false);
+            doll.mouth = -1;
+            addToTotal(
+              this.querySelector("div").getAttribute("data-money"),
+              false
+            );
             console.log("--");
 
             doll_box_mouth.src = ""; // 圖片路徑移除
             doll_lightbox_mouth.src = ""; // 購物車內圖片路徑移除
-
-          } else if ( doll.mouth == -1 ) { //目前無試穿該類別物件
+          } else if (doll.mouth == -1) {
+            //目前無試穿該類別物件
             doll.mouth = this.querySelector("div").getAttribute("data-index");
-            addToTotal( this.querySelector("div").getAttribute("data-money"), true);
+            addToTotal(
+              this.querySelector("div").getAttribute("data-money"),
+              true
+            );
             console.log("++");
 
             doll_box_mouth.src = this.querySelector("img").src; // 圖片路徑更換
             doll_lightbox_mouth.src = this.querySelector("img").src; // 購物車內圖片路徑更換
-
-          } else if ( doll.mouth != -1 ) { //已有試穿該類別其他物件，要替換物件
-            doll.mouth = this.querySelector("div").getAttribute("data-index") ;
+          } else if (doll.mouth != -1) {
+            //已有試穿該類別其他物件，要替換物件
+            doll.mouth = this.querySelector("div").getAttribute("data-index");
             console.log("更換");
-            console.log("doll.mouth"+doll.mouth);
+            console.log("doll.mouth" + doll.mouth);
 
             doll_box_mouth.src = this.querySelector("img").src; // 圖片路徑更換
             doll_lightbox_mouth.src = this.querySelector("img").src; // 購物車內圖片路徑更換
           }
-
         }
-
-      })
+      });
     }
 
     function addToTotal(number, addOrMinus) {
-      console.log("total:"+total);
+      console.log("total:" + total);
 
-      if ( addOrMinus == false ) { // false
+      if (addOrMinus == false) {
+        // false
         console.log("false");
-        total -= Number(number) ;
+        total -= Number(number);
         // lastClickedNumber = null;
-
-      } else if ( addOrMinus == true ) {
+      } else if (addOrMinus == true) {
         console.log("true");
         total += Number(number);
         // lastClickedNumber = index;
       }
 
       result.innerText = total;
-      console.log("total:"+total);
-      console.log("result.innerText"+result.innerText);
-
+      console.log("total:" + total);
+      console.log("result.innerText" + result.innerText);
     }
-
 
     // 重選
     reset.addEventListener("click", resetAll);
 
-    function resetAll(){
+    function resetAll() {
       console.log(99);
       doll_box_hair.src = "";
       doll_box_clothes.src = "";
@@ -814,52 +985,51 @@ $.ajax({
       doll_lightbox_eyebrow.src = "";
       doll_lightbox_eye.src = "";
       doll_lightbox_mouth.src = "";
-      doll = { 
-        "hair": -1,
-        "clothes": -1,
-        "bottoms": -1,
-        "accessories1": -1,
-        "accessories2": -1,
-        "accessories3": -1,
-        "eyebrow": -1,
-        "eye": -1,
-        "mouth": -1
-      }; 
+      doll = {
+        hair: -1,
+        clothes: -1,
+        bottoms: -1,
+        accessories1: -1,
+        accessories2: -1,
+        accessories3: -1,
+        eyebrow: -1,
+        eye: -1,
+        mouth: -1,
+      };
 
       total = 0;
     }
 
+    let sendCheck = document.getElementsByClassName("send_check")[0];
 
-    let sendCheck = document.getElementsByClassName('send_check')[0];
-
-    sendCheck.addEventListener('click',function(e){
+    sendCheck.addEventListener("click", function (e) {
       // let dresss_lightbox = document.getElementsByClassName('dresss_lightbox')[0];
-      let money = document.getElementById('result').innerText;
+      let money = document.getElementById("result").innerText;
 
       console.log(money);
-      let myitem = { 
-        "hair": [],
-        "clothes": [],
-        "bottoms": [],
-        "accessories1": [],
-        "accessories2": [],
-        "accessories3": [],
-        "eyebrow": [],
-        "eye": [],
-        "mouth": []
-      }; 
+      let myitem = {
+        hair: [],
+        clothes: [],
+        bottoms: [],
+        accessories1: [],
+        accessories2: [],
+        accessories3: [],
+        eyebrow: [],
+        eye: [],
+        mouth: [],
+      };
 
       $.ajax({
         url: "php/getMemberPackage.php",
         method: "POST",
         dataType: "text",
         data: {},
-        success: function(response) {
+        success: function (response) {
           response = JSON.parse(response);
           console.log(response);
-      
+
           //將資料庫的資料放到myitem裡面
-          $.each(response, function(index, row) {
+          $.each(response, function (index, row) {
             // console.log(row);
             if (index === "hair" && Array.isArray(row)) {
               myitem.hair = row;
@@ -881,131 +1051,129 @@ $.ajax({
               myitem.mouth = row;
             }
           });
-      
+
           console.log(myitem);
 
           //用myitem與這次購買doll的裝備做比較
-          $.each(myitem, function(index, row) {
-
-            if ( index === "hair" ) {
-              $.each(row, function(index, row2) {
-                if ( row2 == doll.hair ) {
+          $.each(myitem, function (index, row) {
+            if (index === "hair") {
+              $.each(row, function (index, row2) {
+                if (row2 == doll.hair) {
                   doll.hair = -1;
                 }
-              })
-            } else if (index === "clothes" ) {
-              $.each(row, function(index, row2) {
-                if ( row == doll.clothes ) {
+              });
+            } else if (index === "clothes") {
+              $.each(row, function (index, row2) {
+                if (row == doll.clothes) {
                   doll.clothes = -1;
                 }
-              })
-            } else if (index === "bottoms" ) {
-              $.each(row, function(index, row2) {
-                if ( row == doll.bottoms ) {
+              });
+            } else if (index === "bottoms") {
+              $.each(row, function (index, row2) {
+                if (row == doll.bottoms) {
                   doll.bottoms = -1;
                 }
-              })
-            } else if (index === "accessories1" ) {
-              $.each(row, function(index, row2) {
-                if ( row == doll.accessories1 ) {
+              });
+            } else if (index === "accessories1") {
+              $.each(row, function (index, row2) {
+                if (row == doll.accessories1) {
                   doll.accessories1 = -1;
                 }
-              })
-            } else if (index === "accessories2" ) {
-              $.each(row, function(index, row2) {
-                if ( row == doll.accessories2 ) {
+              });
+            } else if (index === "accessories2") {
+              $.each(row, function (index, row2) {
+                if (row == doll.accessories2) {
                   doll.accessories2 = -1;
                 }
-              })
+              });
             } else if (index === "accessories3") {
-              $.each(row, function(index, row2) {
-                if ( row == doll.accessories3 ) {
+              $.each(row, function (index, row2) {
+                if (row == doll.accessories3) {
                   doll.accessories3 = -1;
                 }
-              })
-            } else if (index === "eyebrow" ) {
-              $.each(row, function(index, row2) {
-                if ( row == doll.eyebrow ) {
+              });
+            } else if (index === "eyebrow") {
+              $.each(row, function (index, row2) {
+                if (row == doll.eyebrow) {
                   doll.eyebrow = -1;
                 }
-              })
-            } else if (index === "eye" ) {
-              $.each(row, function(index, row2) {
-                if ( row == doll.eye ) {
+              });
+            } else if (index === "eye") {
+              $.each(row, function (index, row2) {
+                if (row == doll.eye) {
                   doll.eye = -1;
                 }
-              })
-            } else if (index === "mouth" ) {
-              $.each(row, function(index, row2) {
-                if ( row == doll.mouth ) {
+              });
+            } else if (index === "mouth") {
+              $.each(row, function (index, row2) {
+                if (row == doll.mouth) {
                   doll.mouth = -1;
                 }
-              })
+              });
             }
           });
           console.log(doll);
 
-          let checkOK = false ;
-          $.each(doll, function(index, row) {
+          let checkOK = false;
+          $.each(doll, function (index, row) {
             console.log(row);
-            if ( row != -1 ) {
-              checkOK = true ;
+            if (row != -1) {
+              checkOK = true;
             }
-          })
+          });
 
-          if (checkOK) { // 至少有一項商品沒有買過
+          if (checkOK) {
+            // 至少有一項商品沒有買過
             $.ajax({
-                url: "php/buy_dress.php",
-                method: "POST",
-                dataType: "text",
-                data: {
-                  "money":money,
-                  // "doll_list" : doll,
-                  "hair" : doll.hair,
-                  "clothes": doll.clothes,
-                  "bottoms": doll.bottoms,
-                  "accessories1": doll.accessories1,
-                  "accessories2": doll.accessories2,
-                  "accessories3": doll.accessories3,
-                  "eyebrow": doll.eyebrow,
-                  "eye": doll.eye,
-                  "mouth": doll.mouth
-                },
-                success: function(response) {
-                  // response = JSON.parse(response);
-                  console.log(response);
+              url: "php/buy_dress.php",
+              method: "POST",
+              dataType: "text",
+              data: {
+                money: money,
+                // "doll_list" : doll,
+                hair: doll.hair,
+                clothes: doll.clothes,
+                bottoms: doll.bottoms,
+                accessories1: doll.accessories1,
+                accessories2: doll.accessories2,
+                accessories3: doll.accessories3,
+                eyebrow: doll.eyebrow,
+                eye: doll.eye,
+                mouth: doll.mouth,
+              },
+              success: function (response) {
+                // response = JSON.parse(response);
+                console.log(response);
 
-                  if (response == "success") {
-                    alert("購買成功!");
-                    resetAll();
-                    dresss_lightbox.classList.add("dresss_none");
-                  } else if (response == "balance") {
-                    alert("餘額不足!");
-                    location.href = "store_pay_record.html";
-                  } else {
-                    alert("未知狀態");
-                    console.log(response);
-                  }
-                },
-                error: function(exception) {
-                  alert("數據載入失敗: " + exception.status);
+                if (response == "success") {
+                  alert("購買成功!");
+                  resetAll();
+                  dresss_lightbox.classList.add("dresss_none");
+                } else if (response == "balance") {
+                  alert("餘額不足!");
+                  location.href = "store_pay_record.html";
+                } else {
+                  alert("未知狀態");
+                  console.log(response);
                 }
-              });
+              },
+              error: function (exception) {
+                alert("數據載入失敗: " + exception.status);
+              },
+            });
           } else {
             //全部都是購買過的東西，所以不存入資料庫
             resetAll();
             alert("已購買過嘍!");
           }
         },
-        error: function(exception) {
+        error: function (exception) {
           alert("數據載入失敗: " + exception.status);
-        }
+        },
       });
-
-    })
-
+    });
   },
-  error: function(exception) {
-      alert("數據載入失敗: " + exception.status);
-  }
+  error: function (exception) {
+    alert("數據載入失敗: " + exception.status);
+  },
 });
