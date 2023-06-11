@@ -171,12 +171,19 @@ tr:nth-child(3) td:nth-child(1) input[type="text"] {
     justify-content: space-around; 
     width: 100%;
     margin: 0 auto;
-
+    
     padding: 1rem ;
 }
 
-.list-bottom-first  span:last-child{
+
+.list-bottom-first div a{
     padding: .7rem 1rem;
+    pointer-events: none;
+    cursor: default;
+    text-align: center;
+    border-radius: .7rem;
+    background-color: transparent;
+
 }
 
 
@@ -194,7 +201,6 @@ tr:nth-child(3) td:nth-child(1) input[type="text"] {
     max-width: 1200px;
     width: 100%;
     margin: 0 auto;
-    list-style: none;
     padding-left: 0;
     border-left: 3rem solid #CFC7C4;
     border-right: 3rem solid #CFC7C4;
@@ -217,19 +223,18 @@ tr:nth-child(3) td:nth-child(1) input[type="text"] {
     padding: 1rem ;
     border: 1px solid black;
 }
-/* 
-.list-bottom li:first-child{
-    margin-top: 2rem;
-} */
+
 .list-bottom li:not(:last-child){
     margin-bottom: 2rem;
 }
 
 .list-bottom span {
     padding-top: .7rem;
+    flex-grow: 1;
+    flex-basis: 0;
 }
 
-.list-bottom a {
+.list-bottom  ul a{
     color: white;
     padding: .7rem 1rem;
     text-align: center;
