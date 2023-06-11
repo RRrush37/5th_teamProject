@@ -268,7 +268,8 @@ upload_input.style.opacity = 0;
 // 預覽圖片
 upload_input.addEventListener('change', function(e) {
     preview.src = "";
-
+    preview.innerHTML = "" ;
+    
     let curFiles = e.target.files;
     if (curFiles.length !== 0) {
         for (let i = 0; i < curFiles.length; i++) {
