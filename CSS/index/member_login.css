@@ -167,9 +167,26 @@ align-items: center;
       .activity_title > svg:hover {
         animation: left .5s infinite;
     }
+
+    .box #password{
+      position: relative;
+    }
+    .box #eyes{
+      /* color: #938773; */
+      /* border: 1px solid rgb(254, 9, 9); */
+      position: absolute;
+      right: 35%;
+      top: 35%;
+      transform: translateY(-26%);
+      width: 20px;
+      cursor: pointer;
+      object-fit: cover;
+    }
+
+
   
     /* ----------------414------------------------------ */
-     
+    
     @media screen and (max-width: 414px){
   
       body{
@@ -180,7 +197,7 @@ align-items: center;
         background-size: cover;
         background-size: contain;
       }
-     
+      
 
       .box{
         min-width:70%;
@@ -189,6 +206,6 @@ align-items: center;
         max-height:452px;
         width: auto;
   
-       }
+      }
       
-     }
+    }

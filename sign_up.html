@@ -99,10 +99,11 @@
       <span>信箱:</span>
       <input type="text" id="email" />
       <span>密碼:</span>
-      <input type="password" id="pwd" placeholder="需設置大小寫字母"/>
+      <input type="password" id="pwd" placeholder="密碼至少為6位數字跟大小寫字母"/>
+      <img id="password_eyes" src="IMG/password_on.svg" alt="" />
       <span>確認密碼:</span>
-      <input type="password" id="pwdConfirm" />
-
+      <input type="password" id="pwdConfirm"/>
+      <img id="pwdConfirm_eyes" src="IMG/password_on.svg" alt="" />
       <div class="push" id="send">送出</div>
 
       <!-- <div class="gf">
@@ -129,5 +130,45 @@
       src="https://kit.fontawesome.com/75e9abcec6.js"
       crossorigin="anonymous"
     ></script>
+    <script>
+      // let password_eyes = document.getElementById("password_eyes");
+      // let password = document.getElementById("pwd");
+      // password_eyes.addEventListener("click", function () {
+      //   if (this.getAttribute("src") == "IMG/password_on.svg") {
+      //     this.setAttribute("src", "IMG/password_off.svg");
+      //     password.setAttribute("type", "password");
+      //   } else {
+      //     this.setAttribute("src", "IMG/password_on.svg");
+      //     password.setAttribute("type", "password");
+      //   }
+      // });
+      const passwordInput = document.getElementById('pwd');
+      const passwordEye = document.getElementById('password_eyes');
+
+      passwordEye.addEventListener('click', function() {
+        if (passwordInput.type === 'password') {
+          passwordInput.type = 'text';
+          passwordEye.src = 'IMG/password_off.svg';
+        } else {
+          passwordInput.type = 'password';
+          passwordEye.src = 'IMG/password_on.svg';
+        }
+      });
+    </script>
+    <script>
+      const passwordfield = document.getElementById('pwdConfirm');
+      const pwdConfirmEye = document.getElementById('pwdConfirm_eyes');
+
+      pwdConfirmEye.addEventListener('click', function() {
+        if (passwordfield.type === 'password') {
+          passwordfield.type = 'text';
+          pwdConfirmEye.src = 'IMG/password_off.svg';
+        } else {
+          passwordfield.type = 'password';
+          pwdConfirmEye.src = 'IMG/password_on.svg';
+        }
+      });
+    </script>
+
   </body>
 </html>
