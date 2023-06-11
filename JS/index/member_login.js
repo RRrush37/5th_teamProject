@@ -26,7 +26,7 @@ $(() => {
             dataType: "json",
             data: {},
             success: (response) => {
-              response = JSON.parse(response);
+              // response = JSON.parse(response);
               if (response == -1) {
                 alert("請先登入");
               } else if (response == 0) {

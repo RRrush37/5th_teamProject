@@ -8,11 +8,12 @@ if (checkIfLogin()) {
   $statement->bindValue(1, $_SESSION["ID"]);
   $statement->execute();
   $data = $statement->fetchAll();
-  if (count($data)) {
-    echo true;
-  } else {
-    echo false;
-  }
+  echo $data[0]["count(*)"] ;
+  // if (count($data)) {
+  //   echo true;
+  // } else {
+  //   echo false;
+  // }
 } else {
   echo -1;
 }
