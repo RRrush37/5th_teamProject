@@ -17,3 +17,4 @@ if (checkIfLogin()) {
 } else {
   echo -1;
 }
+?>
