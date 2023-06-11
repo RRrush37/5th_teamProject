@@ -126,7 +126,7 @@ $.ajax({
                 //此篇內文有圖片
                 text_image.innerHTML +=
                 `
-                <img src="IMG/${row.imageURL}" alt="">
+                <img src="IMG/diary/member/${row.imageURL}" alt="">
                 `;
             }
 
