@@ -824,28 +824,8 @@ body {
   
 }
 
-<<<<<<< HEAD
-
-.pay_wrapper {
-  background-color: rgb(37, 40, 51);
-  box-shadow: rgba(255, 255, 255, 0.5) 0px 0px 20px;
-  border-radius: 30px;
-  width: 360px;
-  height: 450px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.choose_wrapper h1 {
-  margin: 13px 98px;
-}
-
-=======
 .pay_wrapper{
   width: 350px;
->>>>>>> ad4bc2106b88c8ab728ce9d7afd0ddfb8cca1459
 }
 
 }
