@@ -9,6 +9,8 @@ background-attachment: fixed;
 background-size: cover;
 }
 
+
+
 body::before {
   content: "";
   position: absolute;
@@ -190,7 +192,7 @@ input {
 @media screen and (max-width: 414px){
 
   body{
-    background-image: url(../../IMG/index/rwd/background/background_2.png);
+    background-image: url(../IMG/index/rwd/background/background_2.png);
     min-width:100%;
     max-width:100%;
     width: auto;

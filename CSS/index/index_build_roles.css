@@ -9,6 +9,11 @@ body {
   max-width: 1920px;
 }
 
+
+.activity_title{
+  padding-top: 75px;
+}
+
 .activity_title {
   margin-left: 20px;
 }
