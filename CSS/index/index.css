@@ -161,4 +161,13 @@ a:hover {
     width: auto;
     background-size: cover;
   }
+
+  .row_2{
+    height: 50px;
+  }
+
+  .row_3{
+    height: 50px;
+    margin-top: 10px;
+  }
 }
