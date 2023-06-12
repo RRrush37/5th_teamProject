@@ -74,3 +74,29 @@ export function getArticleMemberPicture(articleID, user_img){
         }
     });
 }
+
+
+export function getActivityMemberPicture(activityID, user_img){
+
+    $.ajax({
+        url: "php/getActivityMemberImg.php",
+        type: "POST",
+        data: {
+            "activityID" : activityID
+        },
+        dataType:"text",
+        success: function(response) {
+            // console.log(response);
+            if (response == -1) {
+                alert("未讀取到使用者資料");
+                // user_img.setAttribute("src", "IMG/model2cut.jpg");
+            } else {
+                user_img.setAttribute("src", response);
+            }
+            
+        },
+        error: function(xhr, status, error) {
+            console.error("error:", error);
+        }
+    });
+}
