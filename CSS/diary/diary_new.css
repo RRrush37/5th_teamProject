@@ -113,9 +113,10 @@ body {
   color: #634921;
   line-height: 1.6;
   padding: 20px;
-  height: 75vh;
+  height: 74vh;
   /* overflow-y: scroll; */
   scrollbar-gutter: stable both-edges;
+  margin-top: 20px;
 }
 
 .text_nav {
@@ -126,9 +127,8 @@ body {
   align-items: center;
   text-decoration-color: #634921;
   text-underline-offset: 6px;
-  font-size: 2rem;
+  font-size:2rem;
   transition: all 0.3s ease-in-out;
-  margin-top: 2rem;
   font-weight: bold;
 }
 
@@ -137,9 +137,8 @@ body {
   /* width: 100%; */
   display: block;
   /* justify-content: center;
-    align-items: center; */
-  font-size: 3rem;
-  line-height: 1.6;
+  align-items: center; */
+  font-size: 2.5rem;
   position: relative;
   cursor: pointer;
   /* margin: 1rem auto; */
@@ -150,7 +149,6 @@ body {
 }
 
 .text_nav div ~ div {
-  margin-top: 1.5rem;
 }
 
 .text_nav div a:hover {
@@ -186,20 +184,22 @@ body {
 
 /* -------------導覽列裡面的大頭貼------- */
 
-.member_photo {
+.member_photo{
   background-image: url(../../IMG/diary/grass.png);
   background-size: cover;
-  background-size: 70%;
+  background-size: 100%;
   background-position: center;
   background-repeat: no-repeat;
+  transform: translateY(0%);
 }
 
-.member_photo img {
-  width: 65%;
+.member_photo img{
+  width: 120%;
   /* height: 50%; */
   display: block;
   margin: auto;
-  transform: translateY(10%);
+  transform: translateY(15%);
+  transform: translateX(-10%);
 }
 
 /* --------------活動內容-------------- */
@@ -254,10 +254,10 @@ body {
 .activity_article {
   position: relative;
   background-color: #847062cf;
-  padding: 25px;
-  border: 1ps solid red;
+  padding: 15px;
+  /* border: 1px solid red; */
 
-  height: 69vh;
+  height: 73vh;
   overflow-y: scroll;
   scrollbar-gutter: stable both-edges;
 }
@@ -562,8 +562,9 @@ body {
 .activity_main .right {
   width: 20.8%;
   color: #000;
-  height: 75vh;
+  height: 74vh;
   overflow-y: scroll;
+  margin-top: 20px;
 }
 
 /* --------------活動右側欄-日曆-------------- */

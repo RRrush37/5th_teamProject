@@ -23,7 +23,7 @@ $.ajax({
   success: (response) => {
     response = JSON.parse(response);
     if (response) {
-      console.log(response);
+      // console.log(response);
       let str = "";
       for (let i = 0; i < response.length; i++) {
         str += `<p style="padding:5px">${response[i].sendMemberID}：${response[i].content}</p><br>`;
@@ -47,7 +47,7 @@ setInterval(() => {
     success: (response) => {
       response = JSON.parse(response);
       if (response) {
-        console.log(response);
+        // console.log(response);
         let str = "";
         for (let i = 0; i < response.length; i++) {
           str += `<p style="padding:5px">${response[i].sendMemberID}：${response[i].content}</p><br>`;
@@ -128,7 +128,7 @@ sendBtn.addEventListener("click", function () {
             success: (response) => {
               response = JSON.parse(response);
               if (response) {
-                console.log(response);
+                // console.log(response);
                 let str = "";
                 for (let i = 0; i < response.length; i++) {
                   str += `<p style="padding:5px">${response[i].sendMemberID}：${response[i].content}</p><br>`;

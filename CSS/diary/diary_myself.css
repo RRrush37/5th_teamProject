@@ -70,6 +70,7 @@ body {
 /*---主要版面----------*/
 .activity_main {
     display: flex;
+    margin-top: 30px;
 }
 
 
@@ -80,8 +81,8 @@ body {
     background-color: #847062cf;
     color: #634921;
     line-height: 1.6;
-    padding: 20px;
-    height: 75vh;
+    padding: 10px;
+    height: 74vh;
     /* overflow-y: scroll; */
     scrollbar-gutter: stable both-edges;
 }
@@ -98,7 +99,6 @@ body {
     text-underline-offset: 6px;
     font-size:2rem;
     transition: all 0.3s ease-in-out;
-    margin-top: 2.5rem;
     font-weight: bold;
 }
 
@@ -111,8 +111,7 @@ body {
     display: block;
     /* justify-content: center;
     align-items: center; */
-    font-size: 3rem;
-    line-height: 1.6;
+    font-size: 2.5rem;
     position: relative;
     cursor: pointer;
     /* margin: 1rem auto; */
@@ -124,7 +123,6 @@ body {
 
 
 .text_nav div ~ div {
-    margin-top: 1.5rem;
 }
 
 .text_nav div a:hover {
@@ -165,18 +163,19 @@ body {
 .member_photo{
     background-image: url(../../IMG/diary/grass.png);
     background-size: cover;
-    background-size: 70%;
-        background-position: center;
-        background-repeat: no-repeat;
-        
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    transform: translateY(0%);
 }
 
 .member_photo img{
-    width: 65%;
+    width: 120%;
     /* height: 50%; */
     display: block;
     margin: auto;
-    transform: translateY(10%);
+    transform: translateY(15%);
+    transform: translateX(-10%);
 }
 
 
@@ -497,6 +496,7 @@ transform: scale(2.5) translateY(25%);
     color: #000;
     height: 75vh;
     overflow-y: scroll;
+
 }
 
 /* --------------活動右側欄-日曆-------------- */

@@ -11,7 +11,7 @@ const get_lightbox = () => {
   );
 
   const render_popup = (response) => {
-    console.log(response);
+    // console.log(response);
     let post_time_display = convertTimeToHumanReadable(response.activityTime);
     let spanClass1 = "-none";
     let ageGreaterThan18 = "";
@@ -53,8 +53,12 @@ const get_lightbox = () => {
                     <div class="activity_content">
                         <h2>${response.activityName}</h2>
                         <h3>${post_time_display}發布</h3>
-                        <p class="inf">活動時間:${response.activityStartDate}到${response.activityEndDate}</p>
-                        <p class="inf">活動地點:${response.activityPlace}</p>
+                        <p class="inf">活動時間:${
+                          response.activityStartDate
+                        }到${response.activityEndDate}</p>
+                        <p class="inf">活動地點:<pan class="location">${
+                          response.activityPlace
+                        }</pan></p>
                         <p>${response.activityNote}</p>
                         <ul>
                             <li class="${spanClass1}"><span class="topic " >${ageGreaterThan18}</span></li>
@@ -65,18 +69,30 @@ const get_lightbox = () => {
                     </div>
                     <div class="article_actions">
                         <div class="interact_lightbox">
-                            <i class="fa-regular fa-heart"></i><span>${response.thumbUpNum}</span>
-                            <i class="fa-regular fa-comment-dots"></i><span class="howmany">${response.commentNum}</span>
+                            <i id="like" style="color:${
+                              response.isThumbUp ? "red" : ""
+                            }" class="fa-regular fa-heart"></i><span id="likeNum">${
+      response.thumbUpNum
+    }</span>
+                            <i class="fa-regular fa-comment-dots"></i><span class="howmany">${
+                              response.commentNum
+                            }</span>
                             <!-- <a href="#"><i class="fa-regular fa-bookmark"></i></a> -->
                         </div>
                         <div class="join">
-                            <h3>參加人數：2/5</h3>
-                            <input type="checkbox" id="iwantjoin_lightbox">
-                            <label for="iwantjoin_lightbox" class="iwantjoin color-button">我要參加</label>
+                            <h3>參加人數：<pan id="joinNum">${
+                              response.joinNum
+                            }</pan>/${response.activityLimit}</h3>
+                            <!--input type="checkbox" id="iwantjoin_lightbox"-->
+                            <div for="iwantjoin_lightbox" class="iwantjoin color-button" id="join">${
+                              response.hasJoined ? "取消參加" : "我要參加"
+                            }</div>
                         </div>
                     </div>
                     <div class="activity_comment">
-                        <h3>共<span class="howmany">${response.commentNum}</span>則留言</h3>
+                        <h3>共<span class="howmany">${
+                          response.commentNum
+                        }</span>則留言</h3>
                         <div class="activity_commentbox">
                         </div>
                     </div>
@@ -98,7 +114,74 @@ const get_lightbox = () => {
                     </div>
                 </div>
                 `;
-
+    document.getElementById("join").addEventListener("click", () => {
+      $.ajax({
+        url: "php/iWantJoin.php",
+        method: "post",
+        dataType: "json",
+        data: { activityID: response.activityID },
+        success: (innerResponse) => {
+          // alert(innerResponse);
+          if (innerResponse) {
+            document.getElementById("join").innerHTML = "取消參加";
+          } else {
+            document.getElementById("join").innerHTML = "我要參加";
+          }
+          $.ajax({
+            url: "php/getActivityJoinNum.php",
+            method: "post",
+            dataType: "json",
+            data: { activityID: response.activityID },
+            success: (response) => {
+              if (response == -1) {
+                alert("請先登入");
+              } else {
+                document.getElementById("joinNum").innerHTML = response;
+                get_card();
+              }
+            },
+            error: (xhr, status, error) => {
+              alert("error: " + error);
+            },
+          });
+        },
+        error: (xhr, status, error) => {
+          alert("error: " + error);
+        },
+      });
+    });
+    document.getElementById("like").addEventListener("click", () => {
+      // alert(1)
+      $.ajax({
+        url: "php/likeActivity.php",
+        method: "post",
+        dataType: "json",
+        data: { activityID: response.activityID },
+        success: (innerResponse) => {
+          if (innerResponse) {
+            document.getElementById("like").style.color = "red";
+          } else {
+            document.getElementById("like").style.color = "";
+          }
+          $.ajax({
+            url: "php/countActivityLike.php",
+            method: "post",
+            dataType: "json",
+            data: { activityID: response.activityID },
+            success: (innerResponse) => {
+              document.getElementById("likeNum").innerHTML = innerResponse;
+              get_card();
+            },
+            error: (xhr, status, error) => {
+              alert("error: " + error);
+            },
+          });
+        },
+        error: (xhr, status, error) => {
+          alert("error: " + error);
+        },
+      });
+    });
     lightbox_background.classList.remove("-none");
     let fa_xmark = document.getElementsByClassName("fa-xmark")[0];
     fa_xmark.addEventListener("click", function () {
@@ -139,38 +222,60 @@ const get_lightbox = () => {
             let comment_send = document.getElementById("comment_send");
             comment_send.addEventListener("click", function (e) {
               e.preventDefault();
+              if (comment.value != "") {
+                let comment_content = comment.value;
+                comment.value = "";
 
-              let comment_content = comment.value;
-              comment.value = "";
-
-              $.ajax({
-                url: "php/activityComment.php",
-                method: "post",
-                dataType: "json",
-                data: {
-                  commentContent: comment_content,
-                  activityId: current_id,
-                },
-                success: (res) => {
-                  if (res == -1) {
-                    alert("請先登入");
-                  } else if (res == 1) {
-                    for (let index = 0; index < all_card.length; index++) {
-                      let card = all_card[index];
-                      if (card.activityID === Number(current_id)) {
-                        get_comment_card(card);
+                $.ajax({
+                  url: "php/activityComment.php",
+                  method: "post",
+                  dataType: "text",
+                  data: {
+                    commentContent: comment_content,
+                    activityId: current_id,
+                  },
+                  success: (res) => {
+                    if (res == -1) {
+                      alert("請先登入");
+                    } else if (res == 1) {
+                      for (let index = 0; index < all_card.length; index++) {
+                        let card = all_card[index];
+                        if (card.activityID === Number(current_id)) {
+                          get_comment_card(card);
+                          let activity_readmore_wrap =
+                            document.getElementsByClassName(
+                              "activity_readmore_wrap"
+                            )[0];
+                          setTimeout(() => {
+                            activity_readmore_wrap.scrollTop =
+                              activity_readmore_wrap.scrollHeight;
+                          }, 100);
+                          let commentCount =
+                            document.getElementsByClassName("howmany");
+                          for (let i = 0; i < commentCount.length; i++) {
+                            let howmany = parseInt(commentCount[i].innerHTML);
+                            howmany++;
+                            commentCount[i].innerHTML = howmany;
+                          }
+                        }
                       }
+                    } else {
+                      alert("發布失敗");
                     }
-                  } else {
-                    alert("發布失敗");
-                  }
-                },
-                error: (xhr, status, error) => {
-                  console.log("error:" + error);
-                  alert("error:" + error);
-                },
-              });
-              // ajax結尾
+                  },
+                  error: (xhr, status, error) => {
+                    console.log("error:" + error);
+                    alert("error:" + error);
+                  },
+                });
+              } else {
+                alert("請輸入留言");
+              }
+            });
+            document.addEventListener("keyup", function (e) {
+              if (e.key == "Enter") {
+                comment_send.click();
+              }
             });
           }
         },
@@ -180,154 +285,163 @@ const get_lightbox = () => {
       });
     }
   });
-
-  //         // 從local抓彈窗留言
-  //         let card = cards[i]
-  //         get_comment_card(card);
-
-  //         // 發留言
-  //         let comment = document.getElementById("comment");
-  //         let comment_send = document.getElementById("comment_send");
-
-  //         // console.log(comment_send);
-  //         comment_send.addEventListener("click", function (e) {
-  //             e.preventDefault();
-  //             let comment_id = Date.now();
-  //             let comment_content = comment.value;
-  //             let post_time = Date.now();
-  //             let post_time_display = convertTimeToHumanReadable(post_time);
-  //             // $.ajax({
-  //             //     url: "php/activityComment.php",
-  //             //     method: "post",
-  //             //     dataType: "json",
-  //             //     data: {
-  //             //         "comment_id": comment_id,
-  //             //         "comment_content": comment_content,
-  //             //         "post_time": post_time
-  //             //     },
-  //             //     success: (response) => {
-  //             //         if(response==-1){
-  //             //             alert("請先登入");
-  //             //         } else if(response == 1) {
-  //             //             alert("發布成功");
-  //             //         }else{
-  //             //             alert("發布失敗");
-  //             //         }
-
-  //             //     },
-  //             //     error: (xhr, status, error) => {
-  //             //         alert("error:" + error)
-  //             //     },
-  //             // });
-
-  //             //         let comment_html = `
-  //             //                     <div class="comment_card">
-  //             //                         <!-- <span class="more_action">‧‧‧</span> -->
-  //             //                         <img class="user" src="IMG/activity/lonely.png" alt="" width="60">
-  //             //                         <div class="comment_text">
-  //             //                             <h2>暱稱</h2>
-  //             //                             <p>${comment_content}</p>
-  //             //                             <h3>B1 ‧ ${post_time_display}</h3>
-  //             //                         </div>
-  //             //                     </div>
-  //             // `;
-  //             // let activity_commentbox = document.getElementsByClassName("activity_commentbox")[0];
-  //             // activity_commentbox.insertAdjacentHTML("afterbegin", comment_html);
-
-  //             let comment_card = {
-  //                 "item_id": cards[i].item_id,
-  //                 "comment_id": comment_id,
-  //                 "comment_content": comment_content,
-  //                 "post_time": post_time
-  //             };
-
-  //             let comment_cards = JSON.parse(localStorage.getItem("comment_cards"));
-
-  //             if (comment_cards) { // 若存在
-  //                 comment_cards.push(comment_card); // [{}, {}]
-  //             } else { // 若不存在
-  //                 comment_cards = [comment_card]; // [{}]
-  //             }
-  //             localStorage.setItem("comment_cards", JSON.stringify(comment_cards));
-
-  //             // 從local抓彈窗留言
-  //             let card = cards[i];
-  //             get_comment_card(card);
-  //         });
-  //         let like_activity = document.getElementsByClassName("fa-heart");
-  //         like_activity1 = [...like_activity];
-  //         // like_activity1.forEach(item => {
-  //         //     item.addEventListener('click', function () {
-  //         //         like_activity1.forEach(item1 => {
-  //         //             if(){
-
-  //         //             }
-  //         //             item1.classList.toggle('fa-regular');
-  //         //             item1.classList.toggle('fa-solid');
-  //         //         })
-
-  //         //     });
-
-  //         // });
-
-  //         // console.log(like_activity);
-
-  //     });
-
-  // }
-
-  // let join_btn = document.getElementsByClassName("join");
-
-  // for (let j = 0; j < join_btn.length; j++) {
-  //     join_btn[j].addEventListener("click", function (e) {
-  //         e.stopPropagation();
-  //     });
-  // }
 };
 
-let countFilter = document.getElementById("count").value;
+//篩選器
+let countFilter = "0";
+let locFilter = "0";
+let durFilter = "0";
 let topicFilter1 = document.getElementsByClassName("byebye");
 let topicFilter2 = [...topicFilter1];
-let topicFilter = [];
+
+let fromnowon = document.getElementsByName("depart");
+let fromnowonValue = "";
+
+window.document.addEventListener("click", function (e) {
+  if (e.target.classList.contains("left"))
+    for (let i = 0; i < fromnowon.length; i++) {
+      fromnowon[i].checked = false;
+      if (!fromnowon[i].checked) {
+      }
+    }
+  fromnowonValue = "";
+  applyFilters();
+});
+
+$(fromnowon).click((e) => {
+  e.stopPropagation();
+  for (let i = 0; i < fromnowon.length; i++) {
+    if (fromnowon[i].checked) {
+      fromnowonValue = fromnowon[i].value;
+      break;
+    }
+  }
+  applyFilters();
+});
+
+$("#count").change(() => {
+  countFilter = document.getElementById("count").value;
+  applyFilters();
+});
 
 $(".byebye").click(() => {
-  topicFilter = [];
+  let topicFilter = [];
   topicFilter2.forEach((e) => {
     if (e.checked) {
       topicFilter.push(e.value);
     }
   });
-  activity_article_cards = document.getElementsByClassName(
-    "activity_article_cards"
-  );
-  if (!topicFilter.length) {
-    for (let i = 0; i < activity_article_cards.length; i++) {
-      activity_article_cards[i].style.display = "block";
-    }
-    return;
-  }
-  for (let i = 0; i < activity_article_cards.length; i++) {
-    if (
-      topicFilter.indexOf(
-        activity_article_cards[i].querySelector(".topic").innerHTML
-      ) === -1
-    ) {
-      activity_article_cards[i].style.display = "none";
-    } else {
-      activity_article_cards[i].style.display = "block";
-    }
-  }
+  applyFilters();
 });
 
-let duration = document.getElementById("during").value;
-let fromnowon = document.getElementsByName("depart");
+$("#during").change(() => {
+  durFilter = document.getElementById("during").value;
+  applyFilters();
+});
 
-var selectedValue;
-for (var i = 0; i < fromnowon.length; i++) {
-  if (fromnowon[i].checked) {
-    selectedValue = fromnowon[i].value;
-    break;
+$("#place").change(() => {
+  locFilter = document.getElementById("place").value;
+  applyFilters();
+});
+
+function applyFilters() {
+  let activity_article_cards = document.getElementsByClassName(
+    "activity_article_cards"
+  );
+
+  if (
+    countFilter === "0" &&
+    !hasCheckedTopics() &&
+    locFilter === "0" &&
+    durFilter === "0" &&
+    fromnowonValue === ""
+  ) {
+    showAllCards(activity_article_cards);
+    return;
+  }
+
+  for (let i = 0; i < activity_article_cards.length; i++) {
+    let activityCard = activity_article_cards[i];
+    let activityCount = activityCard.querySelector(".activityLimit").innerHTML;
+    let topic = activityCard.querySelector(".topic").innerHTML;
+    let location = activityCard.querySelector(".location").innerHTML;
+    let startDate = activityCard.querySelector(".thetime1").innerHTML;
+    startDate = new Date(startDate);
+    let endDate = activityCard.querySelector(".thetime2").innerHTML;
+    endDate = new Date(endDate);
+
+    // 計算兩個日期之間的毫秒差異
+    var timeDiff = Math.abs(endDate.getTime() - startDate.getTime());
+    // 將毫秒差異轉換為天數
+    var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
+    diffDays += 1;
+
+    let go = getDateDiff(startDate);
+    let afterDays = "";
+    if (go < 7) {
+      afterDays = "aweek";
+    } else if (go >= 7 && go <= 30) {
+      afterDays = "amonth";
+    } else if (go > 30) {
+      afterDays = "months";
+    }
+
+    let countMatch = countFilter === "0" || countFilter === activityCount;
+    let topicMatch = topicFilterContains(topic);
+    let locMatch = locFilter === "0" || locFilter === location;
+    let durMatch =
+      durFilter === "0" || parseInt(durFilter) === parseInt(diffDays);
+    let startMatch = fromnowonValue === "" || fromnowonValue === afterDays;
+
+    if (countMatch && topicMatch && locMatch && durMatch && startMatch) {
+      activityCard.style.display = "flex";
+    } else if (
+      countMatch &&
+      !hasCheckedTopics() &&
+      locMatch &&
+      durMatch &&
+      startMatch
+    ) {
+      activityCard.style.display = "flex";
+    } else {
+      activityCard.style.display = "none";
+    }
   }
 }
 
-let loc = document.getElementById("place").value;
+function hasCheckedTopics() {
+  for (let i = 0; i < topicFilter2.length; i++) {
+    if (topicFilter2[i].checked) {
+      return true;
+    }
+  }
+  return false;
+}
+
+function topicFilterContains(topic) {
+  for (let i = 0; i < topicFilter2.length; i++) {
+    if (topicFilter2[i].value === topic && topicFilter2[i].checked) {
+      return true;
+    }
+  }
+  return false;
+}
+
+function showAllCards(cards) {
+  for (let i = 0; i < cards.length; i++) {
+    cards[i].style.display = "flex";
+  }
+}
+
+function getDateDiff(startDate) {
+  // 取得今日日期
+  let today = new Date();
+
+  // 計算時間差（毫秒）
+  let timeDiff = startDate.getTime() - today.getTime();
+
+  // 計算時間差的天數
+  let DateDiff = Math.ceil(timeDiff / (1000 * 3600 * 24));
+
+  return DateDiff;
+}
