@@ -9,6 +9,11 @@ body {
   max-width: 1920px;
 }
 
+
+.activity_title{
+  padding-top: 75px;
+}
+
 .activity_title {
   margin-left: 20px;
 }
@@ -363,6 +368,8 @@ font-weight: bold;
   transform: scale( 150% ) translateY(5%);
 }
 
+
+
 /*--------------------------- lightbox ---------------------------*/
 
 .dresss_lightbox {
@@ -490,6 +497,8 @@ font-weight: bold;
 .none{
   display: none;
 }
+
+
 
 /*------------------------------- 414 --------------------------------*/
 

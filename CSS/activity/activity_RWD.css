@@ -1,0 +1,16 @@
+@import url(../global.css);
+@import url(../activity/activity.css);
+
+@media (max-width: 850px) {
+    .activity_main {
+        position: relative;
+    }
+
+    .left {
+        position: absolute;
+        top: 0;
+        left: 0;
+        min-width: 300px;
+        padding: 10px;
+    }
+}

@@ -375,7 +375,7 @@ body::before {
 @media screen and (max-width: 414px){
   
   body{
-    background-image: url(/IMG/index/rwd/background/background_1.png);
+    background-image: url(../../IMG/index/rwd/background/background_1.png);
     min-width:100%;
     max-width:100%;
     width: auto;
@@ -410,14 +410,17 @@ body::before {
     }
 
    
-    .list-item {
+    .list-item  {
         background-color:#ECEE73;
-        padding: 15px;
+        padding: 9px;
         box-shadow: 0 10px 10px -5px rgba(0, 0, 0, 0.5);
         margin: 10px;
         color: white;
         border-radius: 50px;
       
+    }
+    .list-item  a{
+      color: #985517;
     }
  
        .list-item:first-child {
