@@ -28,9 +28,10 @@ $.ajax({
       for (let i = 0; i < response.length; i++) {
         str += `<p style="padding:5px">${response[i].sendMemberID}：${response[i].content}</p><br>`;
       }
-      let chatroom_middle = document.getElementById("chatroom-inside-middle");
+      let chatroom_middle = document.getElementById("innerText");
       chatroom_middle.innerHTML = str;
-      chatroom_middle.scrollTop = chatroom_middle.clientHeight + 100;
+      document.getElementById("chatroom-inside-middle").scrollTop =
+        chatroom_middle.clientHeight + 100;
     } else {
     }
   },
@@ -52,9 +53,10 @@ setInterval(() => {
         for (let i = 0; i < response.length; i++) {
           str += `<p style="padding:5px">${response[i].sendMemberID}：${response[i].content}</p><br>`;
         }
-        let chatroom_middle = document.getElementById("chatroom-inside-middle");
+        let chatroom_middle = document.getElementById("innerText");
         chatroom_middle.innerHTML = str;
-        chatroom_middle.scrollTop = chatroom_middle.clientHeight + 100;
+        document.getElementById("chatroom-inside-middle").scrollTop =
+          chatroom_middle.clientHeight + 100;
       } else {
       }
     },
@@ -133,11 +135,11 @@ sendBtn.addEventListener("click", function () {
                 for (let i = 0; i < response.length; i++) {
                   str += `<p style="padding:5px">${response[i].sendMemberID}：${response[i].content}</p><br>`;
                 }
-                let chatroom_middle = document.getElementById(
-                  "chatroom-inside-middle"
-                );
+                let chatroom_middle = document.getElementById("innerText");
                 chatroom_middle.innerHTML = str;
-                chatroom_middle.scrollTop = chatroom_middle.clientHeight + 100;
+                console.log(chatroom_middle.clientHeight);
+                document.getElementById("chatroom-inside-middle").scrollTop =
+                  chatroom_middle.clientHeight + 100;
                 enterText.value = "";
               } else alert("留言失敗");
             },
