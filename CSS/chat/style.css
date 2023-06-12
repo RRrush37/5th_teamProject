@@ -312,7 +312,7 @@ body {
 .chatroom-inside-middle {
   width: 90%;
   margin: 0 1rem;
-  height: 370px;
+  height: 400px;
   background-color: white;
   /* position: relative; */
   overflow-y: auto;
