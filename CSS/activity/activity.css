@@ -35,6 +35,11 @@
   color: #000;
 }
 
+
+.nav > a{
+  border: #d6d1f0 solid 2px;
+}
+
 /* --------------卷軸改色-------------- */
 
 ::-webkit-scrollbar-thumb {
@@ -51,7 +56,12 @@ body {
   background-image: url(../../IMG/activity/activity_background.jpeg);
   background-size: 100%;
   background-attachment: fixed;
-  overflow: hidden;
+  overflow-y: hidden;
+  overflow-x: scroll;
+}
+
+body::-webkit-scrollbar {
+  display: none;
 }
 
 .activity {
@@ -88,6 +98,7 @@ body {
 
 .activity_main .left {
   width: 20.8%;
+  min-width: 100px;
   background-color: rgba(217, 212, 239, 0.8);
   color: #000;
   line-height: 1.6;
@@ -283,7 +294,7 @@ input[type="checkbox"] {
 
 .activity_article {
   background-color: rgba(214, 209, 240, 0.9);
-  padding: 25px;
+  padding: 20px;
   height: 77vh;
   overflow-y: scroll;
   scrollbar-gutter: stable both-edges;
@@ -467,6 +478,7 @@ input[type="checkbox"] {
 
 .activity_main .right {
   width: 20.8%;
+  min-width: 240px;
   color: #000;
   height: 77vh;
   overflow-y: scroll;
@@ -542,7 +554,7 @@ ul.weekdays li {
   font-size: 2rem;
 }
 
-.right .my_activity a{
+.right .my_activity a {
   color: #424242;
   text-decoration: underline;
   margin-top: 50px;
@@ -752,8 +764,14 @@ ul.weekdays li {
   display: none;
 }
 
-#iwantjoin_lightbox:checked+label {
+/* #iwantjoin_lightbox:checked+label {
   color: #000;
   background-color: #d6d1f0;
   box-shadow: inset #fff 0px 0px 0px 1px;
+} */
+
+.joined {
+  color: #000!important;
+  background-color: #d6d1f0!important;
+  /* box-shadow: inset #fff 0px 0px 0px 1px; */
 }

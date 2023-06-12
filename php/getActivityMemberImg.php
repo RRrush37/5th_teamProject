@@ -3,12 +3,11 @@
     include "checkIfLogin.php" ;
     session_start();
     if (checkIfLogin()) {
-        $sql = 'SELECT * FROM memberData AS m JOIN article AS a ON m.memberID = a.memberID WHERE articleID = ? ORDER BY a.articleTime DESC';
+        $sql = 'SELECT * FROM memberData AS m JOIN activity AS a ON m.memberID = a.activityOrganiserID WHERE activityID = ? ORDER BY a.activityTime DESC';
         $statement = $pdo->prepare($sql);
-        $statement->bindValue(1, $_POST["articleID"]);
+        $statement->bindValue(1, $_POST["activityID"]);
         $statement->execute();
         $data = $statement->fetchAll();
-
 
         if ( $data > 0 ) {
             foreach($data as $index => $row){
