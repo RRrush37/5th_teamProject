@@ -209,5 +209,27 @@ input {
     width: auto;
 
   }
+
+  .box span{
+    font-size: 2rem;
+    margin-right: 20rem;
+  }
+
+  input{
+    padding: 10px;
+  }
+
+  .push{
+    font-size: 2rem;
+    border-radius: 20px;
+    padding: 15px;
+    width: 90px;
+  }
+
+  .box #eyes{
+    right: 10%;
+    top: 55%;
+    width: 25px;
+  }
   
 }

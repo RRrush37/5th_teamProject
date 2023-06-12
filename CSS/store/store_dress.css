@@ -728,7 +728,7 @@ body {
   }
 
   .money{
-    margin-top: 100px;
+    margin-top: 80px;
   }
 /* 
   .number{
@@ -826,6 +826,11 @@ body {
 
 .pay_wrapper{
   width: 350px;
+}
+
+.pay_close > .fa-xmark{
+  margin-left: 80%;
+  margin-top: 5%;
 }
 
 }

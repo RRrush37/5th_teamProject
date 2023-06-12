@@ -7,6 +7,7 @@ body{
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
+    background-size: 120%;
 }
 
 .bar .ability span:last-child {
@@ -1054,4 +1055,54 @@ section{
 /* ===================== none ==================== */
 .none {
     display: none !important ;
+}
+
+/*------------------------------------ 414 ----------------------------------*/
+
+@media screen and (max-width: 414px){
+
+    body{
+        background-size: 500%;
+    }
+
+    .room{
+        margin-top: 80px;
+        height: 90%;
+    }
+
+    .room #game_state_box{
+        height: 60px;
+    }
+
+    .room #player{
+        height: 75%;
+        width: 90%;
+    }
+
+    .room #center_box #ready_box{
+        position: absolute;
+        top: 40px;
+    }
+
+    .room #center_box #ready_box .btn_box{
+        position: absolute;
+        top: 270px;
+    }
+
+    .room #center_box .confirm{
+        padding: 5px 30px;
+        height: 55px;
+    }
+
+    .room #game_instruction{
+        left: 40%;
+    }
+
+    h2{
+        font-size: 2rem;
+    }
+
+    .room #not_ready_box .not_ready{
+        font-size: 2rem;
+    }
 }

@@ -7,6 +7,7 @@ body{
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
+    background-size: 120%;
 }
 
 .bar .ability span:last-child {
@@ -423,4 +424,30 @@ section{
 
 .none{
     display: none !important ;
+}
+
+/*---------------------------------- 414 --------------------------------------*/
+
+@media screen and (max-width: 414px){
+
+    body{
+        background-size: 485%;
+    }
+
+    .room_list{
+        margin-top: 30px;
+    }
+
+    .room_list .search_box{
+        width: 90%;
+    }
+
+    .room_list .room_box .room{
+        width: 100%;
+    }
+
+    .room_list #create_room{
+        right: 5%;
+        top: 80%;
+    }
 }

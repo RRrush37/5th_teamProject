@@ -7,6 +7,7 @@ body{
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
+    background-size: 120%;
 }
 
 .bar .ability span:last-child {
@@ -236,4 +237,49 @@ section{
 
 .none{
     display: none;
+}
+
+/*---------------------------------- 414 -------------------------------------*/
+
+@media screen and (max-width: 414px){
+
+    body{
+        background-size: 486%;
+    }
+
+    .rule .container{
+        margin-top: 30px;
+        height: 90%;
+        padding: 20px 20px 10px;
+    }
+
+    .rule .must_read{
+        margin-top: 20px;
+    }
+
+    .rule .container .top{
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .rule .left{
+        width: 90%;
+        margin-right: 10px;
+    }
+
+    .rule .left .text_bg{
+        -webkit-text-stroke: 40px #4B4A4A;
+    }
+
+    .rule .right img{
+        transform: scale(1.2);
+        margin-top: 35px;
+    }
+
+    #enter_btn{
+        width: 130px;
+        height: 50px;
+        margin-top: 30px;
+    }
 }

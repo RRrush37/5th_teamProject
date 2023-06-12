@@ -121,3 +121,19 @@ section{
 .container a:hover #paint{
     content: url('../../IMG/gameChoose/paint_hover.svg');
 }
+
+/*----------------------------- 414 -----------------------------*/
+
+@media screen and (max-width: 414px){
+    body{
+        background-size: 470%;
+    }
+
+    section{
+        height: 50%;
+    }
+
+    .container a img{
+        width: 90%;
+    }
+}

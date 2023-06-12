@@ -240,9 +240,38 @@ input {
   min-width:70%;
   max-width:70%;
   min-height:200px;
-  max-height:452px;
+  max-height:500px;
   width: auto;
 
+  }
+
+  .box span{
+    font-size: 2rem;
+    margin-right: 20rem;
+  }
+
+  input{
+     padding: 10px;
+  }
+
+  .push{
+    font-size: 2rem;
+    border-radius: 20px;
+    padding: 15px;
+    width: 90px;
+    margin-top: 20px
+  }
+
+  #password_eyes{
+    right: 10%;
+    top: 63%;
+    width: 25px;
+  }
+
+  #pwdConfirm_eyes{
+    right: 10%;
+    top: 80%;
+    width: 25px;
   }
 
 }
