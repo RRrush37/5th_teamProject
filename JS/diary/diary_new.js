@@ -258,8 +258,9 @@ $.ajax({
                                 </div>
                             `
                             let top_img = document.getElementsByClassName("white")[0].querySelector(".top .img");
-                            getImg(top_img.querySelector("img")); //補大頭貼
-
+                            let readmore_articleID = document.getElementById("readmore_id").getAttribute("data-id");
+                            // getImg(top_img.querySelector("img")); //補大頭貼
+                            picture.getArticleMemberPicture(readmore_articleID, top_img.querySelector("img")) ;
                             
                             get_Comment_list(response.articleID); //加入留言
 
