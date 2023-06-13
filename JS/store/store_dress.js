@@ -107,15 +107,15 @@ $.ajax({
       eyebrow: -1,
       eye: -1,
       mouth: -1,
-      hairMoney: 0,
-      clothesMoney: 0,
-      bottomsMoney: 0,
-      accessories1Money: 0,
-      accessories2Money: 0,
-      accessories3Money: 0,
-      eyebrowMoney: 0,
-      eyeMoney: 0,
-      mouthMoney: 0,
+      hairMoney: -1,
+      clothesMoney: -1,
+      bottomsMoney: -1,
+      accessories1Money: -1,
+      accessories2Money: -1,
+      accessories3Money: -1,
+      eyebrowMoney: -1,
+      eyeMoney: -1,
+      mouthMoney: -1,
     };
 
     // 確認
@@ -732,23 +732,23 @@ $.ajax({
         total -= Number(number);
 
         if ( type == "hair" ) {
-          doll.hairMoney = doll.hairMoney - Number(number) ;
+          doll.hairMoney = -1 ;
         } else if ( type == "clothes" ) {
-          doll.clothesMoney = doll.clothesMoney - Number(number) ;
+          doll.clothesMoney = -1 ;
         } else if ( type == "bottoms" ) {
-          doll.bottomsMoney = doll.bottomsMoney - Number(number) ;
+          doll.bottomsMoney = -1 ;
         } else if ( type == "accessories1" ) {
-          doll.accessories1Money = doll.accessories1Money - Number(number) ;
+          doll.accessories1Money = -1 ;
         } else if ( type == "accessories2" ) {
-          doll.accessories2Money = doll.accessories2Money - Number(number) ;
+          doll.accessories2Money = -1 ;
         } else if ( type == "accessories3" ) {
-          doll.accessories3Money = doll.accessories3Money - Number(number) ;
+          doll.accessories3Money = -1 ;
         } else if ( type == "eyebrow" ) {
-          doll.eyebrowMoney = doll.eyebrowMoney - Number(number) ;
+          doll.eyebrowMoney = -1 ;
         } else if ( type == "eye" ) {
-          doll.eyeMoney = doll.eyeMoney - Number(number) ;
+          doll.eyeMoney = -1 ;
         } else if ( type == "mouth" ) {
-          doll.mouthMoney = doll.mouthMoney - Number(number) ;
+          doll.mouthMoney = -1 ;
         }
         // lastClickedNumber = null;
       } else if (addOrMinus == true) { //加錢
@@ -756,23 +756,23 @@ $.ajax({
         total += Number(number);
         
         if ( type == "hair" ) {
-          doll.hairMoney = doll.hairMoney + Number(number) ;
+          doll.hairMoney = Number(number) ;
         } else if ( type == "clothes" ) {
-          doll.clothesMoney = doll.clothesMoney + Number(number) ;
+          doll.clothesMoney = Number(number) ;
         } else if ( type == "bottoms" ) {
-          doll.bottomsMoney = doll.bottomsMoney + Number(number) ;
+          doll.bottomsMoney = Number(number) ;
         } else if ( type == "accessories1" ) {
-          doll.accessories1Money = doll.accessories1Money + Number(number) ;
+          doll.accessories1Money = Number(number) ;
         } else if ( type == "accessories2" ) {
-          doll.accessories2Money = doll.accessories2Money + Number(number) ;
+          doll.accessories2Money = Number(number) ;
         } else if ( type == "accessories3" ) {
-          doll.accessories3Money = doll.accessories3Money + Number(number) ;
+          doll.accessories3Money = Number(number) ;
         } else if ( type == "eyebrow" ) {
-          doll.eyebrowMoney = doll.eyebrowMoney + Number(number) ;
+          doll.eyebrowMoney = Number(number) ;
         } else if ( type == "eye" ) {
-          doll.eyeMoney = doll.eyeMoney + Number(number) ;
+          doll.eyeMoney = Number(number) ;
         } else if ( type == "mouth" ) {
-          doll.mouthMoney = doll.mouthMoney + Number(number) ;
+          doll.mouthMoney = Number(number) ;
         }
 
         // lastClickedNumber = index;
@@ -1008,9 +1008,10 @@ $.ajax({
             console.log(row);
             if (row != -1) {
               checkOK = true;
+              // console.log(index);
             }
           });
-
+          
           if (checkOK) {
             // 至少有一項商品沒有買過
             $.ajax({
