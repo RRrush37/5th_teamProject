@@ -833,4 +833,10 @@ body {
   margin-top: 5%;
 }
 
+
+.choose_wrapper {
+  display: flex;
+  padding-top: 39px;
+  padding-right: 35px;
+}
 }

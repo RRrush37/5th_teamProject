@@ -47,8 +47,7 @@ export function get_card() {
                                         <a href="#"><i class="fa-regular fa-comment-dots"></i><span class="howmany">${item.commentNum}</span></a>
                                     </div>
                                     <div class="join">
-                                        <h3>參加人數：${item.joinNum
-      }/<pan class="activityLimit">${item.activityLimit}</pan></h3>
+                                        <h3>參加人數：${item.joinNum}/<pan class="activityLimit">${item.activityLimit}</pan></h3>
                                         <span class="iwantjoin color-button">了解更多</span>
                                     </div>
                                 </div>
@@ -62,13 +61,168 @@ export function get_card() {
 
         get_lightbox();
 
-        let activity_article_cards = document.getElementsByClassName("activity_article_cards");
-        for ( let j = 0 ; j < activity_article_cards.length ; j++ ) {
-          let activityID = activity_article_cards[j].getAttribute("data-id")
+        let activity_article_cards = document.getElementsByClassName(
+          "activity_article_cards"
+        );
+        for (let j = 0; j < activity_article_cards.length; j++) {
+          let activityID = activity_article_cards[j].getAttribute("data-id");
 
           // ================================ member img ==============================
           let user_img = activity_article_cards[j].querySelector(".user");
-          picture.getActivityMemberPicture(activityID, user_img) ;
+          picture.getActivityMemberPicture(activityID, user_img);
+        }
+      }
+    },
+    error: (xhr, status, error) => {
+      alert("error:" + error);
+    },
+  });
+}
+
+export function get_cardJoin() {
+  // let cards = JSON.parse(localStorage.getItem("cards"));
+  $.ajax({
+    url: "php/getJoinActivity.php",
+    method: "post",
+    dataType: "json",
+    data: {},
+    success: (response) => {
+      console.log(response);
+      if (response) {
+        // console.log(response);
+        let card_html = "";
+        response.reverse().forEach(function (item, i) {
+          // [{}, {}]
+          // console.log(item);。
+          let post_time_display = convertTimeToHumanReadable(item.activityTime);
+          card_html += `
+                            <div class="activity_article_cards " data-id="${item.activityID}">
+                                <div class="cards_top">
+                                    <div class="cards_top_left">
+                                        <span class="topic">${item.activityTopic}</span>
+                                        <section class="post_time">${post_time_display}發布</section>
+                                    </div>
+                                </div>
+                                <div class="cards_content">
+                                    <div class="card_user"><img class="user" src="IMG/activity/lonely.png" alt=""
+                                            width="60">
+                                    </div>
+                                    <div class="card_text">
+                                        <div class="text_title">
+                                            <h2>${item.activityName}</h2>
+                                        </div>
+                                        <div class="text_content">
+                                            <pan class="thetime1" style="display:none">${item.activityStartDate}</pan><pan class="thetime2" style="display:none">${item.activityEndDate}</pan>
+                                            <pan class="location" style="display:none">${item.activityPlace}</pan>
+                                            ${item.activityNote}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="cards_actions">
+                                    <div class="interact">
+                                        <a href="#"><i class="fa-regular fa-heart ${item.item_id}"></i><span>${item.thumbUpNum}</span></a>
+                                        <a href="#"><i class="fa-regular fa-comment-dots"></i><span class="howmany">${item.commentNum}</span></a>
+                                    </div>
+                                    <div class="join">
+                                        <h3>參加人數：${item.joinNum}/<pan class="activityLimit">${item.activityLimit}</pan></h3>
+                                        <span class="iwantjoin color-button">了解更多</span>
+                                    </div>
+                                </div>
+                            </div>
+    `;
+        });
+
+        let activity_article =
+          document.getElementsByClassName("activity_article")[0];
+        activity_article.innerHTML = card_html;
+
+        get_lightbox();
+
+        let activity_article_cards = document.getElementsByClassName(
+          "activity_article_cards"
+        );
+        for (let j = 0; j < activity_article_cards.length; j++) {
+          let activityID = activity_article_cards[j].getAttribute("data-id");
+
+          // ================================ member img ==============================
+          let user_img = activity_article_cards[j].querySelector(".user");
+          picture.getActivityMemberPicture(activityID, user_img);
+        }
+      }
+    },
+    error: (xhr, status, error) => {
+      alert("error:" + error);
+    },
+  });
+}
+
+export function get_cardSave() {
+  // let cards = JSON.parse(localStorage.getItem("cards"));
+  $.ajax({
+    url: "php/getLikeActivity.php",
+    method: "post",
+    dataType: "json",
+    data: {},
+    success: (response) => {
+      if (response) {
+        // console.log(response);
+        let card_html = "";
+        response.reverse().forEach(function (item, i) {
+          // [{}, {}]
+          // console.log(item);。
+          let post_time_display = convertTimeToHumanReadable(item.activityTime);
+          card_html += `
+                            <div class="activity_article_cards " data-id="${item.activityID}">
+                                <div class="cards_top">
+                                    <div class="cards_top_left">
+                                        <span class="topic">${item.activityTopic}</span>
+                                        <section class="post_time">${post_time_display}發布</section>
+                                    </div>
+                                </div>
+                                <div class="cards_content">
+                                    <div class="card_user"><img class="user" src="IMG/activity/lonely.png" alt=""
+                                            width="60">
+                                    </div>
+                                    <div class="card_text">
+                                        <div class="text_title">
+                                            <h2>${item.activityName}</h2>
+                                        </div>
+                                        <div class="text_content">
+                                            <pan class="thetime1" style="display:none">${item.activityStartDate}</pan><pan class="thetime2" style="display:none">${item.activityEndDate}</pan>
+                                            <pan class="location" style="display:none">${item.activityPlace}</pan>
+                                            ${item.activityNote}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="cards_actions">
+                                    <div class="interact">
+                                        <a href="#"><i class="fa-regular fa-heart ${item.item_id}"></i><span>${item.thumbUpNum}</span></a>
+                                        <a href="#"><i class="fa-regular fa-comment-dots"></i><span class="howmany">${item.commentNum}</span></a>
+                                    </div>
+                                    <div class="join">
+                                        <h3>參加人數：${item.joinNum}/<pan class="activityLimit">${item.activityLimit}</pan></h3>
+                                        <span class="iwantjoin color-button">了解更多</span>
+                                    </div>
+                                </div>
+                            </div>
+    `;
+        });
+
+        let activity_article =
+          document.getElementsByClassName("activity_article")[0];
+        activity_article.innerHTML = card_html;
+
+        get_lightbox();
+
+        let activity_article_cards = document.getElementsByClassName(
+          "activity_article_cards"
+        );
+        for (let j = 0; j < activity_article_cards.length; j++) {
+          let activityID = activity_article_cards[j].getAttribute("data-id");
+
+          // ================================ member img ==============================
+          let user_img = activity_article_cards[j].querySelector(".user");
+          picture.getActivityMemberPicture(activityID, user_img);
         }
       }
     },
@@ -93,7 +247,9 @@ function get_comment_card(card) {
       for (let i = 0; i < response.length; i++) {
         str += `<div class="comment_card">
             <!-- <span class="more_action">‧‧‧</span> -->
-            <img class="user" src="IMG/people/member1/${response[i].memberPicture}" alt="" width="60">
+            <img class="user" src="IMG/people/member1/${
+              response[i].memberPicture
+            }" alt="" width="60">
             <div class="comment_text">
                 <h2>${response[i].name}</h2>
                 <p>${response[i].content}</p>
@@ -343,10 +499,12 @@ const get_lightbox = () => {
                     <div class="activity_content">
                         <h2>${response.activityName}</h2>
                         <h3>${post_time_display}發布</h3>
-                        <p class="inf">活動時間:${response.activityStartDate
-      }到${response.activityEndDate}</p>
-                        <p class="inf">活動地點:<pan class="location">${response.activityPlace
-      }</pan></p>
+                        <p class="inf">活動時間:${
+                          response.activityStartDate
+                        }到${response.activityEndDate}</p>
+                        <p class="inf">活動地點:<pan class="location">${
+                          response.activityPlace
+                        }</pan></p>
                         <p>${response.activityNote}</p>
                         <ul>
                             <li class="${spanClass1}"><span class="topic " >${ageGreaterThan18}</span></li>
@@ -357,25 +515,32 @@ const get_lightbox = () => {
                     </div>
                     <div class="article_actions">
                         <div class="interact_lightbox">
-                            <i id="like" style="color:${response.isThumbUp ? "red" : ""
-      }" class="fa-regular fa-heart"></i><span id="likeNum">${response.thumbUpNum
-      }</span>
-                            <i class="fa-regular fa-comment-dots"></i><span class="howmany">${response.commentNum
-      }</span>
+                            <i id="like" style="color:${
+                              response.isThumbUp ? "red" : ""
+                            }" class="fa-regular fa-heart"></i><span id="likeNum">${
+      response.thumbUpNum
+    }</span>
+                            <i class="fa-regular fa-comment-dots"></i><span class="howmany">${
+                              response.commentNum
+                            }</span>
                             <!-- <a href="#"><i class="fa-regular fa-bookmark"></i></a> -->
                         </div>
                         <div class="join">
-                            <h3>參加人數：<pan id="joinNum">${response.joinNum
-      }</pan>/${response.activityLimit}</h3>
+                            <h3>參加人數：<pan id="joinNum">${
+                              response.joinNum
+                            }</pan>/${response.activityLimit}</h3>
                             <!--input type="checkbox" id="iwantjoin_lightbox"-->
-                            <div for="iwantjoin_lightbox" class="iwantjoin color-button ${response.hasJoined ? "joined" : ""
-      }" id="join" >${response.hasJoined ? "取消參加" : "我要參加"
-      }</div>
+                            <div for="iwantjoin_lightbox" class="iwantjoin color-button ${
+                              response.hasJoined ? "joined" : ""
+                            }" id="join" >${
+      response.hasJoined ? "取消參加" : "我要參加"
+    }</div>
                         </div>
                     </div>
                     <div class="activity_comment">
-                        <h3>共<span class="howmany">${response.commentNum
-      }</span>則留言</h3>
+                        <h3>共<span class="howmany">${
+                          response.commentNum
+                        }</span>則留言</h3>
                         <div class="activity_commentbox">
                         </div>
                     </div>
@@ -391,8 +556,9 @@ const get_lightbox = () => {
                     </div>
                     <button type="submit" class="comment_send selector_submit" id="comment_send" =>送出</button>
                     <div class="actions">
-                        <a href="#"><i  id ="like2" style="color:${response.isThumbUp ? "red" : ""
-      }" class="fa-regular fa-heart"></i></a>
+                        <a href="#"><i  id ="like2" style="color:${
+                          response.isThumbUp ? "red" : ""
+                        }" class="fa-regular fa-heart"></i></a>
                         <!-- <a href="#"><i class="fa-regular fa-bookmark"></i></a> -->
                         <!-- <span class="more_action">‧‧‧</span> -->
                     </div>
@@ -402,9 +568,14 @@ const get_lightbox = () => {
     // user img 更新============================================================
     let Main_user = document.getElementById("Main_user");
     picture.getMemberPicture(Main_user);
-    console.log(response.activityID); 
-    let activityOrganiserID_user = document.getElementById("activityOrganiserID_user");
-    picture.getActivityMemberPicture(response.activityID, activityOrganiserID_user) ;
+    console.log(response.activityID);
+    let activityOrganiserID_user = document.getElementById(
+      "activityOrganiserID_user"
+    );
+    picture.getActivityMemberPicture(
+      response.activityID,
+      activityOrganiserID_user
+    );
     // user img 更新============================================================
     document.getElementById("join").addEventListener("click", () => {
       $.ajax({
@@ -455,11 +626,9 @@ const get_lightbox = () => {
           if (innerResponse) {
             document.getElementById("like").style.color = "red";
             document.getElementById("like2").style.color = "red";
-
           } else {
             document.getElementById("like").style.color = "";
             document.getElementById("like2").style.color = "";
-
           }
           $.ajax({
             url: "php/countActivityLike.php",
@@ -491,11 +660,9 @@ const get_lightbox = () => {
           if (innerResponse) {
             document.getElementById("like2").style.color = "red";
             document.getElementById("like").style.color = "red";
-
           } else {
             document.getElementById("like2").style.color = "";
             document.getElementById("like").style.color = "";
-
           }
           $.ajax({
             url: "php/countActivityLike.php",

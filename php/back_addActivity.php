@@ -40,7 +40,6 @@
                 values(?, now(), ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         $statement = $pdo->prepare($sql);
         $statement->bindValue(1, $_SESSION["ID"]);
-        // $statement->bindValue(2, $currentTime);
         $statement->bindValue(2, $_POST["activityTopic"]);
         $statement->bindValue(3, $_POST["activityStartDate"]);
         $statement->bindValue(4, $_POST["activityEndDate"]);
@@ -59,5 +58,3 @@
 
     } else
         return -1;
-
-?>
