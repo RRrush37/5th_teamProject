@@ -26,7 +26,7 @@ function get_card() {
                                     </div>
                                 </div>
                                 <div class="cards_content">
-                                    <div class="card_user"><img class="user" src="IMG/activity/lonely.png" alt=""
+                                    <div class="card_user"><img class="user" src="" alt=""
                                             width="60">
                                     </div>
                                     <div class="card_text">
@@ -82,7 +82,7 @@ function get_comment_card(card) {
       for (let i = 0; i < response.length; i++) {
         str += `<div class="comment_card">
             <!-- <span class="more_action">‧‧‧</span> -->
-            <img class="user" src="./IMG/activity/lonely.png" alt="" width="60">
+            <img class="user" src="" alt="" width="60">
             <div class="comment_text">
                 <h2>${response[i].name}</h2>
                 <p>${response[i].content}</p>

@@ -42,7 +42,7 @@ const get_lightbox = () => {
                     <i class="fa-solid fa-xmark"></i>
                     <div class="activity_inf">
                         <div class="article_top_left">
-                            <img class="user" src="IMG/activity/lonely.png" alt="" width="60">
+                            <img class="user" src="" alt="" width="60">
                             <div class="user_identity">
                                 <p>${response.organiserName}</p>
                                 <p>${response.activityOrganiserID}</p>
@@ -82,7 +82,7 @@ const get_lightbox = () => {
                     </div>
                 </div>
                 <div class="activity_myaction">
-                    <img class="user" src="IMG/activity/lonely.png" alt="" width="40">
+                    <img class="user" src="" alt="" width="40">
                     <div class="comment_keyin">
                         <textarea name="" id="comment" cols="30" rows="1" placeholder="留言..."></textarea>
                         <!-- <div class="paste">

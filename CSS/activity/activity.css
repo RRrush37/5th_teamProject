@@ -389,14 +389,20 @@ input[type="checkbox"] {
 .cards_content {
   vertical-align: middle;
   display: flex;
+  justify-content: start;
 }
 
 .card_user {
   float: left;
+  width: 20%;
+  overflow: hidden;
+  margin-right: 10px;
 }
 
 .card_user img {
   border: none;
+  width: 100%;
+  transform: scale(2.2) translateY(25%);
 }
 
 .post_time {
@@ -405,6 +411,7 @@ input[type="checkbox"] {
 
 .card_text {
   min-width: 0;
+  margin-top: 20px;
 }
 
 .text_content {
@@ -618,7 +625,8 @@ ul.weekdays li {
 .lightbox_background .user {
   float: none;
   border: none;
-  margin-right: 10px;
+  /* margin-right: 10px; */
+  transform: scale(1.5) translateY(6px);
 }
 
 .activity_main .user {
@@ -774,4 +782,15 @@ ul.weekdays li {
   color: #000!important;
   background-color: #d6d1f0!important;
   /* box-shadow: inset #fff 0px 0px 0px 1px; */
+}
+
+#activity_doll{
+  width: 100%;
+  overflow: hidden;
+  height: 280px;
+}
+
+#activity_doll img{
+  width: 100%;
+  transform: scale(2) translateY(20%)
 }

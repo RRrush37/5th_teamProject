@@ -112,6 +112,7 @@ post_btn.addEventListener("click", function (e) {
           alert("請先登入");
         } else if (response == 1) {
           alert("發布成功");
+          location.href='activity.html';
         } else {
           alert("發布失敗");
         }
