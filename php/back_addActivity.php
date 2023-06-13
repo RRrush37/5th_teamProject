@@ -37,21 +37,21 @@
         //建立SQL
         
         $sql = "INSERT into activity( activityOrganiserID, activityTime, activityTopic, activityStartDate, activityEndDate, activityName, activityNote, activityLimit, activityPlace, con_onlyMale, con_onlyFemale, con_motorLicense, con_ageGreaterThan18)
-                values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                values(?, now(), ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         $statement = $pdo->prepare($sql);
         $statement->bindValue(1, $_SESSION["ID"]);
-        $statement->bindValue(2, $currentTime);
-        $statement->bindValue(3, $_POST["activityTopic"]);
-        $statement->bindValue(4, $_POST["activityStartDate"]);
-        $statement->bindValue(5, $_POST["activityEndDate"]);
-        $statement->bindValue(6, $_POST["activityName"]);
-        $statement->bindValue(7, $_POST["activityNote"]);
-        $statement->bindValue(8, $_POST["activityLimit"]);
-        $statement->bindValue(9, $_POST["activityPlace"]);
-        $statement->bindValue(10, $_POST["con_onlyMale"]);
-        $statement->bindValue(11, $_POST["con_onlyFemale"]);
-        $statement->bindValue(12, $_POST["con_motorLicense"]);
-        $statement->bindValue(13, $_POST["con_ageGreaterThan18"]);
+
+        $statement->bindValue(2, $_POST["activityTopic"]);
+        $statement->bindValue(3, $_POST["activityStartDate"]);
+        $statement->bindValue(4, $_POST["activityEndDate"]);
+        $statement->bindValue(5, $_POST["activityName"]);
+        $statement->bindValue(6, $_POST["activityNote"]);
+        $statement->bindValue(7, $_POST["activityLimit"]);
+        $statement->bindValue(8, $_POST["activityPlace"]);
+        $statement->bindValue(9, $_POST["con_onlyMale"]);
+        $statement->bindValue(10, $_POST["con_onlyFemale"]);
+        $statement->bindValue(11, $_POST["con_motorLicense"]);
+        $statement->bindValue(12, $_POST["con_ageGreaterThan18"]);
         $success = $statement->execute();
         
         echo "新增成功!";
@@ -59,5 +59,3 @@
 
     } else
         return -1;
-
-?>

@@ -16,7 +16,7 @@
     ];
     session_start();
     if (checkIfLogin()) {
-        $sql = "SELECT roomName, roomNum, roomPassword, person, `lock` FROM roomlist ";
+        $sql = "SELECT roomName, roomNum, roomPassword, person, `lock` FROM roomList ";
         $statement = $pdo->prepare($sql);
         $statement->execute();
         $data = $statement->fetchAll();
@@ -25,4 +25,3 @@
     } else {
         echo -1;
     }
-?>
