@@ -12,7 +12,7 @@ export function getMemberPicture(user_img){
                 alert("未讀取到使用者資料");
                 user_img.setAttribute("src", "IMG/model2cut.jpg");
             } else {
-                user_img.setAttribute("src", response);
+                user_img.setAttribute("src", response+"?t="+Date.now());
             }
             
         },
@@ -40,7 +40,7 @@ export function getGameMemberPictureName(user_img, user_name, memberid){
             } else {
                 $.each(response, function(index, row) {
                     user_name.innerHTML = row["memberName"];
-                    user_img.setAttribute("src", row["memberPicture"]);
+                    user_img.setAttribute("src", row["memberPicture"]+"?t="+Date.now());
                 });
             }
         },
@@ -65,7 +65,7 @@ export function getArticleMemberPicture(articleID, user_img){
                 alert("未讀取到使用者資料");
                 user_img.setAttribute("src", "IMG/model2cut.jpg");
             } else {
-                user_img.setAttribute("src", response);
+                user_img.setAttribute("src", response+"?t="+Date.now());
             }
             
         },
@@ -91,7 +91,7 @@ export function getActivityMemberPicture(activityID, user_img){
                 alert("未讀取到使用者資料");
                 // user_img.setAttribute("src", "IMG/model2cut.jpg");
             } else {
-                user_img.setAttribute("src", response);
+                user_img.setAttribute("src", response+"?t="+Date.now());
             }
             
         },
