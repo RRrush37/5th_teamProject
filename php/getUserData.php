@@ -10,6 +10,9 @@
         $statement->execute();
     
         $data = $statement->fetchAll();
+
+         // 将日期值格式化为适当的字符串格式（YYYY-MM-DD）
+        $data[0]['birthday'] = date("Y-m-d", strtotime($data[0]['birthday']));
         echo json_encode($data);
     }
     else{

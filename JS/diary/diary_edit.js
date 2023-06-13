@@ -50,8 +50,10 @@ $(()=>{
                 response = response[0]
                 if(response["gender"]==0){
                     //選女
+                    $("#female").checked = true ;
                 }
                 else{
+                    $("#male").checked = true ;
                     //選男
                 }
                 $("#hight").val(response["height"])
@@ -67,7 +69,8 @@ $(()=>{
                 $("#idname").html("ID:"+response["memberID"])
                 $("#sign").html(response["personalSign"])
                 
-                
+                console.log(response["birthday"]);
+                console.log($("#birthday").val());
             }
         },
         error:(xhr, status, error)=>{
@@ -88,7 +91,7 @@ $(()=>{
         
         //type=radio(男女)
         var userInput = document.querySelector('input[name="sex"]:checked');
-        let sex = userInput;
+        let sex = userInput.value;
         // console.log(sex);
         // console.log(userInput.value);
         
@@ -216,7 +219,11 @@ $(()=>{
         //編輯按鈕
         editBtn.addEventListener('click', function() {
             var fields = document.querySelectorAll('.introduce_right input, .introduce_left input .introduce_right select');  // 選取欄位
-            
+            let lefts = document.querySelectorAll('.introduce_left input');
+            let right = document.querySelector('#constellation');
+            console.log(right);
+           
+            editBtn.style.display = 'none';
             aaaa = hight.value;
             bbbb = interest.value;
             cccc = email.value;
@@ -231,8 +238,15 @@ $(()=>{
             // 將欄位的 disabled 屬性設定為 false
             fields.forEach(function(field) {
                 field.disabled = false;
+                console.log(field);
+            });
+
+            lefts.forEach(function(left) {
+                left.disabled = false;
+                console.log(left);
             });
         
+            right.disabled = false ;
             // 顯示確認修改和取消修改按鈕
             confirmBtn.style.display = 'inline-block';
             cancelBtn.style.display = 'inline-block';
@@ -243,16 +257,16 @@ $(()=>{
             //使用js中querySelectorAll選取這些欄位,將他們的欄位選取,將他們的disable屬性設定false
             var editBtn = document.querySelector('.editBtn');  // 選取編輯按鈕
 
-            editBtn.addEventListener('click', function() {
-                editBtn.style.display = 'none';
-            var fields = document.querySelectorAll('.introduce_right input, .introduce_left input, .introduce_right select');  // 選取欄位
+            // editBtn.addEventListener('click', function() {
+                
+            // var fields = document.querySelectorAll('.introduce_right input, .introduce_left input, .introduce_right select');  // 選取欄位
             
-                // 將欄位的 disabled 屬性設定為 false
-                fields.forEach(function(field) {
-                    field.disabled = false;
-                });
+            //     // 將欄位的 disabled 屬性設定為 false
+            //     fields.forEach(function(field) {
+            //         field.disabled = false;
+            //     });
             
-            });
+            // });
             
 
 
@@ -374,9 +388,15 @@ $(()=>{
                 });
 
 
+                // if ( userInput.value == "m" ) {
+                //     // userInput.checked = false
+                //     document.getElementById("male").checked = true ;
+                // } else if ( sex == "f" ) {
+                //     // userInput.checked = true;
+                //     document.getElementById("female").checked = true ;
+                // }
 
-
-
+                console.log(document.querySelector('input[name="sex"]:checked').value);
 
                 $.ajax({
                     url:"php/updateMemberDetail.php",
@@ -389,12 +409,13 @@ $(()=>{
                         hight:$("#hight").val(),
                         weight:$("#weight").val(),
                         constellation: $("#constellation").val(),
-                        introduce_right:$("#introduce_right").val(),
+                        gender: document.querySelector('input[name="sex"]:checked').value,
                         birthday:$("#birthday").val(),
                         interest:$("#interest").val(),
                         soubriquet:$("#soubriquet").val(),
                         myselfsign:$("#myselfsign").val(),
                         email:$("#email").val(),
+                        age:$("#age").val(),
                     },
                     //傳送成功的話
                     success:(response)=>{
