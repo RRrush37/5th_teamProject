@@ -175,7 +175,7 @@ wss.on('connection', ws => {
           console.log("first"+first);
           if ( room_start[i].second.toString() == "0,0,0,0,0,0,0" && first) { // 第一次全部都回來了
             data[1].wait = true ;
-            data[1].second = [5,5,5,5,5,5,5] ;
+            data[1].second = [10,10,10,10,10,10,10] ;
             data[1].round[1] = "抿牌階段";
             data[0] = "go" ;
             room_start[i] = data[1] ;
@@ -190,7 +190,7 @@ wss.on('connection', ws => {
 
           } else if ( room_start[i].second.toString() == "0,0,0,0,0,0,0" && !first) { //第二次全部都回來了
             data[1].wait = true ;
-            data[1].second = [5,5,5,5,5,5,5] ;
+            data[1].second = [10,10,10,10,10,10,10] ;
             data[1].round[1] = "狼人回合";
             data[0] = "start" ;
             room_start[i] = data[1] ;
@@ -265,7 +265,7 @@ wss.on('connection', ws => {
 
               
               room_start[i].wait = true ;
-              room_start[i].second = [5,5,5,5,5,5,5] ;
+              room_start[i].second = [10,10,10,10,10,10,10] ;
               room_start[i].round[1] = "狼人回合結算";
               data[1] = room_start[i] ; //更新資料
               first = true ;
@@ -307,7 +307,7 @@ wss.on('connection', ws => {
               data[1].killed = room_start[i].killed ; // 更新夜晚殺人資訊
               room_start[i] = data[1]; //更新資料
               room_start[i].wait = true ;
-              room_start[i].second = [5,5,5,5,5,5,5] ;
+              room_start[i].second = [10,10,10,10,10,10,10] ;
               room_start[i].round[1] = "女巫回合";
               data[1] = room_start[i] ;
               first = true ;
@@ -367,7 +367,7 @@ wss.on('connection', ws => {
               data[1].player_state = room_start[i].player_state; // 更新夜晚女巫是否殺人
               room_start[i] = data[1]; //更新資料
               room_start[i].wait = true ;
-              room_start[i].second = [5,5,5,5,5,5,5] ;
+              room_start[i].second = [10,10,10,10,10,10,10] ;
               room_start[i].round[1] = "預言家回合";
               data[1] = room_start[i] ;
               first = true ;
@@ -466,7 +466,7 @@ wss.on('connection', ws => {
               
               data[1].round[1] = room_start[i].round[1] ;
               room_start[i] = data[1]; //更新資料
-              room_start[i].second = [5,5,5,5,5,5,5] ;
+              room_start[i].second = [10,10,10,10,10,10,10] ;
               data[1] = room_start[i];
               console.log("6666666666");
               console.log(room_start[i].round[1]);
@@ -640,7 +640,7 @@ wss.on('connection', ws => {
               // 第一次全部都回來了
 
               room_start[i].wait = true ;
-              room_start[i].second = [5,5,5,5,5,5,5] ;
+              room_start[i].second = [10,10,10,10,10,10,10] ;
               room_start[i].round[0]++;
 
               data[1] = room_start[i] ; //更新資料
