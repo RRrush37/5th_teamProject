@@ -26,7 +26,7 @@ $.ajax({
     
             let room_list = document.getElementsByClassName("room");
             roomImformation();
-    
+            console.log(room_list);
             let search_room_list = [];
             let search_btn = document.getElementById("search_btn");
             let search_el = document.getElementById("search") ;
@@ -290,25 +290,31 @@ $.ajax({
             
     
             function search( str, search_room_list ){
+                console.log(str);
                 search_room_list = [] ;
-                Array.from(room_list).filter( item => {
+                // Array.from(room_list).filter( item => {
                     for ( let i = 0 ; i < room_list.length ; i++ ) {
-                        // console.log(item.querySelectorAll("span")[0].innerHTML.includes(str));
+                        const item = room_list[i];
+                        console.log(i);
+                        console.log(item.querySelectorAll("span")[0].innerHTML.includes(str));
                         if (item.querySelectorAll("span")[0].innerHTML.includes(str) == true) {
                             console.log(item.querySelectorAll("span")[0].getAttribute("data-name"));
                             search_room_list.push(i);
                         }
+                        
                     }
-                } );
+                // } );
     
                 for ( let i = 0 ; i < room_list.length ; i++ ) {
                     if ( search_room_list.includes(i) ) {
                         room_list[i].classList.remove("none");
+                        console.log(room_list[i].classList)
                     } else {
                         room_list[i].classList.add("none");
+                        console.log(room_list[i].classList)
                     }
                 }
-    
+                
             }
             
         } else {

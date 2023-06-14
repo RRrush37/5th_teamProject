@@ -35,8 +35,8 @@ export function getGameMemberPictureName(user_img, user_name, memberid){
 
             response = JSON.parse(response);
             if ( response.length == 0) {
-                user_img.setAttribute("src", "IMG/model2cut.jpg");
-                user_name.innerHTML = "LittleWang";
+                user_img.setAttribute("src", "");
+                user_name.innerHTML = "waitting";
             } else {
                 $.each(response, function(index, row) {
                     user_name.innerHTML = row["memberName"];
